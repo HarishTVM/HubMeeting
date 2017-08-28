@@ -1,0 +1,1 @@
+All .js scripts are added here

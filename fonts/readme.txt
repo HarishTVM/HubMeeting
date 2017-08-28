@@ -1,0 +1,1 @@
+All font styles are added here
