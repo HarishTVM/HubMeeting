@@ -6,8 +6,11 @@
 var express = require("express");
 var cluster = require('cluster');
 var session = require('express-session');
+var routes = require('./server/routes/api-route');
+var io = require("./server/helpers/io-helper");
 var bodyParser = require('body-parser');
-var config = require("./web-config");
+var logger = require('./server/helpers/utility').logger;
+var config = require("./server/web-config");
 var path = require("path");
 var sslPort = 443; // Default port for HTTPS
 
@@ -16,7 +19,7 @@ var sslPort = 443; // Default port for HTTPS
 	var app = module.exports = express();
 	process.env.NODE_ENV = 'production';
 
-	app.set('views', __dirname + '/views');
+	app.set('views', __dirname + '/view');
 	app.engine('html', require('ejs').renderFile);
 
 	app.set('trust proxy', 1);
@@ -28,6 +31,7 @@ var sslPort = 443; // Default port for HTTPS
 	/*BEGIN Configuration for static pages*/
 	app.use('/scripts',express.static('scripts'));
 	app.use('/styles',express.static('styles'));
+    app.use('/view',express.static('view'));
 	app.use('/images',express.static('images'));
 	app.use('/fonts',express.static('fonts'));
 	app.use('/node_modules',express.static('node_modules'));
@@ -48,10 +52,13 @@ var sslPort = 443; // Default port for HTTPS
 	});
 
 	// Access the session as req.session
-	app.get('/api/*', function(req, res, next) {
-	  if (!req.session.user_id)
-		  res.sendStatus(401).send();
-	})
+	// app.get('/api/*', function(req, res, next) {
+	//   if (!req.session.user_id)
+	// 	  res.sendStatus(401).send();
+	// })
+
+    app.use('/', routes);
+    console.log("Routes are OK");
 
 
 /******---------------------------------------------- END Creation Of Server Properties --------------------------------------------------------------------------------------***/
@@ -72,13 +79,13 @@ var sslPort = 443; // Default port for HTTPS
 		  config.app.httpsCert.cert = io.fileReadSync(config.app.httpsCert.cert);
 		  https.createServer(config.app.httpsCert,app).listen(sslPort);
 		  if(config.app.appStage)
-			  console.log('Routejoot Backend services are started!!! Running on %d', sslPort);
+			  console.log('CMS Backend services are started!!! Running on %d', sslPort);
 		}
 		else
 		{
 		  app.listen(config.app.port);
 		  if(config.app.appStage)
-			  console.log('Routejoot Backend services are started!!! Running on %d',config.app.port);
+			  console.log('CMS Backend services are started!!! Running on %d',config.app.port);
 		}
 
 		// Error handler
