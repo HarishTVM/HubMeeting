@@ -1,12 +1,13 @@
 {
   "name": "cms-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "CMS",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
   },
-  "author": "",
+  "author": "Inflexion Technology Solutions",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
