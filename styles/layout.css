@@ -139,6 +139,10 @@ a.article, a.article:hover {
     background: #36d4b1 !important;
     color: #000 !important;
 }
+.content-spacing{
+    padding:40px;
+    margin-top: 40px;
+}
 
 
 /* ---------------------------------------------------
@@ -157,6 +161,10 @@ a.article, a.article:hover {
     width: 100%;
 }
 
+.fixed-nav-custom{
+    position: fixed;
+    width: 100%;
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
