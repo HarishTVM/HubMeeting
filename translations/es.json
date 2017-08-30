@@ -1,4 +1,23 @@
 {
     "WELCOME_MSG": "¡Hola! ¡Bienvenido!",
-    "CONTACT_TEXT": "More bla"
+    "CONTACT_TEXT": "More bla",
+    "NEW_MEETING_BUTTON": "Nueva reunión",
+    "SCHEDULE_MEETING_DONE": "Hecho",
+    "SCHEDULE_MEETING_HEADER": "Programar reunión",
+    "SCHEDULE_MEETING_CANCEL": "Cancelar",
+    "SCHEDULE_MEETING_TITLE": "Título",
+    "SCHEDULE_MEETING_TENANT": "Tenant",
+    "SCHEDULE_MEETING_OWNER": "Inquilino",
+    "SCHEDULE_MEETING_EMAIL": "Email de contacto",
+    "SCHEDULE_MEETING_PHONE": "Teléfono de contacto",
+    "SCHEDULE_MEETING_FROM": "De",
+    "SCHEDULE_MEETING_TO": "A",
+    "SCHEDULE_MEETING_TIMEZONE": "Zona horaria",
+    "SCHEDULE_MEETING_IMPORTANCE": "Importancia",
+    "SCHEDULE_MEETING_COSPACE": "co-espacio",
+    "SCHEDULE_MEETING_COSPACE_TYPE": "tipo coSpace",
+    "SCHEDULE_MEETING_START_MODE": "Modo Inicio",
+    "SCHEDULE_MEETING_MEMBER": "Miembro",
+    "SCHEDULE_MEETING_PARTICIPANTS": "Participantes",
+    "SCHEDULE_MEETING_PIN": "ALFILER"
 }

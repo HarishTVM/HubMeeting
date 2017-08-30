@@ -1,0 +1,45 @@
+.page-header{
+    padding: 6px !important;
+}
+
+.header-div {
+    display: inline-flex;
+    width: 100%;
+}
+
+.head4 {
+    position: relative;
+    left: 1%;
+}
+
+.done-btn {
+    position: absolute;
+    right: 1% !important;
+    background-color: #37d37f !important;
+}
+
+#to {
+    position: relative;
+    left: 38%;
+}
+
+.datetime-div{
+    display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+    .schedule-meeting-div{
+        width: 50%;
+        position: relative;
+        left: 25%;
+    }
+
+}
+
+@media only screen and (min-width: 400px) {
+    #to {
+        position: relative;
+        left: 42%;
+    }
+
+}

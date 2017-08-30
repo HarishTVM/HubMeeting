@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="wide wow-animation smoothscroll" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Home Default</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/newMeeting.css">
+
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <header class="page-header">
+        <div class="header-div">
+          <button class="btn btn-secondary cancel-btn text-center"><%= translation.SCHEDULE_MEETING_CANCEL %></button>
+          <h4 class="head4"><%= translation.SCHEDULE_MEETING_HEADER %></h4>
+          <button class="btn btn-primary done-btn"><%= translation.SCHEDULE_MEETING_DONE %></button> 
+        </div>  
+      </header>
+      <hr><br>
+      <div class="schedule-meeting-div col-xs-12 col-sm-12">
+            <form>
+                    <div class="form-group">
+                    <label><%= translation.SCHEDULE_MEETING_TITLE %></label>
+                      <input type="text" name="title" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_TITLE %>">
+                    </div>
+                    <div class="form-group">
+                      <label><%= translation.SCHEDULE_MEETING_TENANT %></label>
+                      <input type="text" name="tenant" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_TENANT %>">
+                    </div>
+                    <div class="form-group">
+                      <label><%= translation.SCHEDULE_MEETING_OWNER %></label>
+                      <input type="email" name="owner" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_OWNER %>">
+                    </div>
+                    <div class="form-group">
+                        <label><%= translation.SCHEDULE_MEETING_EMAIL %></label>
+                        <input type="email" name="email" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_EMAIL %>">
+                    </div>
+                    <div class="form-group">
+                       <label><%= translation.SCHEDULE_MEETING_PHONE %></label>
+                       <input type="text" name="telephone" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_PHONE %>">
+                    </div>
+                    <div class="labels">
+                      <label><%= translation.SCHEDULE_MEETING_FROM %></label>&nbsp;	
+                      <label id="to"><%= translation.SCHEDULE_MEETING_TO %></label>
+                    </div>
+                    <div class="form-group datetime-div">
+                      <input type="text" name="dateandtime" class="form-control" id="fromdatetimepicker">&nbsp;
+                      <input type="text" name="dateandtime" class="form-control" id="todatetimepicker">
+                    </div>
+
+                    <div class="form-group">
+                            <label><%= translation.SCHEDULE_MEETING_TIMEZONE %></label>
+                            <input type="text" name="timezone" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_TIMEZONE %>">
+                    </div>
+                    <div class="form-group">
+                        <label><%= translation.SCHEDULE_MEETING_IMPORTANCE %></label>
+                                <select class="form-control" id="sel1">
+                                  <option>High</option>
+                                  <option>Normal</option>      
+                                  <option>Low</option>
+                              </select>
+                    </div>
+                    <div class="form-group">
+                            <label><%= translation.SCHEDULE_MEETING_COSPACE %></label>
+                            <input type="text" name="cospace" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_COSPACE %>">
+                    </div>
+                    <div class="form-group">
+                            <label><%= translation.SCHEDULE_MEETING_COSPACE_TYPE %></label>
+                            <select class="form-control" id="sel2">
+                                <option>Default Template</option>
+                                <option>Hidden Room</option>      
+                                <option>Managed Meeting</option>
+                                <option>All Hands</option>   
+                            </select>
+                    </div>
+                    <hr><br>
+                    <div class="form-group">
+                            <label><%= translation.SCHEDULE_MEETING_START_MODE %></label>
+                          <select class="form-control" id="sel3">
+                              <option>Manual</option>
+                              <option>Automatic</option>      
+                          </select>
+                   </div>
+                    <h5><%= translation.SCHEDULE_MEETING_MEMBER %></h5><br>
+                    <div class="form-group">
+                            <label><%= translation.SCHEDULE_MEETING_PARTICIPANTS %></label>
+                            <input type="text" name="participants" class="form-control" placeholder="add...">
+                    </div>
+                    <div class="form-group">
+                            <label><%= translation.SCHEDULE_MEETING_PIN %></label>
+                            <input type="text" name="pin" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_PIN %>">
+                    </div>
+                  </form>  
+            </div>  
+        </div>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>   
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+    <script>
+      $('#fromdatetimepicker').datetimepicker();
+      $('#todatetimepicker').datetimepicker();
+    </script>  
+    <script src="/scripts/core.min.js"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>
