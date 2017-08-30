@@ -7,24 +7,6 @@ var env = "Development";
 
 module.exports.envType = env;
 
-module.exports.database = {
-	url: 'mongodb://192.168.0.3:27017/routejoot-dev',
-	options: {
-		db: { native_parser: true, safe: true },
-		server: {
-			poolSize: 30,
-			reconnectTries: 100,
-			connectTimeoutMS: 30000,
-			socketOptions: {
-				keepAlive: 120,
-				reconnectInterval: 1000,
-			}
-		},
-		user: 'rjreadwriter',
-		pass: 'rjrw22102015'
-	}
-};
-
 module.exports.app = {
 	enableSSL: false,
 	port: 8080,

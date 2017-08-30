@@ -20,6 +20,7 @@ var sslPort = 443; // Default port for HTTPS
 	process.env.NODE_ENV = 'production';
 
 	app.set('views', __dirname + '/view');
+	app.set('view engine', 'ejs');
 	app.engine('html', require('ejs').renderFile);
 
 	app.set('trust proxy', 1);
