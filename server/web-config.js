@@ -14,7 +14,8 @@ module.exports.app = {
 	httpsCert: {
 		cert: './certificates/certificate.pem',
 		key: './certificates/privatekey.pem',
-	}
+	},
+	supportedLangs:["en","es"]
 };
 
 module.exports.redirectLocation = {

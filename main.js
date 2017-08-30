@@ -9,10 +9,15 @@ var session = require('express-session');
 var routes = require('./server/routes/api-route');
 var io = require("./server/helpers/io-helper");
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var logger = require('./server/helpers/utility').logger;
 var config = require("./server/web-config");
 var path = require("path");
+var i18n = require("i18n-express");
 var sslPort = 443; // Default port for HTTPS
+const osLocale = require('os-locale');
+var localLang = null;
+localLang = osLocale.sync().toString();
 
 /******---------------------------------------------- BEGIN Creation Of Server Properties --------------------------------------------------------------------------------------***/
 	// Create express application
@@ -27,6 +32,20 @@ var sslPort = 443; // Default port for HTTPS
 	//app.use(session(config.serverSettings.sessionAttr));
 	app.use(bodyParser.json({limit: '5mb'}));
 	app.use(bodyParser.urlencoded({extended:true,limit: '5mb'}));
+	app.use(cookieParser());
+
+	if(config.app.supportedLangs.indexOf(localLang) < 0)
+		localLang = "en"		
+
+	app.use(i18n({
+		translationsPath: path.join(__dirname, 'translations'),
+		cookieLangName : "ulang",
+		paramLangName : "lang",
+		defaultLang : localLang,
+		browserEnable : false,
+		siteLangs: config.app.supportedLangs,
+		textsVarName: 'translation'
+	}));
 
 	// Configure static files path
 	/*BEGIN Configuration for static pages*/
@@ -39,7 +58,7 @@ var sslPort = 443; // Default port for HTTPS
     app.use('/site-config.js',express.static('site-config.js'));
 	/*END Configuration for static pages*/
 
-    app.use('/favicon.ioc',express.static('/app/images/favicon.png'));
+    app.use('/favicon.ioc',express.static('images/favicon.ioc'));
 
 	//Set headers for all incoming requests
 	app.all('/*', (request, response, next)=>{
