@@ -52,6 +52,14 @@
                   <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required">
                   <label class="form-label" for="contact-phone"><%= translation.SCHEDULE_MEETING_PHONE %></label>
                 </div>
+                <div class="form-wrap form-wrap_icon linear-icon-calendar-check">
+                    <input class="form-input" id="fromdatetimepicker" type="text" name="fromdatetimepicker" data-constraints="@Required">
+                    <label class="form-label" for="fromdatetimepicker"><%= translation.SCHEDULE_MEETING_FROM %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-calendar-check">
+                      <input class="form-input" id="todatetimepicker" type="text" name="todatetimepicker" data-constraints="@Required">
+                      <label class="form-label" for="todatetimepicker"><%= translation.SCHEDULE_MEETING_TO %></label>
+                </div>
                 <div class="form-wrap form-wrap_icon linear-icon-timer">
                   <input class="form-input" id="timezone" type="text" name="timezone" data-constraints="@Required">
                   <label class="form-label" for="timezone"><%= translation.SCHEDULE_MEETING_TIMEZONE %></label>
