@@ -25,89 +25,87 @@
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
-      <header class="page-header">
-        <div class="header-div">
-          <button class="btn btn-secondary cancel-btn text-center"><%= translation.SCHEDULE_MEETING_CANCEL %></button>
-          <h4 class="head4"><%= translation.SCHEDULE_MEETING_HEADER %></h4>
-          <button class="btn btn-primary done-btn"><%= translation.SCHEDULE_MEETING_DONE %></button> 
-        </div>  
-      </header>
-      <hr><br>
-      <div class="schedule-meeting-div col-xs-12 col-sm-12">
-            <form>
-                    <div class="form-group">
-                    <label><%= translation.SCHEDULE_MEETING_TITLE %></label>
-                      <input type="text" name="title" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_TITLE %>">
-                    </div>
-                    <div class="form-group">
-                      <label><%= translation.SCHEDULE_MEETING_TENANT %></label>
-                      <input type="text" name="tenant" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_TENANT %>">
-                    </div>
-                    <div class="form-group">
-                      <label><%= translation.SCHEDULE_MEETING_OWNER %></label>
-                      <input type="email" name="owner" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_OWNER %>">
-                    </div>
-                    <div class="form-group">
-                        <label><%= translation.SCHEDULE_MEETING_EMAIL %></label>
-                        <input type="email" name="email" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_EMAIL %>">
-                    </div>
-                    <div class="form-group">
-                       <label><%= translation.SCHEDULE_MEETING_PHONE %></label>
-                       <input type="text" name="telephone" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_PHONE %>">
-                    </div>
-                    <div class="labels">
-                      <label><%= translation.SCHEDULE_MEETING_FROM %></label>&nbsp;	
-                      <label id="to"><%= translation.SCHEDULE_MEETING_TO %></label>
-                    </div>
-                    <div class="form-group datetime-div">
-                      <input type="text" name="dateandtime" class="form-control" id="fromdatetimepicker">&nbsp;
-                      <input type="text" name="dateandtime" class="form-control" id="todatetimepicker">
-                    </div>
+      <section class="section-lg bg-white text-center main-section">
+        <div class="shell">
+		    <h4><%= translation.SCHEDULE_MEETING_HEADER %></h4>
+          <div class="range range-md-center">
+            <div class="cell-md-10 cell-lg-8">
+              <!-- RD Mailform-->
+              <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <div class="form-wrap form-wrap_icon linear-icon-man">
+                  <input class="form-input" id="title" type="text" name="title" data-constraints="@Required">
+                  <label class="form-label" for="title"><%= translation.SCHEDULE_MEETING_TITLE %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-users-plus">
+                  <input class="form-input" id="tenant" type="text" name="tenant" data-constraints="@Required">
+                  <label class="form-label" for="tenant"><%= translation.SCHEDULE_MEETING_TENANT %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-user-lock">
+                  <input class="form-input" id="owner" type="text" name="owner" data-constraints="@Required">
+                  <label class="form-label" for="owner"><%= translation.SCHEDULE_MEETING_OWNER %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required">
+                  <label class="form-label" for="contact-email"><%= translation.SCHEDULE_MEETING_EMAIL %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-telephone">
+                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required">
+                  <label class="form-label" for="contact-phone"><%= translation.SCHEDULE_MEETING_PHONE %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-timer">
+                  <input class="form-input" id="timezone" type="text" name="timezone" data-constraints="@Required">
+                  <label class="form-label" for="timezone"><%= translation.SCHEDULE_MEETING_TIMEZONE %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-shield icon">
+                          <select class="form-control" id="sel1">
+                            <option value="" selected disabled><%= translation.SCHEDULE_MEETING_IMPORTANCE %></option>
+                            <option><%= translation.SCHEDULE_MEETING_IMP_HIGH %></option>
+                            <option><%= translation.SCHEDULE_MEETING_IMP_NORMAL %></option>      
+                            <option><%= translation.SCHEDULE_MEETING_IMP_LOW %></option>
+                        </select>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-group-work">
+                  <input class="form-input" id="cospace" type="text" name="cospace" data-constraints="@Required">
+                  <label class="form-label" for="cospace"><%= translation.SCHEDULE_MEETING_COSPACE %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-share icon">
+                  <select class="form-control" id="sel2">
+                      <option value="" selected disabled><%= translation.SCHEDULE_MEETING_COSPACE_TYPE %></option>
+                      <option><%= translation.SCHEDULE_MEETING_DEFAULT_TEMPLATE %></option>
+                      <option><%= translation.SCHEDULE_MEETING_HIDDEN_ROOM %></option>      
+                      <option><%= translation.SCHEDULE_MEETING_MANAGED_MEETING %></option>
+                      <option><%= translation.SCHEDULE_MEETING_ALL_HANDS %></option>   
+                  </select>
+                </div>
+                <hr><br>
+                <div class="form-wrap form-wrap_icon linear-icon-aim icon">
+                      <select class="form-control" id="sel3">
+                          <option value="" selected disabled><%= translation.SCHEDULE_MEETING_START_MODE %></option>
+                          <option><%= translation.SCHEDULE_MEETING_MODE_MANUAL %></option>
+                          <option><%= translation.SCHEDULE_MEETING_MODE_AUTOMATIC %></option>      
+                      </select>
+               </div>
+               <br>
+                <h5><%= translation.SCHEDULE_MEETING_MEMBER %></h5>
+                <div class="form-wrap form-wrap_icon linear-icon-users2">
+                  <input class="form-input" id="participants" type="text" name="participants" data-constraints="@Required">
+                  <label class="form-label" for="participants"><%= translation.SCHEDULE_MEETING_PARTICIPANTS %></label>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-location">
+                  <input class="form-input" id="pin" type="text" name="pin" data-constraints="@Required">
+                  <label class="form-label" for="pin"><%= translation.SCHEDULE_MEETING_PIN %></label>
+                </div> 
+              </form>
+              <br>
+              <div class="header-div">
+                  <button class="btn btn-secondary btn-lg cancel-btn text-center"><%= translation.SCHEDULE_MEETING_CANCEL %></button>
+                  <button class="btn btn-primary btn-lg done-btn"><%= translation.SCHEDULE_MEETING_DONE %></button>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    <div class="form-group">
-                            <label><%= translation.SCHEDULE_MEETING_TIMEZONE %></label>
-                            <input type="text" name="timezone" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_TIMEZONE %>">
-                    </div>
-                    <div class="form-group">
-                        <label><%= translation.SCHEDULE_MEETING_IMPORTANCE %></label>
-                                <select class="form-control" id="sel1">
-                                  <option>High</option>
-                                  <option>Normal</option>      
-                                  <option>Low</option>
-                              </select>
-                    </div>
-                    <div class="form-group">
-                            <label><%= translation.SCHEDULE_MEETING_COSPACE %></label>
-                            <input type="text" name="cospace" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_COSPACE %>">
-                    </div>
-                    <div class="form-group">
-                            <label><%= translation.SCHEDULE_MEETING_COSPACE_TYPE %></label>
-                            <select class="form-control" id="sel2">
-                                <option>Default Template</option>
-                                <option>Hidden Room</option>      
-                                <option>Managed Meeting</option>
-                                <option>All Hands</option>   
-                            </select>
-                    </div>
-                    <hr><br>
-                    <div class="form-group">
-                            <label><%= translation.SCHEDULE_MEETING_START_MODE %></label>
-                          <select class="form-control" id="sel3">
-                              <option>Manual</option>
-                              <option>Automatic</option>      
-                          </select>
-                   </div>
-                    <h5><%= translation.SCHEDULE_MEETING_MEMBER %></h5><br>
-                    <div class="form-group">
-                            <label><%= translation.SCHEDULE_MEETING_PARTICIPANTS %></label>
-                            <input type="text" name="participants" class="form-control" placeholder="add...">
-                    </div>
-                    <div class="form-group">
-                            <label><%= translation.SCHEDULE_MEETING_PIN %></label>
-                            <input type="text" name="pin" class="form-control" placeholder="<%= translation.SCHEDULE_MEETING_PIN %>">
-                    </div>
-                  </form>  
-            </div>  
         </div>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>   
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

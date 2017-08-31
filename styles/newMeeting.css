@@ -1,21 +1,15 @@
-.page-header{
-    padding: 6px !important;
-}
-
-.header-div {
-    display: inline-flex;
-    width: 100%;
-}
-
-.head4 {
-    position: relative;
-    left: 1%;
+.main-section {
+    padding: 30px;
 }
 
 .done-btn {
-    position: absolute;
-    right: 1% !important;
     background-color: #37d37f !important;
+    border-color: #37d37f !important;
+}
+
+.done-btn:hover {
+    background-color: black !important;
+    border-color: black !important;
 }
 
 #to {
@@ -27,11 +21,31 @@
     display: flex;
 }
 
+.icon {
+    width: 100%;
+}
+
+.icon::before{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+}
+
+span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
+    position: relative;
+    left: 20%;
+}
+
 @media only screen and (min-width: 768px) {
     .schedule-meeting-div{
         width: 50%;
         position: relative;
         left: 25%;
+    }
+
+    span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
+        position: relative;
+        left: 6% !important;
     }
 
 }
@@ -41,5 +55,18 @@
         position: relative;
         left: 42%;
     }
+}
 
+@media only screen and (max-width: 350px) {
+    span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
+        position: relative;
+        left: 20% !important;
+    }
+}
+
+@media only screen and (min-width: 351px) and (max-width: 767px){
+    span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
+        position: relative;
+        left: 16% !important;
+    }
 }
