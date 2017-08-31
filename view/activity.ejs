@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="wide wow-animation smoothscroll" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Activity</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+
+  </head>
+  <body class="h_body_background">
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page Header-->
+      <header class="page-header">
+        <!-- RD Navbar-->
+      </header>
+      <div class="h_section_padding">
+        <section>
+         <div class=" row h_btn h_button ">
+             <div class="col-sm-12 h_height_inherit" id="btn_all">
+
+             <div class="h_height_inherit " id="btn_add">
+              <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Call" class="btn btn-default btn-circle" ><i class="glyphicon glyphicon-plus"></i></button>
+             </div>
+
+             <div  class="h_height_inherit "id="btn_add_hidden">
+             <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Call" class="btn btn-default btn-circle"><i class="fa fa-phone"></i></button>
+             <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Schedule"class="btn btn-default btn-circle"><i class="fa fa-calendar-plus-o"></i></button>
+             <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Settings"class="btn btn-default btn-circle"><i class="fa fa-sliders"></i></button>
+             </div>
+
+
+         </div>
+        </section>
+        <section>
+         <div class="h_margin_top">
+         <div class="row h_btn h_button_users" id="btn_meeting_details_all">
+
+           <div class="col-sm-4 h_height_inherit">
+            <div class="row h_height_inherit">
+             <div class="col-sm-6 h_height_inherit">
+              <div class="row h_height_inherit">
+               <div class="col-sm-6  h_height_inherit"><i class="fa fa-star-o h_vertical_align"> </i></div>
+               <div class="col-sm-6  h_height_inherit"><p class="h_font-size h_vertical_align">New Call</p></div>
+              </div>
+
+             </div>
+             <div class="col-sm-6 h_height_inherit">
+              <p class="h_font-size h_vertical_align">Harish.users</p></div>
+            </div>
+
+           </div>
+
+           <div class="col-sm-4 h_height_inherit">
+            <div class="h_height_inherit" id="btn_meeting_details">
+            <button id="btn_call_ur"     type="button" data-toggle="collapse" data-target="#btn_call" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Call"     class="fa fa-phone h_height_inherit"></i></button>
+            <button id="btn_schedule_ur" type="button" data-toggle="collapse" data-target="#btn_btn_schedule_ur" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Schedule" class="fa fa-calendar-plus-o"></i></button>
+            <button id="btn_members_ur"  type="button" data-toggle="collapse" data-target="#btn_Member" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Members"  class="fa fa-user" ></i></button>
+            <button id="btn_stats_ur"    type="button" data-toggle="collapse" data-target="#btn_call" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Stats"    class="fa fa-sliders"></i></button>
+            <button id="btn_settings_ur" type="button" data-toggle="collapse" data-target="#btn_call" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Settings" class="fa fa-sliders"></i></button>
+            </div>
+           </div>
+           <div class="col-sm-4 h_height_inherit">
+            <div class="row h_height_inherit">
+            <div class="col-sm-6 h_height_inherit">
+              <div id="btu_ay_notification" class="h_font-size h_vertical_align">
+               <samp class="div_circle_notification" data-badge="1"/>
+              <div class="div_width_notification" >
+              <samp class="div_circle_notification" data-badge="0"/>
+             </div>
+
+             </div>
+             </div>
+             <div class="col-sm-6 h_height_inherit"><p class="h_font-size h_vertical_align" >Aug 30, 2017</p></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+
+        <!-- onSider -->
+        <!-- Call -->
+        <div id="btn_call" class="panel-collapse collapse">
+           <div class="panel-body padding-none radius-none">
+
+              <!-- call button-->
+              <div class="row h_btn h_button_users radius-none">
+                       <div class="col-sm-2 h_height_inherit">
+                        <div class="h_height_inherit">
+                          <input class="h_vertical_align"type="checkbox"  />
+                          </div>
+                         </div>
+
+                          <div class="col-sm-7 h_height_inherit">
+                           <div class="h_height_inherit">
+                            <input class="btn_input_search h_vertical_align" type="text" placeholder="Name Number or URl"/>
+                           </div>
+                           </div>
+
+                          <div class="col-sm-3 h_height_inherit t-color-green">
+                           <div class="row h_height_inherit">
+                            <div class="col-sm-4 h_height_inherit">
+
+                            </div>
+                            <div class="col-sm-8 h_height_inherit">
+                              <p class="h_vertical_align"> Call Selected</p>
+                            </div>
+                           </div>
+
+                          </div>
+                         </div>
+             </div>
+              <div class="panel-footer padding-none border-top-none radius-none">
+
+               <!-- call footer-->
+               <div class="row h_btn h_button_users radius-none">
+                        <div class="col-sm-2 h_height_inherit">
+                         <div class="h_height_inherit">
+                           <input class="h_vertical_align"type="checkbox"  />
+                           </div>
+
+                          </div>
+
+                           <div class="col-sm-7 h_height_inherit">
+
+                            </div>
+                           <div class="col-sm-3 h_height_inherit t-color-green ">
+
+                            <div class="row h_height_inherit">
+                             <div class="col-sm-4 h_height_inherit">
+
+                             </div>
+                             <div class="col-sm-8 h_height_inherit">
+                               <p class="h_vertical_align"> Call </p>
+                             </div>
+                            </div>
+                            </div>
+                          </div>
+              </div>
+       </div>
+
+       <!-- Member -->
+       <div id="btn_Member" class="panel-collapse collapse">
+          <div class="panel-body padding-none radius-none">
+
+             <!-- Member button-->
+             <div class="row h_btn h_button_users radius-none">
+
+                      <div class="col-sm-4 h_height_inherit">
+                       <div class="h_height_inherit h_vertical_align">
+                        <p class="t-left t_insde ">Member(1)</p>
+                       </div>
+                      </div>
+                      <div class="col-sm-4 h_height_inherit">
+                       <div class="h_height_inherit">
+                       </div>
+                      </div>
+
+                      <div class="col-sm-4 h_height_inherit ">
+                       <div class="h_height_inherit">
+                      <button class="h-btn  btn-add-member h_vertical_align">Add Member</button>
+                       </div>
+                      </div>
+                     </div>
+
+            </div>
+
+
+             <div class="panel-footer padding-none border-top-none radius-none">
+
+              <!-- Member1 footer-->
+              <div class="row h_btn h_button_users radius-none div-background">
+                       <div class="col-sm-6 h_height_inherit">
+                       <div class="h_height_inherit h_vertical_align">
+                         <p class="t-left "><a class="t-color-skyblue-email ">Harish inflexion.com</a></p>
+
+                        </div>
+                          </div>
+
+
+                          <div class="col-sm-6 h_height_inherit t-color-green ">
+                           <div class="row h_height_inherit">
+                             <div class="col-sm-4 h_height_inherit"> </div>
+                            <div class="col-sm-8 h_height_inherit">
+                              <p class="h_vertical_align t-right t-margin-right ">  <i class="fa fa-cog"></i></p>
+                            </div>
+                           </div>
+                           </div>
+                         </div>
+
+               <!-- Member2 footer-->
+                <div class="row h_btn h_button_users radius-none">
+                 <div class="col-sm-12 h_height_inherit h_vertical_align">
+                   <p class="t-left t_insde" >Visitor</p>
+                 </div>
+
+                </div>
+
+             </div>
+
+
+      </div>
+    </div>
+
+    <!-- Javascript-->
+    <script src="/scripts/core.min.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/Activity.js"></script>
+   </body>
+ </html>

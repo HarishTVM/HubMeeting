@@ -68,16 +68,15 @@
  font-size: 14px;
  color: #000;
 }
-.tooltip-inner {background-color: #00acd6 !important;color: #fff;
-}
-.tooltip-arrow { border-bottom-color:#00acd6 !important;
- border-top-color:#00acd6 !important; color: #fff }
 
-.h_button {
+
+.h_button{
   color: #fff;
   background-color: #37d37f;
   border-color: #37d37f;
 }
+
+
 .btn-circle{
  width: 35px;
  height: 35px;
@@ -89,6 +88,11 @@
  font-size: 12px;
  border-radius: 17px;
 }
+.btn-circle:hover{
+ background-color: #E4F5F9;
+}
+
+
 .h_btn{
   width: 100%;
   height: 50px;
@@ -126,10 +130,7 @@
  margin-top: 20px;
 }
 
-.row {
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-}
+
 
 .div_circle_notification {
 		position:relative;
@@ -150,19 +151,100 @@
   width: 40px;
  }
 .btn_input_search{
- width: 100%;
+ width: 80%;
  height: 30px;
  margin: auto;
  border: 2px solid #f0f0f0;
  background-color: #f0f0f0;
  border-radius: 5px;
  font-size: 14px;
+ color: #000;
  padding-left: 9px;
 }
-@media screen and (min-width: 480px) {
 
+/* Texe class*/
+.t-color-green{
+ color: #42f45c;
+}
+.t-color-skyblue{
+ color:#66b3ff;
+}
+.t-right{
+ text-align: right;
+}
+.t-margin-right{
+ margin-right: 20px;
+}
+.t-left{
+  text-align: left;
+  margin-left: 10px;
+}
+.t-color-skyblue-email{
+ color: #2bb0e9;
+}
+.t_insde{
+ color: #999;
+font-size: 12px;
+}
+
+.t-color-skyblue-email:hover{
+    text-decoration: underline !important;
+     color: #2bb0e9;
+}
+/* Texe class end*/
+
+/*icon*/
+
+
+/*icon end*/
+
+/* button class*/
+
+.h-btn{
+background-color: #00ace6; /* Green */
+border: none;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+border-radius:5px;
+cursor: pointer;
+}
+.h-btn:hover{background-color: #0099cc;}
+
+.btn-add-member{padding: 4px 15px; margin-left: 120px;}
+
+/* button class end*/
+
+/*div class*/
+.div-background{
 
 }
+
+
+/*div class end*/
+
+
+/*overriding class */
+.tooltip-inner {background-color: #00acd6 !important;color: #fff;
+}
+.tooltip-arrow { border-bottom-color:#00acd6 !important;
+ border-top-color:#00acd6 !important; color: #fff }
+
+.row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.padding-none{
+ padding: 0px !important;
+}
+.radius-none{
+  border-radius: 0px !important;
+}
+.border-top-none{
+  border-top: 0px solid #FFF !important;
+}
+/*overriding class end*/
 
 /*Harish Styles end */
 
