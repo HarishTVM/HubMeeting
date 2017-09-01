@@ -243,19 +243,7 @@ cursor: pointer;
 /*div class end*/
 
 
-/*overriding class */
-.tooltip-inner {background-color: #00acd6 !important;color: #fff;
-}
-.tooltip-arrow { border-bottom-color:#00acd6 !important;border-top-color:#00acd6 !important; color: #fff }
 
-.row{
-    margin-right: 0px !important;
-    margin-left: 0px !important;
-}
-.padding-none{padding: 0px !important;}
-.radius-none{border-radius: 0px !important;}
-.border-top-none{border-top: 0px solid #FFF !important;}
-/*overriding class end*/
 .h-border{
   width: 330px;
   height:450px;
@@ -336,9 +324,7 @@ cursor: pointer;
 .h-div-border{ border: 1px solid #ddd; border-radius: 5px;}
 
 /* none */
-.h-m-top-none{margin-top: 0px 0px 0px 0px !important;}
-.h-padding-none{padding:  0px 0px 0px 0px !important;}
-.h-m-top-none{margin-top: 0px !important;}
+
 /* none end */
 
 
@@ -371,77 +357,26 @@ cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.padding-none{padding: 0px !important;}
+/*/////////////////////////////////// BEGIN NONE for Styles ////////////////////////////////////// */
 
-/* @media (min-width: 1000px) and (max-width: 1025px) {
-.h-m-icon-top{ margin-top: 6% !important;}
-.h-i-m-top{margin-top: 9px;}
-.thumb-corporate__overlay{
-   padding: 2px 10px 5px !important;
+.row{margin-right: 0px !important; margin-left: 0px !important;}
+.padding-none-all{padding: 0px !important;}
+.radius-none{border-radius: 0px !important;}
+.border-top-none{border-top: 0px solid #FFF !important;}
+.h-m-top-none{margin-top: 0px 0px 0px 0px !important;}
+.h-padding-none{padding:  0px 0px 0px 0px !important;}
+.h-m-top-none{margin-top: 0px !important;}
 
-  }
+/*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
+
+
+/*/////////////////////////////////// BEGIN zoomindiv for Styles ////////////////////////////////////// */
+.s-height{
+  height: 160px !important;
 }
 
-@media (min-width: 700px) and (max-width: 1025px) {
-.h-i-m-top{margin-top: 4px;}
-.thumb-corporate__overlay{
-  padding: 2px 10px 5px !important;
-}
-}
-
-
-@media (min-width: 600px) and (max-width: 700px) {
-.h-i-m-top{margin-top: 10px;}
-.thumb-corporate__overlay{
-  padding: 0px 10px 5px !important;
-}
-}
-
-
-
-@media (min-width: 1026px) and (max-width: 1200px) {
-  .h-i-m-top{margin-top: 5px;}
-  .thumb-corporate__overlay{
-    padding: 0px 10px 5px !important;
-  }
-  }
-
-@media (min-width: 300px) and (max-width: 600px) {
-.h-height{border-radius: 8px;height: 143px;}
-.h-i-bottom{top: 2px !important;}
-.h-m-icon-top{margin-top: 1% !important; }
-
-.thumb-corporate__overlay{
-   padding: 0px 10px 5px !important;
-}
-@media (min-width: 1026px) and (max-width: 2025px)  {
-   .h-i-m-top{margin-top: 10px;}
-  .thumb-corporate__overlay-gl{
-   padding: 0px 10px 5px !important;
-    }
-
- }
-
-
-.h-i-m-top{margin-top: 8px; }
-
-} */
-
-.h-cancel-btn {
-  background: #DF3B3B;
-  color: white !important;
-  }
-
-  .h-cancel-btn:hover {
-  background: black;
-  }
-.h-a-padding{
- padding:15px 10px 5px;
-}
-
-
-/* BEGIN zoomindiv for Styles  */
-
-
+/*/////////////////////////////////// End zoomindiv for Styles ////////////////////////////////////// */
 /* BEGIN members for Styles  */
 .scroll-icon{
   height: 175px;
@@ -570,9 +505,9 @@ width: 0px !important;
 /* End Spaces for Styles  */
 
 
-
-/* ////////////////////////////////////////////////////  BEGIN Spaces for media query  //////////////////////////////////////////////////// */
-
+/*========================================================================================
+                    =           BEGIN Spaces Media Queries             =
+==========================================================================================*/
 
 /* ---------------- BEGIN Moblie devices  screens ----------- */
 
@@ -590,7 +525,6 @@ width: 0px !important;
 
 /* ---------------- BEGIN Tablets  screens ----------- */
 @media (min-width: 768px) and (max-width: 991px){
-
   .principale  .parent-div{height: 160px;}
   .h-i-m-top { margin-top: 6px; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
@@ -598,23 +532,18 @@ width: 0px !important;
   .search-margin-top{margin-top: 1%;}
 }
 
-
 /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
+
+
 /* ---------------- BEGIN Desktops and laptops  screens ----------- */
 @media (min-width: 992px) and (max-width: 1199px){
 
   .principale  .parent-div{height: 160px; width: 280px;}
-  .h-i-m-top { margin-top: 6px; }
+  .h-i-m-top { margin-top: 6px }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
-  .head-search-w-h {
-    width: 50%;
-    height: 50px !important;
-    margin: auto;
-
-  }
+  .head-search-w-h { width: 50%; height:50px !important; margin: auto;}
 
 }
-
 /* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
 
 
@@ -634,14 +563,17 @@ width: 0px !important;
   .search-margin-top{margin-top: 3%;}
 }
 
+@media (min-width: 1365px) and (max-width: 1367px){
 
+    .h-i-m-top { margin-top: 25px }
+}
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 
-/* ////////////////////////////////////////////////////  End  Spaces for media query  //////////////////////////////////////////////////// */
 
 
-
-
+/*========================================================================================
+                    =          End Spaces Media Queries             =
+==========================================================================================*/
 
 
 

@@ -36,57 +36,16 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-camera:before {
-	content: "\e017";
-}
-
-.icon-server:before {
-	content: "\e022";
-}
-
-.icon-heart:before {
-	content: "\e024";
-}
-
-.icon-zoom-in:before {
-	content: "\e037";
-}
-
-.icon-microphone:before {
-	content: "\e048";
-}
-
-.icon-cloud:before {
-	content: "\e066";
-}
-
-.icon-user:before {
-	content: "\e074";
-}
-
-.icon-briefcase:before {
-	content: "\e075";
-}
-
-.icon-globe:before {
-	content: "\e078";
-}
-
-.icon-cog::before {
-	content: "\e600";
-}
 
 .icon-close::before {
-	content: "\e601";
+	content: '\e92a';
+	color:#23d7b2;
+}
+.icon-close:hover {
+
+	color:#000;
 }
 
-.icon-play::before {
-	content: "\e602";
-}
-
-.icon-pause::before {
-	content: "\e603";
-}
 
 .icon-close {
 	position: absolute;
@@ -94,9 +53,7 @@
 	right: 20px;
 }
 
-.icon-close:hover {
-	color: #a50a05;
-}
+
 
 /* Styles for dummy content */
 
@@ -130,7 +87,7 @@
 }
 
 .content-style-overlay .icon-close:hover {
-	border-color: #a50a05;	
+	border-color: #080808;	
 }
 
 /* Style for text modal */
@@ -227,7 +184,7 @@
 	padding: 1.5em;
 	width: 100%;
 	border: none;
-	background: #e75854;
+	background: #23d7b2;
 	color: #f9f6e5;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -238,12 +195,12 @@
 .content-style-form .icon-close {
 	top: 0;
 	right: 0;
-	color: #ebd3bd;
+	color: #EBD5C2;
 	font-size: 75%;
 }
 
 .content-style-form .icon-close:hover {
-	color: #e75854;
+	color: #000000;
 }
 
 .js .content-style-form-1 h2,
