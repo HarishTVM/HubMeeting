@@ -321,7 +321,7 @@ cursor: pointer;
 .t-right{text-align:right !important;}
 .t-left{text-align:left !important; }
 .h-r-star{ margin-top: 0%!important;  margin-left: 28% !important;}
-.h-div-border{ border: 1px solid #ddd; border-radius: 5px;}
+
 
 /* none */
 
@@ -407,15 +407,14 @@ cursor: pointer;
     border-radius: 17px;
 
    }
-
-
+   .h-div-border{ border: 1px solid #ddd; border-radius: 5px !important;}
    .members-padding{ padding-left: 6px; padding-right: 1px;}
    .border-bottom-title{ border-bottom: 1px so;}
    .icon-size{ font-size: 17px; line-height: 20px; }
    .morph-content { border-radius: 2px; }
    .close-margin-top{
-     margin-top: 11px;
-     margin-left: 16px;
+     margin-top: 3px;
+     margin-left: 36px;
      position: relative;
      font-size: 15px;
      line-height: 17px;
@@ -566,7 +565,7 @@ width: 0px !important;
 
   .principale  .parent-div{min-height: 160px;}
   .head-search-w-h {width: 99%;}
-  .h-i-m-top {margin-top: 11px; }
+  .h-i-m-top {margin-top: 7px; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .search-margin-top{margin-top: 1%;}
 
@@ -577,7 +576,7 @@ width: 0px !important;
 /* ---------------- BEGIN Tablets  screens ----------- */
 @media (min-width: 768px) and (max-width: 991px){
   .principale  .parent-div{height: 160px;}
-  .h-i-m-top { margin-top: 6px; }
+  .h-i-m-top { margin-top: 3px; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h {width: 99%;}
   .search-margin-top{margin-top: 1%;}
@@ -590,7 +589,7 @@ width: 0px !important;
 @media (min-width: 992px) and (max-width: 1199px){
 
   .principale  .parent-div{height: 160px; width: 280px;}
-  .h-i-m-top { margin-top: 6px }
+  .h-i-m-top { margin-top: 3px }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h { width: 50%; height:50px !important; margin: auto;}
 
@@ -603,7 +602,7 @@ width: 0px !important;
 @media (min-width: 1200px) and (max-width: 20000px){
 
   .principale  .parent-div{height: 160px;}
-  .h-i-m-top { margin-top: 6px; }
+  .h-i-m-top { margin-top: 3px; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h {
     width: 50%;
@@ -616,7 +615,7 @@ width: 0px !important;
 
 @media (min-width: 1365px) and (max-width: 1367px){
 
-    .h-i-m-top { margin-top: 25px }
+    .h-i-m-top { margin-top: 20px }
 }
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 
@@ -627,7 +626,27 @@ width: 0px !important;
 ==========================================================================================*/
 
 
+/*/////////////////////////////////// BEGIN 404page for Styles ////////////////////////////////////// */
 
+.div-page-center{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  
+}
+.page-error-icon-size{
+  font-size: 100px;
+  line-height: 20px;
+}
+
+
+
+/*/////////////////////////////////// END 404page for Styles ////////////////////////////////////// */
 
 
 
