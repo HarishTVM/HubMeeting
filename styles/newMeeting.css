@@ -1,5 +1,5 @@
 .main-section {
-    padding: 30px;
+    padding-top: 40px;
 }
 
 .done-btn {
@@ -27,13 +27,25 @@
 
 .icon::before{
     z-index: 1;
-    position: absolute;
+    position: absolute; 
     top: 50%;
 }
 
 span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
     position: relative;
     left: 20%;
+}
+
+.datetime-picker-container{
+    display: flex;
+}
+
+.from-to-date-container {
+    width: 50%;
+}
+
+* + .form-wrap {
+    margin-top: 0px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -45,7 +57,7 @@ span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-cont
 
     span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
         position: relative;
-        left: 6% !important;
+        left: 5.5% !important;
     }
 
 }
@@ -57,16 +69,33 @@ span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-cont
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (min-width: 320px) and (max-width: 449px){
     span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
         position: relative;
-        left: 20% !important;
+        left: 12% !important;
     }
 }
 
-@media only screen and (min-width: 351px) and (max-width: 767px){
+@media only screen and (min-width: 450px) and (max-width: 767px) {
+    span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
+        position: relative;
+        left: 12% !important;
+    }
+}
+
+/* @media only screen and (min-width: 351px) and (max-width: 767px){
     span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
         position: relative;
         left: 16% !important;
     }
+} */
+
+@media only screen and (max-width: 320px) {
+    .datetime-picker-container{
+        display: block;
+    }
+    .from-to-date-container {
+        width: 100%;
+    }
+
 }

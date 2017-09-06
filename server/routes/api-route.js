@@ -12,8 +12,8 @@ app.get("/", (req, res)=>{
 app.get("/meeting", (req, res)=>{
   res.render("meeting");
 });
-app.get("/newMeeting", (req, res)=>{
-  res.render("newMeeting");
+app.get("/newmeeting", (req, res)=>{
+  res.render("newmeeting");
 });
 app.get("/configure", (req, res)=>{
   res.render("configure");
