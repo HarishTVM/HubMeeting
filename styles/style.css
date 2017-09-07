@@ -169,9 +169,7 @@
 .t-color-skyblue{
  color:#66b3ff;
 }
-.t-right{
- text-align: right;
-}
+
 .t-margin-right{
  margin-right: 20px;
 }
@@ -217,10 +215,6 @@ cursor: pointer;
 /* button class end*/
 
 /*div class*/
-.div-background{
-
-}
-
 
 /*div class end*/
 
@@ -245,7 +239,22 @@ cursor: pointer;
   border-top: 0px solid #FFF !important;
 }
 /*overriding class end*/
+.h-border{
+  width: 330px;
+  height:450px;
+  background-color: #FFFFFF;
+}
 
+.h-height{
+  width: 330px;
+  height:450px;
+} 
+.t-right{
+  text-align:right;
+ }
+.t-padding{
+  padding: 10px
+}
 /*Harish Styles end */
 
 
@@ -2371,7 +2380,7 @@ figure img {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(248, 248, 248, 0.9);
+    background: rgba(126, 126, 126, 0.90);
     transition: transform .3s ease-in-out;
   }
   .desktop .thumb-corporate__overlay .thumb-corporate__list {
@@ -6246,6 +6255,7 @@ h6 + .rating-list {
 */
 .text-left {
   text-align: left;
+
 }
 
 .text-center {
@@ -20276,10 +20286,22 @@ yx-axis
 .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail {
-  -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
-  -moz-transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
-  -o-transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
-  transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
+  -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s,
+ margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+ margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+ opacity .2s ease-in-out, background-color .2s ease-in-out;
+  -moz-transition: width .2s ease-out .2s, height .2s ease-out .2s,
+ margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+ margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+ opacity .2s ease-in-out, background-color .2s ease-in-out;
+  -o-transition: width .2s ease-out .2s, height .2s ease-out .2s,
+ margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+ margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+ opacity .2s ease-in-out, background-color .2s ease-in-out;
+  transition: width .2s ease-out .2s, height .2s ease-out .2s,
+ margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
+ margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
+ opacity .2s ease-in-out, background-color .2s ease-in-out;
 }
 
 /*

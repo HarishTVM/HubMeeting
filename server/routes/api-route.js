@@ -21,10 +21,14 @@ app.get("/configure", (req, res)=>{
 app.get("/changePassword", (req, res)=>{
   res.render("changepassword");
 });
-app.get("/activity", (req, res)=>{
-  res.render("activity");
+app.get("/activitylist", (req, res)=>{
+  res.render("activitylist");
 });
 app.get("/users", (req, res)=>{
   res.render("users");
 });
+app.get("/sapacelist", (req, res)=>{
+  res.render("sapacelist");
+});
+
 module.exports = app;
