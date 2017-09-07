@@ -24,4 +24,7 @@ app.get("/changePassword", (req, res)=>{
 app.get("/activity", (req, res)=>{
   res.render("activity");
 });
+app.get("/users", (req, res)=>{
+  res.render("users");
+});
 module.exports = app;

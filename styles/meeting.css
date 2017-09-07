@@ -2,10 +2,56 @@
     padding: 10px;
 }
 
+.newbtn-search-group {
+    width: 100%;
+    display: inline-flex;
+}
+
 .new-meet-btn{
-    margin: auto;
-    width: 90%;
     background-color: #37d37f !important;
     border-color: #37d37f !important;
+    width: 50%;
+}
+
+.search-btn {
+    margin-top: 0px !important;
+    width: 50%;
+}
+
+.main-section{
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.panel-custom-body{
+    display: inline-flex;
+    width: 100%;
+}
+
+.list-group {
+    width: 50%;
+}
+
+.pagination-nav{
     text-align: center;
+}
+
+.panel.panel-custom {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+@media only screen and (max-width: 425px){
+    .panel-custom-body{
+        display: block;
+    }
+    .list-group {
+        width: initial;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .panel.panel-custom {
+        padding: 25px 6px 25px 6px;
+    }
 }
