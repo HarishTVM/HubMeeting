@@ -266,6 +266,25 @@ cursor: pointer;
  text-align:center;
  margin-top: 5px;
 }
+.h-cursor{
+ cursor:pointer;
+}
+.h-div{
+overflow: hidden;
+position: fixed;
+width: 100%;
+}
+
+/*Harish animation*/
+.h-a-buttom-top{
+ position: relative;
+ top: 200px;
+ visibility: visible;
+ animation-duration: 1.2s;
+ animation-delay: 0.5s;
+ animation-name: fadeInUpSmall;
+
+}
 /*Harish Styles end */
 
 
