@@ -25,13 +25,13 @@
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
-      <div class="newbtn-search-group">
-        <button id = "meetingBtn" class="button button-primary button-block new-meet-btn" type="button"><%= translation.NEW_MEETING_BUTTON %></button>&ensp;
+      <!-- <div class="newbtn-search-group"> -->
+        <!-- <button id = "meetingBtn" class="button button-primary button-block new-meet-btn" type="button"><%= translation.NEW_MEETING_BUTTON %></button>&ensp; -->
         <div class="form-wrap form-wrap_icon linear-icon-magnifier search-btn">
           <input class="form-input" type="text" name="search" placeholder="Search">
-        </div>
+        <!-- </div> -->
       </div>  
-      <section class="section-sm bg-gray-lighter main-section">
+      <section class="section-sm bg-white main-section">
         <div class="shell accordian-shell">
           <!-- Accordion-->
           <div id="accordion" role="tablist">
@@ -106,6 +106,8 @@
             </div>
           </div>
         </div>
+        <!-- data-toggle="tooltip" data-placement="bottom" title="New Meeting" -->
+        <a href="#" data-toggle="tooltip" data-placement="bottom" title="New Meeting" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
       </section>
       <nav class="pagination-nav">
           <ul class="pagination-classic">
@@ -121,6 +123,11 @@
     <script src="/scripts/core.min.js"></script>
     <script src="/scripts/script.js"></script>
     <script src="/scripts/general.js"></script>
-    <a href="#" id="ui-to-top" class="ui-to-top active"></a>
+    <!-- <a href="#" id="ui-to-top" class="ui-to-top active"></a> -->
+    <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+      });
+    </script>
   </body>
 </html>

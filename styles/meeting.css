@@ -7,17 +7,17 @@
 }
 
 .para-title {
-    font-size: medium;
+    font-size: small;
 }
 
 .list-content {
     font-size: smaller;
 }
 
-.newbtn-search-group {
+/* .newbtn-search-group {
     width: 100%;
     display: inline-flex;
-}
+} */
 
 .new-meet-btn{
     background-color: #37d37f !important;
@@ -26,13 +26,15 @@
 }
 
 .search-btn {
-    margin-top: 0px !important;
-    width: 50%;
+    /* margin-top: 0px !important; */
+    width: 30%;
+    /* margin: auto; */
 }
 
 .main-section{
     margin-top: 6px;
     margin-bottom: 6px;
+    padding-top: 15px;
 }
 
 .panel-custom-body{
@@ -46,19 +48,45 @@
 
 .pagination-nav{
     text-align: center;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    right: 0;
 }
 
 .panel.panel-custom {
     padding-left: 3% !important;
     padding-right: 3% !important;
+    border-bottom: 1px solid lightgray;
 }
 
-.mobile .ui-to-top, .tablet .ui-to-top {
+a.collapsed::before{
+    font: 400 20px/20px "Linearicons" !important;
+}
+
+/* .mobile .ui-to-top, .tablet .ui-to-top {
     display: initial !important;
 }
 
 .ui-to-top.active {
     transform: translatey(0) !important;
+} */
+
+.newmeeting-btn-circle {
+    width: 60px;
+    height: 60px;
+    padding: 6px 0;
+    font-size: x-large;
+    line-height: 1.42;
+    border-radius: 60px;
+    position: absolute;
+    right: 1%;
+  }
+
+a.button.button-primary.icon.linear-icon-plus.newmeeting-btn-circle::before {
+    position: relative !important;
+    top: 15% !important;
+    left: 2% !important;
 }
 
 @media only screen and (max-width: 425px){
@@ -73,5 +101,17 @@
 @media only screen and (min-width: 768px){
     .panel.panel-custom {
         padding: 15px 6px 15px 6px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .search-btn {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .search-btn {
+       margin: auto; 
     }
 }

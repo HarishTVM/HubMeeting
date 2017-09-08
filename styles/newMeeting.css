@@ -2,6 +2,25 @@
     padding-top: 40px;
 }
 
+.margin-css {
+    margin-bottom: 20px;
+}
+
+.div1, .div2{
+    display: inline-flex;
+    width: 100%;
+
+}
+
+.email-wrap, .timezone-wrap {
+    width: 50%;
+}
+
+.telephone-wrap, .cospace-wrap {
+    width: 50%;
+    margin-top: auto !important;
+}
+
 .done-btn {
     background-color: #37d37f !important;
     border-color: #37d37f !important;
@@ -91,9 +110,14 @@ span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-cont
 } */
 
 @media only screen and (max-width: 320px) {
-    .datetime-picker-container{
+    .datetime-picker-container, .div1, .div2 {
         display: block;
     }
+
+    .margin-css, .email-wrap, .telephone-wrap {
+        width: 100%;
+    }
+
     .from-to-date-container {
         width: 100%;
     }
