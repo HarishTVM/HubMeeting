@@ -27,8 +27,8 @@ app.get("/activitylist", (req, res)=>{
 app.get("/users", (req, res)=>{
   res.render("users");
 });
-app.get("/sapacelist", (req, res)=>{
-  res.render("sapacelist");
+app.get("/spacelist", (req, res)=>{
+  res.render("spacelist");
 });
 
 module.exports = app;

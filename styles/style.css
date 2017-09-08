@@ -245,15 +245,26 @@ cursor: pointer;
   background-color: #FFFFFF;
 }
 
-.h-height{
-  width: 330px;
-  height:450px;
-} 
+
 .t-right{
   text-align:right;
  }
 .t-padding{
   padding: 10px
+}
+.h-height{
+   height:300px;
+}
+.h-logo-image{
+ width: 18%;
+ height: 18%;
+}
+.h6-title{font-size:small;color: #888;}
+.h6-paragraph{font-size:small; color: #888;}
+
+.h-t-align{
+ text-align:center;
+ margin-top: 5px;
 }
 /*Harish Styles end */
 

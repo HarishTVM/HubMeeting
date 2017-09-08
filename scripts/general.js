@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 
     $('#sapacelist').click(function(){
-        window.location.href='/sapacelist';
+        window.location.href='/spacelist';
     })
 
 
