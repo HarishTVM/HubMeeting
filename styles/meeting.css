@@ -2,6 +2,18 @@
     padding: 10px;
 }
 
+.accordian-shell{
+    padding: 0px;
+}
+
+.para-title {
+    font-size: medium;
+}
+
+.list-content {
+    font-size: smaller;
+}
+
 .newbtn-search-group {
     width: 100%;
     display: inline-flex;
@@ -37,8 +49,16 @@
 }
 
 .panel.panel-custom {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+.mobile .ui-to-top, .tablet .ui-to-top {
+    display: initial !important;
+}
+
+.ui-to-top.active {
+    transform: translatey(0) !important;
 }
 
 @media only screen and (max-width: 425px){
@@ -52,6 +72,6 @@
 
 @media only screen and (min-width: 768px){
     .panel.panel-custom {
-        padding: 25px 6px 25px 6px;
+        padding: 15px 6px 15px 6px;
     }
 }

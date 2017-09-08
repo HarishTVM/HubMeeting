@@ -9,7 +9,7 @@ $(document).ready(function(){
     })
 
     $('#meetingBtn').click(function(){
-        window.location.href='/newMeeting';
+        window.location.href='/newmeeting';
     })
 
     $('#activitylist').click(function(){
