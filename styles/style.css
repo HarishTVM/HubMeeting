@@ -269,10 +269,16 @@ cursor: pointer;
 .h-cursor{
  cursor:pointer;
 }
-.h-div{
-overflow: hidden;
-position: fixed;
-width: 100%;
+.h-search-h{
+ padding: 7px 19px !important;
+ min-height: 0px !important;
+}
+.h-search-div{
+ height: 40px !important;
+ min-height: 0px !important;
+}
+.h-section-top{
+ margin-top: 12px;
 }
 
 /*Harish animation*/
@@ -283,7 +289,30 @@ width: 100%;
  animation-duration: 1.2s;
  animation-delay: 0.5s;
  animation-name: fadeInUpSmall;
+}
+.icon-r-l {
+ right: 18px !important;
+ cursor: pointer;
 
+}
+.h-w-icon{
+ height: 20px !important;
+ width:  20px !important;
+}
+.h-f-size{
+ font-size: 11px;
+}
+.h-m-top{
+ margin-top: 1px !important;
+}
+
+.h-w{
+ width: 20%;
+ height: 30%;
+}
+.div3{
+    float:right;
+    
 }
 /*Harish Styles end */
 
@@ -5066,8 +5095,8 @@ h3 + .panel-custom-group-wrap {
 
 .product-icon-wrap .icon {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   margin: 3px;
   display: -ms-flexbox;
   display: -webkit-flex;

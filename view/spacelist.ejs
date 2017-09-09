@@ -14,10 +14,9 @@
     <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/newmeeting.css">
-    <link rel="stylesheet" href="/styles/animation.css">
-
-  </head>
-  <body style="background-color: #f8f8f8">
+    <link rel="stylesheet" href="/styles/meeting.css">
+   </head>
+    <body style="background-color: #f8f8f8">
     <!-- Page -->
     <% include navbarhome %>
     <div class="page">
@@ -27,40 +26,87 @@
         </div>
       </div>
 
-      <section class="section-lg bg-gray-lighter">
+      <section class="h-section-top bg-gray-lighter">
        <div class="shell">
-         <div class="range range-70" >
-           <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 ">
-             </div>
-
-             <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 ">
-              <input class="form-input bg-white" id="event-search" type="text"  placeholder="Search">
-
-             </div>
-             <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 ">
-
-             </div>
-           </div>
-      <!-- boxs -->
-        <div class="range range-70" >
-             <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 h-div-padding">
-              <div class="h-height bg-white  link-image ">
-               <div class="fadeInUpSmall h-a-buttom-top">
-
-               <h6 class="h6-title h-t-align">Space Name : Harish</h6>
-               <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
-               <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6></div>
-
-              </div>
+        <!-- search box -->
+          <div class="range range-10" >
+            <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding ">
 
             </div>
-             <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 ">
+            <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding ">
+             <input class="form-input bg-white h-search-h" type="text" name="search" placeholder="Search">
+
+            </div>
+            <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding ">
+
+           </div>
+
+          </div>
+        <!-- <div class="cell-sm-12 cell-md-12 cell-xs-12 cell-lg-12 h-div-padding">
+         <input class="form-input bg-white h-search-h" type="text" name="search" placeholder="Search">
+         </div> -->
+          <!-- search box end -->
+      <!-- boxs -->
+        <div class="range range-70" >
+            <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3  img-thumbnail-variant-2">
+              <div class="h-height bg-white  link-image ">
+               <div class="fadeInUpSmall  h-a-buttom-top">
+                <!-- h-a-buttom-top -->
+                   <h6 class="h6-title h-t-align">Space Name : Harish</h6>
+                   <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
+                   <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6>
+
+              </div>
+              <div class="h-m-top caption icon-r-l h-f-size">
+
+                   <div >
+                    <ul>
+                     <li> <span class="h-height  linear-icon-pencil5"><a class="h-f-size">edit</a></span></li>
+                     </ul>
+                     <ul>
+                      <li> <span class=" linear-icon-envelope"><a class="h-f-size">Call</a></span></li>
+                      </ul>
+                      <ul>
+                         <li> <span class="linear-icon-trash2"><a class="h-f-size">Call</a></span></li>
+                          </ul>
+
+
+                   </div>
+
+                   </div>
+
+                  </div>
+
+            </div>
+
+
+             <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 img-thumbnail-variant-2 ">
               <div class="h-height bg-white link-image">
                <div  class="fadeInUpSmall h-a-buttom-top">
                <h6 class="h6-title h-t-align">Space Name : Harish</h6>
                <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
                <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6></div>
-              </div></div>
+              </div>
+                  <div class="h-w caption h-m-top  h-height link-image h-f-size">
+                   <div >
+                    <ul>
+                     <li> <span class="h-height  linear-icon-pencil5"><a class="h-f-size">edit</a></span></li>
+                     </ul>
+                     <ul>
+                      <li> <span class=" linear-icon-envelope"><a class="h-f-size">Call</a></span></li>
+                      </ul>
+                      <ul>
+                         <li> <span class="linear-icon-trash2"><a class="h-f-size">Call</a></span></li>
+                          </ul>
+
+
+                   </div>
+
+                  </div>
+
+             </div>
+
+
              <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 ">
               <div class="h-height bg-white link-image">
                <div  class="fadeInUpSmall h-a-buttom-top">
@@ -69,18 +115,31 @@
                <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6></div>
               </div>
              </div>
+
+
+
              <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 ">
               <div class="h-height bg-white link-image">
                <div class="fadeInUpSmall h-a-buttom-top">
                <h6 class="h6-title h-t-align " >Space Name : Harish</h6>
                <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
                <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6></div>
+
+
+                          <div class="bg-white link-image div3">
+                           <p>m,nm</p>
+                           </div>
+
              </div>
              </div>
+
+            </div>
            </div>
        </div>
      </section>
+       </div>
      <% include footer %>
+
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/scripts/core.min.js"></script>
     <script src="/scripts/script.js"></script>
