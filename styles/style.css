@@ -246,13 +246,13 @@ cursor: pointer;
 }
 
 
-.t-right{
-  text-align:right;
- }
+
 .t-padding{
   padding: 10px
 }
 .h-height{
+
+  border-radius: 2px;
    height:300px;
 }
 .h-logo-image{
@@ -284,16 +284,17 @@ cursor: pointer;
 /*Harish animation*/
 .h-a-buttom-top{
  position: relative;
- top: 200px;
  visibility: visible;
  animation-duration: 1.2s;
  animation-delay: 0.5s;
  animation-name: fadeInUpSmall;
 }
-.icon-r-l {
- right: 18px !important;
- cursor: pointer;
+.icon-cursor {
+ cursor: pointer !important;
 
+}
+.h-div-hidden{
+  visibility: hidden;
 }
 .h-w-icon{
  height: 20px !important;
@@ -306,14 +307,55 @@ cursor: pointer;
  margin-top: 1px !important;
 }
 
-.h-w{
+.h-div-w{
  width: 20%;
- height: 30%;
+ height: 90%;
 }
 .div3{
     float:right;
-    
 }
+.h-div-bottom{
+    float:bottom;
+}
+
+.h-t-buttom{
+  border: 1px solid #000;
+  border-radius: 2px;
+  top: 200px;
+}
+.h-div-border{
+  border: 1px solid #000;
+}
+.h-i-bottom{
+  top: 110px !important;
+   position: relative;
+}
+.h-div-padding{
+  padding-left: 10px;
+  padding-top:20px;
+}
+.t-right{
+  text-align:right;
+ }
+ .t-left{
+   text-align:left;
+  }
+.h-r-star{
+  margin-left: 90% !important;
+    top: 1%!important;
+}
+.h-div-border{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.h-m-top-none{
+  margin-top: 0px !important;
+}
+
+.h-padding-none{
+padding: 0px !important;
+}
+
 /*Harish Styles end */
 
 
@@ -2409,6 +2451,7 @@ figure img {
     opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
     transition-delay: .1s;
+
   }
   .desktop .thumb-corporate__main {
     position: relative;
@@ -2431,6 +2474,7 @@ figure img {
     opacity: 0;
     transition: opacity .2s ease-in-out;
     pointer-events: none;
+
   }
   .desktop .thumb-corporate__overlay::before {
     content: '';
@@ -2439,7 +2483,7 @@ figure img {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(126, 126, 126, 0.90);
+    /*background: rgba(126, 126, 126, 0.90);*/
     transition: transform .3s ease-in-out;
   }
   .desktop .thumb-corporate__overlay .thumb-corporate__list {

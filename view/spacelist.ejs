@@ -16,129 +16,174 @@
     <link rel="stylesheet" href="/styles/newmeeting.css">
     <link rel="stylesheet" href="/styles/meeting.css">
    </head>
-    <body style="background-color: #f8f8f8">
+    <body class="bg-white">
     <!-- Page -->
     <% include navbarhome %>
-    <div class="page">
+    <div class="page h-padding-none">
       <div id="page-loader">
         <div class="cssload-container">
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
+      <section class="breadcrumbs-custom bg-gray-lighter">
+        <div class="shell">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Meeting Hub</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="#home">Home</a></li>
+              <li class="active">Space</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <section class="h-section-top bg-gray-lighter">
+
+      <section class="h-section-top bg-white">
        <div class="shell">
+
         <!-- search box -->
           <div class="range range-10" >
+            <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding "></div>
+            <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding ">
+             <input class="form-input bg-gray-lighter h-search-h" type="text" name="search" placeholder="Search">
+             </div>
             <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding ">
 
             </div>
-            <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding ">
-             <input class="form-input bg-white h-search-h" type="text" name="search" placeholder="Search">
-
-            </div>
-            <div class="cell-sm-4 cell-md-4 cell-xs-4 cell-lg-4 h-div-padding ">
-
-           </div>
 
           </div>
-        <!-- <div class="cell-sm-12 cell-md-12 cell-xs-12 cell-lg-12 h-div-padding">
-         <input class="form-input bg-white h-search-h" type="text" name="search" placeholder="Search">
-         </div> -->
-          <!-- search box end -->
-      <!-- boxs -->
-        <div class="range range-70" >
-            <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3  img-thumbnail-variant-2">
-              <div class="h-height bg-white  link-image ">
-               <div class="fadeInUpSmall  h-a-buttom-top">
-                <!-- h-a-buttom-top -->
-                   <h6 class="h6-title h-t-align">Space Name : Harish</h6>
-                   <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
-                   <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6>
 
-              </div>
-              <div class="h-m-top caption icon-r-l h-f-size">
-
-                   <div >
-                    <ul>
-                     <li> <span class="h-height  linear-icon-pencil5"><a class="h-f-size">edit</a></span></li>
+          <div class="range range-70" >
+            <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 thumb-corporate fadeInUpSmall h-a-buttom-top">
+              <div class="h-height  bg-gray-lighter h-div-border  link-image ">
+                <div class="fadeInUpSmall h-a-buttom-top">
+                  <samp ><a class=" h-r-star t-left icon-cursor  icon-sm fa-star" href="#"></a></samp>
+                  <div class="h-div-padding">
+                    <!-- h-a-buttom-top -->
+                    <ul class="text-center">
+                      <li><h6 class="h6-title ">Space Name : Harish</h6> </li>
+                    </ul>
+                    <ul><b>
+                      <li>
+                        <samp class="h6-title t-right ">Start time: 10Am</samp>
+                        <samp class="h6-title text-center ">To</samp>
+                        <samp class="h6-title t-left ">End time: 11Am</samp>
+                      </li></b>
+                    </ul>
+                    <h6 class="h6-title ">Space ID: Harish.locat</h6>
+                    <h6 class="h6-title ">Meeting Numbers:Sreeharsha,Naveen</h6>
+                   </div>
+                 </div>
+                 <div id="icon-list" class=" h-i-bottom text-center ">
+                   <ul class="list-inline-md  h-a-buttom-top">
+                     <li><a class="icon-cursor  icon-sm fa-edit"  data-toggle="tooltip" data-placement="top" title="Edit" href="#Edit"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-envelope-o" data-toggle="tooltip" data-placement="top" title="Invite" href="#invite"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-users" data-toggle="tooltip" data-placement="top" title="" href="#Delete"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-cog" data-toggle="tooltip" data-placement="top" title="Settings" href="#Settings"></a></li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+            <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 thumb-corporate fadeInUpSmall h-a-buttom-top">
+               <div class="h-height bg-gray-lighter h-div-border  link-image">
+                 <div class="fadeInUpSmall h-a-buttom-top">
+                   <samp ><a class=" h-r-star t-left icon-cursor  icon-sm fa-star" href="#"></a></samp>
+                   <div class="h-div-padding">
+                     <!-- h-a-buttom-top -->
+                     <ul class="text-center">
+                       <li><h6 class="h6-title ">Space Name : Harish</h6> </li>
                      </ul>
-                     <ul>
-                      <li> <span class=" linear-icon-envelope"><a class="h-f-size">Call</a></span></li>
-                      </ul>
-                      <ul>
-                         <li> <span class="linear-icon-trash2"><a class="h-f-size">Call</a></span></li>
-                          </ul>
-
-
-                   </div>
-
-                   </div>
-
-                  </div>
-
-            </div>
-
-
-             <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 img-thumbnail-variant-2 ">
-              <div class="h-height bg-white link-image">
-               <div  class="fadeInUpSmall h-a-buttom-top">
-               <h6 class="h6-title h-t-align">Space Name : Harish</h6>
-               <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
-               <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6></div>
-              </div>
-                  <div class="h-w caption h-m-top  h-height link-image h-f-size">
-                   <div >
-                    <ul>
-                     <li> <span class="h-height  linear-icon-pencil5"><a class="h-f-size">edit</a></span></li>
+                     <ul><b>
+                       <li>
+                         <samp class="h6-title t-right ">Start time: 10Am</samp>
+                         <samp class="h6-title text-center ">To</samp>
+                         <samp class="h6-title t-left ">End time: 11Am</samp>
+                       </li></b>
                      </ul>
-                     <ul>
-                      <li> <span class=" linear-icon-envelope"><a class="h-f-size">Call</a></span></li>
-                      </ul>
-                      <ul>
-                         <li> <span class="linear-icon-trash2"><a class="h-f-size">Call</a></span></li>
-                          </ul>
-
-
-                   </div>
-
+                     <h6 class="h6-title ">Space ID: Harish.locat</h6>
+                     <h6 class="h6-title ">Meeting Numbers:Sreeharsha,Naveen</h6>
+                    </div>
                   </div>
-
-             </div>
-
-
-             <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 ">
-              <div class="h-height bg-white link-image">
-               <div  class="fadeInUpSmall h-a-buttom-top">
-               <h6 class="h6-title h-t-align">Space Name : Harish</h6>
-               <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
-               <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6></div>
+                  <div id="icon-list" class=" h-i-bottom text-center ">
+                    <ul class="list-inline-md  h-a-buttom-top">
+                      <li><a class="icon-cursor  icon-sm fa-edit"  data-toggle="tooltip" data-placement="top" title="Edit" href="#Edit"></a></li>
+                      <li><a class="icon-cursor icon-sm fa-envelope-o" data-toggle="tooltip" data-placement="top" title="Invite" href="#invite"></a></li>
+                      <li><a class="icon-cursor icon-sm fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
+                      <li><a class="icon-cursor icon-sm fa-users" data-toggle="tooltip" data-placement="top" title="" href="#Delete"></a></li>
+                      <li><a class="icon-cursor icon-sm fa-cog" data-toggle="tooltip" data-placement="top" title="Settings" href="#Settings"></a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
+            <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 thumb-corporate fadeInUpSmall h-a-buttom-top">
+              <div class="h-height bg-white h-div-border  link-image">
+                <div class="fadeInUpSmall h-a-buttom-top">
+                  <samp ><a class=" h-r-star t-left icon-cursor  icon-sm fa-star" href="#"></a></samp>
+                  <div class="h-div-padding">
+                    <!-- h-a-buttom-top -->
+                    <ul class="text-center">
+                      <li><h6 class="h6-title ">Space Name : Harish</h6> </li>
+                    </ul>
+                    <ul><b>
+                      <li>
+                        <samp class="h6-title t-right ">Start time: 10Am</samp>
+                        <samp class="h6-title text-center ">To</samp>
+                        <samp class="h6-title t-left ">End time: 11Am</samp>
+                      </li></b>
+                    </ul>
+                    <h6 class="h6-title ">Space ID: Harish.locat</h6>
+                    <h6 class="h6-title ">Meeting Numbers:Sreeharsha,Naveen</h6>
+                   </div>
+                 </div>
+                 <div id="icon-list" class=" h-i-bottom text-center ">
+                   <ul class="list-inline-md  h-a-buttom-top">
+                     <li><a class="icon-cursor  icon-sm fa-edit"  data-toggle="tooltip" data-placement="top" title="Edit" href="#Edit"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-envelope-o" data-toggle="tooltip" data-placement="top" title="Invite" href="#invite"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-users" data-toggle="tooltip" data-placement="top" title="" href="#Delete"></a></li>
+                     <li><a class="icon-cursor icon-sm fa-cog" data-toggle="tooltip" data-placement="top" title="Settings" href="#Settings"></a></li>
+                   </ul>
+                 </div>
+               </div>
              </div>
-
-
-
-             <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 ">
-              <div class="h-height bg-white link-image">
-               <div class="fadeInUpSmall h-a-buttom-top">
-               <h6 class="h6-title h-t-align " >Space Name : Harish</h6>
-               <h6 class="h6-title h-t-align">Space ID: Harish.locat</h6>
-               <h6 class="h6-title h-t-align">Meeting Numbers:Sreeharsha,Naveen</h6></div>
-
-
-                          <div class="bg-white link-image div3">
-                           <p>m,nm</p>
-                           </div>
-
+            <div class="cell-sm-6 cell-md-3 cell-xs-12 cell-lg-3 thumb-corporate fadeInUpSmall h-a-buttom-top">
+              <div class="h-height bg-white h-div-border  link-image">
+                <div class="fadeInUpSmall h-a-buttom-top">
+                  <samp ><a class=" h-r-star t-left icon-cursor  icon-sm fa-star" href="#"></a></samp>
+                   <div class="h-div-padding">
+                     <!-- h-a-buttom-top -->
+                     <ul class="text-center">
+                       <li><h6 class="h6-title ">Space Name : Harish</h6> </li>
+                     </ul>
+                     <ul><b>
+                       <li>
+                          <samp class="h6-title t-right ">Start time: 10Am</samp>
+                          <samp class="h6-title text-center ">To</samp>
+                          <samp class="h6-title t-left ">End time: 11Am</samp>
+                        </li></b></ul>
+                        <h6 class="h6-title ">Space ID: Harish.locat</h6>
+                        <h6 class="h6-title ">Meeting Numbers:Sreeharsha,Naveen</h6>
+                      </div>
+                    </div>
+                    <div id="icon-list" class=" h-i-bottom text-center">
+                       <ul class="list-inline-md  h-a-buttom-top">
+                         <li><a class="icon-cursor  icon-sm fa-edit" data-toggle="tooltip" data-placement="top" title="Edit" href="#Edit"></a></li>
+                         <li><a class="icon-cursor icon-sm fa-envelope-o" data-toggle="tooltip" data-placement="top" title="Invite" href="#invite"></a></li>
+                         <li><a class="icon-cursor icon-sm fa-trash" data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
+                         <li><a class="icon-cursor icon-sm fa-users" data-toggle="tooltip" data-placement="top" title="" href="#Delete"></a></li>
+                         <li><a class="icon-cursor icon-sm fa-cog" data-toggle="tooltip" data-placement="top" title="Settings" href="#Settings"></a></li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+               </div>
              </div>
-             </div>
-
-            </div>
            </div>
-       </div>
-     </section>
-       </div>
-     <% include footer %>
+         </div>
+       </section>
+
+<% include footer %>
 
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/scripts/core.min.js"></script>
