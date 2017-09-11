@@ -30,5 +30,7 @@ app.get("/users", (req, res)=>{
 app.get("/spacelist", (req, res)=>{
   res.render("spacelist");
 });
-
+app.get("/createspace",(req,res)=>{
+ res.render("createspace"); 
+});
 module.exports = app;
