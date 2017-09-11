@@ -14,6 +14,7 @@
     <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/newmeeting.css">
+    <link rel="stylesheet" href="/styles/meeting.css">
 
 
 
@@ -27,48 +28,49 @@
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
+      <div class="container-fluid breadcrumb-container">
+          <ol class="breadcrumb">
+              <h5 class="meeting-head-bread">Create Space</h5>
+              <li><a href="#" class="breadcrumb-links">Home</a></li>
+              <li>Create Space</li>
+          </ol>
+      </div>
       <section class="section-lg bg-white text-center main-section">
-       <div class="shell">
- <h4>Create Space</h4>
-         <div class="range range-md-center">
-
-          <div class="cell-md-10 cell-lg-8">
+        <div class="shell">
+          <h4>Create Space</h4>
+          <div class="range range-md-center">
+            <div class="cell-md-10 cell-lg-8">
             <!-- RD Mailform-->
             <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-              <div class="form-wrap form-wrap_icon linear-icon-man">
+              <div class="form-wrap form-wrap_icon linear-icon-database-add">
                 <input class="form-input" id="contact-sName" type="text" name="name" data-constraints="@Required">
                 <label class="form-label" for="contact-sName">Space Name</label>
               </div>
               <div class="form-wrap form-wrap_icon linear-icon-users-plus">
               <input class="form-input" id="contact-sMember" type="email" name="email"  data-constraints="@Required">
-
-                <label class="form-label" for="contact-sMember">Type member name</label>
-
-
+              <label class="form-label" for="contact-sMember">Type member name</label>
+            </div>
+            <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+              <input class="form-input" id="contact-sPasscode" type="text" name="passcode" data-constraints="@Required">
+              <label class="form-label" for="contact-sPasscode">Passcode</label>
+            </div>
+            <div class="form-wrap form-wrap_icon linear-icon-home6">
+              <input class="form-input" id="contact-sAddress" type="text" name="email" data-constraints="@Required">
+              <label class="form-label" for="contact-sAddress">Space address</label>
               </div>
-              <div class="form-wrap form-wrap_icon linear-icon-barcode3">
-                <input class="form-input" id="contact-sPasscode" type="text" name="passcode" data-constraints="@Required">
-                <label class="form-label" for="contact-sPasscode">Passcode</label>
-              </div>
-              <div class="form-wrap form-wrap_icon linear-icon-home6">
-                <input class="form-input" id="contact-sAddress" type="text" name="email" data-constraints="@Required">
-                <label class="form-label" for="contact-sAddress">Space address</label>
-              </div>
-              <button id="loginBtn" class="button button-primary" type="submit">Discard</button>&nbsp;&nbsp;
+              <button id="loginBtn" class="button button-primary" type="submit">Discard</button>
+              &nbsp;&nbsp;
               &nbsp;&nbsp;
               <button id="loginBtn" class="button button-primary" type="submit">Done</button>
             </form>
           </div>
-
-         </div>
+        </div>
        </div>
       </section>
-      </div>
-      <% include footer %>
+    </div>
+    <% include footer %>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-
     <script src="/scripts/core.min.js"></script>
     <script src="/scripts/script.js"></script>
   </body>
