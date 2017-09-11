@@ -2,6 +2,12 @@
     padding-top: 40px;
 }
 
+.newmeeting-head-bread {
+    float: left;
+    position: absolute;
+    top: 0%;
+}
+
 .margin-css {
     margin-bottom: 20px;
 }
@@ -67,6 +73,16 @@ span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-cont
     margin-top: 0px;
 }
 
+.breadcrumb-container {
+    padding: 0px; 
+    text-align: right;
+    font-size: small;
+}
+
+.breadcrumb-links:hover {
+    text-decoration: underline;
+  }
+
 @media only screen and (min-width: 768px) {
     .schedule-meeting-div{
         width: 50%;
@@ -99,6 +115,29 @@ span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-cont
     span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
         position: relative;
         left: 12% !important;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .div1, .div2 {
+        display: block;
+    }
+
+    .email-wrap, .telephone-wrap {
+        width: 100%;
+    }
+
+    .margin-css {
+        display: block;
+    }
+
+    .from-to-date-container {
+        width: 100%;
+    }
+
+    .timezone-wrap, .cospace-wrap {
+        width: 100%;
     }
 }
 
