@@ -33,4 +33,7 @@ app.get("/spacelist", (req, res)=>{
 app.get("/createspace",(req,res)=>{
  res.render("createspace"); 
 });
+app.get("/revisedmeeting",(req,res)=>{
+  res.render("revisedmeeting"); 
+ });
 module.exports = app;
