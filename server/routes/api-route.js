@@ -43,6 +43,6 @@ app.get("/dashboard",(req,res)=>{
   res.render("dashboard", {year: new Date().getFullYear()}); 
 });
 app.get("/revisedmeeting",(req,res)=>{
-  res.render("revisedmeeting"); 
+  res.render("revisedmeeting", {year: new Date().getFullYear()}); 
  });
 module.exports = app;
