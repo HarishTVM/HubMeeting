@@ -1,5 +1,7 @@
 
 $(document).ready(function(){
+    
+
     $('#loginBtn').click(function(){
         window.location.href='/configure';
     })
@@ -10,22 +12,6 @@ $(document).ready(function(){
 
     $('#meetingBtn').click(function(){
         window.location.href='/newmeeting';
-    })
-
-    $('#activitylist').click(function(){
-        window.location.href='/activitylist';
-    })
-    $('#meetinglist').click(function(){
-        window.location.href='/meeting';
-    })
-
-    $('#users').click(function(){
-        window.location.href='/users';
-    })
-
-
-    $('#sapacelist').click(function(){
-        window.location.href='/spacelist';
     })
 
 
