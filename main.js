@@ -22,36 +22,41 @@ localLang = osLocale.sync().toString();
 	var xmpp = require('simple-xmpp');
 	var dns = require('dns');
 
-	xmpp.on('online', function(data) {
-		console.log('Connected with JID: ' + data.jid.user);
-		console.log('Yes, I\'m connected!');
-	});
+	// xmpp.on('online', function(data) {
+	// 	console.log('Connected with JID: ' + data.jid.user);
+	// 	console.log('Yes, I\'m connected!');
+	// });
 
-	xmpp.on('chat', function(from, message) {
-		xmpp.send(from, 'echo: ' + message);
-	});
+	// xmpp.on('chat', function(from, message) {
+	// 	xmpp.send(from, 'echo: ' + message);
+	// });
 
-	xmpp.on('error', function(err) {
-		console.error(err);
-	});
+	// xmpp.on('error', function(err) {
+	// 	console.error(err);
+	// });
 
-	xmpp.on('subscribe', function(from) {
-	if (from === 'a.friend@gmail.com') {
-		xmpp.acceptSubscription(from);
-		}
-	});
+	// xmpp.on('subscribe', function(from) {
+	// if (from === 'a.friend@gmail.com') {
+	// 	xmpp.acceptSubscription(from);
+	// 	}
+	// });
 
-	xmpp.connect({
-			jid		: "naveen@inflexion.com",
-			password: "Pass1234",
-			host	: 'core1.inflexion.com',
-			port	: 5222
-	});
+	// xmpp.connect({
+	// 		jid		: "naveen@inflexion.com",
+	// 		password: "Pass1234",
+	// 		host	: 'core1.inflexion.com',
+	// 		port	: 5222
+	// });
 
 	dns.resolveSrv("_xmpp-server._tcp.inflexion.com", function(err,data){
 		console.log(err);
 		console.log(data);
 	})
+
+	dns.lookup(require('os').hostname(), function (err, add, fam) {
+		console.log('addr: '+add);
+	  })
+
 /******---------------------------------------------- BEGIN Creation Of Server Properties --------------------------------------------------------------------------------------***/
 	// Create express application
 	var app = module.exports = express();
@@ -146,7 +151,7 @@ localLang = osLocale.sync().toString();
 			if(config.app.appStage)
 				console.error("::::::::::::::::::::::::::::::: Seviour Error ::::::::::::::::::::::::::::: \n"+err.stack);
 
-			logger.log('error', 'Seviour Error::::: ErrorMessage : %s,::::: ErrorStack : %s,::::: ErrorNumber : %s', err.message, err.stack, err.errno);
+			//logger.log('error', 'Seviour Error::::: ErrorMessage : %s,::::: ErrorStack : %s,::::: ErrorNumber : %s', err.message, err.stack, err.errno);
 		    res.status(500);
 		    res.end(err.message);
 			setTimeout(()=>{

@@ -61,7 +61,9 @@
 **/
 
 
-
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
 /*Harish Styles stat */
 .h_font-size{
@@ -69,6 +71,31 @@
  color: #000;
 }
 
+::-webkit-scrollbar
+{
+  width: 5px;  /* for vertical scrollbars */
+  height: 5px; /* for horizontal scrollbars */
+  border-radius: 3px;
+}
+
+::-moz-scrollbar
+{
+  width: 5px;  /* for vertical scrollbars */
+  height: 5px; /* for horizontal scrollbars */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track
+{
+  background: #ffff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #d1e3ff;
+  border-radius: 10px;
+}
 
 .h_button{
   color: #fff;
@@ -125,7 +152,7 @@
 }
 
 .h_margin_top{
- margin-top: 20px;
+ margin-top: 4% ;
 }
 
 
@@ -231,8 +258,8 @@ cursor: pointer;
   background-color: #FFFFFF;
 }
 
-.t-padding{padding: 10px}
-.h-height{border-radius: 2px;height:300px;}
+.t-padding{padding: 5px}
+.h-height{border-radius: 2px;min-height:160px;}
 .h-logo-image{width: 18%;height: 18%;}
 .h6-title{font-size:small;color: #000;}
 .h6-paragraph{font-size:small; color: #888;}
@@ -256,8 +283,6 @@ cursor: pointer;
 .h-a-buttom-top{
  position: relative;
  visibility: visible;
- animation-duration: 1.2s;
- animation-delay: 0.5s;
  animation-name: fadeInUpSmall;
 }
 .icon-cursor {cursor: pointer !important;}
@@ -289,9 +314,7 @@ cursor: pointer;
   border-radius: 2px;
   top: 200px;
 }
-.h-div-border{
-  border: 1px solid #000;
-}
+
 .h-i-bottom{
    top: 110px !important;
    position: relative;
@@ -300,25 +323,42 @@ cursor: pointer;
   padding-left: 10px;
   padding-top:20px;
 }
+.t-buttom{
+ text-align: button;
+}
 .t-right{text-align:right !important;}
 .t-left{text-align:left !important; }
-.h-r-star{margin-left: 90% !important; margin-top: 2%!important;}
-.h-div-border{ border: 1px solid #ddd; border-radius: 10px;}
+.h-r-star{ margin-top: 0%!important;  margin-left: 28% !important;}
+.h-div-border{ border: 1px solid #ddd; border-radius: 5px;}
 
 /* none */
-.h-m-top-none{margin-top: 0px !important;}
-.h-padding-none{padding: 0px 0px 0px 0px !important;}
+.h-m-top-none{margin-top: 0px 0px 0px 0px !important;}
+.h-padding-none{padding:  0px 0px 0px 0px !important;}
 /* none end */
 
 
 .fixed-bottom{ position: fixed; bottom: 0; width: 100%; margin-bottom:10px}
-.h-m-icon-top{
- margin-top: 34% !important;
+
+.h-m-icon-top{    margin-top: 6% !important;}
+.h-pages-next{margin-top: -22px !important;}
+.h-t-m-top{margin-top: 19%;
 }
 
+
+
+
 @media (min-width: 1000px) and (max-width: 1025px) {
- .h-i-bottom{top: -22px !important;}
+.h-m-icon-top{    margin-top: 6% !important;}
 }
+
+@media (min-width: 300px) and (max-width: 600px) {
+.h-height{border-radius: 8px;height: 143px;}
+.h-i-bottom{top: 2px !important;}
+.h-m-icon-top{margin-top: 1% !important; }
+}
+
+
+
 
 /*createSpace*/
 
@@ -874,6 +914,7 @@ code,
   }
   .desktop .link-image:hover {
     box-shadow: 0 5px 23px 0 rgba(0, 0, 0, 0.15);
+    background-color: #f8f8f8;
   }
 }
 
@@ -13706,7 +13747,7 @@ html .page .rd-navbar-fixed .rd-navbar-fixed--hidden {
 }
 
 .rd-navbar-fixed .rd-navbar-nav li > a {
-  color: #000;
+  color: #888;
 }
 
 .rd-navbar-fixed .rd-navbar-nav li:hover > a, .rd-navbar-fixed .rd-navbar-nav li.focus > a, .rd-navbar-fixed .rd-navbar-nav li.active > a, .rd-navbar-fixed .rd-navbar-nav li.opened > a {
