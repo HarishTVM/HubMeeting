@@ -61,7 +61,9 @@
 **/
 
 
-
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
 /*Harish Styles stat */
 .h_font-size{
@@ -69,6 +71,31 @@
  color: #000;
 }
 
+::-webkit-scrollbar
+{
+  width: 5px;  /* for vertical scrollbars */
+  height: 5px; /* for horizontal scrollbars */
+  border-radius: 3px;
+}
+
+::-moz-scrollbar
+{
+  width: 5px;  /* for vertical scrollbars */
+  height: 5px; /* for horizontal scrollbars */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track
+{
+  background: #ffff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #d1e3ff;
+  border-radius: 10px;
+}
 
 .h_button{
   color: #fff;
@@ -13719,7 +13746,7 @@ html .page .rd-navbar-fixed .rd-navbar-fixed--hidden {
 }
 
 .rd-navbar-fixed .rd-navbar-nav li > a {
-  color: #000;
+  color: #888;
 }
 
 .rd-navbar-fixed .rd-navbar-nav li:hover > a, .rd-navbar-fixed .rd-navbar-nav li.focus > a, .rd-navbar-fixed .rd-navbar-nav li.active > a, .rd-navbar-fixed .rd-navbar-nav li.opened > a {
