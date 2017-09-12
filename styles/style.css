@@ -232,7 +232,7 @@ cursor: pointer;
 }
 
 .t-padding{padding: 10px}
-.h-height{border-radius: 2px;height:300px;}
+.h-height{border-radius: 2px;height:160px;}
 .h-logo-image{width: 18%;height: 18%;}
 .h6-title{font-size:small;color: #000;}
 .h6-paragraph{font-size:small; color: #888;}
@@ -256,8 +256,6 @@ cursor: pointer;
 .h-a-buttom-top{
  position: relative;
  visibility: visible;
- animation-duration: 1.2s;
- animation-delay: 0.5s;
  animation-name: fadeInUpSmall;
 }
 .icon-cursor {cursor: pointer !important;}
@@ -300,9 +298,12 @@ cursor: pointer;
   padding-left: 10px;
   padding-top:20px;
 }
+.t-buttom{
+ text-align: button;
+}
 .t-right{text-align:right !important;}
 .t-left{text-align:left !important; }
-.h-r-star{margin-left: 90% !important; margin-top: 2%!important;}
+.h-r-star{ margin-top: 0%!important;  margin-left: 28% !important;}
 .h-div-border{ border: 1px solid #ddd; border-radius: 10px;}
 
 /* none */
@@ -312,12 +313,23 @@ cursor: pointer;
 
 
 .fixed-bottom{ position: fixed; bottom: 0; width: 100%; margin-bottom:10px}
-.h-m-icon-top{
- margin-top: 34% !important;
-}
+.h-m-icon-top{    margin-top: 6% !important;}
 
 @media (min-width: 1000px) and (max-width: 1025px) {
- .h-i-bottom{top: -22px !important;}
+.h-m-icon-top{    margin-top: 6% !important;}
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+.h-height{border-radius: 8px;height: 143px;}
+.h-i-bottom{top: 2px !important;}
+.h-m-icon-top{margin-top: 1% !important; }
+}
+
+
+@media (min-width: 700px) and (max-width: 900px) {
+.h-height{border-radius: 8px;height: 143px;}
+.h-i-bottom{top: 2px !important;}
+.h-m-icon-top{margin-top: 1% !important;  }
 }
 
 /*createSpace*/
@@ -874,6 +886,7 @@ code,
   }
   .desktop .link-image:hover {
     box-shadow: 0 5px 23px 0 rgba(0, 0, 0, 0.15);
+    background-color: #f8f8f8;
   }
 }
 
