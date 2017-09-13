@@ -7,7 +7,7 @@ $(document).ready(function(){
     })
 
     $('#configureBtn').click(function(){
-        window.location.href='/meeting';
+        window.location.href='/dashboard';
     })
 
     $('#meetingBtn').click(function(){

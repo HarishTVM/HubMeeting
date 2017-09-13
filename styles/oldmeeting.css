@@ -153,6 +153,10 @@ a.button.button-primary.icon.linear-icon-plus.newmeeting-btn-circle::before {
     }
 }
 
+.accordian-border {
+    border: 0.5px dotted lightgray;
+}
+
 @media only screen and (min-width: 768px){
     .panel.panel-custom {
         padding: 15px 6px 15px 6px;
