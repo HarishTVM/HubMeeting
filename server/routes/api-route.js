@@ -42,5 +42,7 @@ app.get("/settings",(req,res)=>{
 app.get("/dashboard",(req,res)=>{
   res.render("dashboard", {year: new Date().getFullYear()}); 
 });
-
+app.get("/revisedmeeting",(req,res)=>{
+  res.render("revisedmeeting", {year: new Date().getFullYear()}); 
+ });
 module.exports = app;

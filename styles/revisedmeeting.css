@@ -1,0 +1,58 @@
+.meeting-main-section {
+    padding-top: 25px !important;
+}
+
+.thumbnail-cell, .thumbnail-corp_main {
+    height: 350px !important;
+}
+
+.contents-container {
+    text-align: left;
+    display: flex;
+}
+
+.thumbnail-corp_main.well-lg {
+    padding: 13px !important;
+}
+
+.thumbnail-corp_main {
+    box-shadow: none;
+    transition: box-shadow 0.5s; 
+}
+
+.thumbnail-corp_main:hover {
+    background-color: #f8f8f8;
+    box-shadow: 5px 5px 3px #888888;
+    color: black;
+}
+
+.thumbnail_corp_overlay {
+    padding: 0px;
+}
+
+.thumbnail_corp_main2 {
+    position: relative;
+    top: 84%;
+}
+
+.thumbnail-corp__caption {
+    position: relative;
+    bottom: 15%;
+}
+
+.subtitle {
+    font-style: normal;
+ }
+
+@media only screen and (max-width: 768px){
+    .contents-container {
+        text-align: center;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px){
+    .meeting-main-section {
+        padding-top: 45px !important;
+    }    
+}
