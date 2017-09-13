@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-
-<head>
+  <head>
     <!-- Site Title-->
     <title>Home Default</title>
     <meta name="format-detection" content="telephone=no">
@@ -12,27 +11,234 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/newmeeting.css">
+    <link rel="stylesheet" href="/styles/oldmeeting.css">
     <link rel="stylesheet" href="/styles/meeting.css">
-</head>
-
-<body class=" bg-white">
+    
+  </head>
+  <body>
+    <!-- Page -->
     <% include navbarhome %>
     <div class="page">
-        <p>TODO Dashboard</p>
-    </div>  
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <div class="container-fluid breadcrumb-container">
+          <ol class="breadcrumb">
+              <h5 class="meeting-head-bread">Recent Meetings</h5>
+              <li>Dashboard</li>
+          </ol>
+      </div>
+
+       <section class="section-lg bg-white meeting-main-section">
+            <div class="shell accordian-shell">
+                    <!-- Accordion-->
+                    <div id="accordion" role="tablist">
+                      <!-- Bootstrap panel-->
+                      <div class="panel panel-custom">
+                        <div class="panel-custom-heading" id="1Headingundefined" role="tab">
+                          <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined" aria-controls="1Collapseundefined">Mr.ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                          </p>
+                        </div>
+                        <div class="panel-custom-collapse collapse" id="1Collapseundefined" role="tabpanel" aria-labelledby="1Headingundefined">
+                          <div class="panel-custom-body">
+                            <ul class="list-group list-content">
+                              <li>Cospace: ABC</li>
+                              <li>Owner: Sreeharsha inflexion.com</li>
+                              <li>Operator:</li>
+                              <li>Invitees: 3</li>
+                            </ul>  
+                            <ul class="list-group list-content"> 
+                              <li>Call reference #: 20170907/0001</li>
+                              <li>Call URI: abc</li>
+                              <li>Call ID: 700102</li>
+                            </ul>
+                            <a href="#">Edit</a>
+                         </div>
+                        </div>
+                      </div>
+                      <!-- Bootstrap panel-->
+                      <div class="panel panel-custom">
+                        <div class="panel-custom-heading" id="2Headingundefined" role="tab">
+                          <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#2" href="#2Collapseundefined" aria-controls="2Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                          </p>
+                        </div>
+                        <div class="panel-custom-collapse collapse" id="2Collapseundefined" role="tabpanel" aria-labelledby="2Headingundefined">
+                          <div class="panel-custom-body">
+                              <ul class="list-group list-content">
+                                  <li>Cospace: ABC</li>
+                                  <li>Owner: Sreeharsha inflexion.com</li>
+                                  <li>Operator:</li>
+                                  <li>Invitees: 3</li>
+                              </ul>
+                              <ul class="list-group list-content">
+                                  <li>Call reference #: 20170907/0001</li>
+                                  <li>Call URI: abc</li>
+                                  <li>Call ID: 700102</li>
+                              </ul>
+                                <a href="#">Edit</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Bootstrap panel-->
+                      <div class="panel panel-custom">
+                        <div class="panel-custom-heading" id="3Headingundefined" role="tab">
+                          <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#3" href="#3Collapseundefined" aria-controls="3Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                          </p>
+                        </div>
+                        <div class="panel-custom-collapse collapse" id="3Collapseundefined" role="tabpanel" aria-labelledby="3Headingundefined">
+                          <div class="panel-custom-body">
+                              <ul class="list-group list-content">
+                                  <li>Cospace: ABC</li>
+                                  <li>Owner: Sreeharsha inflexion.com</li>
+                                  <li>Operator:</li>
+                                  <li>Invitees: 3</li>
+                              </ul>
+                                <ul class="list-group list-content">
+                                  <li>Call reference #: 20170907/0001</li>
+                                  <li>Call URI: abc</li>
+                                  <li>Call ID: 700102</li>
+                              </ul>
+                                <a href="#">Edit</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;"><a href="/meeting">see more...</a></p> 
+          <div class="container-fluid breadcrumb-container">
+                <ol class="breadcrumb" style="text-align: left">
+                    <h5 >Activities</h5>
+                </ol>
+          </div>
+          <div class="shell">
+                <div class="range range-50 offset-top-1 ">
+                    <div class="cell-sm-12 cell-md-12 cell-lg-12 h-div-border">
+                        <div id="container" style="min-width: 310px; max-width: 600px; height: 350px; margin: 0 auto"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cell-sm-12 cell-md-12 cell-lg-12 text-center h-div-border" style="margin: 10px;margin-top: 30px; padding-top: 10px">
+                    <div class="rd-calendar">
+                            <div class="rdc-panel">
+                              <h3>Meeting <span class="rdc-month"></span> <span class="rdc-fullyear"></span>
+                              </h3>
+                            </div>
+                            <div class="rdc-table"></div>
+                            <div class="rdc-events"><a class="rdc-events_close"></a>
+                              <ul>
+                                <li class="rdc-event" data-date="06/14/2017">
+                                  <div class="thumbnail-classic"><img src="images/services-2-418x315.jpg" alt="" width="418" height="315"/>
+                                    <div class="caption">
+                                      <h6><a class="thumbnail-classic-title" href="single-event.html">Novi Builder</a></h6>
+                                      <time class="thumbnail-classic-time" datetime="2017">October 30, 2017 @ 8:00 am - November 5, 2017 @ 5:00 pm</time>
+                                      <p>Use our Novi Builder to customize and update your website within seconds.</p>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="rdc-panel-nav">
+                              <a class="rdc-prev">Prev month</a>
+                              <!--<h5 class="veil reveal-sm-block">Calendar Month Navigation</h5>-->
+                              <a class="rdc-next">Next month</a>
+                            </div>
+                          </div>
+            </div>
+        </section>
+    </div>
     <% include footer %>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/scripts/core.min.js"></script>
     <script src="/scripts/script.js"></script>
-    <script src="/scripts/jquery.contenthover.min.js"></script>
     <script src="/scripts/general.js"></script>
-    <script src="/scripts/spacelist.js"></script>
+    <script src="/node_modules/highcharts/highcharts.js"></script>
+    <script src="/node_modules/highcharts/modules/data.js"></script>
+    <script src="/node_modules/highcharts/modules/drilldown.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function(){
             $("#dashboard").addClass("active");
+
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Meetings'
+                },
+                // subtitle: {
+                //     text: 'Click the slices to view versions. Source: netmarketshare.com.'
+                // },
+                plotOptions: {
+                    series: {
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.name}: {point.y:.1f}%'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+                },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Active',
+            y: 10.33,
+            drilldown: 'Active Meetings'
+        }, {
+            name: 'Completed',
+            y: 24.03,
+            drilldown: 'Completed Meetings'
+        }, {
+            name: 'Scheduled',
+            y: 35.38,
+            drilldown: 'Scheduled Meetings'
+        }]
+    }],
+    drilldown: {
+        series: [{
+            name: 'Active',
+            id: 'Active Meetings',
+            data: [
+                ['Jan', 2.33],
+                ['Feb', 1.00],
+                ['Mar', 3.00],
+                ['Apr', 2.00],
+                ['May', 1.00],
+                ['Jun', 1.00]
+            ]
+        }, {
+            name: 'Completed Meetings',
+            id: 'Completed Meetings',
+            data: [
+                ['Jan', 5],
+                ['Feb', 4.03],
+                ['Mar', 4.00],
+                ['Apr', 3.68],
+                ['May', 4.00],
+                ['Jun', 4.00],
+            ]
+        }, {
+            name: 'Scheduled Meetings',
+            id: 'Scheduled Meetings',
+            data: [
+                ['Jan', 5],
+                ['Feb', 5.38],
+                ['Mar', 5.00],
+                ['Apr', 5.00],
+                ['May', 5.00],
+                ['Jun', 10.00]
+            ]
+        }]
+    }
+});
         });
     </script>
-</body>
+  </body>
+</html>
