@@ -1,230 +1,513 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-  <head>
-    <!-- Site Title-->
-    <title>Activity</title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/font-awesome.min.css">
-
-  </head>
-  <body class="h_body_background">
-      <% include navbarhome %>
-    <!-- Page -->
-    <div class="page">
-      <div id="page-loader">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
+<head>
+	<!-- Site Title-->
+	<title>Home Default</title>
+	<meta content="telephone=no" name="format-detection">
+	<meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta charset="utf-8">
+	<link href="/images/favicon.ico" rel="icon" type="image/x-icon"><!-- Stylesheets-->
+	<link href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic" rel="stylesheet" type="text/css">
+	<link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"><!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
+	<link href="/styles/style.css" rel="stylesheet">
+	<link href="/styles/newmeeting.css" rel="stylesheet">
+	<link href="/styles/oldmeeting.css" rel="stylesheet">
+</head>
+<body class=" bg-white">
+	<!-- Page -->
+	<%include navbarhome %>
+	<div class="page">
+		<div id="page-loader">
+			<div class="cssload-container">
+				<div class="cssload-speeding-wheel"></div>
+			</div>
+		</div>
+		<div class="container-fluid breadcrumb-container">
+			<ol class="breadcrumb">
+				<li style="list-style: none; display: inline">
+					<h5 class="meeting-head-bread">Current Activities</h5>
+				</li>
+				<li>
+					<a class="breadcrumb-links" href="/dashboard">Dashboard</a>
+				</li>
+				<li>Activities</li>
+			</ol>
+		</div>
+		<section>
+			<div class="shell">
+				<!-- search box -->
+				<div class="range range-10">
+					<div class="col-sm-12 col-md-12 col-xs-12 col-lg-3 h-pages-next">
+						<nav></nav>
+					</div>
+				</div>
+				<div class="range range-70">
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+                        <b>
+											
+                        <h6>Harish</h6>
+                        </b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+										
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                    <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                   </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic" data-placement="top" data-toggle="tooltip" href="#invite" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic-mute" data-placement="top" data-toggle="tooltip" href="#Member" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera" data-placement="top" data-toggle="tooltip" href="#Settings" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera-crossed" data-placement="top" data-toggle="tooltip" href="#Settings" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+												<b>
+												<h6>Harish</h6></b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<b></b>
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                            <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                           </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic" data-placement="top" data-toggle="tooltip" href="#invite" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic-mute" data-placement="top" data-toggle="tooltip" href="#Member" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera" data-placement="top" data-toggle="tooltip" href="#Settings" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera-crossed" data-placement="top" data-toggle="tooltip" href="#Settings" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+												<b>
+												<h6>Harish</h6></b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<b></b>
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                                 <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                                </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic" data-placement="top" data-toggle="tooltip" href="#invite" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic-mute" data-placement="top" data-toggle="tooltip" href="#Member" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera" data-placement="top" data-toggle="tooltip" href="#Settings" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera-crossed" data-placement="top" data-toggle="tooltip" href="#Settings" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+												<b>
+												<h6>Harish</h6></b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<b></b>
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                                      <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                                     </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic" data-placement="top" data-toggle="tooltip" href="#invite" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-mic-mute" data-placement="top" data-toggle="tooltip" href="#Member" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera" data-placement="top" data-toggle="tooltip" href="#Settings" title="unmute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-camera-crossed" data-placement="top" data-toggle="tooltip" href="#Settings" title="Mute"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+        <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;"><a href="#">see more...</a></p>
+      </div>
+      <div class="container-fluid breadcrumb-container">
+          <ol class="breadcrumb" style="text-align: left">
+              <h5 >Recent Activities</h5>
+          </ol>
+    </div>
+    <div class="shell">
+				<!-- search box -->
+				<div class="range range-10">
+					<div class="col-sm-12 col-md-12 col-xs-12 col-lg-3 h-pages-next">
+						<nav></nav>
+					</div>
+				</div>
+				<div class="range range-70">
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+                        <b>
+											
+                        <h6>Harish</h6>
+                        </b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+										
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                    <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                   </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+												<b>
+												<h6>Harish</h6></b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<b></b>
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                            <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                           </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+												<b>
+												<h6>Harish</h6></b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<b></b>
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                                 <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                                </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate">
+						<div class="h-height bg-white h-div-border link-image">
+							<div class="t-padding">
+								<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+									<div class="col-sm-10 col-md-10 col-xs-10 col-lg-10">
+										<ul class="text-center">
+											<li>
+												<b>
+												<h6>Harish</h6></b>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<b></b>
+												<h6 class="h6-title">Ouner:</h6>
+											</li>
+										</ul><!-- <ul >
+                                      <li>   <img class="sl-img-h-w-Layout" src="/images/speakerlarge.png" > </li>
+                                     </ul> -->
+										<ul>
+											<li>
+												<h6 class="h6-title">Layout Type : allEqual</h6>
+											</li>
+										</ul>
+										<ul>
+											<li>
+												<h6 class="h6-title">Members : 5</h6>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                
+								<div class="thumb-corporate__overlay text-center h-i-m-top" id="icon-list">
+									<ul class="list-inline-sm">
+										<li>
+											<a class="thumb-corporate__list icon-sm linear-icon-reading" data-placement="top" data-target="#myModal" data-toggle="tooltip" href="#Edit" title="info"></a>
+										</li>
+										<li>
+											<a class="thumb-corporate__list h-i-color icon-sm linear-icon-trash2" data-placement="top" data-toggle="tooltip" href="#Delete" title="Delete"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
         </div>
       </div>
-      <!-- Page Header-->
-      <header class="page-header">
-        <!-- RD Navbar-->
-      </header>
-      <div class="h_section_padding">
-        <section>
-         <div class=" row h_btn h_button ">
-             <div class="col-sm-12 h_height_inherit" id="btn_all">
-
-             <div class="h_height_inherit " id="btn_add">
-              <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Call" class="btn btn-default btn-circle" ><i class="glyphicon glyphicon-plus"></i></button>
-             </div>
-
-             <div  class="h_height_inherit "id="btn_add_hidden">
-             <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Call" class="btn btn-default btn-circle"><i class="fa fa-phone"></i></button>
-             <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Schedule"class="btn btn-default btn-circle"><i class="fa fa-calendar-plus-o"></i></button>
-             <button type="button"  data-toggle="tooltip" data-placement="bottom" title="Settings"class="btn btn-default btn-circle"><i class="fa fa-sliders"></i></button>
-             </div>
+      
+     
+    </section>
 
 
-         </div>
-        </section>
-        <section>
-         <div class="h_margin_top">
-         <div class="row h_btn h_button_users" id="btn_meeting_details_all">
-
-           <div class="col-sm-4 h_height_inherit">
-            <div class="row h_height_inherit">
-             <div class="col-sm-6 h_height_inherit">
-              <div class="row h_height_inherit">
-               <div class="col-sm-6  h_height_inherit"><i class="fa fa-star-o h_vertical_align"> </i></div>
-               <div class="col-sm-6  h_height_inherit"><p class="h_font-size h_vertical_align">New Call</p></div>
-              </div>
-
-             </div>
-             <div class="col-sm-6 h_height_inherit">
-              <p class="h_font-size h_vertical_align">Harish.users</p></div>
-            </div>
-
-           </div>
-
-           <div class="col-sm-4 h_height_inherit">
-            <div class="h_height_inherit" id="btn_meeting_details">
-            <button id="btn_call_ur"     type="button" data-toggle="collapse" data-target="#btn_call" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Call"     class="fa fa-phone h_height_inherit"></i></button>
-            <button id="btn_schedule_ur" type="button" data-toggle="collapse" data-target="#btn_btn_schedule_ur" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Schedule" class="fa fa-calendar-plus-o"></i></button>
-            <button id="btn_members_ur"  type="button" data-toggle="collapse" data-target="#btn_Member" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Members"  class="fa fa-user" ></i></button>
-            <button id="btn_stats_ur"    type="button" data-toggle="collapse" data-target="#btn_call" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Stats"    class="fa fa-sliders"></i></button>
-            <button id="btn_settings_ur" type="button" data-toggle="collapse" data-target="#btn_call" class="btn btn-default btn-circle"><i data-toggle="tooltip" data-placement="top" title="Settings" class="fa fa-sliders"></i></button>
-            </div>
-           </div>
-           <div class="col-sm-4 h_height_inherit">
-            <div class="row h_height_inherit">
-            <div class="col-sm-6 h_height_inherit">
-              <div id="btu_ay_notification" class="h_font-size h_vertical_align">
-               <samp class="div_circle_notification" data-badge="1"/>
-              <div class="div_width_notification" >
-              <samp class="div_circle_notification" data-badge="0"/>
-             </div>
-
-             </div>
-             </div>
-             <div class="col-sm-6 h_height_inherit"><p class="h_font-size h_vertical_align" >Aug 30, 2017</p></div>
-            </div>
-           </div>
-          </div>
-         </div>
-        </section>
-
-        <!-- onSider -->
-        <!-- Call -->
-        <div id="btn_call" class="panel-collapse collapse">
-           <div class="panel-body padding-none radius-none">
-
-              <!-- call button-->
-              <div class="row h_btn h_button_users radius-none">
-                       <div class="col-sm-2 h_height_inherit">
-                        <div class="h_height_inherit">
-                          <input class="h_vertical_align"type="checkbox"  />
-                          </div>
-                         </div>
-
-                          <div class="col-sm-7 h_height_inherit">
-                           <div class="h_height_inherit">
-                            <input class="btn_input_search h_vertical_align" type="text" placeholder="Name Number or URl"/>
-                           </div>
-                           </div>
-
-                          <div class="col-sm-3 h_height_inherit t-color-green">
-                           <div class="row h_height_inherit">
-                            <div class="col-sm-4 h_height_inherit">
-
-                            </div>
-                            <div class="col-sm-8 h_height_inherit">
-                              <p class="h_vertical_align"> Call Selected</p>
-                            </div>
-                           </div>
-
-                          </div>
-                         </div>
-             </div>
-              <div class="panel-footer padding-none border-top-none radius-none">
-
-               <!-- call footer-->
-               <div class="row h_btn h_button_users radius-none">
-                        <div class="col-sm-2 h_height_inherit">
-                         <div class="h_height_inherit">
-                           <input class="h_vertical_align"type="checkbox"  />
-                           </div>
-
-                          </div>
-
-                           <div class="col-sm-7 h_height_inherit">
-
-                            </div>
-                           <div class="col-sm-3 h_height_inherit t-color-green ">
-
-                            <div class="row h_height_inherit">
-                             <div class="col-sm-4 h_height_inherit">
-
-                             </div>
-                             <div class="col-sm-8 h_height_inherit">
-                               <p class="h_vertical_align"> Call </p>
-                             </div>
-                            </div>
-                            </div>
-                          </div>
-              </div>
-       </div>
-
-       <!-- Member -->
-       <div id="btn_Member" class="panel-collapse collapse">
-          <div class="panel-body padding-none radius-none">
-
-             <!-- Member button-->
-             <div class="row h_btn h_button_users radius-none">
-
-                      <div class="col-sm-4 h_height_inherit">
-                       <div class="h_height_inherit h_vertical_align">
-                        <p class="t-left t_insde ">Member(1)</p>
-                       </div>
-                      </div>
-                      <div class="col-sm-4 h_height_inherit">
-                       <div class="h_height_inherit">
-                       </div>
-                      </div>
-
-                      <div class="col-sm-4 h_height_inherit ">
-                       <div class="h_height_inherit">
-                      <button class="h-btn  btn-add-member h_vertical_align">Add Member</button>
-                       </div>
-                      </div>
-                     </div>
-
-            </div>
-
-
-             <div class="panel-footer padding-none border-top-none radius-none">
-
-              <!-- Member1 footer-->
-              <div class="row h_btn h_button_users radius-none div-background">
-                       <div class="col-sm-6 h_height_inherit">
-                       <div class="h_height_inherit h_vertical_align">
-                         <p class="t-left "><a class="t-color-skyblue-email ">Harish inflexion.com</a></p>
-
-                        </div>
-                          </div>
-
-
-                          <div class="col-sm-6 h_height_inherit t-color-green ">
-                           <div class="row h_height_inherit">
-                             <div class="col-sm-4 h_height_inherit"> </div>
-                            <div class="col-sm-8 h_height_inherit">
-                              <p class="h_vertical_align t-right t-margin-right ">  <i class="fa fa-cog"></i></p>
-                            </div>
-                           </div>
-                           </div>
-                         </div>
-
-               <!-- Member2 footer-->
-                <div class="row h_btn h_button_users radius-none">
-                 <div class="col-sm-12 h_height_inherit h_vertical_align">
-                   <p class="t-left t_insde" >Visitor</p>
-                 </div>
-
-                </div>
-
-             </div>
-
-
-      </div>
-    </div>
-    
-    <!-- Javascript-->
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/Activity.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#activityList").addClass("active");
-        });
-    </script>
-   </body>
- </html>
+  
+  </div>
+ 
+<%include footer %>
+	<script src="/node_modules/jquery/dist/jquery.min.js">
+	</script> 
+	<script src="/scripts/core.min.js">
+	</script> 
+	<script src="/scripts/script.js">
+	</script> 
+	<script src="/scripts/jquery.contenthover.min.js">
+	</script> 
+	<script src="/scripts/general.js">
+	</script> 
+	<script src="/scripts/spacelist.js">
+	</script> 
+	<script>
+	       $(document).ready(function(){
+	           $("#activityList").addClass("active");
+	       });
+	</script>
+</body>
+</html>
