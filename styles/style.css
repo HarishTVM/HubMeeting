@@ -341,14 +341,23 @@ cursor: pointer;
 
 .h-m-icon-top{    margin-top: 6% !important;}
 .h-pages-next{margin-top: -22px !important;}
-.h-t-m-top{margin-top: 19%;
-}
+
+.h-i-m-top{margin-top: 23px; }
+
+ .h-i-color{color: red !important ;
+  cursor: pointer !important;
+ }
 
 
 
 
 @media (min-width: 1000px) and (max-width: 1025px) {
-.h-m-icon-top{    margin-top: 6% !important;}
+.h-m-icon-top{ margin-top: 6% !important;}
+.h-i-m-top{margin-top: 9px;}
+}
+
+@media (min-width: 700px) and (max-width: 1025px) {
+.h-i-m-top{margin-top: 9px;}
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
@@ -395,6 +404,15 @@ bottom: 15%;
 opacity: 0.6;
 }
 
+/*spacelist page*/
+
+.sl-img-h-w-Layout{
+ width: 50px !important;
+ height: 50px !important;
+ border-radius: 5px;
+ margin-left: 42%;
+}
+/*spacelist page end*/
 
 /*Harish Styles end */
 
