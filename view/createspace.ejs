@@ -14,7 +14,8 @@
     <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/newmeeting.css">
-    <link rel="stylesheet" href="/styles/meeting.css">
+    <link rel="stylesheet" href="/styles/oldmeeting.css">
+
 
 
 
@@ -22,7 +23,7 @@
   <body>
     <!-- Page -->
     <% include navbarhome %>
-    <div class="page">
+    <div class="page" >
       <div id="page-loader">
         <div class="cssload-container">
           <div class="cssload-speeding-wheel"></div>
@@ -30,9 +31,9 @@
       </div>
       <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
-              <h5 class="meeting-head-bread">Create Space</h5>
-              <li><a href="#" class="breadcrumb-links">Home</a></li>
-              <li>Create Space</li>
+              <h5 class="meeting-head-bread">Create space</h5>
+              <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
+              <li>Create space</li>
           </ol>
       </div>
       <section class="section-lg bg-white text-center main-section">
@@ -50,6 +51,7 @@
               <input class="form-input" id="contact-sMember" type="email" name="email"  data-constraints="@Required">
               <label class="form-label" for="contact-sMember">Type member name</label>
             </div>
+
             <div class="form-wrap form-wrap_icon linear-icon-key-hole">
               <input class="form-input" id="contact-sPasscode" type="text" name="passcode" data-constraints="@Required">
               <label class="form-label" for="contact-sPasscode">Passcode</label>
@@ -58,10 +60,10 @@
               <input class="form-input" id="contact-sAddress" type="text" name="email" data-constraints="@Required">
               <label class="form-label" for="contact-sAddress">Space address</label>
               </div>
-              <button id="loginBtn" class="button button-primary" type="submit">Discard</button>
+              <button id="btndiscard" class="button button-primary" type="submit">Discard</button>
               &nbsp;&nbsp;
               &nbsp;&nbsp;
-              <button id="loginBtn" class="button button-primary" type="submit">Done</button>
+             <button id="btndone" class="button button-primary" type="submit">Done</button>
             </form>
           </div>
         </div>
@@ -72,7 +74,8 @@
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
+    <script src="/scripts/script.js"></script>\
+    <script src="/scripts/createspace.js"></script>
     <script>
         $(document).ready(function(){
             $("#spacesList").addClass("active");
