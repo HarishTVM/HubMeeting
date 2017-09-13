@@ -22,7 +22,7 @@ app.get("/changePassword", (req, res)=>{
   res.render("changepassword", {year: new Date().getFullYear()});
 });
 app.get("/activitylist", (req, res)=>{
-  res.render("activitylist"), {year: new Date().getFullYear()};
+  res.render("activitylist", {year: new Date().getFullYear()});
 });
 app.get("/users", (req, res)=>{
   res.render("users", {year: new Date().getFullYear()});
