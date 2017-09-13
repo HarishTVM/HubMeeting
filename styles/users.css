@@ -47,6 +47,10 @@
     font-size: small;
  }
 
+.subtitle-users, .a_para_subhead {
+    font-style: normal;
+} 
+
 .contents_1 {
     text-align: left;
 }
