@@ -393,17 +393,15 @@ cursor: pointer;
 
 /*createSpace end*/
 
-newmeeting-btn-circle {
-width: 60px;
-height: 60px;
-padding: 6px 0;
-font-size: x-large;
-line-height: 1.42;
-border-radius: 60px;
-position: fixed;
-right: 1%;
-bottom: 15%;
-opacity: 0.6;
+.h-iconls-color{
+color: #ffe084 !important;
+}
+.h-iconls-color:hover{
+ color: #000 !important;
+}
+
+.h6-title-color{
+ color: #0086d8;
 }
 
 /*spacelist page*/
@@ -934,7 +932,7 @@ code,
   }
   .desktop .link-image:hover {
     box-shadow: 0 5px 23px 0 rgba(0, 0, 0, 0.15);
-    background-color: #f8f8f8;
+    background-color: #FFF;
   }
 }
 
