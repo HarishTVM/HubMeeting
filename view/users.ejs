@@ -12,10 +12,9 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/meeting.css">
-    <link rel="stylesheet" href="/styles/revisedmeeting.css">
-
     <link rel="stylesheet" href="/styles/users.css">
+    <link rel="stylesheet" href="/styles/oldmeeting.css">
+    
   </head>
   <body>
     <!-- Page -->
@@ -29,7 +28,7 @@
       <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
               <h5 class="meeting-head-bread">Users</h5>
-              <li><a href="#" class="breadcrumb-links">Home</a></li>
+              <li><a href="dashboard" class="breadcrumb-links">Home</a></li>
               <li>Users</li>
           </ol>
       </div>
@@ -58,125 +57,89 @@
             </div> -->
             <div class="range range-50 offset-top-1">
 
-              <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
+              <div class="cell-sm-6 cell-md-4 cell-lg-3 users-cell">
                 <!-- Thumb corporate-->
-                <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
-                  <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
-                    <div class="thumb-corporate__overlay thumbnail_corp_overlay">
+                <div class="thumb thumb-corporate users-corp users-corp_main well well-lg bg-white">
+                  <div class="thumb-corporate__main users_corp_main2"><img src="" alt="" width="0" height="0">
+                    <div class="thumb-corporate__overlay users_corp_overlay">
                       <ul class="list-inline-sm thumb-corporate__list options">
-                        <li><a class="fa fa-pencil fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="Edit"></a></li>
-                        <li><a class="fa fa-info-circle fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="MoreInfo"></a></li>
+                        <li><a class="icon linear-icon-pencil4" id="edit1" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
                       </ul>
                     </div>
                   </div>
-                  <div class="thumb-corporate__caption thumbnail-corp__caption">
-                    <p class="thumb__subtitle subtitle">Mr.John Doe</p>
-                    <div class="contents-container">  
+                  <div class="thumb-corporate__caption users-corp__caption">
                       <div class="contents_1">
-                        <p class="thumb__subtitle subtitle">Cospace: ABC</p>
-                        <p class="thumb__subtitle subtitle">Owner: Sreeharsha inflexion.com</p>
-                        <p class="thumb__subtitle subtitle">Operator:</p>
-                        <p class="thumb__subtitle subtitle">Invitees: 3</p>
+                        <a href="#" class="subtitle-users-head"><p class="thumb__subtitle">sreeharsha.gv@inflexion.com</p></a>
+                        <p class="thumb__subtitle subtitle-users">Sreeharsha G V</p>
+                        <p class="thumb__subtitle subtitle-users">sreeharsha.gv@inflexion.com</p>
+                        <p class="thumb__subtitle subtitle-users">User</p>
                       </div>
-                      <div class="contents_2">
-                          <p class="thumb__subtitle subtitle">Call reference #: 20170907/0001</p>
-                          <p class="thumb__subtitle subtitle">Call URI: abc</p>
-                          <p class="thumb__subtitle subtitle">Call ID: 700102</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
-              <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
+              <div class="cell-sm-6 cell-md-4 cell-lg-3 users-cell">
                   <!-- Thumb corporate-->
-                  <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
-                    <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
-                      <div class="thumb-corporate__overlay thumbnail_corp_overlay">
+                  <div class="thumb thumb-corporate users-corp users-corp_main well well-lg bg-white">
+                    <div class="thumb-corporate__main users_corp_main2"><img src="" alt="" width="0" height="0">
+                      <div class="thumb-corporate__overlay users_corp_overlay">
                         <ul class="list-inline-sm thumb-corporate__list options">
-                          <li><a class="fa fa-pencil fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="Edit"></a></li>
-                          <li><a class="fa fa-info-circle fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="MoreInfo"></a></li>
+                          <li><a class="icon linear-icon-pencil4 edit_link" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
                         </ul>
                       </div>
                     </div>
-                    <div class="thumb-corporate__caption thumbnail-corp__caption">
-                      <p class="thumb__subtitle subtitle">Mr.ABC &emsp; ITS &emsp; 112/9/17 &emsp; 9:00PM</p>
-                      <div class="contents-container">  
+                      <div class="thumb-corporate__caption users-corp__caption">
                         <div class="contents_1">
-                          <p class="thumb__subtitle subtitle">Cospace: ABC</p>
-                          <p class="thumb__subtitle subtitle">Owner: Sreeharsha inflexion.com</p>
-                          <p class="thumb__subtitle subtitle">Operator:</p>
-                          <p class="thumb__subtitle subtitle">Invitees: 3</p>
-                        </div>
-                        <div class="contents_2">
-                            <p class="thumb__subtitle subtitle">Call reference #: 20170907/0001</p>
-                            <p class="thumb__subtitle subtitle">Call URI: abc</p>
-                            <p class="thumb__subtitle subtitle">Call ID: 700102</p>
+                          <a href="#" class="subtitle-users-head"><p class="thumb__subtitle">test@inflexion.com</p></a>
+                          <p class="thumb__subtitle subtitle-users">test inflexion.com</p>
+                          <p class="thumb__subtitle subtitle-users">test@inflexion.com</p>
+                          <p class="thumb__subtitle subtitle-users">User</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
+                <div class="cell-sm-6 cell-md-4 cell-lg-3 users-cell">
                     <!-- Thumb corporate-->
-                    <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
-                      <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
-                        <div class="thumb-corporate__overlay thumbnail_corp_overlay">
+                    <div class="thumb thumb-corporate users-corp users-corp_main well well-lg bg-white">
+                      <div class="thumb-corporate__main users_corp_main2"><img src="" alt="" width="0" height="0">
+                        <div class="thumb-corporate__overlay users_corp_overlay">
                           <ul class="list-inline-sm thumb-corporate__list options">
-                            <li><a class="fa fa-pencil fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="Edit"></a></li>
-                            <li><a class="fa fa-info-circle fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="MoreInfo"></a></li>
+                            <li><a class="icon linear-icon-pencil4 edit_link" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
                           </ul>
                         </div>
                       </div>
-                      <div class="thumb-corporate__caption thumbnail-corp__caption">
-                        <p class="thumb__subtitle subtitle">Mr.ABC &emsp; ITS &emsp; 112/9/17 &emsp; 9:00PM</p>
-                        <div class="contents-container">  
-                          <div class="contents_1">
-                            <p class="thumb__subtitle subtitle">Cospace: ABC</p>
-                            <p class="thumb__subtitle subtitle">Owner: Sreeharsha inflexion.com</p>
-                            <p class="thumb__subtitle subtitle">Operator:</p>
-                            <p class="thumb__subtitle subtitle">Invitees: 3</p>
-                          </div>
-                          <div class="contents_2">
-                              <p class="thumb__subtitle subtitle">Call reference #: 20170907/0001</p>
-                              <p class="thumb__subtitle subtitle">Call URI: abc</p>
-                              <p class="thumb__subtitle subtitle">Call ID: 700102</p>
-                          </div>
+                      <div class="thumb-corporate__caption users-corp__caption">
+                        <div class="contents_1">
+                          <a href="#" class="subtitle-users-head"><p class="thumb__subtitle">sreeharsha.gv@inflexion.com</p></a>
+                          <p class="thumb__subtitle subtitle-users">Sreeharsha inflexion.com</p>
+                          <p class="thumb__subtitle subtitle-users">sreeharsha.gv@inflexion.com</p>
+                          <p class="thumb__subtitle subtitle-users">User</p>
                         </div>
-                      </div>
+                    </div>
                     </div>
                   </div>
-                  <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
+                  <div class="cell-sm-6 cell-md-4 cell-lg-3 users-cell">
                       <!-- Thumb corporate-->
-                      <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
-                        <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
-                          <div class="thumb-corporate__overlay thumbnail_corp_overlay">
+                      <div class="thumb thumb-corporate users-corp users-corp_main well well-lg bg-white">
+                        <div class="thumb-corporate__main users_corp_main2"><img src="" alt="" width="0" height="0">
+                          <div class="thumb-corporate__overlay users_corp_overlay">
                             <ul class="list-inline-sm thumb-corporate__list options">
-                              <li><a class="fa fa-pencil fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="Edit"></a></li>
-                              <li><a class="fa fa-info-circle fa-lg" href="#" data-toggle="tooltip" data-placement="top" title="MoreInfo"></a></li>
+                              <li><a class="icon linear-icon-pencil4" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
                             </ul>
                           </div>
                         </div>
-                        <div class="thumb-corporate__caption thumbnail-corp__caption">
-                          <p class="thumb__subtitle subtitle">Mr.ABC &emsp; ITS &emsp; 112/9/17 &emsp; 9:00PM</p>
-                          <div class="contents-container">  
-                            <div class="contents_1">
-                              <p class="thumb__subtitle subtitle">Cospace: ABC</p>
-                              <p class="thumb__subtitle subtitle">Owner: Sreeharsha inflexion.com</p>
-                              <p class="thumb__subtitle subtitle">Operator:</p>
-                              <p class="thumb__subtitle subtitle">Invitees: 3</p>
-                            </div>
-                            <div class="contents_2">
-                                <p class="thumb__subtitle subtitle">Call reference #: 20170907/0001</p>
-                                <p class="thumb__subtitle subtitle">Call URI: abc</p>
-                                <p class="thumb__subtitle subtitle">Call ID: 700102</p>
-                            </div>
+                        <div class="thumb-corporate__caption users-corp__caption">
+                          <div class="contents_1">
+                            <a href="#" class="subtitle-users-head"><p class="thumb__subtitle">satish@inflexion.com</p></a>  
+                            <p class="thumb__subtitle subtitle-users">Satish Anand</p>
+                            <p class="thumb__subtitle subtitle-users">satish@inflexion.com</p>
+                            <p class="thumb__subtitle subtitle-users">Operator</p>
                           </div>
-                        </div>
+                      </div>
                       </div>
                     </div>
             </div>
           </div>
-          <a href="#" data-toggle="tooltip" data-placement="bottom" title="New Meeting" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
+          <a href="#" data-toggle="tooltip" data-placement="bottom" title="Add User" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
           <nav class="pagination-nav">
               <ul class="pagination-classic">
                 <li class="active"><span>1</span></li>
@@ -194,7 +157,7 @@
     <script src="/scripts/general.js"></script>
     <script>
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="tooltip"]').tooltip({container: 'body'});   
             $("#usersList").addClass("active");
         });
     </script>
