@@ -14,7 +14,13 @@
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/oldmeeting.css">
     <link rel="stylesheet" href="/styles/meeting.css">
-    
+    <style type="text/css">
+        canvas{
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        </style>
   </head>
   <body>
     <!-- Page -->
@@ -113,10 +119,13 @@
                     <h5 >Activities</h5>
                 </ol>
           </div>
-          <div class="shell">
+          <div style="margin-left: 25px; margin-right:25px">
                 <div class="range range-50 offset-top-1 ">
-                    <div class="cell-sm-12 cell-md-12 cell-lg-12 h-div-border">
+                    <div class="cell-sm-12 cell-md-12 cell-lg-6 h-div-border">
                         <div id="container" style="min-width: 310px; max-width: 600px; height: 350px; margin: 0 auto"></div>
+                    </div>
+                    <div class="cell-sm-12 cell-md-12 cell-lg-6 h-div-border">
+                        <canvas id="canvas"></canvas>
                     </div>
                 </div>
             </div>
@@ -157,9 +166,60 @@
     <script src="/node_modules/highcharts/highcharts.js"></script>
     <script src="/node_modules/highcharts/modules/data.js"></script>
     <script src="/node_modules/highcharts/modules/drilldown.js"></script>
+    <script src="/node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="/node_modules/chart.js/samples/utils.js"></script>
     <script>
         $(document).ready(function(){
+            debugger;
             $("#dashboard").addClass("active");
+
+            var popData = {
+  datasets: [{
+    label: ['Meeting Duration'],
+    data: [{
+      x: 100,
+      y: 0,
+      r: 10
+    }, {
+      x: 60,
+      y: 30,
+      r: 20
+    }, {
+      x: 40,
+      y: 60,
+      r: 25
+    }, {
+      x: 80,
+      y: 80,
+      r: 50
+    }, {
+      x: 20,
+      y: 30,
+      r: 25
+    }, {
+      x: 0,
+      y: 100,
+      r: 5
+    }],
+    backgroundColor: "#3a8fff"
+  }]
+};
+
+            var ctx = document.getElementById("canvas").getContext("2d");
+            var myChart = new Chart(ctx, {
+                type: 'bubble',
+                data: popData,
+                options: {
+                    responsive: true,
+                    title:{
+                        display:false,
+                        text:'Meeting Duration'
+                    },
+                    tooltips: {
+                        mode: 'point'
+                    }
+                }
+            });
 
             Highcharts.chart('container', {
                 chart: {
@@ -238,7 +298,8 @@
         }]
     }
 });
-        });
+});
+
     </script>
   </body>
 </html>
