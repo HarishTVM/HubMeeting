@@ -339,7 +339,7 @@ cursor: pointer;
 
 .fixed-bottom{ position: fixed; bottom: 0; width: 100%; margin-bottom:10px}
 
-.h-m-icon-top{    margin-top: 6% !important;}
+.h-m-icon-top{ margin-top: 6% !important;}
 .h-pages-next{margin-top: -22px !important;}
 
 .h-i-m-top{margin-top: 23px; }
@@ -364,6 +364,8 @@ cursor: pointer;
 .h-height{border-radius: 8px;height: 143px;}
 .h-i-bottom{top: 2px !important;}
 .h-m-icon-top{margin-top: 1% !important; }
+
+
 }
 
 
