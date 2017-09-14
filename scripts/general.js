@@ -7,6 +7,10 @@ $(document).ready(function(){
     })
 
     $('#configureBtn').click(function(){
+        window.location.href='/smtp';
+    })
+
+    $('#smtpBtn').click(function(){
         window.location.href='/dashboard';
     })
 
