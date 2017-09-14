@@ -16,7 +16,7 @@
 }
 
 .users-corp_main:hover {
-    background-color: #f8f8f8;
+    background-color: #fff;
     box-shadow: 5px 5px 3px lightgrey;
     color: black;
 }
@@ -73,7 +73,7 @@
 
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px){
+@media only screen and (min-width: 769px) and (max-width: 1000px){
     .users-corp__caption {
         position: relative;
         bottom: 65%;
