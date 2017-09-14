@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/newmeeting.css">
     <link rel="stylesheet" href="/styles/oldmeeting.css">
-     <link rel="stylesheet" href="/styles/meeting.css">
-
+    <link rel="stylesheet" href="/styles/meeting.css">
+    <link rel="stylesheet" href="/styles/spaces.css">
 
 
    </head>
     <body class=" bg-white">
     <!-- Page -->
+
     <% include navbarhome %>
     <div class="page">
       <div id="page-loader">
@@ -41,7 +42,7 @@
       <section>
        <div class="shell">
         <!-- search box -->
-            <div class="range range-5 h-m-top-none" >
+            <div class="range range-5 h-m-top-none " >
              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
 
                <div class=" col-md-12 col-xs-12 col-lg-4 h-m-top-none "></div>
@@ -55,8 +56,8 @@
                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
 
                  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
-                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  ">
-                  <nav>
+                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  h-navber-padding ">
+                  <nav >
                    <ul class="pagination-classic  h-m-top-none">
                     <li class="active"><span>1</span></li>
                     <li><a href="#">2</a></li>
@@ -70,7 +71,7 @@
                   </div>
                  </div>
                  <div class="range range-70" >
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                  <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                    <div class="h-height  bg-white h-div-border  link-image ">
                     <div class="t-padding">
                      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
@@ -95,8 +96,8 @@
                   </div>
                   <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                    <ul>
-                    <li> <samp ><a class="h-r-star   icon-cursor h-iconls-color  icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"   href="#"></a>
-                     <a class="h-r-star icon-cursor  h-iconls-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="right"  title="Not starred" href="#"></a>
+                    <li> <samp ><a class="h-r-star   icon-cursor h-icon-star-color  icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"   href="#"></a>
+                     <a class="h-r-star icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="right"  title="Not starred" href="#"></a>
                     </samp>
                    </li>
                   </ul>
@@ -109,21 +110,19 @@
 
 
 
-                 <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                  <ul class="list-inline-sm  ">
-                  <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                  <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                  <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                  <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                  <li><a class="thumb-corporate__list h-iconls-color h-iconls-coloricon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                  <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                 </ul>
+                 <div id="icon-list" class="thumb-corporate__overlay text-center  h-i-m-top ">
+                   <ul class="list-inline-sm  ">
+                    <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                     <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                     <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                     <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                     </ul>
                  </ul>
                  </div>
                 </div>
                          </div>
                         </div>
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                  <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                    <div class="h-height  bg-white h-div-border  link-image ">
                     <div class="t-padding">
                         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
@@ -148,8 +147,8 @@
                           </div>
                           <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                            <ul>
-                            <li> <samp ><a class="h-r-star   icon-cursor h-iconls-color   icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
-                             <a class="h-r-star icon-cursor  h-iconls-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
+                            <li> <samp ><a class="h-r-star   icon-cursor h-icon-star-color  icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
+                             <a class="h-r-star icon-cursor  h-icon-star-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
                             </samp>
                            </li>
                           </ul>
@@ -159,21 +158,19 @@
                        </div>
 
                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                         <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                         <ul class="list-inline-sm  ">
-                          <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                          <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                          <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                          <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                          <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                          <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                         </ul>
+                         <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top  ">
+                           <ul class="list-inline-sm  ">
+                            <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                             <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                             <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                             <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                             </ul>
                          </ul>
                          </div>
                         </div>
                        </div>
                       </div>
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                  <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                         <div class="h-height  bg-white h-div-border  link-image ">
                          <div class="t-padding">
                              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
@@ -198,8 +195,8 @@
                                </div>
                                <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                                 <ul>
-                                 <li> <samp ><a class="h-r-star   icon-cursor  h-iconls-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
-                                  <a class="h-r-star icon-cursor  h-iconls-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
+                                 <li> <samp ><a class="h-r-star   icon-cursor  h-icon-star-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
+                                  <a class="h-r-star icon-cursor  h-icon-star-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
                                  </samp>
                                 </li>
                                </ul>
@@ -209,21 +206,19 @@
                             </div>
 
                              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                              <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                              <ul class="list-inline-sm  ">
-                               <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                               <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                               <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                               <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                               <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                               <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                              </ul>
+                              <div id="icon-list" class="thumb-corporate__overlay text-center  h-i-m-top ">
+                                <ul class="list-inline-sm  ">
+                                 <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                  <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                  <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                  <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                  </ul>
                               </ul>
                               </div>
                              </div>
                             </div>
                            </div>
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                  <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                              <div class="h-height  bg-white h-div-border  link-image ">
                               <div class="t-padding">
                                   <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
@@ -248,8 +243,8 @@
                                     </div>
                                     <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                                      <ul>
-                                      <li> <samp ><a class="h-r-star   icon-cursor h-iconls-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
-                                       <a class="h-r-star icon-cursor  icon-sm h-iconls-color linear-icon-star" data-toggle="tooltip" data-placement="bottom" title="Not starred" href="#"></a>
+                                      <li> <samp ><a class="h-r-star   icon-cursor h-icon-star-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
+                                       <a class="h-r-star icon-cursor  icon-sm h-icon-star-color linear-icon-star" data-toggle="tooltip" data-placement="bottom" title="Not starred" href="#"></a>
                                       </samp>
                                      </li>
                                     </ul>
@@ -259,15 +254,13 @@
                                  </div>
 
                                   <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                                   <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                                   <ul class="list-inline-sm  ">
-                                    <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                                    <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                                    <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                                    <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                                    <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                                    <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                                   </ul>
+                                   <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top  ">
+                                     <ul class="list-inline-sm  ">
+                                      <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                       <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                       <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                       <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                       </ul>
                                    </ul>
                                    </div>
                                   </div>
@@ -275,15 +268,20 @@
                                 </div>
                        </div>
 
+
+
+
+
+
                        <div class="range range-70" >
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                        <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                          <div class="h-height  bg-white h-div-border  link-image ">
                           <div class="t-padding">
                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
 
                         <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
                          <ul class="text-center" >
-                          <li>  <b><h6 class="h6-title-color" >Harish</h6></b> </li>
+                          <li>  <b><h6 class="h6-title-color">Harish</h6></b> </li>
                          </ul>
                          <ul >
                          <li> <b><h6 class="h6-title">Owner:</h6></b>    </li>
@@ -301,8 +299,8 @@
                         </div>
                         <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                          <ul>
-                          <li> <samp ><a class="h-r-star   icon-cursor  h-iconls-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"   href="#"></a>
-                           <a class="h-r-star icon-cursor  h-iconls-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="right"  title="Not starred" href="#"></a>
+                          <li> <samp ><a class="h-r-star   icon-cursor h-icon-star-color  icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"   href="#"></a>
+                           <a class="h-r-star icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="right"  title="Not starred" href="#"></a>
                           </samp>
                          </li>
                         </ul>
@@ -316,27 +314,25 @@
 
 
                        <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                        <ul class="list-inline-sm  ">
-                        <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                        <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                        <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                        <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                        <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                        <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                       </ul>
+                         <ul class="list-inline-sm  ">
+                          <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                           <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                           <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                           <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                           </ul>
                        </ul>
                        </div>
                       </div>
                                </div>
                               </div>
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                        <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                          <div class="h-height  bg-white h-div-border  link-image ">
                           <div class="t-padding">
                               <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
 
                                 <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
                                  <ul class="text-center" >
-                                  <li>  <b><h6 class="h6-title-color">Sreeharsha</h6></b> </li>
+                                  <li>  <b><h6 class="h6-title-color" >Sreeharsha</h6></b> </li>
                                  </ul>
                                  <ul >
                                  <li> <b><h6 class="h6-title">Owner:</h6></b>    </li>
@@ -354,8 +350,8 @@
                                 </div>
                                 <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                                  <ul>
-                                  <li> <samp ><a class="h-r-star   icon-cursor h-iconls-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
-                                   <a class="h-r-star icon-cursor  h-iconls-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
+                                  <li> <samp ><a class="h-r-star   icon-cursor h-icon-star-color  icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
+                                   <a class="h-r-star icon-cursor  h-icon-star-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
                                   </samp>
                                  </li>
                                 </ul>
@@ -365,28 +361,26 @@
                              </div>
 
                          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                               <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                               <ul class="list-inline-sm  ">
-                                <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                                <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                                <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                                <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                                <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                                <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                               </ul>
+                               <div id="icon-list" class="thumb-corporate__overlay text-center  h-i-m-top ">
+                                 <ul class="list-inline-sm  ">
+                                  <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                   <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                   <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                   <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                   </ul>
                                </ul>
                                </div>
                               </div>
                              </div>
                             </div>
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                        <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                               <div class="h-height  bg-white h-div-border  link-image ">
                                <div class="t-padding">
                                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
 
                                      <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
                                       <ul class="text-center" >
-                                       <li> <b><h6 class="h6-title-color">Sanjay </h6></b> </li>
+                                       <li> <b><h6 class="h6-title-color" >Sanjay </h6></b> </li>
                                       </ul>
                                       <ul >
                                       <li> <b><h6 class="h6-title">Owner:</h6></b>    </li>
@@ -404,8 +398,8 @@
                                      </div>
                                      <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                                       <ul>
-                                       <li> <samp ><a class="h-r-star   icon-cursor h-iconls-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
-                                        <a class="h-r-star icon-cursor  h-iconls-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
+                                       <li> <samp ><a class="h-r-star   icon-cursor  h-icon-star-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
+                                        <a class="h-r-star icon-cursor  h-icon-star-color icon-sm linear-icon-star" data-toggle="tooltip" data-placement="right" title="Not starred" href="#"></a>
                                        </samp>
                                       </li>
                                      </ul>
@@ -415,21 +409,19 @@
                                   </div>
 
                                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                                    <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                                    <ul class="list-inline-sm  ">
-                                     <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                                     <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                                     <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                                     <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                                     <li><a class="thumb-corporate__list h-iconls-color icon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                                     <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                                    </ul>
+                                    <div id="icon-list" class="thumb-corporate__overlay text-center  h-i-m-top ">
+                                      <ul class="list-inline-sm  ">
+                                       <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                        <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                        <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                        <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                        </ul>
                                     </ul>
                                     </div>
                                    </div>
                                   </div>
                                  </div>
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                        <div class="cell-sm-6 cell-md-6 cell-xs-12 cell-lg-3 thumb-corporate ">
                                    <div class="h-height  bg-white h-div-border  link-image ">
                                     <div class="t-padding">
                                         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
@@ -454,8 +446,8 @@
                                           </div>
                                           <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
                                            <ul>
-                                            <li> <samp ><a class="h-r-star   icon-cursor  h-iconls-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
-                                             <a class="h-r-star icon-cursor h-iconls-color  icon-sm linear-icon-star" data-toggle="tooltip" data-placement="bottom" title="Not starred" href="#"></a>
+                                            <li> <samp ><a class="h-r-star   icon-cursor h-icon-star-color icon-sm fa-dot-circle-o" data-toggle="tooltip" data-placement="top" title="Status" href="#"></a>
+                                             <a class="h-r-star icon-cursor  icon-sm h-icon-star-color linear-icon-star" data-toggle="tooltip"  data-placement="bottom" title="Not starred" href="#"></a>
                                             </samp>
                                            </li>
                                           </ul>
@@ -465,15 +457,13 @@
                                        </div>
 
                                         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                                         <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                                         <ul class="list-inline-sm  ">
-                                          <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-reading" data-toggle="tooltip" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="info" href="#Edit"></a></li>
-                                          <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic" data-toggle="tooltip" data-placement="top" title="unmute" href="#invite"></a></li>
-                                          <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-mic-mute" data-toggle="tooltip" data-placement="top" title="Mute" href="#Member"></a></li>
-                                          <li><a class="thumb-corporate__list h-iconls-color  icon-sm linear-icon-camera" data-toggle="tooltip" data-placement="top" title="unmute" href="#Settings"></a></li>
-                                          <li><a class="thumb-corporate__list  h-iconls-color icon-sm linear-icon-camera-crossed" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"></a></li>
-                                          <li><a class="thumb-corporate__list  h-i-color icon-sm linear-icon-trash2 " data-toggle="tooltip" data-placement="top" title="Delete" href="#Delete"></a></li>
-                                         </ul>
+                                         <div id="icon-list" class="thumb-corporate__overlay text-center  h-i-m-top ">
+                                           <ul class="list-inline-sm  ">
+                                            <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                             <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                             <li><p class="btn btn-warning1 btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                             <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                             </ul>
                                          </ul>
                                          </div>
                                         </div>
@@ -484,29 +474,50 @@
 
 
 
-                       <a id="ceateSpace" href="/createspace"data-toggle="tooltip" data-placement="bottom" title="CreateSpace" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
+
+
+
+
+
+
+
+
+           <a id="ceateSpace" href="/createspace"data-toggle="tooltip" data-placement="bottom" title="CreateSpace" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
 
             </div>
+
+            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
+
+              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
+              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  h-navber-padding">
+               <nav>
+                <ul class="pagination-classic  h-m-top-none">
+                 <li class="active"><span>1</span></li>
+                 <li><a href="#">2</a></li>
+                 <li><a href="#">3</a></li>
+                 <li><a href="#">4</a></li>
+                 <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
+                </ul>
+               </nav>
+              </div></div>
+
            </div>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
 
-          <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
-          <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  ">
-           <nav>
-            <ul class="pagination-classic  h-m-top-none">
-             <li class="active"><span>1</span></li>
-             <li><a href="#">2</a></li>
-             <li><a href="#">3</a></li>
-             <li><a href="#">4</a></li>
-             <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
-            </ul>
-           </nav>
-          </div></div>
+
+
        </section>
 
-     <% include footer %>
+
+     <%include footer %>
+
+
+
+
+
+
+
 
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/scripts/core.min.js"></script>
@@ -514,10 +525,12 @@
     <script src="/scripts/jquery.contenthover.min.js"></script>
     <script src="/scripts/general.js"></script>
     <script src="/scripts/spacelist.js"></script>
-    <script src="/scripts/jquery.flexdatalist.min.js"></script>
+
     <script>
         $(document).ready(function(){
             $("#spacesList").addClass("active");
+
+
         });
     </script>
   </body>

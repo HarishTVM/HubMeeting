@@ -115,7 +115,7 @@ html {
  font-size: 12px;
  border-radius: 17px;
 }
-.btn-circle:hover{background-color: #E4F5F9;}
+
 
 
 .h_btn{
@@ -358,6 +358,17 @@ cursor: pointer;
 
 @media (min-width: 700px) and (max-width: 1025px) {
 .h-i-m-top{margin-top: 9px;}
+.thumb-corporate__overlay{
+  padding: 5px 10px 5px !important;
+}
+}
+
+
+@media (min-width: 600px) and (max-width: 700px) {
+.h-i-m-top{margin-top: 14px;}
+.thumb-corporate__overlay{
+  padding: 10px 10px 5px !important;
+}
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
@@ -366,6 +377,9 @@ cursor: pointer;
 .h-m-icon-top{margin-top: 1% !important; }
 
 
+
+.h-i-m-top{margin-top: 8px; }
+
 }
 
 
@@ -373,35 +387,15 @@ cursor: pointer;
 
 /*createSpace*/
 
-.c-chip {
-    display: inline-block;
-    padding: 0 25px;
-    height: 50px;
-    font-size: 16px;
-    line-height: 50px;
-    border-radius: 25px;
-    background-color: #f1f1f1;
-}
-
-.c-chip .c-circle{
-    float: left;
-    margin: 0 10px 0 -25px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-}
 
 /*createSpace end*/
 
-.h-iconls-color{
-color: #ffe084 !important;
-}
-.h-iconls-color:hover{
- color: #000 !important;
-}
 
 .h6-title-color{
- color: #0086d8;
+ color: #23d7b2;
+ font-size: 16px;
+line-height: 1.28;
+font-weight: 900;
 }
 
 /*spacelist page*/
@@ -412,6 +406,26 @@ color: #ffe084 !important;
  border-radius: 5px;
  margin-left: 42%;
 }
+
+
+
+
+
+/*/////*/
+
+
+
+/*end*/
+
+
+
+
+
+
+
+
+
+
 /*spacelist page end*/
 
 /*Harish Styles end */
