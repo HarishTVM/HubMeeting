@@ -48,25 +48,25 @@
             <div class="cell-md-10 cell-lg-8">
               <!-- RD Mailform-->
               <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                <div class="form-wrap form-wrap_icon linear-icon-envelope">
+                <div class="form-wrap form-wrap_icon linear-icon-server">
                   <input class="form-input" id="serveraddress" type="text" name="serveraddress" data-constraints="@Required">
-                  <label class="form-label" for="serveraddress">Server Address</label>
+                  <label class="form-label" for="serveraddress">SMTP Server Address</label>
                 </div>
 				        <div class="form-wrap form-wrap_icon linear-icon-at-sign">
                   <input class="form-input" id="username" type="email" name="username" data-constraints="@Required">
-                  <label class="form-label" for="username">Username</label>
+                  <label class="form-label" for="username">SMTP Username</label>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-key-hole">
                   <input class="form-input" id="password" type="password" name="password" data-constraints="@Required">
-                  <label class="form-label" for="password">Password</label>
+                  <label class="form-label" for="password">SMTP Password</label>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-cable">
                     <input class="form-input" id="tlsport" type="text" name="tlsport" data-constraints="@Required">
-                    <label class="form-label" for="tlsport">Port (TLS)</label>
+                    <label class="form-label" for="tlsport">SMTP Port(TLS)</label>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-cable">
                     <input class="form-input" id="sslport" type="text" name="sslport" data-constraints="@Required">
-                    <label class="form-label" for="sslport">Port (SSL)</label>
+                    <label class="form-label" for="sslport">SMTP Port(SSL)</label>
                 </div> 
                 <button id="smtpBtn" class="button button-primary" type="submit">Submit</button>
               </form>
