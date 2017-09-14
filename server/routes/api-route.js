@@ -45,4 +45,7 @@ app.get("/dashboard",(req,res)=>{
 app.get("/smtp",(req,res)=>{
   res.render("smtp", {year: new Date().getFullYear()}); 
 });
+app.get("/login", (req, res)=>{
+  res.render("login", {year: new Date().getFullYear()});
+});
 module.exports = app;

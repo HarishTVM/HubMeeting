@@ -58,7 +58,7 @@
 
 span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
     position: relative;
-    left: 16%;
+    left: 44px;
 }
 
 .datetime-picker-container{
@@ -92,7 +92,7 @@ span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-cont
 
     span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-container{
         position: relative;
-        left: 5.5% !important;
+        left: 44px!important;
     }
 
 }

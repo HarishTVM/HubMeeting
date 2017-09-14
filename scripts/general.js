@@ -18,8 +18,6 @@ $(document).ready(function(){
         window.location.href='/newmeeting';
     })
 
-
-
     // $(function() {
     //     $(".rd-navbar-nav li").click(function() {
     //         console.log('clicked')

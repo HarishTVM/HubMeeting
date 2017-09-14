@@ -28,7 +28,7 @@
       <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
               <h5 class="meeting-head-bread">Meeting</h5>
-              <li><a href="dashboard" class="breadcrumb-links">Home</a></li>
+              <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
               <li>Meeting</li>
           </ol>
       </div>
@@ -59,12 +59,12 @@
 
               <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
                 <!-- Thumb corporate-->
-                <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
+                <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main link-image well well-lg bg-white">
                   <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
                     <div class="thumb-corporate__overlay thumbnail_corp_overlay">
                       <ul class="list-inline-sm thumb-corporate__list">
-                        <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"></a></li>
-                        <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-placement="bottom" title="Info"></a></li>
+                        <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
+                        <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Info"></a></li>
                       </ul>
                     </div>
                   </div>
@@ -81,12 +81,12 @@
               </div>
               <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
                   <!-- Thumb corporate-->
-                  <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
+                  <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main link-image well well-lg bg-white">
                     <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
                       <div class="thumb-corporate__overlay thumbnail_corp_overlay">
                         <ul class="list-inline-sm thumb-corporate__list">
-                          <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"></a></li>
-                          <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-placement="bottom" title="Info"></a></li>
+                          <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
+                          <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Info"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -103,12 +103,12 @@
                 </div>
                 <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
                     <!-- Thumb corporate-->
-                    <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
+                    <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main link-image well well-lg bg-white">
                       <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
                         <div class="thumb-corporate__overlay thumbnail_corp_overlay">
                           <ul class="list-inline-sm thumb-corporate__list">
-                            <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"></a></li>
-                            <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-placement="bottom" title="Info"></a></li>
+                            <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
+                            <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Info"></a></li>
                           </ul>
                         </div>
                       </div>
@@ -125,12 +125,12 @@
                   </div>
                   <div class="cell-sm-6 cell-md-4 cell-lg-3 thumbnail-cell">
                       <!-- Thumb corporate-->
-                      <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main well well-lg bg-white">
+                      <div class="thumb thumb-corporate thumbnail-corp thumbnail-corp_main link-image well well-lg bg-white">
                         <div class="thumb-corporate__main thumbnail_corp_main2"><img src="" alt="" width="0" height="0">
                           <div class="thumb-corporate__overlay thumbnail_corp_overlay">
                             <ul class="list-inline-sm thumb-corporate__list">
-                              <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"></a></li>
-                              <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-placement="bottom" title="Info"></a></li>
+                              <li><a class="icon linear-icon-pencil5" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Edit"></a></li>
+                              <li><a class="icon linear-icon-reading" href="#" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Info"></a></li>
                             </ul>
                           </div>
                         </div>
@@ -147,7 +147,7 @@
                     </div>
             </div>
           </div>
-          <a href="newmeeting" data-toggle="tooltip" data-placement="bottom" title="New Meeting" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
+          <a href="/newmeeting" data-container="body" data-toggle="tooltip" data-placement="bottom" title="New Meeting" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
           <nav class="pagination-nav">
               <ul class="pagination-classic">
                 <li class="active"><span>1</span></li>
@@ -166,7 +166,7 @@
     <script>
         $(document).ready(function(){
             $("#meetingList").addClass("active");
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="tooltip"]').tooltip({container: 'body'});   
         });
     </script>
   </body>

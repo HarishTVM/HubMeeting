@@ -12,14 +12,15 @@
 
 .users-corp_main {
     box-shadow: none;
-    transition: box-shadow 0.5s; 
+    transition: box-shadow 0.5s;
+    color: black; 
 }
 
-.users-corp_main:hover {
+/* .users-corp_main:hover {
     background-color: #fff;
     box-shadow: 5px 5px 3px lightgrey;
     color: black;
-}
+} */
 
 .users_corp_overlay {
     padding: 0px;
