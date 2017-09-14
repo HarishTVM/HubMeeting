@@ -22,7 +22,25 @@
             <li id="spacesList"><a class="h-cursor" href="/spacelist">Spaces</a></li>
             <li id="usersList"><a class="h-cursor" href="/users">Users</a></li>
             <li id="logsList"><a class="h-cursor" href="/logs">Logs</a></li>
-            <li id="settingsList"><a class="h-cursor" href="/settings">Settings</a></li>
+            <li id="settingsList" class="rd-navbar--has-dropdown rd-navbar-submenu">
+              <a class="h-cursor" href="/settings">Settings</a>
+              <ul class="rd-navbar-dropdown rd-navbar-open-right">
+                <li><a href="#">My Profile</a>
+                </li>
+                <li><a href="/changepassword">Change Password</a>
+                </li>
+                <li class="rd-navbar--has-dropdown rd-navbar-submenu">
+                  <a href="/configure">Configure</a>
+                  <ul class="rd-navbar-dropdown">
+                    <li><a href="/configure">API</a></li>
+                    <li><a href="/smtp">SMTP</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
 </header>
+
+<!-- <span class="rd-navbar-submenu-toggle"></span>
+<span class="rd-navbar-submenu-toggle"></span> -->
