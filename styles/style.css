@@ -342,14 +342,30 @@ cursor: pointer;
 .h-m-icon-top{ margin-top: 6% !important;}
 .h-pages-next{margin-top: -22px !important;}
 
-.h-i-m-top{margin-top: 23px; }
+.h-i-m-top{margin-top: 6px; }
 
  .h-i-color{color: red !important ;
   cursor: pointer !important;
  }
 
 
-
+ .h6-title-color-meeting{
+  color: #23d7b2;
+  font-size: medium;
+  white-space: nowrap; 
+ 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+ }
+ .h6-title-color-meeting:hover{
+  color: #161817;
+}
+.h6-title-color-owner {
+  font-size:small;color: #000;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 
 @media (min-width: 1000px) and (max-width: 1025px) {
 .h-m-icon-top{ margin-top: 6% !important;}
@@ -382,7 +398,17 @@ cursor: pointer;
 
 }
 
-
+.h-cancel-btn {
+  background: #DF3B3B;
+  color: white !important;
+  }
+  
+  .h-cancel-btn:hover {
+  background: black;
+  }
+.h-a-padding{
+ padding:15px 10px 5px;
+}
 
 
 /*createSpace*/
@@ -393,9 +419,11 @@ cursor: pointer;
 
 .h6-title-color{
  color: #23d7b2;
- font-size: 16px;
-line-height: 1.28;
-font-weight: 900;
+ font-size: medium;
+
+}
+.h6-title-color:hover{
+  color: #161817;
 }
 
 /*spacelist page*/

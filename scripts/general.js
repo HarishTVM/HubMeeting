@@ -62,7 +62,6 @@ $(document).ready(function () {
            }
         }
         var attr = $(this).attr
-
     });
 
 });
