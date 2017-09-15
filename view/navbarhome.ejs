@@ -14,7 +14,7 @@
           <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="h-logo-image"src="images/logo.png"/></a></div>
         </div>
         <!-- RD Navbar Nav-->
-        <div class="rd-navbar-nav-wrap">
+        <div class="rd-navbar-nav-wrap nav_position">
           <ul class="rd-navbar-nav" id="nav-bar">
             <li id="dashboard"><a class="h-cursor" href="/dashboard">Dashboard</a></li>
             <li id="meetingList"><a class="h-cursor" href="/meeting">Meeting</a></li>
@@ -22,7 +22,27 @@
             <li id="spacesList"><a class="h-cursor" href="/spacelist">Spaces</a></li>
             <li id="usersList"><a class="h-cursor" href="/users">Users</a></li>
             <li id="logsList"><a class="h-cursor" href="/logs">Logs</a></li>
-            <li id="settingsList"><a class="h-cursor" href="/settings">Settings</a></li>
+            <li id="settingsList" class="rd-navbar--has-dropdown rd-navbar-submenu">
+              <a class="h-cursor" href="/settings">Settings</a>
+              <ul class="rd-navbar-dropdown rd-navbar-open-right">
+                <li><a href="#">My Profile</a></li>
+                <li><a href="/changepassword">Change Password</a></li>
+                <li class="rd-navbar--has-dropdown rd-navbar-submenu">
+                  <a href="/configure">Configure</a>
+                  <ul class="rd-navbar-dropdown">
+                    <li><a href="/configure">API</a></li>
+                    <li><a href="/smtp">SMTP</a></li>
+                  </ul>
+                </li>
+                <li id="signoutBtn"><a class="h-cursor" href="/login">Sign out</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
+      </div>
+    </nav>  
+  </div>
 </header>
+
+<!-- <span class="rd-navbar-submenu-toggle"></span>
+<span class="rd-navbar-submenu-toggle"></span> -->

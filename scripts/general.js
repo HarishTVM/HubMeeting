@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 $(document).ready(function () {
     $('#loginBtn').click(function () {
         window.location.href = '/configure';
@@ -45,8 +46,26 @@ $(document).ready(function () {
         var attr = $(this).attr
 
     });
+=======
+$(document).ready(function(){
+    
 
+    $('#loginBtn').click(function(){
+        window.location.href='/configure';
+    })
 
+    $('#configureBtn').click(function(){
+        window.location.href='/smtp';
+    })
+
+    $('#smtpBtn').click(function(){
+        window.location.href='/dashboard';
+    })
+
+    $('#meetingBtn').click(function(){
+        window.location.href='/newmeeting';
+    })
+>>>>>>> 4f3cf4d68e78a37fc49277dc8ea35580381b8a07
 
     // $(function() {
     //     $(".rd-navbar-nav li").click(function() {

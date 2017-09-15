@@ -12,14 +12,15 @@
 
 .thumbnail-corp_main {
     box-shadow: none;
-    transition: box-shadow 0.5s; 
+    transition: box-shadow 0.5s;
+    color: black; 
 }
 
-.thumbnail-corp_main:hover {
-    background-color: #f8f8f8;
+/* .thumbnail-corp_main:hover {
+    background-color: #fff;
     box-shadow: 5px 5px 3px lightgrey;
     color: black;
-}
+} */
 
 .thumbnail_corp_overlay {
     padding: 0px;
