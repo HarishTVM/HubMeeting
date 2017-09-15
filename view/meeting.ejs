@@ -11,6 +11,7 @@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.1/css/jasny-bootstrap.css"> -->
     <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/newmeeting.css">
@@ -416,11 +417,20 @@
 
 
 
-
-           <a  href="/newmeeting"data-toggle="tooltip" data-placement="bottom" title="CreateMeeting" class="button button-primary icon linear-icon-plus newmeeting-btn-circle"></a>
-
-            </div>
-
+<!-- Modal Content -->
+           <a href="#" style="position: fixed; top:25%; right:2%; opacity:0.6;" class="button button-primary" data-toggle="modal" data-target="#myModal">Create Meeting</a>
+           <div class="container">
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <% include modalmeeting %>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </div>
+<!-- Modal Content END -->
             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
 
               <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
@@ -455,11 +465,14 @@
 
 
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/scripts/core.min.js"></script>
     <script src="/scripts/script.js"></script>
     <script src="/scripts/jquery.contenthover.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.1/js/jasny-bootstrap.js"></script> -->
     <script src="/scripts/general.js"></script>
     <script src="/scripts/spacelist.js"></script>
+
 
     <script>
        $(document).ready(function(){
