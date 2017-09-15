@@ -29,8 +29,9 @@
           <ol class="breadcrumb">
               <h5 class="newmeeting-head-bread"><%= translation.SCHEDULE_MEETING_HEADER %></h5>
               <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
+              <li><a href="/meeting" class="breadcrumb-links">Meeting</a></li>
               <li>New Meeting</li>
-          </ol>
+          </ol>   
       </div>
       <section class="section-lg bg-white text-center main-section">
         <div class="shell">
@@ -104,8 +105,8 @@
               </form>
               <br>
               <div class="header-div">
-                  <button class="btn btn-secondary btn-lg cancel-btn text-center"><%= translation.SCHEDULE_MEETING_CANCEL %></button>
-                  <button class="btn btn-primary btn-lg done-btn"><%= translation.SCHEDULE_MEETING_DONE %></button>
+                <a href="/meeting" class="button cancel-btn text-center"><%= translation.SCHEDULE_MEETING_CANCEL %></a>
+                <a href="/meeting" class="button button-primary done-btn"><%= translation.SCHEDULE_MEETING_DONE %></a>
               </div>  
             </div>
           </div>

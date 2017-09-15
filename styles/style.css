@@ -28079,8 +28079,8 @@ yx-axis
 
 /* Sreeharsha - styles - start*/
   .nav_position {
-    position: relative;
-    right: 300px;
+    position: absolute;
+    right: 24%;
   }
 
 /* Sreeharsha - styles - end*/
