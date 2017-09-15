@@ -96,7 +96,7 @@ localLang = osLocale.sync().toString();
     app.use('/site-config.js',express.static('site-config.js'));
 	/*END Configuration for static pages*/
 
-    app.use('/favicon.ioc',express.static('images/favicon.ioc'));
+    app.use('/logo.png',express.static('images/logo.png'));
 
 	//Set headers for all incoming requests
 	app.all('/*', (request, response, next)=>{
