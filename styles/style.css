@@ -58,6 +58,10 @@
 *   6. Fonts
 *     6.1 FontAwesome
 *     6.2 MDI
+    
+    7. zoomindiv -446 to 
+
+
 **/
 
 
@@ -259,7 +263,7 @@ cursor: pointer;
 }
 
 .t-padding{padding: 5px}
-.h-height{border-radius: 2px;min-height:160px;}
+.h-height{border-radius: 2px;min-height:160px !important;}
 .h-logo-image{width: 15%;}
 .h6-title{font-size:small;color: #000;}
 .h6-paragraph{font-size:small; color: #888;}
@@ -352,19 +356,19 @@ cursor: pointer;
  .h6-title-color-meeting{
   color: #23d7b2;
   font-size: medium;
-  white-space: nowrap; 
- 
+  white-space: nowrap;
+
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
  }
  .h6-title-color-meeting:hover{
   color: #161817;
 }
 .h6-title-color-owner {
   font-size:small;color: #000;
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
 @media (min-width: 1000px) and (max-width: 1025px) {
@@ -372,7 +376,7 @@ cursor: pointer;
 .h-i-m-top{margin-top: 9px;}
 .thumb-corporate__overlay{
    padding: 2px 10px 5px !important;
-  
+
   }
 }
 
@@ -425,7 +429,7 @@ cursor: pointer;
   background: #DF3B3B;
   color: white !important;
   }
-  
+
   .h-cancel-btn:hover {
   background: black;
   }
@@ -439,13 +443,67 @@ cursor: pointer;
 
 /*createSpace end*/
 
+/*Harish Styles stat for zoomindiv */
 
+.text-margin-top{
+  margin-top: 5px;
+}
+.div-border-bottom{
+  border-bottom:1px solid #000000;
+  border-radius: 17px;
+}
+
+.btn-space-circle{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 10%;
+  margin: auto;
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 17px;
+ }
+ 
+ .btn-space-circle-icon{
+  font-size: 17px !important;
+  line-height: 17px !important;
+ }
+
+
+
+.principale {
+    height: 160px !important;
+    width: 100% !important;
+
+    position: relative;
+}
+.principale .contenitore {
+    background-color: #fff;
+    width: 100%;
+    min-height:160px;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
+.close{
+  
+}
+/* .contenitore:hover .content {
+    display: block;
+}
+.contenitore:hover.immagine {
+	position:relative;
+} */
+
+/*Harish Styles End for zoomindiv */
 .h6-title-color{
  color: #23d7b2;
  font-size: medium;
 
 }
- 
+
 .h6-title-color:hover{
   color: #161817;
 }
@@ -28135,7 +28193,7 @@ yx-axis
     right: 24%;
   }
 
-  @media only screen and (min-width: 992px) and (max-width: 1199px){ 
+  @media only screen and (min-width: 992px) and (max-width: 1199px){
     .rd-navbar-brand.logo-place {
       position: absolute;
       left: 0;

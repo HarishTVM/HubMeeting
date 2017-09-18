@@ -31,21 +31,24 @@ app.get("/spacelist", (req, res)=>{
   res.render("spacelist", {year: new Date().getFullYear()});
 });
 app.get("/createspace",(req,res)=>{
- res.render("createspace", {year: new Date().getFullYear()}); 
+ res.render("createspace", {year: new Date().getFullYear()});
 });
 app.get("/logs",(req,res)=>{
-  res.render("logs", {year: new Date().getFullYear()}); 
+  res.render("logs", {year: new Date().getFullYear()});
 });
 app.get("/settings",(req,res)=>{
-  res.render("settings", {year: new Date().getFullYear()}); 
+  res.render("settings", {year: new Date().getFullYear()});
 });
 app.get("/dashboard",(req,res)=>{
-  res.render("dashboard", {year: new Date().getFullYear()}); 
+  res.render("dashboard", {year: new Date().getFullYear()});
 });
 app.get("/smtp",(req,res)=>{
-  res.render("smtp", {year: new Date().getFullYear()}); 
+  res.render("smtp", {year: new Date().getFullYear()});
 });
 app.get("/login", (req, res)=>{
   res.render("login", {year: new Date().getFullYear()});
+});
+app.get("/zoomindiv", (req, res)=>{
+  res.render("zoomindiv", {year: new Date().getFullYear()});
 });
 module.exports = app;
