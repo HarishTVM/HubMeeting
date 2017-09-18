@@ -48,4 +48,7 @@ app.get("/smtp",(req,res)=>{
 app.get("/login", (req, res)=>{
   res.render("login", {year: new Date().getFullYear()});
 });
+app.get("/onhovermeeting", (req, res)=>{
+  res.render("onhovermeeting", {year: new Date().getFullYear()});
+});
 module.exports = app;
