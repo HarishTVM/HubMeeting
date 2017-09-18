@@ -28200,4 +28200,25 @@ yx-axis
     }
   }
 
+  /* onhovermeeting styles Begin */
+
+    .parentCell{
+      height: 200px;
+      padding: 20px;
+      font-size: small;
+      text-align: left;
+      position: relative;
+      display: block;
+      top: 0;
+      left: 0;
+    }
+
+    .closeBtn {
+      position: relative;
+      bottom: 120px;
+      left: 95%;
+    }
+
+  /* onhovermeeting styles End */
+
 /* Sreeharsha - styles - end*/

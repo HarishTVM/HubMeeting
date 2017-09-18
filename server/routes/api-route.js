@@ -51,4 +51,7 @@ app.get("/login", (req, res)=>{
 app.get("/zoomindiv", (req, res)=>{
   res.render("zoomindiv", {year: new Date().getFullYear()});
 });
+app.get("/onhovermeeting", (req, res)=>{
+  res.render("onhovermeeting", {year: new Date().getFullYear()});
+});
 module.exports = app;
