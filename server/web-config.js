@@ -9,7 +9,7 @@ module.exports.envType = env;
 
 module.exports.app = {
 	enableSSL: false,
-	port: 8080,
+	port: 9001,
 	appStage: true, // true for development and false for live
 	httpsCert: {
 		cert: './certificates/certificate.pem',
