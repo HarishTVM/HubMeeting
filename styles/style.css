@@ -338,6 +338,7 @@ cursor: pointer;
 /* none */
 .h-m-top-none{margin-top: 0px 0px 0px 0px !important;}
 .h-padding-none{padding:  0px 0px 0px 0px !important;}
+.h-m-top-none{margin-top: 0px !important;}
 /* none end */
 
 
@@ -445,6 +446,18 @@ cursor: pointer;
 
 /*Harish Styles stat for zoomindiv */
 
+.z-index-div{
+  z-index:999 !important;
+}
+.icon-right{
+  float: right;
+}
+.scroll-icon{
+  height: 175px;
+  width: 300px;
+  overflow-y: scroll;
+}
+
 .text-margin-top{
   margin-top: 5px;
 }
@@ -462,42 +475,59 @@ cursor: pointer;
   text-align: center;
   padding: 6px 0;
   border-radius: 17px;
+
  }
  
  .btn-space-circle-icon{
   font-size: 17px !important;
   line-height: 17px !important;
  }
+.parent-div{
 
-
-
-.principale {
-    height: 160px !important;
-    width: 100% !important;
-
-    position: relative;
-}
-.principale .contenitore {
-    background-color: #fff;
-    width: 100%;
-    min-height:160px;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 160px;
+  width: 300;
+  border-radius: 2px;
 }
 
-.close{
-  
+
+ .principale {
+  height: 160px;
+  width: 300;
+  border-radius: 2px;
+  min-height:160px;
+  position: relative;
 }
-/* .contenitore:hover .content {
-    display: block;
+.principale  .parent-div{
+  background-color: #fff;
+  height: 160px;
+  width: 300;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
 }
-.contenitore:hover.immagine {
-	position:relative;
-} */
 
 /*Harish Styles End for zoomindiv */
+
+
+/* BEGIN CMS Hub Meeting */
+.bg-color{
+  background-color: #eee;
+}
+/* End CMS Hub Meeting */
+
+
+
+
+
+
+
+
+
 .h6-title-color{
  color: #23d7b2;
  font-size: medium;
