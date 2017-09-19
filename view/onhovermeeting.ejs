@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-  <head>
+
+<head>
     <!-- Site Title-->
     <title>CMS Hub Create Meeting</title>
     <meta name="format-detection" content="telephone=no">
@@ -15,129 +16,188 @@
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/newmeeting.css">
 
-  </head>
-  <!-- onhovermeeting Page Begin -->
-  <body>
+</head>
+<!-- onhovermeeting Page Begin -->
+
+<body>
     <!-- Page Header -->
-    <% include navbarhome %> 
-    <!-- Page Begin-->
-    <div class="page">
-      <div id="page-loader">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
-      </div>
-      <!-- Breadcrumb Navbar Begin-->
-      <div class="container-fluid breadcrumb-container">
-          <ol class="breadcrumb">
-              <h5 class="newmeeting-head-bread"><%= translation.SCHEDULE_MEETING_HEADER %></h5>
-              <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-              <li><a href="/meeting" class="breadcrumb-links">Meeting</a></li>
-              <li>New Meeting</li>
-          </ol>   
-      </div>
-      <!-- Breadcrumb Navbar End-->
-      <!-- Meeting table view Begin -->
-      <section class="section-lg bg-white">
-        <div class="shell">
-            <div class="range range-center">
-                <div class="cell-lg-3 rounded">      
-                    <div class="bg-white well parentCell">
-                            <div class="contents">
-                                <p>Owner: Sreeharsha@infelxion.com</p>
-                                <p>Tenant: ITS</p>
-                                <p>CallID: 123456</p>
-                            </div>
-                            <a hef="#" data-toggle="tooltip" data-placement="left" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
-                            <div class="contents child2">
-                                <p>Call reference #: 20170907/0001</p>
-                                <p>Call URI: Sreeharsha.inflexion.com</p>
-                                <p>Call ID: 700102</p>
-                            </div>
-                    </div>
-                </div> 
-                <div class="cell-lg-3 rounded">  
-                    <div class="bg-white well parentCell">
-                            <div class="contents">
-                                <p>Owner: Sreeharsha@infelxion.com</p>
-                                <p>Tenant: ITS</p>
-                                <p>CallID: 123456</p>
-                            </div>
-                            <a hef="#" data-toggle="tooltip" data-placement="left" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
-                            <div class="contents child2">
-                                <p>Call reference #: 20170907/0001</p>
-                                <p>Call URI: Sreeharsha.inflexion.com</p>
-                                <p>Call ID: 700102</p>
-                            </div>                  
-                    </div>
+    <% include navbarhome %>
+        <!-- Page Begin-->
+        <div class="page">
+            <div id="page-loader">
+                <div class="cssload-container">
+                    <div class="cssload-speeding-wheel"></div>
                 </div>
-                <div class="cell-lg-3 rounded">  
-                        <div class="bg-white well parentCell">
+            </div>
+            <!-- Breadcrumb Navbar Begin-->
+            <div class="container-fluid breadcrumb-container">
+                <ol class="breadcrumb">
+                    <h5 class="newmeeting-head-bread">
+                        <%= translation.SCHEDULE_MEETING_HEADER %>
+                    </h5>
+                    <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
+                    <li><a href="/meeting" class="breadcrumb-links">Meeting</a></li>
+                    <li>New Meeting</li>
+                </ol>
+            </div>
+            <!-- Breadcrumb Navbar End-->
+            <!-- Meeting table view Begin -->
+            <section class="section-lg bg-white">
+                <div class="shell">
+                    <div class="range range-50">
+                        <div class="cell-lg-3 rounded">
+                            <div class="bg-white well parentCell">
                                 <div class="contents">
                                     <p>Owner: Sreeharsha@infelxion.com</p>
                                     <p>Tenant: ITS</p>
                                     <p>CallID: 123456</p>
                                 </div>
-                                <a hef="#" data-toggle="tooltip" data-placement="left" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="info" class="fa fa-2x fa-info-circle infoBtn" aria-hidden="true"></a>
                                 <div class="contents child2">
                                     <p>Call reference #: 20170907/0001</p>
                                     <p>Call URI: Sreeharsha.inflexion.com</p>
                                     <p>Call ID: 700102</p>
-                                </div>                  
+                                </div>
+                            </div>
                         </div>
-                </div>      
-            </div>
-        </div>
-      </section>
+                        <div class="cell-lg-3 rounded">
+                            <div class="bg-white well parentCell">
+                                <div class="contents">
+                                    <p>Owner: Sreeharsha@infelxion.com</p>
+                                    <p>Tenant: ITS</p>
+                                    <p>CallID: 123456</p>
+                                </div>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="info" class="fa fa-2x fa fa-info-circle infoBtn" aria-hidden="true"></a>
+                                <div class="contents child2">
+                                    <p>Call reference #: 20170907/0001</p>
+                                    <p>Call URI: Sreeharsha.inflexion.com</p>
+                                    <p>Call ID: 700102</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-lg-3">
+                            <div class="bg-white well parentCell">
+                                <div class="contents">
+                                    <p>Owner: Sreeharsha@infelxion.com</p>
+                                    <p>Tenant: ITS</p>
+                                    <p>CallID: 123456</p>
+                                </div>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="info" class="fa fa-2x fa fa-info-circle infoBtn" aria-hidden="true"></a>
+                                <div class="contents child2">
+                                    <p>Call reference #: 20170907/0001</p>
+                                    <p>Call URI: Sreeharsha.inflexion.com</p>
+                                    <p>Call ID: 700102</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-lg-3">
+                            <div class="bg-white well parentCell">
+                                <div class="contents">
+                                    <p>Owner: Sreeharsha@infelxion.com</p>
+                                    <p>Tenant: ITS</p>
+                                    <p>CallID: 123456</p>
+                                </div>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="info" class="fa fa-2x fa fa-info-circle infoBtn" aria-hidden="true"></a>
+                                <div class="contents child2">
+                                    <p>Call reference #: 20170907/0001</p>
+                                    <p>Call URI: Sreeharsha.inflexion.com</p>
+                                    <p>Call ID: 700102</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-lg-3">
+                            <div class="bg-white well parentCell">
+                                <div class="contents">
+                                    <p>Owner: Sreeharsha@infelxion.com</p>
+                                    <p>Tenant: ITS</p>
+                                    <p>CallID: 123456</p>
+                                </div>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="info" class="fa fa-2x fa fa-info-circle infoBtn" aria-hidden="true"></a>
+                                <div class="contents child2">
+                                    <p>Call reference #: 20170907/0001</p>
+                                    <p>Call URI: Sreeharsha.inflexion.com</p>
+                                    <p>Call ID: 700102</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell-lg-3">
+                            <div class="bg-white well parentCell">
+                                <div class="contents">
+                                    <p>Owner: Sreeharsha@infelxion.com</p>
+                                    <p>Tenant: ITS</p>
+                                    <p>CallID: 123456</p>
+                                </div>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="close" class="fa fa-2x fa-times-circle closeBtn" aria-hidden="true"></a>
+                                <a hef="#" data-toggle="tooltip" data-placement="top" title="info" class="fa fa-2x fa fa-info-circle infoBtn" aria-hidden="true"></a>
+                                <div class="contents child2">
+                                    <p>Call reference #: 20170907/0001</p>
+                                    <p>Call URI: Sreeharsha.inflexion.com</p>
+                                    <p>Call ID: 700102</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <!-- Meeting table view End -->
-      </div>
-      <!-- Page End-->
-      <!-- Page Footer -->
-      <% include footer %>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>   
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script>
-        $('[data-toggle="tooltip"]').tooltip(); 
-        $(window).load(function(){
-        $('.child2').hide();
-        $('.parentCell').css('color', 'black');
-        $('.parentCell').css('fontWeight', 'normal');
-            $('.parentCell').hover(function(){
-                $(this).find('.child2').show();
-                $(this).animate({
-                    height: 400,
-                    top: -50,
-                    left: -40
-                }, 'fast');
-                $(this).animate().css( 'box-shadow', '5px 5px 5px lightgray');
-                $(this).css('opacity', '0.8');
-                $(this).css('color', 'black');
-                $(this).css('fontWeight', '900');
-                $(this).css({
-                    zIndex: 1,
-                }); 
-            }, function(){
-                $(this).find('.closeBtn').click(function(){ 
-                    $(this).find('.child2').hide();
-                    $(this).animate().css( 'box-shadow', 'none');
-                    $(this).css('opacity', '1');
-                    $(this).css('color', 'black');
-                    $(this).css('fontWeight', 'normal');
-                    $(this).animate({
-                        height: 200,
-                        top: 0,
-                        left: 0
-                    }, 'fast');
-                    $(this).css({
-                        zIndex: 1
+            <!-- Meeting table view End -->
+        </div>
+        <!-- Page End-->
+        <!-- Page Footer -->
+        <% include footer %>
+            <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+            <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="/scripts/core.min.js"></script>
+            <script src="/scripts/script.js"></script>
+            <script>
+                $('[data-toggle="tooltip"]').tooltip();
+                $(window).load(function () {
+                    var hoverEle = null, isHovered = false;
+                    $('.child2').hide();
+                    $('.parentCell').css({'color': 'black', 'fontWeight': 'normal'});
+                    $('.closeBtn').hide();
+
+                    $('.infoBtn').click(function() {
+                        if(!isHovered){
+                            $(this).siblings('.child2').show();
+                            $(this).parent().animate({
+                                width: 300,
+                                height: 400
+                            }, 'fast');
+                            $(this).parent().animate().css({'box-shadow': '3px 3px 5px lightgray'});
+                            $(this).parent().css({'opacity': 0.8, 'color': 'black', 'fontWeight': '900', 'position': 'absolute'});
+                            $(this).parent().css({zIndex: 100});
+                            $(this).siblings('.closeBtn').show();
+                            $(this).hide();
+                            hoverEle = $(this).parent('.parentCell');
+                            isHovered = true;
+                        }
                     });
-            });
-        }); 
-    });       
-    </script>
-  </body>
+
+                    $('.closeBtn').click(function () {
+                        if (hoverEle != null) {
+                            $(hoverEle).find('.child2').hide();
+                            $(hoverEle).css({'opacity': 1, 'color': 'black', 'fontWeight': 'normal', 'position': 'relative'})
+                            $(hoverEle).animate().css({'box-shadow': 'none'});
+                            $(hoverEle).animate({
+                                width: 300,
+                                height: 200
+                            }, 'fast');
+                            $(hoverEle).css({zIndex: 1});
+                            hoverEle = null;
+                            isHovered = false;
+                            $('.parentCell').find('.closeBtn').hide();
+                            $('.parentCell').find('.infoBtn').show();
+                        }
+                    });
+                });
+            </script>
+</body>
 <!-- onhovermeeting page start -->
+
 </html>
