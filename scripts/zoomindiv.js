@@ -1,96 +1,50 @@
 $(document).ready(function () {
-    var isModelClosed = true;
-    var currentModel = null;
-   
-    
-    $('.content').hide();
-    $('#close').hide();
 
-    // $('.contenitore').hover(function() {
-    //     $('#close').show();
-    //     $(this).find('.content').show();
+    var hoverEle = null, isHovered = false;
 
-    //     $(this).animate({
-    //         width: 450,
-    //         height: 400,
-    //         top: -40,
-    //         left: 0
-    //     }, 'fast');
-    //     $(this).animate().css('box-shadow', '50px #fff');
-    //     $(this).css({
-    //         zIndex: 100
-    //     });
+    $('.child-hidden').hide();
+    $('.btn-close ').hide();
 
-    //     $('#close').show();
-    //     },function(){
-
-    //         $("#close").click(function(){
-
-    //             $(this).find('.content').hide();
-    //             $('.contenitore').animate({
-    //                 height: 160,
-    //                 width:300,
-    //                 top: 0,
-    //                 left: 0
-    //             }, 'fast');
-    //             $('.contenitore').animate().css('box-shadow', 'none');
-    //             $('.contenitore').css({
-    //                 zIndex: 1
-    //     });
-    //     $('#close').hide();
-    //     $('.content').hide();
-    //     }); 
-    // });
-
-
-
-
-    // try to naveen BEGIN
-
-
-    $('.contenitore').hover(function () {
-      
-        if (isModelClosed) {
-            $('#close').show();
-            $(this).find('.content').show();
-           
-            debugger;
-            $(this).removeClass('.content');
-            $(this).animate({
-                width: 450,
-                height: 400,
-                top: -40,
-                left: 0
-            }, 'fast');
-            $(this).animate().css('box-shadow', '50px #fff');
-            $(this).css({
-                zIndex: 100
-            });
-            currentModel = this;
-            isModelClosed = false;
-        }
-    });
-
-    $("#close").click(function () {
-        debugger;
-
-
-        if(currentModel != null){
-          //  $(currentModel).addClass('.content');
-            $(currentModel).animate({
-                height: 160,
+    $('.icon-info').click(function () {
+        
+        if (!isHovered) {
+            
+       
+            $(this).parents('.icons-parents').hide();
+            $(this).parents('.parent-div').animate({
                 width: 300,
-                top: 0,
-                left: 0
-            }, 'fast');
-            $(currentModel).animate().css('box-shadow', 'none');
-            $(currentModel).css({
-                zIndex: 1
-            });
-            isModelClosed = true;
-            currentModel = null;
+                height: 300,
+                top: -50
+             }, 'fast');
+            $(this).closest('.principale').css({ 'z-index':'1000'});
+            $(this).parents('.icons-parents').siblings('.child-hidden').show();
+            $(this).parents('.icons-parents').siblings('.parent-close').find('.btn-close ').show();
+        
+            $(this).siblings('.btn-close ').show();
+            hoverEle = $(this).parents('.parent-div');
+            isHovered = true;
         }
     });
 
-    // try to naveen END
+    $('.btn-close ').click(function () {
+       
+        if (hoverEle != null) {
+        
+     
+            $(hoverEle).animate({
+                height: 160,
+                width: 270,
+                top: 0    
+            }, 'fast');
+
+            $(hoverEle).find('.child-hidden').hide();
+            $(this).closest('.principale').css({ 'z-index':'1'});
+            $('.parent-div').find('.btn-close ').hide();
+            $(hoverEle).find('.icons-parents').show();
+
+            hoverEle = null;
+            isHovered = false;
+        }
+    });
+
 });
