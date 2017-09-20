@@ -454,8 +454,25 @@ cursor: pointer;
 }
 .scroll-icon{
   height: 175px;
-  width: 300px;
+  width: 550px;
   overflow-y: scroll;
+}
+
+.members-padding{
+  padding-left: 15px;
+  padding-right: 31px;
+}
+.members-margin-t{
+  margin-top: 2px;
+}
+.members-padding-icon{
+  padding-right:2px !important;
+  padding-left:2px !important;
+}
+
+.padding-r-l{
+  padding-right:5px !important;
+  padding-left:5px !important;
 }
 
 .text-margin-top{
@@ -490,26 +507,41 @@ cursor: pointer;
   left: 0;
   height: 160px;
   width: 300;
-  border-radius: 2px;
 }
 
 
  .principale {
   height: 160px;
-  width: 300;
-  border-radius: 2px;
-  min-height:160px;
+  width: 300px;
   position: relative;
 }
 .principale  .parent-div{
-  background-color: #fff;
   height: 160px;
-  width: 300;
+  width: 300px;
   position: absolute;
   display: block;
   top: 0;
   left: 0;
 }
+
+/* BEGIN Spaces pagination  */
+.pagination-next{
+  background-color: #23d7b2;
+  border-color: #23d7b2;
+  color:#FFF !important;
+  border-radius: 7px;
+}
+.pagination-text-color{
+  color:#FFF !important;
+}
+.h-navber-padding{
+  padding: 6px !important;
+  z-index: -1 !important;
+}
+
+
+
+
 
 /*Harish Styles End for zoomindiv */
 
@@ -521,18 +553,16 @@ cursor: pointer;
 /* End CMS Hub Meeting */
 
 
-
-
-
-
-
-
-
 .h6-title-color{
  color: #23d7b2;
- font-size: medium;
+ font-size:small;
+ margin-top: 5px;
 
 }
+.h6-title-medium{
+  font-size:medium !important;
+}
+
 
 .h6-title-color:hover{
   color: #161817;
