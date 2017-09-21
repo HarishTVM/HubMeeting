@@ -372,7 +372,7 @@ cursor: pointer;
   text-overflow: ellipsis;
 }
 
-@media (min-width: 1000px) and (max-width: 1025px) {
+/* @media (min-width: 1000px) and (max-width: 1025px) {
 .h-m-icon-top{ margin-top: 6% !important;}
 .h-i-m-top{margin-top: 9px;}
 .thumb-corporate__overlay{
@@ -424,7 +424,7 @@ cursor: pointer;
 
 .h-i-m-top{margin-top: 8px; }
 
-}
+} */
 
 .h-cancel-btn {
   background: #DF3B3B;
@@ -503,13 +503,12 @@ cursor: pointer;
 
  .principale {
   height: 160px;
-  width: 300px;
   position: relative;
 }
 
 .principale  .parent-div{
   height: 160px;
-  width: 300px;
+ 
   position: absolute;
   display: block;
   top: 0;
@@ -540,7 +539,6 @@ cursor: pointer;
 }
 
 .head-search-w-h {
-  /* margin-top: 0px !important; */
   width: 40%;
   height: 50px !important;
   margin: auto;
@@ -563,17 +561,76 @@ cursor: pointer;
 
 /* END Spaces pagination footer */
 
+/* End Spaces for Styles  */
 
 
 
-/* End zoomindiv for Styles  */
+/* ////////////////////////////////////////////////////  BEGIN Spaces for media query  //////////////////////////////////////////////////// */
+
+
+/* ---------------- BEGIN Moblie devices  screens ----------- */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  
+  .principale  .parent-div{min-height: 160px;}
+  .head-search-w-h {width: 80%;}
+  .h-i-m-top {margin-top: 11px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  
+  
+
+  
+}
+/* x---x---x---x---x---x End Moblie devices screens x---x---x---x---x---x*/
+
+/* ---------------- BEGIN Desktops and laptops  screens ----------- */
+@media (min-width: 992px) and (max-width: 1199px){
+  
+  .principale  .parent-div{height: 160px; width: 280px;}
+  .h-i-m-top { margin-top: 6px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  
+}  
+
+/* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
+ 
+/* ---------------- BEGIN Tablets  screens ----------- */
+@media (min-width: 768px) and (max-width: 991px){
+
+  .principale  .parent-div{height: 160px;}
+  .h-i-m-top { margin-top: 6px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+}
+
+
+/* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
+
+/* ---------------- BEGIN Tablets  screens ----------- */
+@media (min-width: 1200px) and (max-width: 20000px){
+  
+  .principale  .parent-div{height: 160px;}
+  .h-i-m-top { margin-top: 20px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+}
+  
+  
+  /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
+
+/* ////////////////////////////////////////////////////  End  Spaces for media query  //////////////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
 
 
 /* BEGIN CMS Hub Meeting */
-.bg-color{
-  background-color: #eee;
-  }
-  
+.bg-color{background-color: #eee;}
 
 
 /* End CMS Hub Meeting */
@@ -1124,7 +1181,7 @@ code,
 
 @media (max-width: 767px) {
   .link-image {
-    max-width: 370px;
+    /* max-width: 370px; */
     margin-left: auto;
     margin-right: auto;
   }
