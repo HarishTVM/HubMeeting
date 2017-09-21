@@ -58,8 +58,8 @@
 *   6. Fonts
 *     6.1 FontAwesome
 *     6.2 MDI
-    
-    7. zoomindiv -446 to 
+
+    7. zoomindiv -446 to
 
 
 **/
@@ -494,7 +494,7 @@ cursor: pointer;
   border-radius: 17px;
 
  }
- 
+
  .btn-space-circle-icon{
   font-size: 17px !important;
   line-height: 17px !important;
@@ -508,7 +508,7 @@ cursor: pointer;
 
 .principale  .parent-div{
   height: 160px;
- 
+
   position: absolute;
   display: block;
   top: 0;
@@ -539,7 +539,7 @@ cursor: pointer;
 }
 
 .head-search-w-h {
-  width: 40%;
+  width: 50%;
   height: 50px !important;
   margin: auto;
 }
@@ -558,6 +558,12 @@ cursor: pointer;
   padding: 6px !important;
   z-index: -1 !important;
 }
+.icon-arrow-right{
+width: 0px !important;
+}
+.search-margin-top{
+  margin-top: 1%;
+}
 
 /* END Spaces pagination footer */
 
@@ -571,49 +577,64 @@ cursor: pointer;
 /* ---------------- BEGIN Moblie devices  screens ----------- */
 
 @media (min-width: 320px) and (max-width: 767px) {
-  
+
   .principale  .parent-div{min-height: 160px;}
-  .head-search-w-h {width: 80%;}
+  .head-search-w-h {width: 99%;}
   .h-i-m-top {margin-top: 11px; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
-  
-  
+  .search-margin-top{margin-top: 1%;}
 
-  
+
 }
 /* x---x---x---x---x---x End Moblie devices screens x---x---x---x---x---x*/
 
-/* ---------------- BEGIN Desktops and laptops  screens ----------- */
-@media (min-width: 992px) and (max-width: 1199px){
-  
-  .principale  .parent-div{height: 160px; width: 280px;}
-  .h-i-m-top { margin-top: 6px; }
-  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
-  
-}  
-
-/* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
- 
 /* ---------------- BEGIN Tablets  screens ----------- */
 @media (min-width: 768px) and (max-width: 991px){
 
   .principale  .parent-div{height: 160px;}
   .h-i-m-top { margin-top: 6px; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  .head-search-w-h {width: 99%;}
+  .search-margin-top{margin-top: 1%;}
 }
 
 
 /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
+/* ---------------- BEGIN Desktops and laptops  screens ----------- */
+@media (min-width: 992px) and (max-width: 1199px){
+
+  .principale  .parent-div{height: 160px; width: 280px;}
+  .h-i-m-top { margin-top: 6px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  .head-search-w-h {
+    width: 50%;
+    height: 50px !important;
+    margin: auto;
+
+  }
+
+}
+
+/* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
+
+
 
 /* ---------------- BEGIN Tablets  screens ----------- */
 @media (min-width: 1200px) and (max-width: 20000px){
-  
+
   .principale  .parent-div{height: 160px;}
-  .h-i-m-top { margin-top: 20px; }
+  .h-i-m-top { margin-top: 6px; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  .head-search-w-h {
+    width: 50%;
+    height: 50px !important;
+    margin: auto;
+    float: right;
+  }
+  .search-margin-top{margin-top: 3%;}
 }
-  
-  
+
+
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 
 /* ////////////////////////////////////////////////////  End  Spaces for media query  //////////////////////////////////////////////////// */
@@ -28346,11 +28367,11 @@ yx-axis
   /* onhovermeeting styles Begin */
 
     .card-section {
-      padding-top: 50px; 
+      padding-top: 50px;
     }
 
    .style_prevu_kit
-   {  
+   {
        display: block;
        position: relative;
        top: 0;
@@ -28358,14 +28379,14 @@ yx-axis
        padding: 20px;
        z-index: 0;
        /* -webkit-transition: all 200ms ease-in;
-       -webkit-transform: scale(1); 
+       -webkit-transform: scale(1);
        -ms-transition: all 200ms ease-in;
-       -ms-transform: scale(1); 
+       -ms-transform: scale(1);
        -moz-transition: all 200ms ease-in;
        -moz-transform: scale(1);
        transition: all 200ms ease-in;
        transform: scale(1);    */
-          
+
    }
 
    /* .style_prevu_kit:hover
@@ -28375,14 +28396,14 @@ yx-axis
        -webkit-transition: all 200ms ease-in;
        -webkit-transform: scale(1.1);
        -ms-transition: all 200ms ease-in;
-       -ms-transform: scale(1.1);   
+       -ms-transform: scale(1.1);
        -moz-transition: all 200ms ease-in;
-       -moz-transform: scale(1.1); 
+       -moz-transform: scale(1.1);
        transition: all 200ms ease-in;
        transform: scale(1.1);
        position: relative;
        top: -80px;
-       left: -45px; 
+       left: -45px;
    } */
 
    .contents {
