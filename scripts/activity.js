@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
  $('#btn_add_hidden').hide();
  $('#btn_meeting_details').hide();
  $('[data-toggle="tooltip"]').tooltip();
@@ -37,5 +39,7 @@ $("#btn_call_ur").click(function(){
        $(this).css('background-color', '#FFF');
     });
  });
+
+ 
 
 });

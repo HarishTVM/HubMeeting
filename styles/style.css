@@ -439,23 +439,20 @@ cursor: pointer;
 }
 
 
-/*createSpace*/
+/* BEGIN zoomindiv for Styles  */
 
 
-/*createSpace end*/
-
-/*Harish Styles stat for zoomindiv */
-
+/* BEGIN members for Styles  */
+.scroll-icon{
+  height: 175px;
+  width: 550px;
+  overflow-y: scroll;
+}
 .z-index-div{
   z-index:999 !important;
 }
 .icon-right{
   float: right;
-}
-.scroll-icon{
-  height: 175px;
-  width: 550px;
-  overflow-y: scroll;
 }
 
 .members-padding{
@@ -469,6 +466,9 @@ cursor: pointer;
   padding-right:2px !important;
   padding-left:2px !important;
 }
+/* END members for Styles  */
+
+
 
 .padding-r-l{
   padding-right:5px !important;
@@ -499,15 +499,6 @@ cursor: pointer;
   font-size: 17px !important;
   line-height: 17px !important;
  }
-.parent-div{
-
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 160px;
-  width: 300;
-}
 
 
  .principale {
@@ -515,6 +506,7 @@ cursor: pointer;
   width: 300px;
   position: relative;
 }
+
 .principale  .parent-div{
   height: 160px;
   width: 300px;
@@ -524,7 +516,7 @@ cursor: pointer;
   left: 0;
 }
 
-/* BEGIN Spaces pagination  */
+/* BEGIN Spaces pagination footer */
 .pagination-next{
   background-color: #23d7b2;
   border-color: #23d7b2;
@@ -539,17 +531,51 @@ cursor: pointer;
   z-index: -1 !important;
 }
 
+/* END Spaces pagination head */
+
+.head-top-pagination {
+  position: absolute;
+  right: 4%;
+  top:37px;
+}
+
+.head-search-w-h {
+  /* margin-top: 0px !important; */
+  width: 40%;
+  height: 50px !important;
+  margin: auto;
+}
+
+/* BEGIN Spaces pagination head */
+.pagination-next{
+  background-color: #23d7b2;
+  border-color: #23d7b2;
+  color:#FFF !important;
+  border-radius: 7px;
+}
+.pagination-text-color{
+  color:#FFF !important;
+}
+.h-navber-padding{
+  padding: 6px !important;
+  z-index: -1 !important;
+}
+
+/* END Spaces pagination footer */
 
 
 
 
-/*Harish Styles End for zoomindiv */
+/* End zoomindiv for Styles  */
 
 
 /* BEGIN CMS Hub Meeting */
 .bg-color{
   background-color: #eee;
-}
+  }
+  
+
+
 /* End CMS Hub Meeting */
 
 

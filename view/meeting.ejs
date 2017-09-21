@@ -21,464 +21,602 @@
 
 
    </head>
-    <body class=" bg-white">
-    <!-- Page -->
-
-    <% include navbarhome %>
-    <div class="page">
-      <div id="page-loader">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
-      </div>
-      <div class="container-fluid breadcrumb-container">
+   <body class=" bg-white">
+      <!-- BEGIN Hub Meeting -->
+      <% include navbarhome %>
+          <div class="page">
+            <!-- BEGIN page loader -->
+            <div id="page-loader">
+              <div class="cssload-container">
+                <div class="cssload-speeding-wheel"></div>
+              </div>
+            </div>
+            <!-- End page loader -->
+  
+        <!-- BEGIN Spaces toolbar-->
+        <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
-              <h5 class="meeting-head-bread">Meeting</h5>
-              <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-              <li>Meeting</li>
+            <h5 class="meeting-head-bread">Meeting</h5>
+            <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
+            <li>Meeting</li>
           </ol>
-      </div>
-
-
-      <section>
-       <div class="shell">
-        <!-- search box -->
+        </div>
+          <!-- END Spaces toolbar-->
+  
+        <section>
+          <!-- BEGIN Spaces pagination head -->
+          <div class="shell">
+            <!-- BEGIN Spaces search head -->
             <div class="range range-5 h-m-top-none " >
-             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
-
-               <div class=" col-md-12 col-xs-12 col-lg-4 h-m-top-none "></div>
-               <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none ">
-                <input class="form-input bg-gray-lighter  h-search-h" type="text" name="search" placeholder="Search">
-               </div>
-                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-pages-next  "><nav>
+             
+              <div class="searchBtn-pagination-container ">
+                <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
+                  <input class="form-input search-input " type="text" name="search" placeholder="Enter the Meetingname">
+                <!-- </div> -->
                 </div>
-
-               </div>
-               <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
-
-                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
-                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  h-navber-padding ">
-                  <nav >
-                   <ul class="pagination-classic  h-m-top-none">
-                    <li class="active"><span>1</span></li>
+                <nav class="head-top-pagination">
+                  <ul class="pagination-classic">
+                    <li class="active pagination-next"><span class="pagination-text-color">1</span></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
-                   </ul>
-                  </nav>
-                 </div></div>
-                  <div class="col-sm-12 col-md-12 col-xs-12 col-lg-3 h-pages-next "><nav>
-                  </div>
-                 </div>
-                 <div class="range range-70" >
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                   <div class="h-height  bg-color h-div-border  link-image ">
-                      <div class="t-padding">
-                          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-
-                            <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                             <ul class="text-center" >
-                              <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                             </ul>
-                             <ul >
-                             <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
-                            </ul>
-
-                             <ul>
-                              <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                             </ul>
-                             <ul>
-                              <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                             </ul>
-
-                            </div>
-                            <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                           </div>
-
-                          </div>
-                         </div>
-
-                       <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                          <div id="icon-list" class="thumb-corporate__overlay text-center  h-i-m-top ">
-                              <ul class="list-inline-sm  ">
-                                  <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                                  <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                  <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                    </ul>
-                               </div>
-                              </div>
-                         </div>
-                        </div>
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                   <div class="h-height  bg-color h-div-border  link-image ">
-                      <div class="t-padding">
-                          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-
-                            <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                             <ul class="text-center" >
-                              <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                             </ul>
-                             <ul >
-                             <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
-                            </ul>
-
-                             <ul>
-                              <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                             </ul>
-                             <ul>
-                              <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                             </ul>
-
-                            </div>
-                            <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                           </div>
-
-                          </div>
-                         </div>
-
-
-                   <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                         <div id="icon-list" class=" thumb-corporate__overlay text-center h-i-m-top  ">
-                            <ul class="list-inline-sm  ">
-                                <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                                <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                  </ul>
-
-                         </div>
-                        </div>
-                       </div>
-                      </div>
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                        <div class="h-height  bg-color h-div-border  link-image ">
-                            <div class="t-padding">
-                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-
-                                  <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                   <ul class="text-center" >
-                                    <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                                   </ul>
-                                   <ul >
-                                   <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
-                                  </ul>
-
-                                   <ul>
-                                    <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                                   </ul>
-                                   <ul>
-                                    <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                                   </ul>
-
+                  </ul>
+                </nav> 
+              </div> 
+            </div>
+  
+            
+            <!-- END Spaces search head -->
+  
+            <!-- BEGIN Spaces pagination  body-->
+                 <div class="row range range-70 " >
+                 
+                   <!-- BEGIN Spaces animate zoom Grid 1 -->
+                   <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                      <div class="principale ">
+                          <div class="parent-div bg-color h-div-border link-image ">
+                            
+                               <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                                 <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                                   <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Harish</h6></b> </li></ul>
+                                   <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                                   <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Sreeharsha@inflexion.com</h6></b></li></ul>
+                                   <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                                   <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
                                   </div>
-                                  <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                                 </div>
-
+                                 <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                                   <ul>
+                                      <li>
+                                        <samp>
+                                          <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                         </samp>
+                                      </li>
+                                  
+                                  </ul>
                                 </div>
-                               </div>
-
-
-                             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                              <div id="icon-list" class=" thumb-corporate__overlay text-center  h-i-m-top ">
-                                  <ul class="list-inline-sm  ">
-                                      <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                                      <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                      <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                        </ul>
                               </div>
-                             </div>
-                            </div>
-                           </div>
-                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                             <div class="h-height bg-color h-div-border  link-image ">
-                                <div class="t-padding">
-                                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-
-                                      <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                       <ul class="text-center" >
-                                        <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                                       </ul>
-                                       <ul >
-                                       <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
+  
+                              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                                  <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                    <ul class="list-inline-sm  ">
+                                      <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                      <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                      <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                      <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                            
+                              <div class=" child-hidden ">
+                                <div class=" scroll-icon members-padding ">
+                                  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                    <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                      <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                      <ul class="list-inline-sm icon-right ">
+                                        <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                        <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                        <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
                                       </ul>
-
-                                       <ul>
-                                        <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                                       </ul>
-                                       <ul>
-                                        <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                                       </ul>
-
-                                      </div>
-                                      <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                                     </div>
-
                                     </div>
-                                   </div>
-
-                                  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                                   <div id="icon-list " class=" thumb-corporate__overlay text-center h-i-m-top  ">
-                                      <ul class="list-inline-sm  ">
-                                          <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                                          <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                          <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                            </ul>
-                                   </div>
                                   </div>
-                                 </div>
-                                </div>
-                       </div>
-
-
-
-
-
-
-                       <div class="range range-70" >
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                         <div class="h-height bg-color h-div-border  link-image ">
-                            <div class="t-padding">
-                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-
-                                  <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                   <ul class="text-center" >
-                                    <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                                   </ul>
-                                   <ul >
-                                   <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
-                                  </ul>
-
-                                   <ul>
-                                    <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                                   </ul>
-                                   <ul>
-                                    <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                                   </ul>
-
-                                  </div>
-                                  <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                                 </div>
 
                                 </div>
-                               </div>
-
-                             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-
-
-
-
-                       <div id="icon-list" class="thumb-corporate__overlay text-center h-i-m-top ">
-                          <ul class="list-inline-sm  ">
-                              <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                              <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                              <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                </ul>
-                       </ul>
-                       </div>
-                      </div>
-                               </div>
                               </div>
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                         <div class="h-height bg-color h-div-border  link-image ">
-                            <div class="t-padding">
-                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-
-                                  <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                   <ul class="text-center" >
-                                    <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                                   </ul>
-                                   <ul >
-                                   <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
-                                  </ul>
-
-                                   <ul>
-                                    <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                                   </ul>
-                                   <ul>
-                                    <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                                   </ul>
-
-                                  </div>
-                                  <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                                 </div>
-
-                                </div>
-                               </div>
-
-                         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                               <div id="icon-list" class=" thumb-corporate__overlay text-center  h-i-m-top ">
-                                  <ul class="list-inline-sm  ">
-                                      <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                                      <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                      <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                        </ul>
-                               </ul>
-                               </div>
-                              </div>
-                             </div>
                             </div>
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                              <div class="h-height bg-color h-div-border  link-image ">
-                                  <div class="t-padding">
-                                      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
+                          </div>
+                        </div>
+                    <!-- END Spaces animate zoom Grid 1 --->
+  
+                    <!-- BEGIN Spaces animate zoom Grid 2 -->
+  
+                    <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
 
-                                        <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                         <ul class="text-center" >
-                                          <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                                         </ul>
-                                         <ul >
-                                         <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
-                                        </ul>
+                      <div class="principale ">
+                        <div class="parent-div bg-color h-div-border link-image ">
+                          
+                             <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                               <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                                 <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Sreeharsha</h6></b> </li></ul>
+                                 <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                                 <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Sreeharsha@inflexion.com</h6></b></li></ul>
+                                 <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                                 <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
+                                </div>
+                               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                                 <ul>
+                                    <li>
+                                      <samp>
+                                        <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                       </samp>
+                                    </li>
+                                
+                                </ul>
+                              </div>
+                            </div>
 
-                                         <ul>
-                                          <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                                         </ul>
-                                         <ul>
-                                          <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                                         </ul>
-
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                                       </div>
-
-                                      </div>
-                                     </div>
-
-
-                                   <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                                    <div id="icon-list" class=" thumb-corporate__overlay text-center  h-i-m-top ">
-                                        <ul class="list-inline-sm  ">
-                                            <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                                            <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                            <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                              </ul>
-                                    </ul>
-                                    </div>
-                                   </div>
+                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                                <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                  <ul class="list-inline-sm  ">
+                                    <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                    <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                    <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                    <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                  </ul>
+                                </div>
+                              </div>
+                          
+                            <div class=" child-hidden ">
+                              <div class=" scroll-icon members-padding ">
+                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                  <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                    <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
                                   </div>
-                                 </div>
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                                   <div class="h-height bg-color h-div-border  link-image ">
-                                      <div class="t-padding">
-                                          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
+                                  <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                    <ul class="list-inline-sm icon-right ">
+                                      <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                      <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                      <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                    </ul>
+                                  </div>
+                                </div>
 
-                                            <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                             <ul class="text-center" >
-                                              <li>  <b><h6 class="h6-title-color-meeting" >Sreeharsha inflexion.com </h6></b> </li>
-                                             </ul>
-                                             <ul >
-                                             <li> <b><h6 class="h6-title">Tenant: ITS</h6></b>    </li>
-                                            </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                
+                  <!-- END Spaces animate zoom Grid 2 --->
+                  
+                  <!-- BEGIN Spaces animate zoom Grid 3 -->
+  
+                  <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                    <div class="principale ">
+                      <div class="parent-div bg-color h-div-border link-image ">
+                        
+                           <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                             <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                               <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Ravi</h6></b> </li></ul>
+                               <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                               <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Ravi@inflexion.com</h6></b></li></ul>
+                               <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                               <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
+                              </div>
+                             <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                               <ul>
+                                  <li>
+                                    <samp>
+                                      <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                     </samp>
+                                  </li>
+                              
+                              </ul>
+                            </div>
+                          </div>
 
-                                             <ul>
-                                              <li> <h6 class=" h6-title-color-owner  ">Owner: Sreeharsha inflexion.com</h6> </li>
-                                             </ul>
-                                             <ul>
-                                              <li> <h6 class="h6-title ">Call ID: 700400</h6> </li>
-                                             </ul>
+                          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                              <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                <ul class="list-inline-sm  ">
+                                  <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                  <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                  <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                  <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                </ul>
+                              </div>
+                            </div>
+                        
+                          <div class=" child-hidden ">
+                            <div class=" scroll-icon members-padding ">
+                              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                  <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                  <ul class="list-inline-sm icon-right ">
+                                    <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                    <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                    <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                  </ul>
+                                </div>
+                              </div>
 
-                                            </div>
-                                            <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 text-center">
-
-                                           </div>
-
-                                          </div>
-                                         </div>
-
-
-                                        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                                         <div id="icon-list" class="thumb-corporate__overlay text-center  h-i-m-top ">
-                                            <ul class="list-inline-sm  ">
-                                                <li><p class="btn  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
-                                                <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                                <li><p class="btn h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
-                                                  </ul>
-                                         </ul>
-                                         </div>
-                                        </div>
-                                       </div>
-                                      </div>
-                             </div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- Modal Content -->
-           <a href="#" style="position: fixed; top:25%; right:2%; opacity:0.6;" class="button button-primary" data-toggle="modal" data-target="#myModal">Create Meeting</a>
-           <div class="container">
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                    <% include modalmeeting %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   </div>
-                </div>
-              </div>
-          </div>
-          </div>
-<!-- Modal Content END -->
-            <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none  ">
+                 
+                   <!-- END Spaces animate zoom Grid 3 -->
+  
+                    <!-- BEGIN Spaces animate zoom Grid 4 -->
+  
+                    <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+                      <div class="principale ">
+                        <div class="parent-div bg-color h-div-border link-image ">
+                          
+                             <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                               <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                                 <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Sanjay</h6></b> </li></ul>
+                                 <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                                 <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Sanjay@inflexion.com</h6></b></li></ul>
+                                 <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                                 <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
+                                </div>
+                               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                                 <ul>
+                                    <li>
+                                      <samp>
+                                        <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                       </samp>
+                                    </li>
+                                
+                                </ul>
+                              </div>
+                            </div>
 
-              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
-              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  h-navber-padding">
-               <nav>
+                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                                <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                  <ul class="list-inline-sm  ">
+                                    <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                    <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                    <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                    <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                  </ul>
+                                </div>
+                              </div>
+                          
+                            <div class=" child-hidden ">
+                              <div class=" scroll-icon members-padding ">
+                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                  <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                    <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
+                                  </div>
+                                  <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                    <ul class="list-inline-sm icon-right ">
+                                      <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                      <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                      <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                 
+                    <!-- END Spaces animate zoom Grid 4 -->
+                        
+  
+  
+  <!-- BEGIN Spaces Grid 2 body -->
+  
+  
+                    <!-- BEGIN Spaces animate zoom Grid 1 -->
+  
+                    <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+
+                      <div class="principale ">
+                        <div class="parent-div bg-color h-div-border link-image ">
+                          
+                             <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                               <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                                 <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Naveen</h6></b> </li></ul>
+                                 <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                                 <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Naveen@inflexion.com</h6></b></li></ul>
+                                 <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                                 <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
+                                </div>
+                               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                                 <ul>
+                                    <li>
+                                      <samp>
+                                        <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                       </samp>
+                                    </li>
+                                
+                                </ul>
+                              </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                                <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                  <ul class="list-inline-sm  ">
+                                    <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                    <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                    <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                    <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                  </ul>
+                                </div>
+                              </div>
+                          
+                            <div class=" child-hidden ">
+                              <div class=" scroll-icon members-padding ">
+                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                  <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                    <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
+                                  </div>
+                                  <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                    <ul class="list-inline-sm icon-right ">
+                                      <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                      <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                      <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  
+                      <!-- END Spaces animate zoom Grid 1 --->
+  
+                      <!-- BEGIN Spaces animate zoom Grid 2 -->
+  
+                      <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+
+                        <div class="principale ">
+                          <div class="parent-div bg-color h-div-border link-image ">
+                            
+                               <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                                 <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                                   <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Rajesh</h6></b> </li></ul>
+                                   <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                                   <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Rajesh@inflexion.com</h6></b></li></ul>
+                                   <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                                   <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
+                                  </div>
+                                 <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                                   <ul>
+                                      <li>
+                                        <samp>
+                                          <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                         </samp>
+                                      </li>
+                                  
+                                  </ul>
+                                </div>
+                              </div>
+  
+                              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                                  <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                    <ul class="list-inline-sm  ">
+                                      <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                      <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                      <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                      <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                            
+                              <div class=" child-hidden ">
+                                <div class=" scroll-icon members-padding ">
+                                  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                    <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                      <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                      <ul class="list-inline-sm icon-right ">
+                                        <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                        <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                        <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                     
+                    <!-- END Spaces animate zoom Grid 2 --->
+  
+                    <!-- BEGIN Spaces animate zoom Grid 3 -->
+  
+                    <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+
+                      <div class="principale ">
+                        <div class="parent-div bg-color h-div-border link-image ">
+                          
+                             <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                               <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                                 <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Prakash</h6></b> </li></ul>
+                                 <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                                 <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Prakash@inflexion.com</h6></b></li></ul>
+                                 <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                                 <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
+                                </div>
+                               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                                 <ul>
+                                    <li>
+                                      <samp>
+                                        <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                       </samp>
+                                    </li>
+                                
+                                </ul>
+                              </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                                <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                  <ul class="list-inline-sm  ">
+                                    <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                    <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                    <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                    <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                  </ul>
+                                </div>
+                              </div>
+                          
+                            <div class=" child-hidden ">
+                              <div class=" scroll-icon members-padding ">
+                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                  <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                    <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
+                                  </div>
+                                  <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                    <ul class="list-inline-sm icon-right ">
+                                      <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                      <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                      <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                     <!-- END Spaces animate zoom Grid 3 -->
+  
+                    <!-- BEGIN Spaces animate zoom Grid 4 -->
+  
+                    <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
+
+                      <div class="principale ">
+                        <div class="parent-div bg-color h-div-border link-image ">
+                          
+                             <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
+                               <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
+                                 <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Ramesh</h6></b> </li></ul>
+                                 <ul><li> <h6 class="h6-title ">Tenant : ITS</h6></li></ul>
+                                 <ul ><li> <b><h6 class=" h6-title-color-owner">Owner: Ramesh@inflexion.com</h6></b></li></ul>
+                                 <ul><li> <h6 class="h6-title ">Call ID: 700102</h6> </li></ul>
+                                 <ul><li><h6 class="h6-title ">Members : 5</h6></li></ul>
+                                </div>
+                               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
+                                 <ul>
+                                    <li>
+                                      <samp>
+                                        <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="Close"  ></a>
+                                       </samp>
+                                    </li>
+                                
+                                </ul>
+                              </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
+                                <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
+                                  <ul class="list-inline-sm  ">
+                                    <li><p class="btn  icon-info  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm "  data-toggle="tooltip" data-placement="top" title="Info" href="#Settings"><i class="linear-icon-reading"></i></p></li>
+                                    <li><p class="btn  icon-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Edit" href="#Settings"><i class="linear-icon-pencil5"></i> </p></li>
+                                    <li><p class="btn  icon-invite  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm  "  data-toggle="tooltip" data-placement="top" title="Invite" href="#Settings"><i class="linear-icon-envelope"></i> </p></li>
+                                    <li><p class="btn btn-circle  h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  "     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                  </ul>
+                                </div>
+                              </div>
+                          
+                            <div class=" child-hidden ">
+                              <div class=" scroll-icon members-padding ">
+                                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12   h-div-border members-margin-t">
+                                  <div class="col-md-4 col-sm-4 col-md-4 col-xs-4 col-lg-6 ">
+                                    <ul><li><b><h6 class="h6-title-color text-margin-top">Harish.inflexiontech@gmail.com</h6></b> </li></ul>
+                                  </div>
+                                  <div class="col-md-8 col-sm-8 col-md-8 col-xs-8 col-lg-6 ">
+                                    <ul class="list-inline-sm icon-right ">
+                                      <li class="members-padding-icon"><p class="btn  btn-warning1 btn-space-circle-icon btn-space-circle thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Mute" href="#Settings"><i class="linear-icon-mic"></i> </p></li>
+                                      <li class="members-padding-icon" ><p class="btn btn-warning1 btn-space-circle-icon btn-space-circle  thumb-corporate__list h-iconls-color  icon-sm members-padding-icon" data-toggle="tooltip" data-placement="top" title="Hide" href="#Settings"><i class="linear-icon-camera"></i></p></li>
+                                      <li class="members-padding-icon"><p class="btn  btn-space-circle-icon btn-space-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-sm  members-padding-icon"     data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings"><i class="linear-icon-trash2"></i> </p></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  
+                    <!-- END Spaces animate zoom Grid 4 -->
+  
+                 </div>
+  
+                 <!-- BEGIN Spaces pagination  body-->
+  
+  
+                
+                            
+   
+  
+  
+          
+      
+   <!-- BEGIN Spaces pagination footer -->
+   <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none   ">
+      <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
+      <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  h-navber-padding">
+     
+            <nav>
                 <ul class="pagination-classic  h-m-top-none">
-                 <li class="active"><span>1</span></li>
-                 <li><a href="#">2</a></li>
-                 <li><a href="#">3</a></li>
-                 <li><a href="#">4</a></li>
-                 <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
+                  <li class="active pagination-next"><span class="pagination-text-color">1</span></li>
+                  <li><a >2</a></li>
+                  <li><a >3</a></li>
+                  <li><a >4</a></li>
+                  <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
                 </ul>
-               </nav>
-              </div></div>
-
-           </div>
-        </div>
-
-
-
-
-       </section>
-
-
-     <%include footer %>
-
-
-
-
-
-
-
-
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/jquery.contenthover.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.1/js/jasny-bootstrap.js"></script> -->
-    <script src="/scripts/general.js"></script>
-    <script src="/scripts/spacelist.js"></script>
-
-
-    <script>
-       $(document).ready(function(){
+              </nav>
+      </div>
+    </div>
+     <!-- END Spaces pagination footer -->
+    
+     <a id="ceateSpace"  href="/newMeeting" data-toggle="tooltip" data-placement="bottom" title="" class="button button-primary icon linear-icon-plus newmeeting-btn-circle" data-original-title="Create Meeting"></a>
+   
+    </div>
+  </div>
+  </section>
+  <%include footer %>
+  
+          <!-- BEGIN Template script file links -->
+          <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+          <script src="/scripts/core.min.js"></script>
+          <script src="/scripts/script.js"></script>
+          <script src="/scripts/jquery.contenthover.min.js"></script>
+          <script src="/scripts/general.js"></script>
+          <script src="/scripts/spacelist.js"></script>
+  
+         <!--  BEGIN Template script file links src -->
+  
+  
+        <!-- BEGIN Spaces script -->
+          <script src="/scripts/zoomindiv.js"></script>
+  
+          <script>
+          $(document).ready(function(){
             $("#meetingList").addClass("active");
-
-        });
-    </script>
-  </body>
+          });
+          </script>
+          <!-- End Spaces script -->
+  
+          <!-- END Zoom Div -->
+        </body>
 </html>

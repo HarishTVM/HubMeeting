@@ -11,21 +11,24 @@ $(document).ready(function () {
             $(this).parents('.icons-parents').hide();
             hoverEle = $(this).parents('.parent-div');
              $(this).parents('.parent-div').animate({
-                 width: 555,
-                 height: 300,
-                 top: -90,
-                 right:-100
+                width: 555,
+                height: 300,
+                right: -80,
+                top: -80,
+                left: -45
           
              }, 'fast');
            
-            $(this).closest('.principale').css({ 'z-index':'1000'},{'background-color':'red !important'});   
            
+            $(this).closest('.principale').css({ 'z-index':'1000'});
             $(this).closest('.link-image').css({'background-color':'#fff'});   
             $(this).parents('.icons-parents').siblings('.child-hidden').show(800);
             $(this).parents('.icons-parents').siblings('.parent-close').find('.btn-close ').show();
             $(this).siblings('.btn-close ').show();
         
             isHovered = true;
+
+           
         }
     });
 
@@ -44,7 +47,7 @@ $(document).ready(function () {
             $('.parent-div').find('.btn-close ').hide();
             $(this).closest('.link-image').css({'background-color':'#eee'});   
             $(hoverEle).find('.icons-parents').show();
-            
+          
             hoverEle = null;
             isHovered = false;
         }
