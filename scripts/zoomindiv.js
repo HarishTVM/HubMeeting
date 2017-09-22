@@ -91,7 +91,7 @@ $(document).ready(function () {
             $('.parent-div').find('.btn-close ').hide();
             $(this).closest('.link-image').css({'background-color':'#eee'});   
             $(hoverEle).find('.icons-parents').show();
-            
+          
             hoverEle = null;
             isHovered = false;
         }

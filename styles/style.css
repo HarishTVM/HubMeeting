@@ -58,8 +58,8 @@
 *   6. Fonts
 *     6.1 FontAwesome
 *     6.2 MDI
-    
-    7. zoomindiv -446 to 
+
+    7. zoomindiv -446 to
 
 
 **/
@@ -372,7 +372,7 @@ cursor: pointer;
   text-overflow: ellipsis;
 }
 
-@media (min-width: 1000px) and (max-width: 1025px) {
+/* @media (min-width: 1000px) and (max-width: 1025px) {
 .h-m-icon-top{ margin-top: 6% !important;}
 .h-i-m-top{margin-top: 9px;}
 .thumb-corporate__overlay{
@@ -424,7 +424,7 @@ cursor: pointer;
 
 .h-i-m-top{margin-top: 8px; }
 
-}
+} */
 
 .h-cancel-btn {
   background: #DF3B3B;
@@ -439,23 +439,20 @@ cursor: pointer;
 }
 
 
-/*createSpace*/
+/* BEGIN zoomindiv for Styles  */
 
 
-/*createSpace end*/
-
-/*Harish Styles stat for zoomindiv */
-
+/* BEGIN members for Styles  */
+.scroll-icon{
+  height: 175px;
+  width: 550px;
+  overflow-y: scroll;
+}
 .z-index-div{
   z-index:999 !important;
 }
 .icon-right{
   float: right;
-}
-.scroll-icon{
-  height: 175px;
-  width: 550px;
-  overflow-y: scroll;
 }
 
 .members-padding{
@@ -469,6 +466,9 @@ cursor: pointer;
   padding-right:2px !important;
   padding-left:2px !important;
 }
+/* END members for Styles  */
+
+
 
 .padding-r-l{
   padding-right:5px !important;
@@ -494,37 +494,28 @@ cursor: pointer;
   border-radius: 17px;
 
  }
- 
+
  .btn-space-circle-icon{
   font-size: 17px !important;
   line-height: 17px !important;
  }
-.parent-div{
-
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 160px;
-  width: 300;
-}
 
 
  .principale {
   height: 160px;
-  width: 300px;
   position: relative;
 }
+
 .principale  .parent-div{
   height: 160px;
-  width: 300px;
+
   position: absolute;
   display: block;
   top: 0;
   left: 0;
 }
 
-/* BEGIN Spaces pagination  */
+/* BEGIN Spaces pagination footer */
 .pagination-next{
   background-color: #23d7b2;
   border-color: #23d7b2;
@@ -539,17 +530,130 @@ cursor: pointer;
   z-index: -1 !important;
 }
 
+/* END Spaces pagination head */
+
+.head-top-pagination {
+  position: absolute;
+  right: 4%;
+  top:37px;
+}
+
+.head-search-w-h {
+  width: 50%;
+  height: 50px !important;
+  margin: auto;
+}
+
+/* BEGIN Spaces pagination head */
+.pagination-next{
+  background-color: #23d7b2;
+  border-color: #23d7b2;
+  color:#FFF !important;
+  border-radius: 7px;
+}
+.pagination-text-color{
+  color:#FFF !important;
+}
+.h-navber-padding{
+  padding: 6px !important;
+  z-index: -1 !important;
+}
+.icon-arrow-right{
+width: 0px !important;
+}
+.search-margin-top{
+  margin-top: 1%;
+}
+
+/* END Spaces pagination footer */
+
+/* End Spaces for Styles  */
+
+
+
+/* ////////////////////////////////////////////////////  BEGIN Spaces for media query  //////////////////////////////////////////////////// */
+
+
+/* ---------------- BEGIN Moblie devices  screens ----------- */
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+  .principale  .parent-div{min-height: 160px;}
+  .head-search-w-h {width: 99%;}
+  .h-i-m-top {margin-top: 11px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  .search-margin-top{margin-top: 1%;}
+
+
+}
+/* x---x---x---x---x---x End Moblie devices screens x---x---x---x---x---x*/
+
+/* ---------------- BEGIN Tablets  screens ----------- */
+@media (min-width: 768px) and (max-width: 991px){
+
+  .principale  .parent-div{height: 160px;}
+  .h-i-m-top { margin-top: 6px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  .head-search-w-h {width: 99%;}
+  .search-margin-top{margin-top: 1%;}
+}
+
+
+/* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
+/* ---------------- BEGIN Desktops and laptops  screens ----------- */
+@media (min-width: 992px) and (max-width: 1199px){
+
+  .principale  .parent-div{height: 160px; width: 280px;}
+  .h-i-m-top { margin-top: 6px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  .head-search-w-h {
+    width: 50%;
+    height: 50px !important;
+    margin: auto;
+
+  }
+
+}
+
+/* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
+
+
+
+/* ---------------- BEGIN Tablets  screens ----------- */
+@media (min-width: 1200px) and (max-width: 20000px){
+
+  .principale  .parent-div{height: 160px;}
+  .h-i-m-top { margin-top: 6px; }
+  .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
+  .head-search-w-h {
+    width: 50%;
+    height: 50px !important;
+    margin: auto;
+    float: right;
+  }
+  .search-margin-top{margin-top: 3%;}
+}
+
+
+  /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
+
+/* ////////////////////////////////////////////////////  End  Spaces for media query  //////////////////////////////////////////////////// */
 
 
 
 
-/*Harish Styles End for zoomindiv */
+
+
+
+
+
+
 
 
 /* BEGIN CMS Hub Meeting */
-.bg-color{
-  background-color: #eee;
-}
+.bg-color{background-color: #eee;}
+
+
 /* End CMS Hub Meeting */
 
 
@@ -1098,7 +1202,7 @@ code,
 
 @media (max-width: 767px) {
   .link-image {
-    max-width: 370px;
+    /* max-width: 370px; */
     margin-left: auto;
     margin-right: auto;
   }
@@ -28263,11 +28367,11 @@ yx-axis
   /* onhovermeeting styles Begin */
 
     .card-section {
-      padding-top: 50px; 
+      padding-top: 50px;
     }
 
    .style_prevu_kit
-   {  
+   {
        display: block;
        position: relative;
        top: 0;
@@ -28275,14 +28379,14 @@ yx-axis
        padding: 20px;
        z-index: 0;
        /* -webkit-transition: all 200ms ease-in;
-       -webkit-transform: scale(1); 
+       -webkit-transform: scale(1);
        -ms-transition: all 200ms ease-in;
-       -ms-transform: scale(1); 
+       -ms-transform: scale(1);
        -moz-transition: all 200ms ease-in;
        -moz-transform: scale(1);
        transition: all 200ms ease-in;
        transform: scale(1);    */
-          
+
    }
 
    /* .style_prevu_kit:hover
@@ -28292,14 +28396,14 @@ yx-axis
        -webkit-transition: all 200ms ease-in;
        -webkit-transform: scale(1.1);
        -ms-transition: all 200ms ease-in;
-       -ms-transform: scale(1.1);   
+       -ms-transform: scale(1.1);
        -moz-transition: all 200ms ease-in;
-       -moz-transform: scale(1.1); 
+       -moz-transform: scale(1.1);
        transition: all 200ms ease-in;
        transform: scale(1.1);
        position: relative;
        top: -80px;
-       left: -45px; 
+       left: -45px;
    } */
 
    .contents {
