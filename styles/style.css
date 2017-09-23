@@ -333,7 +333,7 @@ cursor: pointer;
 .h-m-icon-top{ margin-top: 6% !important;}
 .h-pages-next{margin-top: -22px !important;}
 
-.h-i-m-top{margin-top: 6px; }
+
 
  .h-i-color{color: red !important ;
   cursor: pointer !important;
@@ -367,40 +367,84 @@ cursor: pointer;
 .h-m-top-none{margin-top: 0px 0px 0px 0px !important;}
 .h-padding-none{padding:  0px 0px 0px 0px !important;}
 .h-m-top-none{margin-top: 0px !important;}
+.padding-right-none{padding-right: 0px !important;}
+.padding-left-none{padding-left: 0px !important}
 
 /*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
 
 
 /*/////////////////////////////////// BEGIN zoomindiv for Styles ////////////////////////////////////// */
-.s-height{
-  height: 160px !important;
+.s-height{ height: 160px !important; width: 100% !important;     margin: 0px 0px !important;}
+.pagination-margin-top{ margin-top: 24px;}
+.members-padding-icon{ padding-right:1px !important; padding-left:1px !important;}
+.title-color{
+    color: #23d7b2;
+    font-size: small;
+    margin-top: 5px;
+  }
+  .icon-margin-top{ margin-top: 5px}
+  .title-align{ text-align: start; margin-left: 5px; }
+  .members-padding{ padding: 5px; }
+  .scroll-icon{
+    height: 330px;
+    width: 339px;
+    overflow-y: scroll;
+
+  }
+  .icon-member-circle{
+    width: 28px;
+    height: 28px;
+    position: relative;
+    top: 10%;
+    margin: auto;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 17px;
+
+   }
+
+
+   .members-padding{ padding-left: 6px; padding-right: 1px;}
+   .border-bottom-title{ border-bottom: 1px so;}
+   .icon-size{ font-size: 17px; line-height: 20px; }
+   .morph-content { border-radius: 2px; }
+   .close-margin-top{
+     margin-top: 11px;
+     margin-left: 16px;
+     position: relative;
+     font-size: 15px;
+     line-height: 17px;
+   }
+   /*.pagination-h-w{
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     padding: 0;
+     font-size: 12px;
+     line-height: 40px;
+     font-weight: 300;
+     font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
+     background-color: #23d7b2;
+     border: 1px solid #23d7b2;
+     color: #FFF;
+     text-align: center;
+     transition: .4s;
+     border-radius: 50px;
 }
+   .pagination-h-w:hover{
+     background-color: #000;
+     color: #000;
+   }*/
+
 
 /*/////////////////////////////////// End zoomindiv for Styles ////////////////////////////////////// */
 /* BEGIN members for Styles  */
-.scroll-icon{
-  height: 175px;
-  width: 550px;
-  overflow-y: scroll;
-}
-.z-index-div{
-  z-index:999 !important;
-}
-.icon-right{
-  float: right;
-}
 
-.members-padding{
-  padding-left: 15px;
-  padding-right: 31px;
-}
-.members-margin-t{
-  margin-top: 2px;
-}
-.members-padding-icon{
-  padding-right:2px !important;
-  padding-left:2px !important;
-}
+.z-index-div{ z-index:999 !important;  }
+.icon-right{ float: right; }
+
+.members-margin-t{ margin-top: 2px; }
+
 /* END members for Styles  */
 
 

@@ -42,7 +42,6 @@
 	color:#23d7b2;
 }
 .icon-close:hover {
-
 	color:#000;
 }
 
@@ -87,7 +86,7 @@
 }
 
 .content-style-overlay .icon-close:hover {
-	border-color: #080808;	
+	border-color: #080808;
 }
 
 /* Style for text modal */
@@ -160,7 +159,7 @@
 .content-style-form input[type="text"],
 .content-style-form input[type="password"] {
 	padding: 10px;
-	width: 100%;
+	width: 11%;
 	border: 2px solid #ebd3bd;
 	background: transparent;
 	color: #b09a86;
@@ -182,7 +181,7 @@
 	display: block;
 	margin-top: 2.5em;
 	padding: 1.5em;
-	width: 100%;
+	width: 11%;
 	border: none;
 	background: #23d7b2;
 	color: #f9f6e5;
@@ -373,7 +372,7 @@
 
 .morph-button-inflow.open .content-style-social a {
 	-webkit-transform: translateX(0);
-	transform: translateX(0);	
+	transform: translateX(0);
 }
 
 .morph-button-inflow.open .content-style-social a:nth-child(2) {
@@ -510,20 +509,3 @@
 		right: 5px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
