@@ -441,13 +441,16 @@
 		-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
 		transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
 	}
+
 }
 
+
 @media screen and (max-width: 400px) {
+
 	.morph-button-fixed,
 	.morph-button-fixed .morph-content {
-		width: 200px;
-		height: 80px;
+		width: 28px;
+		height: 28px;
 	}
 
 	.morph-button-fixed > button {

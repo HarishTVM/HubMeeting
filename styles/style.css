@@ -344,7 +344,6 @@ cursor: pointer;
   color: #23d7b2;
   font-size: medium;
   white-space: nowrap;
-
   overflow: hidden;
   text-overflow: ellipsis;
  }
@@ -369,6 +368,7 @@ cursor: pointer;
 .h-m-top-none{margin-top: 0px !important;}
 .padding-right-none{padding-right: 0px !important;}
 .padding-left-none{padding-left: 0px !important}
+.border-none{ border: 0px solid #f8f8f8 !important}
 
 /*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
 
@@ -384,6 +384,11 @@ cursor: pointer;
   }
   .icon-margin-top{ margin-top: 5px}
   .title-align{ text-align: start; margin-left: 5px; }
+  .text-overflow-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .members-padding{ padding: 5px; }
   .scroll-icon{
     height: 330px;
@@ -442,6 +447,7 @@ cursor: pointer;
 
 .z-index-div{ z-index:999 !important;  }
 .icon-right{ float: right; }
+.div-top{ top:10px; }
 
 .members-margin-t{ margin-top: 2px; }
 
@@ -522,6 +528,7 @@ cursor: pointer;
   height: 50px !important;
   margin: auto;
 }
+
 
 /* BEGIN Spaces pagination head */
 .pagination-next{
