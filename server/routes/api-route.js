@@ -54,4 +54,7 @@ app.get("/zoomindiv", (req, res)=>{
 app.get("/onhovermeeting", (req, res)=>{
   res.render("onhovermeeting", {year: new Date().getFullYear()});
 });
+app.get("/404page", (req, res)=>{
+  res.render("404page", {year: new Date().getFullYear()});
+});
 module.exports = app;
