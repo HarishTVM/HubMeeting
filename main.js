@@ -17,6 +17,7 @@ var i18n = require("i18n-express");
 var sslPort = 443; // Default port for HTTPS
 const osLocale = require('os-locale');
 var localLang = null;
+var handlebars = require('handlebars');
 localLang = osLocale.sync().toString();
 
 	var xmpp = require('simple-xmpp');

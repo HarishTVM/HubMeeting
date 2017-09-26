@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
     <!-- Site Title-->
-    <title>CMS Hub Meeting</title>
+    <title><%= translation.HUB_MEETING_PAGE_TITLE %></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,9 +36,9 @@
         <!-- BEGIN Spaces toolbar-->
         <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
-            <h5 class="meeting-head-bread">Meeting</h5>
-            <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-            <li>Meeting</li>
+            <h5 class="meeting-head-bread"><%= translation.HUB_MEETING_SUBHEAD_MEETING %></h5>
+            <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_MEETING_BREADCRUMB_DASHBOARD %></a></li>
+            <li><%= translation.HUB_MEETING_BREADCRUMB_MEETING %></li>
           </ol>
         </div>
           <!-- END Spaces toolbar-->
@@ -589,7 +589,7 @@
     </div>
      <!-- END Spaces pagination footer -->
 
-     <a id="ceateSpace"  href="/newMeeting" data-toggle="tooltip" data-placement="bottom" title="" class="button button-primary icon linear-icon-plus newmeeting-btn-circle" data-original-title="Create Meeting"></a>
+     <a id="ceateSpace"  href="/newMeeting" data-toggle="tooltip" data-placement="bottom" title="" class="button button-primary icon linear-icon-plus newmeeting-btn-circle" data-original-title="<%= translation.HUB_MEETING_CREATE_MEETING_BTN %>"></a>
 
     </div>
   </div>

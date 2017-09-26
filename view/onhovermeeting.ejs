@@ -16,7 +16,7 @@
     <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/newmeeting.css">
-
+    <script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
 </head>
 <!-- onhovermeeting Page Begin -->
 
@@ -46,7 +46,7 @@
             <section class="section-lg bg-white card-section">
                 <div class="shell">
                     <div class="range range-center">                            
-                        
+                        <div id="contentDiv"></div>
                     </div>
                 </div>
             </section>
@@ -60,9 +60,27 @@
             <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
             <script src="/scripts/core.min.js"></script>
             <script src="/scripts/script.js"></script>
-            <script src="/scripts/http-helper.js"></script>
-            <script src="/scripts/http-helper-test.js"></script>
+            <script src="/scripts/http-helper.js"></script> 
+            <!-- <script src="/scripts/http-helper-test.js"></script>  -->
 
+            <script id="template-quote" type="text/x-handlebars-template">
+                <div>{{_id}} and {{ISO_code}}</div>
+                <div></div>
+            </script>
+
+            <script type="text/javascript">
+                var quoteInfo = $('#template-quote').html();
+                var template = Handlebars.compile(quoteInfo);
+
+                httpGet('getCountries', function(result){
+                    
+                    var context = result.data[0];
+                    console.log(context);
+                    // var context = { "name" : "Ritesh Kumar", "occupation" : "developer" };
+                    var html = template(context);
+                    $('#contentDiv').append(html);
+                });          
+            </script>
 </body>
 <!-- onhovermeeting page start -->
 

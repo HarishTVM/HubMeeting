@@ -1,24 +1,21 @@
 var BASE_URL = "http://api.routejoot.com/";
-
+    
     var httpGet = function(Url, callback) {
-        debugger;    
         $.ajax({
             method: 'GET',
             url: BASE_URL + Url,
-            success: function(response){
-                callback(response);
+            success: function(data, status, xhr){
+                callback(data);
+                // callback(xhr.status);
             },
-            error: function(response, xhr, status){
-                console.log(xhr);
+            error: function(status, xhr){
+                console.log(xhr.status);
                 console.log("Failure");
             },
         });
-        // function onSuccess(result){ 
-        //     console.log(result);
-        // }
     };    
     
-    var httpPost = function(Url, _data){
+    var httpPost = function(Url, _data, callback){
         $.ajax({
             method: 'POST',
             url: Url,
@@ -26,16 +23,16 @@ var BASE_URL = "http://api.routejoot.com/";
                 "Content-Type": "application/json; charset=utf-8"
             },
             data: _data,
-            success: function(response, xhr, data){
-                console.log(xhr.status);
+            success: function(data, status, xhr){
+                callback(data);
             },
-            error: function(response, xhr){
+            error: function(status, xhr){
                 console.log(xhr.status);
             },
         });
     };
     
-    var httpPut = function(Url, _data) {
+    var httpPut = function(Url, _data, callback) {
         $.ajax({
             method: 'PUT',
             url: Url,
@@ -43,26 +40,26 @@ var BASE_URL = "http://api.routejoot.com/";
                 "Content-Type": "application/json; charset=utf-8"
             },
             data: _data,
-            success: function(response, xhr, data) {
-                console.log(xhr.status);
+            success: function(data, status, xhr) {
+                callback(data);
             },
-            error: function(response, xhr){
+            error: function(status, xhr){
                 console.log(xhr.status);
             }
         });
     };
 
-    var httpDelete = function(Url, _data) {
+    var httpDelete = function(Url, _data, callback) {
         $.ajax({
             method: 'DELETE',
             url: Url + '?' + $.param({"data": _data}),
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             },
-            success: function(response, xhr, data) {
-                console.log(xhr.status);
+            success: function(data, status, xhr) {
+                callback(data);
             },
-            error: function(response, xhr){
+            error: function(status, xhr){
                 console.log(xhr.status);
             }
         });

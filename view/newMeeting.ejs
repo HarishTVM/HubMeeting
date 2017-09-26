@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
     <!-- Site Title-->
-    <title>CMS Hub Create Meeting</title>
+    <title><%= translation.SCHEDULE_MEETING_PAGE_TITLE %></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,9 +28,9 @@
       <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
               <h5 class="newmeeting-head-bread"><%= translation.SCHEDULE_MEETING_HEADER %></h5>
-              <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-              <li><a href="/meeting" class="breadcrumb-links">Meeting</a></li>
-              <li>New Meeting</li>
+              <li><a href="/dashboard" class="breadcrumb-links"><%= translation.SCHEDULE_MEETING_BREADCRUMB_DASHBOARD %></a></li>
+              <li><a href="/meeting" class="breadcrumb-links"><%= translation.SCHEDULE_MEETING_BREADCRUMB_MEETING %></a></li>
+              <li><%= translation.SCHEDULE_MEETING_BREADCRUMB_NEW_MEETING %></li>
           </ol>   
       </div>
       <section class="section-lg bg-white text-center main-section">

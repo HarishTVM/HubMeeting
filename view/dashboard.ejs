@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
     <!-- Site Title-->
-    <title>CMS Hub Dashboard</title>
+    <title><%= translation.HUB_DASHBORD_SUBHEAD_DASHBOARD %></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,8 +33,8 @@
       </div>
       <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
-              <h5 class="meeting-head-bread">Recent Meetings</h5>
-              <li>Dashboard</li>
+              <h5 class="meeting-head-bread"><%= translation.HUB_DASHBORD_RECENT_MEETINGS %></h5>
+              <li><%= translation.HUB_DASHBORD_SUBHEAD_DASHBOARD %></li>
           </ol>
       </div>
 
@@ -113,10 +113,10 @@
                       </div>
                     </div>
                   </div>
-          <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;"><a href="/meeting">see more...</a></p> 
+          <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;"><a href="/meeting"><%= translation.HUB_DASHBORD_LINK_SEE_MORE %>...</a></p> 
           <div class="container-fluid breadcrumb-container">
                 <ol class="breadcrumb" style="text-align: left">
-                    <h5 >Activities</h5>
+                    <h5><%= translation.HUB_DASHBORD_SUBHEAD_ACTIVITY %></h5>
                 </ol>
           </div>
           <div style="margin-left: 25px; margin-right:25px">
@@ -133,7 +133,7 @@
             <div class="cell-sm-12 cell-md-12 cell-lg-12 text-center h-div-border" style="margin: 10px;margin-top: 30px; padding-top: 10px">
                     <div class="rd-calendar">
                             <div class="rdc-panel">
-                              <h3>Meeting <span class="rdc-month"></span> <span class="rdc-fullyear"></span>
+                              <h3><%= translation.HUB_DASHBORD_CALENDER %> <span class="rdc-month"></span> <span class="rdc-fullyear"></span>
                               </h3>
                             </div>
                             <div class="rdc-table"></div>
@@ -151,9 +151,9 @@
                               </ul>
                             </div>
                             <div class="rdc-panel-nav">
-                              <a class="rdc-prev">Prev month</a>
+                              <a class="rdc-prev"><%= translation.HUB_DASHBORD_LINK_PREV_MONTH %></a>
                               <!--<h5 class="veil reveal-sm-block">Calendar Month Navigation</h5>-->
-                              <a class="rdc-next">Next month</a>
+                              <a class="rdc-next"><%= translation.HUB_DASHBORD_LINK_NEXT_MONTH %></a>
                             </div>
                           </div>
             </div>
@@ -175,7 +175,7 @@
 
             var popData = {
   datasets: [{
-    label: ['Meeting Duration'],
+    label: ['<%= translation.HUB_DASHBORD_BUBBLE_CHART_MEETING_DURATION %>'],
     data: [{
       x: 100,
       y: 0,
@@ -213,7 +213,7 @@
                     responsive: true,
                     title:{
                         display:false,
-                        text:'Meeting Duration'
+                        text:'<%= translation.HUB_DASHBORD_BUBBLE_CHART_MEETING_DURATION %>'
                     },
                     tooltips: {
                         mode: 'point'
@@ -226,7 +226,7 @@
                     type: 'pie'
                 },
                 title: {
-                    text: 'Meetings'
+                    text: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS %>'
                 },
                 // subtitle: {
                 //     text: 'Click the slices to view versions. Source: netmarketshare.com.'
@@ -245,25 +245,25 @@
                     pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
                 },
     series: [{
-        name: 'Brands',
+        name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS %>',
         colorByPoint: true,
         data: [{
-            name: 'Active',
+            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_ACTIVE %>',
             y: 10.33,
             drilldown: 'Active Meetings'
         }, {
-            name: 'Completed',
+            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_COMPLETED %>',
             y: 24.03,
             drilldown: 'Completed Meetings'
         }, {
-            name: 'Scheduled',
+            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_SCHEDULED %>',
             y: 35.38,
             drilldown: 'Scheduled Meetings'
         }]
     }],
     drilldown: {
         series: [{
-            name: 'Active',
+            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_ACTIVE %>',
             id: 'Active Meetings',
             data: [
                 ['Jan', 2.33],
