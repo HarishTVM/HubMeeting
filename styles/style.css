@@ -270,15 +270,15 @@ border-color: #23d7b2;
      font-size: 15px;
      line-height: 17px;
    }
-   .h6-title-medium{font-size:medium !important;}   
+   .h6-title-medium{font-size:medium !important;}
    .h6-title-color:hover{color: #161817;}
    .h6-title-color{
     color: #23d7b2;
     font-size:small;
     margin-top: 5px;
-   
+
    }
-   
+
 
 /*/////////////////////////////////// End zoomindiv for Styles ////////////////////////////////////// */
 /* BEGIN members for Styles  */
@@ -455,7 +455,7 @@ border-color: #23d7b2;
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  
+
 }
 .page-error-icon-size{
   font-size: 100px;
@@ -468,6 +468,27 @@ border-color: #23d7b2;
 /*/////////////////////////////////// BEGIN CMS Hub Meeting for Styles ////////////////////////////////////// */
 .bg-color{background-color: #eee;}
 /*/////////////////////////////////// END CMS Hub Meeting for Styles ////////////////////////////////////// */
+
+/*/////////////////////////////////// BEGIN Create spaces for Styles ////////////////////////////////////// */
+.btn_discard{
+  display: inline-block;
+  width: auto; max-width: 100%;
+  border: 1px solid; border-radius: 3px;
+  padding: 12px 30px;
+  font-size: 12px; line-height: 24px;
+  font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: .06em;
+  transition: .33s all ease;
+  white-space: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  background-color: red;
+  color: #fff;
+}
+.btn_discard:hover{ background-color: #000; }
+/*/////////////////////////////////// END Create spaces for Styles ////////////////////////////////////// */
 
 
 /*spacelist page end*/

@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
     <!-- Site Title-->
-    <title>CMS Hub Spaces</title>
+    <title><%= translation.HUB_SPACES_TITLE %></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,9 +35,9 @@
       <!-- BEGIN Spaces toolbar-->
       <div class="container-fluid breadcrumb-container">
         <ol class="breadcrumb">
-          <h5 class="meeting-head-bread">Spaces</h5>
-          <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-          <li>Spaces</li>
+          <h5 class="meeting-head-bread"><%= translation.HUB_SPACES_TOOLBAR_SPACES %></h5>
+          <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
+          <li><%= translation.HUB_SPACES_TOOLBAR_SPACES %></li>
         </ol>
       </div>
         <!-- END Spaces toolbar-->
@@ -50,7 +50,7 @@
   					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
   						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
   							<div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h search-margin-top">
-  								<input class="form-input search-input " type="text" name="search" placeholder="Enter the Spacename">
+  								<input class="form-input search-input " type="text" name="search" placeholder="<%= translation.HUB_SPACES_SEARCH_PLACEHOLDER %>">
   							</div>
   						</div>
   						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
@@ -1465,7 +1465,7 @@
    <!-- END Spaces pagination footer -->
 
 
-   <a id="ceateSpace" href="/createspace" data-toggle="tooltip" data-placement="bottom" title="" class="button button-primary icon linear-icon-plus newmeeting-btn-circle" data-original-title="CreateSpace"></a>
+   <a id="ceateSpace" href="/createspace" data-toggle="tooltip" data-placement="bottom" title="" class="button button-primary icon linear-icon-plus newmeeting-btn-circle" data-original-title="<%= translation.HUB_CREATE_SPACE_TOOLBAR %>"></a>
   </div>
 </div>
 </section>

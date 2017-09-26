@@ -3,7 +3,7 @@
 
 <head>
   <!-- Site Title-->
-  <title>CMS Hub Spaces</title>
+  <title><%= translation.HUB_SPACES_TITLE %></title>
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,9 +34,9 @@
       <!-- BEGIN Spaces toolbar-->
       <div class="container-fluid breadcrumb-container">
         <ol class="breadcrumb">
-          <h5 class="meeting-head-bread">Spaces</h5>
-          <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-          <li>Spaces</li>
+          <h5 class="meeting-head-bread"><%= translation.HUB_SPACES_TOOLBAR_SPACES %></h5>
+          <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
+          <li><%= translation.HUB_SPACES_TOOLBAR_SPACES %></li>
         </ol>
       </div>
       <!-- END Spaces toolbar-->
@@ -49,7 +49,7 @@
                 <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
                   <!-- BEGIN Spaces search input head -->
                   <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h search-margin-top">
-                    <input class="form-input search-input " type="text" name="search" placeholder="Enter the Spacename">
+                    <input class="form-input search-input " type="text" name="search" placeholder="<%= translation.HUB_SPACES_SEARCH_PLACEHOLDER %>">
                   </div>
                   <!-- BEGIN Spaces search input head -->
                 </div>
@@ -78,9 +78,9 @@
                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
                  <!-- BEGIN card one user details for Spaces -->
                  <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 ">
-                   <ul class="text-center"><li> <b><h6 class="h6-title-color text-overflow-title h6-title-medium">Harish@.inflexiontech.com</h6></b></li></ul>
-                   <ul><li> <b><h6 class="h6-title text-overflow-title ">Owner:</h6></b></li></ul>
-                   <ul><li><h6 class="h6-title text-overflow-title ">Layout Type : {{allEqual}}</h6></li></ul>
+                   <ul class="text-center"><li> <b><h6 id="spaceNameID" class="h6-title-color text-overflow-title h6-title-medium">Names</h6></b></li></ul>
+                   <ul><li> <b><h6 class="h6-title text-overflow-title ">Owner :</h6></b></li></ul>
+                   <ul><li><h6 class="h6-title text-overflow-title ">allEqual :</h6></li></ul>
                    <ul><li><h6 class="h6-title text-overflow-title ">Call ID: 700102</h6></li></ul>
                    <ul><li><h6 class="h6-title text-overflow-title ">Members : 5</h6></li></ul>
                   </div>
@@ -89,8 +89,8 @@
                   <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
                     <ul><li>
                       <samp class="icon-margin-top">
-                        <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"  ></a>
-                        <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="Not starred" ></a>
+                        <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_STATUS %>"  ></a>
+                        <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="<%= translation.HUB_SPACES_TOOLTIP_STAR %> " ></a>
                       </samp>
                     </li></ul>
                   </div>
@@ -100,12 +100,12 @@
                 <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
                 <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
                   <ul class="list-inline-sm"><li>
-                    <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="Info" href="#Settings">
+                    <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" href="#Settings">
                       <i class="linear-icon-reading"></i>
                     </p>
                   </li>
                   <li>
-                    <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings">
+                    <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>" href="#Settings">
                       <i class="linear-icon-trash2"></i>
                     </p>
                   </li>
@@ -128,19 +128,19 @@
                     </ul>
                   </div>
                   <!-- END card one user details for Spaces-->
-                  
+
                   <!-- BEGIN card one close icon for Spaces-->
                   <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-right-none padding-left-none">
                     <ul>
                       <li class="members-padding-icon" >
-                        <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="close" href="#close"><i class="linear-icon-cross2"></i>
+                        <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>" href="#close"><i class="linear-icon-cross2"></i>
                         </a>
                       </li>
                     </ul>
                   </div>
                     <!-- END card one close icon for Spaces-->
                 </div>
-                
+
                 <!-- BEGIN card one members for Spaces-->
                 <div class="members-padding scroll-icon">
                   <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-right-none padding-left-none members-margin-t h-div-border">
@@ -149,7 +149,7 @@
                       <ul><li><b><h6 class="title-color  title-align text-margin-top text-overflow-title">Sreeharsha.inflexiontech@gmail.com</h6></b> </li></ul>
                     </div>
                     <!-- END card one spaces name for Spaces members -->
-                    
+
                     <!-- BEGIN card one show the icon mic,camera and delete for Spaces members-->
                     <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-6">
                       <ul class="list-inline-sm icon-right ">
@@ -162,7 +162,6 @@
                   </div>
                 </div>
                 <!-- END card one members for Spaces-->
-                
               </div>
             </div>
             <!-- END card one info icon onclick show for Spaces-->
@@ -186,8 +185,8 @@
               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
                 <ul><li>
                   <samp class="icon-margin-top">
-                    <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"  ></a>
-                    <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="Not starred" ></a>
+                    <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title=" <%= translation.HUB_SPACES_TOOLTIP_STATUS %> "  ></a>
+                    <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="<%= translation.HUB_SPACES_TOOLTIP_STAR %> " ></a>
                   </samp>
                 </li></ul>
               </div>
@@ -197,12 +196,12 @@
             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
               <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
                 <ul class="list-inline-sm"><li>
-                  <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="Info" href="#Settings">
+                  <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" href="#Settings">
                     <i class="linear-icon-reading"></i>
                   </p>
                 </li>
                 <li>
-                  <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings">
+                  <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>" href="#Settings">
                     <i class="linear-icon-trash2"></i>
                   </p>
                 </li>
@@ -228,7 +227,7 @@
                   <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-right-none padding-left-none">
                     <ul>
                       <li class="members-padding-icon">
-                        <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="close" href="#close"><i class="linear-icon-cross2"></i></a>
+                        <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>" href="#close"><i class="linear-icon-cross2"></i></a>
                       </li>
                     </ul>
                   </div>
@@ -277,8 +276,8 @@
                 <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
                   <ul><li>
                     <samp class="icon-margin-top">
-                      <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"  ></a>
-                      <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="Not starred" ></a>
+                      <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title=" <%= translation.HUB_SPACES_TOOLTIP_STATUS %>  "  ></a>
+                      <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="<%= translation.HUB_SPACES_TOOLTIP_STAR %> " ></a>
                     </samp>
                   </li></ul>
                 </div>
@@ -288,12 +287,12 @@
               <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
                 <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
                   <ul class="list-inline-sm"><li>
-                    <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="Info" href="#Settings">
+                    <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" href="#Settings">
                       <i class="linear-icon-reading"></i>
                     </p>
                   </li>
                   <li>
-                    <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings">
+                    <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>" href="#Settings">
                       <i class="linear-icon-trash2"></i>
                     </p>
                   </li>
@@ -319,7 +318,7 @@
                     <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-right-none padding-left-none">
                       <ul>
                         <li class="members-padding-icon">
-                          <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="close" href="#close"><i class="linear-icon-cross2"></i></a>
+                          <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>" href="#close"><i class="linear-icon-cross2"></i></a>
                         </li>
                       </ul>
                     </div>
@@ -368,8 +367,8 @@
         <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
           <ul><li>
             <samp class="icon-margin-top">
-              <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="Status"  ></a>
-              <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="Not starred" ></a>
+              <a class="h-r-star  icon-cursor h-icon-star-color icon-sm fa-dot-circle-o " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_STATUS %>"  ></a>
+              <a class="h-r-star  icon-cursor  h-icon-star-color icon-sm linear-icon-star"  data-toggle="tooltip" data-placement="top"  title="<%= translation.HUB_SPACES_TOOLTIP_STAR %>" ></a>
             </samp>
           </li></ul>
         </div>
@@ -379,12 +378,12 @@
       <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
         <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
           <ul class="list-inline-sm"><li>
-            <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="Info" href="#Settings">
+            <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %> " href="#Settings">
               <i class="linear-icon-reading"></i>
             </p>
           </li>
           <li>
-            <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="Delete" href="#Settings">
+            <p class="btn btn-circle h-icon-color-sm-delete thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>" href="#Settings">
               <i class="linear-icon-trash2"></i>
             </p>
           </li>
@@ -410,7 +409,7 @@
             <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-right-none padding-left-none">
               <ul>
                 <li class="members-padding-icon">
-                  <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="close" href="#close"><i class="linear-icon-cross2"></i></a>
+                  <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="bottom" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>" href="#close"><i class="linear-icon-cross2"></i></a>
                 </li>
               </ul>
             </div>
@@ -442,7 +441,6 @@
      </div>
     </div>
 <!--================================ END Spaces card Four ======================================== -->
-
 <!-- BEGIN Spaces pagination footer -->
 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none">
   <div class="range range-5 h-m-top-none ">
@@ -467,7 +465,7 @@
 </div>
 </section>
   <%include footer %>
-  
+
   <!-- BEGIN Template script file links -->
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/scripts/core.min.js"></script>
@@ -475,9 +473,12 @@
   <script src="/scripts/jquery.contenthover.min.js"></script>
   <script src="/scripts/general.js"></script>
   <script src="/scripts/modernizr.custom.js"></script>
+  <script type="text/x-handlebars-template"></script>
+  <script type="handlebars-v4.0.2.js"></script>
   <!--  BEGIN Template script file links src -->
-  
+
   <!-- BEGIN Spaces script -->
+
   <!-- <script src="/scripts/zoomindiv.js"></script> -->
   <script src="/scripts/classie.js"></script>
   <script src="/scripts/uiMorphingButton_fixed.js"></script>
@@ -487,6 +488,7 @@
   });
   </script>
   <script>
+
     (function () {
       var docElem = window.document.documentElement, didScroll, scrollPosition;
       // trick to prevent scrolling when opening/closing button
@@ -515,7 +517,7 @@
         didScroll = false;
       };
       scrollFn();
-      
+
       [].slice.call(document.querySelectorAll('.morph-button')).forEach(function (bttn) {
         new UIMorphingButton(bttn, {
           closeEl: '.linear-icon-cross2',

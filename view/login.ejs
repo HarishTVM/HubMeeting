@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
     <!-- Site Title-->
-    <title>CMS Hub Login</title>
+    <title><%= translation.CMSHUB_LOGIN %></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@
 
                   <div class="rd-navbar-brand"><img class="h-logo-image" src="/images/logo.png" ></div>
                 </div>
-                <div class="rd-navbar-brand"><h4>Meeting hub Manager</h4></div>
+                <div class="rd-navbar-brand"><h4><%= translation.HUBLOGIN_MEETING_HUB_MANAGER %></h4></div>
               </div>
             </nav>
           </div>
@@ -47,20 +47,20 @@
       <!-- Forms-->
       <section class="section-lg bg-white text-center">
         <div class="shell">
-		<h4>Login</h4>
+          <h4><%= translation.HUBLOGIN %></h4>
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <!-- RD Mailform-->
               <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
                 <div class="form-wrap form-wrap_icon linear-icon-man">
                   <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                  <label class="form-label" for="contact-name">User name</label>
+                  <label class="form-label" for="contact-name"><%= translation.HUBLOGIN_USERNAME %></label>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-key-hole">
                   <input class="form-input" id="contact-email" type="password" name="email" data-constraints="@Required">
-                  <label class="form-label" for="contact-email">Password</label>
+                  <label class="form-label" for="contact-email"><%= translation.HUBLOGIN_PASSWORD %></label>
                 </div>
-                <button id="loginBtn" class="button button-primary" type="submit">Login</button>
+                <button id="loginBtn" class="button button-primary" type="submit"><%= translation.HUBLOGIN %></button>
               </form>
             </div>
           </div>
@@ -68,7 +68,7 @@
       </section>
       <!-- Forms-->
     </div>
-    <% include footer %> 
+    <% include footer %>
     <!-- Javascript-->
     <script src="scripts/core.min.js"></script>
     <script src="scripts/script.js"></script>
