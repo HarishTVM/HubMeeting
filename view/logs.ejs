@@ -3,7 +3,7 @@
 
 <head>
     <!-- Site Title-->
-    <title>CMS Hub Logs</title>
+    <title><%= translation.HUB_LOGS_TITLE %></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,9 +29,9 @@
         </div>
         <div class="container-fluid breadcrumb-container">
             <ol class="breadcrumb">
-                <h5 class="meeting-head-bread">Logs</h5>
-                <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-                <li>Logs</li>
+                <h5 class="meeting-head-bread"><%= translation.HUB_LOGS_TOOLBER %></h5>
+                <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
+                <li><%= translation.HUB_LOGS_TOOLBER %></li>
             </ol>
         </div>
         <!-- <div class="newbtn-search-group"> -->
@@ -49,8 +49,8 @@
               <li><a href="#">4</a></li>
               <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
             </ul>
-          </nav> 
-        </div> 
+          </nav>
+        </div>
         <section class="section-sm bg-white main-section">
           <div class="shell accordian-shell">
             <!-- Accordion-->
@@ -68,8 +68,8 @@
                       <li>Owner: Sreeharsha inflexion.com</li>
                       <li>Operator:</li>
                       <li>Invitees: 3</li>
-                    </ul>  
-                    <ul class="list-group list-content"> 
+                    </ul>
+                    <ul class="list-group list-content">
                       <li>Call reference #: 20170907/0001</li>
                       <li>Call URI: abc</li>
                       <li>Call ID: 700102</li>
@@ -228,7 +228,7 @@
             </ul>
         </nav>
       </section>
-  
+
       </div>
     <% include footer %>
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>

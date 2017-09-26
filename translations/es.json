@@ -1,4 +1,72 @@
 {
+  "CMSHUB_LOGIN":"Inicio del CMS Hub",
+  "HUBLOGIN_MEETING_HUB_MANAGER":"Administrador del concentrador de reuniones",
+  "HUBLOGIN":"Iniciar sesión",
+  "HUBLOGIN_USERNAME":"Nombre de usuario",
+  "HUBLOGIN_PASSWORD":"Contraseña",
+
+  "HUBCONFIGUATION_TITLE":"Configuración del concentrador de CMS",
+  "HUBCONFIGUATION":"Configuración",
+  "HUBCONFIGUATION_API_URL":"URL de la API",
+  "HUBCONFIGUATION_API_USERNAME":"Nombre de usuario de API",
+  "HUBCONFIGUATION_API_PASSWORD":"Contraseña del API",
+  "HUBCONFIGUATION_SAVE":"Salvar",
+
+  "HUBSMTP_TITLE":"SMTP de concentrador de CMS ",
+  "HUBSMTP_SETUP":"Configuración SMTP",
+  "HUBSMTP_SERVER_ADDRESS":"Dirección del servidor SMTP",
+  "HUBSMTP_USERNAME":"Nombre de usuario de SMTP",
+  "HUBSMTP_PASSWORD":"Contraseña SMTP",
+  "HUBSMTP_PORT_TLS":"Puerto SMTP (TLS)",
+  "HUBSMTP_PORT_SSL":"Puerto SMTP (SSL)",
+  "HUBSMTP_PORT_SUBMIT":"Enviar",
+
+  "HUB_SPACES_TITLE":"Espacios de concentrador de CMS",
+  "HUB_SPACES_TOOLBAR_SPACES":"Espacios",
+  "HUB_SPACES_TOOLBAR_DASHBOARD":"Tablero",
+  "HUB_SPACES_SEARCH_PLACEHOLDER":"Ingrese el Spacename",
+  "HUB_SPACES_TOOLTIP_STATUS":"Estado",
+  "HUB_SPACES_TOOLTIP_STAR":"No tiene estrellas",
+  "HUB_SPACES_TOOLTIP_INFO":"información",
+  "HUB_SPACES_TOOLTIP_EDIT":"Editar",
+  "HUB_SPACES_TOOLTIP_DELETE":"Borrar",
+  "HUB_SPACES_TOOLTIP_MUTE":"Mudo",
+  "HUB_SPACES_TOOLTIP_HIDE":"Esconder",
+  "HUB_SPACES_TOOLTIP_CLOSE":"Cerca",
+
+
+
+
+  "HUB_CREATE_SPACE_TITLE":"CMS Hub Crear espacio",
+  "HUB_CREATE_SPACE_TOOLBAR":"Crear espacio",
+  "HUB_CREATE_SPACE_NAME":"Nombre del espacio",
+  "HUB_CREATE_SPACE_TYPE_MEMBER_NAME":"Escribe el nombre de miembro",
+  "HUB_CREATE_SPACE_PASSCODE":"Código de acceso",
+  "HUB_CREATE_SPACE_ADDRESS":"Dirección del espacio",
+  "HUB_CREATE_SPACE_DISCARD":"Descarte",
+  "HUB_CREATE_SPACE_DONE":"Hecho",
+
+  "HUB_CHANGE_PASSWORD_TITLE":"Cambiar contraseña de CMS Hub",
+  "HUB_CHANGE_PASSWORD":"Cambia la contraseña",
+  "HUB_NEW_PASSWORD":"nueva contraseña",
+  "HUB_CONFIRM_PASSWORD":"Confirmar contraseña",
+  "HUB_SAVE":"Salvar",
+
+  "HUB_USERS_TITLE":"Usuarios de CMS Hub",
+  "HUB_USERS":"Usuarios",
+  "HUB_USERS_SEARCH_PLACEHOLDER":"Introduzca el nombre de usuario",
+
+  "HUB_ACTIVITY_TITLE":"Actividades del CMS Hub",
+  "HUB_ACTIVITY_TOOLBAR_CURRENT_ACTIVITIES":"Actividades actuales",
+  "HUB_ACTIVITY_SEARCH_PLACEHOLDER":"Ingrese el Meeting y el Spacename",
+  "HUB_ACTIVITY_TOOLBAR_ACTIVITIES":"Ocupaciones",
+  "HUB_ACTIVITY_SEE_MORE":"Ver más",
+  "HUB_ACTIVITY_TOOLBAR_RECENT_ACTIVITIES":"Actividades recientes",
+
+  "HUB_LOGS_TITLE":"Registros del concentrador de CMS",
+  "HUB_LOGS_TOOLBER":"Registros",
+
+
     "WELCOME_MSG": "¡Hola! ¡Bienvenido!",
     "CONTACT_TEXT": "More bla",
     "SCHEDULE_MEETING_PAGE_TITLE": "CMS Hub crea una reunión",

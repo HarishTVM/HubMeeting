@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
     <!-- Site Title-->
-    <title>CMS Hub Create space</title>
+    <title><%= translation.HUB_SPACE_TOOLBAR_DASHBOARD %></title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,41 +31,40 @@
       </div>
       <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb">
-              <h5 class="meeting-head-bread">Create space</h5>
-              <li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-              <li><a href="/spacelist" class="breadcrumb-links">Spaces</a></li>
-              
-              <li>Create space</li>
+              <h5 class="meeting-head-bread"><%= translation.HUB_CREATE_SPACE_TITLE %></h5>
+              <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
+              <li><a href="/spacelist" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_SPACES %></a></li>
+              <li><%= translation.HUB_CREATE_SPACE_TOOLBAR %></li>
           </ol>
       </div>
       <section class="section-lg bg-white text-center main-section">
         <div class="shell">
-          <h4>Create Space</h4>
+          <h4><%= translation.HUB_CREATE_SPACE_TOOLBAR %></h4>
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
             <!-- RD Mailform-->
             <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
               <div class="form-wrap form-wrap_icon linear-icon-database-add">
                 <input class="form-input" id="contact-sName" type="text" name="name" data-constraints="@Required">
-                <label class="form-label" for="contact-sName">Space Name</label>
+                <label class="form-label" for="contact-sName"><%= translation.HUB_CREATE_SPACE_NAME %></label>
               </div>
               <div class="form-wrap form-wrap_icon linear-icon-users-plus">
               <input class="form-input" id="contact-sMember" type="email" name="email"  data-constraints="@Required">
-              <label class="form-label" for="contact-sMember">Type member name</label>
+              <label class="form-label" for="contact-sMember"><%= translation.HUB_CREATE_SPACE_TYPE_MEMBER_NAME %></label>
             </div>
 
             <div class="form-wrap form-wrap_icon linear-icon-key-hole">
               <input class="form-input" id="contact-sPasscode" type="text" name="passcode" data-constraints="@Required">
-              <label class="form-label" for="contact-sPasscode">Passcode</label>
+              <label class="form-label" for="contact-sPasscode"><%= translation.HUB_CREATE_SPACE_PASSCODE %> </label>
             </div>
             <div class="form-wrap form-wrap_icon linear-icon-home6">
               <input class="form-input" id="contact-sAddress" type="text" name="email" data-constraints="@Required">
-              <label class="form-label" for="contact-sAddress">Space address</label>
+              <label class="form-label" for="contact-sAddress"><%= translation.HUB_CREATE_SPACE_ADDRESS %></label>
               </div>
-              <button id="btndiscard" class="button h-cancel-btn " type="submit">Discard</button>
+              <button id="btndiscard" class="button btn_discard " type="submit"><%= translation.HUB_CREATE_SPACE_DISCARD %> </button>
               &nbsp;&nbsp;
               &nbsp;&nbsp;
-             <button id="btndone" class="button button-primary" type="submit">Done</button>
+             <button id="btndone" class="button button-primary" type="submit"><%= translation.HUB_CREATE_SPACE_DONE %></button>
             </form>
           </div>
         </div>

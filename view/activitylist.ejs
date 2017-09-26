@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll" lang="en">
 <head>
 	<!-- Site Title-->
-	<title>CMS Hub  Activities</title>
+	<title><%= translation.HUB_ACTIVITY_TITLE %></title>
 
 	<meta content="telephone=no" name="format-detection">
 	<meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -29,9 +29,9 @@
 
 		<div class="container-fluid breadcrumb-container">
 			<ol class="breadcrumb">
-				<h5 class="meeting-head-bread">Current Activities</h5>
-				<li><a href="/dashboard" class="breadcrumb-links">Dashboard</a></li>
-				<li>Activities</li>
+				<h5 class="meeting-head-bread"><%= translation.HUB_ACTIVITY_TOOLBAR_CURRENT_ACTIVITIES %></h5>
+				<li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %> </a></li>
+				<li><%= translation.HUB_ACTIVITY_TOOLBAR_ACTIVITIES %></li>
 			</ol>
 		</div>
 		<section>
@@ -41,7 +41,7 @@
 					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
 						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
 							<div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h search-margin-top">
-								<input class="form-input search-input " type="text" name="search" placeholder="Enter the Meeting and Spacename">
+								<input class="form-input search-input " type="text" name="search" placeholder="<%= translation.HUB_ACTIVITY_SEARCH_PLACEHOLDER %>">
 							</div>
 						</div>
 						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
@@ -746,13 +746,13 @@
 
 						  <!-- END Activities animate zoom Grid 4 -->
         </div>
-        <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;"><a >see more...</a></p>
+        <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;"><a><%= translation.HUB_ACTIVITY_SEE_MORE %></a></p>
 
 
 	</div>
       <div class="container-fluid breadcrumb-container">
           <ol class="breadcrumb" style="text-align: left">
-              <h5 >Recent Activities</h5>
+              <h5 ><%= translation.HUB_ACTIVITY_TOOLBAR_RECENT_ACTIVITIES %></h5>
           </ol>
     </div>
     <div class="shell">
