@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+    
+    // For DEMO To Be Deleted
     $('#loginBtn').click(function () {
         window.location.href = '/configure';
     });
@@ -30,11 +32,9 @@ $(document).ready(function () {
 
 
     $(".btn-warning1").click(function () {
-
         if ($(this).hasClass("btn-actived")) {
             $(this).removeClass("btn-actived");
             $(this).children().removeClass("h-iconls-color-white");
-
             if($(this).children().hasClass("linear-icon-camera-crossed")){
                 $(this).children().removeClass("linear-icon-camera-crossed");
                 $(this).children().addClass("linear-icon-camera");

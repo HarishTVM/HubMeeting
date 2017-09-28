@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="wide wow-animation smoothscroll" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>
+      <%= translation.CMSHUB_LOGIN %>
+    </title>
+      <% include _layouts/common-header %>
+      <link rel="stylesheet" href="styles/style.css">
+      <link rel="stylesheet" href="styles/login.css">
+  </head>
+  <body>
+    <!-- BEGIN Page Loader -->
+    <div class="page" id="login-page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- END Page Loader -->
+
+      <% include _layouts/restricted-header %>
+      <!-- BEGIN Forms-->
+        <section class="section-lg bg-white text-center">
+          <div class="shell">
+            <h4><%= translation.HUBLOGIN %></h4>
+            <div class="range range-md-center">
+              <div class="cell-md-10 cell-lg-8">
+                <form class="loginForm rd-mailform rd-mailform_style-1 text-center validate-form">
+                  <!-- User Email Text field -->
+                  <div class="form-wrap form-wrap_icon linear-icon-man">
+                    <input class="form-input validate-text" id="contact-name" type="text" name="name">
+                    <label class="form-label" for="contact-name"><%= translation.HUBLOGIN_USERNAME %></label>
+                    <span class="hide error-text">User Name is Required</span>
+                  </div>
+                  <!-- User Password Text field -->
+                  <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+                    <input class="form-input validate-text" id="contact-email" type="password" name="email">
+                    <label class="form-label" for="contact-email"><%= translation.HUBLOGIN_PASSWORD %></label>
+                    <span class="hide error-text">Password field is required</span>
+                  </div>
+                  <button id="loginBtn" class="button button-primary" type="button"><%= translation.HUBLOGIN %></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- END Forms-->
+    </div>
+    <% include _layouts/footer %>
+    <!-- Javascript-->
+    <% include _layouts/common-scripts %>
+    <script src="/scripts/login.js"></script>
+    <script src="/scripts/common/validation.js"></script>
+  </body>
+</html>

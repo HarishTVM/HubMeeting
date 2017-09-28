@@ -63,7 +63,10 @@ localLang = osLocale.sync().toString();
 	var app = module.exports = express();
 	process.env.NODE_ENV = 'production';
 
-	app.set('views', __dirname + '/view');
+	//app.set('views', __dirname + '/view');
+	app.set('views', [path.join(__dirname, '/view'),
+					  path.join(__dirname, '/view/user-setup/'), 
+					  path.join(__dirname, '/view/error/')]);
 	app.set('view engine', 'ejs');
 	app.engine('html', require('ejs').renderFile);
 
