@@ -1,4 +1,4 @@
-var BASE_URL = "http://api.routejoot.com/";
+var BASE_URL = "http://192.168.5.85:9000/api/";
     
     var httpGet = function(Url, callback) {
         $.ajax({
@@ -6,7 +6,6 @@ var BASE_URL = "http://api.routejoot.com/";
             url: BASE_URL + Url,
             success: function(data, status, xhr){
                 callback(data);
-                // callback(xhr.status);
             },
             error: function(status, xhr){
                 console.log(xhr.status);

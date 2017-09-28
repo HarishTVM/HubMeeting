@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/login.css">
     <link href="/images/logo.png" rel="icon" type="image/x-icon">
-		<!--[if lt IE 10]>
+  	<!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
 		<![endif]-->
@@ -51,7 +51,7 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <!-- RD Mailform-->
-              <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <form class="loginForm rd-mailform rd-mailform_style-1 text-center">
                 <div class="form-wrap form-wrap_icon linear-icon-man">
                   <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
                   <label class="form-label" for="contact-name"><%= translation.HUBLOGIN_USERNAME %></label>
@@ -70,8 +70,11 @@
     </div>
     <% include footer %>
     <!-- Javascript-->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="scripts/core.min.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/general.js"></script>
+    <!-- <script src="scripts/general.js"></script> -->
+    <script src="/scripts/login.js"></script>
+    <script src="/scripts/http-helper.js"></script>
   </body>
 </html>
