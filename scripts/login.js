@@ -12,7 +12,10 @@ $(document).ready(function(){
                     debugger;
                     if(err){
                         if(err.customErrCode == errorCodes.UNKNOWN_USER) // TODO Toastr
-                            alert("user not exists");
+                        {
+                          toastr.options.closeButton = true;
+                          toastr.error('User does not exist');
+                        }  
                     }
                     //local storage logic
                     localStorage.setItem("userID", resp.data.userID);

@@ -1,5 +1,5 @@
 var app = {
-    BASE_URL:"http://localhost:9000/api/",
+    BASE_URL:"http://192.168.5.85:9000/api/",
 }
 
 var apiType = {
@@ -24,6 +24,7 @@ var serverStatus = {
 var ToastMesssges = {
     // Global
     INTERNAL_SERVER_ERROR:"Error occored on Server. Please Contact Administrator.",
+    UNHANDLED_ERROR: "Unhandled Error",
 
     // Login
     UNKNOWN_USER: "Given user name does not exists."
