@@ -137,5 +137,8 @@
     "HUB_MEETING_SUBHEAD_MEETING": "Reunión",
     "HUB_MEETING_BREADCRUMB_DASHBOARD": "Tablero",
     "HUB_MEETING_BREADCRUMB_MEETING": "Reunión",
-    "HUB_MEETING_CREATE_MEETING_BTN": "Crear una reunión"
+    "HUB_MEETING_CREATE_MEETING_BTN": "Crear una reunión",
+
+    "LOGIN_ERROR_TEXT_CONTACT_NAME": "Se requiere nombre de usuario",
+    "LOGIN_ERROR_TEXT_CONTACT_EMAIL": "El campo de contraseña es obligatorio"
 }

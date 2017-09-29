@@ -31,13 +31,13 @@
                   <div class="form-wrap form-wrap_icon linear-icon-man">
                     <input class="form-input validate-text" id="contact-name" type="text" name="name">
                     <label class="form-label" for="contact-name"><%= translation.HUBLOGIN_USERNAME %></label>
-                    <span class="hide error-text">User Name is Required</span>
+                    <span class="hide error-text"><%= translation.LOGIN_ERROR_TEXT_CONTACT_NAME %></span>
                   </div>
                   <!-- User Password Text field -->
                   <div class="form-wrap form-wrap_icon linear-icon-key-hole">
                     <input class="form-input validate-text" id="contact-email" type="password" name="email">
                     <label class="form-label" for="contact-email"><%= translation.HUBLOGIN_PASSWORD %></label>
-                    <span class="hide error-text">Password field is required</span>
+                    <span class="hide error-text"><%= translation.LOGIN_ERROR_TEXT_CONTACT_EMAIL %></span>
                   </div>
                   <button id="loginBtn" class="button button-primary" type="button"><%= translation.HUBLOGIN %></button>
                 </form>
