@@ -8,8 +8,10 @@ var httpGet = function (Url, callback) {
         error: function (errObj, xhr, errStr) {
             if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR){
                 // TODO Error Toastr
-                // FOR Demo To be deleted
-                alert(ToastMesssges.INTERNAL_SERVER_ERROR);
+                {
+                 toastr.options.closeButton = true;
+                 toastr.warning(ToastMesssges.INTERNAL_SERVER_ERROR);
+                }
             }
             if(errObj.status == serverStatus.PAGE_NOT_FOUND)
                 window.location.href = "/404page";
@@ -17,6 +19,10 @@ var httpGet = function (Url, callback) {
                 callback(null, errObj.responseJSON.data);
             else{
                 //TODO Unhandled Error Toastr
+                {
+                 toastr.options.closeButton = true;
+                 toastr.info(ToastMesssges.UNHANDLED_ERROR);
+                }
             }
         },
     });
