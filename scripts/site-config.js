@@ -1,9 +1,10 @@
 var app = {
-    BASE_URL:"http://192.168.5.85:9000/api/",
+    BASE_URL:"http://localhost:9000/api/",
 }
 
 var apiType = {
-    AUTH_USER:"authenticateUser"
+    AUTH_USER:"authenticateUser",
+    CHANGE_PASSWORD: "changeUserLoginPassword"
 }
 
 var errorCodes = {
