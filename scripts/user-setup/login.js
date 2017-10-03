@@ -18,7 +18,6 @@ $(document).ready(function(){
                         }  
                     }
                     //local storage logic
-                    debugger;
                     localStorage.setItem("userID", resp.data.userID);
                     console.log(localStorage.getItem("userID"));
                     curUserID = localStorage.getItem("userID");
