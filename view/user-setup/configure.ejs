@@ -1,78 +1,103 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
-    <!-- Site Title-->
+    <!-- BEGIN Site Title-->
     <title><%= translation.HUBCONFIGUATION_TITLE %></title>
+    <!-- END Site Title-->
+    
+    <!-- BEGIN Common bootstrap meta-->
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
+    <!-- END Common bootstrap meta-->
+
+    <!--BEGIN logo image file links -->
     <link href="/images/logo.png" rel="icon" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/login.css"> <!--Styling for footer - common for login and configuration pages-->
-		<!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
+    <!--END logo image file links -->
+
+    <!--BEGIN Stylesheets file links -->
+    <% include _layouts/common-header %>
+    <link rel="stylesheet" href="styles/common/style.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <!--END Stylesheets file links -->
 
   </head>
+
   <body>
-    <!-- Page -->
+    <!-- BEGIN Page -->
     <div class="page" id="login-page">
+      <!-- BEGIN page-loader -->
       <div id="page-loader">
         <div class="cssload-container">
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
-      <header class="page-header ">
-          <!-- RD Navbar-->
-          <div class="rd-navbar-wrap  " >
-            <nav class="rd-navbar rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="69px" data-lg-stick-up-offset="1px" data-body-class="rd-navbar-default-linked">
-              <div class="rd-navbar-inner">
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-
-                  <div class="rd-navbar-brand"><img class="h-logo-image" src="/images/logo.png"></div>
-                </div>
-               <div class="rd-navbar-brand"><h4><%= translation.HUBLOGIN_MEETING_HUB_MANAGER %></h4></div>
-               </div>
-            </nav>
-          </div>
-        </header>
-      <!-- Forms-->
+      <!-- END page-loader -->
+      
+      <!-- BEGIN page-header Navbar for configure -->
+      <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="69px" data-lg-stick-up-offset="1px" data-body-class="rd-navbar-default-linked">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <div class="rd-navbar-brand"><img class="h-logo-image" src="/images/logo.png"></div>
+              </div>
+              <div class="rd-navbar-brand"><h4><%= translation.HUBLOGIN_MEETING_HUB_MANAGER %></h4></div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- END page-header Navbar for configure -->
       <section class="section-lg bg-white text-center configure-section-custom">
         <div class="shell">
-         <h4><%= translation.HUBCONFIGUATION %></h4>
+          <!-- BEGIN form Title for configure -->
+          <h4><%= translation.HUBCONFIGUATION %></h4>
+          <!-- END form Title for configure -->
+          <!-- BEGIN for -->
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
-              <!-- RD Mailform-->
+         
               <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <!-- API URL input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-link2">
-                  <input class="form-input" id="api-url" type="apiurl" name="nPassword" data-constraints="@Required">
+                  <input class="form-input" id="api-url" type="apiurl" name="" data-constraints="@Required">
                   <label class="form-label" for="api-url"><%= translation.HUBCONFIGUATION_API_URL %></label>
                 </div>
-				<div class="form-wrap form-wrap_icon linear-icon-man">
-                  <input class="form-input" id="api-uname" type="apiurl" name="nPassword" data-constraints="@Required">
+                <!-- User Name input field -->
+                <div class="form-wrap form-wrap_icon linear-icon-man">
+                  <input class="form-input" id="api-uname" type="apiurl" name="apiuserName" data-constraints="@Required">
                   <label class="form-label" for="api-uname"><%= translation.HUBCONFIGUATION_API_USERNAME %></label>
                 </div>
+                
+                <!-- User API Password input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                  <input class="form-input" id="api-password" type="password" name="cPassword" data-constraints="@Required">
+                  <input class="form-input" id="api-password" type="password" name="apiPassword" data-constraints="@Required">
                   <label class="form-label" for="api-password"><%= translation.HUBCONFIGUATION_API_PASSWORD %></label>
                 </div>
+                <!-- Form Submit button for Configure -->
                 <button id="configureBtn" class="button button-primary " type="submit"><%= translation.HUBCONFIGUATION_SAVE %></button>
               </form>
             </div>
           </div>
+             <!-- END form -->
         </div>
       </section>
     </div>
-    <% include footer %>
-    <!-- Javascript-->
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/general.js"></script>
+    <!-- END Page -->
+     <!-- BEGIN Page footer for SMTP-->
+     <%include _layouts/footer %>
+     <!-- END Page footer for SMTP -->
+ 
+     <!-- BEGIN Template script file links -->
+     <% include _layouts/common-scripts %>
+     <!-- END Template script file links -->
+ 
+     <!-- BEGIN script file links -->
+     <script src="/scripts/user-setup/configure.js"></script>
+     <!-- END script file links -->
+
   </body>
 </html>

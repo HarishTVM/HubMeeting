@@ -27,9 +27,7 @@ app.get("/activitylist", (req, res)=>{
 app.get("/users", (req, res)=>{
   res.render("users", {year: new Date().getFullYear()});
 });
-app.get("/spacelist", (req, res)=>{
-  res.render("spacelist", {year: new Date().getFullYear()});
-});
+
 app.get("/createspace",(req,res)=>{
  res.render("createspace", {year: new Date().getFullYear()});
 });
@@ -48,13 +46,14 @@ app.get("/smtp",(req,res)=>{
 app.get("/login", (req, res)=>{
   res.render("login", {year: new Date().getFullYear()});
 });
-app.get("/zoomindiv", (req, res)=>{
-  res.render("zoomindiv", {year: new Date().getFullYear()});
-});
 app.get("/onhovermeeting", (req, res)=>{
   res.render("onhovermeeting", {year: new Date().getFullYear()});
 });
 app.get("/404page", (req, res)=>{
   res.render("404page", {year: new Date().getFullYear()});
+});
+
+app.get("/spacelist", (req, res)=>{
+  res.render("spacelist", {year: new Date().getFullYear()});
 });
 module.exports = app;
