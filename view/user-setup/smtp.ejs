@@ -1,84 +1,109 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
   <head>
-    <!-- Site Title-->
+    <!-- BEGIN Site Title-->
     <title><%= translation.HUBSMTP_TITLE %></title>
+    <!-- END Site Title-->
+     <!-- BEGIN Common bootstrap meta-->
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
+    <!-- END Common bootstrap meta-->
+    <!--BEGIN logo image file links -->
     <link href="/images/logo.png" rel="icon" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/styles/style.css">
-	<!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
+    <!--END logo image file links -->
+
+    <!--BEGIN Stylesheets file links -->
+    <% include _layouts/common-header %>
+    <link rel="stylesheet" href="styles/common/style.css">
+     <!--END Stylesheets file links -->
 
   </head>
   <body>
-    <!-- Page -->
+    <!-- BEGIN Page -->
     <div class="page" id="smtp-page">
+      <!-- BEGIN page-loader -->
       <div id="page-loader">
         <div class="cssload-container">
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
+      <!-- END page-loader -->
+      <!-- BEGIN page-header Navbar for SMTP -->
       <header class="page-header">
-          <!-- RD Navbar-->
-          <div class="rd-navbar-wrap" >
-            <nav class="rd-navbar rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="69px" data-lg-stick-up-offset="1px" data-body-class="rd-navbar-default-linked">
-              <div class="rd-navbar-inner">
-                <!-- RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <div class="rd-navbar-brand"><img class="h-logo-image"  src="/images/logo.png"></div>
-                </div>
-               <div class="rd-navbar-brand"><h4><%= translation.HUBLOGIN_MEETING_HUB_MANAGER %></h4></div>
-               </div>
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="69px" data-lg-stick-up-offset="1px" data-body-class="rd-navbar-default-linked">
+            <div class="rd-navbar-inner">
+               <!-- BEGIN logo image Navbar for SMTP -->
+              <div class="rd-navbar-panel">
+                <div class="rd-navbar-brand"><img class="h-logo-image"  src="/images/logo.png"></div>
+              </div>
+               <!-- BEGIN logo image Navbar for SMTP -->
+               <!-- BEGIN Title Navbar for SMTP -->
+              <div class="rd-navbar-brand"><h4><%= translation.HUBLOGIN_MEETING_HUB_MANAGER %></h4></div>
+              <!-- END Title Navbar for SMTP -->
+            </div>
             </nav>
           </div>
         </header>
-      <!-- Forms-->
-      <section class="section-lg bg-white text-center configure-section-custom">
-        <div class="shell">
-         <h4><%= translation.HUBSMTP_SETUP %> </h4>
-          <div class="range range-md-center">
-            <div class="cell-md-10 cell-lg-8">
-              <!-- RD Mailform-->
-              <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                <div class="form-wrap form-wrap_icon linear-icon-server">
-                  <input class="form-input" id="serveraddress" type="text" name="serveraddress" data-constraints="@Required">
-                  <label class="form-label" for="serveraddress"><%= translation.HUBSMTP_SERVER_ADDRESS %></label>
+          <!-- END page-header Navbar for SMTP -->
+
+          <section class="section-lg bg-white text-center configure-section-custom">
+            <div class="shell">
+              <!-- Form Title for SMTP -->
+              <h4><%= translation.HUBSMTP_SETUP %></h4>
+             
+              <!-- BEGIN form for SMTP -->
+              <div class="range range-md-center">
+                <div class="cell-md-10 cell-lg-8">
+                  <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                    <!--SMTP ServerAddress input field -->
+                    <div class="form-wrap form-wrap_icon linear-icon-server">
+                      <input class="form-input" id="serveraddress" type="text" name="serveraddress" data-constraints="@Required">
+                      <label class="form-label" for="serveraddress"><%= translation.HUBSMTP_SERVER_ADDRESS %></label>
+                    </div>
+                    <!-- SMTP User Name input field -->
+                    <div class="form-wrap form-wrap_icon linear-icon-at-sign">
+                      <input class="form-input" id="username" type="email" name="username" data-constraints="@Required">
+                      <label class="form-label" for="username"><%= translation.HUBSMTP_USERNAME %> </label>
+                    </div>
+                    <!-- SMTP Password input field -->
+                    <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+                      <input class="form-input" id="password" type="password" name="password" data-constraints="@Required">
+                      <label class="form-label" for="password"><%= translation.HUBSMTP_PASSWORD %> </label>
+                    </div>
+                    <!-- SMTP Port(TLS) input field -->
+                    <div class="form-wrap form-wrap_icon linear-icon-cable">
+                      <input class="form-input" id="tlsport" type="text" name="tlsport" data-constraints="@Required">
+                      <label class="form-label" for="tlsport"><%= translation.HUBSMTP_PORT_TLS %></label>
+                    </div>
+                    <!-- SMTP Port(SSL) input field -->
+                    <div class="form-wrap form-wrap_icon linear-icon-cable">
+                      <input class="form-input" id="sslport" type="text" name="sslport" data-constraints="@Required">
+                      <label class="form-label" for="sslport"><%= translation.HUBSMTP_PORT_SSL %></label>
+                    </div>
+                    <!-- Form Submit button for SMTP -->
+                    <button id="smtpBtn" class="button button-primary" type="submit"><%= translation.HUBSMTP_PORT_SUBMIT %></button>
+                  </form>
                 </div>
-				        <div class="form-wrap form-wrap_icon linear-icon-at-sign">
-                  <input class="form-input" id="username" type="email" name="username" data-constraints="@Required">
-                  <label class="form-label" for="username"><%= translation.HUBSMTP_USERNAME %> </label>
-                </div>
-                <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                  <input class="form-input" id="password" type="password" name="password" data-constraints="@Required">
-                  <label class="form-label" for="password"><%= translation.HUBSMTP_PASSWORD %> </label>
-                </div>
-                <div class="form-wrap form-wrap_icon linear-icon-cable">
-                    <input class="form-input" id="tlsport" type="text" name="tlsport" data-constraints="@Required">
-                    <label class="form-label" for="tlsport"><%= translation.HUBSMTP_PORT_TLS %></label>
-                </div>
-                <div class="form-wrap form-wrap_icon linear-icon-cable">
-                    <input class="form-input" id="sslport" type="text" name="sslport" data-constraints="@Required">
-                    <label class="form-label" for="sslport"><%= translation.HUBSMTP_PORT_SSL %></label>
-                </div>
-                <button id="smtpBtn" class="button button-primary" type="submit"><%= translation.HUBSMTP_PORT_SUBMIT %></button>
-              </form>
-            </div>
-          </div>
+              </div>
+           <!-- BEGIN form for SMTP -->
         </div>
       </section>
     </div>
-    <% include footer %>
-    <!-- Javascript-->
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/general.js"></script>
-  </body>
+    <!-- END Page -->
+    
+    <!-- BEGIN Page footer for SMTP-->
+    <%include _layouts/footer %>
+    <!-- END Page footer for SMTP -->
+
+    <!-- BEGIN Template script file links -->
+    <% include _layouts/common-scripts %>
+    <!-- END Template script file links -->
+
+    <!-- BEGIN script file links -->
+    <script src="/scripts/user-setup/smtp.js"></script>
+    <!-- END script file links -->
+   </body>
 </html>

@@ -70,33 +70,34 @@ html {
 }
 
 
-/*/////////////////////////////////// BEGIN zoomindiv for Styles ////////////////////////////////////// */
+
+/*/////////////////////////////////// BEGIN Spacelist for Styles ////////////////////////////////////// */
 
 .h-box-shadow{
-margin-top: 0;
-margin-bottom: 1.5rem;
-text-align: left;
-position: relative;
-background: #fff;
-box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
-border-radius: .375rem;
-
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  position: relative;
+  background: #fff;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+  border-radius: .375rem;
 }
-
-.h-background-color{
-  background-color: #f4f4ef;
+.sl-div-shadow-member{ position: relative; box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);   margin-top: 5px; }
+.sl-div-shadow-member:hover{
+  margin-top: 5px;
+  box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
+  border: 1px solid #23d7b2;
+  background: linear-gradient(to right, #FFF, #f6f6f6);
 }
+.h-background-color{ background-color: #f4f4ef; }
 .h-box-shadow:hover{
   box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
   border: 1px solid #23d7b2;
   background: linear-gradient(to right, #FFF, #f6f6f6);
 }
-.h-arrow-right{
-  font-size: 18px !important;
-  line-height: 18px !important;
-}
+.sl-bg-color{ background: linear-gradient(to right, #FFF, #f6f6f6); }
+.h-arrow-right{ font-size: 18px !important; line-height: 18px !important; }
 .h-circle{ border-radius: 47px !important; }
-
 .pagination-next{
   background-color: #23d7b2;
   border-color: #23d7b2;
@@ -109,12 +110,7 @@ border-radius: .375rem;
   border: 1px solid #23d7b2;
   color: #000;
 }
-
-
-.pagination-classic{
-  margin: 0;
-  border-radius: 50%;
-}
+.pagination-classic{ margin: 0; border-radius: 50%; }
 .pagination-classic li span {
   display: inline-block;
   width: 50px;
@@ -130,12 +126,31 @@ border-radius: .375rem;
   text-align: center;
   transition: .4s;
 }
-
-
+.sl-border-right-div{ border-right: 2px solid red; height: 488px; }
 .h-background-color{background-color:#fff !important;}
+.sl-icon-close{ position: absolute;top: 3px; right:20px; }
+.sl-model-bg-color{ background-color: #23d7b2; min-height: 40px; }
+.sl-model-text-color{ color:#fff; }
+.sl-model-text-color:hover{color: #000;}
+.sl-model-height{ height: 500px; padding: 10px;}
+.sl-model-title{ padding: 10px;}
+.sl-bg-title{ background-color: #f5f5f5 }
+.close-margin-top{
+  top: 14px;
+  right: 20px;
+  position: absolute;
+  font-size: 15px;
+  line-height: 17px;
+}
+.sl-m-top-text{ margin-top: 20px; }
+.sl-model-text-font-small{ font-size:small;color: #fff; }
+.sl-model-scroll-member{
+  height: 500px;
+  width: 100%;
+  overflow-y: scroll;
+}
+/*/////////////////////////////////// END Spacelist for Styles ////////////////////////////////////// */
 
-
-/*/////////////////////////////////// END Harish for Styles ////////////////////////////////////// */
 
 
 
@@ -218,19 +233,25 @@ border-radius: .375rem;
 }
 .padding-none{padding: 0px !important;}
 .h-navber-padding{ padding: 6px !important; }
-/*/////////////////////////////////// BEGIN NONE for Styles ////////////////////////////////////// */
 
+/*/////////////////////////////////// BEGIN NONE for Styles ////////////////////////////////////// */
+/*--------------------BEGIN Margin-none for Styles----------------------------------- */
+.h-m-top-none{margin-top: 0px 0px 0px 0px !important;}
+.h-m-top-none{margin-top: 0px !important;}
 .row{margin-right: 0px !important; margin-left: 0px !important;}
-.padding-none-all{padding: 0px !important;}
+/*--------------------END Margin-none forStyles----------------------------------- --*/
+/*--------------------BEGIN Border-none for Styles----------------------------------- */
 .radius-none{border-radius: 0px !important;}
 .border-top-none{border-top: 0px solid #FFF !important;}
-.h-m-top-none{margin-top: 0px 0px 0px 0px !important;}
+.border-none{ border: 0px solid #f8f8f8 !important}
+/*--------------------END Border-none for Styles----------------------------------- */
+/*--------------------BEGIN Padding-none for Styles----------------------------------- */
+.padding-none-all{padding: 0px !important;}
 .h-padding-none{padding:  0px 0px 0px 0px !important;}
-.h-m-top-none{margin-top: 0px !important;}
 .padding-right-none{padding-right: 0px !important;}
 .padding-left-none{padding-left: 0px !important}
-.border-none{ border: 0px solid #f8f8f8 !important}
-
+.padding-top-none{ padding: 0px 0 !important;}
+/*--------------------END Padding-none for Styles---------------------------------------*/
 /*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
 
 
@@ -333,13 +354,6 @@ border-color: #23d7b2;
    .border-bottom-title{ border-bottom: 1px so;}
    .icon-size{ font-size: 17px; line-height: 20px; }
    .morph-content { border-radius: 2px; }
-   .close-margin-top{
-     margin-top: 3px;
-     margin-left: 36px;
-     position: relative;
-     font-size: 15px;
-     line-height: 17px;
-   }
    .h6-title-medium{font-size:medium !important;}
    .h6-title-color:hover{color: #161817;}
    .h6-title-color{
@@ -396,12 +410,7 @@ border-color: #23d7b2;
 }
 
 /* BEGIN Spaces pagination footer */
-.pagination-next{
-  background-color: #23d7b2;
-  border-color: #23d7b2;
-  color:#FFF !important;
-  border-radius: 7px;
-}
+
 .pagination-text-color{color:#FFF !important;}
 .h-navber-padding{
   padding: 6px !important;
@@ -424,12 +433,6 @@ border-color: #23d7b2;
 
 
 /* BEGIN Spaces pagination head */
-.pagination-next{
-  background-color: #23d7b2;
-  border-color: #23d7b2;
-  color:#FFF !important;
-  border-radius: 7px;
-}
 .pagination-text-color{ color:#FFF !important;}
 .h-navber-padding{
   padding: 6px !important;
@@ -5229,31 +5232,12 @@ h3 + .panel-custom-group-wrap {
   width: 0;
 }
 
-.pagination-classic {
-  margin: 0;
-}
 
 .pagination-classic li {
   display: inline-block;
 }
 
-.pagination-classic li a,
-.pagination-classic li span {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  font-size: 12px;
-  line-height: 50px;
-  font-weight: 300;
-  font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
-  background-color: #f8f8f8;
-  border: 1px solid #f8f8f8;
-  color: #888;
-  text-align: center;
-  transition: .4s;
-  border-radius: 4px;
-}
+
 
 .pagination-classic li a.icon,
 .pagination-classic li span.icon {
@@ -20746,8 +20730,8 @@ yx-axis
 */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("/fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -23795,7 +23779,7 @@ yx-axis
 
 @font-face {
   font-family: 'Linearicons';
-  src: url("../fonts/Linearicons.ttf") format("truetype");
+  src: url("/fonts/Linearicons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -28223,9 +28207,9 @@ yx-axis
       right: 1%;
       top: 1%;
     }
-  
+
     /* END Login styles */
-    
+
   .nav_position {
     position: absolute;
     right: 24%;
@@ -28251,7 +28235,7 @@ yx-axis
        top: 0;
        left: 0;
        padding: 20px;
-       z-index: 0;    
+       z-index: 0;
    }
 
    .contents {

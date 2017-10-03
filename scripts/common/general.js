@@ -1,39 +1,9 @@
 
 $(document).ready(function () {
-    
-    // For DEMO To Be Deleted
-    $('#loginBtn').click(function () {
-        window.location.href = '/configure';
-    });
-    $('#configureBtn').click(function () {
-        window.location.href = '/dashboard';
-    });
-    $('#meetingBtn').click(function () {
-        window.location.href = '/newmeeting';
-    });
 
-
-    $('#loginBtn').click(function(){
-        window.location.href='/configure';
-    })
-
-    $('#configureBtn').click(function(){
-        window.location.href='/smtp';
-    })
-
-    $('#smtpBtn').click(function(){
-        window.location.href='/dashboard';
-    })
-
-    $('#meetingBtn').click(function(){
-        window.location.href='/newmeeting';
-    })
-
-
-
+    // Button hover effect for meeting members
     $(".btn-warning1").click(function () {
         if ($(this).hasClass("btn-actived")) {
-            $(this).removeClass("btn-actived");
             $(this).children().removeClass("h-iconls-color-white");
             if($(this).children().hasClass("linear-icon-camera-crossed")){
                 $(this).children().removeClass("linear-icon-camera-crossed");
@@ -47,10 +17,8 @@ $(document).ready(function () {
            }
         }
         else {
-            $(this).addClass("btn-actived");
             $(this).children().addClass("h-iconls-color-white");
-
-           if($(this).children().hasClass("linear-icon-camera")){
+            if($(this).children().hasClass("linear-icon-camera")){
                 $(this).children().removeClass("linear-icon-camera");
                 $(this).children().addClass("linear-icon-camera-crossed");
                 $(this).attr("data-original-title", "Show");

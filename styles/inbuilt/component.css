@@ -37,7 +37,7 @@
 	height: 28px;
 	padding: 4px 0;
 	border-radius: 5px;
-	
+
 }
 
 .morph-button-fixed > button {
@@ -153,7 +153,7 @@
 
 .morph-button-modal.open .morph-content {
 	top: 50% !important;
-	left: 50% !important;
+	left: 30% !important;
 	margin: -210px 0 0 -300px;
 	width: 600px;
 	height: 420px;
@@ -182,7 +182,7 @@
 .morph-button-modal-3 > button,
 .morph-button-modal-3 .morph-content {
 	background-color: #FFFFFF;
-	color: #e75854;
+	
 }
 
 .morph-button-modal-4 {
@@ -224,8 +224,8 @@
 
 .morph-button-modal-2.open .morph-content {
 	margin: -210px 0 0 -170px;
-	width: 340px;
-	height: 420px;
+	width: 850px;
+	height: 500px;
 }
 
 .morph-button-modal-3.open .morph-content {

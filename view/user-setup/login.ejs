@@ -6,8 +6,8 @@
       <%= translation.CMSHUB_LOGIN %>
     </title>
       <% include _layouts/common-header %>
-      <link rel="stylesheet" href="styles/style.css">
-      <link rel="stylesheet" href="styles/login.css">
+      <link rel="stylesheet" href="styles/common/style.css">
+      <link rel="stylesheet" href="styles/login/login.css">
   </head>
   <body>
     <!-- BEGIN Page Loader -->
@@ -47,10 +47,18 @@
         </section>
         <!-- END Forms-->
     </div>
-    <% include _layouts/footer %>
-    <!-- Javascript-->
-    <% include _layouts/common-scripts %>
-    <script src="/scripts/login.js"></script>
-    <script src="/scripts/common/validation.js"></script>
+      <!-- END Page -->
+
+
+     <!-- Page footer for SMTP -->
+     <%include _layouts/footer %>
+
+     <!-- Template script file links -->
+     <% include _layouts/common-scripts %>
+ 
+     <!-- Script file links -->
+     <script src="/scripts/user-setup/login.js"></script>
+     
+    
   </body>
 </html>
