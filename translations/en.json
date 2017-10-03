@@ -143,5 +143,8 @@
     "HUB_MEETING_CREATE_MEETING_BTN": "Create Meeting",
 
     "LOGIN_ERROR_TEXT_CONTACT_NAME": "User Name is Required",
-    "LOGIN_ERROR_TEXT_CONTACT_EMAIL": "Password field is Required"
+    "LOGIN_ERROR_TEXT_CONTACT_EMAIL": "Password field is Required",
+
+    "CPASSWORD_ERROR_TEXT_NEW_PASSWORD": "New Password is Required",
+    "CPASSWORD_ERROR_TEXT_CONFIRM_PASSWORD": "Confirm Password is Required"
 }

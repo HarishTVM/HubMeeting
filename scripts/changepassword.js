@@ -1,41 +1,34 @@
 $(document).ready(function(){
-    console.log(localStorage.getItem("userID"));
     $('#saveBtn').click(function(){
-        var iscpformvalid = false;
-        var isnewpwdvaild = false;
-        var isconfirmpwdvalid = false;
+        debugger;
+        console.log(userid);
+        if($('form').hasClass('validate-form')){
+            var resultItem = [];
 
-        var newpwd = $('#new-password').val();
-        var confirmpwd = $('#c-password').val();
+            $('.validate-text').each(function(i, obj){
+                resultItem.push(validateText(obj));
+            });
 
-        if(newpwd == ""){
-            isnewpwdvaild = false;
-        }
-        else{
-            isnewpwdvaild = true;
-        }
-        if(confirmpwd == ""){
-            isconfirmpwdvalid = false;
-        }
-        else{
-            isconfirmpwdvalid = true;
-        }
-
-        if(isnewpwdvaild == true && isconfirmpwdvalid == true){
-            iscpformvalid = true;
-        }
-
-        if(iscpformvalid == true){
-            if(newpwd === confirmpwd){
-
-                httpPut('changeUserLoginPassword', )
+            if(resultItem.indexOf(false) < 0){
+                debugger;
+                if($('#new-password').val() == $('#c-password').val()){
+                    reqData = {
+                        "userID" : parseInt(userid),
+                        "userPassword": $('#new-password').val()
+                    }
+                    console.log(reqData);
+                    httpPut(apiType.CHANGE_PASSWORD, reqData, function(resp){
+                        console.log(resp);
+                        alert("Password successfully changed");
+                        window.location.href = '/configure';
+                    });
+                }
+                else {
+                    toastr.options.closeButton = true;
+                    toastr.info('Password Mismatch');
+                }  
             }
-            else{
-                alert("passwords mismatch..!");
-            }
-        }
-        else{
-            alert("Please enter valid details in the form fields");
         }
     });
+
 });

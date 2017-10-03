@@ -3,7 +3,8 @@ var app = {
 }
 
 var apiType = {
-    AUTH_USER:"authenticateUser"
+    AUTH_USER:"authenticateUser",
+    CHANGE_PASSWORD: "changeUserLoginPassword"
 }
 
 var errorCodes = {
