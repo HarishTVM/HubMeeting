@@ -1,10 +1,7 @@
-var userid;
 $(document).ready(function(){
     $('#loginBtn').click(function(){
-        debugger;
         if($('form').hasClass('validate-form')){
             var resultItem = [];
-
             $('.validate-text').each(function(i, obj){
                 resultItem.push(validateText(obj));
             });
@@ -19,7 +16,6 @@ $(document).ready(function(){
                     }
                     //local storage logic
                     localStorage.setItem("userID", resp.data.userID);
-                    console.log(localStorage.getItem("userID"));
                     curUserID = localStorage.getItem("userID");
                     if(curUserID == 1){
                         window.location.href="/dashboard";
@@ -33,7 +29,3 @@ $(document).ready(function(){
         }
     }); 
 });
-
-// Making userID available for change password page
-userid = localStorage.getItem("userID");
-console.log(userid);  

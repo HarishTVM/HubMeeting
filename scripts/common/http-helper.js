@@ -43,14 +43,13 @@ var httpPost = function (Url, _data, callback) {
 };
 
 var httpPut = function (Url, _data, callback) {
-    debugger;
     $.ajax({
         method: 'PUT',
         url: app.BASE_URL + Url,
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
-        data: _data,
+        data: JSON.stringify(_data),
         success: function (response, status, xhr) {
             callback(response);
         },

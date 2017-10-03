@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $('#saveBtn').click(function(){
         debugger;
-        console.log(userid); //Print userid from localstorage
         if($('form').hasClass('validate-form')){
             var resultItem = [];
             //To populate error texts 
@@ -13,13 +12,12 @@ $(document).ready(function(){
                 // To check if new-password == confirm-password
                 if($('#new-password').val() == $('#c-password').val()){
                     reqData = {
-                        "userID" : parseInt(userid),
+                        "userID" : parseInt(localStorage.getItem("userID")),
                         "userPassword": $('#new-password').val()
                     }
                     console.log(reqData);
                     // Put method to change the password
                     httpPut(apiType.CHANGE_PASSWORD, reqData, function(resp){
-                        console.log(resp);
                         alert("Password successfully changed"); //To do toast
                         window.location.href = '/configure';
                     });
