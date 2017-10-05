@@ -27,7 +27,7 @@
 			</ol>
 		</div>
 		<!-- END Current Activities toolbar-->
-		
+
 		<section>
 			<div class="shell">
 				<!-- BEGIN Activities search head -->
@@ -44,7 +44,7 @@
 							<!-- END Activities Search  -->
 							<!-- Pagination next head -->
 							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
-								<%include _layouts/pagination-head %>
+								<%include _layouts/pagination/pagination-head %>
 							</div>
 						</div>
 					</div>
@@ -54,16 +54,8 @@
 				<!-- BEGIN Activities search head -->
 
 				<!-- BEGIN Current Activities -->
-				<div>
-					<!-- Card One -->
-					<div class="col-sm-6 col-md-4 col-xs-12 col-lg-3"><%include _layouts/common-card %></div>
-					<!-- Card Two -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/common-card %></div>
-					<!-- Card Three -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/common-card %></div>
-					<!-- Card Four -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/common-card %></div>
-				</div>
+			
+				
 				<!-- END Current Activities -->
 				<!-- See More -->
 				<p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;"><a><%= translation.HUB_ACTIVITY_SEE_MORE %></a></p>
@@ -78,27 +70,27 @@
 				<!-- BEGIN Recent Activities -->
 				<div class="shell">
 					<!-- Card One -->
-					<div class="col-sm-6 col-md-4 col-xs-12 col-lg-3"><%include _layouts/common-card %></div>
+					<div class="col-sm-6 col-md-4 col-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
 					<!-- Card Two -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/common-card %></div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
 					<!-- Card Three -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/common-card %></div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
 					<!-- Card Four -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/common-card %></div>
-					</div>
+					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
+				</div>
 				<!-- END Recent Activities -->
 				<!-- BEGIN pagination footer -->
-				<%include _layouts/pagination-footer %>
+				<%include _layouts/pagination/pagination-footer %>
 			</section>
 			<%include _layouts/footer %>
-	
+
 		<!-- BEGIN Template script file links -->
 		<% include _layouts/common-scripts %>
 		<script src="/scripts/inbuilt/modernizr.custom.js"></script>
 		<script src="/scripts/common/general.js"></script>
 		<script src="/scripts/spaces/spacelist.js"></script>
 		<!--  END Template script file links src -->
-	
+
 		<!-- BEGIN Spaces script -->
 		<script src="/scripts/inbuilt/classie.js"></script>
 		<script src="/scripts/inbuilt/uiMorphingButton_fixed.js"></script>

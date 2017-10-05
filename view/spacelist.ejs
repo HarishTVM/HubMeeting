@@ -26,8 +26,7 @@
           <li><%= translation.HUB_SPACES_TOOLBAR_SPACES %></li>
         </ol>
       </div>
-      <section >
-        
+      <section>
         <div class="shell">
           <!-- BEGIN Activities search head -->
           <div class="range range-5 h-m-top-none">
@@ -49,16 +48,14 @@
             </div>
           </div>
           <!-- END Activities search head -->
-          
           <div id="List"></div>
-          
           <% include _layouts/cards/card %>
-     
           <!-- Pagination next footer -->
-          <%include _layouts/pagination/pagination-footer %>
-          <%include _layouts/footer %>
-      </div>
-        </section>
+          <% include _layouts/pagination/pagination-footer %>
+        </div>
+      
+      </section>
+   
    
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
@@ -70,9 +67,8 @@
         $("#spacesList").addClass("active");
       });
       </script>
-
-
-
     </div>
+  
+        <%include _layouts/footer %>    
   </body>
   </html>
