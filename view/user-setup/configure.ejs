@@ -19,7 +19,8 @@
     <!--BEGIN Stylesheets file links -->
     <% include _layouts/common-header %>
     <link rel="stylesheet" href="styles/common/style.css">
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/login/login.css">
+    <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">    
     <!--END Stylesheets file links -->
 
   </head>
@@ -36,20 +37,7 @@
       <!-- END page-loader -->
       
       <!-- BEGIN page-header Navbar for configure -->
-      <header class="page-header">
-        <!-- RD Navbar-->
-        <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="69px" data-lg-stick-up-offset="1px" data-body-class="rd-navbar-default-linked">
-            <div class="rd-navbar-inner">
-              <!-- RD Navbar Panel-->
-              <div class="rd-navbar-panel">
-                <div class="rd-navbar-brand"><img class="h-logo-image" src="/images/logo.png"></div>
-              </div>
-              <div class="rd-navbar-brand"><h4><%= translation.HUBLOGIN_MEETING_HUB_MANAGER %></h4></div>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <% include _layouts/restricted-header %>
       <!-- END page-header Navbar for configure -->
       <section class="section-lg bg-white text-center configure-section-custom">
         <div class="shell">
@@ -60,22 +48,24 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
          
-              <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
                 <!-- API URL input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-link2">
-                  <input class="form-input" id="api-url" type="apiurl" name="" data-constraints="@Required">
+                  <input class="form-input validate-text" id="api-url" type="apiurl" name="apiurl">
                   <label class="form-label" for="api-url"><%= translation.HUBCONFIGUATION_API_URL %></label>
+                  <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_URL %></span>                  
                 </div>
                 <!-- User Name input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-man">
-                  <input class="form-input" id="api-uname" type="apiurl" name="apiuserName" data-constraints="@Required">
+                  <input class="form-input validate-text" id="api-uname" type="apiurl" name="apiuserName">
                   <label class="form-label" for="api-uname"><%= translation.HUBCONFIGUATION_API_USERNAME %></label>
+                  <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_USERNAME %></span>                  
                 </div>
-                
                 <!-- User API Password input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                  <input class="form-input" id="api-password" type="password" name="apiPassword" data-constraints="@Required">
+                  <input class="form-input validate-text" id="api-password" type="password" name="apiPassword">
                   <label class="form-label" for="api-password"><%= translation.HUBCONFIGUATION_API_PASSWORD %></label>
+                  <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_PASSWORD %></span>                  
                 </div>
                 <!-- Form Submit button for Configure -->
                 <button id="configureBtn" class="button button-primary " type="submit"><%= translation.HUBCONFIGUATION_SAVE %></button>
@@ -96,7 +86,9 @@
      <!-- END Template script file links -->
  
      <!-- BEGIN script file links -->
+     <script src="/scripts/common/validation.js"></script>
      <script src="/scripts/user-setup/configure.js"></script>
+     <script src="/scripts/inbuilt/toastr.min.js"></script>     
      <!-- END script file links -->
 
   </body>

@@ -18,7 +18,9 @@ $(document).ready(function(){
                     console.log(reqData);
                     // Put method to change the password
                     httpPut(apiType.CHANGE_PASSWORD, reqData, function(resp){
-                        alert("Password successfully changed"); //To do toast
+                        //Toast for successful password change
+                        toastr.options.closeButton = true;
+                        toastr.success('Password successfully changed');
                         window.location.href = '/configure';
                     });
                 }

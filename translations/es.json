@@ -143,5 +143,15 @@
     "LOGIN_ERROR_TEXT_CONTACT_EMAIL": "El campo de contraseña es obligatorio",
 
     "CPASSWORD_ERROR_TEXT_NEW_PASSWORD": "Se requiere una nueva contraseña",
-    "CPASSWORD_ERROR_TEXT_CONFIRM_PASSWORD": "Confirme que la contraseña es obligatoria"
+    "CPASSWORD_ERROR_TEXT_CONFIRM_PASSWORD": "Confirme que la contraseña es obligatoria",
+
+    "CONFIGURE_ERROR_TEXT_API_URL": "URL de la API es obligatorio",
+    "CONFIGURE_ERROR_TEXT_API_USERNAME": "El nombre de usuario de la API es obligatorio",
+    "CONFIGURE_ERROR_TEXT_API_PASSWORD": "Se requiere la contraseña de la API",
+
+    "SMTP_ERROR_TEXT_SMTP_SERVER_ADDRESS": "La dirección del servidor es obligatoria",
+    "SMTP_ERROR_TEXT_SMTP_USERNAME": "Se requiere nombre de usuario",
+    "SMTP_ERROR_TEXT_SMTP_PASSWORD": "Se requiere contraseña",
+    "SMTP_ERROR_TEXT_SMTP_PORT_TLS": "Puerto TLS es necesario",
+    "SMTP_ERROR_TEXT_SMTP_PORT_SSL": "Se requiere puerto SSL"
 }
