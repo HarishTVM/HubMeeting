@@ -42,32 +42,32 @@
                 <!-- END Activities Search  -->
                 <!-- Pagination next head -->
                 <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
-                  <%include _layouts/pagination/pagination-head %>
+                <ul class="sync-pagination pagination-sm"></ul> <!-- Pagination plugin -->
+                  
                 </div>
               </div>
             </div>
           </div>
           <!-- END Activities search head -->
-          <div id="List"></div>
+          <!-- <div id="List"></div> -->
           <% include _layouts/cards/card %>
           <!-- Pagination next footer -->
-          <% include _layouts/pagination/pagination-footer %>
+          <ul class="sync-pagination pagination-sm"></ul> <!-- Pagination plugin -->
+          
         </div>
-      
       </section>
-   
-   
+    </div>   
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
+      <script src="/scripts/jquery.twbsPagination.min.js"></script>
       <script src="/scripts/spaces/spacelist.js"></script>
-      
-    </script>
+
       <script>
       $(document).ready(function () {
         $("#spacesList").addClass("active");
       });
       </script>
-    </div>
+
   
         <%include _layouts/footer %>    
   </body>

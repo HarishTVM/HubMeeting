@@ -16,21 +16,19 @@ $(document).ready(function(){
                 httpPost(apiType.CONFIGURE, reqData, function(resp, err){
                     debugger;
                     if(err){
-                        if(err.customErrCode == errorCodes.API_UNKNOWN_USER) // TODO Toastr
+                        //Error for unknown user
+                        if(err.customErrCode == errorCodes.API_UNKNOWN_USER)
                         {
                           toastr.options.closeButton = true;
                           toastr.error(err.message);
                         }
-                        var errIntServData = "Error: Error: connect ECONNREFUSED 192.168.5.29:445";
-                        if(err.data === errIntServData){
-                            toastr.options.closeButton = true;
-                            toastr.warning(err.data);
-                        }  
                     }
                     // Toast for successful API configuration - TODO
                     else {
                         console.log(resp);
-                        alert("API configured succesfully"); //Demo only
+                        toastr.options.closeButton = true;
+                        toastr.info("Success. Page will be re-directed to Dashboard");
+                        setTimeout(function(){window.location.href="/dashboard"}, 5000);
                     }
                 });
             }

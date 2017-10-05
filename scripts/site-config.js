@@ -1,18 +1,20 @@
 var app = {
-    BASE_URL:"http://192.168.5.20:9000/api/",
+    BASE_URL:"http://192.168.5.85:9000/api/",
 }
 
 var apiType = {
     AUTH_USER:"authenticateUser",
     CHANGE_PASSWORD: "changeUserLoginPassword",
-    CONFIGURE: "checkCmsApiUrl"
+    CONFIGURE: "checkCmsApiUrl",
+    SPACES_LIST: "getCospaces"
 }
 
 var errorCodes = {
     // Login
-    UNKNOWN_USER:1,
+    UNKNOWN_USER: 1,
+    PASSWORD_MISMATCH: 2,
     //CONFIGURE API
-    API_UNKNOWN_USER : 100
+    API_UNKNOWN_USER: 100
 }
 
 var errorType = {
@@ -31,8 +33,5 @@ var ToastMesssges = {
     UNHANDLED_ERROR: "Error unhandled",
 
     // Login
-    UNKNOWN_USER: "Given user name does not exists.",
-    
-    //Configure API
-    CONFIGURE_INTERNAL_SERVER_ERROR: "Error: Error: connect ETIMEDOUT 192.168.5.26:445"
+    UNKNOWN_USER: "Given user name does not exists."
 }

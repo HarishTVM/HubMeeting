@@ -13,10 +13,13 @@ var httpGet = function (Url, callback) {
                  toastr.warning(ToastMesssges.INTERNAL_SERVER_ERROR);
                 }
             }
+
             if(errObj.status == serverStatus.PAGE_NOT_FOUND)
                 window.location.href = "/404page";
+            
             if(errObj.status == serverStatus.UNAUTHORIZED && (typeof errObj.responseJSON.data != 'undefined') && errObj.responseJSON.data.errorType == errorType.CUSTOM_ERROR)
                 callback(null, errObj.responseJSON.data);
+            
             else {
                  toastr.options.closeButton = true;
                  toastr.info(ToastMesssges.UNHANDLED_ERROR)
@@ -39,13 +42,14 @@ var httpPost = function (Url, _data, callback) {
         },
         error: function (errObj, xhr, errStr) {
             debugger;
-            if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR)
-                callback(null, errObj.responseJSON.data);
-
-            if(errObj.status == serverStatus.PAGE_NOT_FOUND)
+            if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR){
+                 toastr.options.closeButton = true;
+                 toastr.warning(errObj.responseJSON.data);
+            }
+            else if(errObj.status == serverStatus.PAGE_NOT_FOUND)
                 window.location.href = "/404page";
 
-            if(errObj.status == serverStatus.UNAUTHORIZED && (typeof errObj.responseJSON.data != 'undefined') && errObj.responseJSON.data.errorType == errorType.CUSTOM_ERROR)
+            else if(errObj.status == serverStatus.UNAUTHORIZED && (typeof errObj.responseJSON.data != 'undefined') && errObj.responseJSON.data.errorType == errorType.CUSTOM_ERROR)
                 callback(null, errObj.responseJSON.data);
 
             else {
