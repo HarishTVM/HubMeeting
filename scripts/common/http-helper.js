@@ -32,13 +32,27 @@ var httpPost = function (Url, _data, callback) {
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },
-        data: _data,
+        data: JSON.stringify(_data),
         success: function (response, status, xhr) {
+            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
-            console.log(errObj.status);
-        },
+            debugger;
+            if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR)
+                callback(null, errObj.responseJSON.data);
+
+            if(errObj.status == serverStatus.PAGE_NOT_FOUND)
+                window.location.href = "/404page";
+
+            if(errObj.status == serverStatus.UNAUTHORIZED && (typeof errObj.responseJSON.data != 'undefined') && errObj.responseJSON.data.errorType == errorType.CUSTOM_ERROR)
+                callback(null, errObj.responseJSON.data);
+
+            else {
+                 toastr.options.closeButton = true;
+                 toastr.info(ToastMesssges.UNHANDLED_ERROR)
+            }
+        }
     });
 };
 

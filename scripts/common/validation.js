@@ -1,4 +1,3 @@
-
 function validateText(obj){
     var errorEle = $(obj).siblings('.error-text'); 
 

@@ -17,6 +17,7 @@
     <!--BEGIN Stylesheets file links -->
     <% include _layouts/common-header %>
     <link rel="stylesheet" href="styles/common/style.css">
+    <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css"> 
      <!--END Stylesheets file links -->
 
   </head>
@@ -31,23 +32,8 @@
       </div>
       <!-- END page-loader -->
       <!-- BEGIN page-header Navbar for SMTP -->
-      <header class="page-header">
-        <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="69px" data-lg-stick-up-offset="1px" data-body-class="rd-navbar-default-linked">
-            <div class="rd-navbar-inner">
-               <!-- BEGIN logo image Navbar for SMTP -->
-              <div class="rd-navbar-panel">
-                <div class="rd-navbar-brand"><img class="h-logo-image"  src="/images/logo.png"></div>
-              </div>
-               <!-- BEGIN logo image Navbar for SMTP -->
-               <!-- BEGIN Title Navbar for SMTP -->
-              <div class="rd-navbar-brand"><h4><%= translation.HUBLOGIN_MEETING_HUB_MANAGER %></h4></div>
-              <!-- END Title Navbar for SMTP -->
-            </div>
-            </nav>
-          </div>
-        </header>
-          <!-- END page-header Navbar for SMTP -->
+      <% include _layouts/restricted-header %>
+      <!-- END page-header Navbar for SMTP -->
 
           <section class="section-lg bg-white text-center configure-section-custom">
             <div class="shell">
@@ -57,31 +43,36 @@
               <!-- BEGIN form for SMTP -->
               <div class="range range-md-center">
                 <div class="cell-md-10 cell-lg-8">
-                  <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                  <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
                     <!--SMTP ServerAddress input field -->
                     <div class="form-wrap form-wrap_icon linear-icon-server">
-                      <input class="form-input" id="serveraddress" type="text" name="serveraddress" data-constraints="@Required">
+                      <input class="form-input validate-text" id="serveraddress" type="text" name="serveraddress">
                       <label class="form-label" for="serveraddress"><%= translation.HUBSMTP_SERVER_ADDRESS %></label>
+                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_SERVER_ADDRESS %></span>                  
                     </div>
                     <!-- SMTP User Name input field -->
                     <div class="form-wrap form-wrap_icon linear-icon-at-sign">
-                      <input class="form-input" id="username" type="email" name="username" data-constraints="@Required">
+                      <input class="form-input validate-text" id="username" type="email" name="username">
                       <label class="form-label" for="username"><%= translation.HUBSMTP_USERNAME %> </label>
+                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_USERNAME %></span>                  
                     </div>
                     <!-- SMTP Password input field -->
                     <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                      <input class="form-input" id="password" type="password" name="password" data-constraints="@Required">
+                      <input class="form-input validate-text" id="password" type="password" name="password">
                       <label class="form-label" for="password"><%= translation.HUBSMTP_PASSWORD %> </label>
+                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_PASSWORD %></span>                  
                     </div>
                     <!-- SMTP Port(TLS) input field -->
                     <div class="form-wrap form-wrap_icon linear-icon-cable">
-                      <input class="form-input" id="tlsport" type="text" name="tlsport" data-constraints="@Required">
+                      <input class="form-input validate-text" id="tlsport" type="text" name="tlsport">
                       <label class="form-label" for="tlsport"><%= translation.HUBSMTP_PORT_TLS %></label>
+                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_PORT_TLS %></span>                  
                     </div>
                     <!-- SMTP Port(SSL) input field -->
                     <div class="form-wrap form-wrap_icon linear-icon-cable">
-                      <input class="form-input" id="sslport" type="text" name="sslport" data-constraints="@Required">
+                      <input class="form-input validate-text" id="sslport" type="text" name="sslport">
                       <label class="form-label" for="sslport"><%= translation.HUBSMTP_PORT_SSL %></label>
+                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_PORT_SSL %></span>                  
                     </div>
                     <!-- Form Submit button for SMTP -->
                     <button id="smtpBtn" class="button button-primary" type="submit"><%= translation.HUBSMTP_PORT_SUBMIT %></button>
@@ -104,6 +95,8 @@
 
     <!-- BEGIN script file links -->
     <script src="/scripts/user-setup/smtp.js"></script>
+    <script src="/scripts/common/validation.js"></script>
+    <script src="/scripts/inbuilt/toastr.min.js"></script> 
     <!-- END script file links -->
    </body>
 </html>
