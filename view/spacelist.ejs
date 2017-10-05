@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="wide wow-animation smoothscroll" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title><%= translation.HUB_SPACES_TITLE %></title>
+    <!-- Site logo images-->
+    <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
+    <!--Stylesheets file links -->
+    <% include _layouts/common-header %>
+  </head>
+  <body class=" h-background-color">
+    <!-- include file for navigation -->
+    <% include _layouts/header-with-navigation %>
+    <div class="page">
+      <!-- BEGIN page loader -->
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- BEGIN Spaces toolbar-->
+      <div class="container-fluid breadcrumb-container">
+        <ol class="breadcrumb ">
+          <h5 class="meeting-head-bread"><%= translation.HUB_SPACES_TOOLBAR_SPACES %></h5>
+          <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
+          <li><%= translation.HUB_SPACES_TOOLBAR_SPACES %></li>
+        </ol>
+      </div>
+      <section >
+        
+        <div class="shell">
+          <!-- BEGIN Activities search head -->
+          <div class="range range-5 h-m-top-none">
+            <div class="searchBtn-pagination-container">
+              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <!-- BEGIN Activities Search  -->
+                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
+                  <!-- Search input field -->
+                  <div class="h-box-shadow form-wrap form-wrap_icon h-box-shadow linear-icon-magnifier head-search-w-h search-margin-top">
+                    <input class="form-input search-input " type="text" name="search" placeholder="<%= translation.HUB_ACTIVITY_SEARCH_PLACEHOLDER %>">
+                  </div>
+                </div>
+                <!-- END Activities Search  -->
+                <!-- Pagination next head -->
+                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
+                  <%include _layouts/pagination/pagination-head %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Activities search head -->
+          
+          <div id="List"></div>
+          
+          <% include _layouts/cards/card %>
+     
+          <!-- Pagination next footer -->
+          <%include _layouts/pagination/pagination-footer %>
+          <%include _layouts/footer %>
+      </div>
+        </section>
+   
+      <!-- include file for Script -->
+      <% include _layouts/common-scripts %>
+      <script src="/scripts/spaces/spacelist.js"></script>
+      
+    </script>
+      <script>
+      $(document).ready(function () {
+        $("#spacesList").addClass("active");
+      });
+      </script>
+
+
+
+    </div>
+  </body>
+  </html>
