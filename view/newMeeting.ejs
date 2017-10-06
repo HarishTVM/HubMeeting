@@ -3,22 +3,16 @@
   <head>
     <!-- Site Title-->
     <title><%= translation.SCHEDULE_MEETING_PAGE_TITLE %></title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
-    <link rel="stylesheet" href="/styles/style.css">
+     <!-- Site logo images-->
+     <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
+     <!--Stylesheets file links -->
+     <% include _layouts/common-header %>
     <link rel="stylesheet" href="/styles/newmeeting.css">
 
   </head>
   <body>
-    <!-- Page -->
-    <% include navbarhome %>
+   <!-- include file for navigation -->
+   <% include _layouts/header-with-navigation %>
     <div class="page">
       <div id="page-loader">
         <div class="cssload-container">
@@ -113,20 +107,13 @@
         </div>
       </section>
       </div>
-      <% include footer %>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>   
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- <script src="/node_modules/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script> -->
-    <!-- <script>
-      $('#fromdatetimepicker').datetimepicker();
-      $('#todatetimepicker').datetimepicker();
-    </script>   -->
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
+         <!-- BEGIN script file links -->
+    <% include _layouts/common-scripts %>
     <script>
         $(document).ready(function(){
             $("#meetingList").addClass("active");
         });
-    </script>
+    </script>   <!-- Pagination next footer -->
+    <%include _layouts/footer %>
   </body>
 </html>

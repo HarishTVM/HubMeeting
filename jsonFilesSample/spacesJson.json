@@ -1,0 +1,69 @@
+{
+    "names": 10,
+    "spaceLists": [
+        {
+            "spacesNames":"Harish",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"speakerOnly",
+            "callId":700102,
+            "members":2
+        },
+        {
+            "spacesNames":"Naveen",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"Full Screen",
+            "callId":700103,
+            "members":5
+        },
+        {
+            "spacesNames":"Sreeharsha",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"speakerOnly",
+            "callId":700104,
+            "members":3
+        },
+        {
+            "spacesNames":"Ravi",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"Full Screen",
+            "callId":700105,
+            "members":4
+        },
+        {
+            "spacesNames":"Sanjay",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"speakerOnly",
+            "callId":700106,
+            "members":6
+        },
+        {
+            "spacesNames":"Ravi",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"Full Screen",
+            "callId":700105,
+            "members":4
+        },
+        {
+            "spacesNames":"Ravi",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"Full Screen",
+            "callId":700105,
+            "members":4
+        },
+        {
+            "spacesNames":"Ravi",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"Full Screen",
+            "callId":700105,
+            "members":4
+        },
+        {
+            "spacesNames":"Ravi",
+            "owner":"harish@inflexiontech.com",
+            "layoutType":"Full Screen",
+            "callId":700105,
+            "members":4
+        }
+    ]
+
+}

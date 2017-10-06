@@ -3,17 +3,10 @@
   <head>
     <!-- Site Title-->
     <title><%= translation.HUB_DASHBORD_SUBHEAD_DASHBOARD %></title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link href="/images/logo.png" rel="icon" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/oldmeeting.css">
-    <link rel="stylesheet" href="/styles/meeting.css">
+    <!-- Site logo images-->
+    <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
+    <!--Stylesheets file links -->
+    <% include _layouts/common-header %>
     <style type="text/css">
         canvas{
             -moz-user-select: none;
@@ -24,7 +17,7 @@
   </head>
   <body>
     <!-- Page -->
-    <% include navbarhome %>
+    <% include _layouts/header-with-navigation %>
     <div class="page">
       <div id="page-loader">
         <div class="cssload-container">
@@ -159,10 +152,10 @@
             </div>
         </section>
     </div>
-    <% include footer %>
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/general.js"></script>
+     <!-- BEGIN script file links -->
+     <% include _layouts/common-scripts %>
+     <!-- Pagination next footer -->
+     <%include _layouts/footer %>
     <script src="/node_modules/highcharts/highcharts.js"></script>
     <script src="/node_modules/highcharts/modules/data.js"></script>
     <script src="/node_modules/highcharts/modules/drilldown.js"></script>

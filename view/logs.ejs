@@ -4,23 +4,16 @@
 <head>
     <!-- Site Title-->
     <title><%= translation.HUB_LOGS_TITLE %></title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link href="/images/logo.png" rel="icon" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
-    <link rel="stylesheet" href="/styles/style.css">
-    <!-- <link rel="stylesheet" href="/styles/newmeeting.css"> -->
+     <!-- Site logo images-->
+     <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
+     <!--Stylesheets file links -->
+     <% include _layouts/common-header %>
     <link rel="stylesheet" href="/styles/meeting.css">
     <link rel="stylesheet" href="/styles/oldmeeting.css">
 </head>
 
 <body class=" bg-white">
-    <% include navbarhome %>
+    <% include _layouts/header-with-navigation %>
     <div class="page">
         <div id="page-loader">
           <div class="cssload-container">
@@ -41,7 +34,7 @@
             <input class="form-input search-input" type="text" name="search" placeholder="Search by Names, Cospaces , etc..,">
           <!-- </div> -->
           </div>
-          <nav class="top-pagination">
+          <!-- <nav class="top-pagination">
             <ul class="pagination-classic">
               <li class="active"><span>1</span></li>
               <li><a href="#">2</a></li>
@@ -49,7 +42,7 @@
               <li><a href="#">4</a></li>
               <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
             </ul>
-          </nav>
+          </nav> -->
         </div>
         <section class="section-sm bg-white main-section">
           <div class="shell accordian-shell">
@@ -218,7 +211,7 @@
               </div>
             </div>
           </div>
-        <nav class="pagination-nav">
+        <!-- <nav class="pagination-nav">
             <ul class="pagination-classic">
               <li class="active"><span>1</span></li>
               <li><a href="#">2</a></li>
@@ -226,20 +219,18 @@
               <li><a href="#">4</a></li>
               <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
             </ul>
-        </nav>
+        </nav> -->
       </section>
 
       </div>
-    <% include footer %>
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/scripts/core.min.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/jquery.contenthover.min.js"></script>
-    <script src="/scripts/general.js"></script>
-    <script src="/scripts/spacelist.js"></script>
+
+  <!-- BEGIN script file links -->
+  <% include _layouts/common-scripts %>
     <script>
         $(document).ready(function () {
             $("#logsList").addClass("active");
         });
     </script>
+      <!-- Pagination next footer -->
+      <%include _layouts/footer %>
 </body>

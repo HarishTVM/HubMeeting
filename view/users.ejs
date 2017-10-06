@@ -3,461 +3,62 @@
   <head>
     <!-- Site Title-->
     <title><%= translation.HUB_USERS_TITLE %></title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link href="/images/logo.png" rel="icon" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="/node_modules/datetimepicker-master/build/jquery.datetimepicker.min.css"> -->
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/newmeeting.css">
-    <link rel="stylesheet" href="/styles/oldmeeting.css">
-    <link rel="stylesheet" href="/styles/meeting.css">
-    <link rel="stylesheet" href="/styles/spaces.css">
-
-
-   </head>
-   <body class=" bg-white">
-        <!-- BEGIN Zoom Div -->
-        <% include navbarhome %>
-            <div class="page">
-              <!-- BEGIN page loader -->
-              <div id="page-loader">
-                <div class="cssload-container">
-                  <div class="cssload-speeding-wheel"></div>
-                </div>
-              </div>
-              <!-- End page loader -->
-
-          <!-- BEGIN Spaces toolbar-->
-          <div class="container-fluid breadcrumb-container">
-            <ol class="breadcrumb">
-              <h5 class="meeting-head-bread"><%= translation.HUB_USERS %> </h5>
-              <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
-              <li><%= translation.HUB_USERS %></li>
-            </ol>
-          </div>
-            <!-- END Spaces toolbar-->
-
-          <section>
-            <!-- BEGIN Spaces pagination head -->
-            <div class="shell">
-              <!-- BEGIN Spaces search head -->
-              <div class="range range-5 h-m-top-none " >
-
-                <div class="searchBtn-pagination-container ">
-                  <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
-                    <input class="form-input search-input " type="text" name="search" placeholder="<%= translation.HUB_USERS_SEARCH_PLACEHOLDER %>">
-                  <!-- </div> -->
-                  </div>
-                  <nav class="head-top-pagination">
-                    <ul class="pagination-classic">
-                      <li class="active pagination-next"><span class="pagination-text-color">1</span></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-
-
-              <!-- END Spaces search head -->
-
-              <!-- BEGIN Spaces pagination  body-->
-                   <div class="row range range-70 " >
-
-                     <!-- BEGIN Spaces animate zoom Grid 1 -->
-                     <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                      <div class="principale ">
-                        <div class="parent-div bg-color h-div-border link-image ">
-
-                             <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                               <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                 <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Harish inflexion.com</h6></b> </li></ul>
-                                 <ul ><li> <b><h6 class="h6-title">Names:Harish</h6></b></li></ul>
-                                 <ul><li> <h6 class="h6-title ">Email: Harish@inflexion.com</h6></li></ul>
-                                 <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                </div>
-                               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                 <ul>
-                                    <li>
-                                      <samp>
-                                        <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                       </samp>
-                                    </li>
-                                  </ul>
-                              </div>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                  <ul class="list-inline-sm  ">
-                                    <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                    </ul>
-                                </div>
-                              </div>
-
-                            <div class=" child-hidden ">
-
-                            </div>
-                          </div>
-                        </div>
-                     </div>
-                      <!-- END Spaces animate zoom Grid 1 --->
-
-                      <!-- BEGIN Spaces animate zoom Grid 2 -->
-
-                      <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                        <div class="principale ">
-                          <div class="parent-div bg-color h-div-border link-image ">
-
-                               <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                                 <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                   <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Rajesh inflexion.com</h6></b> </li></ul>
-                                   <ul ><li> <b><h6 class="h6-title">Names:Rajesh</h6></b></li></ul>
-                                   <ul><li> <h6 class="h6-title ">Email: Rajesh@inflexion.com</h6></li></ul>
-                                   <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                  </div>
-                                 <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                   <ul>
-                                      <li>
-                                        <samp>
-                                          <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                         </samp>
-                                      </li>
-                                    </ul>
-                                </div>
-                              </div>
-
-                              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                  <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                    <ul class="list-inline-sm  ">
-                                      <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                      </ul>
-                                  </div>
-                                </div>
-
-                              <div class=" child-hidden ">
-
-                              </div>
-                            </div>
-                          </div>
-                      </div>
-
-                    <!-- END Spaces animate zoom Grid 2 --->
-
-                    <!-- BEGIN Spaces animate zoom Grid 3 -->
-
-                    <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                      <div class="principale ">
-                        <div class="parent-div bg-color h-div-border link-image ">
-                           <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                               <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                 <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Prakash inflexion.com</h6></b> </li></ul>
-                                 <ul ><li> <b><h6 class="h6-title">Names:Prakash</h6></b></li></ul>
-                                 <ul><li> <h6 class="h6-title ">Email: Prakash@inflexion.com</h6></li></ul>
-                                 <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                </div>
-                               <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                 <ul>
-                                    <li>
-                                      <samp>
-                                        <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                       </samp>
-                                    </li>
-                                  </ul>
-                              </div>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                  <ul class="list-inline-sm  ">
-                                    <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                    </ul>
-                                </div>
-                              </div>
-
-                            <div class=" child-hidden ">
-
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                     <!-- END Spaces animate zoom Grid 3 -->
-
-                      <!-- BEGIN Spaces animate zoom Grid 4 -->
-
-                      <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                        <div class="principale ">
-                          <div class="parent-div bg-color h-div-border link-image ">
-
-                               <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                                 <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                   <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Ramesh inflexion.com</h6></b> </li></ul>
-                                   <ul ><li> <b><h6 class="h6-title">Names:Ramesh</h6></b></li></ul>
-                                   <ul><li> <h6 class="h6-title ">Email: Ramesh@inflexion.com</h6></li></ul>
-                                   <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                  </div>
-                                 <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                   <ul>
-                                      <li>
-                                        <samp>
-                                          <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                         </samp>
-                                      </li>
-                                    </ul>
-                                </div>
-                              </div>
-
-                              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                  <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                    <ul class="list-inline-sm  ">
-                                      <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                      </ul>
-                                  </div>
-                                </div>
-
-                              <div class=" child-hidden ">
-
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-
-                      <!-- END Spaces animate zoom Grid 4 -->
-
-
-
-    <!-- BEGIN Spaces Grid 2 body -->
-
-
-                      <!-- BEGIN Spaces animate zoom Grid 1 -->
-
-                      <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                          <div class="principale ">
-                              <div class="parent-div bg-color h-div-border link-image ">
-
-                                   <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                                     <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                       <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Ravi inflexion.com</h6></b> </li></ul>
-                                       <ul ><li> <b><h6 class="h6-title">Names:Ravi</h6></b></li></ul>
-                                       <ul><li> <h6 class="h6-title ">Email: Ravi@inflexion.com</h6></li></ul>
-                                       <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                      </div>
-                                     <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                       <ul>
-                                          <li>
-                                            <samp>
-                                              <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                             </samp>
-                                          </li>
-                                        </ul>
-                                    </div>
-                                  </div>
-
-                                  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                      <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                        <ul class="list-inline-sm  ">
-                                          <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                          </ul>
-                                      </div>
-                                    </div>
-
-                                  <div class=" child-hidden ">
-
-                                  </div>
-                                </div>
-                              </div>
-                      </div>
-
-                        <!-- END Spaces animate zoom Grid 1 --->
-
-                        <!-- BEGIN Spaces animate zoom Grid 2 -->
-
-                        <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                            <div class="principale ">
-                                <div class="parent-div bg-color h-div-border link-image ">
-
-                                     <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                                       <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                         <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Sanjay inflexion.com</h6></b> </li></ul>
-                                         <ul ><li> <b><h6 class="h6-title">Names:Sanjay</h6></b></li></ul>
-                                         <ul><li> <h6 class="h6-title ">Email: Sanjay@inflexion.com</h6></li></ul>
-                                         <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                        </div>
-                                       <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                         <ul>
-                                            <li>
-                                              <samp>
-                                                <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                               </samp>
-                                            </li>
-                                          </ul>
-                                      </div>
-                                    </div>
-
-                                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                        <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                          <ul class="list-inline-sm  ">
-                                            <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                            </ul>
-                                        </div>
-                                      </div>
-
-                                    <div class=" child-hidden ">
-
-                                    </div>
-                                  </div>
-                                </div>
-
-                        </div>
-
-                      <!-- END Spaces animate zoom Grid 2 --->
-
-                      <!-- BEGIN Spaces animate zoom Grid 3 -->
-
-                      <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                          <div class="principale ">
-                              <div class="parent-div bg-color h-div-border link-image ">
-
-                                   <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                                     <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                       <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Naveen inflexion.com</h6></b> </li></ul>
-                                       <ul ><li> <b><h6 class="h6-title">Names:Naveen</h6></b></li></ul>
-                                       <ul><li> <h6 class="h6-title ">Email: Naveen@inflexion.com</h6></li></ul>
-                                       <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                      </div>
-                                     <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                       <ul>
-                                          <li>
-                                            <samp>
-                                              <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                             </samp>
-                                          </li>
-                                        </ul>
-                                    </div>
-                                  </div>
-
-                                  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                      <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                        <ul class="list-inline-sm  ">
-                                          <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                          </ul>
-                                      </div>
-                                    </div>
-
-                                  <div class=" child-hidden ">
-
-                                  </div>
-                                </div>
-                              </div>
-                      </div>
-
-                       <!-- END Spaces animate zoom Grid 3 -->
-
-                      <!-- BEGIN Spaces animate zoom Grid 4 -->
-
-                      <div class="cell-sm-6 cell-md-4 cell-xs-12 cell-lg-3 thumb-corporate ">
-                          <div class="principale ">
-                              <div class="parent-div bg-color h-div-border link-image ">
-
-                                   <div class="contents_1 col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 parent-close ">
-                                     <div class="col-sm-10 col-md-10 col-xs-10 col-lg-10 " >
-                                       <ul class="text-center" ><li>  <b><h6 class="h6-title-color h6-title-medium">Sreeharsha inflexion.com</h6></b> </li></ul>
-                                       <ul ><li> <b><h6 class="h6-title">Names:Sreeharsha</h6></b></li></ul>
-                                       <ul><li> <h6 class="h6-title ">Email: Sreeharsha@inflexion.com</h6></li></ul>
-                                       <ul><li> <h6 class="h6-title ">Role: Operator</h6> </li></ul>
-                                      </div>
-                                     <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 ">
-                                       <ul>
-                                          <li>
-                                            <samp>
-                                              <a class="h-r-star btn-close  icon-cursor h-icon-star-color  icon-sm linear-icon-cross" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>"  ></a>
-                                             </samp>
-                                          </li>
-                                        </ul>
-                                    </div>
-                                  </div>
-
-                                  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12  icons-parents">
-                                      <div id="icon-list" class="thumb-corporate__overlay thumb-corporate__overlay-gl text-center  h-i-m-top ">
-                                        <ul class="list-inline-sm  ">
-                                          <li><p class="btn icon-users-edit  h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color  icon-sm " data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_EDIT %>" href="#Settings"><i class="linear-icon-pencil5"></i></p></li>
-                                          </ul>
-                                      </div>
-                                    </div>
-
-                                  <div class=" child-hidden ">
-
-                                  </div>
-                                </div>
-                              </div>
-                      </div>
-
-                      <!-- END Spaces animate zoom Grid 4 -->
-
-                   </div>
-
-                   <!-- BEGIN Spaces pagination  body-->
-
-
-
-
-
-
-
-
-
-     <!-- BEGIN Spaces pagination footer -->
-     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 h-m-top-none   ">
-        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-5 h-m-top-none "></div>
-        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-4 h-m-top-none  h-navber-padding">
-
-              <nav>
-                  <ul class="pagination-classic  h-m-top-none">
-                    <li class="active pagination-next"><span class="pagination-text-color">1</span></li>
-                    <li><a >2</a></li>
-                    <li><a >3</a></li>
-                    <li><a >4</a></li>
-                    <li><a class="icon linear-icon-arrow-right" href="#"></a></li>
-                  </ul>
-                </nav>
+    <!-- Site logo images-->
+    <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
+    <!--Stylesheets file links -->
+    <% include _layouts/common-header %>
+  </head>
+  <body class="h-background-color">
+    <!-- include file for navigation -->
+    <% include _layouts/header-with-navigation %>
+    <div class="page">
+      <!-- BEGIN page loader -->
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
-       <!-- END Spaces pagination footer -->
-
+      <!-- End page loader -->
+      <!-- BEGIN Users toolbar-->
+      <div class="container-fluid breadcrumb-container">
+        <ol class="breadcrumb">
+          <h5 class="meeting-head-bread"><%= translation.HUB_USERS %> </h5>
+          <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
+          <li><%= translation.HUB_USERS %></li>
+        </ol>
       </div>
-    </div>
-    </section>
-    <%include footer %>
-
-            <!-- BEGIN Template script file links -->
-            <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-            <script src="/scripts/core.min.js"></script>
-            <script src="/scripts/script.js"></script>
-            <script src="/scripts/jquery.contenthover.min.js"></script>
-            <script src="/scripts/general.js"></script>
-            <script src="/scripts/spacelist.js"></script>
-
-           <!--  BEGIN Template script file links src -->
-
-
-          <!-- BEGIN Spaces script -->
-            <script src="/scripts/zoomindiv.js"></script>
-
-            <script>
-            $(document).ready(function(){
-              $("#usersList").addClass("active");
-            });
-            </script>
-            <!-- End Spaces script -->
-
-            <!-- END Zoom Div -->
-          </body>
+      <!-- END Users toolbar-->
+      <section>
+        <div class="shell">
+          <!-- BEGIN Users search head -->
+          <div class="range range-5 h-m-top-none">
+            <div class="searchBtn-pagination-container">
+              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <!-- BEGIN Users Search  -->
+                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
+                  <!-- Search input field -->
+                  <div class="h-box-shadow form-wrap form-wrap_icon h-box-shadow linear-icon-magnifier head-search-w-h search-margin-top">
+                    <input class="form-input search-input " type="text" name="search" placeholder="<%= translation.HUB_ACTIVITY_SEARCH_PLACEHOLDER %>">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END Users search head -->
+          <!-- include file for card-->
+          <% include _layouts/cards/card %>
+         </div>
+        </div>
+      </section>
+      <!-- BEGIN script file links -->
+      <% include _layouts/common-scripts %>
+      <script>
+      $(document).ready(function(){
+        $("#usersList").addClass("active");
+      });
+      </script>
+      <!-- End Users script -->
+      <!-- Pagination next footer -->
+      <%include _layouts/footer %>
+  </body>
 </html>
