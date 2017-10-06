@@ -1,23 +1,26 @@
-$(document).ready(function(){
-    var pagesInTotal = 0;
+$(document).ready(function () {
     debugger;
-    for(var i=0; i <= pagesInTotal;){
-        debugger;
-        httpGet(apiType.SPACES_LIST+"?offset="+i+"&limit=10", function(resp){
-            console.log(resp.data.coSpaces.attrkey.total/8);
-            var pages = Math.ceil(resp.data.coSpaces.attrkey.total/8);
-            console.log(pages);
-            localStorage.setItem("pageCount",pages);
+    var totalRecords = 0;
+    for (var i = 0; i <= totalRecords;) {
+        httpGet(apiType.SPACES_LIST + "?offset=" + i + "&limit=8", function (resp) {
+            var records = resp.data.coSpaces.attrkey.total;
+            localStorage.setItem("recordCount", records);
+            // console.log("Total Pages: ", records / 8);
+            var pages = Math.ceil(records / 8);
+            // console.log("Pages: ", pages);
+            //Pagination logic
             $('.sync-pagination').twbsPagination({
                 totalPages: pages,
+                hideOnlyOnePage: true,
                 onPageClick: function (evt, page) {
-
+                    debugger;
+                    var list = resp.data.coSpaces.coSpace;
+                    console.log(list.slice(i))
                 }
             });
         });
-        i=i+10;
-        pagesInTotal = localStorage.getItem("pageCount");
-        console.log(parseInt(pagesInTotal));   
+        totalRecords = localStorage.getItem("recordCount");
+        console.log(totalRecords);
+        i=i+8;
     }
-
 });
