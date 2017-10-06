@@ -153,5 +153,11 @@
     "SMTP_ERROR_TEXT_SMTP_USERNAME": "Se requiere nombre de usuario",
     "SMTP_ERROR_TEXT_SMTP_PASSWORD": "Se requiere contraseña",
     "SMTP_ERROR_TEXT_SMTP_PORT_TLS": "Puerto TLS es necesario",
-    "SMTP_ERROR_TEXT_SMTP_PORT_SSL": "Se requiere puerto SSL"
+    "SMTP_ERROR_TEXT_SMTP_PORT_SSL": "Se requiere puerto SSL",
+
+    
+    "CREATE_SPACE_ERROR_TEXT_SPACE_NAME":"El nombre del espacio es obligatorio",
+    "CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME":"Tipo de nombre de miembro es obligatorio",
+    "CREATE_SPACE_ERROR_TEXT_PASS_CODE":"El código de pase es obligatorio",
+    "CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES":"Se requiere dirección de espacio"
 }

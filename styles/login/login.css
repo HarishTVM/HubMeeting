@@ -1,13 +1,7 @@
-#login-page {
-    min-height: 0px !important;
-  }
-
+#login-page { min-height: 0px !important;}
 .footer-container {
     width: 100%;
     position: absolute;
     bottom: 0;
 }
-
-.configure-section-custom {
-    padding: 60px 0;
-}
+.configure-section-custom { padding: 60px 0; }

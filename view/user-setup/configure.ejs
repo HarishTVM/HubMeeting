@@ -51,19 +51,19 @@
               <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
                 <!-- API URL input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-link2">
-                  <input class="form-input validate-text" id="api-url" type="apiurl" name="apiurl">
+                  <input class="form-input  input-box-shadow validate-text" id="api-url" type="apiurl" name="apiurl">
                   <label class="form-label" for="api-url"><%= translation.HUBCONFIGUATION_API_URL %></label>
                   <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_URL %></span>                  
                 </div>
                 <!-- User Name input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-man">
-                  <input class="form-input validate-text" id="api-uname" type="apiurl" name="apiuserName">
+                  <input class="form-input input-box-shadow validate-text" id="api-uname" type="apiurl" name="apiuserName">
                   <label class="form-label" for="api-uname"><%= translation.HUBCONFIGUATION_API_USERNAME %></label>
                   <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_USERNAME %></span>                  
                 </div>
                 <!-- User API Password input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                  <input class="form-input validate-text" id="api-password" type="password" name="apiPassword">
+                  <input class="form-input input-box-shadow validate-text" id="api-password" type="password" name="apiPassword">
                   <label class="form-label" for="api-password"><%= translation.HUBCONFIGUATION_API_PASSWORD %></label>
                   <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_PASSWORD %></span>                  
                 </div>
@@ -77,8 +77,7 @@
       </section>
     </div>
     <!-- END Page -->
-     <!-- BEGIN Page footer for SMTP-->
-     <%include _layouts/footer %>
+   
      <!-- END Page footer for SMTP -->
  
      <!-- BEGIN Template script file links -->
@@ -90,6 +89,7 @@
      <script src="/scripts/user-setup/configure.js"></script>
      <script src="/scripts/inbuilt/toastr.min.js"></script>     
      <!-- END script file links -->
-
+  <!-- BEGIN Page footer for SMTP-->
+  <%include _layouts/footer %>
   </body>
 </html>

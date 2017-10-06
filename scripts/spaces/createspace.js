@@ -1,8 +1,11 @@
 $(document).ready(function(){
- $('#btndiscard').click(function() {
- window.location.href='/dashboard';
- });
- $('#btndone').click(function() {
- window.location.href='/spacelist';
- });
+    $('#btndone').click(function(){
+        if($('form').hasClass('validate-form')){
+            var resultItem = [];
+            $('.validate-text').each(function(i, obj){
+                resultItem.push(validateText(obj));
+            });
+        }
+    });
+
 });

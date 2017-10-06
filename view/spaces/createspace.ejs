@@ -7,7 +7,7 @@
  <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
  <!--Stylesheets file links -->
  <% include _layouts/common-header %>
-
+ <link rel="stylesheet" href="/styles/spaces/createspace.css">
 
 
   </head>
@@ -34,23 +34,27 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
             <!-- RD Mailform-->
-            <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-              <div class="form-wrap form-wrap_icon linear-icon-database-add">
-                <input class="form-input" id="contact-sName" type="text" name="name" data-constraints="@Required">
+            <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
+              <div id="Name"class="form-wrap form-wrap_icon linear-icon-database-add">
+                <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name">
                 <label class="form-label" for="contact-sName"><%= translation.HUB_CREATE_SPACE_NAME %></label>
+                <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %></span>
               </div>
               <div class="form-wrap form-wrap_icon linear-icon-users-plus">
-              <input class="form-input" id="contact-sMember" type="email" name="email"  data-constraints="@Required">
+              <input class="form-input input-box-shadow validate-text" id="contact-sMember" type="email" name="email">
               <label class="form-label" for="contact-sMember"><%= translation.HUB_CREATE_SPACE_TYPE_MEMBER_NAME %></label>
+              <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME %></span>
             </div>
-
             <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-              <input class="form-input" id="contact-sPasscode" type="text" name="passcode" data-constraints="@Required">
-              <label class="form-label" for="contact-sPasscode"><%= translation.HUB_CREATE_SPACE_PASSCODE %> </label>
+              <input class="form-input input-box-shadow validate-text alidate-text" id="contact-sPasscode" type="text" name="passcode">
+              <label class="form-label" for="contact-sPasscode"><%= translation.HUB_CREATE_SPACE_PASSCODE %></label>
+              <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_PASS_CODE %></span>              
             </div>
-            <div class="form-wrap form-wrap_icon linear-icon-home6">
-              <input class="form-input" id="contact-sAddress" type="text" name="email" data-constraints="@Required">
+            <div class="form-wrap form-wrap_icon linear-icon-home6 ">
+              <input class="form-input input-box-shadow validate-text" id="contact-sAddress" type="text" name="email">
               <label class="form-label" for="contact-sAddress"><%= translation.HUB_CREATE_SPACE_ADDRESS %></label>
+              <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES %></span>
+              
               </div>
               <button id="btndiscard" class="button btn_discard " type="submit"><%= translation.HUB_CREATE_SPACE_DISCARD %> </button>
               &nbsp;&nbsp;
@@ -65,6 +69,9 @@
 
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
+
+      <script src="/scripts/common/validation.js"></script>
+      <script src="/scripts/spaces/createspace.js"></script>
     <script>
         $(document).ready(function(){
             $("#spacesList").addClass("active");

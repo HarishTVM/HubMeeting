@@ -149,6 +149,16 @@ html {
   width: 100%;
   overflow-y: scroll;
 }
+
+.input-box-shadow{
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+  border-radius: .375rem;
+}
+.input-box-shadow:hover{
+  box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
+  border-color: #23d7b2;
+  border-radius: .375rem;
+}
 /*/////////////////////////////////// END Spacelist for Styles ////////////////////////////////////// */
 
 
@@ -1506,7 +1516,8 @@ input:-webkit-autofill ~ .form-validation {
 .form-input:focus {
   outline: 0;
   background: #fff;
-  border-color: #ececee;
+  border: 1px solid #23d7b2;
+  box-shadow: 0px 0px 0px 0px rgba(46,61,73,.2);
 }
 
 textarea.form-input {

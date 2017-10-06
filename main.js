@@ -65,8 +65,14 @@ localLang = osLocale.sync().toString();
 
 	//app.set('views', __dirname + '/view');
 	app.set('views', [path.join(__dirname, '/view'),
-					  path.join(__dirname, '/view/user-setup/'), 
-					  path.join(__dirname, '/view/error/')]);
+					  path.join(__dirname, '/view/user-setup/'),
+					  path.join(__dirname, '/view/activity/'),
+					  path.join(__dirname, '/view/spaces/'),
+					  path.join(__dirname, '/view/meeting/'),
+					  path.join(__dirname, '/view/logs/'),
+					  path.join(__dirname, '/view/demo/'),
+					  path.join(__dirname, '/view/users/'),
+					  path.join(__dirname, '/view/dashboard/')]);
 	app.set('view engine', 'ejs');
 	app.engine('html', require('ejs').renderFile);
 

@@ -148,14 +148,18 @@
     "CPASSWORD_ERROR_TEXT_NEW_PASSWORD": "New Password is Required",
     "CPASSWORD_ERROR_TEXT_CONFIRM_PASSWORD": "Confirm Password is Required",
 
-    "CONFIGURE_ERROR_TEXT_API_URL": "API url is Required",
-    "CONFIGURE_ERROR_TEXT_API_USERNAME": "API username is Required",
+    "CONFIGURE_ERROR_TEXT_API_URL": "API URL is Required",
+    "CONFIGURE_ERROR_TEXT_API_USERNAME": "API UserName is Required",
     "CONFIGURE_ERROR_TEXT_API_PASSWORD": "API Password is Required",
 
-    "SMTP_ERROR_TEXT_SMTP_SERVER_ADDRESS": "Server address is Required",
+    "SMTP_ERROR_TEXT_SMTP_SERVER_ADDRESS": "Server Address is Required",
     "SMTP_ERROR_TEXT_SMTP_USERNAME": "Username is Required",
     "SMTP_ERROR_TEXT_SMTP_PASSWORD": "Password is Required",
     "SMTP_ERROR_TEXT_SMTP_PORT_TLS": "Port TLS is Required",
-    "SMTP_ERROR_TEXT_SMTP_PORT_SSL": "Port SSL is Required"
+    "SMTP_ERROR_TEXT_SMTP_PORT_SSL": "Port SSL is Required",
 
+    "CREATE_SPACE_ERROR_TEXT_SPACE_NAME":"Space Name is Required",
+    "CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME":"Type Member Name is Required",
+    "CREATE_SPACE_ERROR_TEXT_PASS_CODE":"Pass Code is Required",
+    "CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES":"Space Address is Required"
 }
