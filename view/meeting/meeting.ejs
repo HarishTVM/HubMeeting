@@ -5,6 +5,7 @@
     <title><%= translation.HUB_MEETING_PAGE_TITLE %></title>
     <!-- Site logo images-->
     <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="/styles/meeting/meeting.css">
     <!--Stylesheets file links -->
     <% include _layouts/common-header %>
   </head>
@@ -36,7 +37,7 @@
             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
               <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
                 <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h search-margin-top">
-                  <input class="form-input search-input " type="text" name="search" placeholder="Enter the Meeting">
+                  <input class="form-input search-input input-box-shadow " type="text" name="search" placeholder="Enter the Meeting">
                 </div>
               </div>
               <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
@@ -52,7 +53,7 @@
             <% include _layouts/cards-meeting/card-meeting %>
           </div>
           <!-- ceateMeeting -->
-          <a href="/newMeeting" data-toggle="tooltip" data-placement="bottom" title="" 
+          <a href="/newMeeting" data-toggle="tooltip" data-placement="bottom" title=""
             class="button button-primary  linear-icon-plus newmeeting-btn-circle"
             data-original-title="<%= translation.HUB_MEETING_CREATE_MEETING_BTN %>"></a>
         </div>
@@ -60,7 +61,8 @@
     </section>
     <!-- BEGIN script file links -->
     <% include _layouts/common-scripts %>
-  
+
+
     <script>
     $(document).ready(function(){
       $("#meetingList").addClass("active");

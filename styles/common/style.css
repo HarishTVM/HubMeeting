@@ -80,6 +80,7 @@ html {
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
   border-radius: .375rem;
 }
+.text-font-size{ font-size:small;}
 .sl-div-shadow-member{ position: relative; box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);   margin-top: 5px; }
 .sl-div-shadow-member:hover{
   margin-top: 5px;
@@ -259,6 +260,7 @@ html {
 .padding-right-none{padding-right: 0px !important;}
 .padding-left-none{padding-left: 0px !important}
 .padding-top-none{ padding: 0px 0 !important;}
+.padding-left-left-none{padding-right: 0px !important; padding-left: 0px !important;}
 /*--------------------END Padding-none for Styles---------------------------------------*/
 /*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
 
