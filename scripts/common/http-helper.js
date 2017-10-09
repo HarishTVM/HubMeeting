@@ -43,7 +43,7 @@ var httpPost = function (Url, _data, callback) {
             debugger;
             if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR){
                  toastr.options.closeButton = true;
-                 toastr.warning(errObj.responseJSON.data);
+                 toastr.warning(ToastMesssges.INTERNAL_SERVER_ERROR); //errObj.responseJSON.data
             }
             else if(errObj.status == serverStatus.PAGE_NOT_FOUND)
                 window.location.href = "/404page";
@@ -83,10 +83,10 @@ var httpPut = function (Url, _data, callback) {
     });
 };
 
-var httpDelete = function (Url, _data, callback) {
+var httpDelete = function (Url, callback) {
     $.ajax({
         method: 'DELETE',
-        url: app.BASE_URL + Url + '?' + $.param({ "data": _data }),
+        url: app.BASE_URL + Url,
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         },

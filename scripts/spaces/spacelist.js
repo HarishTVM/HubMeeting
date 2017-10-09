@@ -2,7 +2,7 @@ $(document).ready(function () {
     debugger;
     var totalRecords = 0;
     for (var i = 0; i <= totalRecords;) {
-        httpGet(apiType.SPACES_LIST + "?offset=" + i + "&limit=8", function (resp) {
+        httpGet(apiType.GET_COSPACES + "?offset=" + i + "&limit=8", function (resp) {
             var records = resp.data.coSpaces.attrkey.total;
             localStorage.setItem("recordCount", records);
             // console.log("Total Pages: ", records / 8);
@@ -15,7 +15,7 @@ $(document).ready(function () {
                 onPageClick: function (evt, page) {
                     debugger;
                     var list = resp.data.coSpaces.coSpace;
-                    console.log(list.slice(i))
+                    console.log(list);
                 }
             });
         });

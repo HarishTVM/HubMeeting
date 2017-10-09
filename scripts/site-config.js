@@ -1,12 +1,15 @@
 var app = {
-    BASE_URL:"http://192.168.5.85:9000/api/",
+    BASE_URL:"http://192.168.5.87:9000/api/",
 }
 
 var apiType = {
     AUTH_USER:"authenticateUser",
     CHANGE_PASSWORD: "changeUserLoginPassword",
     CONFIGURE: "checkCmsApiUrl",
-    SPACES_LIST: "getCospaces"
+    GET_COSPACES: "getCospaces",
+    CREATE_COSPACE: "createCospace",
+    UPDATE_COSCPACE: "updateCospace",
+    DELETE_COSPACE_USER: "deleteCospaceUser"
 }
 
 var errorCodes = {
