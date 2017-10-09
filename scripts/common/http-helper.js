@@ -79,7 +79,7 @@ var httpPut = function (Url, _data, callback) {
             }
             if(errObj.status == serverStatus.PAGE_NOT_FOUND)
                 window.location.href = '/404page';
-        },
+        }
     });
 };
 
@@ -93,8 +93,15 @@ var httpDelete = function (Url, callback) {
         success: function (response, status, xhr) {
             callback(response);
         },
-        error: function (errObj, xhr, errStr) {
-            console.log(xhr.status);
+        error: function (errObj, xhr, errStr){
+            if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR){
+                {
+                    toastr.options.closeButton = true;
+                    toastr.warning(ToastMesssges.INTERNAL_SERVER_ERROR);
+                }
+            }
+            if(errObj.status == serverStatus.PAGE_NOT_FOUND)
+                window.location.href = '/404page';
         }
     });
 };

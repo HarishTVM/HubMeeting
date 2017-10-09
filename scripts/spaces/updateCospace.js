@@ -1,6 +1,7 @@
 //This script tage must be included in updateCoscpace HTML page
 //UpdateCospace HTML page to contain both createspace and updateCospace script tags for localstorage logic 
 $(document).ready(function(){
+    //BEGIN Update Cospace Logic
     $('#updateBtn').click(function(){
        if($('form').hasClass('validate-form')){
            var resultItem = [];
@@ -23,4 +24,14 @@ $(document).ready(function(){
            }
        }
     });
+    //END Update Cospace Logic
+
+    //BEGIN DELETE COSPACE USER LOGIC
+    $('#deleteBtn').click(function(){
+        httpDelete(apiType.DELETE_COSPACE_USER+"?cospaceId=localStorage.getItem('cospaceid')", function(resp){
+            console.log(resp);
+            alert("User deletion successfull..!") //TODO Toaster
+        })
+    });
+    //END DELETE COSPACE USER LOGIC
 });
