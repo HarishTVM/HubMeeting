@@ -14,8 +14,11 @@ $(document).ready(function () {
                 hideOnlyOnePage: true,
                 onPageClick: function (evt, page) {
                     debugger;
-                    var list = resp.data.coSpaces.coSpace;
-                    console.log(list);
+                    var coSpacelist = resp.data.coSpaces;
+                    var source = $('#cardId').html();
+                    var template = Handlebars.compile(source);
+                    $('#List').html( template(coSpacelist));
+                    console.log(coSpacelist);
                 }
             });
         });
