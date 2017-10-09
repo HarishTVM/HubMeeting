@@ -69,7 +69,7 @@ localLang = osLocale.sync().toString();
 					  path.join(__dirname, '/view/activity/'),
 					  path.join(__dirname, '/view/spaces/'),
 					  path.join(__dirname, '/view/meeting/'),
-					  path.join(__dirname, '/view/logs/'),
+					  path.join(__dirname, '/view/error-logs/'),
 					  path.join(__dirname, '/view/demo/'),
 					  path.join(__dirname, '/view/users/'),
 					  path.join(__dirname, '/view/dashboard/')]);
