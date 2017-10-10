@@ -31,9 +31,7 @@ app.get("/users", (req, res)=>{
 app.get("/createspace",(req,res)=>{
  res.render("createspace", {year: new Date().getFullYear()});
 });
-app.get("/logs",(req,res)=>{
-  res.render("logs", {year: new Date().getFullYear()});
-});
+
 app.get("/settings",(req,res)=>{
   res.render("settings", {year: new Date().getFullYear()});
 });
@@ -51,6 +49,9 @@ app.get("/onhovermeeting", (req, res)=>{
 });
 app.get("/404page", (req, res)=>{
   res.render("404page", {year: new Date().getFullYear()});
+});
+app.get("/logs",(req,res)=>{
+  res.render("logs", {year: new Date().getFullYear()});
 });
 
 app.get("/spacelist", (req, res)=>{
