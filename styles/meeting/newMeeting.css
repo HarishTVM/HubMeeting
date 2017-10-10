@@ -92,6 +92,14 @@ span#select2-sel1-container, span#select2-sel2-container, span#select2-sel3-cont
     background: black;
 }
 
+.custom-cospace::before{
+    z-index: 1;
+}
+
+li.select2-results__option:hover{
+    color: white !important;
+}
+
 @media only screen and (min-width: 768px) {
     .schedule-meeting-div{
         width: 50%;

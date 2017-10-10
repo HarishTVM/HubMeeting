@@ -1553,7 +1553,6 @@ textarea.form-input {
   font-size: 24px;
   line-height: 24px;
   color: #c7c7c7;
-  z-index: 100;
 }
 
 .form-wrap_icon__label-outside:before {
