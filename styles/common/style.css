@@ -2702,7 +2702,6 @@ figure img {
     opacity: 0;
     transition: opacity .2s ease-in-out;
     pointer-events: none;
-
   }
   .desktop .thumb-corporate__overlay::before {
     content: '';

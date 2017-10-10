@@ -1,7 +1,7 @@
 <!--BEGIN Meeting-Card -->
-<div  class="col-sm-6 col-md-4 col-xs-12 col-lg-3 thumb-corporate">
-  <div class="bg-white box-shadow-meeting h-div-border s-height  padding-left-left-none">
-    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  padding-left-left-none">
+<div  class="col-sm-6 col-md-4 col-xs-12 col-lg-3 ">
+  <div class="bg-white box-shadow-meeting h-div-border s-height padding-left-left-none thumb-corporate">
+    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  padding-left-left-none ">
       <!-- Meeting Title -->
       <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-left-none">
         <ul class="text-center">
@@ -42,10 +42,18 @@
         </div>
       </div>
     </div>
-    <div class="thumb-corporate__overlay ">
-      <ul class="icon-bottom list-inline-sm thumb-corporate__list" >
-        <li><a class="icon-sm linear-icon-reading" href="#"></a></li>
-        <li><i class="icon-sm linear-icon-trash2 texe-color-red" href="#"></i></li>
+    <div class="thumb-corporate__overlay">
+      <ul class="list-inline-sm thumb-corporate__list">
+        <li>
+          <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" href="#Settings">
+            <i class="linear-icon-reading"></i>
+          </p>
+        </li>
+        <li>
+          <p class="btn btn-circle thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="tooltip" data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>" href="#Settings">
+            <i class="linear-icon-trash2"></i>
+          </p>
+        </li>
       </ul>
     </div>
   </div>
