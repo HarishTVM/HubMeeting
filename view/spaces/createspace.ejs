@@ -8,7 +8,7 @@
  <!--Stylesheets file links -->
  <% include _layouts/common-header %>
  <link rel="stylesheet" href="/styles/spaces/createspace.css">
-
+ <link rel="stylesheet" href="styles/meeting/newMeeting.css">
 
   </head>
   <body>
@@ -33,29 +33,53 @@
           <h4><%= translation.HUB_CREATE_SPACE_TOOLBAR %></h4>
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
-            <!-- RD Mailform-->
+
             <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
               <div id="Name"class="form-wrap form-wrap_icon linear-icon-database-add">
                 <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name">
                 <label class="form-label" for="contact-sName"><%= translation.HUB_CREATE_SPACE_NAME %></label>
                 <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %></span>
               </div>
-              <div class="form-wrap form-wrap_icon linear-icon-users-plus">
+              <div id="URI"class="form-wrap form-wrap_icon fa-link">
+                  <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI">
+                  <label class="form-label" for="contact-create_space_URI"><%= translation.HUB_CREATE_SPACE_ENTER_URI %></label>
+                  <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %></span>
+                </div>
+              <!-- <div class="form-wrap form-wrap_icon linear-icon-users-plus">
               <input class="form-input input-box-shadow validate-text" id="contact-sMember" type="email" name="email">
               <label class="form-label" for="contact-sMember"><%= translation.HUB_CREATE_SPACE_TYPE_MEMBER_NAME %></label>
               <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME %></span>
+            </div> -->
+            <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
+              <select class="form-control on-hover-color " id="sel3">
+                  <option value="" selected disabled><%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %></option>
+                  <option><%= translation.HUB_CREATE_SPACE_ALLEQUAL %></option>
+                  <option><%= translation.HUB_CREATE_SPACE_SPEAKERONLY %></option>      
+                  <option><%= translation.HUB_CREATE_SPACE_TELEPRESENCE %></option>
+                  <option><%= translation.HUB_CREATE_SPACE_STACKED %></option> 
+                  <option><%= translation.HUB_CREATE_SPACE_ALLEQUALQUARTERS %></option>   
+                  <option><%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %></option>     
+              </select>
+            </div>
+            <div class="form-wrap form-wrap_icon linear-icon-telephone margin-css custom-cospace input-box-shadow">
+              <select id="sel3">
+                  <option value="" selected disabled>Select the Require CallId</option>
+                  <option>True</option>
+                  <option>False </option>
+              </select>
             </div>
             <div class="form-wrap form-wrap_icon linear-icon-key-hole">
               <input class="form-input input-box-shadow validate-text alidate-text" id="contact-sPasscode" type="text" name="passcode">
               <label class="form-label" for="contact-sPasscode"><%= translation.HUB_CREATE_SPACE_PASSCODE %></label>
               <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_PASS_CODE %></span>              
             </div>
-            <div class="form-wrap form-wrap_icon linear-icon-home6 ">
+            <!-- <div class="form-wrap form-wrap_icon linear-icon-home6 ">
               <input class="form-input input-box-shadow validate-text" id="contact-sAddress" type="text" name="email">
               <label class="form-label" for="contact-sAddress"><%= translation.HUB_CREATE_SPACE_ADDRESS %></label>
               <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES %></span>
               
-              </div>
+              </div> -->
+            
               <button id="btndiscard" class="button btn_discard " type="submit"><%= translation.HUB_CREATE_SPACE_DISCARD %> </button>
               &nbsp;&nbsp;
               &nbsp;&nbsp;

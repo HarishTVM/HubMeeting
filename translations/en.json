@@ -38,12 +38,28 @@
 
   "HUB_CREATE_SPACE_TITLE":"CMS Hub Create Space",
   "HUB_CREATE_SPACE_TOOLBAR":"Create Space",
-  "HUB_CREATE_SPACE_NAME":"Space Name",
+  "HUB_CREATE_SPACE_NAME":"Enter the Space Name",
+  "HUB_CREATE_SPACE_PASSCODE":"Enter the Passcode",
+  "HUB_CREATE_SPACE_ENTER_URI":"Enter the URI",
   "HUB_CREATE_SPACE_TYPE_MEMBER_NAME":"Type Member Name",
-  "HUB_CREATE_SPACE_PASSCODE":"Passcode",
+  "HUB_CREATE_SPACE_DEFAULT_LAYOUT":"Select the DefaultLayout",
+  "HUB_CREATE_SPACE_ALLEQUAL":"Allequal",
+  "HUB_CREATE_SPACE_SPEAKERONLY":"Speakeronly",
+  "HUB_CREATE_SPACE_TELEPRESENCE":"Telepresence",
+  "HUB_CREATE_SPACE_STACKED":"Stacked",
+  "HUB_CREATE_SPACE_ALLEQUALQUARTERS":"Allequalquarters",
+  "HUB_CREATE_SPACE_ALLEQUALNINTHS":"Allequalninths",
+  "HUB_CREATE_SPACE_ALLEQUALSIXTEENTHS":"Allequalsixteenths",
+  "HUB_CREATE_SPACE_ALLEQUALTWENTYFIFTHS":"Allequaltwentyfifths",
+  "HUB_CREATE_SPACE_ONEPLUSFIVE ":"Oneplusfive",
+  "HUB_CREATE_SPACE_ONEPLUSSEVEN":"Oneplusseven",
+  "HUB_CREATE_SPACE_ONEPLUSNINE":"Oneplusnine",
+  "HUB_CREATE_SPACE_AUTOMATIC":"Automatic",
+  "HUB_CREATE_SPACE_ONEPLUSN":"Oneplusn",
   "HUB_CREATE_SPACE_ADDRESS":"Space Address",
   "HUB_CREATE_SPACE_DISCARD":"Discard",
   "HUB_CREATE_SPACE_DONE":"Done",
+  
 
   "HUB_CHANGE_PASSWORD_TITLE":"CMS Hub Change Password",
   "HUB_CHANGE_PASSWORD":"Change Password",
@@ -159,6 +175,7 @@
     "SMTP_ERROR_TEXT_SMTP_PORT_SSL": "Port SSL is Required",
 
     "CREATE_SPACE_ERROR_TEXT_SPACE_NAME":"Space Name is Required",
+    "CREATE_SPACE_ERROR_TEXT_ENTER_URI":"URI is Required",
     "CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME":"Type Member Name is Required",
     "CREATE_SPACE_ERROR_TEXT_PASS_CODE":"Pass Code is Required",
     "CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES":"Space Address is Required"

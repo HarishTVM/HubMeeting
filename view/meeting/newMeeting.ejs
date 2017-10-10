@@ -34,51 +34,51 @@
               <!-- RD Mailform-->
               <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
                 <div class="form-wrap form-wrap_icon linear-icon-man margin-css title-wrap">
-                  <input class="form-input" id="title" type="text" name="title" data-constraints="@Required">
+                  <input class="form-input input-box-shadow " id="title" type="text" name="title" data-constraints="@Required">
                   <label class="form-label" for="title"><%= translation.SCHEDULE_MEETING_TITLE %></label>
                 </div>
                 <div class="div1 margin-css">
                   <div class="form-wrap form-wrap_icon linear-icon-key-hole email-wrap">
-                    <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Required">
+                    <input class="form-input input-box-shadow " id="contact-email" type="email" name="email" data-constraints="@Required">
                     <label class="form-label" for="contact-email"><%= translation.SCHEDULE_MEETING_EMAIL %></label>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon linear-icon-telephone telephone-wrap">
-                    <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required">
+                    <input class="form-input input-box-shadow " id="contact-phone" type="text" name="phone" data-constraints="@Required">
                     <label class="form-label" for="contact-phone"><%= translation.SCHEDULE_MEETING_PHONE %></label>
                   </div>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
                       <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                      <input class="form-input" id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                      <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
                   </div>&nbsp;&nbsp;	
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                       <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                      <input class="form-input" id="fromdate" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                      <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
                   </div>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input" id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                    <input class="form-input input-box-shadow " id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
                   </div>&nbsp;&nbsp;	
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input" id="todate" type="text" name="totime" placeholder="End-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                    <input class="form-input input-box-shadow " id="todate" type="text" name="totime" placeholder="End-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
                   </div>
                 </div>  
                 <div class="div2 margin-css">
                   <div class="form-wrap form-wrap_icon linear-icon-timer timezone-wrap">
-                    <input class="form-input" id="timezone" type="text" name="timezone" data-constraints="@Required">
+                    <input class="form-input input-box-shadow " id="timezone" type="text" name="timezone" data-constraints="@Required">
                     <label class="form-label" for="timezone"><%= translation.SCHEDULE_MEETING_TIMEZONE %></label>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon linear-icon-group-work cospace-wrap">
-                    <input class="form-input" id="cospace" type="text" name="cospace" data-constraints="@Required">
+                    <input class="form-input input-box-shadow " id="cospace" type="text" name="cospace" data-constraints="@Required">
                     <label class="form-label" for="cospace"><%= translation.SCHEDULE_MEETING_COSPACE %></label>
                   </div>
                 </div>  
-                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace">
-                  <select class="form-control on-hover-color" id="sel2">
+                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow ">
+                  <select class="form-control on-hover-color " id="sel2">
                       <option value="" selected disabled><%= translation.SCHEDULE_MEETING_COSPACE_TYPE %></option>
                       <option><%= translation.SCHEDULE_MEETING_DEFAULT_TEMPLATE %></option>
                       <option><%= translation.SCHEDULE_MEETING_HIDDEN_ROOM %></option>      
@@ -88,11 +88,11 @@
                 </div>
                 <h5><%= translation.SCHEDULE_MEETING_MEMBER %></h5>
                 <div class="form-wrap form-wrap_icon linear-icon-users2">
-                  <input class="form-input" id="participants" type="text" name="participants" data-constraints="@Required">
+                  <input class="form-input input-box-shadow " id="participants" type="text" name="participants" data-constraints="@Required">
                   <label class="form-label" for="participants"><%= translation.SCHEDULE_MEETING_PARTICIPANTS %></label>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-location">
-                  <input class="form-input" id="pin" type="text" name="pin" data-constraints="@Required">
+                  <input class="form-input input-box-shadow " id="pin" type="text" name="pin" data-constraints="@Required">
                   <label class="form-label" for="pin"><%= translation.SCHEDULE_MEETING_PIN %></label>
                 </div> 
               </form>
