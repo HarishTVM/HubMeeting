@@ -8,6 +8,7 @@
     <!--Stylesheets file links -->
     <% include _layouts/common-header %>
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
+
   </head>
   <body class=" h-background-color">
     <!-- include file for navigation -->
@@ -43,8 +44,7 @@
                 <!-- END Activities Search  -->
                 <!-- Pagination next head -->
                 <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
-                <ul class="sync-pagination pagination-sm"></ul> <!-- Pagination plugin -->
-
+                  <ul class="sync-pagination pagination-sm"></ul> <!--Pagination plugin-->
                 </div>
               </div>
             </div>
@@ -68,12 +68,13 @@
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
 
-      <script src="/scripts/jquery.twbsPagination.min.js"></script>
       <script src="/scripts/spaces/spacelist.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <script src="/scripts/jquery.twbsPagination.min.js"></script>
       <script>
       $(document).ready(function () {
         $("#spacesList").addClass("active");
+        
       });
       </script>
 
