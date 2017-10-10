@@ -1,6 +1,7 @@
 //This script tage must be included in updateCoscpace HTML page
 //UpdateCospace HTML page to contain both createspace and updateCospace script tags for localstorage logic 
 $(document).ready(function(){
+    
     //BEGIN Update Cospace Logic
     $('#updateBtn').click(function(){
        if($('form').hasClass('validate-form')){
@@ -34,4 +35,6 @@ $(document).ready(function(){
         })
     });
     //END DELETE COSPACE USER LOGIC
-});
+}); 
+
+

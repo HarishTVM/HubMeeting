@@ -51,6 +51,9 @@ var httpPost = function (Url, _data, callback) {
             else if(errObj.status == serverStatus.UNAUTHORIZED && (typeof errObj.responseJSON.data != 'undefined') && errObj.responseJSON.data.errorType == errorType.CUSTOM_ERROR)
                 callback(null, errObj.responseJSON.data);
 
+            else if(errObj.status == serverStatus.BAD_REQUEST && (typeof errObj.responseJSON.data != 'undefined') && errObj.responseJSON.data.errorType == errorType.CUSTOM_ERROR)
+                callback(null, errObj.responseJSON.data);
+
             else {
                  toastr.options.closeButton = true;
                  toastr.info(ToastMesssges.UNHANDLED_ERROR)

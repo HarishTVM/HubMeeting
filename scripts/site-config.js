@@ -16,8 +16,10 @@ var errorCodes = {
     // Login
     UNKNOWN_USER: 1,
     PASSWORD_MISMATCH: 2,
-    //CONFIGURE API
-    API_UNKNOWN_USER: 100
+    // CONFIGURE API
+    API_UNKNOWN_USER: 100,
+    // CREATE COSPACE
+    BAD_REQUEST: 400
 }
 
 var errorType = {
@@ -27,7 +29,8 @@ var errorType = {
 var serverStatus = {
     INTERNAL_SERVER_ERROR: 500,
     UNAUTHORIZED: 401,
-    PAGE_NOT_FOUND: 404
+    PAGE_NOT_FOUND: 404,
+    BAD_REQUEST: 400
 }
 
 var queryTypes = {
@@ -37,8 +40,9 @@ var queryTypes = {
 var ToastMesssges = {
     // Global
     INTERNAL_SERVER_ERROR:"Error occored on Server. Please Contact Administrator.",
-    UNHANDLED_ERROR: "Error unhandled",
+    UNHANDLED_ERROR: "Error unhandled.",
 
     // Login
     UNKNOWN_USER: "Given user name does not exists."
+
 }

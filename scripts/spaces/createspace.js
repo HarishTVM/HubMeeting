@@ -9,22 +9,24 @@ $(document).ready(function(){
             if(resultItem.indexOf(false) < 0){
                 var reqData = {
                     "name": $('#contact-sName').val(),
-                    "uri": $('#contact-sMember').val(),
+                    "uri": $('#contact-create_space_URI').val(),
                     "passcode": $('#contact-sPasscode').val(),
-                    "defaultLayout": "allEqual",
-                    "cdrTag": "a123"
+                    "defaultLayout": $('#sel1').val(),
                 };
                 console.log(reqData);
                 httpPost(apiType.CREATE_COSPACE, reqData, function(resp, err){
                     if(err){
-                        //Error code
+                        if(err.customErrCode == errorCodes.BAD_REQUEST) {
+                            toastr.options.closeButton = true;
+                            toastr.error("Error: DuplicateCoSpaceUri");
+                          }
                     }
                     else{
-                        //Success Code
-
                         console.log(resp);
-                        //Localstorage Logic
-                        localStorage.setItem("cospaceid",resp.data);
+                        //Success Toast service
+                        toastr.options.closeButton = true;
+                        toastr.success("Cospace created successfully..!");
+                        setTimeout(function(){window.location.href="/spacelist"}, 5000); 
                     }
                 });
             }

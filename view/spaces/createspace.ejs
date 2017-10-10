@@ -9,6 +9,7 @@
  <% include _layouts/common-header %>
  <link rel="stylesheet" href="/styles/spaces/createspace.css">
  <link rel="stylesheet" href="styles/meeting/newMeeting.css">
+ <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
 
   </head>
   <body>
@@ -40,7 +41,7 @@
                 <label class="form-label" for="contact-sName"><%= translation.HUB_CREATE_SPACE_NAME %></label>
                 <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %></span>
               </div>
-              <div id="URI"class="form-wrap form-wrap_icon fa-link">
+              <div id="URI"class="form-wrap form-wrap_icon linear-icon-link2">
                   <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI">
                   <label class="form-label" for="contact-create_space_URI"><%= translation.HUB_CREATE_SPACE_ENTER_URI %></label>
                   <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %></span>
@@ -51,7 +52,7 @@
               <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME %></span>
             </div> -->
             <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
-              <select class="form-control on-hover-color " id="sel3">
+              <select class="form-control on-hover-color " id="sel1">
                   <option value="" selected disabled><%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %></option>
                   <option><%= translation.HUB_CREATE_SPACE_ALLEQUAL %></option>
                   <option><%= translation.HUB_CREATE_SPACE_SPEAKERONLY %></option>      
@@ -61,13 +62,13 @@
                   <option><%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %></option>     
               </select>
             </div>
-            <div class="form-wrap form-wrap_icon linear-icon-telephone margin-css custom-cospace input-box-shadow">
-              <select id="sel3">
+            <!-- <div class="form-wrap form-wrap_icon linear-icon-telephone margin-css custom-cospace input-box-shadow">
+              <select id="sel2">
                   <option value="" selected disabled>Select the Require CallId</option>
                   <option>True</option>
                   <option>False </option>
               </select>
-            </div>
+            </div> -->
             <div class="form-wrap form-wrap_icon linear-icon-key-hole">
               <input class="form-input input-box-shadow validate-text alidate-text" id="contact-sPasscode" type="text" name="passcode">
               <label class="form-label" for="contact-sPasscode"><%= translation.HUB_CREATE_SPACE_PASSCODE %></label>
@@ -93,7 +94,7 @@
 
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
-
+      <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
     <script>
