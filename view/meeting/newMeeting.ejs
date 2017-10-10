@@ -7,7 +7,7 @@
      <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
      <!--Stylesheets file links -->
      <% include _layouts/common-header %>
-    <link rel="stylesheet" href="/styles/newmeeting.css">
+    <link rel="stylesheet" href="/styles/meeting/newmeeting.css">
   </head>
   <body>
    <!-- include file for navigation -->
@@ -77,8 +77,8 @@
                     <label class="form-label" for="cospace"><%= translation.SCHEDULE_MEETING_COSPACE %></label>
                   </div>
                 </div>  
-                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css">
-                  <select class="form-control" id="sel2">
+                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace">
+                  <select class="form-control on-hover-color" id="sel2">
                       <option value="" selected disabled><%= translation.SCHEDULE_MEETING_COSPACE_TYPE %></option>
                       <option><%= translation.SCHEDULE_MEETING_DEFAULT_TEMPLATE %></option>
                       <option><%= translation.SCHEDULE_MEETING_HIDDEN_ROOM %></option>      
