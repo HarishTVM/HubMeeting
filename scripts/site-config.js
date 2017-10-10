@@ -1,5 +1,5 @@
 var app = {
-    BASE_URL:"http://192.168.5.87:9000/api/",
+    BASE_URL:"http://localhost:9000/api/",
 }
 
 var apiType = {
@@ -28,6 +28,10 @@ var serverStatus = {
     INTERNAL_SERVER_ERROR: 500,
     UNAUTHORIZED: 401,
     PAGE_NOT_FOUND: 404
+}
+
+var queryTypes = {
+    LIMIT:8
 }
 
 var ToastMesssges = {
