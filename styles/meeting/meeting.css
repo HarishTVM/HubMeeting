@@ -16,13 +16,13 @@
   background: #e0e0e2;
   opacity: 0.8;
 }
-.icon-bottom{
-  position: absolute !important;
-  bottom: 0px;
-}
 
 /*/////////////////////////////////// BEGIN Meeting for Styles ////////////////////////////////////// */
 
 /*/////////////////////////////////// BEGIN Card Meeting for Styles ////////////////////////////////////// */
 .btn-padding-edit{ padding: 8px 30px !important;}
+.icon-bottom{
+  position: absolute  !important;
+  bottom: 10px;
+}
 /*/////////////////////////////////// End Card Meeting for Styles ////////////////////////////////////// */

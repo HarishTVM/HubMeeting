@@ -265,6 +265,7 @@ html {
 .padding-left-none{padding-left: 0px !important}
 .padding-top-none{ padding: 0px 0 !important;}
 .padding-left-left-none{padding-right: 0px !important; padding-left: 0px !important;}
+.padding-left-right-none{padding-right: 0px !important; padding-left: 0px !important;}
 /*--------------------END Padding-none for Styles---------------------------------------*/
 /*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
 /*/////////////////////////////////// BEGIN Card Meeting for Styles ////////////////////////////////////// */
