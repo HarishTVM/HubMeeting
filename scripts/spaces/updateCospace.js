@@ -1,40 +1,44 @@
-//This script tage must be included in updateCoscpace HTML page
+//This script tag must be included in updateCoscpace HTML page
 //UpdateCospace HTML page to contain both createspace and updateCospace script tags for localstorage logic 
 $(document).ready(function(){
-    
-    //BEGIN Update Cospace Logic
-    $('#updateBtn').click(function(){
-       if($('form').hasClass('validate-form')){
-           var resultItem = [];
-           $('.validate-text').each(function(i, obj){
-                resultItem.push(validateText(obj));
-           });
 
-           if(resultItem.indexOf(false) < 0){
+    var coSpaceCard = {};
+
+        myFunc = function(eleDiv){
+        debugger;
+        console.log(eleDiv);
+        coSpaceCard.id = $(eleDiv).attr("coSpaceId");
+        coSpaceCard.name = $(eleDiv).find('#coSpaceName').attr("coSpaceName");
+        coSpaceCard.code = $(eleDiv).find('#code').attr("code");
+        coSpaceCard.uri = $(eleDiv).find('#uri').attr("uri");
+        coSpaceCard.defLay = $(eleDiv).find('#defLay').attr("defLay");
+        console.log(coSpaceCard);
+    }
+
+
+
+    //BEGIN Update Cospace Logic
+    $("#editBtn").click(function(){
+        window.location.href="/createspace";
+        $('#contact-sName').val() = coSpaceCard.name;
+        $('#contact-create_space_URI').val() = coSpaceCard.uri;
+        $('#contact-sPasscode').val() = coSpaceCard.code;
+        $('#sel1').val() = coSpaceCard.defLay;
+
+        $('#updateBtn').click(function(){
             var reqData = {
-                "coSpaceId": localStorage.getItem("cospaceid"),
+                "coSpaceId": coSpaceCard.id,
                 "name": $('#contact-sName').val(),
-                "uri": $('#contact-sMember').val(),
+                "uri": $('#contact-create_space_URI'),
                 "passcode": $('#contact-sPasscode').val(),
-                "defaultLayout": "allEqual",
-                "cdrTag": "a123"
+                "defaultLayout": $('#sel1').val(),
             };
             httpPut(apiType.UPDATE_COSCPACE, reqData, function(resp){
                 alert("Cospace updated successfully..!") //TODO Toaster
             });
-           }
-       }
-    });
+        });
+    })
     //END Update Cospace Logic
-
-    //BEGIN DELETE COSPACE USER LOGIC
-    $('#deleteBtn').click(function(){
-        httpDelete(apiType.DELETE_COSPACE_USER+"?cospaceId=localStorage.getItem('cospaceid')", function(resp){
-            console.log(resp);
-            alert("User deletion successfull..!") //TODO Toaster
-        })
-    });
-    //END DELETE COSPACE USER LOGIC
 }); 
 
 
