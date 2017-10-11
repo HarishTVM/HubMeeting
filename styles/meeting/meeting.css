@@ -13,8 +13,8 @@
 .box-shadow-meeting:hover{
   box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
   border: 1px solid #23d7b2;
-  background: #81e4ce;
-  opacity: 0.5;
+  background: #e0e0e2;
+  opacity: 0.8;
 }
 .icon-bottom{
   position: absolute !important;
@@ -22,3 +22,7 @@
 }
 
 /*/////////////////////////////////// BEGIN Meeting for Styles ////////////////////////////////////// */
+
+/*/////////////////////////////////// BEGIN Card Meeting for Styles ////////////////////////////////////// */
+.btn-padding-edit{ padding: 8px 30px !important;}
+/*/////////////////////////////////// End Card Meeting for Styles ////////////////////////////////////// */

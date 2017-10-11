@@ -135,7 +135,7 @@ html {
 .sl-model-bg-color{ background-color: #23d7b2; min-height: 40px; }
 .sl-model-text-color{ color:#fff; }
 .sl-model-text-color:hover{color: #000;}
-.sl-model-height{ height: 500px; padding: 10px;}
+.sl-model-height{ height: 400px; padding: 10px;}
 .sl-model-title{ padding: 10px;}
 .sl-bg-title{ background-color: #f5f5f5 }
 .close-margin-top{
@@ -145,10 +145,10 @@ html {
   font-size: 15px;
   line-height: 17px;
 }
-.sl-m-top-text{ margin-top: 20px; }
+.sl-m-top-text{ margin-top: 9px; }
 .sl-model-text-font-small{ font-size:small;color: #fff; }
 .sl-model-scroll-member{
-  height: 500px;
+  height: 340px;
   width: 100%;
   overflow-y: scroll;
 }
@@ -267,6 +267,11 @@ html {
 .padding-left-left-none{padding-right: 0px !important; padding-left: 0px !important;}
 /*--------------------END Padding-none for Styles---------------------------------------*/
 /*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
+/*/////////////////////////////////// BEGIN Card Meeting for Styles ////////////////////////////////////// */
+.btn-padding-edit{ padding: 8px 30px !important;
+  cursor: pointer;
+}
+/*/////////////////////////////////// End Card Meeting for Styles ////////////////////////////////////// */
 
 
 /*/////////////////////////////////// BEGIN zoomindiv for Styles ////////////////////////////////////// */
@@ -2710,7 +2715,7 @@ figure img {
     bottom: 0;
     left: 0;
     right: 0;
-    /*background: rgba(126, 126, 126, 0.90);*/
+
     transition: transform .3s ease-in-out;
   }
   .desktop .thumb-corporate__overlay .thumb-corporate__list {

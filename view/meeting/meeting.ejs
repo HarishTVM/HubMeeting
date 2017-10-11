@@ -6,6 +6,7 @@
     <!-- Site logo images-->
     <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="/styles/meeting/meeting.css">
+		
     <!--Stylesheets file links -->
     <% include _layouts/common-header %>
   </head>
@@ -32,7 +33,7 @@
       <section>
         <!-- BEGIN Meeting pagination head -->
         <div class="shell">
-          <!-- BEGIN Meeting search head -->
+          <!-- Meeting search head -->
           <div class="range range-5 h-m-top-none">
             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
               <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
@@ -47,29 +48,20 @@
               </div>
             </div>
           </div>
-          <!-- END Meeting search head -->
           <div class="row range range-70">
-            <!-- include file for card-->
             <% include _layouts/cards/card-meeting %>
           </div>
-          <!-- ceateMeeting -->
-          <a href="/newMeeting" data-toggle="tooltip" data-placement="bottom" title=""
-            class="button button-primary  linear-icon-plus newmeeting-btn-circle"
-            data-original-title="<%= translation.HUB_MEETING_CREATE_MEETING_BTN %>"></a>
         </div>
-      </div>
-    </section>
-    <!-- BEGIN script file links -->
-    <% include _layouts/common-scripts %>
-
-
-    <script>
-    $(document).ready(function(){
-      $("#meetingList").addClass("active");
-    });
-    </script>
-    <!-- End Meeting script -->
-    <!-- Pagination next footer -->
-    <%include _layouts/footer %>
-  </body>
+      </section>
+    </div>
+        <!-- BEGIN script file links -->
+        <% include _layouts/common-scripts %>
+        <script>
+        $(document).ready(function(){
+          $("#meetingList").addClass("active");
+        });
+        </script>
+        <!-- End Meeting script -->
+        <%include _layouts/footer %>
+      </body>
 </html>

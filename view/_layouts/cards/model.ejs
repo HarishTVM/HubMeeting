@@ -1,6 +1,15 @@
-<!-- BEGIN card one info icon onclick show for Spaces-->
-     <div class="morph-content padding-top-none">
-            <div class="content-style-form content-style-form-1">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h6 >SpaceName</h6>
+      </div>
+      <div class="modal-body padding-none-all">
+
+          <div class="content-style-form content-style-form-1">
               <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-right-none padding-left-none h-m-top-none">
                 <div class="sl-model-bg-color sl-model-height">
                   <ul class="text-center"><li> <h6 class="text-overflow-title sl-model-text-color h6-title-medium">Harish@.inflexiontech.com</h6></li></ul>
@@ -13,11 +22,6 @@
               <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-right-none padding-left-none h-m-top-none">
                 <div class="sl-model-height">
                   <ul class="text-center"><li> <b><h6 class="h6-title-color text-overflow-title h6-title-medium">Members List</h6></b></li></ul>
-                  <ul>
-                    <li class="members-padding-icon">
-                      <a class=" close-margin-top thumb-corporate__list " data-toggle="tooltip" data-placement="left" title="<%= translation.HUB_SPACES_TOOLTIP_CLOSE %>" href="#close"><i class="linear-icon-cross2"></i></a>
-                    </li>
-                  </ul>
                   <div class="sl-m-top-text sl-model-scroll-member">
                     <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-right-none padding-left-none  h-div-border sl-div-shadow-member">
                       <!-- BEGIN card two  spaces name for Spaces members-->
@@ -39,5 +43,10 @@
                   </div>
                 </div>
             </div>
-          </div>
-<!-- END card one info icon onclick show for Spaces-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-padding-edit button button-primary" data-dismiss="modal" >Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
