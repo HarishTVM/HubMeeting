@@ -1,9 +1,21 @@
 //This script tag must be included in updateCoscpace HTML page
 //UpdateCospace HTML page to contain both createspace and updateCospace script tags for localstorage logic 
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 $(document).ready(function(){
-
     var coSpaceCard = {};
-
         myFunc = function(eleDiv){
         debugger;
         console.log(eleDiv);
@@ -13,19 +25,17 @@ $(document).ready(function(){
         coSpaceCard.uri = $(eleDiv).find('#uri').attr("uri");
         coSpaceCard.defLay = $(eleDiv).find('#defLay').attr("defLay");
         console.log(coSpaceCard);
-    }
-
-
-
-    //BEGIN Update Cospace Logic
-    $("#editBtn").click(function(){
-        window.location.href="/createspace";
-        $('#contact-sName').val() = coSpaceCard.name;
-        $('#contact-create_space_URI').val() = coSpaceCard.uri;
-        $('#contact-sPasscode').val() = coSpaceCard.code;
-        $('#sel1').val() = coSpaceCard.defLay;
-
-        $('#updateBtn').click(function(){
+   
+      // BEGIN Update Cospace Logic
+      $("#editBtn").click(function(){
+        debugger;
+        console.log(coSpaceCard);
+        window.location.href="/createspace?card=" + JSON.stringify(coSpaceCard);
+        
+        var userName = getUrlVars()["id"];
+        console.log(userName);
+        
+        $('#doneBtn').click(function(){
             var reqData = {
                 "coSpaceId": coSpaceCard.id,
                 "name": $('#contact-sName').val(),
@@ -39,6 +49,10 @@ $(document).ready(function(){
         });
     })
     //END Update Cospace Logic
+   
+    }
+
+ 
 }); 
 
 

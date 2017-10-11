@@ -1,4 +1,8 @@
 $(document).ready(function(){
+            
+    $('#createSpace').show();
+    $('#updateSpace').hide();
+
     $('#btndone').click(function(){
         if($('form').hasClass('validate-form')){
             var resultItem = [];

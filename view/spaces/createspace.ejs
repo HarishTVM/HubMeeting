@@ -31,7 +31,8 @@
       </div>
       <section class="section-lg bg-white text-center main-section">
         <div class="shell">
-          <h4><%= translation.HUB_CREATE_SPACE_TOOLBAR %></h4>
+          <h4 id="createSpace"><%= translation.HUB_CREATE_SPACE_TOOLBAR %></h4>
+          <h4 id="updateSpace">Update Cospace</h4>
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
 
@@ -97,6 +98,7 @@
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
+      <script src="/scripts/spaces/updateCospace.js"></script>
     <script>
         $(document).ready(function(){
             $("#spacesList").addClass("active");

@@ -1,5 +1,5 @@
-$(document).ready(function () {
-
+getCospaces = function(){
+    debugger;
     var offset = 0, pages;
     //GET coSpaces records
     httpGet(apiType.GET_COSPACES + "?offset="+offset+"&limit="+queryTypes.LIMIT, function (resp) {
@@ -20,24 +20,35 @@ $(document).ready(function () {
                     var coSpacelist = resp.data;
                     var source = $('#cardId').html();
                     var template = Handlebars.compile(source);
-                    $('#List').html( template(coSpacelist));
-                  
+                    $('#List').html(template(coSpacelist));
                 });
             }
         });
     });
+}
+
+$(document).ready(function() {
+    getCospaces();
 
     // BEGIN SEARCH FILTER
-        $('#filter').keyup(function(){
-            debugger;
+        $('#filter').change(function(){
             var input = $('#filter').val();
             httpGet(apiType.GET_COSPACES + "?filter=" + input, function(resp){
-                console.log(resp);
-                var coSpacelist = resp.data;
-                var source = $('#cardId').html();
-                var template = Handlebars.compile(source);
-                $('#List').html( template(coSpacelist));
-            });  
+                if(input.length > 0){
+                    debugger;
+                        console.log("Filtered: ", resp);
+                        var coSpacelist = resp.data;
+                        var source = $('#cardId').html();
+                        var template = Handlebars.compile(source);
+                        $('#List').html(template(coSpacelist));
+                }
+                else{
+                    debugger;
+                    console.log("Not Filtered: ", resp);
+                    getCospaces();
+                }
+            });      
         });
-    // END SEARCH FILTER 
+    // END SEARCH FILTER
+
 });
