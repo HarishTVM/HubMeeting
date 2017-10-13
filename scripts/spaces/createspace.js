@@ -47,9 +47,10 @@ $(document).ready(function () {
                 var templateHandle = Handlebars.compile(memberHandle);
                 $('#memberAddDiv').html(templateHandle(userArray_2));
             }
+            
         });
-    });
 
+    });
     // END GET USERS
 
     $('#btndone').click(function () {
@@ -86,8 +87,21 @@ $(document).ready(function () {
         }
     });
 
-
-    // BEGIN JQUERY AUTOCOMPLETE LOGIC - PLUGIN
-   
-    // END JQUERY AUTOCOMPLETE LOGIC - PLUGIN
+    // BEGIN CHIPS PLUGIN 
+    $('#textarea').textext({
+        plugins : 'tags prompt focus autocomplete ajax arrow',
+        tagsItems : JSON.parse(response),
+        prompt : 'Add one...',
+        ajax : {
+            method: "GET",
+            url : app.BASE_URL + apiType.GET_USERS,
+            dataType : 'json',
+            cacheResults : true,
+            success: function (response, status, xhr) {
+                debugger;
+                console.log(response);
+            },
+        }
+    });
+    // END CHIPS PLUGIN 
 });
