@@ -10,8 +10,6 @@
  <link rel="stylesheet" href="/styles/spaces/createspace.css">
  <link rel="stylesheet" href="styles/meeting/newMeeting.css">
  <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
- <link rel="stylesheet" href="/node_modules/easy-autocomplete/dist/easy-autocomplete.min.css">
- <link rel="stylesheet" href="/node_modules/easy-autocomplete/dist/easy-autocomplete.themes.min.css">
 
   </head>
   <body>
@@ -38,7 +36,7 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
 
-            <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
+            <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
               <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                 <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                 <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %></span>
@@ -115,10 +113,10 @@
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
-      <script src="/node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.min.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/spaces/updateCospace.js"></script>
+      
     <script>
         $(document).ready(function(){
             $("#spacesList").addClass("active");
@@ -126,9 +124,9 @@
     </script>
 
   <script id="memberAdd" type="text/x-handlebars-template">
-      {{#each user}}
-        <option>{{userJid}}</option> 
-      {{/each}}
+    {{#each user}}
+    <option value="{{userJid}}">{{userJid}}</option> 
+    {{/each}}
   </script>  
 
   <%include _layouts/footer %>  
