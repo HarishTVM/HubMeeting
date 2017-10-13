@@ -177,13 +177,16 @@ a.button.button-primary.icon.linear-icon-plus.newmeeting-btn-circle::before {
         right: unset;
         text-align: center;
     }
+    .sl-model-height{
+        height: 320px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .newmeeting-btn-circle {
         width: 50px;
         height: 50px;
-        padding: 3px 0;
+        padding: 11px 0;
         font-size: large;
         line-height: 1.42;
         border-radius: 50px;
@@ -192,6 +195,9 @@ a.button.button-primary.icon.linear-icon-plus.newmeeting-btn-circle::before {
         top: 40%;
         opacity: 0.6;
       }
+      .hover-icon-bottom{bottom: 8px; }
+      .sl-model-height{ height: 190px; }
+      .sl-model-scroll-member{ height: 190px; }
 }
 
 @media only screen and (max-width: 999px) {
@@ -200,6 +206,8 @@ a.button.button-primary.icon.linear-icon-plus.newmeeting-btn-circle::before {
         position: unset !important;
         top: unset !important;
     }
+    .sl-model-height{height: 320px;}
+    .sl-model-scroll-member{ height: 320px; }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -208,4 +216,6 @@ a.button.button-primary.icon.linear-icon-plus.newmeeting-btn-circle::before {
         position: absolute;
         top: 0%;
  }
+ .sl-model-height{ height: 320px; }
+.sl-model-scroll-member{ height: 320; }
 } 

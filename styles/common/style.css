@@ -95,7 +95,6 @@ html {
 .h-background-color{ background-color: #f4f4ef; }
 .h-box-shadow:hover{
   box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
-  border: 1px solid #23d7b2;
   background: linear-gradient(to right, #FFF, #f6f6f6);
 }
 .sl-bg-color{ background: linear-gradient(to right, #FFF, #f6f6f6); }
@@ -159,7 +158,6 @@ html {
 }
 .input-box-shadow:hover{
   box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
-  border-color: #23d7b2;
   border-radius: .375rem;
 }
 /*/////////////////////////////////// END Spacelist for Styles ////////////////////////////////////// */
@@ -268,11 +266,21 @@ html {
 .padding-left-right-none{padding-right: 0px !important; padding-left: 0px !important;}
 /*--------------------END Padding-none for Styles---------------------------------------*/
 /*/////////////////////////////////// END NONE for Styles ////////////////////////////////////// */
-/*/////////////////////////////////// BEGIN Card Meeting for Styles ////////////////////////////////////// */
+/*/////////////////////////////////// BEGIN Card for Styles ////////////////////////////////////// */
 .btn-padding-edit{ padding: 8px 30px !important;
   cursor: pointer;
 }
-/*/////////////////////////////////// End Card Meeting for Styles ////////////////////////////////////// */
+.hover-icon-bottom{
+  position: absolute;
+  bottom: 33px;
+}
+.pagination-top{
+  position: relative;
+  top: 19px;
+}
+.cursor-default{ cursor:default; }
+.cursor-pointer{ cursor: pointer;}
+/*/////////////////////////////////// End Card for Styles ////////////////////////////////////// */
 
 
 /*/////////////////////////////////// BEGIN zoomindiv for Styles ////////////////////////////////////// */
@@ -380,7 +388,7 @@ border-color: #23d7b2;
     color: #23d7b2;
     font-size:small;
     margin-top: 5px;
-
+    text-align: center;
    }
 
 
@@ -503,6 +511,7 @@ border-color: #23d7b2;
   .h-i-m-top { margin-top: 3px }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h { width: 50%; height:50px !important; margin: auto;}
+  .hover-icon-bottom { bottom: 11px; }
 
 }
 /* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
@@ -522,11 +531,13 @@ border-color: #23d7b2;
     float: right;
   }
   .search-margin-top{margin-top: 3%;}
+
 }
 
 @media (min-width: 1365px) and (max-width: 1367px){
 
     .h-i-m-top { margin-top: 20px }
+    .hover-icon-bottom { bottom: 11px; }
 }
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 

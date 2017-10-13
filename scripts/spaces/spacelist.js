@@ -29,9 +29,9 @@ getCospaces = function(){
 
 $(document).ready(function() {
     getCospaces();
-
+    
     // BEGIN SEARCH FILTER
-        $('#filter').change(function(){
+        $('#filter').keyup(function(){
             var input = $('#filter').val();
             httpGet(apiType.GET_COSPACES + "?filter=" + input, function(resp){
                 if(input.length > 0){
