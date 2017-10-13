@@ -10,6 +10,8 @@
  <link rel="stylesheet" href="/styles/spaces/createspace.css">
  <link rel="stylesheet" href="styles/meeting/newMeeting.css">
  <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
+ <link rel="stylesheet" href="/node_modules/easy-autocomplete/dist/easy-autocomplete.min.css">
+ <link rel="stylesheet" href="/node_modules/easy-autocomplete/dist/easy-autocomplete.themes.min.css">
 
   </head>
   <body>
@@ -37,21 +39,16 @@
             <div class="cell-md-10 cell-lg-8">
 
             <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
-              <div id="Name"class="form-wrap form-wrap_icon linear-icon-database-add">
-                <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name">
-                <label class="form-label" for="contact-sName"><%= translation.HUB_CREATE_SPACE_NAME %></label>
+              <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
+                <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                 <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %></span>
               </div>
-              <div id="URI"class="form-wrap form-wrap_icon linear-icon-link2">
-                  <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI">
-                  <label class="form-label" for="contact-create_space_URI"><%= translation.HUB_CREATE_SPACE_ENTER_URI %></label>
+              <div id="URI" class="form-wrap form-wrap_icon linear-icon-link2">
+                  <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI" placeholder="<%= translation.HUB_CREATE_SPACE_ENTER_URI %>">
                   <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %></span>
-                </div>
-              <!-- <div class="form-wrap form-wrap_icon linear-icon-users-plus">
-              <input class="form-input input-box-shadow validate-text" id="contact-sMember" type="email" name="email">
-              <label class="form-label" for="contact-sMember"><%= translation.HUB_CREATE_SPACE_TYPE_MEMBER_NAME %></label>
-              <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME %></span>
-            </div> -->
+              </div>
+              <div class="hide form-wrap"><p id="videoAdd">Video Address: </p></div>
+
             <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
               <select class="form-control on-hover-color " id="sel1">
                   <option value="" selected disabled><%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %></option>
@@ -63,25 +60,47 @@
                   <option><%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %></option>     
               </select>
             </div>
-            <!-- <div class="form-wrap form-wrap_icon linear-icon-telephone margin-css custom-cospace input-box-shadow">
-              <select id="sel2">
-                  <option value="" selected disabled>Select the Require CallId</option>
-                  <option>True</option>
-                  <option>False </option>
-              </select>
-            </div> -->
-            <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+
+            <div id="memberParentDiv" class="form-wrap form-input form-wrap_icon linear-icon-man input-box-shadow">
+              <button id="addMemberBtn" class="button button-primary button-xs" type="button" style="float: right;">New Member</button>
+              <input list="members" name="addmembers" type="text" id="addMembers" placeholder="Add Member">
+              <datalist id="members">
+                  <div id="memberAddDiv"></div>
+              </datalist>
+            </div>
+            <div class="hide form-wrap form-wrap_icon linear-icon-key-hole">
               <input class="form-input input-box-shadow validate-text alidate-text" id="contact-sPasscode" type="text" name="passcode">
               <label class="form-label" for="contact-sPasscode"><%= translation.HUB_CREATE_SPACE_PASSCODE %></label>
               <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_PASS_CODE %></span>              
             </div>
+            <!-- BEGIN SCHEDULE MEETING -->
+            <div class="form-wrap"><h6>Schedule Meeting</h6></div>
+            <div class="row form-wrap datetime-picker-container margin-css">
+                <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
+                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                    <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                </div>&nbsp;&nbsp;	
+                <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
+                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                    <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                </div>
+            </div>
+            <div class="row form-wrap datetime-picker-container margin-css">
+                <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
+                  <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                  <input class="form-input input-box-shadow " id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                </div>&nbsp;&nbsp;	
+                <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
+                  <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                  <input class="form-input input-box-shadow " id="todate" type="text" name="totime" placeholder="End-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                </div>
+            </div>
+            <!-- END SCHEDULE MEETING --> 
             <!-- <div class="form-wrap form-wrap_icon linear-icon-home6 ">
               <input class="form-input input-box-shadow validate-text" id="contact-sAddress" type="text" name="email">
               <label class="form-label" for="contact-sAddress"><%= translation.HUB_CREATE_SPACE_ADDRESS %></label>
               <span class="hide error-text"><%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES %></span>
-              
               </div> -->
-            
               <button id="btndiscard" class="button btn_discard " type="submit"><%= translation.HUB_CREATE_SPACE_DISCARD %> </button>
               &nbsp;&nbsp;
               &nbsp;&nbsp;
@@ -96,6 +115,7 @@
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <script src="/node_modules/easy-autocomplete/dist/jquery.easy-autocomplete.min.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/spaces/updateCospace.js"></script>
@@ -105,7 +125,12 @@
         });
     </script>
 
-    
-<%include _layouts/footer %>  
+  <script id="memberAdd" type="text/x-handlebars-template">
+      {{#each user}}
+        <option>{{userJid}}</option> 
+      {{/each}}
+  </script>  
+
+  <%include _layouts/footer %>  
   </body>
 </html>

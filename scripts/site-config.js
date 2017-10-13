@@ -9,7 +9,8 @@ var apiType = {
     GET_COSPACES: "getCospaces",
     CREATE_COSPACE: "createCospace",
     UPDATE_COSCPACE: "updateCospace",
-    DELETE_COSPACE_USER: "deleteCospaceUser"
+    DELETE_COSPACE_USER: "deleteCospaceUser",
+    GET_USERS: "getUsers"
 }
 
 var errorCodes = {

@@ -1,8 +1,8 @@
 //This script tag must be included in updateCoscpace HTML page
 //UpdateCospace HTML page to contain both createspace and updateCospace script tags for localstorage logic 
-
 function getUrlVars()
 {
+    debugger;
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
     for(var i = 0; i < hashes.length; i++)
@@ -15,9 +15,10 @@ function getUrlVars()
 }
 
 $(document).ready(function(){
+    
     var coSpaceCard = {};
+
         myFunc = function(eleDiv){
-        debugger;
         console.log(eleDiv);
         coSpaceCard.id = $(eleDiv).attr("coSpaceId");
         coSpaceCard.name = $(eleDiv).find('#coSpaceName').attr("coSpaceName");
@@ -26,33 +27,33 @@ $(document).ready(function(){
         coSpaceCard.defLay = $(eleDiv).find('#defLay').attr("defLay");
         console.log(coSpaceCard);
    
+    }
       // BEGIN Update Cospace Logic
       $("#editBtn").click(function(){
         debugger;
-        console.log(coSpaceCard);
         window.location.href="/createspace?card=" + JSON.stringify(coSpaceCard);
-        
-        var userName = getUrlVars()["id"];
+        console.log(coSpaceCard);
+    });
+
+    $('#btndone').click(function(){
+        debugger;
+        var userName = getUrlVars()["card"];
         console.log(userName);
-        
-        $('#doneBtn').click(function(){
-            var reqData = {
-                "coSpaceId": coSpaceCard.id,
-                "name": $('#contact-sName').val(),
-                "uri": $('#contact-create_space_URI'),
-                "passcode": $('#contact-sPasscode').val(),
-                "defaultLayout": $('#sel1').val(),
-            };
-            httpPut(apiType.UPDATE_COSCPACE, reqData, function(resp){
-                alert("Cospace updated successfully..!") //TODO Toaster
-            });
+        var reqData = {
+            "coSpaceId": coSpaceCard.id,
+            "name": $('#contact-sName').val(),
+            "uri": $('#contact-create_space_URI'),
+            "passcode": $('#contact-sPasscode').val(),
+            "defaultLayout": $('#sel1').val(),
+        };
+        httpPut(apiType.UPDATE_COSCPACE, reqData, function(resp){
+            alert("Cospace updated successfully..!") //TODO Toaster
         });
-    })
+    });
     //END Update Cospace Logic
    
-    }
 
- 
+
 }); 
 
 
