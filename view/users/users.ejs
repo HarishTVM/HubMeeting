@@ -1,64 +1,91 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-  <head>
-    <!-- Site Title-->
-    <title><%= translation.HUB_USERS_TITLE %></title>
-    <!-- Site logo images-->
-    <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
-    <!--Stylesheets file links -->
-    <% include _layouts/common-header %>
-  </head>
-  <body class="h-background-color">
-    <!-- include file for navigation -->
-    <% include _layouts/header-with-navigation %>
+
+<head>
+  <!-- Site Title-->
+  <title>
+    <%= translation.HUB_USERS_TITLE %>
+  </title>
+  <!-- Site logo images-->
+  <link href="/images/logo.png" rel="icon" type="image/x-icon" />
+  <!--Stylesheets file links -->
+  <link href="/styles/users.css" type="text/css" />
+  <% include _layouts/common-header %>
+</head>
+
+<body class="h-background-color">
+  <!-- include file for navigation -->
+  <% include _layouts/header-with-navigation %>
     <div class="page">
-      <!-- BEGIN page loader -->
-      <div id="page-loader">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
-      </div>
-      <!-- End page loader -->
       <!-- BEGIN Users toolbar-->
       <div class="container-fluid breadcrumb-container">
         <ol class="breadcrumb">
-          <h5 class="meeting-head-bread"><%= translation.HUB_USERS %> </h5>
-          <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
-          <li><%= translation.HUB_USERS %></li>
+          <h5 class="meeting-head-bread">
+            <%= translation.HUB_USERS %>
+          </h5>
+          <li>
+            <a href="/dashboard" class="breadcrumb-links">
+              <%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %>
+            </a>
+          </li>
+          <li>
+            <%= translation.HUB_USERS %>
+          </li>
         </ol>
       </div>
       <!-- END Users toolbar-->
       <section>
         <div class="shell">
-          <!-- BEGIN Users search head -->
+          <!-- BEGIN Activities search head -->
           <div class="range range-5 h-m-top-none">
             <div class="searchBtn-pagination-container">
               <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
-                <!-- BEGIN Users Search  -->
+                <!-- BEGIN Activities Search  -->
                 <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
                   <!-- Search input field -->
                   <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h search-margin-top">
-                    <input class="form-input search-input input-box-shadow " type="text" name="search" placeholder="<%= translation.HUB_ACTIVITY_SEARCH_PLACEHOLDER %>">
+                    <input id="filter-users" class="form-input cursor-pointer search-input input-box-shadow" type="text" name="search" placeholder="Search the UserName">
                   </div>
+                </div>
+                <!-- END Activities Search  -->
+                <!-- Pagination next head -->
+                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4 pagination-top">
+                  <ul class="sync-pagination pagination-sm"></ul>
+                  <!--Pagination plugin-->
                 </div>
               </div>
             </div>
           </div>
-          <!-- END Users search head -->
+
+
+          <!-- handlebars -->
+          <div id="users-card"></div>
+
           <!-- include file for card-->
-          <% include _layouts/cards/card %>
-         </div>
+          <% include _layouts/cards/users-card %>
+            <% include _layouts/modals/users-modal %>
+
         </div>
-      </section>
-      <!-- BEGIN script file links -->
-      <% include _layouts/common-scripts %>
+        <div class="us-card-loading" id="page-loaders">
+          <div class="cssload-container">
+            <div class="cssload-speeding-wheel"></div>
+          </div>
+        </div>
+    </div>
+    </section>
+    <!-- BEGIN script file links -->
+    <% include _layouts/common-scripts %>
+      <script src="/scripts/users/users-card.js"></script>
+      <script src="/scripts/jquery.twbsPagination.min.js"></script>
+      <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script>
-      $(document).ready(function(){
-        $("#usersList").addClass("active");
-      });
+        $(document).ready(function () {
+          $("#usersList").addClass("active");
+        });
       </script>
       <!-- End Users script -->
       <!-- Pagination next footer -->
       <%include _layouts/footer %>
-  </body>
+</body>
+
 </html>

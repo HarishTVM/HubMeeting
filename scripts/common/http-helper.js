@@ -1,4 +1,5 @@
 var httpGet = function (Url, callback) {
+    debugger;
     $.ajax({
         method: 'GET',
         url: app.BASE_URL + Url,

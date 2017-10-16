@@ -69,6 +69,45 @@ html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+/*========================================================================================
+                    =          BEGIN Card for Users               =
+==========================================================================================*/
+.us-card-loading{
+  position: absolute;
+  left: 50% ;
+  top: 35%;
+  display: none;
+  background: transparent url("../images/loading-big.gif");
+  z-index: 1000;
+  height: 31px;
+  width: 31px;
+}
+.us-name-circle {
+    position: relative;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #23d7b2;
+}
+.us-name-circle:hover{
+  border: 1px solid #000000;
+}
+.card-width-name{  width:25% !important; }
+.card-width-title{ width:70% !important; }
+.card-icon-size{ font-size: xx-large; color:#000000;}
+
+.us-card-mardin-top{margin-top:2%;}
+.us-card-title-mardin-top{margin-top:4%;}
+.us-title-color{ color:#23d7b2;font-size: medium;}
+.us-title-color:hover{color:#000000;}
+.us-icon-color{ color:#23d7b2; }
+.us-modal-width{ width: 80% !important;}
+/*========================================================================================
+                  =           BEGIN Card for Users           =
+==========================================================================================*/
+
+
 /*/////////////////////////////////// BEGIN Spacelist for Styles ////////////////////////////////////// */
 
 .h-box-shadow{
@@ -271,8 +310,8 @@ html {
   cursor: pointer;
 }
 .hover-icon-bottom{
-  position: absolute;
-  bottom: 33px;
+  position: relative;
+  bottom: 4px;
 }
 .pagination-top{
   position: relative;
@@ -474,6 +513,7 @@ border-color: #23d7b2;
 /* End Spaces for Styles  */
 
 
+
 /*========================================================================================
                     =           BEGIN Spaces Media Queries             =
 ==========================================================================================*/
@@ -511,7 +551,6 @@ border-color: #23d7b2;
   .h-i-m-top { margin-top: 3px }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h { width: 50%; height:50px !important; margin: auto;}
-  .hover-icon-bottom { bottom: 11px; }
 
 }
 /* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
@@ -533,11 +572,15 @@ border-color: #23d7b2;
   .search-margin-top{margin-top: 3%;}
 
 }
-
+@media (min-width: 769px){
+  .hover-icon-bottom {
+    position: relative;
+    bottom: -20%;
+}
+}
 @media (min-width: 1365px) and (max-width: 1367px){
 
     .h-i-m-top { margin-top: 20px }
-    .hover-icon-bottom { bottom: 11px; }
 }
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 

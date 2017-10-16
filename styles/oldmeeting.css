@@ -195,7 +195,6 @@ a.button.button-primary.icon.linear-icon-plus.newmeeting-btn-circle::before {
         top: 40%;
         opacity: 0.6;
       }
-      .hover-icon-bottom{bottom: 8px; }
       .sl-model-height{ height: 190px; }
       .sl-model-scroll-member{ height: 190px; }
 }
