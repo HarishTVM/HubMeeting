@@ -2,56 +2,70 @@ $(document).ready(function () {
 
     $('#createSpace').show();
     $('#updateSpace').hide();
-
-    //BEGIN Add Member Button Logic
-
-    $('#addMemberBtn').on('click', function () {
+    
+    var filterArray = [];
+    //BEGIN Add Member and DELETE MEMBER Logic
+    $('#addMemberBtn').live('click', function () {
         debugger;
-        var member = $('<input list="members" name="addmembers" type="text" id="addMembers" placeholder="Add Member"/>\
-                        <datalist id="members">\
-                        <div id="memberAddDiv"></div>\
+        var member = $('<div id="addDeleteParent" class="addDeleteParent input-group form-wrap input-box-shadow">\
+                        <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">\
+                        <span id="searchMember" class="bg-gray input-group-addon"><a class="search-member-icon fa fa-search fa-lg" aria-hidden="true"></a></span>\
+                        <span id="deleteMember" class="input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>\
+                        </div>\
+                        <datalist id="emails">\
+                            <div id="memberAddDiv"></div>\
                         </datalist>');
 
         $('#memberParentDiv').append(member);
     });
 
-    //END Add Member Button Logic
+    $("#deleteMember").live('click', function(){
+        debugger;
+        $(this).parent().remove();
+    });
+
+    //END Add Member and DELETE MEMBER Logic
 
     //BEGIN Mirror populate input value logic
-    $('#contact-sName').keyup(function () {
+    $('#contact-sName').on('keyup', function () {
         $('#contact-create_space_URI').val(this.value);
         $('videoAdd').append(this.value);
     });
     //END Mirror populate input value logic
 
     // BEGIN GET USERS
-    $('#addMembers').keyup(function () {
+    $('#searchMember').on('click', function () {
         debugger;
-        var filterData = $('#addMembers').val();
+        var filterData = $(this).siblings("#addMembers").val();
         httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {
-            // console.log(resp.data.users.attrkey.total);
-            var totalUsers = resp.data.users.attrkey.total;
-            localStorage.setItem("userInTotal", totalUsers);
+            var totalUsers = resp.data.total;
             if (totalUsers > 1) {
-                var userArray_1 = resp.data.users;
+                var userArray_1 = resp.data;
+                filterArray.push(filterData);   
+                filterData = undefined;
                 // console.log(userData.length);
                 var memberHandlebar = $('#memberAdd').html();
                 var templateHandlebar = Handlebars.compile(memberHandlebar);
                 $('#memberAddDiv').html(templateHandlebar(userArray_1));
+
             }
-            else {
-                var userArray_2 = resp.data.users;
+            else if(totalUsers == 1){
+                var userArray_2 = resp.data;
+                filterArray.push(filterData);   
+                filterData = undefined;
                 // var userJid = resp.data.users.user.userJid;
                 // console.log(userJid.substring(userJid.indexOf('@')));
                 var memberHandle = $('#memberAdd').html();
                 var templateHandle = Handlebars.compile(memberHandle);
                 $('#memberAddDiv').html(templateHandle(userArray_2));
             }
-            
+            else{
+                console.log("No matching users..!")
+            }
         });
-
     });
     // END GET USERS
+    
 
     $('#btndone').click(function () {
         if ($('form').hasClass('validate-form')) {
@@ -87,21 +101,7 @@ $(document).ready(function () {
         }
     });
 
-    // BEGIN CHIPS PLUGIN 
-    $('#textarea').textext({
-        plugins : 'tags prompt focus autocomplete ajax arrow',
-        tagsItems : JSON.parse(response),
-        prompt : 'Add one...',
-        ajax : {
-            method: "GET",
-            url : app.BASE_URL + apiType.GET_USERS,
-            dataType : 'json',
-            cacheResults : true,
-            success: function (response, status, xhr) {
-                debugger;
-                console.log(response);
-            },
-        }
-    });
-    // END CHIPS PLUGIN 
+    // BEGIN MODAL CLOSE LOGIC
+        $("#myModal").modal({show: false, backdrop: 'static', keyboard: false})
+    // END MODAL CLOSE LOGIC
 });

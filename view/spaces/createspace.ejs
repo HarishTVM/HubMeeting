@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="/styles/spaces/createspace.css">
     <link rel="stylesheet" href="styles/meeting/newMeeting.css">
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
-    <link rel="stylesheet" href="/node_modules/autoplugin/textext.core.css">
-    <link rel="stylesheet" href="/node_modules/autoplugin/textext.plugin.autocomplete.css">
-    <link rel="stylesheet" href="/node_modules/autoplugin/textext.plugin.tags.css">
 </head>
 
 <body>
@@ -73,7 +70,7 @@
                   <p id="videoAdd">Video Address: </p>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
-                  <select class="form-control on-hover-color " id="sel1">
+                  <select class="form-control on-hover-color" id="sel1">
                     <option value="" selected disabled>
                       <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
                     </option>
@@ -130,12 +127,14 @@
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow " id="todate" type="text" name="totime" placeholder="End-time" data-time-picker="time"
+                    <input class="form-input input-box-shadow" id="todate" type="text" name="totime" placeholder="End-time" data-time-picker="time"
                       data-dtp="dtp_HoYzJ">
                   </div>
                 </div>
                 <!-- END SCHEDULE MEETING -->
-                <!-- Trigger the modal with a button -->
+                <div class="form-wrap">
+                  <h6>Members</h6>
+                </div>
                 <div class="form-wrap margin-css custom-cospace input-box-shadow">
                   <input type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal" style="width: 100%;"/>
                 </div>  
@@ -145,19 +144,26 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                       <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Members</h4>
+                        <h6 class="modal-title modal-title">Add Members</h6>
+                        <button id="addMemberBtn" type="button" class="button button-primary button-sm">Add Member</button>
                       </div>
-                      <div class="modal-body">
-                          <textarea id="textarea" rows="1"></textarea>
+                      <div id="memberParentDiv" class="modal-body">
+                        <div id="addDeleteParent" class="addDeleteParent input-group form-wrap input-box-shadow">
+                          <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">
+                          <span id="searchMember" class="bg-gray input-group-addon"><a class="search-member-icon fa fa-search fa-lg" aria-hidden="true"></a></span>
+                          <span id="deleteMember" class="bg-gray input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>
+                        </div>
+                        <datalist id="emails">
+                          <div id="memberAddDiv"></div>
+                        </datalist>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="button button-default button-sm" data-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button id="btndiscard" class="button btn_discard " type="submit">
+                <button id="btndiscard" class="button btn_discard" type="submit">
                   <%= translation.HUB_CREATE_SPACE_DISCARD %>
                 </button>
                 &nbsp;&nbsp; &nbsp;&nbsp;
@@ -166,7 +172,7 @@
                 </button>
               </form>
             </div>
-          </div>
+          </div>  
         </div>
       </section>
     </div>
@@ -174,11 +180,6 @@
     <!-- include file for Script -->
     <% include _layouts/common-scripts %>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
-      <script src="/node_modules/autoplugin/textext.core.js"></script>
-      <script src="/node_modules/autoplugin/textext.plugin.ajax.js"></script>
-      <script src="/node_modules/autoplugin/textext.plugin.filter.js"></script>
-      <script src="/node_modules/autoplugin/textext.plugin.autocomplete.js"></script>
-      <script src="/node_modules/autoplugin/textext.plugin.tags.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/spaces/updateCospace.js"></script>
@@ -189,12 +190,12 @@
       </script>
 
       <script id="memberAdd" type="text/x-handlebars-template">
-      {{#with user}}
-       <option value="{{userJid}}">{{userJid}}</option> 
+      {{#with users}}
+       <option>{{userJid}}</option> 
       {{/with}}
-      {{#each user}}
-        <option value="{{userJid}}">{{userJid}}</option>
-      {{/each}}
+      <!-- {{#each users}}
+        <option>{{user.userJid}}</option>
+      {{/each}} -->
   </script>
 
       <%include _layouts/footer %>

@@ -28,27 +28,23 @@ getCospaces = function(){
 }
 
 $(document).ready(function() {
+    debugger;
     getCospaces();
     
-    // BEGIN SEARCH FILTER
-        $('#filter').keyup(function(){
-            var input = $('#filter').val();
-            httpGet(apiType.GET_COSPACES + "?filter=" + input, function(resp){
-                if(input.length > 0){
-                    debugger;
-                        console.log("Filtered: ", resp);
-                        var coSpacelist = resp.data;
-                        var source = $('#cardId').html();
-                        var template = Handlebars.compile(source);
-                        $('#List').html(template(coSpacelist));
-                }
-                else{
-                    debugger;
-                    console.log("Not Filtered: ", resp);
-                    getCospaces();
-                }
-            });      
-        });
-    // END SEARCH FILTER
+    // // BEGIN SEARCH FILTER
+    //     $('#filter').keyup(function(){
+    //         debugger;
+    //         var input = $('#filter').val();
+    //         if(input.length > 0){
+    //                 httpGet(apiType.GET_COSPACES + "?filter=" + input, function(resp){
+    //                     console.log(resp);
+    //             });
+    //         }     
+    //         else if(input.length == 0){
+    //             debugger;
+    //             getCospaces();
+    //         }      
+    //     });
+    // // END SEARCH FILTER
 
 });

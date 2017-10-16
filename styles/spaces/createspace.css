@@ -15,4 +15,49 @@
     border: 1px solid #23d7b2;
     background: linear-gradient(to right, #FFF, #f6f6f6);
   }
+
+  #deleteMember, #searchMember {
+      border: none;
+  }
+
+#deleteMember:hover {
+    cursor: pointer;
+}
+
+#searchMember:hover {
+    cursor: pointer;
+}
+
+#memberParentDiv{
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.minus-icon {
+    color: red;
+}
+
+.modal-title {
+    float: left;
+    margin: auto;
+}
+
+#addMemberBtn{
+    float: right;
+    margin: auto;
+}
+
+#addMembers{
+    font-size: medium;
+    color: black;
+    font-style: none;
+}
+
+datalist {
+	display: none;
+}
+/* specifically hide the arrow on focus */
+input::-webkit-calendar-picker-indicator {
+	display: none;
+}
 /*/////////////////////////////////// END CreateSpace for Styles ////////////////////////////////////// */
