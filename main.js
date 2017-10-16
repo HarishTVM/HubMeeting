@@ -83,7 +83,7 @@ localLang = osLocale.sync().toString();
 	app.use(cookieParser());
 
 	if(config.app.supportedLangs.indexOf(localLang) < 0)
-		localLang = "en"		
+		localLang = "en"
 
 	app.use(i18n({
 		translationsPath: path.join(__dirname, 'translations'),
@@ -102,6 +102,7 @@ localLang = osLocale.sync().toString();
     app.use('/view',express.static('view'));
 	app.use('/images',express.static('images'));
 	app.use('/fonts',express.static('fonts'));
+	app.use('/json',express.static('json'));
 	app.use('/node_modules',express.static('node_modules'));
     app.use('/site-config.js',express.static('site-config.js'));
 	/*END Configuration for static pages*/

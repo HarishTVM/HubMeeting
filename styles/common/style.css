@@ -90,13 +90,14 @@ html {
     border-radius: 50%;
     border: 1px solid #23d7b2;
 }
+
 .us-name-circle:hover{
   border: 1px solid #000000;
 }
 .card-width-name{  width:25% !important; }
 .card-width-title{ width:70% !important; }
 .card-icon-size{ font-size: xx-large; color:#000000;}
-
+.sl-card-mardin-top{margin-top:10%;}
 .us-card-mardin-top{margin-top:2%;}
 .us-card-title-mardin-top{margin-top:4%;}
 .us-title-color{ color:#23d7b2;font-size: medium;}
@@ -514,31 +515,33 @@ border-color: #23d7b2;
 
 
 
-/*========================================================================================
+/*========================================================================================s
                     =           BEGIN Spaces Media Queries             =
 ==========================================================================================*/
 
 /* ---------------- BEGIN Moblie devices  screens ----------- */
 
 @media (min-width: 320px) and (max-width: 767px) {
-
+.sl-card-mardin-top{margin-top:-10%;}
   .principale  .parent-div{min-height: 160px;}
   .head-search-w-h {width: 99%;}
-  .h-i-m-top {margin-top: 7px; }
+  .h-i-m-top {margin-top: -15%; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .search-margin-top{margin-top: 1%;}
-
+ .us-icon-margin-top{ margin-top: -1%;}
 
 }
 /* x---x---x---x---x---x End Moblie devices screens x---x---x---x---x---x*/
 
 /* ---------------- BEGIN Tablets  screens ----------- */
 @media (min-width: 768px) and (max-width: 991px){
+  .sl-card-mardin-top{margin-top:9%;}
   .principale  .parent-div{height: 160px;}
-  .h-i-m-top { margin-top: 3px; }
+  .h-i-m-top { margin-top: 2%; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h {width: 99%;}
-  .search-margin-top{margin-top: 1%;}
+  .search-margin-top{margin-top: 12%;}
+  .us-icon-margin-top{ margin-top: -3%;}
 }
 
 /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
@@ -548,10 +551,10 @@ border-color: #23d7b2;
 @media (min-width: 992px) and (max-width: 1199px){
 
   .principale  .parent-div{height: 160px; width: 280px;}
-  .h-i-m-top { margin-top: 3px }
+  .h-i-m-top { margin-top: 2% }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h { width: 50%; height:50px !important; margin: auto;}
-
+  .us-icon-margin-top{ margin-top: -3%;}
 }
 /* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
 
@@ -559,9 +562,10 @@ border-color: #23d7b2;
 
 /* ---------------- BEGIN Tablets  screens ----------- */
 @media (min-width: 1200px) and (max-width: 20000px){
+  .sl-card-mardin-top{margin-top:9%;}
 
   .principale  .parent-div{height: 160px;}
-  .h-i-m-top { margin-top: 3px; }
+  .h-i-m-top { margin-top: 2%; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h {
     width: 50%;
@@ -570,17 +574,19 @@ border-color: #23d7b2;
     float: right;
   }
   .search-margin-top{margin-top: 3%;}
-
+  .us-icon-margin-top{ margin-top: -7%;}
 }
-@media (min-width: 769px){
+/*@media (min-width: 769px){
   .hover-icon-bottom {
     position: relative;
     bottom: -20%;
-}
+}*/
 }
 @media (min-width: 1365px) and (max-width: 1367px){
+  .sl-card-mardin-top{margin-top:2%;}
 
-    .h-i-m-top { margin-top: 20px }
+    .h-i-m-top { margin-top: 2% }
+    .us-icon-margin-top{ margin-top: -19px;}
 }
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 
