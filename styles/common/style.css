@@ -72,6 +72,22 @@ html {
 /*========================================================================================
                     =          BEGIN Card for Users               =
 ==========================================================================================*/
+
+/* BEGIN PAGINATION PLUGIN  */
+a.page-item:active{
+  background:#23d7b2 !important;
+  color:#000000 !important;
+}
+
+a.page-link {
+  background: #FFFFFF !important;
+  color:#23d7b2 !important;
+}
+
+.plugin-top-pagination.page-item.page-link{
+  background: black !important;
+}
+/* END PAGINATION PLUGIN  */
 .us-card-loading{
   position: absolute;
   left: 50% ;
@@ -91,9 +107,6 @@ html {
     border: 1px solid #23d7b2;
 }
 
-.us-name-circle:hover{
-  border: 1px solid #000000;
-}
 .card-width-name{  width:25% !important; }
 .card-width-title{ width:70% !important; }
 .card-icon-size{ font-size: xx-large; color:#000000;}
@@ -495,7 +508,6 @@ border-color: #23d7b2;
 
 .head-search-w-h {
   width: 50%;
-  height: 50px !important;
   margin: auto;
 }
 
@@ -529,6 +541,7 @@ border-color: #23d7b2;
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .search-margin-top{margin-top: 1%;}
  .us-icon-margin-top{ margin-top: -1%;}
+ 
 
 }
 /* x---x---x---x---x---x End Moblie devices screens x---x---x---x---x---x*/
@@ -539,7 +552,7 @@ border-color: #23d7b2;
   .principale  .parent-div{height: 160px;}
   .h-i-m-top { margin-top: 2%; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
-  .head-search-w-h {width: 99%;}
+  .head-search-w-h {width: 70%;}
   .search-margin-top{margin-top: 12%;}
   .us-icon-margin-top{ margin-top: -3%;}
 }
@@ -553,7 +566,7 @@ border-color: #23d7b2;
   .principale  .parent-div{height: 160px; width: 280px;}
   .h-i-m-top { margin-top: 2% }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
-  .head-search-w-h { width: 50%; height:50px !important; margin: auto;}
+  .head-search-w-h { width: 70%;}
   .us-icon-margin-top{ margin-top: -3%;}
 }
 /* x---x---x---x---x---x End Desktops and laptops screens x---x---x---x---x---x*/
@@ -567,12 +580,7 @@ border-color: #23d7b2;
   .principale  .parent-div{height: 160px;}
   .h-i-m-top { margin-top: 2%; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
-  .head-search-w-h {
-    width: 50%;
-    height: 50px !important;
-    margin: auto;
-    float: right;
-  }
+  .head-search-w-h { width: 50%;}
   .search-margin-top{margin-top: 3%;}
   .us-icon-margin-top{ margin-top: -1%;}
 }
@@ -581,10 +589,9 @@ border-color: #23d7b2;
     position: relative;
     bottom: -20%;
 }*/
-}
-@media (min-width: 1365px) and (max-width: 1367px){
-  .sl-card-mardin-top{margin-top:2%;}
 
+@media (min-width: 1365px) and (max-width: 1367px){
+    .sl-card-mardin-top{margin-top:2%;}
     .h-i-m-top { margin-top: 2% }
     .us-icon-margin-top{ margin-top: -19px;}
 }

@@ -1,136 +1,134 @@
-// getUsers = function(filter){
-//     $('#page-loaders').show();
-//     var offset = 0, pages, query;
-//     var pages = filter;
-//     if( fliter == 0){
-//         debugger;
-//         console.log("fliter")
-//     }
-//     else{
-//         httpGet(apiType.GET_COSPACES + "?offset="+offset+"&limit="+queryTypes.LIMIT, function (resp) {
-//             var totalRec = resp.data.total; //Total coSpace records
-//             pages = Math.ceil((parseInt(resp.data.total)/queryTypes.LIMIT) + 1); //No of pages in pagination
-//                 //Pagination Logic
-//                 $('.sync-pagination').twbsPagination({
-//                     totalPages: pages,
-//                     hideOnlyOnePage: true,
-//                     onPageClick: function(evnt, page){
-//                         offset = queryTypes.LIMIT * (page - 1);
-//                         //If offset is greater than total records
-//                         if(offset > totalRec)
-//                             offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
+$(document).ready(function () {
+    // setColorIcon();
+    $('#page-loaders-users').show();
+    $('.div-loaders-users').hide();
+    var isKeyEntered = false;
+    getUsersHttp();
 
-//                     }
-
-
-//                 });
-//             });
-// console.log("One")
-// }
-
-
-
-
-
-// query = apiType.GET_USERS + "?offset="+offset+"&limit="+queryTypes.LIMIT;
-// if(typeof fliter != 'undefined' && fliter != null)
-//      query +="&filter=" + filter;
-
-//     //  httpGet(query, function (resp) {
-//         var totalRec = resp.data.total; //Total coSpace records
-//         pages = Math.ceil((parseInt(resp.data.total)/queryTypes.LIMIT) + 1); //No of pages in pagination
-//         //Pagination Logic
-//         /* All fine, proceed with code */
-//         $('.sync-pagination').twbsPagination({
-//             totalPages: pages,
-//             hideOnlyOnePage: true,
-//             onPageClick: function(evnt, page){
-//                 offset = queryTypes.LIMIT * (page - 1);
-//                 //If offset is greater than total records
-//                 if(offset > totalRec)
-//                 offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
-//                 //If offset is lesser than total records
-
-//                 httpGet((typeof filter != 'undefined' && filter != null)?apiType.GET_USERS + "?offset="+offset+"&limit="+queryTypes.LIMIT+"&filter="+filter:apiType.GET_USERS + "?offset="+offset+"&limit="+queryTypes.LIMIT, function (resp) {
-//                     //Bind the response using Handlebars
-//                     debugger;
-//                     var cardDivUserId = $('#users-cardID').html();
-//                     var handleBarsUserId = Handlebars.compile(cardDivUserId);
-//                     $('#users-card').html(handleBarsUserId(resp.data));
-//                 });
-//             }
-
-//         });
-//         setTimeout(function(){
-//             $('#page-loaders').hide();
-//         }, 500);
-//     });
-
-
-getUsers = function (filter) {
-
-    var offset = 0, pages, query;
-    var pages = filter;
-
-    httpGet(apiType.GET_USERS + "?filter=" + filter, function (resp) {
-        console.log("Filtered: ", resp);
-        var totalRec = resp.data.total; //Total coSpace records
-        pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT) + 1); //No of pages in pagination
-        //
-        // var sou = $('#users-cardID').html();
-        // var templ = Handlebars.compile(sou);
-        // $('#users-card').html(templ(resp.data));
+    $('#filter-users').keyup(function () {
+        filterUsers(isKeyEntered);
     });
 
-    httpGet(apiType.GET_USERS + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, function (resp) {
+
+});
+
+getUsersHttp = function () {
+
+    var offsetUsers = 0, pages;
+    $('.div-loaders-users').show();
+    $('#page-loaders-users').show();
+    //GET coSpaces records
+    httpGet(apiType.GET_USERS, function (resp) {
         var totalRec = resp.data.total; //Total coSpace records
-        pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT) + 1); //No of pages in pagination
+        pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT)); //No of pages in pagination
         //Pagination Logic
         $('.sync-pagination').twbsPagination({
-            totalPages: 10,
-            hideOnlyOnePage: true,
-            onPageClick: function (evnt, page) {
-                offset = queryTypes.LIMIT * (page - 1);
-                //If offset is greater than total records
-                if (offset > totalRec)
-                    offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
-                //If offset is lesser than total records
-                httpGet(apiType.GET_USERS + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, function (resp) {
+            totalPages: pages,
+            onPageClick: function (event, page) {
+                $('.div-loaders-users').show();
+                $('#page-loaders-users').hide();
+
+                if ($('.div-loaders-users').show()) {
+                    $('.bg-white').each(function () {
+                        this.style.setProperty('background-color', '#f2f2f2', 'important');
+                    });
+                }
+
+                offsetUsers = queryTypes.LIMIT * (page - 1);
+                if (offsetUsers > totalRec)
+                    offsetUsers = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
+                httpGet(apiType.GET_USERS + "?offset=" + offsetUsers + "&limit=" + queryTypes.LIMIT, function (resp) {
                     //Bind the response using Handlebars
-                    // var coSpacelist = resp.data;
-                    // var source = $('#users-cardID').html();
-                    // var template = Handlebars.compile(source);
-                    // $('#users-card').html(template(coSpacelist));
+
+                    var sourceUsers = $('#users-cardID').html();
+                    var templateUsers = Handlebars.compile(sourceUsers);
+                    $('#users-card').html(templateUsers(resp.data));
+                    $('.div-loaders-users').hide();
+                    $('#page-loaders-users').hide();
+                    if ($('.card-icon-size')) {
+                        setIconcolor();
+                    }
                 });
-                setTimeout(function () {
-                    $('#page-loaders').hide();
-                }, 500);
-            }
+            },
+            hideOnlyOnePage: true
         });
     });
+}
 
+filterUsers = function (isKeyEntered) {
+
+    if (!isKeyEntered) {
+        isKeyEntered = true;
+        setTimeout(function () {
+            $("#filter-users").prop("disabled", true);
+            $('.sync-pagination').empty();
+            $('.sync-pagination').removeData("twbs-pagination");
+            $('.sync-pagination').unbind("page");
+
+            var offset = 0;
+            var input = $('#filter-users').val();
+            if (input.length > 0) {
+                httpGet(apiType.GET_USERS + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
+                    var totalRec = resp.data.total; //Total coSpace records
+                    var pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT)); //No of pages in pagination
+                    //Pagination Logic
+                    $('.sync-pagination').twbsPagination({
+                        totalPages: pages,
+                        onPageClick: function (event, page) {
+                            offsetUsers = queryTypes.LIMIT * (page - 1);
+                            //If offset is greater than total records
+                            if (offsetUsers > totalRec)
+                                offsetUsers = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
+                            //If offset is lesser than total records
+                            httpGet(apiType.GET_USERS + "?offset=" + offsetUsers + "&limit=" + queryTypes.LIMIT + "&filter=" + input, function (resp) {
+                                //Bind the response using Handlebars
+                                var sourceUsers = $('#users-cardID').html();
+                                var templateUsers = Handlebars.compile(sourceUsers);
+                                $('#users-card').html(templateUsers(resp.data));
+                            });
+                        },
+                        hideOnlyOnePage: true
+                    });
+                    isKeyEntered = false;
+                    $("#filter-users").prop("disabled", false);
+                });
+            }
+            else if (input.length == 0) {
+                isKeyEntered = false;
+                getUsersHttp();
+            }
+        }, 1500);
+    }
 
 }
 
-
-$(document).ready(function () {
-    // $('#page-loaders').hide();
-    // getUsers();
-    //
-    // $('#filter-users').keyup(function(){
-    //     getUsers($('#filter-users').val());
-    // });
-
-
+setIconcolor = function () {
+    var colorIcons;
 
     $.getJSON('/json/color.json', function (response) {
-        console.log(response);
-        // var source = $('#cardId').html();
-        // var template = Handlebars.compile(source);
-        // var result = template(response);
-        //  $('#List').html(result);
-        $('.card-icon-size').each(function () {
-            this.style.setProperty('color:', 'important');
 
+        var res = response;
+
+
+        $('.card-icon-size').each(function (resq) {
+            console.log(resq)
+            
+            // for (var i = 0; i < resq.data.colors.length; i++) {
+            //     console.log("colorIcons:" + resq.data.colors[i].color);
+            //     this.style.setProperty('color', res.data.colors[i].color, 'important');
+
+            //     // $('.card-icon-size').css('color', res.data.colors[i].color ,'important');
+            // }
         });
+
+
+
+        // console.log("outside-loop"+colorIcons);
+
+
     });
+
+
+
+
+}
