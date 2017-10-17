@@ -8,7 +8,6 @@
     <!--Stylesheets file links -->
     <% include _layouts/common-header %>
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
-
   </head>
   <body class=" h-background-color">
     <!-- include file for navigation -->
@@ -44,7 +43,7 @@
                 <!-- END Activities Search  -->
                 <!-- Pagination next head -->
                 <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4 pagination-top">
-                  <ul class="sync-pagination pagination-sm"></ul> <!--Pagination plugin-->
+                  <ul id="plugin-pagination" class="sync-pagination pagination-sm"></ul> <!--Pagination plugin-->
                 </div>
               </div>
             </div>
@@ -53,11 +52,6 @@
           <div id="List"></div>
           <% include _layouts/cards/card %>
           <% include _layouts/cards/model %>
-       
-
-
-       
-
         </div>
             <!-- ceateMeeting -->
             <a href="/createspace" data-toggle="tooltip" data-placement="bottom" title=""
@@ -79,7 +73,7 @@
       });
       </script>
    <!-- Pagination next footer -->
-   <ul class="sync-pagination pagination-sm"></ul>
+   <ul id="plugin-pagination" class="sync-pagination pagination-sm"></ul>
    <!-- Pagination plugin -->
         <%include _layouts/footer %>
   </body>

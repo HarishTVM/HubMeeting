@@ -30,6 +30,9 @@ getCospaces = function () {
 
 $(document).ready(function () {
     var isKeyEntered = false;
+    // BEGIN STYLES FOR PAGINATION
+        $('#plugin-pagination').css("border","1px solid black");
+    // END STYLES FOR PAGINATION
     getCospaces();
 
     // BEGIN SEARCH FILTER
@@ -90,5 +93,4 @@ $(document).ready(function () {
             }  
         });
     // END SEARCH FILTER
-
 });
