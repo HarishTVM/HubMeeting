@@ -48,6 +48,12 @@ $(document).ready(function () {
                     if(input.length > 0){
                             httpGet(apiType.GET_COSPACES + "?filter=" + input + '&offset='+ offset + '&limit='+ queryTypes.LIMIT, function(resp){
                                 debugger;
+                                if(resp.data.total == 0){
+                                    var noData = $('<h6>No Data</h6>');
+                                    $("#List").html(noData);
+                                    isKeyEntered = false;
+                                    $("#filter").prop( "disabled", false );
+                                }
                                 var totalRec = resp.data.total; //Total coSpace records
                                 var pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT)); //No of pages in pagination
                                 //Pagination Logic
@@ -71,15 +77,16 @@ $(document).ready(function () {
                                     hideOnlyOnePage: true
                                 });
                                 isKeyEntered = false;
-                                $("#filter").prop( "disabled", false ); 
+                                $("#filter").prop( "disabled", false );  
                         });
                     }     
                     else if(input.length == 0){
                         debugger;
-                        isKeyEntered = false;  
+                        isKeyEntered = false;
+                        $("#filter").prop( "disabled", false );
                         getCospaces();
-                    }
-                }, 1500);  
+                        }
+                    }, 1500);
             }  
         });
     // END SEARCH FILTER
