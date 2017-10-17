@@ -2,6 +2,11 @@
 <script id="cardId" type="text/x-handlebars-template">
 {{#each coSpaces}}
 <div class="col-sm-6 col-md-4 col-xs-12 col-lg-3">
+    <div class="us-card-loading card-loaders-spacelist" >
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
   <div class="morph-button div-top thumb-corporate morph-button-modal morph-button-modal-2 morph-button-fixed  bg-white h-box-shadow h-div-border s-height"
     coSpaceId={{coSpace.attrkey.id}} onclick="myFunc(this)">
     <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">

@@ -13,12 +13,7 @@
     <!-- include file for navigation -->
     <% include _layouts/header-with-navigation %>
     <div class="page">
-      <!-- BEGIN page loader -->
-      <div id="page-loader">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
-      </div>
+     
       <!-- BEGIN Spaces toolbar-->
       <div class="container-fluid breadcrumb-container">
         <ol class="breadcrumb ">
@@ -30,34 +25,42 @@
       <section>
         <div class="shell">
           <!-- BEGIN Activities search head -->
-          <div class="range range-5 h-m-top-none">
-            <div class="searchBtn-pagination-container">
-              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
-                <!-- BEGIN Activities Search  -->
-                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
-                  <!-- Search input field -->
-                  <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h search-margin-top">
-                    <input id="filter" class="form-input cursor-pointer search-input input-box-shadow" type="text" name="search" placeholder="Search the SpaceName">
-                  </div>
-                </div>
-                <!-- END Activities Search  -->
-                <!-- Pagination next head -->
-                <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4 pagination-top">
-                  <ul id="plugin-pagination" class="sync-pagination pagination-sm"></ul> <!--Pagination plugin-->
-                </div>
-              </div>
-            </div>
-          </div>
+
+  <!-- BEGIN Activities search head -->
+  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+      <!-- Search input field -->
+      <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
+        <input id="filter" class="form-input cursor-pointer search-input input-box-shadow" type="text" name="search" placeholder="Search the UserName">
+      </div>
+    </div>
+    <!-- END Activities Search  -->
+    <!-- Pagination next head -->
+    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+      <ul class="sync-pagination pagination-sm "></ul>
+      <!--Pagination plugin-->
+    </div>
           <!-- END Activities search head -->
           <div id="List"></div>
           <% include _layouts/cards/card %>
           <% include _layouts/cards/model %>
+        </div>
+
+         <!-- BEGIN page loader -->
+         <div class="us-card-loading page-loaders">
+          <div class="cssload-container">
+            <div class="cssload-speeding-wheel"></div>
+          </div>
         </div>
             <!-- ceateMeeting -->
             <a href="/createspace" data-toggle="tooltip" data-placement="bottom" title=""
             class="button button-primary  linear-icon-plus newmeeting-btn-circle"
             data-original-title="<%= translation.HUB_CREATE_SPACE_TOOLBAR %>"></a>
       </section>
+
+      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+          <ul class="sync-pagination pagination-sm "></ul>
+          <!--Pagination plugin-->
+        </div>
     </div>
       <!-- include file for Script -->
       <% include _layouts/common-scripts %>
@@ -73,7 +76,7 @@
       });
       </script>
    <!-- Pagination next footer -->
-   <ul id="plugin-pagination" class="sync-pagination pagination-sm"></ul>
+
    <!-- Pagination plugin -->
         <%include _layouts/footer %>
   </body>

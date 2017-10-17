@@ -2,6 +2,8 @@ $(document).ready(function () {
     // setColorIcon();
     $('#page-loaders-users').show();
     $('.div-loaders-users').hide();
+    $('.usersNoData').hide();
+
     var isKeyEntered = false;
     getUsersHttp();
 
@@ -71,6 +73,16 @@ filterUsers = function (isKeyEntered) {
                 httpGet(apiType.GET_USERS + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
                     var totalRec = resp.data.total; //Total coSpace records
                     var pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT)); //No of pages in pagination
+                    
+                    if(resp.data.total == 0){
+                        var noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                                        <h6>No Data</h6>\
+                                        </div>');
+                        $("#users-card").html(noData);
+                        isKeyEntered = false;
+                        $("#filter-users").prop( "disabled", false );
+                    }
+                    
                     //Pagination Logic
                     $('.sync-pagination').twbsPagination({
                         totalPages: pages,

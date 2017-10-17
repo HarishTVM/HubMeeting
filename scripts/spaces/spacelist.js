@@ -1,5 +1,7 @@
 getCospaces = function () {
-    debugger;
+
+    $('.card-loaders-spacelist').show();
+    $('.page-loaders').show();
     var offset = 0, pages;
     //GET coSpaces records
     httpGet(apiType.GET_COSPACES, function (resp) {
@@ -9,7 +11,15 @@ getCospaces = function () {
         $('.sync-pagination').twbsPagination({
             totalPages: pages,
             onPageClick: function (event, page) {
-                debugger;
+                $('.card-loaders-spacelist').show();
+                $('.page-loaders').hide();
+
+                if ($('.card-loaders-spacelist').show()) {
+                    $('.bg-white').each(function () {
+                        this.style.setProperty('background-color', '#f2f2f2', 'important');
+                    });
+                }
+
                 offset = queryTypes.LIMIT * (page - 1);
                 //If offset is greater than total records
                 if (offset > totalRec)
@@ -21,6 +31,8 @@ getCospaces = function () {
                     var source = $('#cardId').html();
                     var template = Handlebars.compile(source);
                     $('#List').html(template(coSpacelist));
+                    $('.card-loaders-spacelist').hide();
+                    $('.page-loaders').hide();
                 });
             },
             hideOnlyOnePage: true
@@ -29,6 +41,8 @@ getCospaces = function () {
 }
 
 $(document).ready(function () {
+
+  
     var isKeyEntered = false;
     // BEGIN STYLES FOR PAGINATION
         $('#plugin-pagination').css("border","1px solid black");
@@ -52,7 +66,9 @@ $(document).ready(function () {
                             httpGet(apiType.GET_COSPACES + "?filter=" + input + '&offset='+ offset + '&limit='+ queryTypes.LIMIT, function(resp){
                                 debugger;
                                 if(resp.data.total == 0){
-                                    var noData = $('<h6>No Data</h6>');
+                                    var noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                                                    <h6>No Data</h6>\
+                                                    </div>');
                                     $("#List").html(noData);
                                     isKeyEntered = false;
                                     $("#filter").prop( "disabled", false );
