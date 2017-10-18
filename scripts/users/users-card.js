@@ -1,17 +1,13 @@
 $(document).ready(function () {
-    // setColorIcon();
     $('#page-loaders-users').show();
     $('.div-loaders-users').hide();
     $('.usersNoData').hide();
 
     var isKeyEntered = false;
     getUsersHttp();
-
     $('#filter-users').keyup(function () {
         filterUsers(isKeyEntered);
     });
-
-
 });
 
 getUsersHttp = function () {
@@ -29,7 +25,6 @@ getUsersHttp = function () {
             onPageClick: function (event, page) {
                 $('.div-loaders-users').show();
                 $('#page-loaders-users').hide();
-
                 if ($('.div-loaders-users').show()) {
                     $('.bg-white').each(function () {
                         this.style.setProperty('background-color', '#f2f2f2', 'important');
@@ -73,16 +68,16 @@ filterUsers = function (isKeyEntered) {
                 httpGet(apiType.GET_USERS + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
                     var totalRec = resp.data.total; //Total coSpace records
                     var pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT)); //No of pages in pagination
-                    
-                    if(resp.data.total == 0){
+
+                    if (resp.data.total == 0) {
                         var noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
                                         <h6>No Data</h6>\
                                         </div>');
                         $("#users-card").html(noData);
                         isKeyEntered = false;
-                        $("#filter-users").prop( "disabled", false );
+                        $("#filter-users").prop("disabled", false);
                     }
-                    
+
                     //Pagination Logic
                     $('.sync-pagination').twbsPagination({
                         totalPages: pages,
@@ -124,13 +119,13 @@ setIconcolor = function () {
 
         $('.card-icon-size').each(function (resq) {
             console.log(resq)
-            
-            // for (var i = 0; i < resq.data.colors.length; i++) {
-            //     console.log("colorIcons:" + resq.data.colors[i].color);
-            //     this.style.setProperty('color', res.data.colors[i].color, 'important');
 
-            //     // $('.card-icon-size').css('color', res.data.colors[i].color ,'important');
-            // }
+            for (var i = 0; i < resq.data.colors.length; i++) {
+                console.log("colorIcons:" + resq.data.colors[i].color);
+                this.style.setProperty('color', res.data.colors[i].color, 'important');
+
+                // $('.card-icon-size').css('color', res.data.colors[i].color ,'important');
+            }
         });
 
 

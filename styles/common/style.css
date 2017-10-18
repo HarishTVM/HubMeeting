@@ -78,7 +78,35 @@ a.page-item:active{
   background:#23d7b2 !important;
   color:#000000 !important;
 }
+.modal-icon-close{
+  right: 2%;
+  top: 4%;
+  position: absolute;
+  font-size: 32px;
 
+}
+.modal-scrollbar{
+  overflow-x: auto;
+  height: 200px;
+}
+.modal-background{
+  background: #23d7b2;
+}
+.modal-card-padding{
+  padding:16px;
+}
+.modal-padding{ padding:10px; }
+.toolbar-bg{
+  background: #c5c5c5;
+  border-top:1px solid #353434;
+  border-bottom:1px solid #353434;
+}
+.toolbar-padding{
+  padding: 8px 15px;
+  margin-bottom: -4px;
+  list-style: none;
+  border-radius: 4px
+}
 a.page-link {
   background: #FFFFFF !important;
   color:#23d7b2 !important;

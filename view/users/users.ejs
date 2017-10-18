@@ -16,6 +16,7 @@
 <body class="h-background-color ">
   <!-- include file for navigation -->
   <% include _layouts/header-with-navigation %>
+   <!-- BEGIN Users Pages-->
     <div class="page">
       <!-- BEGIN Users toolbar-->
       <div class="container-fluid breadcrumb-container">
@@ -36,51 +37,52 @@
       <!-- END Users toolbar-->
       <section>
         <div class="shell">
-          <!-- BEGIN Activities search head -->
+          <!-- BEGIN users search head -->
           <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
             <!-- Search input field -->
             <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
               <input id="filter-users" class="form-input cursor-pointer search-input input-box-shadow" type="text" name="search" placeholder="Search the UserName">
             </div>
           </div>
-          <!-- END Activities Search  -->
+          <!-- END users Search  -->
           <!-- Pagination next head -->
           <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
             <ul class="sync-pagination pagination-sm "></ul>
             <!--Pagination plugin-->
           </div>
-
           <!-- handlebars -->
           <div id="users-card"></div>
           <!-- include file for card-->
           <% include _layouts/cards/users-card %>
-            <% include _layouts/modals/users-modal %>
-
+          <% include _layouts/modals/users-modal %>
         </div>
+        <!-- page-loaders-users -->
         <div class="us-card-loading" id="page-loaders-users">
           <div class="cssload-container">
             <div class="cssload-speeding-wheel"></div>
           </div>
         </div>
+        <!--Pagination next plugin footer -->
         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
-          <ul class="sync-pagination pagination-sm "></ul>
-          <!--Pagination plugin-->
+          <ul class="sync-pagination pagination-sm" />
         </div>
     </div>
+    
+      <!-- End Users Pages-->
     </section>
+
     <!-- BEGIN script file links -->
     <% include _layouts/common-scripts %>
       <script src="/scripts/users/users-card.js"></script>
       <script src="/scripts/jquery.twbsPagination.min.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <!-- End Users script -->
+     <!-- Navigation active Users -->
       <script>
         $(document).ready(function () {
           $("#usersList").addClass("active");
         });
       </script>
-      <!-- End Users script -->
-
-
       <!-- Pagination next footer -->
       <%include _layouts/footer %>
 </body>
