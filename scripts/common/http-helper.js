@@ -1,14 +1,11 @@
 var httpGet = function (Url, callback) {
-    debugger;
     $.ajax({
         method: 'GET',
         url: app.BASE_URL + Url,
         success: function (response, status, xhr) {
-            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
-            debugger;
             if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR){
                 {
                  toastr.options.closeButton = true;
@@ -39,11 +36,9 @@ var httpPost = function (Url, _data, callback) {
         },
         data: JSON.stringify(_data),
         success: function (response, status, xhr) {
-            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
-            debugger;
             if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR){
                  toastr.options.closeButton = true;
                  toastr.warning(ToastMesssges.INTERNAL_SERVER_ERROR); //errObj.responseJSON.data
