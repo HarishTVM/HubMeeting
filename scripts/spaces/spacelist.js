@@ -12,6 +12,8 @@ function getCoSpacesRequest(query, page, callback) {
 }
 
 getCospaces = function () {
+    $('.card-loaders-spacelist').show();
+    $('.page-loaders').show();
     var offset = 0, pages;
     //GET coSpaces records
     httpGet(apiType.GET_COSPACES + '?&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
@@ -22,6 +24,14 @@ getCospaces = function () {
         $('.sync-pagination').twbsPagination({
             totalPages: pages,
             onPageClick: function (event, page) {
+                $('.card-loaders-spacelist').show();
+                $('.page-loaders').hide();
+
+                if ($('.card-loaders-spacelist').show()) {
+                    $('.bg-white').each(function () {
+                        this.style.setProperty('background-color', '#f2f2f2', 'important');
+                    });
+                }
                 offset = queryTypes.LIMIT * (page - 1);
                 //If offset is greater than total records
                 if (offset > totalRec)
@@ -30,6 +40,8 @@ getCospaces = function () {
                     //Bind the response using Handlebars
                     var template = Handlebars.compile($('#cardId').html());
                     $('#List').html(template(resp.data));
+                    $('.card-loaders-spacelist').hide();
+                    $('.page-loaders').hide();
                 })
             },
             hideOnlyOnePage: true
@@ -57,10 +69,18 @@ $(document).ready(function () {
                     if(recentSearch != input){
                         recentSearch = input;
                         httpGet(apiType.GET_COSPACES + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
+                            if(resp.data.total == 0){
+                                var noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                                                <h6>No Data</h6>\
+                                                </div>');
+                                $("#List").html(noData);
+                                isKeyEntered = false;
+                                $("#filter").prop( "disabled", false );
+                            }
+
                             var totalRec = resp.data.total; //Total coSpace records
                             var pages = Math.ceil((parseInt(resp.data.total) / queryTypes.LIMIT)); //No of pages in pagination
                             firstPageObj = resp;
-    
                             //Pagination Logic
                             $('.sync-pagination').twbsPagination({
                                 totalPages: pages,
