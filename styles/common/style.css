@@ -110,7 +110,7 @@ a.page-link {
 .card-width-name{  width:25% !important; }
 .card-width-title{ width:70% !important; }
 .card-icon-size{ font-size: xx-large; color:#000000;}
-.sl-card-mardin-top{margin-top:10%;}
+.sl-card-mardin-top{ position: relative; vertical-align: bottom; }
 .us-card-mardin-top{margin-top:2%;}
 .us-card-title-mardin-top{margin-top:4%;}
 .us-title-color{ color:#23d7b2;font-size: medium;}
@@ -534,7 +534,7 @@ border-color: #23d7b2;
 /* ---------------- BEGIN Moblie devices  screens ----------- */
 
 @media (min-width: 320px) and (max-width: 767px) {
-.sl-card-mardin-top{margin-top:-10%;}
+.sl-card-mardin-top{margin-top:7%;}
   .principale  .parent-div{min-height: 160px;}
   .head-search-w-h {width: 99%;}
   .h-i-m-top {margin-top: -15%; }
@@ -548,7 +548,7 @@ border-color: #23d7b2;
 
 /* ---------------- BEGIN Tablets  screens ----------- */
 @media (min-width: 768px) and (max-width: 991px){
-  .sl-card-mardin-top{margin-top:9%;}
+  .sl-card-mardin-top{margin-top:7%;}
   .principale  .parent-div{height: 160px;}
   .h-i-m-top { margin-top: 2%; }
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
@@ -574,8 +574,8 @@ border-color: #23d7b2;
 
 
 /* ---------------- BEGIN Tablets  screens ----------- */
-@media (min-width: 1200px) and (max-width: 20000px){
-  .sl-card-mardin-top{margin-top:9%;}
+@media (max-width: 20000px){
+  .sl-card-mardin-top{margin-top:7%;}
 
   .principale  .parent-div{height: 160px;}
   .h-i-m-top { margin-top: 2%; }
@@ -589,15 +589,12 @@ border-color: #23d7b2;
     position: relative;
     bottom: -20%;
 }*/
-
-@media (min-width: 1365px) and (max-width: 1367px){
-    .sl-card-mardin-top{margin-top:2%;}
-    .h-i-m-top { margin-top: 2% }
-    .us-icon-margin-top{ margin-top: -19px;}
+@media (min-width: 1000px) and (max-width: 1500px){
+  .sl-card-mardin-top{margin-top:11%;}
+  .h-i-m-top { margin-top: 2% }
+  .us-icon-margin-top{ margin-top: -19px;}
 }
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
-
-
 
 /*========================================================================================
                     =          End Spaces Media Queries             =
