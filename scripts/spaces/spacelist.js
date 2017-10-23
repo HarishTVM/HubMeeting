@@ -1,6 +1,6 @@
 var firstPageObj = null;
 var recentSearch = "";
-
+var noData;
 function getCoSpacesRequest(query, page, callback) {
     if (page == 1)
         callback(firstPageObj);
@@ -38,10 +38,11 @@ getCospaces = function () {
                     offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
                 getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, page, function (resp) {
                     //Bind the response using Handlebars
+                    $('.page-loaders').hide();
                     var template = Handlebars.compile($('#cardId').html());
                     $('#List').html(template(resp.data));
                     $('.card-loaders-spacelist').hide();
-                    $('.page-loaders').hide();
+                    
                 })
             },
             hideOnlyOnePage: true
@@ -56,10 +57,14 @@ getCospaces = function () {
 
 $(document).ready(function () {
     var isKeyEntered = false;
+  
+    $('#page-loaders-users').show();
     getCospaces();
 
     // BEGIN SEARCH FILTER
     $('#filter').keyup(function () {
+        $("#List").hide();
+        $('.page-loaders').show();
         if (!isKeyEntered) {
             isKeyEntered = true;
             setTimeout(function () {
@@ -71,15 +76,18 @@ $(document).ready(function () {
                 var offset = 0;
                 var input = $('#filter').val();
                 if (input.length > 0) {
+                    $("#List").show();
                     if(recentSearch != input){
                         recentSearch = input;
                         httpGet(apiType.GET_COSPACES + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
                             if(resp.data.total == 0){
-                                var noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                                $('.page-loaders').hide();
+                                noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
                                                 <h6>No Data</h6>\
                                                 </div>');
                                 $("#List").html(noData);
                                 isKeyEntered = false;
+                              
                                 $("#filter").prop( "disabled", false );
                             }
 
@@ -96,8 +104,10 @@ $(document).ready(function () {
                                         offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
     
                                     getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT + "&filter=" + input, page, function (resp) {
+                                        $('.page-loaders').hide();
                                         var template = Handlebars.compile($('#cardId').html());
                                         $('#List').html(template(resp.data));
+                                       
                                     })
                                 },
                                 hideOnlyOnePage: true

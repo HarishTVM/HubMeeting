@@ -95,11 +95,12 @@ a.page-item:active{
 .modal-card-padding{
   padding:16px;
 }
-.modal-padding{ padding:10px; }
+
+.modal-padding{ padding:30px; }
 .toolbar-bg{
-  background: #c5c5c5;
-  border-top:1px solid #353434;
-  border-bottom:1px solid #353434;
+  background: #ffffff;
+  border-top:1px solid #c2c2c2 !important;
+  border-bottom:1px solid #c2c2c2 !important;
 }
 .toolbar-padding{
   padding: 8px 15px;
@@ -351,6 +352,7 @@ a.page-link {
 .btn-padding-edit{ padding: 8px 30px !important;
   cursor: pointer;
 }
+
 .hover-icon-bottom{
   position: relative;
   bottom: 4px;
@@ -361,6 +363,11 @@ a.page-link {
 }
 .cursor-default{ cursor:default; }
 .cursor-pointer{ cursor: pointer;}
+.cursor-auto{ cursor:auto;}
+.text-color-default{ color:#888; }
+.bg-white-modal{
+background:#FFFFFF !important;
+}
 /*/////////////////////////////////// End Card for Styles ////////////////////////////////////// */
 
 
