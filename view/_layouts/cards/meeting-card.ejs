@@ -1,63 +1,99 @@
-<!--BEGIN Meeting-Card -->
-<div  class="col-sm-6 col-md-4 col-xs-12 col-lg-3 ">
-  <div class="bg-white box-shadow-meeting h-div-border s-height padding-left-left-none thumb-corporate">
-    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  padding-left-left-none ">
-      <!-- Meeting Title -->
-      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-left-none">
-        <ul class="text-center">
-          <li><b>
-            <h6 class="h6-title-color  text-overflow-title h6-title-medium">Title</h6>
-          </b></li>
-        </ul>
+<!-- BEGIN Page card -->
+<script id="meetingCardId" type="text/x-handlebars-template">
+  {{#each meetings}}
+  
+  <div class="col-sm-6 col-md-4 col-xs-12 col-lg-3">
+      <div class="us-card-loading card-loaders-meeting" >
+          <div class="cssload-container">
+            <div class="cssload-speeding-wheel"></div>
+          </div>
+        </div>
+    <div id="mainParent" class="morph-button div-top thumb-corporate morph-button-modal morph-button-modal-2 morph-button-fixed  bg-white h-box-shadow h-div-border s-height">
+      <div  class="col-md-12 col-sm-12  col-xs-12 col-lg-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
+          <div  class="col-md-12 col-sm-12 col-xs-12 col-lg-10 padding-left-right-none"data-toggle=" " title="{{meeting.name}}" >  <h6 class="us-title-color text-overflow-title h6-title-medium cursor-default text-center">
+              {{#if meeting.name}}
+              {{meeting.name}}
+                {{else}}
+                UnNamed
+                 {{/if}}
+              </h6></div>
+          <div  class="col-md-12 col-sm-12 col-xs-12 col-lg-2 padding-left-right-none card-m-right" >
+              <h6 class="linear-icon-radio-button card-icon-size"></h6> </div>
+          <!-- BEGIN card one user details for Spaces -->
+     
+        </div>
+       <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
+         
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-1 padding-left-right-none">
+              <i class="linear-icon-calendar-31 card-text-f-size "></i>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-11 padding-left-right-none ">
+              <h6 class="cursor-default card-mardin-top h6-title card-text-spacing text-overflow-title card-text-p-left">{{meeting.startDate}} <p class="card-text-f-size linear-icon-clock3"/><p class="card-text-p-left">{{meeting.startTime}}</p></h6>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-1 padding-left-right-none">
+                <i class="linear-icon-users2 card-text-f-size"></i>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-11 padding-left-right-none ">
+                  <h6 class="cursor-default card-mardin-top h6-title card-text-spacing text-overflow-title card-text-p-left">{{meeting.totalMembers}} <p>MeetingTypes </p><p class="card-text-p-left">{{meeting.startTime}}</p></h6>
+                </div>
+            </div> 
+        <!-- <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
+            <div class="col-md-6 col-sm-6  col-xs-6 col-lg-1 padding-left-right-none">
+              <i class="linear-icon-calendar-31"></i>
+            </div>
+            <div class="col-md-6 col-sm-6  col-xs-6 col-lg-11 padding-left-right-none ">
+              <h6 class="cursor-default us-card-mardin-top h6-title card-text-spacing text-overflow-title card-text-p-left">{{meeting.startDate}} <p class="card-text-f-size">To</p> {{meeting.endDate}} </h6>
+            </div>
+          </div> -->
+          <!-- <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
+
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-1 padding-left-right-none">
+                <i class="linear-icon-clock3"></i>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-7 padding-left-right-none ">
+                <h6 class="cursor-default us-card-mardin-top h6-title card-text-spacing-time text-overflow-title card-text-p-left">{{meeting.startTime}} <p class="card-text-f-size">To</p> {{meeting.endTime}} </h6>
+              </div>
+              <div class="col-md-6 col-sm-6  col-xs-6 col-lg-1 padding-left-right-none">
+                  <i class="linear-icon-users2"></i>
+                </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-3 padding-left-right-none">
+                  <h6 class="card-m-top h6-title text-overflow-title card-text-p-left">{{meeting.totalMembers}}</h6>
+                </div>
+            </div> -->
+            <!-- <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
+                <div class="col-md-6 col-sm-6  col-xs-6 col-lg-1 padding-left-right-none">
+                  <i class="linear-icon-users2"></i>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-11 padding-left-right-none ">
+                  <h6 class=" card-m-top h6-title card-text-spacing text-overflow-title card-text-p-left"> {{meeting.totalMembers}}</h6>
+                </div>
+              </div> -->
       </div>
-      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
-        <!-- Meeting Icon Telephone -->
-        <div class="col-md-2 col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-left-none">
-          <i class="text-color-black linear-icon-telephone"></i>
-        </div>
-        <!-- Meeting Set Telephone Number -->
-        <div class="col-md-10 col-sm-10 col-md-10 col-xs-10 col-lg-10 padding-left-left-none">
-          <p class="text-font-size text-margin-top">9894805882</p>
-        </div>
-      </div>
-      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
-        <!-- Meeting Time  -->
-        <div class="col-md-2 col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-left-none">
-          <!-- Meeting Time  -->
-          <i class="text-color-black linear-icon-clock2"></i>
-        </div>
-        <!-- Meeting Set Time Value   -->
-        <div class="col-md-10 col-sm-10 col-md-10 col-xs-10 col-lg-10 padding-left-left-none">
-          <p class="text-font-size text-margin-top">10.00am To 11.00am</p>
+      <!-- BEGIN card mouseover show icon for Spaces-->
+      <div id="infoDelteBtnsParent" class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+        <div id="icon-list" class="thumb-corporate__overlay text-center sl-card-mardin-top">
+          <ul class="list-inline-sm">
+            <li id="spacelistInfoBtn">
+              <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="modal"
+                data-target="#myModal" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>">
+                <i class="linear-icon-reading"></i>
+              </p>
+            </li>
+            <li>
+              <p id="deleteBtn" class="btn btn-circle thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm" data-toggle="tooltip"
+                data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>">
+                <i class="linear-icon-trash2"></i>
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
-        <!-- Meeting icon Calendar -->
-        <div class="col-md-2 col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-left-none">
-          <i class="text-color-black linear-icon-calendar-full"></i>
-        </div>
-        <!-- Meeting Date-->
-        <div class="col-md-10 col-sm-10 col-md-10 col-xs-10 col-lg-10 padding-left-left-none">
-          <p class="text-font-size text-margin-top">09/10/2017 To 09/10/2017</p>
-        </div>
-      </div>
-    </div>
-    <div class="thumb-corporate__overlay">
-      <ul class="list-inline-sm thumb-corporate__list icon-bottom">
-        <li>
-          <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm"  data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" data-toggle="modal" data-target="#myModal">
-            <i class="linear-icon-reading"></i>
-          </p>
-        </li>
-        <li>
-          <p class="btn btn-circle thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm "data-toggle="modal"  title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>">
-            <i class="linear-icon-trash2"></i>
-          </p>
-        </li>
-      </ul>
+      <!-- END card one mouseover show for Spaces-->
     </div>
   </div>
-  
-</div>
-    
-<!-- END Meeting-Card -->
+  {{/each}}
+  </script>
+<!-- END Page card -->

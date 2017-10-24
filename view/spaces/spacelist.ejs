@@ -1,81 +1,93 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-  <head>
-    <!-- Site Title-->
-    <title><%= translation.HUB_SPACES_TITLE %></title>
-    <!-- Site logo images-->
-    <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
-    <!--Stylesheets file links -->
-    <% include _layouts/common-header %>
+
+<head>
+  <!-- Site Title-->
+  <title>
+    <%= translation.HUB_SPACES_TITLE %>
+  </title>
+  <!-- Site logo images-->
+  <link href="/images/logo.png" rel="icon" type="image/x-icon" />
+  <!--Stylesheets file links -->
+  <% include _layouts/common-header %>
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
-  </head>
-  <body class=" h-background-color">
-    <!-- include file for navigation -->
-    <% include _layouts/header-with-navigation %>
+</head>
+
+<body class=" h-background-color">
+  <!-- include file for navigation -->
+  <% include _layouts/header-with-navigation %>
     <div class="page">
-     
+
       <!-- BEGIN Spaces toolbar-->
       <div class="container-fluid breadcrumb-container">
         <ol class="breadcrumb ">
-          <h5 class="meeting-head-bread"><%= translation.HUB_SPACES_TOOLBAR_SPACES %></h5>
-          <li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %></a></li>
-          <li><%= translation.HUB_SPACES_TOOLBAR_SPACES %></li>
+          <h5 class="meeting-head-bread">
+            <%= translation.HUB_SPACES_TOOLBAR_SPACES %>
+          </h5>
+          <li>
+            <a href="/dashboard" class="breadcrumb-links">
+              <%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %>
+            </a>
+          </li>
+          <li>
+            <%= translation.HUB_SPACES_TOOLBAR_SPACES %>
+          </li>
         </ol>
       </div>
       <section>
         <div class="shell">
           <!-- BEGIN Activities search head -->
 
-  <!-- BEGIN Activities search head -->
-  <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-      <!-- Search input field -->
-      <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
-        <input id="filter" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search the UserName">
-      </div>
-    </div>
-    <!-- END Activities Search  -->
-    <!-- Pagination next head -->
-    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
-      <ul class="sync-pagination pagination-sm "></ul>
-      <!--Pagination plugin-->
-    </div>
+          <!-- BEGIN Activities search head -->
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+            <!-- Search input field -->
+            <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
+              <input id="filter" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search the UserName">
+            </div>
+          </div>
+          <!-- END Activities Search  -->
+          <!-- Pagination next head -->
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+            <ul class="sync-pagination pagination-sm "></ul>
+            <!--Pagination plugin-->
+          </div>
           <!-- END Activities search head -->
           <div id="List"></div>
           <% include _layouts/cards/card %>
-          <% include _layouts/cards/model %>
+            <% include _layouts/cards/model %>
         </div>
 
-         <!-- BEGIN page loader -->
-         <div class="us-card-loading page-loaders">
+        <!-- BEGIN page loader -->
+        <div class="us-card-loading page-loaders">
           <div class="cssload-container">
             <div class="cssload-speeding-wheel"></div>
           </div>
         </div>
-            <!-- ceateMeeting -->
-            <a href="/createspace" data-toggle="tooltip" data-placement="bottom" title=""
-            class="button button-primary  linear-icon-plus newmeeting-btn-circle"
-            data-original-title="<%= translation.HUB_CREATE_SPACE_TOOLBAR %>"></a>
+        <!-- ceateMeeting -->
+        <a href="/createspace" data-toggle="tooltip" data-placement="bottom" title="" class="button button-primary  linear-icon-plus newmeeting-btn-circle"
+          data-original-title="<%= translation.HUB_CREATE_SPACE_TOOLBAR %>"></a>
       </section>
 
       <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
-          <ul class="sync-pagination pagination-sm "></ul>
-          <!--Pagination plugin-->
-        </div>
+        <ul class="sync-pagination pagination-sm "></ul>
+        <!--Pagination plugin-->
+      </div>
     </div>
-      <!-- include file for Script -->
-      <% include _layouts/common-scripts %>
+    <!-- include file for Script -->
+    <% include _layouts/common-scripts %>
       <script src="/scripts/spaces/spacelist.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/jquery.twbsPagination.min.js"></script>
       <script>
-      $(document).ready(function () {
-        $("#spacesList").addClass("active");
-        
-      });
-      </script>
-   <!-- Pagination next footer -->
+        $(document).ready(function () {
+          $("#spacesList").addClass("active");
 
-   <!-- Pagination plugin -->
-        <%include _layouts/footer %>
-  </body>
-  </html>
+        });
+      </script>
+      <!-- Pagination next footer -->
+
+      <!-- Pagination plugin -->
+      <%include _layouts/footer %>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+{
+    "code": "OK",
+    "data": {
+        "total": "40",
+        "meetings": [
+            {
+                "meeting": {
+                    "name": "Administrator",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5",
+                    "uri": "Administrator",
+                    "defaultLayout": "Administrator@inflexion.com"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "Administrator",
+                    "uri": "",
+                    "defaultLayout": "Administrator@inflexion.com",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "Administrator",
+                    "uri": "",
+                    "defaultLayout": "Administrator@inflexion.com",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "Administrator",
+                    "uri": "",
+                    "defaultLayout": "Administrator@inflexion.com",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "Administrator",
+                    "uri": "",
+                    "defaultLayout": "Administrator@inflexion.com",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "Administrator",
+                    "uri": "",
+                    "defaultLayout": "Administrator@inflexion.com",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "",
+                    "uri": "",
+                    "defaultLayout": "Administrator@inflexion.com",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "",
+                    "uri": "",
+                    "defaultLayout": "Administrator@inflexion.com",
+                    "startDate": "27/10/2017",
+                    "endDate": "27/10/2017",
+                    "startTime": "10.30",
+                    "endTime": "12.30",
+                    "totalMembers": "5"
+                }
+            }
+        ]
+    }
+}

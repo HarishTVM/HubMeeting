@@ -169,6 +169,7 @@ a.page-link {
   border-top:1px solid #c2c2c2 !important;
   border-bottom:1px solid #c2c2c2 !important;
 }
+
 /*========================================================================================
                     =          END modal for Users               =
 ==========================================================================================*/
@@ -648,7 +649,7 @@ border-color: #23d7b2;
   .thumb-corporate__overlay{padding: 0px 0px 0px !important;}
   .head-search-w-h { width: 50%;}
   .search-margin-top{margin-top: 3%;}
-  .us-icon-margin-top{ margin-top: -1%;}
+  .us-icon-margin-top{ margin-top: -3%;}
 }
 /*@media (min-width: 769px){
   .hover-icon-bottom {
@@ -658,7 +659,7 @@ border-color: #23d7b2;
 @media (min-width: 1000px) and (max-width: 1500px){
   .sl-card-mardin-top{margin-top:11%;}
   .h-i-m-top { margin-top: 2% }
-  .us-icon-margin-top{ margin-top: 1%;}
+  .us-icon-margin-top{ margin-top: -2%;}
 }
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 

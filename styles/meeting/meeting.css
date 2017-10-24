@@ -17,6 +17,8 @@
   opacity: 0.8;
 }
 
+
+
 /*/////////////////////////////////// BEGIN Meeting for Styles ////////////////////////////////////// */
 
 /*/////////////////////////////////// BEGIN Card Meeting for Styles ////////////////////////////////////// */
@@ -25,4 +27,16 @@
   position: absolute  !important;
   bottom: 10px;
 }
+.card-text-spacing{ word-spacing: 16px;}
+.card-text-p-left{ padding-left: 7px !important;}
+.card-text-f-size{
+font-size: medium;
+font-weight: 400;
+font-size: 23px;
+}
+.card-mardin-top{margin-top:-1%;}
+.card-text-spacing-time{ word-spacing: 7px;}
+.card-m-top{ margin-top: 12px; }
+.card-m-right{text-align: right; }
+.card-icon-size{font-size: 19px !important;}
 /*/////////////////////////////////// End Card Meeting for Styles ////////////////////////////////////// */
