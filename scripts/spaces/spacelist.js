@@ -23,10 +23,11 @@ getCospaces = function () {
         //Pagination Logic
         $('.sync-pagination').twbsPagination({
             totalPages: pages,
+            prev: 'Prev',
+            next: 'Next',
             onPageClick: function (event, page) {
                 $('.card-loaders-spacelist').show();
                 $('.page-loaders').hide();
-
                 if ($('.card-loaders-spacelist').show()) {
                     $('.bg-white').each(function () {
                         this.style.setProperty('background-color', '#f2f2f2', 'important');

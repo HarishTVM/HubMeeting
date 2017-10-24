@@ -78,27 +78,7 @@ a.page-item:active{
   background:#23d7b2 !important;
   color:#000000 !important;
 }
-.modal-icon-close{
-  right: 2%;
-  top: 4%;
-  position: absolute;
-  font-size: 32px;
 
-}
-
-.modal-background{
-  background: #23d7b2;
-}
-.modal-card-padding{
-  padding:16px;
-}
-
-.modal-padding{ padding:30px; }
-.toolbar-bg{
-  background: #ffffff;
-  border-top:1px solid #c2c2c2 !important;
-  border-bottom:1px solid #c2c2c2 !important;
-}
 .toolbar-padding{
   padding: 8px 15px;
   margin-bottom: -4px;
@@ -146,7 +126,8 @@ a.page-link {
 /*========================================================================================
                     =          BEGIN modal for Users               =
 ==========================================================================================*/
-
+.modal-body{padding: 5px !important;}
+.modal-dialog { margin: 10px auto !important;}
 .modal-box-shadow{
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -162,13 +143,31 @@ a.page-link {
 }
 .modal-scrollbar{
   overflow-x: auto;
-  height: 230px;
+  height: 228px;
 }
 .modal-width-title{width: 7% !important;}
 .modal-title-mardin-top{margin-top:-1%; }
 .modal-title-color{
   font-size: small;
   color:#888;
+}
+.modal-icon-close{
+  right: 2%;
+  top: 4%;
+  position: absolute;
+  font-size: 32px;
+
+}
+
+.modal-card-padding{
+  padding:16px;
+}
+
+.modal-padding{ padding:30px; }
+.toolbar-bg{
+  background: #f5f5f5;
+  border-top:1px solid #c2c2c2 !important;
+  border-bottom:1px solid #c2c2c2 !important;
 }
 /*========================================================================================
                     =          END modal for Users               =
