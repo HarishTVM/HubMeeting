@@ -38,6 +38,7 @@ getCospaces = function () {
                     offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
                 getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, page, function (resp) {
                     //Bind the response using Handlebars
+                    $("#List").show();
                     $('.page-loaders').hide();
                     var template = Handlebars.compile($('#cardId').html());
                     $('#List').html(template(resp.data));

@@ -35,8 +35,10 @@ getUsers = function () {
         //Pagination Logic
         $('.sync-pagination').twbsPagination({
             totalPages: pages,
+            prev: 'Prev',
+            next: 'Next',
             onPageClick: function (event, page) {
-              //  $("#users-card").hide();
+                //  $("#users-card").hide();
                 $('.div-loaders-users').show();
                 $('#page-loaders-users').hide();
                 if ($('.div-loaders-users').show()) {
@@ -53,7 +55,7 @@ getUsers = function () {
                     // for(var i = 0;i < resp.data.users.length; i++ ){
                     //     alert(resp.data.users[i].user.userJid);
                     // }
-                    
+
                     var templateUsers = Handlebars.compile($('#users-cardID').html());
                     $('#users-card').html(templateUsers(resp.data));
                     $('.div-loaders-users').hide();
@@ -130,6 +132,7 @@ filterUsers = function (isKeyEntered) {
             }
             else if (input.length == 0) {
                 isKeyEntered = false;
+                $("#filter-users").prop("disabled", false);
                 getUsers();
 
             }

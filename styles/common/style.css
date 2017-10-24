@@ -85,10 +85,7 @@ a.page-item:active{
   font-size: 32px;
 
 }
-.modal-scrollbar{
-  overflow-x: auto;
-  height: 200px;
-}
+
 .modal-background{
   background: #23d7b2;
 }
@@ -133,7 +130,7 @@ a.page-link {
     width: 55px;
     text-align: center;
     border-radius: 50%;
-    border: 1px solid #23d7b2;
+    border: 1px solid #09609d;
 }
 
 .card-width-name{  width:25% !important; }
@@ -142,12 +139,42 @@ a.page-link {
 .sl-card-mardin-top{ position: relative; vertical-align: bottom; }
 .us-card-mardin-top{margin-top:2%;}
 .us-card-title-mardin-top{margin-top:4%;}
-.us-title-color{ color:#23d7b2;font-size: medium;}
-.us-title-color:hover{color:#000000;}
-.us-icon-color{ color:#23d7b2; }
+.us-title-color{ color:#09609d;}
+.us-icon-color{ color:#9c27b0; }
 .us-modal-width{ width: 80% !important;}
+
 /*========================================================================================
-                  =           BEGIN Card for Users           =
+                    =          BEGIN modal for Users               =
+==========================================================================================*/
+
+.modal-box-shadow{
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  position: relative;
+  background: #fff;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+  border-radius: .375rem;
+}
+.modal-box-shadow:hover{
+  box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
+  background: linear-gradient(to right, #FFF, #f6f6f6);
+}
+.modal-scrollbar{
+  overflow-x: auto;
+  height: 230px;
+}
+.modal-width-title{width: 7% !important;}
+.modal-title-mardin-top{margin-top:-1%; }
+.modal-title-color{
+  font-size: small;
+  color:#888;
+}
+/*========================================================================================
+                    =          END modal for Users               =
+==========================================================================================*/
+/*========================================================================================
+                  =           END Card for Users           =
 ==========================================================================================*/
 
 
@@ -293,8 +320,12 @@ a.page-link {
 }
 
 .h-logo-image{width: 15%;}
-.h6-title{font-size:small;color: #000;}
-
+.h6-title{
+  font-size:small;
+  color: #888;
+  font-weight: 400;
+}
+.t-c-default-toolbar{ color: #888 !important; }
 
 /*Harish animation*/
 
@@ -364,7 +395,12 @@ a.page-link {
 .cursor-default{ cursor:default; }
 .cursor-pointer{ cursor: pointer;}
 .cursor-auto{ cursor:auto;}
-.text-color-default{ color:#888; }
+.text-color-default{
+  color:#888;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.45;
+}
 .bg-white-modal{
 background:#FFFFFF !important;
 }
@@ -470,14 +506,10 @@ border-color: #23d7b2;
    .border-bottom-title{ border-bottom: 1px so;}
    .icon-size{ font-size: 17px; line-height: 20px; }
    .morph-content { border-radius: 2px; }
-   .h6-title-medium{font-size:medium !important;}
-   .h6-title-color:hover{color: #161817;}
-   .h6-title-color{
-    color: #23d7b2;
-    font-size:small;
-    margin-top: 5px;
-    text-align: center;
-   }
+   .h6-title-medium{
+     font-size:medium !important;
+     font-weight: 500;
+  }
 
 
 /*/////////////////////////////////// End zoomindiv for Styles ////////////////////////////////////// */
@@ -627,7 +659,7 @@ border-color: #23d7b2;
 @media (min-width: 1000px) and (max-width: 1500px){
   .sl-card-mardin-top{margin-top:11%;}
   .h-i-m-top { margin-top: 2% }
-  .us-icon-margin-top{ margin-top: -19px;}
+  .us-icon-margin-top{ margin-top: 1%;}
 }
   /* x---x---x---x---x---x End Tablets screens x---x---x---x---x---x*/
 

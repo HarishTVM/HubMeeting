@@ -1,4 +1,5 @@
 <!-- BEGIN Page card  -->
+<link href="/styles/modals/usersmodals.css" type="text/css" />
 <script id="users-cardID" type="text/x-handlebars-template">
     {{#each users}}
  
@@ -19,7 +20,7 @@
                     {{#if user.userJid}}
                     {{user.userJid}}
                       {{else}}
-                       noUserID
+                      notAvailable
                        {{/if}}
             </div>
         </div>
@@ -32,7 +33,7 @@
                         {{#if user.name}}
                         {{user.name}}
                           {{else}}
-                           noUserName
+                          unNamed
                            {{/if}}
                 
             </div>
@@ -46,7 +47,7 @@
                         {{#if user.email}}
                         {{user.email}}
                           {{else}}
-                           noMail
+                          notAvailable
                            {{/if}}
                
             </div>
@@ -56,9 +57,8 @@
         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none us-icon-margin-top">
             <div id="icon-list" class="thumb-corporate__overlay text-center ">
                 <ul class="list-inline-sm">
-                    <li>
-                        <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="modal"
-                            data-target="#usersModal" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>">
+                    <li data-toggle="modal" data-target="#usersModal">
+                        <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm"data-toggle="tooltip" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" >
                             <i class="linear-icon-reading"></i>
                         </p>
                     </li>
