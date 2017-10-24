@@ -255,7 +255,7 @@ a.page-link {
 .sl-m-top-text{ margin-top: 9px; }
 .sl-model-text-font-small{ font-size:small;color: #fff; }
 .sl-model-scroll-member{
-  height: 340px;
+  height: 277px;
   width: 100%;
   overflow-y: scroll;
 }
@@ -710,7 +710,7 @@ border-color: #23d7b2;
   background-color: red;
   color: #fff;
 }
-.btn_discard:hover{ background-color: #000; }
+.btn_discard:hover{ background-color: #000;color: white; };
 /*/////////////////////////////////// END Create spaces for Styles ////////////////////////////////////// */
 
 
