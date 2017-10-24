@@ -3,7 +3,8 @@ $(document).ready(function () {
     $('#createSpace').show();
     $('#updateSpace').hide();
     
-    var filterArray = [];
+    var filterArray = []; //ARRAY TO HOLD SCHEDULE MEETING MEMBERS
+
     //BEGIN Add Member and DELETE MEMBER Logic
     $('#addMemberBtn').live('click', function () {
         debugger;
@@ -39,29 +40,12 @@ $(document).ready(function () {
         var filterData = $(this).siblings("#addMembers").val();
         httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {
             var totalUsers = resp.data.total;
-            if (totalUsers > 1) {
-                var userArray_1 = resp.data;
                 filterArray.push(filterData);   
                 filterData = undefined;
                 // console.log(userData.length);
                 var memberHandlebar = $('#memberAdd').html();
                 var templateHandlebar = Handlebars.compile(memberHandlebar);
-                $('#memberAddDiv').html(templateHandlebar(userArray_1));
-
-            }
-            else if(totalUsers == 1){
-                var userArray_2 = resp.data;
-                filterArray.push(filterData);   
-                filterData = undefined;
-                // var userJid = resp.data.users.user.userJid;
-                // console.log(userJid.substring(userJid.indexOf('@')));
-                var memberHandle = $('#memberAdd').html();
-                var templateHandle = Handlebars.compile(memberHandle);
-                $('#memberAddDiv').html(templateHandle(userArray_2));
-            }
-            else{
-                console.log("No matching users..!")
-            }
+                $('#memberAddDiv').html(templateHandlebar(resp.data));
         });
     });
     // END GET USERS

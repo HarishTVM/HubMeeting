@@ -205,14 +205,10 @@
       </script>
 
       <script id="memberAdd" type="text/x-handlebars-template">
-      {{#with users}}
-       <option>{{userJid}}</option> 
-      {{/with}}
-      <!-- {{#each users}}
-        <option>{{user.userJid}}</option>
-      {{/each}} -->
+      {{#each users}}
+       <option>{{user.userJid}}</option> 
+      {{/each}}
   </script>
-
       <%include _layouts/footer %>
 </body>
 

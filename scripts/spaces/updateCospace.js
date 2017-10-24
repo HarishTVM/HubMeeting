@@ -30,6 +30,8 @@ $(document).ready(function(){
     }
       // BEGIN Update Cospace Logic
       $("#editBtn").click(function(){
+        $("#createSpace").hide();
+        $("#updateSpace").show();
         debugger;
         window.location.href="/createspace?card=" + JSON.stringify(coSpaceCard);
         console.log(coSpaceCard);

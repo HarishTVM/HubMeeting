@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('#smtpBtn').click(function(){
-        debugger;
+        $("#page-loader").show();
         if($('form').hasClass('validate-form')){
             var resultItem = [];
             $('.validate-text').each(function(i, obj){

@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('#saveBtn').click(function(){
+        $("#page-loader").show();
         debugger;
         if($('form').hasClass('validate-form')){
             var resultItem = [];
