@@ -51,11 +51,6 @@ getCospaces = function () {
     });
 }
 
-// BEGIN GLOBAL OBJECT FOR AUTOPOPULATING MODAL INSPACELIST PAGE 
- 
-
-// END GLOBAL OBJECT FOR AUTOPOPULATING MODAL INSPACELIST PAGE
-
 $(document).ready(function () {
     var isKeyEntered = false;
   
@@ -122,6 +117,7 @@ $(document).ready(function () {
                 }
                 else if (input.length == 0) {
                     isKeyEntered = false;
+                    $("#filter").prop("disabled", false);
                     getCospaces();
                 }
             }, 1500);
@@ -133,14 +129,17 @@ $(document).ready(function () {
         $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function(){
             debugger;
             var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
-            var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
-            $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
-            var b = $(autoPopulate).children("#tenant").attr("tenant");
-            $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
-            var c = $(autoPopulate).children("#uri").attr("uri");
-            $("#modalUri").html("<p>URI:&nbsp;</p>" + c);
-            var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
-            $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
+                var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
+                $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
+
+                var b = $(autoPopulate).children("#tenant").attr("tenant");
+                $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
+
+                var c = $(autoPopulate).children("#uri").attr("uri");
+                $("#modalUri").html("<p>URI:&nbsp;</p>" + c);
+                
+                var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
+                $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
         });
     //END MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
 });
