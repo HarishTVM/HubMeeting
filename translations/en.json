@@ -174,5 +174,22 @@
     "CREATE_SPACE_ERROR_TEXT_ENTER_URI":"URI is Required",
     "CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME":"Type Member Name is Required",
     "CREATE_SPACE_ERROR_TEXT_PASS_CODE":"Pass Code is Required",
-    "CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES":"Space Address is Required"
+    "CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES":"Space Address is Required",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_FROM_DATE":"From date is Required",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME":"From time is Required",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE":"To date is Required",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME":"To time is Required",
+
+    "NEW_MEETING_ERROR_TEXT_TITLE": "Title is required",
+    "NEW_MEETING_ERROR_TEXT_EMAIl": "Email is required",
+    "NEW_MEETING_ERROR_TEXT_PHONE": "Phone is required",
+    "NEW_MEETING_ERROR_TEXT_FROM_DATE": "From date is required",
+    "NEW_MEETING_ERROR_TEXT_FROM_TIME": "From time is required",
+    "NEW_MEETING_ERROR_TEXT_TO_DATE": "To date is required",
+    "NEW_MEETING_ERROR_TEXT_TO_TIME": "To time is required",
+    "NEW_MEETING_ERROR_TEXT_TIME_ZONE": "Time-zone is required",
+    "NEW_MEETING_ERROR_TEXT_COSPACE": "Cospace is required",
+    "NEW_MEETING_ERROR_TEXT_PARTICIPANTS": "Participants are required",
+    "NEW_MEETING_ERROR_TEXT_PIN": "Pin is required"
+
 }

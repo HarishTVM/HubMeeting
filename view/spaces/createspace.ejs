@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/styles/spaces/createspace.css">
     <link rel="stylesheet" href="styles/meeting/newMeeting.css">
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+    
 </head>
 
 <body>
@@ -110,25 +112,37 @@
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date"
+                    <input class="form-input input-box-shadow validate-text" id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date"
                       data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_DATE %>
+                      </span>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time"
+                    <input class="form-input input-box-shadow validate-text" id="fromtime" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time"
                       data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME %>
+                      </span>
                   </div>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow " id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date"
+                    <input class="form-input input-box-shadow validate-text" id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date"
                       data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE %>
+                      </span>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow" id="todate" type="text" name="totime" placeholder="End-time" data-time-picker="time"
+                    <input class="form-input input-box-shadow validate-text" id="totime" type="text" name="totime" placeholder="End-time" data-time-picker="time"
                       data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME %>
+                      </span>
                   </div>
                 </div>
                 <!-- END SCHEDULE MEETING -->
@@ -179,10 +193,11 @@
 
     <!-- include file for Script -->
     <% include _layouts/common-scripts %>
+      <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
-      <script src="/scripts/spaces/updateCospace.js"></script>
+      <!-- <script src="/scripts/spaces/updateCospace.js"></script> -->
       <script>
         $(document).ready(function () {
           $("#spacesList").addClass("active");
