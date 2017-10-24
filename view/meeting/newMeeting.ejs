@@ -32,53 +32,62 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <!-- RD Mailform-->
-              <form class="rd-mailform rd-mailform_style-1 text-center" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
                 <div class="form-wrap form-wrap_icon linear-icon-man margin-css title-wrap">
-                  <input class="form-input input-box-shadow " id="title" type="text" name="title" data-constraints="@Required">
+                  <input class="form-input input-box-shadow validate-text" id="title" type="text" name="title">
                   <label class="form-label" for="title"><%= translation.SCHEDULE_MEETING_TITLE %></label>
+                  <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TITLE %></span>
                 </div>
                 <div class="div1 margin-css">
                   <div class="form-wrap form-wrap_icon linear-icon-key-hole email-wrap">
-                    <input class="form-input input-box-shadow " id="contact-email" type="email" name="email" data-constraints="@Required">
+                    <input class="form-input input-box-shadow validate-text" id="contact-email" type="email" name="email">
                     <label class="form-label" for="contact-email"><%= translation.SCHEDULE_MEETING_EMAIL %></label>
+                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_EMAIl %></span>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon linear-icon-telephone telephone-wrap">
-                    <input class="form-input input-box-shadow " id="contact-phone" type="text" name="phone" data-constraints="@Required">
+                    <input class="form-input input-box-shadow validate-text" id="contact-phone" type="text" name="phone">
                     <label class="form-label" for="contact-phone"><%= translation.SCHEDULE_MEETING_PHONE %></label>
+                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_PHONE %></span>
                   </div>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
                       <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                      <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                      <input class="form-input input-box-shadow validate-text" id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_FROM_DATE %></span>
                   </div>&nbsp;&nbsp;	
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                       <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                      <input class="form-input input-box-shadow " id="fromdate" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                      <input class="form-input input-box-shadow validate-text" id="fromtime" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_FROM_TIME %></span>
                   </div>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow " id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                    <input class="form-input input-box-shadow validate-text" id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
+                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TO_DATE %></span>
                   </div>&nbsp;&nbsp;	
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow " id="todate" type="text" name="totime" placeholder="End-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                    <input class="form-input input-box-shadow validate-text" id="totime" type="text" name="totime" placeholder="End-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
+                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TO_TIME %></span>
                   </div>
                 </div>  
                 <div class="div2 margin-css">
                   <div class="form-wrap form-wrap_icon linear-icon-timer timezone-wrap">
-                    <input class="form-input input-box-shadow " id="timezone" type="text" name="timezone" data-constraints="@Required">
+                    <input class="form-input input-box-shadow validate-text" id="timezone" type="text" name="timezone">
                     <label class="form-label" for="timezone"><%= translation.SCHEDULE_MEETING_TIMEZONE %></label>
+                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TIME_ZONE %></span>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon linear-icon-group-work cospace-wrap">
-                    <input class="form-input input-box-shadow " id="cospace" type="text" name="cospace" data-constraints="@Required">
+                    <input class="form-input input-box-shadow validate-text" id="cospace" type="text" name="cospace">
                     <label class="form-label" for="cospace"><%= translation.SCHEDULE_MEETING_COSPACE %></label>
+                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_COSPACE %></span>
                   </div>
                 </div>  
                 <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow ">
-                  <select class="form-control on-hover-color " id="sel2">
+                  <select class="form-control on-hover-color" id="sel2">
                       <option value="" selected disabled><%= translation.SCHEDULE_MEETING_COSPACE_TYPE %></option>
                       <option><%= translation.SCHEDULE_MEETING_DEFAULT_TEMPLATE %></option>
                       <option><%= translation.SCHEDULE_MEETING_HIDDEN_ROOM %></option>      
@@ -88,18 +97,20 @@
                 </div>
                 <h5><%= translation.SCHEDULE_MEETING_MEMBER %></h5>
                 <div class="form-wrap form-wrap_icon linear-icon-users2">
-                  <input class="form-input input-box-shadow " id="participants" type="text" name="participants" data-constraints="@Required">
+                  <input class="form-input input-box-shadow validate-text" id="participants" type="text" name="participants">
                   <label class="form-label" for="participants"><%= translation.SCHEDULE_MEETING_PARTICIPANTS %></label>
+                  <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_PARTICIPANTS %></span>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-location">
-                  <input class="form-input input-box-shadow " id="pin" type="text" name="pin" data-constraints="@Required">
+                  <input class="form-input input-box-shadow validate-text" id="pin" type="text" name="pin">
                   <label class="form-label" for="pin"><%= translation.SCHEDULE_MEETING_PIN %></label>
+                  <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_PIN %></span>
                 </div> 
               </form>
               <br>
               <div class="header-div">
                 <a href="/meeting" class="button cancel-btn text-center"><%= translation.SCHEDULE_MEETING_CANCEL %></a>
-                <a href="/meeting" class="button button-primary done-btn"><%= translation.SCHEDULE_MEETING_DONE %></a>
+                <a href="#" class="button button-primary done-btn"><%= translation.SCHEDULE_MEETING_DONE %></a>
               </div>  
             </div>
           </div>
@@ -108,6 +119,8 @@
       </div>
          <!-- BEGIN script file links -->
     <% include _layouts/common-scripts %>
+    <script src="/scripts/meeting/meeting.js"></script>
+    <script src="/scripts/common/validation.js"></script>
     <script>
         $(document).ready(function(){
             $("#meetingList").addClass("active");

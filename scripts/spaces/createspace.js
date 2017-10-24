@@ -75,11 +75,13 @@ $(document).ready(function () {
             });
 
             if (resultItem.indexOf(false) < 0) {
+              
                 var reqData = {
                     "name": $('#contact-sName').val(),
                     "uri": $('#contact-create_space_URI').val(),
                     "passcode": $('#contact-sPasscode').val(),
                     "defaultLayout": $('#sel1').val(),
+
                 };
                 console.log(reqData);
                 httpPost(apiType.CREATE_COSPACE, reqData, function (resp, err) {
@@ -98,6 +100,7 @@ $(document).ready(function () {
                     }
                 });
             }
+
         }
     });
 

@@ -175,5 +175,22 @@
     "CREATE_SPACE_ERROR_TEXT_ENTER_URI":"Se requiere URI",
     "CREATE_SPACE_ERROR_TEXT_TYPE_MEMBER_NAME":"Tipo de nombre de miembro es obligatorio",
     "CREATE_SPACE_ERROR_TEXT_PASS_CODE":"El código de pase es obligatorio",
-    "CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES":"Se requiere dirección de espacio"
+    "CREATE_SPACE_ERROR_TEXT_SPACE_ADDRES":"Se requiere dirección de espacio",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_FROM_DATE":"A partir de la fecha es obligatorio",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME":"Se requiere tiempo",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE":"Hasta la fecha es obligatorio",
+    "CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME":"Se requiere tiempo",
+
+
+    "NEW_MEETING_ERROR_TEXT_TITLE": "Título es requerido",
+    "NEW_MEETING_ERROR_TEXT_EMAIl": "correo electronico es requerido",
+    "NEW_MEETING_ERROR_TEXT_PHONE": "Se requiere teléfono",
+    "NEW_MEETING_ERROR_TEXT_FROM_DATE": "A partir de la fecha es obligatorio",
+    "NEW_MEETING_ERROR_TEXT_FROM_TIME": "Se requiere tiempo",
+    "NEW_MEETING_ERROR_TEXT_TO_DATE": "Hasta la fecha es obligatorio",
+    "NEW_MEETING_ERROR_TEXT_TO_TIME": "Se requiere tiempo",
+    "NEW_MEETING_ERROR_TEXT_TIME_ZONE": "La zona horaria es obligatoria",
+    "NEW_MEETING_ERROR_TEXT_COSPACE": "Cospace es requerido",
+    "NEW_MEETING_ERROR_TEXT_PARTICIPANTS": "Los participantes son requeridos",
+    "NEW_MEETING_ERROR_TEXT_PIN": "PIN es requerido"
 }
