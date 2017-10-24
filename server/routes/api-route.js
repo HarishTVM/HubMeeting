@@ -27,11 +27,12 @@ app.get("/activitylist", (req, res)=>{
 app.get("/users", (req, res)=>{
   res.render("users", {year: new Date().getFullYear()});
 });
-
 app.get("/createspace",(req,res)=>{
  res.render("createspace", {year: new Date().getFullYear()});
 });
-
+app.get("/updatespace", (req, res)=>{
+  res.render("updatespace", {year: new Date().getFullYear()});
+});
 app.get("/settings",(req,res)=>{
   res.render("settings", {year: new Date().getFullYear()});
 });
@@ -53,8 +54,8 @@ app.get("/404page", (req, res)=>{
 app.get("/logs",(req,res)=>{
   res.render("logs", {year: new Date().getFullYear()});
 });
-
 app.get("/spacelist", (req, res)=>{
   res.render("spacelist", {year: new Date().getFullYear()});
 });
+
 module.exports = app;

@@ -126,6 +126,12 @@ $(document).ready(function () {
     });
     // END SEARCH FILTER
 
+    // BEGIN EDIT BUTTON IN SPACELIST MODAL LOGIC
+        $("#modalEditBtn").click(function(){
+            window.location.href = "/updatecospace"
+        });
+    // END EDIT BUTTON IN SPACELIST MODAL LOGIC
+
     //BEGIN MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
         $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function(){
             debugger;
