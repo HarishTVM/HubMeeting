@@ -19,27 +19,53 @@
                  {{/if}}
               </h6></div>
           <div  class="col-md-12 col-sm-12 col-xs-12 col-lg-2 padding-left-right-none card-m-right" >
-              <h6 class="linear-icon-radio-button card-icon-size"></h6> </div>
+              <h6 class="linear-icon-radio-button card-icon-size-status"></h6> </div>
           <!-- BEGIN card one user details for Spaces -->
      
         </div>
        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
-         
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-1 padding-left-right-none">
-              <i class="linear-icon-calendar-31 card-text-f-size "></i>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-11 padding-left-right-none ">
-              <h6 class="cursor-default card-mardin-top h6-title card-text-spacing text-overflow-title card-text-p-left">{{meeting.startDate}} <p class="card-text-f-size linear-icon-clock3"/><p class="card-text-p-left">{{meeting.startTime}}</p></h6>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
-              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-1 padding-left-right-none">
-                <i class="linear-icon-users2 card-text-f-size"></i>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-11 padding-left-right-none ">
-                  <h6 class="cursor-default card-mardin-top h6-title card-text-spacing text-overflow-title card-text-p-left">{{meeting.totalMembers}} <p>MeetingTypes </p><p class="card-text-p-left">{{meeting.startTime}}</p></h6>
+          <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none ">
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-3 padding-left-right-none">
+                  <i class="linear-icon-calendar-31 card-text-f-size "></i>
                 </div>
-            </div> 
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-9 padding-left-right-none ">
+                  <h6 class="cursor-default card-mardin-top h6-title text-overflow-title "> {{meeting.startDate}}</h6>
+                </div>
+        
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none ">
+              <div class="col-md-6 col-sm-6 col-xs-6 col-lg-3 padding-left-right-none">
+                  <i class="card-text-f-size linear-icon-clock3"></i>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-9 padding-left-right-none ">
+                  <h6 class="cursor-default card-mardin-top h6-title text-overflow-title ">{{meeting.startTime}}</h6>
+                </div>
+                 
+          </div>
+           
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
+              <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none ">
+                  <div class="col-md-6 col-sm-6 col-xs-6 col-lg-3 padding-left-right-none">
+                      <i class="linear-icon-users2 card-text-f-size "></i>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-9 padding-left-right-none ">
+                      <h6 class="cursor-default card-mardin-top h6-title text-overflow-title "> {{meeting.totalMembers}}</h6>
+                    </div>
+            
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none ">
+                  <div class="col-md-6 col-sm-6 col-xs-6 col-lg-3 padding-left-right-none">
+                      <i class="card-text-f-size linear-icon-border-all "></i>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-9 padding-left-right-none " data-toggle=" " title="{{meeting.defaultLayout}}">
+                      <h6 class="cursor-default card-mardin-top h6-title text-overflow-title ">{{meeting.defaultLayout}}</h6>
+                    </div>
+                     
+              </div>
+               
+              </div>
+       
         <!-- <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
             <div class="col-md-6 col-sm-6  col-xs-6 col-lg-1 padding-left-right-none">
               <i class="linear-icon-calendar-31"></i>
@@ -75,14 +101,14 @@
       <!-- BEGIN card mouseover show icon for Spaces-->
       <div id="infoDelteBtnsParent" class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
         <div id="icon-list" class="thumb-corporate__overlay text-center sl-card-mardin-top">
-          <ul class="list-inline-sm">
-            <li id="spacelistInfoBtn">
+          <ul class="list-inline-sm info-p-left-right">
+            <li id="spacelistInfoBtn ">
               <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm" data-toggle="modal"
                 data-target="#myModal" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>">
                 <i class="linear-icon-reading"></i>
               </p>
             </li>
-            <li>
+            <li class="">
               <p id="deleteBtn" class="btn btn-circle thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm" data-toggle="tooltip"
                 data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>">
                 <i class="linear-icon-trash2"></i>

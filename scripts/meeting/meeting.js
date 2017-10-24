@@ -9,3 +9,4 @@ getMeeting = function () {
         $('#meeting-card').html(meetingTemplate(response.data));
     });
 }
+

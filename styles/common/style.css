@@ -69,6 +69,7 @@ html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+
 /*========================================================================================
                     =          BEGIN Card for Users               =
 ==========================================================================================*/
@@ -137,9 +138,8 @@ a.page-link {
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
   border-radius: .375rem;
 }
-.modal-box-shadow:hover{
-  box-shadow: 0px 0px 0px 0 rgba(46,61,73,.2);
-  background: linear-gradient(to right, #FFF, #f6f6f6);
+.modal-m-top-card{
+  top:35px;
 }
 .modal-scrollbar{
   overflow-x: auto;
@@ -165,7 +165,7 @@ a.page-link {
 
 .modal-padding{ padding:30px; }
 .toolbar-bg{
-  background: #f5f5f5;
+  background: #ffffff;
   border-top:1px solid #c2c2c2 !important;
   border-bottom:1px solid #c2c2c2 !important;
 }
@@ -308,16 +308,17 @@ a.page-link {
 
 
 .btn-circle{
- width: 35px;
- height: 35px;
+ width: 30px;
+ height: 30px;
  position: relative;
  top: 10%;
  margin: auto;
  text-align: center;
  padding: 6px 0;
- font-size: 12px;
+ font-size: 17px !important;
  border-radius: 17px;
 }
+
 
 .h-logo-image{width: 15%;}
 .h6-title{
@@ -410,12 +411,12 @@ background:#FFFFFF !important;
 /*/////////////////////////////////// BEGIN zoomindiv for Styles ////////////////////////////////////// */
 
 .h-icon-info-sm{
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   padding: 6px 0px;
   border-radius: 50px;
   text-align: center;
-  font-size: 12px;
+  font-size: 17px !important;
   color: #23d7b2;
   background-color: #fff;
   line-height: 1.42857;
@@ -657,7 +658,7 @@ border-color: #23d7b2;
     bottom: -20%;
 }*/
 @media (min-width: 1000px) and (max-width: 1500px){
-  .sl-card-mardin-top{margin-top:11%;}
+  .sl-card-mardin-top{margin-top:6%;}
   .h-i-m-top { margin-top: 2% }
   .us-icon-margin-top{ margin-top: -2%;}
 }
@@ -2256,8 +2257,8 @@ textarea.form-input {
 .list-inline-sm > * {
   position: relative;
   margin-top: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 .list-inline-sm > * {

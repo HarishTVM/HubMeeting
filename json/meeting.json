@@ -8,95 +8,95 @@
                     "name": "Administrator",
                     "startDate": "27/10/2017",
                     "endDate": "27/10/2017",
-                    "startTime": "10.30",
+                    "startTime": "10.30 Am",
                     "endTime": "12.30",
                     "totalMembers": "5",
-                    "uri": "Administrator",
-                    "defaultLayout": "Administrator@inflexion.com"
+                    "uri": "uri.Administrator",
+                    "defaultLayout": "SpeakerOnly"
                 }
             },
             {
                 "meeting": {
-                    "name": "Administrator",
-                    "uri": "",
-                    "defaultLayout": "Administrator@inflexion.com",
-                    "startDate": "27/10/2017",
-                    "endDate": "27/10/2017",
-                    "startTime": "10.30",
+                    "name": "Harish",
+                    "uri": "uri.sample",
+                    "defaultLayout": "AllEqual",
+                    "startDate": "28/10/2017",
+                    "endDate": "28/10/2017",
+                    "startTime": "11.30 Am",
                     "endTime": "12.30",
-                    "totalMembers": "5"
+                    "totalMembers": "1"
                 }
             },
             {
                 "meeting": {
-                    "name": "Administrator",
-                    "uri": "",
-                    "defaultLayout": "Administrator@inflexion.com",
-                    "startDate": "27/10/2017",
-                    "endDate": "27/10/2017",
-                    "startTime": "10.30",
-                    "endTime": "12.30",
-                    "totalMembers": "5"
+                    "name": "Sreeharsha",
+                    "uri": "SreeharshaSample.uri",
+                    "defaultLayout": "AllEqualQuarters",
+                    "startDate": "29/10/2017",
+                    "endDate": "29/10/2017",
+                    "startTime": "1.30 pm",
+                    "endTime": "2.30",
+                    "totalMembers": "10"
                 }
             },
             {
                 "meeting": {
-                    "name": "Administrator",
-                    "uri": "",
-                    "defaultLayout": "Administrator@inflexion.com",
-                    "startDate": "27/10/2017",
-                    "endDate": "27/10/2017",
-                    "startTime": "10.30",
+                    "name": "Naveen",
+                    "uri": "naveen.Sample",
+                    "defaultLayout": "AllEqualNinths",
+                    "startDate": "30/10/2017",
+                    "endDate": "30/10/2017",
+                    "startTime": "10.30 Am",
                     "endTime": "12.30",
-                    "totalMembers": "5"
+                    "totalMembers": "15"
                 }
             },
             {
                 "meeting": {
-                    "name": "Administrator",
-                    "uri": "",
-                    "defaultLayout": "Administrator@inflexion.com",
-                    "startDate": "27/10/2017",
-                    "endDate": "27/10/2017",
-                    "startTime": "10.30",
+                    "name": "Satish",
+                    "uri": "uri.SatishSapmle",
+                    "defaultLayout": "AllEqualSixteenths",
+                    "startDate": "30/10/2017",
+                    "endDate": "30/10/2017",
+                    "startTime": "11.30 Pm",
                     "endTime": "12.30",
-                    "totalMembers": "5"
+                    "totalMembers": "11"
                 }
             },
             {
                 "meeting": {
-                    "name": "Administrator",
-                    "uri": "",
-                    "defaultLayout": "Administrator@inflexion.com",
-                    "startDate": "27/10/2017",
-                    "endDate": "27/10/2017",
-                    "startTime": "10.30",
+                    "name": "Ravi",
+                    "uri": "Ravi.uri",
+                    "defaultLayout": "AllEqualTwentyFifths",
+                    "startDate": "1/11/2017",
+                    "endDate": "1/11/2017",
+                    "startTime": "10.30 Pm",
                     "endTime": "12.30",
-                    "totalMembers": "5"
+                    "totalMembers": "18"
                 }
             },
             {
                 "meeting": {
-                    "name": "",
-                    "uri": "",
-                    "defaultLayout": "Administrator@inflexion.com",
-                    "startDate": "27/10/2017",
-                    "endDate": "27/10/2017",
-                    "startTime": "10.30",
+                    "name": "Ganesh",
+                    "uri": "Ganesh.uri",
+                    "defaultLayout": "Speaker large",
+                    "startDate": "2/11/2017",
+                    "endDate": "2/11/2017",
+                    "startTime": "11.30 Pm",
                     "endTime": "12.30",
-                    "totalMembers": "5"
+                    "totalMembers": "20"
                 }
             },
             {
                 "meeting": {
-                    "name": "",
-                    "uri": "",
-                    "defaultLayout": "Administrator@inflexion.com",
-                    "startDate": "27/10/2017",
-                    "endDate": "27/10/2017",
-                    "startTime": "10.30",
+                    "name": "Prakash M",
+                    "uri": "MJ.Sample",
+                    "defaultLayout": "Speaker large",
+                    "startDate": "2/11/2017",
+                    "endDate": "2/11/2017",
+                    "startTime": "10.30 Pm",
                     "endTime": "12.30",
-                    "totalMembers": "5"
+                    "totalMembers": "17"
                 }
             }
         ]
