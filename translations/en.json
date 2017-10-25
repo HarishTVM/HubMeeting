@@ -114,7 +114,11 @@
     "SCHEDULE_MEETING_MEMBER": "Member",
     "SCHEDULE_MEETING_PARTICIPANTS": "Participants",
     "SCHEDULE_MEETING_PIN": "PIN",
-
+    "SCHEDULE_MEETING_SUB_HEAD": "Schedule Meeting",
+    "SCHEDULE_MEETING_SUB_HEAD_MEMBERS": "Members",
+    "SCHEDULE_MEETING_MEETING_TYPE": "Meeting type",
+    "SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME": "One time",
+    "SCHEDULE_MEETING_MEETING_TYPE_PERSONAL": "Personal",
 
     "HUB_FOOTER": "Inflexion Technology Solutions",
 
@@ -190,6 +194,10 @@
     "NEW_MEETING_ERROR_TEXT_TIME_ZONE": "Time-zone is required",
     "NEW_MEETING_ERROR_TEXT_COSPACE": "Cospace is required",
     "NEW_MEETING_ERROR_TEXT_PARTICIPANTS": "Participants are required",
-    "NEW_MEETING_ERROR_TEXT_PIN": "Pin is required"
+    "NEW_MEETING_ERROR_TEXT_PIN": "Pin is required",
+
+    "UPDATE_SPACE_HEADING": "CMS HUB Update Space",
+    "UPDATE_SPACE_BREADCRUMB": "Update Space",
+    "UPDATE_SPACE_FORM_HEADING": "Update Space"
 
 }

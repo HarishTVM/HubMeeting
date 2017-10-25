@@ -1,8 +1,22 @@
 $(document).ready(function () {
 
+    //BEGIN DETERMINE THE PATHNAME
+        if(window.location.pathname == "/createspace"){
+            $(".meeting-head-bread").html("CMS Hub Create Space");
+            $("#updatespace-breadcrumb").html("Create Space");
+            $("#createSpace").html("Create Space");
+        }
+        else if(window.location.pathname == "/updatespace"){
+            $(".meeting-head-bread").html("CMS Hub Update Space");
+            $("#updatespace-breadcrumb").html("Update Space");
+            $("#createSpace").html("Update Space");
+        }
+    //END DETERMINE THE PATHNAME
+
+    var isKeyEntered = false;
     $('#createSpace').show();
     $('#updateSpace').hide();
-    
+
     var filterArray = []; //ARRAY TO HOLD SCHEDULE MEETING MEMBERS
 
     //BEGIN Add Member and DELETE MEMBER Logic
@@ -20,7 +34,7 @@ $(document).ready(function () {
         $('#memberParentDiv').append(member);
     });
 
-    $("#deleteMember").live('click', function(){
+    $("#deleteMember").live('click', function () {
         debugger;
         $(this).parent().remove();
     });
@@ -35,21 +49,22 @@ $(document).ready(function () {
     //END Mirror populate input value logic
 
     // BEGIN GET USERS
-    $('#searchMember').on('click', function () {
+    $('#searchMember').live('click', function() {
         debugger;
         var filterData = $(this).siblings("#addMembers").val();
         httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {
             var totalUsers = resp.data.total;
-                filterArray.push(filterData);   
-                filterData = undefined;
-                // console.log(userData.length);
-                var memberHandlebar = $('#memberAdd').html();
-                var templateHandlebar = Handlebars.compile(memberHandlebar);
-                $('#memberAddDiv').html(templateHandlebar(resp.data));
+            // filterArray.push(filterData);   
+            // filterData = undefined;
+            // console.log(userData.length);
+            var memberHandlebar = $('#memberAdd').html();
+            var templateHandlebar = Handlebars.compile(memberHandlebar);
+            $('#memberAddDiv').html(templateHandlebar(resp.data));
         });
+
     });
     // END GET USERS
-    
+
 
     $('#btndone').click(function () {
         if ($('form').hasClass('validate-form')) {
@@ -59,7 +74,7 @@ $(document).ready(function () {
             });
 
             if (resultItem.indexOf(false) < 0) {
-              
+
                 var reqData = {
                     "name": $('#contact-sName').val(),
                     "uri": $('#contact-create_space_URI').val(),
@@ -89,6 +104,6 @@ $(document).ready(function () {
     });
 
     // BEGIN MODAL CLOSE LOGIC
-        $("#myModal").modal({show: false, backdrop: 'static', keyboard: false})
+    $("#myModal").modal({ show: false, backdrop: 'static', keyboard: false })
     // END MODAL CLOSE LOGIC
 });

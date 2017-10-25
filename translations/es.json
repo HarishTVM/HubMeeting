@@ -115,6 +115,11 @@
     "SCHEDULE_MEETING_MEMBER": "Miembro",
     "SCHEDULE_MEETING_PARTICIPANTS": "Participantes",
     "SCHEDULE_MEETING_PIN": "ALFILER",
+    "SCHEDULE_MEETING_SUB_HEAD": "Programar una reunión",
+    "SCHEDULE_MEETING_SUB_HEAD_MEMBERS": "Miembros",
+    "SCHEDULE_MEETING_MEETING_TYPE": "Tipo de reunión",
+    "SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME": "Una vez",
+    "SCHEDULE_MEETING_MEETING_TYPE_PERSONAL": "Personal",
 
     "HUB_FOOTER": "Inflexion Technology Solutions",
 
@@ -192,5 +197,9 @@
     "NEW_MEETING_ERROR_TEXT_TIME_ZONE": "La zona horaria es obligatoria",
     "NEW_MEETING_ERROR_TEXT_COSPACE": "Cospace es requerido",
     "NEW_MEETING_ERROR_TEXT_PARTICIPANTS": "Los participantes son requeridos",
-    "NEW_MEETING_ERROR_TEXT_PIN": "PIN es requerido"
+    "NEW_MEETING_ERROR_TEXT_PIN": "PIN es requerido",
+
+    "UPDATE_SPACE_HEADING": "Espacio de actualización CMS HUB",
+    "UPDATE_SPACE_BREADCRUMB": "Actualizar espacio",
+    "UPDATE_SPACE_FORM_HEADING": "Actualizar espacio"
 }

@@ -56,8 +56,11 @@
 datalist {
 	display: none;
 }
+
 /* specifically hide the arrow on focus */
-input::-webkit-calendar-picker-indicator {
+
+/* input::-webkit-calendar-picker-indicator {
 	display: none;
-}
+} */
+
 /*/////////////////////////////////// END CreateSpace for Styles ////////////////////////////////////// */
