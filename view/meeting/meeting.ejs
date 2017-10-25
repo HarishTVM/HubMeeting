@@ -53,9 +53,11 @@
           </div>
           <!-- handlebars -->
           <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-            <div class="all-card-margin-top" id="meeting-card"></div>
+            <div class="all-card-margin-top" id="meeting-card">
+             
+            </div>
           </div>
-         
+
           <!-- include file for card-->
 
           <% include _layouts/cards/meeting-card %>
@@ -68,7 +70,9 @@
           </div>
         </div>
 
-
+        <!-- createMeeting -->
+        <a href="/newMeeting" data-toggle="tooltip" data-placement="bottom" title="" class="button button-primary  linear-icon-plus newmeeting-btn-circle"
+          data-original-title="<%= translation.SCHEDULE_MEETING_BREADCRUMB_NEW_MEETING %>"></a>
         <!-- End Users Pages-->
       </section>
     </div>

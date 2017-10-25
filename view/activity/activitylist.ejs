@@ -24,11 +24,11 @@
 				</div>
 			</div>
 			<!-- BEGIN Current Activities toolbar-->
-			
+
 			<div class="container-fluid breadcrumb-container">
 				<ol class="breadcrumb">
 					<h5 class="meeting-head-bread  t-c-default-toolbar">
-						<%= translation.HUB_ACTIVITY_TOOLBAR_CURRENT_ACTIVITIES %>
+						Activity
 					</h5>
 					<li>
 						<a href="/dashboard" class="breadcrumb-links">
@@ -36,52 +36,68 @@
 						</a>
 					</li>
 					<li>
-						<%= translation.HUB_ACTIVITY_TOOLBAR_ACTIVITIES %>
+						Activity
 					</li>
 				</ol>
 			</div>
 			<!-- END Current Activities toolbar-->
 
 			<section>
-				<div class="shell">
-
-					<!-- END Activities search head -->
-
-					<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
-						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-							<div id="activity-card"></div>
-						</div>
+				<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  toolbar-bg padding-left-right-none">
+					<div class="container-fluid breadcrumb-container">
+						<ol class="toolbar-padding" style="text-align: left">
+							<h5 class="text-color-default ">
+								Activities Meeting
+							</h5>
+						</ol>
 					</div>
-					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
-						<% include _layouts/cards/activitylist-card %>
-							<% include _layouts/modals/activitylist-modal %>
-					</div>
-
-					<!-- BEGIN Current Activities -->
-
-					<!-- END Current Activities -->
-
 				</div>
+				<!-- END Activities search head -->
+
+				<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+						<div id="activity-card">
+
+							<a href="#" id="ui-to-top" class="ui-to-top active"></a>
+						</div>
+					
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+					<% include _layouts/cards/activitylist-card %>
+						<% include _layouts/modals/activitylist-modal %>
+				</div>
+
+				<!-- BEGIN Current Activities -->
+
+				<!-- END Current Activities -->
+
 				<!-- BEGIN Recent Activities Toolbar -->
-				<div class="container-fluid breadcrumb-container">
-					<ol class="breadcrumb" style="text-align: left">
-						<h5 class=" t-c-default-toolbar">
-							<%= translation.HUB_ACTIVITY_TOOLBAR_RECENT_ACTIVITIES %>
-						</h5>
-					</ol>
+				<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  toolbar-bg padding-left-right-none">
+					<div class="container-fluid breadcrumb-container">
+						<ol class="toolbar-padding" style="text-align: left">
+							<h5 class="text-color-default ">
+								Recent Meeting
+							</h5>
+						</ol>
+					</div>
 				</div>
 				<!-- END Recent Activities Toolbar -->
 				<!-- BEGIN Recent Activities -->
-				<div class="shell">
-					<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
-						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-							<div id="recent-meeting-card"></div>
+
+				<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+						<div id="recent-meeting-card">
+							
 						</div>
+					
 					</div>
-					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
-						<% include _layouts/cards/recent-meeting-card %>
-					</div>
+					
 				</div>
+				<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+					<% include _layouts/cards/recent-meeting-card %>
+				</div>
+
 				<!-- END Recent Activities -->
 
 
@@ -104,6 +120,8 @@
 				</script>
 		</div>
 		<%include _layouts/footer %>
+
+		
 </body>
 
 </html>
