@@ -1,0 +1,68 @@
+{
+    "code": "OK",
+    "data": {
+        "total": "40",
+        "meetings": [
+            {
+                "meeting": {
+                    "name": "RouteJoot Team",
+                    "uri": "RouteJoot.Sample",
+                    "defaultLayout": "AllEqualNinths",
+                    "startDate": "30/10/2017",
+                    "endDate": "30/10/2017",
+                    "startTime": "10.30 Am",
+                    "endTime": "12.30",
+                    "totalMembers": "15",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "Meeting Expired",
+                    "meetingStatusColor": "#ff4d4d"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "MyWired Team",
+                    "uri": "uri.AnbuSapmle",
+                    "defaultLayout": "AllEqualSixteenths",
+                    "startDate": "30/10/2017",
+                    "endDate": "30/10/2017",
+                    "startTime": "11.30 Pm",
+                    "endTime": "12.30",
+                    "totalMembers": "11",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "Meeting Completed",
+                    "meetingStatusColor": "#74a9d8"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "MyWired Client",
+                    "uri": "Client.uri",
+                    "defaultLayout": "Speaker large",
+                    "startDate": "2/11/2017",
+                    "endDate": "2/11/2017",
+                    "startTime": "11.30 Pm",
+                    "endTime": "12.30",
+                    "totalMembers": "20",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "Meeting Expired",
+                    "meetingStatusColor": "#ff4d4d"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "NextHoles Client",
+                    "uri": "uri.NextHolesSample",
+                    "defaultLayout": "AllEqual",
+                    "startDate": "28/10/2017",
+                    "endDate": "28/10/2017",
+                    "startTime": "11.30 Am",
+                    "endTime": "12.30",
+                    "totalMembers": "1",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "Meeting Completed",
+                    "meetingStatusColor": "#74a9d8"
+                }
+            }
+        ]
+    }
+}
