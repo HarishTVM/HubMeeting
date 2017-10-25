@@ -308,15 +308,15 @@ a.page-link {
 
 
 .btn-circle{
- width: 30px;
- height: 30px;
+ width: 29px;
+ height: 29px;
  position: relative;
  top: 10%;
  margin: auto;
  text-align: center;
- padding: 6px 0;
- font-size: 17px !important;
- border-radius: 17px;
+ padding: 5px 0;
+ font-size: 16px !important;
+ border-radius: 50px;
 }
 
 
@@ -405,6 +405,7 @@ a.page-link {
 .bg-white-modal{
 background:#FFFFFF !important;
 }
+.t-color-default-meeting{color:#888}
 /*/////////////////////////////////// End Card for Styles ////////////////////////////////////// */
 
 
@@ -446,13 +447,14 @@ border-color: #23d7b2;
    border-color: #23d7b2;
 }
 .h-icon-color-sm-delete{
-  color: red !important;
-  background-color: #FFFFFF ;
-  border-color: #FF0000;
+  color: rgb(255, 0, 0) !important;
+  background-color: rgba(255, 255, 255, 0.589) ;
+  border-color: red;
 }
 .h-icon-color-sm-delete:hover{
-  color: red !important;
-  border-color: #FF0000;
+  color: rgba(255, 255, 255, 0.993) !important;
+  border-color: rgba(255, 0, 0, 0.589);
+  background-color:rgb(255, 8, 8);
 }
 .h-icon-star-color{ color: #23d7b2; }
 .h-icon-star-color:hover{ color: #000; }
@@ -658,7 +660,7 @@ border-color: #23d7b2;
     bottom: -20%;
 }*/
 @media (min-width: 1000px) and (max-width: 1500px){
-  .sl-card-mardin-top{margin-top:6%;}
+  .sl-card-mardin-top{margin-top:16%;}
   .h-i-m-top { margin-top: 2% }
   .us-icon-margin-top{ margin-top: -2%;}
 }

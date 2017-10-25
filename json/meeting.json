@@ -5,98 +5,126 @@
         "meetings": [
             {
                 "meeting": {
-                    "name": "Administrator",
+                    "name": "CMS Dept Team",
                     "startDate": "27/10/2017",
                     "endDate": "27/10/2017",
                     "startTime": "10.30 Am",
                     "endTime": "12.30",
                     "totalMembers": "5",
-                    "uri": "uri.Administrator",
-                    "defaultLayout": "SpeakerOnly"
+                    "uri": "uri.CMS",
+                    "defaultLayout": "SpeakerOnly",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor":"#4dffa6"
+              
                 }
             },
             {
                 "meeting": {
-                    "name": "Harish",
-                    "uri": "uri.sample",
-                    "defaultLayout": "AllEqual",
-                    "startDate": "28/10/2017",
-                    "endDate": "28/10/2017",
-                    "startTime": "11.30 Am",
-                    "endTime": "12.30",
-                    "totalMembers": "1"
-                }
-            },
-            {
-                "meeting": {
-                    "name": "Sreeharsha",
-                    "uri": "SreeharshaSample.uri",
-                    "defaultLayout": "AllEqualQuarters",
-                    "startDate": "29/10/2017",
-                    "endDate": "29/10/2017",
-                    "startTime": "1.30 pm",
-                    "endTime": "2.30",
-                    "totalMembers": "10"
-                }
-            },
-            {
-                "meeting": {
-                    "name": "Naveen",
-                    "uri": "naveen.Sample",
-                    "defaultLayout": "AllEqualNinths",
-                    "startDate": "30/10/2017",
-                    "endDate": "30/10/2017",
-                    "startTime": "10.30 Am",
-                    "endTime": "12.30",
-                    "totalMembers": "15"
-                }
-            },
-            {
-                "meeting": {
-                    "name": "Satish",
-                    "uri": "uri.SatishSapmle",
-                    "defaultLayout": "AllEqualSixteenths",
-                    "startDate": "30/10/2017",
-                    "endDate": "30/10/2017",
-                    "startTime": "11.30 Pm",
-                    "endTime": "12.30",
-                    "totalMembers": "11"
-                }
-            },
-            {
-                "meeting": {
-                    "name": "Ravi",
-                    "uri": "Ravi.uri",
+                    "name": "Network Dept Team",
+                    "uri": "Network.uri",
                     "defaultLayout": "AllEqualTwentyFifths",
                     "startDate": "1/11/2017",
                     "endDate": "1/11/2017",
                     "startTime": "10.30 Pm",
                     "endTime": "12.30",
-                    "totalMembers": "18"
+                    "totalMembers": "18",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "Meeting Completed",
+                    "meetingStatusColor":"#74a9d8"
+                }
+            },
+       
+            {
+                "meeting": {
+                    "name": "Proxy Team",
+                    "uri": "Proxy.uri",
+                    "defaultLayout": "AllEqualQuarters",
+                    "startDate": "29/10/2017",
+                    "endDate": "29/10/2017",
+                    "startTime": "1.30 pm",
+                    "endTime": "2.30",
+                    "totalMembers": "10",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "Meeting to be Start",
+                    "meetingStatusColor":"#ffff4d"
+                    
                 }
             },
             {
                 "meeting": {
-                    "name": "Ganesh",
-                    "uri": "Ganesh.uri",
+                    "name": "RouteJoot Team",
+                    "uri": "RouteJoot.Sample",
+                    "defaultLayout": "AllEqualNinths",
+                    "startDate": "30/10/2017",
+                    "endDate": "30/10/2017",
+                    "startTime": "10.30 Am",
+                    "endTime": "12.30",
+                    "totalMembers": "15",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "Meeting Expired",
+                    "meetingStatusColor":"#ff4d4d"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "MyWired Team",
+                    "uri": "uri.AnbuSapmle",
+                    "defaultLayout": "AllEqualSixteenths",
+                    "startDate": "30/10/2017",
+                    "endDate": "30/10/2017",
+                    "startTime": "11.30 Pm",
+                    "endTime": "12.30",
+                    "totalMembers": "11",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor":"#4dffa6"
+                }
+            },
+        
+            {
+                "meeting": {
+                    "name": "MyWired Client",
+                    "uri": "Client.uri",
                     "defaultLayout": "Speaker large",
                     "startDate": "2/11/2017",
                     "endDate": "2/11/2017",
                     "startTime": "11.30 Pm",
                     "endTime": "12.30",
-                    "totalMembers": "20"
+                    "totalMembers": "20",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "Meeting to be Start",
+                    "meetingStatusColor":"#ffff4d"
                 }
             },
             {
                 "meeting": {
-                    "name": "Prakash M",
-                    "uri": "MJ.Sample",
+                    "name": "NextHoles Client",
+                    "uri": "uri.NextHolesSample",
+                    "defaultLayout": "AllEqual",
+                    "startDate": "28/10/2017",
+                    "endDate": "28/10/2017",
+                    "startTime": "11.30 Am",
+                    "endTime": "12.30",
+                    "totalMembers": "1",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "Meeting Completed",
+                    "meetingStatusColor":"#74a9d8"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "RouteJoot Client",
+                    "uri": "RouteJoot.Sample",
                     "defaultLayout": "Speaker large",
                     "startDate": "2/11/2017",
                     "endDate": "2/11/2017",
                     "startTime": "10.30 Pm",
                     "endTime": "12.30",
-                    "totalMembers": "17"
+                    "totalMembers": "17",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "Meeting to be Start",
+                    "meetingStatusColor":"#ffff4d"
                 }
             }
         ]

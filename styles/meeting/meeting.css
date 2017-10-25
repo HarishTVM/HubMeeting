@@ -16,8 +16,7 @@
   background: #e0e0e2;
   opacity: 0.8;
 }
-
-
+.all-card-margin-top{margin-top: 5%;}
 
 /*/////////////////////////////////// BEGIN Meeting for Styles ////////////////////////////////////// */
 
@@ -27,15 +26,21 @@
   position: absolute  !important;
   bottom: 10px;
 }
-.card-text-spacing{ word-spacing: 16px;}
+.meeting-div{height: 23px !important;}
+.card-text-spacing{ word-spacing: 11px;}
 .card-text-f-size{
 font-size: medium;
 font-weight: 400;
 font-size: 23px;
+margin-top: -6px;
+color: #9c27b0;
 }
-.card-mardin-top{margin-top:14%;}
 .card-text-spacing-time{ word-spacing: 7px;}
-.card-m-top{ margin-top: 12px; }
+.card-m-top{ margin-top: 8px; }
 .card-m-right{text-align: right; }
 .card-icon-size-status{font-size: 19px !important;}
+.card-texe-type-left{
+  left: 11px;
+  position: absolute;
+}
 /*/////////////////////////////////// End Card Meeting for Styles ////////////////////////////////////// */
