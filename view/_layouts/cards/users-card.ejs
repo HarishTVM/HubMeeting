@@ -2,7 +2,7 @@
 
 <script id="users-cardID" type="text/x-handlebars-template">
     {{#each users}}
- 
+  
 <div class="col-sm-6 col-md-4 col-xs-12 col-lg-3 ">
         <div class="us-card-loading div-loaders-users">
                 <div class="cssload-container">
@@ -11,11 +11,14 @@
               </div>
     <div class="div-top thumb-corporate bg-white h-box-shadow h-div-border s-height">
         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
+               
             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 card-width-name padding-left-right-none">
                 <div class="us-name-circle">
-                    <i class="card-icon-size linear-icon-man"></i>
+                        <i class="card-icon-size linear-icon-man"  style="color:{{ colors.iconColor}};"></i>
+                        
                 </div>
             </div>
+           
             <div data-toggle=" " title="{{user.userJid}}" class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 padding-left-right-none card-width-title us-title-color text-overflow-title h6-title-medium us-card-title-mardin-top cursor-default">
                     {{#if user.userJid}}
                     {{user.userJid}}
@@ -53,7 +56,7 @@
         </div>
 
         <!-- BEGIN card mouseover show icon for Spaces-->
-        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none us-icon-margin-top">
+        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
             <div id="icon-list" class="thumb-corporate__overlay text-center ">
                 <ul class="list-inline-sm">
                     <li data-toggle="modal" data-target="#usersModal">
@@ -68,6 +71,7 @@
         <!-- END card one mouseover show for Spaces-->
     </div>
 </div>
+
 {{/each}}
 </script>
 <!-- END Page card -->

@@ -1,104 +1,123 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-	<head>
+
+<head>
 	<!-- Site Title-->
-	<title><%= translation.HUB_ACTIVITY_TITLE %></title>
+	<title>
+		<%= translation.HUB_ACTIVITY_TITLE %>
+	</title>
 	<!-- Site logo images-->
-	<link href="/images/logo.png" rel="icon" type="image/x-icon"/>
+	<link href="/images/logo.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="/styles/meeting/meeting.css">
 	<!--Stylesheets file links -->
 	<% include _layouts/common-header %>
 </head>
+
 <body class="h-background-color">
 	<!--BEGIN Page activitylist -->
 	<% include _layouts/header-with-navigation %>
-	<div class="page">
-		<!-- page loader -->
-		<div id="page-loader">
-			<div class="cssload-container">
-				<div class="cssload-speeding-wheel"></div>
+		<div class="page">
+			<!-- page loader -->
+			<div id="page-loader">
+				<div class="cssload-container">
+					<div class="cssload-speeding-wheel"></div>
+				</div>
 			</div>
-		</div>
-		<!-- BEGIN Current Activities toolbar-->
-		<div class="container-fluid breadcrumb-container">
-			<ol class="breadcrumb">
-				<h5 class="meeting-head-bread"><%= translation.HUB_ACTIVITY_TOOLBAR_CURRENT_ACTIVITIES %></h5>
-				<li><a href="/dashboard" class="breadcrumb-links"><%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %> </a></li>
-				<li><%= translation.HUB_ACTIVITY_TOOLBAR_ACTIVITIES %></li>
-			</ol>
-		</div>
-		<!-- END Current Activities toolbar-->
+			<!-- BEGIN Current Activities toolbar-->
+			<div class="container-fluid breadcrumb-container">
+				<ol class="breadcrumb">
+					<h5 class="meeting-head-bread  t-c-default-toolbar">
+						<%= translation.HUB_ACTIVITY_TOOLBAR_CURRENT_ACTIVITIES %>
+					</h5>
+					<li>
+						<a href="/dashboard" class="breadcrumb-links">
+							<%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %>
+						</a>
+					</li>
+					<li>
+						<%= translation.HUB_ACTIVITY_TOOLBAR_ACTIVITIES %>
+					</li>
+				</ol>
+			</div>
+			<!-- END Current Activities toolbar-->
 
-		<section>
-			<div class="shell">
-				<!-- BEGIN Activities search head -->
-				<div class="range range-5 h-m-top-none">
-					<div class="searchBtn-pagination-container ">
-						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
-							<!-- BEGIN Activities Search  -->
-							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-8">
-								<!-- Search input field -->
-								<div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h search-margin-top">
-									<input class="form-input search-input input-box-shadow " type="text" name="search" placeholder="<%= translation.HUB_ACTIVITY_SEARCH_PLACEHOLDER %>">
-								</div>
-							</div>
-							<!-- END Activities Search  -->
-							<!-- Pagination next head -->
-							<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-4">
-								<%include _layouts/pagination/pagination-head %>
-							</div>
+			<section>
+				<div class="shell">
+					<!-- BEGIN Activities search head -->
+					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+						<!-- Search input field -->
+						<div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
+							<input id="filter-users" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search The Meeting">
 						</div>
 					</div>
+					<!-- END Activities search head -->
+					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+						<div id="activity-card"></div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+						<% include _layouts/cards/activitylist-card %>
+						<% include _layouts/modals/activitylist-modal %>
+					</div>
+
+					<!-- BEGIN Current Activities -->
+
+					<!-- END Current Activities -->
+					<!-- See More -->
+					<p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;">
+						<a>
+							<%= translation.HUB_ACTIVITY_SEE_MORE %>
+						</a>
+					</p>
 				</div>
-				<!-- END Activities search head -->
-
-				<!-- BEGIN Activities search head -->
-
-				<!-- BEGIN Current Activities -->
-
-
-				<!-- END Current Activities -->
-				<!-- See More -->
-				<p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;"><a><%= translation.HUB_ACTIVITY_SEE_MORE %></a></p>
-			</div>
 				<!-- BEGIN Recent Activities Toolbar -->
 				<div class="container-fluid breadcrumb-container">
 					<ol class="breadcrumb" style="text-align: left">
-						<h5 ><%= translation.HUB_ACTIVITY_TOOLBAR_RECENT_ACTIVITIES %></h5>
+						<h5 class=" t-c-default-toolbar">
+							<%= translation.HUB_ACTIVITY_TOOLBAR_RECENT_ACTIVITIES %>
+						</h5>
 					</ol>
 				</div>
 				<!-- END Recent Activities Toolbar -->
 				<!-- BEGIN Recent Activities -->
 				<div class="shell">
-					<!-- Card One -->
-					<div class="col-sm-6 col-md-4 col-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
-					<!-- Card Two -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
-					<!-- Card Three -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
-					<!-- Card Four -->
-					<div class="cell-sm-6 cell-md-4 cell-xs-12 col-lg-3"><%include _layouts/cards/card %></div>
+
+					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+						<div id="recent-meeting-card"></div>
+					</div>
+					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+						<% include _layouts/cards/recent-meeting-card %>
+
+					</div>
+					<!-- See More -->
+					<p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;">
+						<a>
+							<%= translation.HUB_ACTIVITY_SEE_MORE %>
+						</a>
+					</p>
+
 				</div>
 				<!-- END Recent Activities -->
-				<!-- BEGIN pagination footer -->
-				<%include _layouts/pagination/pagination-footer %>
+
 
 			</section>
-		<!-- BEGIN Template script file links -->
-		<% include _layouts/common-scripts %>
-		<script src="/scripts/inbuilt/modernizr.custom.js"></script>
-		<script src="/scripts/common/general.js"></script>
-		<script src="/scripts/spaces/spacelist.js"></script>
-		<!--  END Template script file links src -->
+			<!-- BEGIN Template script file links -->
+			<% include _layouts/common-scripts %>
+				<script src="/scripts/inbuilt/modernizr.custom.js"></script>
+				<script src="/scripts/common/general.js"></script>
+				<script src="/scripts/spaces/spacelist.js"></script>
+				<script src="/scripts/activity/activitylist.js"></script>
+				<!--  END Template script file links src -->
 
-		<!-- BEGIN Spaces script -->
-		<script src="/scripts/inbuilt/classie.js"></script>
-		<script src="/scripts/inbuilt/uiMorphingButton_fixed.js"></script>
-		<script>
-					 $(document).ready(function(){
-							 $("#activityList").addClass("active");
-					 });
-		</script>
-	</div>
-    <%include _layouts/footer %>
+				<!-- BEGIN Spaces script -->
+				<script src="/scripts/inbuilt/classie.js"></script>
+				<script src="/scripts/inbuilt/uiMorphingButton_fixed.js"></script>
+				<script>
+					$(document).ready(function () {
+						$("#activityList").addClass("active");
+					});
+				</script>
+		</div>
+		<%include _layouts/footer %>
 </body>
+
 </html>

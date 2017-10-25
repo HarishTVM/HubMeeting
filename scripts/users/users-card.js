@@ -2,14 +2,17 @@ var firstPageObj = null;
 var searchUsers = "";
 var noData;
 $(document).ready(function () {
+
     $('#page-loaders-users').show();
     $('.div-loaders-users').hide();
-
     var isKeyEntered = false;
-    getUsers();
+
     $('#filter-users').keyup(function () {
         filterUsers(isKeyEntered);
     });
+
+    getUsers();
+
 });
 
 function getUsersHttpRequest(query, page, callback) {
@@ -23,6 +26,12 @@ function getUsersHttpRequest(query, page, callback) {
 }
 
 getUsers = function () {
+    getActiveMeeting();
+    getCurrentMeeting();
+    getRecntMeeting();
+    getSchedulMeeting();
+    getcratedMeeting();
+
     $('.div-loaders-users').show();
     $('#page-loaders-users').show();
 
@@ -52,14 +61,13 @@ getUsers = function () {
                 getUsersHttpRequest(apiType.GET_USERS + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, page, function (resp) {
                     //Bind the response using Handlebars
                     $("#users-card").show();
-                    // for(var i = 0;i < resp.data.users.length; i++ ){
-                    //     alert(resp.data.users[i].user.userJid);
-                    // }
 
                     var templateUsers = Handlebars.compile($('#users-cardID').html());
                     $('#users-card').html(templateUsers(resp.data));
                     $('.div-loaders-users').hide();
                     $('#page-loaders-users').hide();
+
+
                 });
             },
             hideOnlyOnePage: true
@@ -133,11 +141,50 @@ filterUsers = function (isKeyEntered) {
             else if (input.length == 0) {
                 isKeyEntered = false;
                 $("#filter-users").prop("disabled", false);
-                getUsers();
+
 
             }
         }, 1500);
 
     }
 
+}
+
+
+getCurrentMeeting = function () {
+    $.getJSON('/json/currentmeeting.json', function (response) {
+        console.log(response);
+        var activityListTemplate = Handlebars.compile($('#activitylistCardId').html());
+        $('#currentMeeting').html(activityListTemplate(response.data));
+    });
+}
+getRecntMeeting = function () {
+    $.getJSON('/json/recentmeeting.json', function (response) {
+        console.log(response);
+        var recentMeetingTemplate = Handlebars.compile($('#recentMeetingCardId').html());
+        $('#usersmodalrecent').html(recentMeetingTemplate(response.data));
+    });
+}
+
+getSchedulMeeting = function () {
+    $.getJSON('/json/schedulmeeting.json', function (response) {
+        console.log(response);
+        var schedulMeetingTemplate = Handlebars.compile($('#schedulMeetingCardId').html());
+        $('#usersmodalschedul').html(schedulMeetingTemplate(response.data));
+    });
+}
+getcratedMeeting = function () {
+    $.getJSON('/json/createdmeeting.json', function (response) {
+        console.log(response);
+        var createdMeetingTemplate = Handlebars.compile($('#createMeetingCardId').html());
+        $('#usersmodalcreated').html(createdMeetingTemplate(response.data));
+    });
+}
+
+getActiveMeeting = function () {
+    $.getJSON('/json/meeting.json', function (response) {
+        console.log(response);
+        var createdMeetingTemplate = Handlebars.compile($('#activeMeetingCardId').html());
+        $('#usersmodalactive').html(createdMeetingTemplate(response.data));
+    });
 }

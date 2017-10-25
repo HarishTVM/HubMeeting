@@ -1,14 +1,145 @@
 {
   "data": {
-    "colors": [
+    "userColors": [
       {
-        "color": "#FFFFFF"
+        "colors": {
+          "iconColor": "#4dffa6"
+        }
       },
       {
-        "color": "#41f468"
+        "colors": {
+          "iconColor": "#000000"
+        }
       },
       {
-        "color": "#4286f4"
+        "colors": {
+          "iconColor": "#FFFFFF"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#888888"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#4dffa6"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#000000"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#FFFFFF"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#888888"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#4dffa6"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#000000"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#FFFFFF"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#888888"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#4dffa6"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#000000"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#FFFFFF"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#888888"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#4dffa6"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#000000"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#FFFFFF"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#888888"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#4dffa6"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#000000"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#FFFFFF"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#888888"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#4dffa6"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#000000"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#FFFFFF"
+        }
+      },
+      {
+        "colors": {
+          "iconColor": "#888888"
+        }
       }
     ]
   }
