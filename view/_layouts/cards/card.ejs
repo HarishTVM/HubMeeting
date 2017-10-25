@@ -2,14 +2,14 @@
 <script id="cardId" type="text/x-handlebars-template">
 {{#each coSpaces}}
 
-<div class="col-sm-6 col-md-4 col-xs-12 col-lg-3">
+<div id="mainDiv" class="col-sm-6 col-md-4 col-xs-12 col-lg-3">
     <div class="us-card-loading card-loaders-spacelist" >
         <div class="cssload-container">
           <div class="cssload-speeding-wheel"></div>
         </div>
       </div>
-  <div id="mainParent" class="morph-button div-top thumb-corporate morph-button-modal morph-button-modal-2 morph-button-fixed  bg-white h-box-shadow h-div-border s-height">
-    <div id="cospaceCardParent" class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12" coSpaceId={{coSpace.attrkey.id}}>
+  <div id="mainParent" class="morph-button div-top thumb-corporate morph-button-modal morph-button-modal-2 morph-button-fixed  bg-white h-box-shadow h-div-border s-height" coSpaceId={{coSpace.attrkey.id}}>
+    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
       <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
         <!-- BEGIN card one user details for Spaces -->
         <ul data-toggle=" " title="{{coSpace.name}}" id="coSpaceName" coSpaceName={{coSpace.name}}>
@@ -79,8 +79,8 @@
             </p>
           </li>
           <li>
-            <p id="deleteBtn" class="btn btn-circle thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm" data-toggle="tooltip"
-              data-placement="top" title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>">
+            <p id="deleteBtn" class="btn btn-circle thumb-corporate__list h-icon-color-sm-delete btn-actived-delete icon-sm"
+               title="<%= translation.HUB_SPACES_TOOLTIP_DELETE %>">
               <i class="linear-icon-trash2"></i>
             </p>
           </li>

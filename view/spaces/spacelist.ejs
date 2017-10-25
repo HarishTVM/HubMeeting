@@ -11,6 +11,7 @@
   <!--Stylesheets file links -->
   <% include _layouts/common-header %>
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
+    <link rel="stylesheet" href="/styles/common/sweetalert.css">
 </head>
 
 <body class=" h-background-color">
@@ -76,8 +77,10 @@
     <!-- include file for Script -->
     <% include _layouts/common-scripts %>
       <script src="/scripts/spaces/spacelist.js"></script>
+      <script src="/scripts/spaces/updatespace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/jquery.twbsPagination.min.js"></script>
+      <script src="/scripts/common/sweetalert.min.js"></script>
       <script>
         $(document).ready(function () {
           $("#spacesList").addClass("active");

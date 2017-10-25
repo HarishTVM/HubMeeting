@@ -3,9 +3,11 @@ var httpGet = function (Url, callback) {
         method: 'GET',
         url: app.BASE_URL + Url,
         success: function (response, status, xhr) {
+            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
+            debugger;
             if(errObj.status == serverStatus.INTERNAL_SERVER_ERROR){
                 {
                  toastr.options.closeButton = true;

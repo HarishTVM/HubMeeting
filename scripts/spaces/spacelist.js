@@ -44,7 +44,7 @@ getCospaces = function () {
                     var template = Handlebars.compile($('#cardId').html());
                     $('#List').html(template(resp.data));
                     $('.card-loaders-spacelist').hide();
-                    
+
                 })
             },
             hideOnlyOnePage: true
@@ -54,7 +54,7 @@ getCospaces = function () {
 
 $(document).ready(function () {
     var isKeyEntered = false;
-  
+
     $('#page-loaders-users').show();
     getCospaces();
 
@@ -74,18 +74,18 @@ $(document).ready(function () {
                 var input = $('#filter').val();
                 if (input.length > 0) {
                     $("#List").show();
-                    if(recentSearch != input){
+                    if (recentSearch != input) {
                         recentSearch = input;
                         httpGet(apiType.GET_COSPACES + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
-                            if(resp.data.total == 0){
+                            if (resp.data.total == 0) {
                                 $('.page-loaders').hide();
                                 noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
                                                 <h6>No Data</h6>\
                                                 </div>');
                                 $("#List").html(noData);
                                 isKeyEntered = false;
-                              
-                                $("#filter").prop( "disabled", false );
+
+                                $("#filter").prop("disabled", false);
                             }
 
                             var totalRec = resp.data.total; //Total coSpace records
@@ -99,12 +99,13 @@ $(document).ready(function () {
                                     //If offset is greater than total records
                                     if (offset > totalRec)
                                         offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
-    
+
                                     getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT + "&filter=" + input, page, function (resp) {
                                         $('.page-loaders').hide();
                                         var template = Handlebars.compile($('#cardId').html());
                                         $('#List').html(template(resp.data));
-                                       
+
+
                                     })
                                 },
                                 hideOnlyOnePage: true
@@ -127,20 +128,57 @@ $(document).ready(function () {
     // END SEARCH FILTER
 
     //BEGIN MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
-        $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function(){
-            debugger;
-            var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
-                var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
-                    $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
+    $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
+        debugger;
+        var cospaceIdEle = $(this).parents("#mainParent").attr("coSpaceId");
+        var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
+        var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
+        $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
 
-                var b = $(autoPopulate).children("#tenant").attr("tenant");
-                    $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
+        var b = $(autoPopulate).children("#tenant").attr("tenant");
+        if (b != null)
+            $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
+        else $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + "Not available");
 
-                var c = $(autoPopulate).children("#uri").attr("uri");
-                    $("#modalUri").html("<p>URI:&nbsp;</p>" + c);
+        var c = $(autoPopulate).children("#uri").attr("uri");
+        $("#modalUri").html("<p>URI:&nbsp;</p>" + c);
 
-                var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
-                    $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
+        var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
+        if (b != undefined)
+            $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
+        else $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + "Not available");
+
+            // BEGIN UPDATE COSPACE 
+    $("#modalEditBtn").click(function () {
+        debugger;
+        httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + cospaceIdEle, function (resp, err) {
+        debugger;
+        window.location.href = "/updatespace";
+            $("#contact-sName").val(resp.data.coSpace.name);
+            $("#contact-create_space_URI").val(resp.data.coSpace.uri);
         });
+    });
+    // END UPDATE COSPACE 
+    });
     //END MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
+
+
+    // BEGIN DELETE SPACELIST CARDS
+    $("#deleteBtn").live("click", function(){
+        var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
+        var ele = $(mainEle).children("#coSpaceName").attr("coSpaceName");
+        swal({
+            title:"",
+            text: "Are you sure you want to delete " + ele + " ?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: false
+        },
+        function(){
+            swal("Deleted!", "", "success");
+        });
+    });  
+    // END DELETE SPACELIST CARDS
 });
