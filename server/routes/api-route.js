@@ -31,7 +31,7 @@ app.get("/createspace",(req,res)=>{
  res.render("createspace", {year: new Date().getFullYear()});
 });
 app.get("/updatespace", (req, res)=>{
-  res.render("updatespace", {year: new Date().getFullYear()});
+  res.render("createspace", {year: new Date().getFullYear()});
 });
 app.get("/settings",(req,res)=>{
   res.render("settings", {year: new Date().getFullYear()});

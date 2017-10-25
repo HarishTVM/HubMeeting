@@ -39,7 +39,7 @@
               <%= translation.HUB_SPACES_TOOLBAR_SPACES %>
             </a>
           </li>
-          <li>
+          <li id="updatespace-breadcrumb">
             <%= translation.HUB_CREATE_SPACE_TOOLBAR %>
           </li>
         </ol>
@@ -104,7 +104,20 @@
                 </div>
                 <!-- BEGIN SCHEDULE MEETING -->
                 <div class="form-wrap">
-                  <h6>Schedule Meeting</h6>
+                  <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD %></h6>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow">
+                  <select class="form-control on-hover-color" id="sel2">
+                    <option value="" selected disabled>
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE %>
+                    </option>
+                    <option>
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME %>
+                    </option>
+                    <option>
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_PERSONAL %>
+                    </option>
+                  </select>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
@@ -144,7 +157,7 @@
                 </div>
                 <!-- END SCHEDULE MEETING -->
                 <div class="form-wrap">
-                  <h6>Members</h6>
+                  <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD_MEMBERS %></h6>
                 </div>
                 <div class="form-wrap margin-css custom-cospace input-box-shadow">
                   <input type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal" style="width: 100%;"/>
@@ -165,7 +178,7 @@
                           <span id="deleteMember" class="bg-gray input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>
                         </div>
                         <datalist id="emails">
-                          <div id="memberAddDiv"></div>
+                          <option id="memberAddDiv"></option>
                         </datalist>
                       </div>
                       <div class="modal-footer">
@@ -201,11 +214,12 @@
       </script>
 
       <script id="memberAdd" type="text/x-handlebars-template">
-      {{#each users}}
-       <option>{{user.userJid}}</option> 
-      {{/each}}
-  </script>
-      <%include _layouts/footer %>
+        {{#each users}}
+        <option>{{user.userJid}}</option> 
+        {{/each}}
+      </script>
+
+      <% include _layouts/footer %>
 </body>
 
 </html>
