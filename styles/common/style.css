@@ -143,7 +143,7 @@ a.page-link {
 }
 .modal-scrollbar{
   overflow-x: auto;
-  height: 228px;
+  height: 176px;
 }
 .modal-width-title{width: 7% !important;}
 .modal-title-mardin-top{margin-top:-1%; }
@@ -169,6 +169,7 @@ a.page-link {
   border-top:1px solid #c2c2c2 !important;
   border-bottom:1px solid #c2c2c2 !important;
 }
+.meeting-icon-size{ font-size: 20px !important; }
 
 /*========================================================================================
                     =          END modal for Users               =

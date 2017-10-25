@@ -45,22 +45,58 @@
             </div>
           </div>
 
-          <!-- /// -->
+          <!--  Active Meeting -->
           <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none toolbar-bg">
             <div class="container-fluid breadcrumb-container">
               <ol class="toolbar-padding" style="text-align: left">
                 <h5 class="text-color-default ">
-                  Activities Meeting
+                  Active Meeting
                 </h5>
               </ol>
             </div>
           </div>
           <div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-              <div id="currentMeeting"></div>
+              <div id="usersmodalactive"></div>
             </div>
             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
-              <% include _layouts/cards/activitylist-card %>
+              <% include _layouts/cards/active-meeting %>
+            </div>
+          </div>
+          <!--  Schedule Meeting -->
+          <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none toolbar-bg">
+            <div class="container-fluid breadcrumb-container">
+              <ol class="toolbar-padding" style="text-align: left">
+                <h5 class="text-color-default ">
+                  Schedule Meeting Created
+                </h5>
+              </ol>
+            </div>
+          </div>
+          <div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+              <div id="usersmodalschedul"></div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+                <% include _layouts/cards/schedule-meeting %>
+            </div>
+          </div>
+          <!--  Created Meeting -->
+          <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none toolbar-bg">
+            <div class="container-fluid breadcrumb-container">
+              <ol class="toolbar-padding" style="text-align: left">
+                <h5 class="text-color-default ">
+                  Created Meeting
+                </h5>
+              </ol>
+            </div>
+          </div>
+          <div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+              <div id="usersmodalcreated"></div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+              <% include _layouts/cards/created-meeting %>
             </div>
           </div>
         </div>

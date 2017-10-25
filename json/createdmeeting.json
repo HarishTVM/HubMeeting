@@ -14,8 +14,9 @@
                     "uri": "uri.CMS",
                     "defaultLayout": "SpeakerOnly",
                     "meetingType": "Personal Meeting",
-                    "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor":"#4dffa6"
+              
                 }
             },
             {
@@ -30,9 +31,10 @@
                     "totalMembers": "18",
                     "meetingType": "Personal Meeting",
                     "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatusColor":"#74a9d8"
                 }
             },
+       
             {
                 "meeting": {
                     "name": "Proxy Team",
@@ -44,8 +46,9 @@
                     "endTime": "2.30",
                     "totalMembers": "10",
                     "meetingType": "Personal Meeting",
-                    "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatus": "Meeting to be Started",
+                    "meetingStatusColor":"#ffff4d"
+                    
                 }
             },
             {
@@ -59,8 +62,8 @@
                     "endTime": "12.30",
                     "totalMembers": "15",
                     "meetingType": "Personal Meeting",
-                    "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatus": "Meeting Expired",
+                    "meetingStatusColor":"#ff4d4d"
                 }
             },
             {
@@ -74,10 +77,11 @@
                     "endTime": "12.30",
                     "totalMembers": "11",
                     "meetingType": "Personal Meeting",
-                    "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor":"#4dffa6"
                 }
             },
+        
             {
                 "meeting": {
                     "name": "MyWired Client",
@@ -89,8 +93,8 @@
                     "endTime": "12.30",
                     "totalMembers": "20",
                     "meetingType": "OneTime Meeting",
-                    "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatus": "Meeting to be Started",
+                    "meetingStatusColor":"#ffff4d"
                 }
             },
             {
@@ -105,7 +109,7 @@
                     "totalMembers": "1",
                     "meetingType": "OneTime Meeting",
                     "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatusColor":"#74a9d8"
                 }
             },
             {
@@ -119,8 +123,8 @@
                     "endTime": "12.30",
                     "totalMembers": "17",
                     "meetingType": "OneTime Meeting",
-                    "meetingStatus": "Meeting Completed",
-                    "meetingStatusColor": "#74a9d8"
+                    "meetingStatus": "Meeting to be Started",
+                    "meetingStatusColor":"#ffff4d"
                 }
             }
         ]

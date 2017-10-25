@@ -5,6 +5,66 @@
         "meetings": [
             {
                 "meeting": {
+                    "name": "MyWired Team",
+                    "uri": "uri.AnbuSapmle",
+                    "defaultLayout": "AllEqualSixteenths",
+                    "startDate": "30/10/2017",
+                    "endDate": "30/10/2017",
+                    "startTime": "11.30 Pm",
+                    "endTime": "12.30",
+                    "totalMembers": "11",
+                    "meetingType": "Personal Meeting",
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor": "#4dffa6"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "MyWired Client",
+                    "uri": "Client.uri",
+                    "defaultLayout": "Speaker large",
+                    "startDate": "2/11/2017",
+                    "endDate": "2/11/2017",
+                    "startTime": "11.30 Pm",
+                    "endTime": "12.30",
+                    "totalMembers": "20",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor": "#4dffa6"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "NextHoles Client",
+                    "uri": "uri.NextHolesSample",
+                    "defaultLayout": "AllEqual",
+                    "startDate": "28/10/2017",
+                    "endDate": "28/10/2017",
+                    "startTime": "11.30 Am",
+                    "endTime": "12.30",
+                    "totalMembers": "1",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor": "#4dffa6"
+                }
+            },
+            {
+                "meeting": {
+                    "name": "RouteJoot Client",
+                    "uri": "RouteJoot.Sample",
+                    "defaultLayout": "Speaker large",
+                    "startDate": "2/11/2017",
+                    "endDate": "2/11/2017",
+                    "startTime": "10.30 Pm",
+                    "endTime": "12.30",
+                    "totalMembers": "17",
+                    "meetingType": "OneTime Meeting",
+                    "meetingStatus": "On Going Meeting",
+                    "meetingStatusColor": "#4dffa6"
+                }
+            },
+            {
+                "meeting": {
                     "name": "CMS Dept Team",
                     "startDate": "27/10/2017",
                     "endDate": "27/10/2017",
@@ -15,8 +75,7 @@
                     "defaultLayout": "SpeakerOnly",
                     "meetingType": "Personal Meeting",
                     "meetingStatus": "On Going Meeting",
-                    "meetingStatusColor":"#4dffa6"
-              
+                    "meetingStatusColor": "#4dffa6"
                 }
             },
             {
@@ -31,10 +90,9 @@
                     "totalMembers": "18",
                     "meetingType": "Personal Meeting",
                     "meetingStatus": "On Going Meeting",
-                    "meetingStatusColor":"#4dffa6"
+                    "meetingStatusColor": "#4dffa6"
                 }
             },
-       
             {
                 "meeting": {
                     "name": "Proxy Team",
@@ -47,8 +105,7 @@
                     "totalMembers": "10",
                     "meetingType": "Personal Meeting",
                     "meetingStatus": "On Going Meeting",
-                    "meetingStatusColor":"#4dffa6"
-                    
+                    "meetingStatusColor": "#4dffa6"
                 }
             },
             {
@@ -63,7 +120,7 @@
                     "totalMembers": "15",
                     "meetingType": "Personal Meeting",
                     "meetingStatus": "On Going Meeting",
-                    "meetingStatusColor":"#4dffa6"
+                    "meetingStatusColor": "#4dffa6"
                 }
             }
         ]
