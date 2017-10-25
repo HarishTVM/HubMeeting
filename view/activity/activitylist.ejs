@@ -24,6 +24,7 @@
 				</div>
 			</div>
 			<!-- BEGIN Current Activities toolbar-->
+			
 			<div class="container-fluid breadcrumb-container">
 				<ol class="breadcrumb">
 					<h5 class="meeting-head-bread  t-c-default-toolbar">
@@ -43,31 +44,23 @@
 
 			<section>
 				<div class="shell">
-					<!-- BEGIN Activities search head -->
-					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-						<!-- Search input field -->
-						<div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
-							<input id="filter-users" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search The Meeting">
-						</div>
-					</div>
+
 					<!-- END Activities search head -->
-					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-						<div id="activity-card"></div>
+
+					<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+							<div id="activity-card"></div>
+						</div>
 					</div>
 					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
 						<% include _layouts/cards/activitylist-card %>
-						<% include _layouts/modals/activitylist-modal %>
+							<% include _layouts/modals/activitylist-modal %>
 					</div>
 
 					<!-- BEGIN Current Activities -->
 
 					<!-- END Current Activities -->
-					<!-- See More -->
-					<p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;">
-						<a>
-							<%= translation.HUB_ACTIVITY_SEE_MORE %>
-						</a>
-					</p>
+
 				</div>
 				<!-- BEGIN Recent Activities Toolbar -->
 				<div class="container-fluid breadcrumb-container">
@@ -80,21 +73,14 @@
 				<!-- END Recent Activities Toolbar -->
 				<!-- BEGIN Recent Activities -->
 				<div class="shell">
-
-					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
-						<div id="recent-meeting-card"></div>
+					<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+						<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+							<div id="recent-meeting-card"></div>
+						</div>
 					</div>
 					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
 						<% include _layouts/cards/recent-meeting-card %>
-
 					</div>
-					<!-- See More -->
-					<p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;margin-bottom:10px;">
-						<a>
-							<%= translation.HUB_ACTIVITY_SEE_MORE %>
-						</a>
-					</p>
-
 				</div>
 				<!-- END Recent Activities -->
 
