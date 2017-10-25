@@ -68,7 +68,7 @@
             <div class="container-fluid breadcrumb-container">
               <ol class="toolbar-padding" style="text-align: left">
                 <h5 class="text-color-default ">
-                  Schedule Meeting Created
+                  Scheduled Meeting
                 </h5>
               </ol>
             </div>
@@ -97,6 +97,25 @@
             </div>
             <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
               <% include _layouts/cards/created-meeting %>
+            </div>
+          </div>
+
+          <!--  Expired Meeting -->
+          <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none toolbar-bg">
+            <div class="container-fluid breadcrumb-container">
+              <ol class="toolbar-padding" style="text-align: left">
+                <h5 class="text-color-default ">
+                  Expired Meeting
+                </h5>
+              </ol>
+            </div>
+          </div>
+          <div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+              <div id="usersmodalexpired"></div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+              <% include _layouts/cards/expired-meeting %>
             </div>
           </div>
         </div>

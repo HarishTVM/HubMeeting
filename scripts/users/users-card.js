@@ -31,6 +31,7 @@ getUsers = function () {
     getRecntMeeting();
     getSchedulMeeting();
     getcratedMeeting();
+    getExpiredMeeting();
 
     $('.div-loaders-users').show();
     $('#page-loaders-users').show();
@@ -186,5 +187,12 @@ getActiveMeeting = function () {
         console.log(response);
         var createdMeetingTemplate = Handlebars.compile($('#activeMeetingCardId').html());
         $('#usersmodalactive').html(createdMeetingTemplate(response.data));
+    });
+}
+getExpiredMeeting = function () {
+    $.getJSON('/json/expiredmeeting.json', function (response) {
+        console.log(response);
+        var createdMeetingTemplate = Handlebars.compile($('#expiredMeetingCardId').html());
+        $('#usersmodalexpired').html(createdMeetingTemplate(response.data));
     });
 }
