@@ -43,12 +43,12 @@ $(document).ready(function () {
 
   // BEGIN DELETE ACTIVE MEETING CARDS
   $("#activityDeleteBtn").live("click", function () {
-    var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
-    var ele = $(mainEle).children("#activeMeetingName").attr("activeMeetingName");
+    var activeMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
+    var activeEle = $(activeMainEle).children("#activeMeetingName").attr("activeMeetingName");
     debugger;
     swal({
       title: "",
-      text: "Are you sure you want to delete " + ele + " ?",
+      text: "Are you sure you want to delete " + activeEle + " ?",
       type: "warning",
       showCancelButton: true,
       confirmButtonClass: "btn-danger",
@@ -60,6 +60,27 @@ $(document).ready(function () {
       });
   });
   // END DELETE ACTIVE MEETING CARDS
+
+    // BEGIN DELETE RECENT MEETING CARDS
+    $("#recentMeetingDelBtn").live("click", function () {
+      debugger;
+      var recentMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
+      var recentEle = $(recentMainEle).children("#recentMeetingName").attr("recentMeetingName");
+      debugger;
+      swal({
+        title: "",
+        text: "Are you sure you want to delete " + recentEle + " ?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonClass: "btn-danger",
+        confirmButtonText: "Yes, delete it!",
+        closeOnConfirm: false
+      },
+        function () {
+          swal("Deleted!", "", "success");
+        });
+    });
+    // END DELETE RECENT MEETING CARDS
 
 });
 getCurrentMeeting = function () {

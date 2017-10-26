@@ -136,7 +136,7 @@ $(document).ready(function () {
         $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
 
         var b = $(autoPopulate).children("#tenant").attr("tenant");
-        if (b != null)
+        if (typeof b != undefined)
             $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
         else $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + "Not available");
 
