@@ -131,19 +131,19 @@ $(document).ready(function () {
     $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
         debugger;
         var cospaceIdEle = $(this).parents("#mainParent").attr("coSpaceId");
-        var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
+        // var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
 
-        var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
-        $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
+        // var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
+        // $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
 
-        var b = $(autoPopulate).children("#tenant").attr("tenant");
-        $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
+        // var b = $(autoPopulate).children("#tenant").attr("tenant");
+        // $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
 
-        var c = $(autoPopulate).children("#uri").attr("uri");
-        $("#modalUri").html("<p>Uri:&nbsp;</p>" + c);
+        // var c = $(autoPopulate).children("#uri").attr("uri");
+        // $("#modalUri").html("<p>Uri:&nbsp;</p>" + c);
 
-        var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
-        $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
+        // var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
+        // $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
 
         // BEGIN UPDATE COSPACE 
         $("#modalEditBtn").on('click', function () {

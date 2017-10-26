@@ -1,5 +1,17 @@
 $(document).ready(function () {
 
+  //BEGIN EDIT OPTION IN MODAL LINKING
+    $("#recentbtnEditModal").on('click', function () {
+      debugger;
+      window.location.href = "/updatemeeting";
+  });
+
+    $("#activeEditBtn").on('click', function () {
+      debugger;
+      window.location.href = "/updatemeeting";
+  });
+  //END EDIT OPTION IN MODAL LINKING
+
   getCurrentMeeting();
   getRecntMeeting();
   $('#btn_add_hidden').hide();
