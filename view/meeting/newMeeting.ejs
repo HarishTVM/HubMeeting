@@ -28,7 +28,7 @@
       <div class="container-fluid breadcrumb-container">
         <ol class="breadcrumb">
           <h5 class="meeting-head-bread">
-            Create Meeting
+            <%= translation.CREATE_MEETING_HEADING_4_5_BREADCRUMB %>
           </h5>
           <li>
             <a href="/dashboard" class="breadcrumb-links">
@@ -37,18 +37,18 @@
           </li>
           <li>
             <a href="/meeting" class="breadcrumb-links">
-              Meeting
+              <%= translation.CREATE_MEETING_BREADCRUMB_MEETING %>
             </a>
           </li>
-          <li>
-            Create Meeting
+          <li id="createmeeting-breadcrumb">
+            <%= translation.CREATE_MEETING_HEADING_4_5_BREADCRUMB %>
           </li>
         </ol>
       </div>
       <section class="section-lg bg-white text-center main-section">
         <div class="shell">
-          <h4 id="createSpace">
-            Create Meeting
+          <h4 id="createMeeting">
+            <%= translation.CREATE_MEETING_HEADING_4_5_BREADCRUMB %>
           </h4>
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
@@ -213,6 +213,7 @@
     <% include _layouts/common-scripts %>
       <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
       <script src="/scripts/common/validation.js"></script>
+      <script src="/scripts/meeting/updatemeeting.js"></script>
       <script src="/scripts/spaces/updatespace.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>   

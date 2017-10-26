@@ -33,7 +33,7 @@
   "HUB_SPACES_TOOLTIP_CLOSE":"Close",
 
 
-  "HUB_CREATE_SPACE_TITLE":"CMS Hub Create Space",
+  "HUB_CREATE_SPACE_TITLE":"Create Space",
   "HUB_CREATE_SPACE_TOOLBAR":"Create Space",
   "HUB_CREATE_SPACE_NAME":"Enter the Space Name",
   "HUB_CREATE_SPACE_PASSCODE":"Enter the Passcode",
@@ -196,8 +196,10 @@
     "NEW_MEETING_ERROR_TEXT_PARTICIPANTS": "Participants are required",
     "NEW_MEETING_ERROR_TEXT_PIN": "Pin is required",
 
-    "UPDATE_SPACE_HEADING": "CMS HUB Update Space",
+    "UPDATE_SPACE_HEADING": "Update Space",
     "UPDATE_SPACE_BREADCRUMB": "Update Space",
-    "UPDATE_SPACE_FORM_HEADING": "Update Space"
+    "UPDATE_SPACE_FORM_HEADING": "Update Space",
 
+    "CREATE_MEETING_HEADING_4_5_BREADCRUMB": "Create Meeting",
+    "CREATE_MEETING_BREADCRUMB_MEETING": "Meeting"
 }

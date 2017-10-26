@@ -201,5 +201,8 @@
 
     "UPDATE_SPACE_HEADING": "Espacio de actualización CMS HUB",
     "UPDATE_SPACE_BREADCRUMB": "Actualizar espacio",
-    "UPDATE_SPACE_FORM_HEADING": "Actualizar espacio"
+    "UPDATE_SPACE_FORM_HEADING": "Actualizar espacio",
+
+    "CREATE_MEETING_HEADING_4_5_BREADCRUMB": "Crear reunión",
+    "CREATE_MEETING_BREADCRUMB_MEETING": "Reunión"
 }

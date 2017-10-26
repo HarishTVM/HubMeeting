@@ -1,24 +1,32 @@
 $(document).ready(function () {
-    
+
     getMeeting();
 
-    $(".done-btn").click(function(){
-        if($('form').hasClass('validate-form')){
+    $(".done-btn").click(function () {
+        if ($('form').hasClass('validate-form')) {
             var resultItem = [];
-            $('.validate-text').each(function(i, obj){
+            $('.validate-text').each(function (i, obj) {
                 resultItem.push(validateText(obj));
             });
-        }    
+        }
     });
-    
+
+    // BEGIN UPDATE COSPACE 
+    $("#btnEditModal").on('click', function () {
+        debugger;
+        window.location.href = "/updatemeeting";
+    });
+    // END UPDATE COSPACE 
+
     meetingModal();
+
     // BEGIN DELETE MEETING CARDS
-    $("#meetingDelBtn").live("click", function(){
+    $("#meetingDelBtn").live("click", function () {
         debugger;
         var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var ele = $(mainEle).children("#meetingName").attr("meetingName");
         swal({
-            title:"",
+            title: "",
             text: "Are you sure you want to delete " + ele + " ?",
             type: "warning",
             showCancelButton: true,
@@ -26,11 +34,12 @@ $(document).ready(function () {
             confirmButtonText: "Yes, delete it!",
             closeOnConfirm: false
         },
-        function(){
-            swal("Deleted!", "", "success");
-        });
-    });  
+            function () {
+                swal("Deleted!", "", "success");
+            });
+    });
     // END DELETE MEETING CARDS
+
 });
 
 getMeeting = function () {
@@ -38,7 +47,7 @@ getMeeting = function () {
         console.log(response);
         var meetingTemplate = Handlebars.compile($('#meetingCardId').html());
         $('#meeting-card').html(meetingTemplate(response.data));
-       
+
     });
 
 }

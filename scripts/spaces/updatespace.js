@@ -62,6 +62,8 @@ $(document).ready(function () {
         debugger;
         $("#contact-sName").val(resp.data.coSpace.name);
         $("#contact-create_space_URI").val(resp.data.coSpace.uri);
+        $("#sel1 option[value='Allequal']").prop("selected", true);
+        $("#sel2 option[value='One Time']").val("selected", true);
         $("#fromdate").val("26-10-2017");
         $("#fromtime").val("26-10-2017");
         $("#todate").val("12:45");

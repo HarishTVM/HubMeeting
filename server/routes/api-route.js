@@ -15,6 +15,9 @@ app.get("/meeting", (req, res)=>{
 app.get("/newmeeting", (req, res)=>{
   res.render("newmeeting",{year: new Date().getFullYear()});
 });
+app.get("/updatemeeting", (req, res)=>{
+  res.render("newmeeting",{year: new Date().getFullYear()});
+});
 app.get("/configure", (req, res)=>{
   res.render("configure", {year: new Date().getFullYear()});
 });
