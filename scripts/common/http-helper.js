@@ -22,8 +22,9 @@ var httpGet = function (Url, callback) {
                 callback(null, errObj.responseJSON.data);
             
             else {
-                 toastr.options.closeButton = true;
-                 toastr.info(ToastMesssges.UNHANDLED_ERROR)
+                //  toastr.options.closeButton = true;
+                //  toastr.info(ToastMesssges.UNHANDLED_ERROR)
+                console.log(ToastMesssges.UNHANDLED_ERROR);
             }
         }
     });

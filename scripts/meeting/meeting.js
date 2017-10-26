@@ -1,6 +1,16 @@
 $(document).ready(function () {
     
     getMeeting();
+
+    $(".done-btn").click(function(){
+        if($('form').hasClass('validate-form')){
+            var resultItem = [];
+            $('.validate-text').each(function(i, obj){
+                resultItem.push(validateText(obj));
+            });
+        }    
+    });
+    
     meetingModal();
     // BEGIN DELETE MEETING CARDS
     $("#meetingDelBtn").live("click", function(){

@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-  <head>
-    <!-- Site Title-->
-    <title><%= translation.SCHEDULE_MEETING_PAGE_TITLE %></title>
-     <!-- Site logo images-->
-     <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
-     <!--Stylesheets file links -->
-     <% include _layouts/common-header %>
-    <link rel="stylesheet" href="/styles/meeting/newmeeting.css">
-  </head>
-  <body>
-   <!-- include file for navigation -->
-   <% include _layouts/header-with-navigation %>
+
+<head>
+  <!-- Site Title-->
+  <title>
+    <%= translation.HUB_SPACE_TOOLBAR_DASHBOARD %>
+  </title>
+  <!-- Site logo images-->
+  <link href="/images/logo.png" rel="icon" type="image/x-icon" />
+  <!--Stylesheets file links -->
+  <% include _layouts/common-header %>
+    <link rel="stylesheet" href="/styles/spaces/createspace.css">
+    <link rel="stylesheet" href="styles/meeting/newMeeting.css">
+    <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
+    <link rel="stylesheet" href="/styles/common/sweetalert.css">
+</head>
+
+<body>
+  <!-- include file for navigation -->
+  <% include _layouts/header-with-navigation %>
     <div class="page">
       <div id="page-loader">
         <div class="cssload-container">
@@ -19,114 +26,210 @@
         </div>
       </div>
       <div class="container-fluid breadcrumb-container">
-          <ol class="breadcrumb">
-              <h5 class="newmeeting-head-bread"><%= translation.SCHEDULE_MEETING_HEADER %></h5>
-              <li><a href="/dashboard" class="breadcrumb-links"><%= translation.SCHEDULE_MEETING_BREADCRUMB_DASHBOARD %></a></li>
-              <li><a href="/meeting" class="breadcrumb-links"><%= translation.SCHEDULE_MEETING_BREADCRUMB_MEETING %></a></li>
-              <li><%= translation.SCHEDULE_MEETING_BREADCRUMB_NEW_MEETING %></li>
-          </ol>   
+        <ol class="breadcrumb">
+          <h5 class="meeting-head-bread">
+            Create Meeting
+          </h5>
+          <li>
+            <a href="/dashboard" class="breadcrumb-links">
+              <%= translation.HUB_SPACES_TOOLBAR_DASHBOARD %>
+            </a>
+          </li>
+          <li>
+            <a href="/meeting" class="breadcrumb-links">
+              Meeting
+            </a>
+          </li>
+          <li>
+            Create Meeting
+          </li>
+        </ol>
       </div>
       <section class="section-lg bg-white text-center main-section">
         <div class="shell">
-		    <!-- <h4><%= translation.SCHEDULE_MEETING_HEADER %></h4> -->
+          <h4 id="createSpace">
+            Create Meeting
+          </h4>
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
-              <!-- RD Mailform-->
-              <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
-                <div class="form-wrap form-wrap_icon linear-icon-man margin-css title-wrap">
-                  <input class="form-input input-box-shadow validate-text" id="title" type="text" name="title">
-                  <label class="form-label" for="title"><%= translation.SCHEDULE_MEETING_TITLE %></label>
-                  <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TITLE %></span>
+              <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
+                <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
+                  <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
+                  <span class="hide error-text">
+                    <%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %>
+                  </span>
                 </div>
-                <div class="div1 margin-css">
-                  <div class="form-wrap form-wrap_icon linear-icon-key-hole email-wrap">
-                    <input class="form-input input-box-shadow validate-text" id="contact-email" type="email" name="email">
-                    <label class="form-label" for="contact-email"><%= translation.SCHEDULE_MEETING_EMAIL %></label>
-                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_EMAIl %></span>
-                  </div>&nbsp;&nbsp;
-                  <div class="form-wrap form-wrap_icon linear-icon-telephone telephone-wrap">
-                    <input class="form-input input-box-shadow validate-text" id="contact-phone" type="text" name="phone">
-                    <label class="form-label" for="contact-phone"><%= translation.SCHEDULE_MEETING_PHONE %></label>
-                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_PHONE %></span>
-                  </div>
+                <div id="URI" class="form-wrap form-wrap_icon linear-icon-link2">
+                  <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI"
+                    placeholder="<%= translation.HUB_CREATE_SPACE_ENTER_URI %>">
+                  <span class="hide error-text">
+                    <%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %>
+                  </span>
                 </div>
-                <div class="row form-wrap datetime-picker-container margin-css">
-                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
-                      <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                      <input class="form-input input-box-shadow validate-text" id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
-                      <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_FROM_DATE %></span>
-                  </div>&nbsp;&nbsp;	
-                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
-                      <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                      <input class="form-input input-box-shadow validate-text" id="fromtime" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
-                      <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_FROM_TIME %></span>
-                  </div>
+                <div class="hide form-wrap">
+                  <p id="videoAdd">Video Address: </p>
                 </div>
-                <div class="row form-wrap datetime-picker-container margin-css">
-                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
-                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date" data-dtp="dtp_HoYzJ">
-                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TO_DATE %></span>
-                  </div>&nbsp;&nbsp;	
-                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
-                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="totime" type="text" name="totime" placeholder="End-time" data-time-picker="time" data-dtp="dtp_HoYzJ">
-                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TO_TIME %></span>
-                  </div>
-                </div>  
-                <div class="div2 margin-css">
-                  <div class="form-wrap form-wrap_icon linear-icon-timer timezone-wrap">
-                    <input class="form-input input-box-shadow validate-text" id="timezone" type="text" name="timezone">
-                    <label class="form-label" for="timezone"><%= translation.SCHEDULE_MEETING_TIMEZONE %></label>
-                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_TIME_ZONE %></span>
-                  </div>&nbsp;&nbsp;
-                  <div class="form-wrap form-wrap_icon linear-icon-group-work cospace-wrap">
-                    <input class="form-input input-box-shadow validate-text" id="cospace" type="text" name="cospace">
-                    <label class="form-label" for="cospace"><%= translation.SCHEDULE_MEETING_COSPACE %></label>
-                    <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_COSPACE %></span>
-                  </div>
-                </div>  
-                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow ">
-                  <select class="form-control on-hover-color" id="sel2">
-                      <option value="" selected disabled><%= translation.SCHEDULE_MEETING_COSPACE_TYPE %></option>
-                      <option><%= translation.SCHEDULE_MEETING_DEFAULT_TEMPLATE %></option>
-                      <option><%= translation.SCHEDULE_MEETING_HIDDEN_ROOM %></option>      
-                      <option><%= translation.SCHEDULE_MEETING_MANAGED_MEETING %></option>
-                      <option><%= translation.SCHEDULE_MEETING_ALL_HANDS %></option>   
+                <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
+                  <select class="form-control on-hover-color" id="sel1">
+                    <option value="" selected disabled>
+                      <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
+                    </option>
+                    <option selected="selected">
+                      <%= translation.HUB_CREATE_SPACE_ALLEQUAL %>
+                    </option>
+                    <option>
+                      <%= translation.HUB_CREATE_SPACE_SPEAKERONLY %>
+                    </option>
+                    <option>
+                      <%= translation.HUB_CREATE_SPACE_TELEPRESENCE %>
+                    </option>
+                    <option>
+                      <%= translation.HUB_CREATE_SPACE_STACKED %>
+                    </option>
+                    <option>
+                      <%= translation.HUB_CREATE_SPACE_ALLEQUALQUARTERS %>
+                    </option>
+                    <option>
+                      <%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %>
+                    </option>
                   </select>
                 </div>
-                <h5><%= translation.SCHEDULE_MEETING_MEMBER %></h5>
-                <div class="form-wrap form-wrap_icon linear-icon-users2">
-                  <input class="form-input input-box-shadow validate-text" id="participants" type="text" name="participants">
-                  <label class="form-label" for="participants"><%= translation.SCHEDULE_MEETING_PARTICIPANTS %></label>
-                  <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_PARTICIPANTS %></span>
+                <!-- BEGIN SCHEDULE MEETING -->
+                <div class="form-wrap">
+                  <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD %></h6>
                 </div>
-                <div class="form-wrap form-wrap_icon linear-icon-location">
-                  <input class="form-input input-box-shadow validate-text" id="pin" type="text" name="pin">
-                  <label class="form-label" for="pin"><%= translation.SCHEDULE_MEETING_PIN %></label>
-                  <span class="hide error-text"><%= translation.NEW_MEETING_ERROR_TEXT_PIN %></span>
-                </div> 
+                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow">
+                  <select class="form-control on-hover-color" id="sel2">
+                    <option value="" disabled>
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE %>
+                    </option>
+                    <option selected="selected">
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME %>
+                    </option>
+                    <option>
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_PERSONAL %>
+                    </option>
+                  </select>
+                </div>
+                <div class="row form-wrap datetime-picker-container margin-css">
+                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
+                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                    <input class="form-input input-box-shadow validate-text" id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date"
+                      data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_DATE %>
+                      </span>
+                  </div>&nbsp;&nbsp;
+                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
+                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                    <input class="form-input input-box-shadow validate-text" id="fromtime" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time"
+                      data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME %>
+                      </span>
+                  </div>
+                </div>
+                <div class="row form-wrap datetime-picker-container margin-css">
+                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
+                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                    <input class="form-input input-box-shadow validate-text" id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date"
+                      data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE %>
+                      </span>
+                  </div>&nbsp;&nbsp;
+                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
+                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
+                    <input class="form-input input-box-shadow validate-text" id="totime" type="text" name="totime" placeholder="End-time" data-time-picker="time"
+                      data-dtp="dtp_HoYzJ">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME %>
+                      </span>
+                  </div>
+                </div>
+                <!-- END SCHEDULE MEETING -->
+                <br>
+                <div class="form-wrap">
+                  <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD_MEMBERS %></h6>
+                </div><br>
+                <section id="existingMembers" class="input-box-shadow" style="padding: 5px;">
+                    <h6 style="text-align: left;">Existing Members</h6>
+                    <div class="alert-div">
+                      <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          admin@inflexion.com
+                      </div>
+                      <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          hr-dept@inflexion.com
+                      </div>
+                    </div>
+                </section><br>
+                <div class="form-wrap margin-css custom-cospace input-box-shadow">
+                  <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal" style="width: 100%;"/>
+                </div>  
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h6 class="modal-title modal-title">Add Members</h6>
+                        <button id="addMemberBtn" type="button" class="button button-primary button-sm">Add Member</button>
+                      </div>
+                      <div id="memberParentDiv" class="modal-body">
+                        <input id="admin" name="admin" class="form-input" type="text" value="admin@inflexion.com" placeholder="add member...">
+                        <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member...">
+                        <div id="addDeleteParent" class="addDeleteParent input-group form-wrap input-box-shadow">
+                          <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">
+                          <span id="searchMember" class="bg-gray input-group-addon"><a class="search-member-icon fa fa-search fa-lg" aria-hidden="true"></a></span>
+                          <span id="deleteMember" class="bg-gray input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>
+                        </div>
+                        <datalist id="emails">
+                          <option id="memberAddDiv"></option>
+                        </datalist>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="button button-default button-sm" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="/meeting" id="newMeetingBtnDiscard" class="button btn_discard" type="submit">
+                  <%= translation.HUB_CREATE_SPACE_DISCARD %>
+                </a>
+                &nbsp;&nbsp; &nbsp;&nbsp;
+                <button id="btndone" class="button button-primary" type="submit">
+                  <%= translation.HUB_CREATE_SPACE_DONE %>
+                </button>
               </form>
-              <br>
-              <div class="header-div">
-                <a href="/meeting" class="button cancel-btn text-center"><%= translation.SCHEDULE_MEETING_CANCEL %></a>
-                <a href="#" class="button button-primary done-btn"><%= translation.SCHEDULE_MEETING_DONE %></a>
-              </div>  
             </div>
-          </div>
+          </div>  
         </div>
       </section>
-      </div>
-         <!-- BEGIN script file links -->
+    </div>
+
+    <!-- include file for Script -->
     <% include _layouts/common-scripts %>
-    <script src="/scripts/meeting/meeting.js"></script>
-    <script src="/scripts/common/validation.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#meetingList").addClass("active");
+      <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
+      <script src="/scripts/common/validation.js"></script>
+      <script src="/scripts/spaces/updatespace.js"></script>
+      <script src="/scripts/spaces/createspace.js"></script>
+      <script src="/scripts/inbuilt/toastr.min.js"></script>   
+      <script src="/scripts/common/sweetalert.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $("#meetingList").addClass("active");
         });
-    </script>   
-    <!-- Pagination next footer -->
-    <%include _layouts/footer %>
-  </body>
+      </script>
+
+      <script id="memberAdd" type="text/x-handlebars-template">
+        {{#each users}}
+        <option>{{user.userJid}}</option> 
+        {{/each}}
+      </script>
+
+      <% include _layouts/footer %>
+</body>
+
 </html>
