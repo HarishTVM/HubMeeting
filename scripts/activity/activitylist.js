@@ -41,18 +41,38 @@ $(document).ready(function () {
       });
   });
 
+  // BEGIN DELETE ACTIVE MEETING CARDS
+  $("#activityDeleteBtn").live("click", function () {
+    var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
+    var ele = $(mainEle).children("#activeMeetingName").attr("activeMeetingName");
+    debugger;
+    swal({
+      title: "",
+      text: "Are you sure you want to delete " + ele + " ?",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonClass: "btn-danger",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: false
+    },
+      function () {
+        swal("Deleted!", "", "success");
+      });
+  });
+  // END DELETE ACTIVE MEETING CARDS
+
 });
 getCurrentMeeting = function () {
   $.getJSON('/json/currentmeeting.json', function (response) {
-      console.log(response);
-      var activityListTemplate = Handlebars.compile($('#activitylistCardId').html());
-      $('#activity-card').html(activityListTemplate(response.data));
+    console.log(response);
+    var activityListTemplate = Handlebars.compile($('#activitylistCardId').html());
+    $('#activity-card').html(activityListTemplate(response.data));
   });
 }
 getRecntMeeting = function () {
   $.getJSON('/json/recentmeeting.json', function (response) {
-      console.log(response);
-      var recentMeetingTemplate = Handlebars.compile($('#recentMeetingCardId').html());
-      $('#recent-meeting-card').html(recentMeetingTemplate(response.data));
+    console.log(response);
+    var recentMeetingTemplate = Handlebars.compile($('#recentMeetingCardId').html());
+    $('#recent-meeting-card').html(recentMeetingTemplate(response.data));
   });
 }
