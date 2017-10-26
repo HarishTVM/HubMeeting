@@ -3,6 +3,7 @@ var searchUsers = "";
 var noData;
 $(document).ready(function () {
 
+
     $('#page-loaders-users').show();
     $('.div-loaders-users').hide();
     var isKeyEntered = false;

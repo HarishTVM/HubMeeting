@@ -10,7 +10,7 @@
 	<link href="/images/logo.png" rel="icon" type="image/x-icon" />
 	<link rel="stylesheet" href="/styles/meeting/meeting.css">
 	<link rel="stylesheet" href="/styles/common/sweetalert.css">
-	
+
 	<!--Stylesheets file links -->
 	<% include _layouts/common-header %>
 </head>
@@ -45,11 +45,11 @@
 			<!-- END Current Activities toolbar-->
 
 			<section>
-				<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  toolbar-bg padding-left-right-none">
+				<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  padding-left-right-none">
 					<div class="container-fluid breadcrumb-container">
 						<ol class="toolbar-padding" style="text-align: left">
 							<h5 class="text-color-default ">
-								Activities Meeting
+								Active Meeting
 							</h5>
 						</ol>
 					</div>
@@ -62,7 +62,7 @@
 
 							<a href="#" id="ui-to-top" class="ui-to-top active"></a>
 						</div>
-					
+
 					</div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
@@ -75,7 +75,7 @@
 				<!-- END Current Activities -->
 
 				<!-- BEGIN Recent Activities Toolbar -->
-				<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  toolbar-bg padding-left-right-none">
+				<div class="col-sm-12 col-md-12 col-xs-12 col-lg-12   padding-left-right-none">
 					<div class="container-fluid breadcrumb-container">
 						<ol class="toolbar-padding" style="text-align: left">
 							<h5 class="text-color-default ">
@@ -90,15 +90,17 @@
 				<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
 					<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
 						<div id="recent-meeting-card">
-							
+
 						</div>
-					
+
 					</div>
-					
+
 				</div>
 				<div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
 					<% include _layouts/cards/recent-meeting-card %>
+						<% include _layouts/cards/model %>
 				</div>
+
 
 				<!-- END Recent Activities -->
 
@@ -106,12 +108,13 @@
 			</section>
 			<!-- BEGIN Template script file links -->
 			<% include _layouts/common-scripts %>
-				<script src="/scripts/inbuilt/modernizr.custom.js"></script>
-				<script src="/scripts/common/sweetalert.min.js"></script>
-				<script src="/scripts/common/general.js"></script>
 				<!-- <script src="/scripts/spaces/spacelist.js"></script> -->
 				<script src="/scripts/activity/activitylist.js"></script>
 				<!--  END Template script file links src -->
+				<script type="text/javascript" src="/scripts/meeting/meeting.js"></script>
+				<script src="/scripts/jquery.twbsPagination.min.js"></script>
+				<script src="/scripts/inbuilt/toastr.min.js"></script>
+				<script src="/scripts/common/sweetalert.min.js"></script>
 
 				<!-- BEGIN Spaces script -->
 				<script src="/scripts/inbuilt/classie.js"></script>
@@ -124,7 +127,7 @@
 		</div>
 		<%include _layouts/footer %>
 
-		
+
 </body>
 
 </html>
