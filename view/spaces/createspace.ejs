@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/styles/spaces/createspace.css">
     <link rel="stylesheet" href="styles/meeting/newMeeting.css">
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
+    <link rel="stylesheet" href="/styles/common/sweetalert.css">
 </head>
 
 <body>
@@ -73,7 +74,7 @@
                     <option value="" selected disabled>
                       <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
                     </option>
-                    <option>
+                    <option selected="selected">
                       <%= translation.HUB_CREATE_SPACE_ALLEQUAL %>
                     </option>
                     <option>
@@ -93,25 +94,16 @@
                     </option>
                   </select>
                 </div>
-                <div class="hide form-wrap form-wrap_icon linear-icon-key-hole">
-                  <input class="form-input input-box-shadow validate-text" id="contact-sPasscode" type="text" name="passcode">
-                  <label class="form-label" for="contact-sPasscode">
-                    <%= translation.HUB_CREATE_SPACE_PASSCODE %>
-                  </label>
-                  <span class="hide error-text">
-                    <%= translation.CREATE_SPACE_ERROR_TEXT_PASS_CODE %>
-                  </span>
-                </div>
                 <!-- BEGIN SCHEDULE MEETING -->
                 <div class="form-wrap">
                   <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD %></h6>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow">
                   <select class="form-control on-hover-color" id="sel2">
-                    <option value="" selected disabled>
+                    <option value="" disabled>
                       <%= translation.SCHEDULE_MEETING_MEETING_TYPE %>
                     </option>
-                    <option>
+                    <option selected="selected">
                       <%= translation.SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME %>
                     </option>
                     <option>
@@ -156,11 +148,25 @@
                   </div>
                 </div>
                 <!-- END SCHEDULE MEETING -->
+                <br>
                 <div class="form-wrap">
                   <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD_MEMBERS %></h6>
-                </div>
+                </div><br>
+                <section id="existingMembers" class="input-box-shadow" style="padding: 5px;">
+                    <h6 style="text-align: left;">Existing Members</h6>
+                    <div class="alert-div">
+                      <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          admin@inflexion.com
+                      </div>
+                      <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          hr-dept@inflexion.com
+                      </div>
+                    </div>
+                </section><br>
                 <div class="form-wrap margin-css custom-cospace input-box-shadow">
-                  <input type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal" style="width: 100%;"/>
+                  <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal" style="width: 100%;"/>
                 </div>  
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
@@ -172,6 +178,8 @@
                         <button id="addMemberBtn" type="button" class="button button-primary button-sm">Add Member</button>
                       </div>
                       <div id="memberParentDiv" class="modal-body">
+                        <input id="admin" name="admin" class="form-input" type="text" value="admin@inflexion.com" placeholder="add member...">
+                        <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member...">
                         <div id="addDeleteParent" class="addDeleteParent input-group form-wrap input-box-shadow">
                           <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">
                           <span id="searchMember" class="bg-gray input-group-addon"><a class="search-member-icon fa fa-search fa-lg" aria-hidden="true"></a></span>
@@ -187,9 +195,9 @@
                     </div>
                   </div>
                 </div>
-                <button id="btndiscard" class="button btn_discard" type="submit">
+                <a href="/spacelist" id="btndiscard" class="button btn_discard" type="submit">
                   <%= translation.HUB_CREATE_SPACE_DISCARD %>
-                </button>
+                </a>
                 &nbsp;&nbsp; &nbsp;&nbsp;
                 <button id="btndone" class="button button-primary" type="submit">
                   <%= translation.HUB_CREATE_SPACE_DONE %>
@@ -205,8 +213,10 @@
     <% include _layouts/common-scripts %>
       <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
       <script src="/scripts/common/validation.js"></script>
+      <script src="/scripts/spaces/updatespace.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
-      <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <script src="/scripts/inbuilt/toastr.min.js"></script>   
+      <script src="/scripts/common/sweetalert.min.js"></script>
       <script>
         $(document).ready(function () {
           $("#spacesList").addClass("active");

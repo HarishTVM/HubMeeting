@@ -1,16 +1,36 @@
 $(document).ready(function () {
+    // BEGIN PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
+        if (window.location.pathname == "/createspace" || window.location.pathname == "/newMeeting") {
+            $("#existingMembers").hide();
+        }
+        else {
+            $("#existingMembers").show();
+        }
+
+        $("#clickToAdd").click(function(){
+            if (window.location.pathname == "/createspace" || window.location.pathname == "/newMeeting") {
+                $("#admin").hide();
+                $("#hrDept").hide();
+            }
+            else {
+                $("#admin").show();
+                $("#hrDept").show();
+            }
+        });
+
+    // END PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
 
     //BEGIN DETERMINE THE PATHNAME
-        if(window.location.pathname == "/createspace"){
-            $(".meeting-head-bread").html("CMS Hub Create Space");
-            $("#updatespace-breadcrumb").html("Create Space");
-            $("#createSpace").html("Create Space");
-        }
-        else if(window.location.pathname == "/updatespace"){
-            $(".meeting-head-bread").html("CMS Hub Update Space");
-            $("#updatespace-breadcrumb").html("Update Space");
-            $("#createSpace").html("Update Space");
-        }
+    if (window.location.pathname == "/createspace") {
+        $(".meeting-head-bread").html("CMS Hub Create Space");
+        $("#updatespace-breadcrumb").html("Create Space");
+        $("#createSpace").html("Create Space");
+    }
+    else if (window.location.pathname == "/updatespace") {
+        $(".meeting-head-bread").html("CMS Hub Update Space");
+        $("#updatespace-breadcrumb").html("Update Space");
+        $("#createSpace").html("Update Space");
+    }
     //END DETERMINE THE PATHNAME
 
     var isKeyEntered = false;
@@ -49,7 +69,7 @@ $(document).ready(function () {
     //END Mirror populate input value logic
 
     // BEGIN GET USERS
-    $('#searchMember').live('click', function() {
+    $('#searchMember').live('click', function () {
         debugger;
         var filterData = $(this).siblings("#addMembers").val();
         httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {

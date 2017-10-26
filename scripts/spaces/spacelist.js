@@ -132,43 +132,35 @@ $(document).ready(function () {
         debugger;
         var cospaceIdEle = $(this).parents("#mainParent").attr("coSpaceId");
         var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
+
         var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
         $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
 
         var b = $(autoPopulate).children("#tenant").attr("tenant");
-        if (typeof b != undefined)
-            $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
-        else $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + "Not available");
+        $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
 
         var c = $(autoPopulate).children("#uri").attr("uri");
-        $("#modalUri").html("<p>URI:&nbsp;</p>" + c);
+        $("#modalUri").html("<p>Uri:&nbsp;</p>" + c);
 
         var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
-        if (b != undefined)
-            $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
-        else $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + "Not available");
+        $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
 
-            // BEGIN UPDATE COSPACE 
-    $("#modalEditBtn").click(function () {
-        debugger;
-        httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + cospaceIdEle, function (resp, err) {
-        debugger;
-        window.location.href = "/updatespace";
-            $("#contact-sName").val(resp.data.coSpace.name);
-            $("#contact-create_space_URI").val(resp.data.coSpace.uri);
+        // BEGIN UPDATE COSPACE 
+        $("#modalEditBtn").on('click', function () {
+            debugger;
+            window.location.href = "/updatespace?cospaceId=" + cospaceIdEle;
         });
-    });
-    // END UPDATE COSPACE 
+        // END UPDATE COSPACE 
     });
     //END MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
 
 
     // BEGIN DELETE SPACELIST CARDS
-    $("#deleteBtn").live("click", function(){
+    $("#deleteBtn").live("click", function () {
         var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var ele = $(mainEle).children("#coSpaceName").attr("coSpaceName");
         swal({
-            title:"",
+            title: "",
             text: "Are you sure you want to delete " + ele + " ?",
             type: "warning",
             showCancelButton: true,
@@ -176,9 +168,9 @@ $(document).ready(function () {
             confirmButtonText: "Yes, delete it!",
             closeOnConfirm: false
         },
-        function(){
-            swal("Deleted!", "", "success");
-        });
-    });  
+            function () {
+                swal("Deleted!", "", "success");
+            });
+    });
     // END DELETE SPACELIST CARDS
 });
