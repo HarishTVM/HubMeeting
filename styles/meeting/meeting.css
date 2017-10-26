@@ -44,4 +44,27 @@ color: #9c27b0;
   position: absolute;
 }
 .crad-bottom-div{ bottom: 5px; }
+.m-details-padding{padding: 10px;}
+.m-details-color{
+  font-size: medium;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: -5px;
+  color: #9c27b0;
+}
+.m-details-color-size{
+  font-size: 14px;
+  color: #888888;
+}
+.modal-margin-t{margin-top: 12%;}
+.modal-border-r{border-right: 1px solid #e5e5e5;}
+.modal-padding-member{
+  padding: 3px;
+}
+.modal-toolbar-border-t-b{
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
+.modal-t-align-l{text-align: left;}
+.modal-border-radius{border-radius: 5px; !important}
 /*/////////////////////////////////// End Card Meeting for Styles ////////////////////////////////////// */

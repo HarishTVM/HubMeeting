@@ -43,7 +43,7 @@
           <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
             <!-- Search input field -->
             <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
-              <input id="filter-users" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search The Meeting">
+              <input id="filter-users" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search Users">
             </div>
           </div>
           <!-- END users Search  -->
@@ -87,6 +87,12 @@
           $("#usersList").addClass("active");
         });
       </script>
+
+<script>
+    window.onload = function () {
+        $('.').modal('show');
+    }
+</script>
       <!-- Pagination next footer -->
       <%include _layouts/footer %>
 </body>

@@ -11,6 +11,7 @@ $(document).ready(function () {
         }    
     });
     
+    meetingModal();
     // BEGIN DELETE MEETING CARDS
     $("#meetingDelBtn").live("click", function(){
         debugger;
@@ -37,6 +38,15 @@ getMeeting = function () {
         console.log(response);
         var meetingTemplate = Handlebars.compile($('#meetingCardId').html());
         $('#meeting-card').html(meetingTemplate(response.data));
+       
+    });
+
+}
+meetingModal = function () {
+    $.getJSON('/json/meeting.json', function (response) {
+        console.log(response);
+        var meetingModalTemplate = Handlebars.compile($('#meetingModalId').html());
+        $('#modal').html(meetingModalTemplate(response.data));
     });
 }
 

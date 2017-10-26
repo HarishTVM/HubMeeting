@@ -48,20 +48,26 @@
           <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
             <!-- Search input field -->
             <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
-              <input id="filter-meeting" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search The Meeting">
+              <input id="filter-meeting" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search Meeting">
             </div>
           </div>
           <!-- handlebars -->
           <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
             <div class="all-card-margin-top" id="meeting-card">
-             
             </div>
+          </div>
+          <% include _layouts/cards/meeting-card %>
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+            <div class="modal"></div>
           </div>
 
           <!-- include file for card-->
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+              <% include _layouts/cards/model %>
+          </div>
 
-          <% include _layouts/cards/meeting-card %>
-            <% include _layouts/cards/model %>
+          
+
         </div>
         <!-- page-loaders-users -->
         <div class="us-card-loading" id="page-loaders-users">
