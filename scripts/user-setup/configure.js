@@ -27,7 +27,7 @@ $(document).ready(function(){
                         console.log(resp);
                         toastr.options.closeButton = true;
                         toastr.info("Success. Page will be re-directed to Dashboard");
-                        setTimeout(function(){window.location.href="/dashboard"}, 5000);
+                        setTimeout(function(){window.location.href="/dashboard"}, 3000);
                     }
                 });
             }

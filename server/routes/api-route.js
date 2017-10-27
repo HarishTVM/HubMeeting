@@ -21,6 +21,9 @@ app.get("/updatemeeting", (req, res)=>{
 app.get("/configure", (req, res)=>{
   res.render("configure", {year: new Date().getFullYear()});
 });
+app.get("/configure-settings", (req, res)=>{
+  res.render("configure", {year: new Date().getFullYear()});
+});
 app.get("/changePassword", (req, res)=>{
   res.render("changepassword", {year: new Date().getFullYear()});
 });
@@ -43,6 +46,9 @@ app.get("/dashboard",(req,res)=>{
   res.render("dashboard", {year: new Date().getFullYear()});
 });
 app.get("/smtp",(req,res)=>{
+  res.render("smtp", {year: new Date().getFullYear()});
+});
+app.get("/smtp-settings",(req,res)=>{
   res.render("smtp", {year: new Date().getFullYear()});
 });
 app.get("/login", (req, res)=>{

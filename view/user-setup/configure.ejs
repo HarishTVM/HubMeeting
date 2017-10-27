@@ -37,7 +37,7 @@
       <!-- END page-loader -->
       
       <!-- BEGIN page-header Navbar for configure -->
-      <% include _layouts/restricted-header %>
+      <% include _layouts/header-with-navigation %>
       <!-- END page-header Navbar for configure -->
       <section class="section-lg bg-white text-center configure-section-custom">
         <div class="shell">
@@ -51,24 +51,24 @@
               <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
                 <!-- API URL input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-link2">
-                  <input class="form-input  input-box-shadow validate-text" id="api-url" type="apiurl" name="apiurl">
-                  <label class="form-label" for="api-url"><%= translation.HUBCONFIGUATION_API_URL %></label>
+                  <input class="form-input  input-box-shadow validate-text" id="api-url" type="apiurl" name="apiurl" placeholder="<%= translation.HUBCONFIGUATION_API_URL %>">
+                  <!-- <label class="form-label" for="api-url"><%= translation.HUBCONFIGUATION_API_URL %></label> -->
                   <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_URL %></span>                  
                 </div>
                 <!-- User Name input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-man">
-                  <input class="form-input input-box-shadow validate-text" id="api-uname" type="apiurl" name="apiuserName">
-                  <label class="form-label" for="api-uname"><%= translation.HUBCONFIGUATION_API_USERNAME %></label>
+                  <input class="form-input input-box-shadow validate-text" id="api-uname" type="apiurl" name="apiuserName" placeholder="<%= translation.HUBCONFIGUATION_API_USERNAME %>">
+                  <!-- <label class="form-label" for="api-uname"><%= translation.HUBCONFIGUATION_API_USERNAME %></label> -->
                   <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_USERNAME %></span>                  
                 </div>
                 <!-- User API Password input field -->
                 <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                  <input class="form-input input-box-shadow validate-text" id="api-password" type="password" name="apiPassword">
-                  <label class="form-label" for="api-password"><%= translation.HUBCONFIGUATION_API_PASSWORD %></label>
+                  <input class="form-input input-box-shadow validate-text" id="api-password" type="password" name="apiPassword" placeholder="<%= translation.HUBCONFIGUATION_API_PASSWORD %>">
+                  <!-- <label class="form-label" for="api-password"><%= translation.HUBCONFIGUATION_API_PASSWORD %></label> -->
                   <span class="hide error-text"><%= translation.CONFIGURE_ERROR_TEXT_API_PASSWORD %></span>                  
                 </div>
                 <!-- Form Submit button for Configure -->
-                <button id="configureBtn" class="button button-primary " type="submit"><%= translation.HUBCONFIGUATION_SAVE %></button>
+                <a id="configureBtn" class="button button-primary " type="submit"><%= translation.HUBCONFIGUATION_SAVE %></a>
               </form>
             </div>
           </div>
@@ -87,6 +87,7 @@
      <!-- BEGIN script file links -->
      <script src="/scripts/common/validation.js"></script>
      <script src="/scripts/user-setup/configure.js"></script>
+     <script src="/scripts/user-setup/apismtpsettings.js"></script>
      <script src="/scripts/inbuilt/toastr.min.js"></script>     
      <!-- END script file links -->
   <!-- BEGIN Page footer for SMTP-->
