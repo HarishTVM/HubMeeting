@@ -26,12 +26,13 @@ getCospaces = function () {
             prev: 'Prev',
             next: 'Next',
             onPageClick: function (event, page) {
+                $('.LoadingPageHide').hide();
                 $('.card-loaders-spacelist').show();
                 $('.page-loaders').hide();
                 if ($('.card-loaders-spacelist').show()) {
-                    $('.bg-white').each(function () {
-                        this.style.setProperty('background-color', '#f2f2f2', 'important');
-                    });
+                    // $('.bg-white').each(function () {
+                    //     this.style.setProperty('background-color', '#f2f2f2', 'important');
+                    // });
                 }
                 offset = queryTypes.LIMIT * (page - 1);
                 //If offset is greater than total records
@@ -40,6 +41,7 @@ getCospaces = function () {
                 getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, page, function (resp) {
                     //Bind the response using Handlebars
                     $("#List").show();
+                    $('.LoadingPageHide').show();
                     $('.page-loaders').hide();
                     var template = Handlebars.compile($('#cardId').html());
                     $('#List').html(template(resp.data));

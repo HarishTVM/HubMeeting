@@ -9,67 +9,71 @@
                   <div class="cssload-speeding-wheel"></div>
                 </div>
               </div>
-    <div class="div-top thumb-corporate bg-white h-box-shadow h-div-border s-height">
-        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-               
-            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 card-width-name padding-left-right-none">
-                <div class="us-name-circle">
-                        <i class="card-icon-size linear-icon-man"  style="color:{{ colors.iconColor}};"></i>
-                        
+          
+                <div class="div-top thumb-corporate bg-white h-box-shadow h-div-border s-height">
+                        <div class="LoadingPageHide">
+                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
+                           
+                        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 card-width-name padding-left-right-none">
+                            <div class="us-name-circle">
+                                    <i class="card-icon-size linear-icon-man"  style="color:{{ colors.iconColor}};"></i>
+                                    
+                            </div>
+                        </div>
+                       
+                        <div data-toggle=" " title="{{user.userJid}}" class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 padding-left-right-none card-width-title us-title-color text-overflow-title h6-title-medium us-card-title-mardin-top cursor-default">
+                                {{#if user.userJid}}
+                                {{user.userJid}}
+                                  {{else}}
+                                  Not Available
+                                   {{/if}}
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 us-card-mardin-top ">
+                        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-right-none text-center">
+                            <i class="us-icon-color linear-icon-user"></i>
+                        </div>
+                        <div  data-toggle=" " title="{{user.name}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10 cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title">
+                          
+                                    {{#if user.name}}
+                                    {{user.name}}
+                                      {{else}}
+                                      <br>
+                                      {{/if}}
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                        <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-right-none text-center">
+                            <i class="us-icon-color linear-icon-envelope"></i>
+                        </div>
+                        <div data-toggle=" " title="{{user.email}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10 cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title">
+                            
+                                    {{#if user.email}}
+                                    {{user.email}}
+                                      {{else}}
+                                      Not Available
+                                       {{/if}}
+                           
+                        </div>
+                    </div>
+            
+                    <!-- BEGIN card mouseover show icon for Spaces-->
+                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
+                        <div id="icon-list" class="thumb-corporate__overlay text-center ">
+                            <ul class="list-inline-sm">
+                                <li data-toggle="modal" data-target="#usersModal">
+                                    <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm"data-toggle="tooltip" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" >
+                                        <i class="linear-icon-reading"></i>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                  
+                    <!-- END card one mouseover show for Spaces-->
                 </div>
-            </div>
-           
-            <div data-toggle=" " title="{{user.userJid}}" class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 padding-left-right-none card-width-title us-title-color text-overflow-title h6-title-medium us-card-title-mardin-top cursor-default">
-                    {{#if user.userJid}}
-                    {{user.userJid}}
-                      {{else}}
-                      Not Available
-                       {{/if}}
-            </div>
-        </div>
-        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 us-card-mardin-top ">
-            <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-right-none text-center">
-                <i class="us-icon-color linear-icon-user"></i>
-            </div>
-            <div  data-toggle=" " title="{{user.name}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10 cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title">
-              
-                        {{#if user.name}}
-                        {{user.name}}
-                          {{else}}
-                          <br>
-                          {{/if}}
-            </div>
-        </div>
-        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
-            <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-right-none text-center">
-                <i class="us-icon-color linear-icon-envelope"></i>
-            </div>
-            <div data-toggle=" " title="{{user.email}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10 cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title">
-                
-                        {{#if user.email}}
-                        {{user.email}}
-                          {{else}}
-                          Not Available
-                           {{/if}}
-               
-            </div>
-        </div>
-
-        <!-- BEGIN card mouseover show icon for Spaces-->
-        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
-            <div id="icon-list" class="thumb-corporate__overlay text-center ">
-                <ul class="list-inline-sm">
-                    <li data-toggle="modal" data-target="#usersModal">
-                        <p class="btn actbtn icon-info h-icon-info-sm btn-circle thumb-corporate__list h-iconls-color icon-sm"data-toggle="tooltip" title="<%= translation.HUB_SPACES_TOOLTIP_INFO %>" >
-                            <i class="linear-icon-reading"></i>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-      
-        <!-- END card one mouseover show for Spaces-->
-    </div>
+              </div>
+   
 </div>
 
 {{/each}}

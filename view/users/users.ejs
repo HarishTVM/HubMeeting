@@ -18,7 +18,7 @@
 <body class="h-background-color ">
   <!-- include file for navigation -->
   <% include _layouts/header-with-navigation %>
-   <!-- BEGIN Users Pages-->
+    <!-- BEGIN Users Pages-->
     <div class="page">
       <!-- BEGIN Users toolbar-->
       <div class="container-fluid breadcrumb-container">
@@ -56,8 +56,15 @@
           <div id="users-card"></div>
           <!-- include file for card-->
           <% include _layouts/cards/users-card %>
-          <% include _layouts/modals/users-modal %>
-       
+            <% include _layouts/modals/users-modal %>
+
+
+
+              <!--Pagination next plugin footer -->
+
+              <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+                <ul class="sync-pagination pagination-sm" />
+              </div>
         </div>
         <!-- page-loaders-users -->
         <div class="us-card-loading" id="page-loaders-users">
@@ -65,13 +72,10 @@
             <div class="cssload-speeding-wheel"></div>
           </div>
         </div>
-        <!--Pagination next plugin footer -->
-        <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
-          <ul class="sync-pagination pagination-sm" />
-        </div>
+
     </div>
-    
-      <!-- End Users Pages-->
+
+    <!-- End Users Pages-->
     </section>
 
     <!-- BEGIN script file links -->
@@ -81,20 +85,23 @@
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/common/sweetalert.min.js"></script>
       <!-- End Users script -->
-     <!-- Navigation active Users -->
+      <!-- Navigation active Users -->
       <script>
         $(document).ready(function () {
           $("#usersList").addClass("active");
         });
       </script>
 
-<script>
-    window.onload = function () {
-        $('.').modal('show');
-    }
-</script>
+      <script>
+        window.onload = function () {
+          $('.').modal('show');
+        }
+      </script>
       <!-- Pagination next footer -->
-      <%include _layouts/footer %>
+      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+        <%include _layouts/footer %>
+      </div>
+
 </body>
 
 </html>
