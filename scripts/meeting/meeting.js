@@ -13,7 +13,6 @@ $(document).ready(function () {
 
     // BEGIN UPDATE COSPACE 
     $("#editmodelBtn").on('click', function () {
-        debugger;
         window.location.href = "/updatemeeting";
     });
     // END UPDATE COSPACE 
@@ -22,7 +21,6 @@ $(document).ready(function () {
 
     // BEGIN DELETE MEETING CARDS
     $("#meetingDelBtn").live("click", function () {
-        debugger;
         var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var ele = $(mainEle).children("#meetingName").attr("meetingName");
         swal({

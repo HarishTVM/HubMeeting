@@ -14,7 +14,6 @@ $(document).ready(function(){
                     "apiPassword": $('#api-password').val()
                 }
                 httpPost(apiType.CONFIGURE, reqData, function(resp, err){
-                    debugger;
                     if(err){
                         //Error for unknown user
                         if(err.customErrCode == errorCodes.API_UNKNOWN_USER)
