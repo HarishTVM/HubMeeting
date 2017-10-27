@@ -44,7 +44,7 @@
           <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
             <!-- Search input field -->
             <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
-              <input id="filter" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search Spaces">
+              <input id="filter" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder=" <%= translation.HUB_SPACES_SEARCH_SPACES %>">
             </div>
           </div>
           <!-- END Activities Search  -->
@@ -69,10 +69,7 @@
           data-original-title="<%= translation.HUB_CREATE_SPACE_TOOLBAR %>"></a>
       </section>
 
-      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
-        <ul class="sync-pagination pagination-sm "></ul>
-        <!--Pagination plugin-->
-      </div>
+
     </div>
     <!-- include file for Script -->
     <% include _layouts/common-scripts %>
@@ -87,7 +84,10 @@
         });
       </script>
       <!-- Pagination next footer -->
-
+      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+        <ul class="sync-pagination pagination-sm "></ul>
+        <!--Pagination plugin-->
+      </div>
       <!-- Pagination plugin -->
       <%include _layouts/footer %>
 </body>

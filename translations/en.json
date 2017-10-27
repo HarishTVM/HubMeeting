@@ -31,6 +31,8 @@
   "HUB_SPACES_TOOLTIP_MUTE":"Mute",
   "HUB_SPACES_TOOLTIP_HIDE":"Hide",
   "HUB_SPACES_TOOLTIP_CLOSE":"Close",
+  "HUB_SPACES_SEARCH_SPACES":"Search Spaces",
+  
 
 
   "HUB_CREATE_SPACE_TITLE":"Create Space",
@@ -66,17 +68,24 @@
 
   "HUB_USERS_TITLE":"CMS Hub Users",
   "HUB_USERS":"Users",
-  "HUB_USERS_SEARCH_PLACEHOLDER":"Enter The Username",
+  "HUB_USERS_SEARCH_PLACEHOLDER":"Search Username",
+  
 
   "HUB_ACTIVITY_TITLE":"CMS Hub Activities",
   "HUB_ACTIVITY_TOOLBAR_CURRENT_ACTIVITIES":"Current Activities",
   "HUB_ACTIVITY_TOOLBAR_ACTIVITIES":"Activities",
   "HUB_ACTIVITY_SEE_MORE":"See More",
   "HUB_ACTIVITY_TOOLBAR_RECENT_ACTIVITIES":"Recent Activities",
+  "HUB_ACTIVITY_TOOLBAR_ACTIVITY":"Activity",
+  "HUB_ACTIVITY_ACTIVE_MEETINGS":"Active Meetings",
+  "HUB_SCHEDULED_MEETINGS":"Scheduled Meetings",
+  
+
+
   
   "HUB_LOGS_TITLE":"CMS Hub Logs",
   "HUB_LOGS_TOOLBER":"Logs",
-
+  "HUB_LOGS_SEARCH_LOGS":"Search Logs",
 
 
 
@@ -119,6 +128,9 @@
     "SCHEDULE_MEETING_MEETING_TYPE": "Meeting type",
     "SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME": "One time",
     "SCHEDULE_MEETING_MEETING_TYPE_PERSONAL": "Personal",
+    "CREATED_MEETINGS":"Created Meetings",
+    "EXPIRED_MEETINGS":"Expired Meetings",
+    "RECENT_MEETINGS":"",
 
     "HUB_FOOTER": "Inflexion Technology Solutions",
 
