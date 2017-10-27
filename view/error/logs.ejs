@@ -8,8 +8,8 @@
      <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
      <!--Stylesheets file links -->
      <% include _layouts/common-header %>
-    <link rel="stylesheet" href="/styles/meeting.css">
     <link rel="stylesheet" href="/styles/oldmeeting.css">
+    <link rel="stylesheet" href="/styles/meeting/meeting.css">
 </head>
 
 <body class=" bg-white">
@@ -34,8 +34,8 @@
             <input class="form-input search-input input-box-shadow " type="text" name="search" placeholder="<%= translation.HUB_LOGS_SEARCH_LOGS %>">
           <!-- </div> -->
           </div>
-
         </div>
+        <% include _layouts/modals/spacelist-modal %>
         <section class="section-sm bg-white main-section">
           <div class="shell accordian-shell">
             <!-- Accordion-->
@@ -43,14 +43,17 @@
               <!-- Bootstrap panel-->
               <div class="panel panel-custom">
                 <div class="panel-custom-heading" id="1Headingundefined" role="tab">
-                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined" aria-controls="1Collapseundefined">Mr.ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined" aria-controls="1Collapseundefined"><span style="color:#333;">harish.users has created a new cospace<span style="float:right;font-size:11px">23/9/17 11:00AM</span></span></a>
                   </p>
                 </div>
                 <div class="panel-custom-collapse collapse" id="1Collapseundefined" role="tabpanel" aria-labelledby="1Headingundefined">
                   <div class="panel-custom-body">
                     <ul class="list-group list-content">
-                      <li>Cospace: ABC</li>
-                      <li>Owner: Sreeharsha inflexion.com</li>
+                      <li>Cospace: Harish.users</li>
+                      <li>Owner: Harish inflexion.com  <a href="#">
+                          <span class="glyphicon glyphicon-info-sign" data-toggle="modal"
+                          data-target="#myModal"></span>
+                        </a></li>
                       <li>Operator:</li>
                       <li>Invitees: 3</li>
                     </ul>
@@ -59,21 +62,24 @@
                       <li>Call URI: abc</li>
                       <li>Call ID: 700102</li>
                     </ul>
-                    <a href="#">Edit</a>
+                    <!-- <a href="#">Edit</a> -->
                  </div>
                 </div>
               </div>
               <!-- Bootstrap panel-->
               <div class="panel panel-custom">
                 <div class="panel-custom-heading" id="2Headingundefined" role="tab">
-                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#2" href="#2Collapseundefined" aria-controls="2Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#2" href="#2Collapseundefined" aria-controls="2Collapseundefined"><span style="color:#333;">network Dept.users created a new meeting<span style="float:right;font-size:11px">29/9/17 5:00PM</span></span></a>
                   </p>
                 </div>
                 <div class="panel-custom-collapse collapse" id="2Collapseundefined" role="tabpanel" aria-labelledby="2Headingundefined">
                   <div class="panel-custom-body">
                       <ul class="list-group list-content">
-                          <li>Cospace: ABC</li>
-                          <li>Owner: Sreeharsha inflexion.com</li>
+                          <li>Cospace: Network Dept</li>
+                          <li>Owner: Sreeharsha inflexion.com  <a href="#">
+                              <span class="glyphicon glyphicon-info-sign" data-toggle="modal"
+                              data-target="#myModal"></span>
+                            </a></li> 
                           <li>Operator:</li>
                           <li>Invitees: 3</li>
                       </ul>
@@ -82,21 +88,24 @@
                           <li>Call URI: abc</li>
                           <li>Call ID: 700102</li>
                       </ul>
-                        <a href="#">Edit</a>
+                        <!-- <a href="#">Edit</a> -->
                   </div>
                 </div>
               </div>
               <!-- Bootstrap panel-->
               <div class="panel panel-custom">
                 <div class="panel-custom-heading" id="3Headingundefined" role="tab">
-                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#3" href="#3Collapseundefined" aria-controls="3Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#3" href="#3Collapseundefined" aria-controls="3Collapseundefined"><span style="color:#333;">schema Admins.users has invited you for a meeting<span style="float:right;font-size:11px">30/9/17 10:00AM</span></span> </a>
                   </p>
                 </div>
                 <div class="panel-custom-collapse collapse" id="3Collapseundefined" role="tabpanel" aria-labelledby="3Headingundefined">
                   <div class="panel-custom-body">
                       <ul class="list-group list-content">
-                          <li>Cospace: ABC</li>
-                          <li>Owner: Sreeharsha inflexion.com</li>
+                          <li>Cospace: Schema Admins</li>
+                          <li>Owner: Sreeharsha inflexion.com <a href="#">
+                              <span class="glyphicon glyphicon-info-sign" data-toggle="modal"
+                              data-target="#myModal"></span>
+                            </a></li> 
                           <li>Operator:</li>
                           <li>Invitees: 3</li>
                       </ul>
@@ -105,21 +114,25 @@
                           <li>Call URI: abc</li>
                           <li>Call ID: 700102</li>
                       </ul>
-                        <a href="#">Edit</a>
+                        <!-- <a href="#">Edit</a> -->
                   </div>
                 </div>
               </div>
               <!-- Bootstrap panel-->
               <div class="panel panel-custom">
                 <div class="panel-custom-heading" id="4Headingundefined" role="tab">
-                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#4" href="#4Collapseundefined" aria-controls="4Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#4" href="#4Collapseundefined" aria-controls="4Collapseundefined"><span style="color:#333;">naveen.users has deleted a meeting<span style="float:right;font-size:11px">3/10/17 2:00PM</span></span> </a>
                   </p>
                 </div>
                 <div class="panel-custom-collapse collapse" id="4Collapseundefined" role="tabpanel" aria-labelledby="4Headingundefined">
                   <div class="panel-custom-body">
                       <ul class="list-group list-content">
-                          <li>Cospace: ABC</li>
-                          <li>Owner: Sreeharsha inflexion.com</li>
+                          <li>Cospace: Naveen</li>
+                          <li>Owner: Sreeharsha inflexion.com <a href="#">
+                                  <span class="glyphicon glyphicon-info-sign" data-toggle="modal"
+                                  data-target="#myModal"></span>
+                                </a>
+                          </li>
                           <li>Operator:</li>
                           <li>Invitees: 3</li>
                       </ul>
@@ -128,21 +141,25 @@
                           <li>Call URI: abc</li>
                           <li>Call ID: 700102</li>
                       </ul>
-                        <a href="#">Edit</a>
+                        <!-- <a href="#">Edit</a> -->
                   </div>
                 </div>
               </div>
                <!-- Bootstrap panel-->
               <div class="panel panel-custom">
                 <div class="panel-custom-heading" id="5Headingundefined" role="tab">
-                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#5" href="#5Collapseundefined" aria-controls="5Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#5" href="#5Collapseundefined" aria-controls="5Collapseundefined"><span style="color:#333;">rajesh.users has updated a cospace<span style="float:right;font-size:11px">10/10/17 6:00PM</span></span></a>
                   </p>
                 </div>
                 <div class="panel-custom-collapse collapse" id="5Collapseundefined" role="tabpanel" aria-labelledby="5Headingundefined">
                   <div class="panel-custom-body">
                       <ul class="list-group list-content">
-                          <li>Cospace: ABC</li>
-                          <li>Owner: Sreeharsha inflexion.com</li>
+                          <li>Cospace: Rajesh</li>
+                          <li>Owner: Rajesh inflexion.com <a href="#">
+                                  <span class="glyphicon glyphicon-info-sign" data-toggle="modal"
+                                  data-target="#myModal"></span>
+                                </a>
+                          </li>
                           <li>Operator:</li>
                           <li>Invitees: 3</li>
                       </ul>
@@ -151,21 +168,25 @@
                           <li>Call URI: abc</li>
                           <li>Call ID: 700102</li>
                       </ul>
-                        <a href="#">Edit</a>
+                        <!-- <a href="#">Edit</a> -->
                   </div>
                 </div>
               </div>
               <!-- Bootstrap panel-->
               <div class="panel panel-custom">
                 <div class="panel-custom-heading" id="6Headingundefined" role="tab">
-                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#6" href="#6Collapseundefined" aria-controls="6Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#6" href="#6Collapseundefined" aria-controls="6Collapseundefined"><span style="color:#333;">ramesh.users has ended a meeting<span style="float:right;font-size:11px">15/10/17 4:00PM</span></span></a>
                   </p>
                 </div>
                 <div class="panel-custom-collapse collapse" id="6Collapseundefined" role="tabpanel" aria-labelledby="6Headingundefined">
                   <div class="panel-custom-body">
                       <ul class="list-group list-content">
-                          <li>Cospace: ABC</li>
-                          <li>Owner: Sreeharsha inflexion.com</li>
+                          <li>Cospace: Ramesh</li>
+                          <li>Owner: Ramesh inflexion.com <a href="#">
+                                  <span class="glyphicon glyphicon-info-sign" data-toggle="modal"
+                                  data-target="#myModal"></span>
+                                </a>
+                          </li>
                           <li>Operator:</li>
                           <li>Invitees: 3</li>
                       </ul>
@@ -174,21 +195,25 @@
                           <li>Call URI: abc</li>
                           <li>Call ID: 700102</li>
                       </ul>
-                        <a href="#">Edit</a>
+                        <!-- <a href="#">Edit</a> -->
                   </div>
                 </div>
               </div>
               <!-- Bootstrap panel-->
               <div class="panel panel-custom">
                 <div class="panel-custom-heading" id="7Headingundefined" role="tab">
-                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#7" href="#7Collapseundefined" aria-controls="7Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                  <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#7" href="#7Collapseundefined" aria-controls="7Collapseundefined"><span style="color:#333;">satish.users has started a meeting<span style="float:right;font-size:11px">23/10/17 3:00PM</span></span></a>
                   </p>
                 </div>
                 <div class="panel-custom-collapse collapse" id="7Collapseundefined" role="tabpanel" aria-labelledby="7Headingundefined">
                   <div class="panel-custom-body">
                       <ul class="list-group list-content">
-                          <li>Cospace: ABC</li>
-                          <li>Owner: Sreeharsha inflexion.com</li>
+                          <li>Cospace: Satish</li>
+                          <li>Owner: Satish inflexion.com <a href="#">
+                                  <span class="glyphicon glyphicon-info-sign" data-toggle="modal"
+                                  data-target="#myModal"></span>
+                                </a>
+                          </li>
                           <li>Operator:</li>
                           <li>Invitees: 3</li>
                       </ul>
@@ -197,7 +222,7 @@
                           <li>Call URI: abc</li>
                           <li>Call ID: 700102</li>
                       </ul>
-                        <a href="#">Edit</a>
+                        <!-- <a href="#">Edit</a> -->
                   </div>
                 </div>
               </div>
@@ -213,6 +238,7 @@
     <script>
         $(document).ready(function () {
             $("#logsList").addClass("active");
+            $("#modalEditBtn").hide();
         });
     </script>
       <!-- Pagination next footer -->

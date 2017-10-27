@@ -1,5 +1,16 @@
 $(document).ready(function () {
 
+    //BEGIN CHECK CHILDERN LENGTH INSIDE EXISTING MEMBERS
+        $(".alertClose").on('click', function(){
+            debugger;
+            var numItems = $('.alertClose').length;
+            if(numItems == 0 || numItems == 1)
+              $(this).parents("#existingMembers").remove();
+            // numItems=numItems-1;    
+        });
+
+    //END CHECK CHILDERN LENGTH INSIDE EXISTING MEMBERS
+
     // BEGIN PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
         if (window.location.pathname == "/createspace" || window.location.pathname == "/newMeeting") {
             $("#existingMembers").hide();

@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
 
     // BEGIN UPDATE COSPACE 
-    $("#btnEditModal").on('click', function () {
+    $("#editmodelBtn").on('click', function () {
         debugger;
         window.location.href = "/updatemeeting";
     });
