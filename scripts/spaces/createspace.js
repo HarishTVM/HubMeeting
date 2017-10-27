@@ -28,7 +28,6 @@ $(document).ready(function () {
                 $("#hrDept").show();
             }
         });
-
     // END PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
 
     //BEGIN DETERMINE THE PATHNAME

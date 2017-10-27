@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    debugger;
         //BEGIN DETERMINE THE PATHNAME
         if (window.location.pathname == "/newmeeting") {
             $("#meetingList").addClass("active");

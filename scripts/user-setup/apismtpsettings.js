@@ -1,9 +1,5 @@
 $(document).ready(function(){
-
-    $("#settingsList").(function(){
-        $(this)
-    })
-
+    // BEGIN AUTOPOPULATE FORM FOR CONFIGURE AND SMTP PAGES
     if(window.location.pathname == "/configure-settings"){
         $("#api-url").val("https://192.168.5.27:445");
         $("#api-uname").val("apiuser");
@@ -21,4 +17,6 @@ $(document).ready(function(){
         $("#api-uname").val("");
         $("#api-password").val("");
     }
+    // END AUTOPOPULATE FORM FOR CONFIGURE AND SMTP PAGES
+
 });

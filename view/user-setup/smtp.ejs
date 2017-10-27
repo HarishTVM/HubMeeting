@@ -1,103 +1,129 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-  <head>
-    <!-- BEGIN Site Title-->
-    <title><%= translation.HUBSMTP_TITLE %></title>
-    <!-- END Site Title-->
-     <!-- BEGIN Common bootstrap meta-->
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <!-- END Common bootstrap meta-->
-    <!--BEGIN logo image file links -->
-    <link href="/images/logo.png" rel="icon" type="image/x-icon">
-    <!--END logo image file links -->
 
-    <!--BEGIN Stylesheets file links -->
-    <% include _layouts/common-header %>
+<head>
+  <!-- BEGIN Site Title-->
+  <title>
+    <%= translation.HUBSMTP_TITLE %>
+  </title>
+  <!-- END Site Title-->
+  <!-- BEGIN Common bootstrap meta-->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <!-- END Common bootstrap meta-->
+  <!--BEGIN logo image file links -->
+  <link href="/images/logo.png" rel="icon" type="image/x-icon">
+  <!--END logo image file links -->
+
+  <!--BEGIN Stylesheets file links -->
+  <% include _layouts/common-header %>
     <link rel="stylesheet" href="styles/common/style.css">
-    <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css"> 
-     <!--END Stylesheets file links -->
+    <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
+    <!--END Stylesheets file links -->
 
-  </head>
-  <body>
-    <!-- BEGIN Page -->
-    <div class="page" id="smtp-page">
-      <!-- BEGIN page-loader -->
-      <div id="page-loader">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
+</head>
+
+<body>
+  <!-- BEGIN Page -->
+  <div class="page" id="smtp-page">
+    <!-- BEGIN page-loader -->
+    <div id="page-loader">
+      <div class="cssload-container">
+        <div class="cssload-speeding-wheel"></div>
       </div>
-      <!-- END page-loader -->
-      <!-- BEGIN page-header Navbar for SMTP -->
-      <% include _layouts/header-with-navigation %>
+    </div>
+    <!-- END page-loader -->
+    <!-- BEGIN page-header Navbar for SMTP -->
+    <% include _layouts/header-with-navigation %>
       <!-- END page-header Navbar for SMTP -->
 
-          <section class="section-lg bg-white text-center configure-section-custom">
-            <div class="shell">
-              <!-- Form Title for SMTP -->
-              <h4><%= translation.HUBSMTP_SETUP %></h4>
-             
-              <!-- BEGIN form for SMTP -->
-              <div class="range range-md-center">
-                <div class="cell-md-10 cell-lg-8">
-                  <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
-                    <!--SMTP ServerAddress input field -->
-                    <div class="form-wrap form-wrap_icon linear-icon-server">
-                      <input class="form-input input-box-shadow validate-text" id="serveraddress" type="text" name="serveraddress" placeholder="<%= translation.HUBSMTP_SERVER_ADDRESS %>">
-                      <!-- <label class="form-label" for="serveraddress"><%= translation.HUBSMTP_SERVER_ADDRESS %></label> -->
-                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_SERVER_ADDRESS %></span>                  
-                    </div>
-                    <!-- SMTP User Name input field -->
-                    <div class="form-wrap form-wrap_icon linear-icon-at-sign">
-                      <input class="form-input input-box-shadow validate-text" id="username" type="email" name="username" placeholder="<%= translation.HUBSMTP_USERNAME %>">
-                      <!-- <label class="form-label" for="username"><%= translation.HUBSMTP_USERNAME %></label> -->
-                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_USERNAME %></span>                  
-                    </div>
-                    <!-- SMTP Password input field -->
-                    <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                      <input class="form-input input-box-shadow validate-text" id="password" type="password" name="password" placeholder="<%= translation.HUBSMTP_PASSWORD %>">
-                      <!-- <label class="form-label" for="password"><%= translation.HUBSMTP_PASSWORD %> </label> -->
-                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_PASSWORD %></span>                  
-                    </div>
-                    <!-- SMTP Port(TLS) input field -->
-                    <div class="form-wrap form-wrap_icon linear-icon-cable">
-                      <input class="form-input input-box-shadow validate-text" id="tlsport" type="text" name="tlsport" placeholder="<%= translation.HUBSMTP_PORT_TLS %>">
-                      <!-- <label class="form-label" for="tlsport"><%= translation.HUBSMTP_PORT_TLS %></label> -->
-                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_PORT_TLS %></span>                  
-                    </div>
-                    <!-- SMTP Port(SSL) input field -->
-                    <div class="form-wrap form-wrap_icon linear-icon-cable">
-                      <input class="form-input input-box-shadow validate-text" id="sslport" type="text" name="sslport" placeholder="<%= translation.HUBSMTP_PORT_SSL %>">
-                      <!-- <label class="form-label" for="sslport"><%= translation.HUBSMTP_PORT_SSL %></label> -->
-                      <span class="hide error-text"><%= translation.SMTP_ERROR_TEXT_SMTP_PORT_SSL %></span>                  
-                    </div>
-                    <!-- Form Submit button for SMTP -->
-                    <a href="/dashboard" id="smtpBtn" class="button button-primary" type="submit"><%= translation.HUBSMTP_PORT_SUBMIT %></a>
-                  </form>
+      <section class="section-lg bg-white text-center configure-section-custom">
+        <div class="shell">
+          <!-- Form Title for SMTP -->
+          <h4>
+            <%= translation.HUBSMTP_SETUP %>
+          </h4>
+
+          <!-- BEGIN form for SMTP -->
+          <div class="range range-md-center">
+            <div class="cell-md-10 cell-lg-8">
+              <form class="rd-mailform rd-mailform_style-1 text-center validate-form">
+                <!--SMTP ServerAddress input field -->
+                <div class="form-wrap form-wrap_icon linear-icon-server">
+                  <input class="form-input input-box-shadow validate-text" id="serveraddress" type="text" name="serveraddress" placeholder="<%= translation.HUBSMTP_SERVER_ADDRESS %>">
+                  <!-- <label class="form-label" for="serveraddress"><%= translation.HUBSMTP_SERVER_ADDRESS %></label> -->
+                  <span class="hide error-text">
+                    <%= translation.SMTP_ERROR_TEXT_SMTP_SERVER_ADDRESS %>
+                  </span>
                 </div>
-              </div>
-           <!-- BEGIN form for SMTP -->
+                <!-- SMTP User Name input field -->
+                <div class="form-wrap form-wrap_icon linear-icon-at-sign">
+                  <input class="form-input input-box-shadow validate-text" id="username" type="email" name="username" placeholder="<%= translation.HUBSMTP_USERNAME %>">
+                  <!-- <label class="form-label" for="username"><%= translation.HUBSMTP_USERNAME %></label> -->
+                  <span class="hide error-text">
+                    <%= translation.SMTP_ERROR_TEXT_SMTP_USERNAME %>
+                  </span>
+                </div>
+                <!-- SMTP Password input field -->
+                <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+                  <input class="form-input input-box-shadow validate-text" id="password" type="password" name="password" placeholder="<%= translation.HUBSMTP_PASSWORD %>">
+                  <!-- <label class="form-label" for="password"><%= translation.HUBSMTP_PASSWORD %> </label> -->
+                  <span class="hide error-text">
+                    <%= translation.SMTP_ERROR_TEXT_SMTP_PASSWORD %>
+                  </span>
+                </div>
+                <!-- SMTP Port(TLS) input field -->
+                <div class="form-wrap form-wrap_icon linear-icon-cable">
+                  <input class="form-input input-box-shadow validate-text" id="tlsport" type="text" name="tlsport" placeholder="<%= translation.HUBSMTP_PORT_TLS %>">
+                  <!-- <label class="form-label" for="tlsport"><%= translation.HUBSMTP_PORT_TLS %></label> -->
+                  <span class="hide error-text">
+                    <%= translation.SMTP_ERROR_TEXT_SMTP_PORT_TLS %>
+                  </span>
+                </div>
+                <!-- SMTP Port(SSL) input field -->
+                <div class="form-wrap form-wrap_icon linear-icon-cable">
+                  <input class="form-input input-box-shadow validate-text" id="sslport" type="text" name="sslport" placeholder="<%= translation.HUBSMTP_PORT_SSL %>">
+                  <!-- <label class="form-label" for="sslport"><%= translation.HUBSMTP_PORT_SSL %></label> -->
+                  <span class="hide error-text">
+                    <%= translation.SMTP_ERROR_TEXT_SMTP_PORT_SSL %>
+                  </span>
+                </div>
+                <!-- Form Submit button for SMTP -->
+                <a href="/dashboard" id="smtpBtn" class="button button-primary" type="submit">
+                  <%= translation.HUBSMTP_PORT_SUBMIT %>
+                </a>
+              </form>
+            </div>
+          </div>
+          <!-- BEGIN form for SMTP -->
         </div>
       </section>
-    </div>
-    <!-- END Page -->
-    
-    <!-- BEGIN Page footer for SMTP-->
-    <%include _layouts/footer %>
+  </div>
+  <!-- END Page -->
+
+  <!-- BEGIN Page footer for SMTP-->
+  <%include _layouts/footer %>
     <!-- END Page footer for SMTP -->
 
     <!-- BEGIN Template script file links -->
     <% include _layouts/common-scripts %>
-    <!-- END Template script file links -->
+      <!-- END Template script file links -->
 
-    <!-- BEGIN script file links -->
-    <script src="/scripts/user-setup/smtp.js"></script>
-    <script src="/scripts/user-setup/apismtpsettings.js"></script>
-    <script src="/scripts/common/validation.js"></script>
-    <script src="/scripts/inbuilt/toastr.min.js"></script> 
-    <!-- END script file links -->
-   </body>
+      <!-- BEGIN script file links -->
+      <script src="/scripts/user-setup/smtp.js"></script>
+      <script src="/scripts/user-setup/apismtpsettings.js"></script>
+      <script src="/scripts/common/validation.js"></script>
+      <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <!-- END script file links -->
+      <!-- BEGIN HIGHLIGHT SETTINGS NAVIGATION LINK -->
+      <script>
+        $(document).ready(function () {
+          $("#highlightSettingLink").css("color", "#2ed3ae");
+        });
+      </script>
+      <!-- END HIGHLIGHT SETTINGS NAVIGATION LINK -->
+</body>
+
 </html>
