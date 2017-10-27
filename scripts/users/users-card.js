@@ -16,10 +16,8 @@ $(document).ready(function () {
 
     // BEGIN DELETE USERS RECENT MEETING CARDS
     $("#recentMeetingDelBtn").live("click", function () {
-        debugger;
         var userRecentMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var userRecentEle = $(userRecentMainEle).children("#recentMeetingName").attr("recentMeetingName");
-        debugger;
         swal({
             title: "",
             text: "Are you sure you want to delete " + userRecentEle + " ?",
@@ -39,7 +37,6 @@ $(document).ready(function () {
     $("#userActiveMeetingDelBtn").live("click", function () {
         var userActiveMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var userActiveEle = $(userActiveMainEle).children("#userActiveMeetingName").attr("userActiveMeetingName");
-        debugger;
         swal({
             title: "",
             text: "Are you sure you want to delete " + userActiveEle + " ?",
@@ -57,10 +54,8 @@ $(document).ready(function () {
 
     // BEGIN DELETE USERS SCHEDULE MEETING CARDS
     $("#scheduleMeetingDelBtn").live("click", function () {
-        debugger;
         var userScheduleMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var userScheduleEle = $(userScheduleMainEle).children("#scheduleMeetingName").attr("scheduleMeetingName");
-        debugger;
         swal({
             title: "",
             text: "Are you sure you want to delete " + userScheduleEle + " ?",
@@ -78,10 +73,8 @@ $(document).ready(function () {
 
     // BEGIN DELETE USERS CREATED MEETING CARDS
     $("#createdMeetingDelBtn").live("click", function () {
-        debugger;
         var userCreatedMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var userCreatedEle = $(userCreatedMainEle).children("#createdMeetingName").attr("createdMeetingName");
-        debugger;
         swal({
             title: "",
             text: "Are you sure you want to delete " + userCreatedEle + " ?",
@@ -99,10 +92,8 @@ $(document).ready(function () {
 
     // BEGIN DELETE USERS EXPIRED MEETING CARDS
     $("#expiredMeetingDelBtn").live("click", function () {
-        debugger;
         var userExpiredMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
         var userExpiredEle = $(userExpiredMainEle).children("#expiredMeetingName").attr("expiredMeetingName");
-        debugger;
         swal({
             title: "",
             text: "Are you sure you want to delete " + userExpiredEle + " ?",

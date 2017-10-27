@@ -1,7 +1,6 @@
 //This script tag must be included in updateCoscpace HTML page
 //UpdateCospace HTML page to contain both createspace and updateCospace script tags for localstorage logic 
 // function getUrlVars() {
-//     debugger;
 //     var vars = [], hash;
 //     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
 //     for (var i = 0; i < hashes.length; i++) {
@@ -31,13 +30,11 @@ $(document).ready(function () {
     // $("#editBtn").click(function () {
     //     $("#createSpace").hide();
     //     $("#updateSpace").show();
-    //     debugger;
     //     window.location.href = "/createspace?card=" + JSON.stringify(coSpaceCard);
     //     console.log(coSpaceCard);
     // });
 
     // $('#btndone').click(function () {
-    //     debugger;
     //     var userName = getUrlVars()["card"];
     //     console.log(userName);
     //     var reqData = {
@@ -59,7 +56,6 @@ $(document).ready(function () {
     var subString = url.substring(url.indexOf('=') + 1);
     console.log(subString);
     httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + subString, function (resp, err) {
-            debugger;
             $("#contact-sName").val(resp.data.coSpace.name);
             $("#contact-create_space_URI").val(resp.data.coSpace.uri);
             $("#sel1 option[value='Allequal']").prop("selected", true);
@@ -73,8 +69,16 @@ $(document).ready(function () {
     // END POPULATE UPDATE COSPACE FORM
 
     $('#btndone').click(function () {
-        swal("Success!", "", "success");
-        setTimeout(function(){window.location.href="/spacelist"}, 2000);
+        if ($('form').hasClass('validate-form')) {
+            var resultItem = [];
+            $('.validate-text').each(function (i, obj) {
+                resultItem.push(validateText(obj));
+            });
+            if (resultItem.indexOf(false) < 0) {
+            swal("Success!", "", "success");
+            setTimeout(function(){window.location.href="/spacelist"}, 2000);
+            }
+        }    
     });
 });
 

@@ -2,12 +2,10 @@ $(document).ready(function () {
 
   //BEGIN EDIT OPTION IN MODAL LINKING
     $("#recentbtnEditModal").on('click', function () {
-      debugger;
       window.location.href = "/updatemeeting";
   });
 
     $("#activeEditBtn").on('click', function () {
-      debugger;
       window.location.href = "/updatemeeting";
   });
   //END EDIT OPTION IN MODAL LINKING
@@ -57,7 +55,6 @@ $(document).ready(function () {
   $("#activityDeleteBtn").live("click", function () {
     var activeMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
     var activeEle = $(activeMainEle).children("#activeMeetingName").attr("activeMeetingName");
-    debugger;
     swal({
       title: "",
       text: "Are you sure you want to delete " + activeEle + " ?",
@@ -75,10 +72,8 @@ $(document).ready(function () {
 
     // BEGIN DELETE RECENT MEETING CARDS
     $("#recentMeetingDelBtn").live("click", function () {
-      debugger;
       var recentMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
       var recentEle = $(recentMainEle).children("#recentMeetingName").attr("recentMeetingName");
-      debugger;
       swal({
         title: "",
         text: "Are you sure you want to delete " + recentEle + " ?",

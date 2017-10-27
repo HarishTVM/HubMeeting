@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     //BEGIN CHECK CHILDERN LENGTH INSIDE EXISTING MEMBERS
         $(".alertClose").on('click', function(){
-            debugger;
             var numItems = $('.alertClose').length;
             if(numItems == 0 || numItems == 1)
               $(this).parents("#existingMembers").remove();
@@ -53,7 +52,6 @@ $(document).ready(function () {
 
     //BEGIN Add Member and DELETE MEMBER Logic
     $('#addMemberBtn').live('click', function () {
-        debugger;
         var member = $('<div id="addDeleteParent" class="addDeleteParent input-group form-wrap input-box-shadow">\
                         <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">\
                         <span id="searchMember" class="bg-gray input-group-addon"><a class="search-member-icon fa fa-search fa-lg" aria-hidden="true"></a></span>\
@@ -67,7 +65,6 @@ $(document).ready(function () {
     });
 
     $("#deleteMember").live('click', function () {
-        debugger;
         $(this).parent().remove();
     });
 
@@ -82,7 +79,6 @@ $(document).ready(function () {
 
     // BEGIN GET USERS
     $('#searchMember').live('click', function () {
-        debugger;
         var filterData = $(this).siblings("#addMembers").val();
         httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {
             var totalUsers = resp.data.total;

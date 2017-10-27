@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $('#loginBtn').click(function(){
         $("#page-loader").show();
-        debugger;
         if($('form').hasClass('validate-form')){
             var resultItem = [];
             $('.validate-text').each(function(i, obj){
