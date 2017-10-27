@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    $("#settingsList").(function(){
+        $(this)
+    })
+
     if(window.location.pathname == "/configure-settings"){
         $("#api-url").val("https://192.168.5.27:445");
         $("#api-uname").val("apiuser");

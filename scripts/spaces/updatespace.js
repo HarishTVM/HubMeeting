@@ -13,6 +13,12 @@
 
 $(document).ready(function () {
 
+    $(".alertClose").on('click', function(){
+        var numItems = $('.alertClose').length;
+        if(numItems == 0 || numItems == 1)
+          $(this).parents("#existingMembers").remove();
+        // numItems=numItems-1;    
+    });
     // var coSpaceCard = {};
 
     // myFunc = function (eleDiv) {
