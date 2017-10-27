@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
   //BEGIN EDIT OPTION IN MODAL LINKING
-    $("#recentbtnEditModal").on('click', function () {
-      window.location.href = "/updatemeeting";
+    $("#activityEditmodelBtn").on('click', function () {
+      window.location.href = "/updateactivitymeeting";
   });
 
     $("#activeEditBtn").on('click', function () {
-      window.location.href = "/updatemeeting";
+      window.location.href = "/updateactivitymeeting";
   });
   //END EDIT OPTION IN MODAL LINKING
 

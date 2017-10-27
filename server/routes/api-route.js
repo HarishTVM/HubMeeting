@@ -30,6 +30,9 @@ app.get("/changePassword", (req, res)=>{
 app.get("/activitylist", (req, res)=>{
   res.render("activitylist", {year: new Date().getFullYear()});
 });
+app.get("/updateactivitymeeting", (req, res)=>{
+  res.render("newmeeting",{year: new Date().getFullYear()});
+});
 app.get("/users", (req, res)=>{
   res.render("users", {year: new Date().getFullYear()});
 });

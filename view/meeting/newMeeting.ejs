@@ -218,13 +218,7 @@
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>   
       <script src="/scripts/common/sweetalert.min.js"></script>
-      <script>
-        $(document).ready(function () {
-          $("#meetingList").addClass("active");
-        });
-      </script>
-
-      <script id="memberAdd" type="text/x-handlebars-template">
+       <script id="memberAdd" type="text/x-handlebars-template">
         {{#each users}}
         <option>{{user.userJid}}</option> 
         {{/each}}

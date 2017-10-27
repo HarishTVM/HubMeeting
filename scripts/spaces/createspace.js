@@ -11,7 +11,7 @@ $(document).ready(function () {
     //END CHECK CHILDERN LENGTH INSIDE EXISTING MEMBERS
 
     // BEGIN PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
-        if (window.location.pathname == "/createspace" || window.location.pathname == "/newMeeting") {
+        if (window.location.pathname == "/createspace" || window.location.pathname == "/newmeeting") {
             $("#existingMembers").hide();
         }
         else {
@@ -19,7 +19,7 @@ $(document).ready(function () {
         }
 
         $("#clickToAdd").click(function(){
-            if (window.location.pathname == "/createspace" || window.location.pathname == "/newMeeting") {
+            if (window.location.pathname == "/createspace" || window.location.pathname == "/newmeeting") {
                 $("#admin").hide();
                 $("#hrDept").hide();
             }
