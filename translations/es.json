@@ -60,6 +60,7 @@
   "HUB_CREATE_SPACE_ADDRESS":"Dirección del espacio",
   "HUB_CREATE_SPACE_DISCARD":"Descarte",
   "HUB_CREATE_SPACE_DONE":"Hecho",
+  "HUB_CREATE_SPACE_OWNERJID": "PropietarioJid",  
 
   "HUB_CHANGE_PASSWORD_TITLE":"Cambiar contraseña de CMS Hub",
   "HUB_CHANGE_PASSWORD":"Cambia la contraseña",
@@ -191,6 +192,8 @@
     "CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME":"Se requiere tiempo",
     "CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE":"Hasta la fecha es obligatorio",
     "CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME":"Se requiere tiempo",
+    "CREATE_SPACE_ERROR_TEXT_OWNERJID":"PropietarioJid es requerido",
+    
 
 
     "NEW_MEETING_ERROR_TEXT_TITLE": "Título es requerido",

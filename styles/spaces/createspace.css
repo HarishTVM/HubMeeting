@@ -53,9 +53,7 @@
     font-style: none;
 }
 
-datalist {
-	display: none;
-}
+/* datalist {display:none;} */
 
 /* specifically hide the arrow on focus */
 

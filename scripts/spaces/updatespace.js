@@ -11,14 +11,14 @@
 //     return vars;
 // }
 
-$(document).ready(function () {
+// $(document).ready(function () {
 
-    $(".alertClose").on('click', function(){
-        var numItems = $('.alertClose').length;
-        if(numItems == 0 || numItems == 1)
-          $(this).parents("#existingMembers").remove();
-        // numItems=numItems-1;    
-    });
+    // $(".alertClose").on('click', function(){
+    //     var numItems = $('.alertClose').length;
+    //     if(numItems == 0 || numItems == 1)
+    //       $(this).parents("#existingMembers").remove();
+    //     // numItems=numItems-1;    
+    // });
     // var coSpaceCard = {};
 
     // myFunc = function (eleDiv) {
@@ -58,34 +58,34 @@ $(document).ready(function () {
 
 
     // BEGIN POPULATE UPDATE COSPACE FORM
-    var url = window.location.href;
-    var subString = url.substring(url.indexOf('=') + 1);
-    console.log(subString);
-    httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + subString, function (resp, err) {
-            $("#contact-sName").val(resp.data.coSpace.name);
-            $("#contact-create_space_URI").val(resp.data.coSpace.uri);
-            $("#sel1 option[value='Allequal']").prop("selected", true);
-            $("#sel2 option[value='One Time']").val("selected", true);
-            $("#fromdate").val("26-10-2017");
-            $("#fromtime").val("26-10-2017");
-            $("#todate").val("12:45");
-            $("#totime").val("14:00");
-        });
+    // var url = window.location.href;
+    // var subString = url.substring(url.indexOf('=') + 1);
+    // console.log(subString);
+    // httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + subString, function (resp, err) {
+    //         $("#contact-sName").val(resp.data.coSpace.name);
+    //         $("#contact-create_space_URI").val(resp.data.coSpace.uri);
+    //         $("#sel1 option[value='Allequal']").prop("selected", true);
+    //         $("#sel2 option[value='One Time']").val("selected", true);
+    //         $("#fromdate").val("26-10-2017");
+    //         $("#fromtime").val("26-10-2017");
+    //         $("#todate").val("12:45");
+    //         $("#totime").val("14:00");
+    //     });
 
     // END POPULATE UPDATE COSPACE FORM
 
-    $('#btndone').click(function () {
-        if ($('form').hasClass('validate-form')) {
-            var resultItem = [];
-            $('.validate-text').each(function (i, obj) {
-                resultItem.push(validateText(obj));
-            });
-            if (resultItem.indexOf(false) < 0) {
-            swal("Success!", "", "success");
-            setTimeout(function(){window.location.href="/spacelist"}, 2000);
-            }
-        }    
-    });
-});
+    // $('#btndone').click(function () {
+    //     if ($('form').hasClass('validate-form')) {
+    //         var resultItem = [];
+    //         $('.validate-text').each(function (i, obj) {
+    //             resultItem.push(validateText(obj));
+    //         });
+    //         if (resultItem.indexOf(false) < 0) {
+    //         swal("Success!", "", "success");
+    //         setTimeout(function(){window.location.href="/spacelist"}, 2000);
+    //         }
+    //     }    
+    // });
+// });
 
 

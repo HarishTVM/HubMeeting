@@ -53,6 +53,19 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
+                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow">
+                  <select class="form-control on-hover-color" id="sel2">
+                    <option selected value="default" disabled>
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE %>
+                    </option>
+                    <option value="opt1">
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME %>
+                    </option>
+                    <option value="opt2">
+                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_PERSONAL %>
+                    </option>
+                  </select>
+                </div>
                 <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                   <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                   <span class="hide error-text">
@@ -71,62 +84,58 @@
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
                   <select class="form-control on-hover-color" id="sel1">
-                    <option value="default" disabled>
+                    <option selected value="default" disabled>
                       <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
                     </option>
-                    <option value="Allequal">
+                    <option value="otp1">
                       <%= translation.HUB_CREATE_SPACE_ALLEQUAL %>
                     </option>
-                    <option>
+                    <option value="otp2">
                       <%= translation.HUB_CREATE_SPACE_SPEAKERONLY %>
                     </option>
-                    <option>
+                    <option value="otp3">
                       <%= translation.HUB_CREATE_SPACE_TELEPRESENCE %>
                     </option>
-                    <option>
+                    <option value="otp4">
                       <%= translation.HUB_CREATE_SPACE_STACKED %>
                     </option>
-                    <option>
+                    <option value="otp4">
                       <%= translation.HUB_CREATE_SPACE_ALLEQUALQUARTERS %>
                     </option>
-                    <option>
+                    <option value="otp6">
                       <%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %>
                     </option>
                   </select>
                 </div>
+                <div class="form-wrap form-wrap_icon linear-icon-database-add">
+                  <input class="form-input input-box-shadow validate-text" id="ownerJid" type="text" name="ownerjid" placeholder="<%= translation.HUB_CREATE_SPACE_OWNERJID %>">
+                  <span class="hide error-text">
+                    <%= translation.CREATE_SPACE_ERROR_TEXT_OWNERJID %>
+                  </span>
+                </div>
                 <!-- BEGIN SCHEDULE MEETING -->
                 <div class="form-wrap">
-                  <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD %></h6>
+                  <h6>
+                    <%= translation.SCHEDULE_MEETING_SUB_HEAD %>
+                  </h6>
                 </div>
-                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow">
-                  <select class="form-control on-hover-color" id="sel2">
-                    <option value="default" disabled>
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE %>
-                    </option>
-                    <option value="One time">
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME %>
-                    </option>
-                    <option>
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_PERSONAL %>
-                    </option>
-                  </select>
-                </div>
+
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="fromdate" type="text" name="fromdate" placeholder="Start-date" data-time-picker="date"
-                      data-dtp="dtp_HoYzJ">
-                      <span class="hide error-text">
-                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_DATE %>
-                      </span>
+                    <input class="form-input input-box-shadow validate-text" id="fromdate" type="text" name="fromdate" placeholder="Start-date"
+                      data-time-picker="date" data-dtp="dtp_HoYzJ">
+                    <span class="hide error-text">
+                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_DATE %>
+                    </span>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="fromtime" type="text" name="fromtime" placeholder="Start-time" data-time-picker="time"
-                      data-dtp="dtp_HoYzJ">
-                      <span class="hide error-text">
-                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME %>
-                      </span>
+                    <input class="form-input input-box-shadow validate-text" id="fromtime" type="text" name="fromtime" placeholder="Start-time"
+                      data-time-picker="time" data-dtp="dtp_HoYzJ">
+                    <span class="hide error-text">
+                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME %>
+                    </span>
                   </div>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
@@ -134,40 +143,49 @@
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
                     <input class="form-input input-box-shadow validate-text" id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date"
                       data-dtp="dtp_HoYzJ">
-                      <span class="hide error-text">
-                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE %>
-                      </span>
+                    <span class="hide error-text">
+                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE %>
+                    </span>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
                     <!-- <label class="form-label-outside" for="event-date">Date</label> -->
                     <input class="form-input input-box-shadow validate-text" id="totime" type="text" name="totime" placeholder="End-time" data-time-picker="time"
                       data-dtp="dtp_HoYzJ">
-                      <span class="hide error-text">
-                        <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME %>
-                      </span>
+                    <span class="hide error-text">
+                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME %>
+                    </span>
                   </div>
                 </div>
                 <!-- END SCHEDULE MEETING -->
                 <br>
                 <div class="form-wrap">
-                  <h6><%= translation.SCHEDULE_MEETING_SUB_HEAD_MEMBERS %></h6>
-                </div><br>
+                  <h6>
+                    <%= translation.SCHEDULE_MEETING_SUB_HEAD_MEMBERS %>
+                  </h6>
+                </div>
+                <br>
                 <section id="existingMembers" class="input-box-shadow" style="padding: 5px;">
-                    <h6 style="text-align: left;">Existing Members</h6>
-                    <div class="alert-div">
-                      <div class="alert alert-info alert-dismissible fade in" role="alert">
-                        <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          admin@inflexion.com
-                      </div>
-                      <div class="alert alert-info alert-dismissible fade in" role="alert">
-                        <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          hr-dept@inflexion.com
-                      </div>
+                  <h6 style="text-align: left;">Existing Members</h6>
+                  <div class="alert-div">
+                    <div class="alert alert-info alert-dismissible fade in" role="alert">
+                      <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      admin@inflexion.com
                     </div>
-                </section><br>
+                    <div class="alert alert-info alert-dismissible fade in" role="alert">
+                      <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      hr-dept@inflexion.com
+                    </div>
+                  </div>
+                </section>
+                <br>
                 <div class="form-wrap margin-css custom-cospace input-box-shadow">
-                  <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal" style="width: 100%;"/>
-                </div>  
+                  <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal"
+                    style="width: 100%;" />
+                </div>
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
@@ -180,13 +198,14 @@
                       <div id="memberParentDiv" class="modal-body">
                         <input id="admin" name="admin" class="form-input" type="text" value="admin@inflexion.com" placeholder="add member...">
                         <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member...">
-                        <div id="addDeleteParent" class="addDeleteParent input-group form-wrap input-box-shadow">
-                          <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">
-                          <span id="searchMember" class="bg-gray input-group-addon"><a class="search-member-icon fa fa-search fa-lg" aria-hidden="true"></a></span>
-                          <span id="deleteMember" class="bg-gray input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>
+                        <div id="addDeleteParent" class="input-group form-wrap input-box-shadow">
+                          <input id="addMembers" class="form-input" type="text" list="emails" autocomplete="off" multiple placeholder="add member...">
+                          <span id="deleteMember" class="bg-gray input-group-addon">
+                            <a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a>
+                          </span>
                         </div>
                         <datalist id="emails">
-                          <option id="memberAddDiv"></option>
+                            <option id="memberAddDiv"></option>
                         </datalist>
                       </div>
                       <div class="modal-footer">
@@ -204,7 +223,7 @@
                 </button>
               </form>
             </div>
-          </div>  
+          </div>
         </div>
       </section>
     </div>
@@ -213,9 +232,9 @@
     <% include _layouts/common-scripts %>
       <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
       <script src="/scripts/common/validation.js"></script>
-      <script src="/scripts/spaces/updatespace.js"></script>
+      <!-- <script src="/scripts/spaces/updatespace.js"></script> -->
       <script src="/scripts/spaces/createspace.js"></script>
-      <script src="/scripts/inbuilt/toastr.min.js"></script>   
+      <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/common/sweetalert.min.js"></script>
       <script>
         $(document).ready(function () {
@@ -225,7 +244,9 @@
 
       <script id="memberAdd" type="text/x-handlebars-template">
         {{#each users}}
-        <option>{{user.userJid}}</option> 
+            {{#with user}}
+              {{userJid}}
+            {{/with}}  
         {{/each}}
       </script>
 

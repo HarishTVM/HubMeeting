@@ -58,6 +58,7 @@
   "HUB_CREATE_SPACE_ADDRESS":"Space Address",
   "HUB_CREATE_SPACE_DISCARD":"Discard",
   "HUB_CREATE_SPACE_DONE":"Done",
+  "HUB_CREATE_SPACE_OWNERJID": "OwnerJid",
   
 
   "HUB_CHANGE_PASSWORD_TITLE":"CMS Hub Change Password",
@@ -79,16 +80,10 @@
   "HUB_ACTIVITY_TOOLBAR_ACTIVITY":"Activity",
   "HUB_ACTIVITY_ACTIVE_MEETINGS":"Active Meetings",
   "HUB_SCHEDULED_MEETINGS":"Scheduled Meetings",
-  
-
-
-  
+   
   "HUB_LOGS_TITLE":"CMS Hub Logs",
   "HUB_LOGS_TOOLBER":"Logs",
   "HUB_LOGS_SEARCH_LOGS":"Search Logs",
-
-
-
 
     "WELCOME_MSG": "Hi! Welcome!",
     "CONTACT_TEXT": "More bla",
@@ -195,6 +190,7 @@
     "CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME":"From time is Required",
     "CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE":"To date is Required",
     "CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME":"To time is Required",
+    "CREATE_SPACE_ERROR_TEXT_OWNERJID":"OwnerJid is required",
 
     "NEW_MEETING_ERROR_TEXT_TITLE": "Title is required",
     "NEW_MEETING_ERROR_TEXT_EMAIl": "Email is required",
