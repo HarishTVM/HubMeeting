@@ -53,12 +53,8 @@
     font-style: none;
 }
 
-/* datalist {display:none;} */
-
-/* specifically hide the arrow on focus */
-
-/* input::-webkit-calendar-picker-indicator {
-	display: none;
-} */
+.text-area.form-input {
+    height: 100px !important;
+}
 
 /*/////////////////////////////////// END CreateSpace for Styles ////////////////////////////////////// */

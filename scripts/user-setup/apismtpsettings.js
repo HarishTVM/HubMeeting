@@ -18,5 +18,4 @@ $(document).ready(function(){
         $("#api-password").val("");
     }
     // END AUTOPOPULATE FORM FOR CONFIGURE AND SMTP PAGES
-
 });

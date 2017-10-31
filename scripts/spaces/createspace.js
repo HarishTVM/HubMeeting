@@ -1,6 +1,5 @@
 $(document).ready(function () {
     var isKeyEntered = false;
-    debugger;
     // BEGIN SELECTED OPTIONS FOR FORM DROPDOWN INPUTS
     if (window.location.pathname == "/createspace") {
         $("#sel2").val("default");
@@ -168,19 +167,29 @@ $(document).ready(function () {
     // END MODAL CLOSE LOGIC
 
     // BEGIN POPULATE UPDATE COSPACE FORM
-    var url = window.location.href;
-    var subString = url.substring(url.indexOf('=') + 1);
-    console.log(subString);
-    httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + subString, function (resp, err) {
-        $("#contact-sName").val(resp.data.coSpace.name);
-        $("#contact-create_space_URI").val(resp.data.coSpace.uri);
-        // $("#sel1 option[value='Allequal']").prop("selected", true);
-        // $("#sel2 option[value='One Time']").val("selected", true);
-        $("#fromdate").val("26-10-2017");
-        $("#fromtime").val("26-10-2017");
-        $("#todate").val("12:45");
-        $("#totime").val("14:00");
-    });
+    setTimeout(function(){
+        var url = window.location.href;
+        var subString = url.substring(url.indexOf('=') + 1);
+        // console.log(subString);
+        httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + subString, function (resp, err) {
+            $("#contact-sName").val(resp.data.coSpace.name);
+            $("#contact-create_space_URI").val(resp.data.coSpace.uri);
+            // $("#sel1 option[value='Allequal']").prop("selected", true);
+            // $("#sel2 option[value='One Time']").val("selected", true);
+            $("#fromdate").val("26-10-2017");
+            $("#fromtime").val("26-10-2017");
+            $("#todate").val("12:45");
+            $("#totime").val("14:00");
+        });
+    }, 1000);
     // END POPULATE UPDATE COSPACE FORM
+
+    // BEGIN MOMENT.JS CODE LOGIC 
+        console.log(moment().format());
+        // END MOMENT.JS CODE LOGIC 
+        console.log(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+        console.log(typeof moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+        console.log(moment().format("ddd, hA"));
+        console.log(moment());
 });
 

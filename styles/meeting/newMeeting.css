@@ -100,6 +100,10 @@ li.select2-results__option:hover{
     color: white !important;
 }
 
+.text-area.form-input {
+    height: 100px !important;
+}
+
 @media only screen and (min-width: 768px) {
     .schedule-meeting-div{
         width: 50%;

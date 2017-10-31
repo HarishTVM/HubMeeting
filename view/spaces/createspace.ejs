@@ -72,11 +72,23 @@
                     <%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %>
                   </span>
                 </div>
+                <div class="form-wrap form-wrap_icon linear-icon-book">
+                  <textarea class="text-area form-input input-box-shadow validate-text" rows="4" id="description" name="description" placeholder="Description for Spacename..."></textarea>
+                  <span class="hide error-text">
+                    <%= translation.CREATE_SPACE_ERROR_TEXT_DESCRIPTION %>
+                  </span>
+                </div>
                 <div id="URI" class="form-wrap form-wrap_icon linear-icon-link2">
                   <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI"
                     placeholder="<%= translation.HUB_CREATE_SPACE_ENTER_URI %>">
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %>
+                  </span>
+                </div>
+                <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+                  <input class="form-input input-box-shadow validate-text" id="passcode" type="text" name="passcode" placeholder="<%= translation.HUB_CREATE_SPACE_PASSCODE %>">
+                  <span class="hide error-text">
+                    <%= translation.CREATE_SPACE_ERROR_TEXT_PASSCODE %>
                   </span>
                 </div>
                 <div class="hide form-wrap">
@@ -107,7 +119,7 @@
                     </option>
                   </select>
                 </div>
-                <div class="form-wrap form-wrap_icon linear-icon-database-add">
+                <div class="form-wrap form-wrap_icon linear-icon-profile">
                   <input class="form-input input-box-shadow validate-text" id="ownerJid" type="text" name="ownerjid" placeholder="<%= translation.HUB_CREATE_SPACE_OWNERJID %>">
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_OWNERJID %>
@@ -205,7 +217,7 @@
                           </span>
                         </div>
                         <datalist id="emails">
-                            <option id="memberAddDiv"></option>
+                          <option id="memberAddDiv"></option>
                         </datalist>
                       </div>
                       <div class="modal-footer">
@@ -236,9 +248,15 @@
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/common/sweetalert.min.js"></script>
+      <!-- BEGIN MOMENT.JS SCRIPT TAGS -->
+      <script src="/node_modules/moment/min/locales.min.js"></script>
+      <script src="/node_modules/moment/min/moment.min.js"></script>
+      <script src="/node_modules/moment/min/moment-with-locales.min.js"></script>
+      <!-- END MOMENT.JS SCRIPT TAGS -->
       <script>
         $(document).ready(function () {
           $("#spacesList").addClass("active");
+          moment().format(); //BELONGS TO MOMENT.JS 
         });
       </script>
 
