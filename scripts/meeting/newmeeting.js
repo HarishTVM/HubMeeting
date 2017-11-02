@@ -13,9 +13,19 @@ $(document).ready(function () {
 
     for (i in meetingType) {
         if (meetingType.hasOwnProperty(i)) {
-            var radioBtn = $('<label class="radio-inline">\
-                              <input type="radio" name="i" value="meetingType.i"/>i</label>');
-            radioBtn.appendTo('#meetingType');
+            console.log(i);
+            $("#typeMeeting").append(
+                $('<label />', {
+                    'text': i                            
+                }).prepend(
+                    $('<input />', { 
+                        type: 'radio', 
+                        name: 'types', 
+                        id: 'types' + meetingType[i],
+                        value: meetingType[i]
+                    })
+                )
+            );   
             count++;
         }
     }
