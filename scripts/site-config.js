@@ -11,7 +11,8 @@ var apiType = {
     UPDATE_COSCPACE: "updateCospace",
     DELETE_COSPACE_USER: "deleteCospaceUser",
     GET_USERS: "getUsers",
-    GET_COSPACES_BY_ID: "getCospacesbyId"
+    GET_COSPACES_BY_ID: "getCospacesbyId",
+    CHECK_COSPACE_EXISTENCE: "checkCoSpaceExistence"
 }
 
 var errorCodes = {
