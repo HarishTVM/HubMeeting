@@ -698,6 +698,10 @@ border-color: #23d7b2;
 /*/////////////////////////////////// END CMS Hub Meeting for Styles ////////////////////////////////////// */
 
 /*/////////////////////////////////// BEGIN Create spaces for Styles ////////////////////////////////////// */
+.text-padding-m-t{
+  padding: 5px;
+}
+
 .btn_discard{
   display: inline-block;
   width: auto; max-width: 100%;
