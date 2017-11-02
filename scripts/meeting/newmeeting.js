@@ -15,17 +15,17 @@ $(document).ready(function () {
         if (meetingType.hasOwnProperty(i)) {
             console.log(i);
             $("#typeMeeting").append(
-                $('<label />', {
-                    'text': i                            
+                $('<label  />', {
+                    'text': i                          
                 }).prepend(
-                    $('<input />', { 
+                    $('<input/>', { 
                         type: 'radio', 
-                        name: 'types', 
+                        name: 'types',
                         id: 'types' + meetingType[i],
                         value: meetingType[i]
                     })
                 )
-            );   
+            );
             count++;
         }
     }
