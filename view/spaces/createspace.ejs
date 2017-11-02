@@ -53,45 +53,83 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
-                <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow">
-                  <select class="form-control on-hover-color" id="sel2">
-                    <option selected value="default" disabled>
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE %>
-                    </option>
-                    <option value="opt1">
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME %>
-                    </option>
-                    <option value="opt2">
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_PERSONAL %>
-                    </option>
-                  </select>
-                </div>
+
                 <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                   <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %>
                   </span>
                 </div>
-                <div class="form-wrap form-wrap_icon linear-icon-book">
-                  <textarea class="text-area form-input input-box-shadow validate-text" rows="4" id="description" name="description" placeholder="Description for Spacename..."></textarea>
-                  <span class="hide error-text">
-                    <%= translation.CREATE_SPACE_ERROR_TEXT_DESCRIPTION %>
-                  </span>
+                <div class="row form-wrap datetime-picker-container margin-css">
+                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-link2 from-to-date-container">
+                    <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI"
+                      placeholder="<%= translation.HUB_CREATE_SPACE_ENTER_URI %>">
+                    <span class="hide error-text">
+                      <%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %>
+                    </span>
+                  </div>&nbsp;&nbsp;
+                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-key-hole from-to-date-container">
+                    <input class="form-input input-box-shadow validate-text" id="passcode" type="text" name="passcode" placeholder="<%= translation.HUB_CREATE_SPACE_PASSCODE %>">
+                    <span class="hide error-text">
+                      <%= translation.CREATE_SPACE_ERROR_TEXT_PASSCODE %>
+                    </span>
+                  </div>
                 </div>
-                <div id="URI" class="form-wrap form-wrap_icon linear-icon-link2">
+                
+
+
+                <div class="row form-wrap datetime-picker-container margin-css">
+                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-link2 from-to-date-container">
+                    <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
+                      <select class="form-control on-hover-color" id="sel1">
+                        <option selected value="default" disabled>
+                          <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
+                        </option>
+                        <option value="otp1">
+                          <%= translation.HUB_CREATE_SPACE_ALLEQUAL %>
+                        </option>
+                        <option value="otp2">
+                          <%= translation.HUB_CREATE_SPACE_SPEAKERONLY %>
+                        </option>
+                        <option value="otp3">
+                          <%= translation.HUB_CREATE_SPACE_TELEPRESENCE %>
+                        </option>
+                        <option value="otp4">
+                          <%= translation.HUB_CREATE_SPACE_STACKED %>
+                        </option>
+                        <option value="otp4">
+                          <%= translation.HUB_CREATE_SPACE_ALLEQUALQUARTERS %>
+                        </option>
+                        <option value="otp6">
+                          <%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %>
+                        </option>
+                      </select>
+                    </div>
+                  </div>&nbsp;&nbsp;
+                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-profile from-to-date-container">
+                    <div class="form-wrap form-wrap_icon linear-icon-profile">
+                      <input class="form-input input-box-shadow validate-text" id="ownerJid" type="text" name="ownerjid" placeholder="<%= translation.HUB_CREATE_SPACE_OWNERJID %>">
+                      <span class="hide error-text">
+                        <%= translation.CREATE_SPACE_ERROR_TEXT_OWNERJID %>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div id="URI" class="form-wrap form-wrap_icon linear-icon-link2">
                   <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI"
                     placeholder="<%= translation.HUB_CREATE_SPACE_ENTER_URI %>">
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %>
                   </span>
-                </div>
-                <div class="form-wrap form-wrap_icon linear-icon-key-hole">
+                </div> -->
+                <!-- <div class="form-wrap form-wrap_icon linear-icon-key-hole">
                   <input class="form-input input-box-shadow validate-text" id="passcode" type="text" name="passcode" placeholder="<%= translation.HUB_CREATE_SPACE_PASSCODE %>">
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_PASSCODE %>
                   </span>
-                </div>
-                <div class="hide form-wrap">
+                </div> -->
+                <!-- <div class="hide form-wrap">
                   <p id="videoAdd">Video Address: </p>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
@@ -124,58 +162,19 @@
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_OWNERJID %>
                   </span>
-                </div>
-                <!-- BEGIN SCHEDULE MEETING -->
-                <div class="form-wrap">
-                  <h6>
-                    <%= translation.SCHEDULE_MEETING_SUB_HEAD %>
-                  </h6>
-                </div>
-
-                <div class="row form-wrap datetime-picker-container margin-css">
-                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
-                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="fromdate" type="text" name="fromdate" placeholder="Start-date"
-                      data-time-picker="date" data-dtp="dtp_HoYzJ">
-                    <span class="hide error-text">
-                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_DATE %>
-                    </span>
-                  </div>&nbsp;&nbsp;
-                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
-                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="fromtime" type="text" name="fromtime" placeholder="Start-time"
-                      data-time-picker="time" data-dtp="dtp_HoYzJ">
-                    <span class="hide error-text">
-                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_FROM_TIME %>
-                    </span>
-                  </div>
-                </div>
-                <div class="row form-wrap datetime-picker-container margin-css">
-                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-calendar-31 from-to-date-container">
-                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="todate" type="text" name="todate" placeholder="End-date" data-time-picker="date"
-                      data-dtp="dtp_HoYzJ">
-                    <span class="hide error-text">
-                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_DATE %>
-                    </span>
-                  </div>&nbsp;&nbsp;
-                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-timer2 from-to-date-container">
-                    <!-- <label class="form-label-outside" for="event-date">Date</label> -->
-                    <input class="form-input input-box-shadow validate-text" id="totime" type="text" name="totime" placeholder="End-time" data-time-picker="time"
-                      data-dtp="dtp_HoYzJ">
-                    <span class="hide error-text">
-                      <%= translation.CREATE_SPACE_ERROR_TEXT_MEETING_TO_TIME %>
-                    </span>
-                  </div>
-                </div>
-                <!-- END SCHEDULE MEETING -->
-                <br>
-                <div class="form-wrap">
+                </div> -->
+                <!-- <div class="form-wrap">
                   <h6>
                     <%= translation.SCHEDULE_MEETING_SUB_HEAD_MEMBERS %>
                   </h6>
-                </div>
-                <br>
+                </div> -->
+                <a href="/spacelist" id="btndiscard" class="button btn_discard" type="submit">
+                  <%= translation.HUB_CREATE_SPACE_DISCARD %>
+                </a>
+                &nbsp;&nbsp; &nbsp;&nbsp;
+                <button id="btndone" class="button button-primary" type="submit">
+                  <%= translation.HUB_CREATE_SPACE_DONE %>
+                </button>
                 <section id="existingMembers" class="input-box-shadow" style="padding: 5px;">
                   <h6 style="text-align: left;">Existing Members</h6>
                   <div class="alert-div">
@@ -194,7 +193,7 @@
                   </div>
                 </section>
                 <br>
-                <div class="form-wrap margin-css custom-cospace input-box-shadow">
+                <div style="display:none" class="form-wrap margin-css custom-cospace input-box-shadow">
                   <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal"
                     style="width: 100%;" />
                 </div>
@@ -226,13 +225,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="/spacelist" id="btndiscard" class="button btn_discard" type="submit">
-                  <%= translation.HUB_CREATE_SPACE_DISCARD %>
-                </a>
-                &nbsp;&nbsp; &nbsp;&nbsp;
-                <button id="btndone" class="button button-primary" type="submit">
-                  <%= translation.HUB_CREATE_SPACE_DONE %>
-                </button>
+           
               </form>
             </div>
           </div>
