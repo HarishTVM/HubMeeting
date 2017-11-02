@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     getMeeting();
 
     $(".done-btn").click(function () {

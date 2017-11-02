@@ -185,11 +185,12 @@ $(document).ready(function () {
     // END POPULATE UPDATE COSPACE FORM
 
     // BEGIN MOMENT.JS CODE LOGIC 
-        console.log(moment().format());
-        // END MOMENT.JS CODE LOGIC 
-        console.log(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
-        console.log(typeof moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
-        console.log(moment().format("ddd, hA"));
-        console.log(moment());
+        // console.log(moment().format());
+        // console.log(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+        // console.log(typeof moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+        // console.log(moment().format("ddd, hA"));
+        // console.log(moment());
+    // END MOMENT.JS CODE LOGIC 
+    
 });
 

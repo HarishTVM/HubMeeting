@@ -54,17 +54,14 @@
             <div class="cell-md-10 cell-lg-8">
               <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
                 <div class="form-wrap form-wrap_icon linear-icon-group-work margin-css custom-cospace input-box-shadow">
-                  <select class="form-control on-hover-color" id="sel2">
+                  <!-- <select class="form-control on-hover-color" id="sel2">
                     <option selected value="default" disabled>
                       <%= translation.SCHEDULE_MEETING_MEETING_TYPE %>
                     </option>
-                    <option value="opt1">
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_ONE_TIME %>
-                    </option>
-                    <option value="opt2">
-                      <%= translation.SCHEDULE_MEETING_MEETING_TYPE_PERSONAL %>
-                    </option>
-                  </select>
+                  </select> -->
+                  <div id="meetingType">
+                    <label for="meeting-type">Meeting Type:</label>
+                  </div>
                 </div>
                 <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                   <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
@@ -98,24 +95,6 @@
                   <select class="form-control on-hover-color" id="sel1">
                     <option selected value="default" disabled>
                       <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
-                    </option>
-                    <option value="opt1">
-                      <%= translation.HUB_CREATE_SPACE_ALLEQUAL %>
-                    </option>
-                    <option value="opt2">
-                      <%= translation.HUB_CREATE_SPACE_SPEAKERONLY %>
-                    </option>
-                    <option value="opt3">
-                      <%= translation.HUB_CREATE_SPACE_TELEPRESENCE %>
-                    </option>
-                    <option value="opt4">
-                      <%= translation.HUB_CREATE_SPACE_STACKED %>
-                    </option>
-                    <option value="opt5">
-                      <%= translation.HUB_CREATE_SPACE_ALLEQUALQUARTERS %>
-                    </option>
-                    <option value="opt6">
-                      <%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %>
                     </option>
                   </select>
                 </div>
@@ -209,11 +188,8 @@
                       <div id="memberParentDiv" class="modal-body">
                         <input id="admin" name="admin" class="form-input" type="text" value="admin@inflexion.com" placeholder="add member...">
                         <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member...">
-                        <div id="addDeleteParent" class="addDeleteParent input-group form-wrap input-box-shadow">
-                          <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">
-                          <span id="searchMember" class="bg-gray input-group-addon">
-                            <a class="search-member-icon fa fa-search fa-lg" aria-hidden="true"></a>
-                          </span>
+                        <div id="addDeleteParent" class="input-group form-wrap input-box-shadow">
+                          <input id="addMembers" class="form-input" type="text" list="emails" autocomplete="off" multiple placeholder="add member...">
                           <span id="deleteMember" class="bg-gray input-group-addon">
                             <a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a>
                           </span>
@@ -246,6 +222,7 @@
     <% include _layouts/common-scripts %>
       <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
       <script src="/scripts/common/validation.js"></script>
+      <script src="/scripts/meeting/newmeeting.js"></script>
       <script src="/scripts/meeting/updatemeeting.js"></script>
       <!-- <script src="/scripts/spaces/updatespace.js"></script> -->
       <script src="/scripts/spaces/createspace.js"></script>

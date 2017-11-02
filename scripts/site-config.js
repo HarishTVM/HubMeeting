@@ -1,9 +1,9 @@
 var app = {
-    BASE_URL:"http://192.168.5.87:9000/api/",
+    BASE_URL: "http://192.168.5.87:9000/api/",
 }
 
 var apiType = {
-    AUTH_USER:"authenticateUser",
+    AUTH_USER: "authenticateUser",
     CHANGE_PASSWORD: "changeUserLoginPassword",
     CONFIGURE: "checkCmsApiUrl",
     GET_COSPACES: "getCospaces",
@@ -25,7 +25,7 @@ var errorCodes = {
 }
 
 var errorType = {
-    CUSTOM_ERROR:"CUSTOM_ERROR"
+    CUSTOM_ERROR: "CUSTOM_ERROR"
 }
 
 var serverStatus = {
@@ -36,15 +36,36 @@ var serverStatus = {
 }
 
 var queryTypes = {
-    LIMIT:8
+    LIMIT: 8
 }
 
 var ToastMesssges = {
     // Global
-    INTERNAL_SERVER_ERROR:"Error occored on Server. Please Contact Administrator.",
+    INTERNAL_SERVER_ERROR: "Error occored on Server. Please Contact Administrator.",
     UNHANDLED_ERROR: "Error unhandled.",
 
     // Login
     UNKNOWN_USER: "Given user name does not exists."
 
+}
+
+var meetingType = {
+    Personal: 0,
+    OneTime: 1
+}
+
+var meetingLayoutTranslation = {
+    0: "allEqual",
+    1: "speakerOnly",
+    2: "telepresence",
+    3: "stacked",
+    4: "allEqualQuarters",
+    5: "allEqualNinths",
+    6: "allEqualSixteenths",
+    7: "allEqualTwentyFifths",
+    8: "onePlusFive",
+    9: "onePlusSeven",
+    10: "onePlusNine",
+    11: "automatic",
+    12: "onePlusN"
 }
