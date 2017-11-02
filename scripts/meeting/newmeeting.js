@@ -1,9 +1,19 @@
 $(document).ready(function () {
+    
     //BEGIN CHECK FOR MEETING TYPE
-    $("#sel2").on("change", function () {
-        if ($("#sel2").val() == "Personal") {
+    $("#contact-sName").on("focus", function(){
+        debugger;
+        var inputs = $("#typeMeeting").find("input");
+        var checkedVal = $('input[name=types]:checked').val();
+        if(checkedVal == 0){
+            console.log("Personal button checked");
         }
     });
+
+    // $("#sel2").on("change", function () {
+    //     if ($("#sel2").val() == "Personal") {
+    //     }
+    // });
     //END CHECK FOR MEETING TYPE
 
     // BEGIN DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
@@ -46,14 +56,14 @@ $(document).ready(function () {
         if ($("#contact-sName").val() != "") {
             var checkcoSpaceName = $(this).val();
             httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
-                if (resp.data.coSpaces.attrkey.total == 1){
-                    $("#spaceNameCheck").addClass("hide").fadeIn();
+                if (resp.data.coSpaces.attrkey.total >= 1) {
+                    $("#spaceNameCheck").addClass("hide").fadeOut();
                     swal('Space Name already exists...');
-                }    
-                else $("#spaceNameCheck").removeClass("hide").fadeOut();
+                }
+                else $("#spaceNameCheck").removeClass("hide").fadeIn();
             });
         }
-        else $("#spaceNameCheck").addClass("hide").fadeIn();
+        else $("#spaceNameCheck").addClass("hide").fadeOut();
     });
 
     $("#contact-create_space_URI").blur(function () {
@@ -61,32 +71,44 @@ $(document).ready(function () {
         if ($("#contact-sName").val() != "") {
             var checkcoSpaceUri = $(this).val();
             httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
-                if (resp.data.coSpaces.attrkey.total == 1){
-                    $("#spaceUriCheck").addClass("hide").fadeIn();
+                if (resp.data.coSpaces.attrkey.total >= 1) {
+                    $("#spaceUriCheck").addClass("hide").fadeOut();
                     swal('URI already exists...');
-                }    
-                else $("#spaceUriCheck").removeClass("hide").fadeOut();
+                }
+                else $("#spaceUriCheck").removeClass("hide").fadeIn();
             });
         }
-        else $("#spaceUriCheck").addClass("hide").fadeIn();
+        else $("#spaceUriCheck").addClass("hide").fadeOut();
     });
     // END EXISTING SPACENAME VERFICATION
 
     // BEGIN CHECK IF OWNERJID FIELD ID FILLED
-        var preventPropagate = true;
-        $("#clickToAdd").on("click", function(e){
-            debugger;
-            if($("#ownerJid").val() == ""){
-                if(preventPropagate){
-                    e.stopPropagation();
-                    swal('Please fill ownerJid field...');
-                }
+    var preventPropagate = true;
+    $("#clickToAdd").on("click", function (e) {
+        debugger;
+        if ($("#ownerJid").val() == "") {
+            if (preventPropagate) {
+                e.stopPropagation();
+                swal('Please fill ownerJid field...');
             }
-            else{
-                preventPropagate = false;
-            }
-        });
-        
+        }
+        else {
+            preventPropagate = false;
+        }
+    });
+
     // END CHECK IF OWNERJID FIELD ID FILLED
+
+    // BEGIN FORM SUBMIT LOGIC
+    $("#newMeetingDone").click(function () {
+        debugger;
+        if ($('form').hasClass('validate-form')) {
+            var resultItem = [];
+            $('.validate-text').each(function (i, obj) {
+                resultItem.push(validateText(obj));
+            });
+        }
+    });
+    // END FORM SUBMIT LOGIC
 
 });

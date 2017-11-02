@@ -125,8 +125,8 @@ li.select2-results__option:hover{
 #spaceNameCheck, #spaceUriCheck {
     color: green !important;
     position: absolute;
-    right: 1%;
-    top: 1%;
+    right: -6%;
+    top: -20%;
 }
 
 @media only screen and (min-width: 768px) {

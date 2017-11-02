@@ -148,7 +148,7 @@ $(document).ready(function () {
     //BEGIN FORM SUBMIT LOGIC
 
     //BEGIN FORM SUBMIT LOGIC FOR DEMO 1
-    $('#btndone').click(function () {
+    $('#createSpaceDone').click(function () {
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
