@@ -66,9 +66,7 @@ $(document).ready(function () {
                         }
                     });
                 }
-                else { 
-                    $("#spaceNameCheck").addClass("hide").fadeOut();
-                }
+                else $("#spaceNameCheck").addClass("hide").fadeOut();
             });
         }
         else {  // IF CHECKEDVAL == 1 
