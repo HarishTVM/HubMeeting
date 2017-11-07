@@ -15,9 +15,7 @@
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
     <link rel="stylesheet" href="/styles/common/sweetalert.css">
     <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
-    
 </head>
-
 <body>
   <!-- include file for navigation -->
   <% include _layouts/header-with-navigation %>
@@ -219,7 +217,9 @@
 
     <!-- include file for Script -->
     <% include _layouts/common-scripts %>
-      <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
+      <script src="/node_modules/moment/min/locales.min.js"></script>
+      <script src="/node_modules/moment/min/moment.min.js"></script>
+      <script src="/node_modules/moment/min/moment-with-locales.min.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/meeting/newmeeting.js"></script>
       <script src="/scripts/meeting/updatemeeting.js"></script>

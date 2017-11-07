@@ -1,5 +1,5 @@
 var app = {
-    BASE_URL: "http://192.168.5.87:9000/api/",
+    BASE_URL: "http://192.168.5.20:9000/api/",
 }
 
 var apiType = {
@@ -13,8 +13,8 @@ var apiType = {
     GET_USERS: "getUsers",
     GET_COSPACES_BY_ID: "getCospacesbyId",
     CHECK_COSPACE_EXISTENCE: "checkCoSpaceExistence",
-    GET_COSPACES_USERS:"getCoSpacesUsers"
-
+    GET_COSPACES_USERS:"getCoSpacesUsers",
+    CREATE_MEETING: "createMeeting"
 }
 
 var errorCodes = {
@@ -54,7 +54,9 @@ var ToastMesssges = {
 
 var meetingType = {
     Personal: 0,
-    OneTime: 1
+    OneTime: 1,
+    Default: 2
+    
 }
 
 var meetingLayoutTranslation = {
