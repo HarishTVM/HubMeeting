@@ -75,11 +75,6 @@ html {
 ==========================================================================================*/
 
 /* BEGIN PAGINATION PLUGIN  */
-a.page-item:active{
-  background:#23d7b2 !important;
-  color:#000000 !important;
-}
-
 .toolbar-padding{
   padding: 8px 15px;
   margin-bottom: -4px;
@@ -127,6 +122,14 @@ a.page-link {
 /*========================================================================================
                     =          BEGIN modal for Users               =
 ==========================================================================================*/
+.body-center{
+  position: relative;
+  top: 50%;
+}
+.body-center-details{
+  position: relative;
+  top: 58%;
+}
 .modal-body{padding: 5px !important;}
 .modal-dialog { margin: 10px auto !important;}
 .modal-box-shadow{

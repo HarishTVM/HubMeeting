@@ -18,6 +18,11 @@ app.get("/newmeeting", (req, res)=>{
 app.get("/updatemeeting", (req, res)=>{
   res.render("newmeeting",{year: new Date().getFullYear()});
 });
+// Schedule Meeting  for Modal
+app.get("/schedulemeeting", (req, res)=>{
+  res.render("newmeeting", {year: new Date().getFullYear()});
+});
+
 app.get("/configure", (req, res)=>{
   res.render("configure", {year: new Date().getFullYear()});
 });
@@ -42,6 +47,7 @@ app.get("/createspace",(req,res)=>{
 app.get("/updatespace", (req, res)=>{
   res.render("createspace", {year: new Date().getFullYear()});
 });
+
 app.get("/settings",(req,res)=>{
   res.render("settings", {year: new Date().getFullYear()});
 });

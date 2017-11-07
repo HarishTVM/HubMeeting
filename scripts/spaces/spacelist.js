@@ -43,7 +43,7 @@ getCospaces = function () {
                     $("#List").show();
                     $('.LoadingPageHide').show();
                     $('.page-loaders').hide();
-                    var template = Handlebars.compile($('#cardId').html());
+                    var template = Handlebars.compile($('#coSpacesUsers').html());
                     $('#List').html(template(resp.data));
                     $('.card-loaders-spacelist').hide();
 
@@ -52,14 +52,17 @@ getCospaces = function () {
             hideOnlyOnePage: true
         });
     });
+
 }
 
 $(document).ready(function () {
     var isKeyEntered = false;
-
     $('#page-loaders-users').show();
+    $('.loading-modal').hide();
+    $(".space-details").hide();
+    $(".space-members-list").hide();
     getCospaces();
-
+    GetusersID();
     // BEGIN SEARCH FILTER
     $('#filter').keyup(function () {
         $("#List").hide();
@@ -104,7 +107,7 @@ $(document).ready(function () {
 
                                     getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT + "&filter=" + input, page, function (resp) {
                                         $('.page-loaders').hide();
-                                        var template = Handlebars.compile($('#cardId').html());
+                                        var template = Handlebars.compile($('#coSpacesUsers').html());
                                         $('#List').html(template(resp.data));
 
 
@@ -133,6 +136,7 @@ $(document).ready(function () {
     $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
         debugger;
         var cospaceIdEle = $(this).parents("#mainParent").attr("coSpaceId");
+
         // var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
 
         // var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
@@ -175,4 +179,51 @@ $(document).ready(function () {
             });
     });
     // END DELETE SPACELIST CARDS
+
 });
+
+// BEGIN GetusersID and Set Modal 
+GetusersID = function () {
+
+    $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
+        $('.loading-modal').show();
+        
+        var coSpaceId = $(this).parents("#mainParent").attr("coSpaceId");
+        var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
+
+        var getUsersURL = $(autoPopulate).children("#uri").attr("uri");
+        var coSpaceNameTitle = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
+        var coSpaceURL = $(autoPopulate).children("#uri").attr("uri");
+        var coSpaceOwnerJid = $(autoPopulate).children("#ownerJid").attr("ownerJid");
+        
+        var keyID = "11979e19-66b1-41f5-9fbf-0f2cb5363922";
+
+
+        setTimeout(function () {
+            $("#coSpaceNameTitle").html(a);
+      //      var template = Handlebars.compile($('#coSpacesUser-Modal-Script').html());
+            httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + keyID ,function (resp) {
+                console.log(resp);
+        
+                $(".space-details").show();
+                $(".space-members-list").show();
+                
+
+           //   $('.modal-dialog').html(template(resp.data));
+                
+            });
+            $('.loading-modal').hide();
+
+        },1000);
+
+     
+        $("#btnScheduleModal").on('click', function () {
+            window.location.href = "/schedulemeeting?cospaceId=" + coSpaceId;
+        });
+
+    });
+
+  
+
+}
+// End GetusersID and Set Modal 

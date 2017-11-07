@@ -117,7 +117,7 @@ $(document).ready(function () {
             });
     });
     // END DELETE USERS EXPIRED MEETING CARDS
-
+    setSplice();
 });
 
 function getUsersHttpRequest(query, page, callback) {
@@ -130,6 +130,14 @@ function getUsersHttpRequest(query, page, callback) {
     }
 }
 
+setSplice = function(){
+
+    Handlebars.registerHelper('splitTitle', function() {
+        var avatar = substr()
+        return t[1] + " <br/> " + t[0];
+      });
+}
+    
 getUsers = function () {
     getActiveMeeting();
     getCurrentMeeting();
@@ -181,7 +189,6 @@ getUsers = function () {
         });
     });
 }
-
 filterUsers = function (isKeyEntered) {
     $("#users-card").hide();
     $('#page-loaders-users').show();
@@ -256,8 +263,6 @@ filterUsers = function (isKeyEntered) {
     }
 
 }
-
-
 getCurrentMeeting = function () {
     $.getJSON('/json/currentmeeting.json', function (response) {
         console.log(response);
@@ -272,7 +277,6 @@ getRecntMeeting = function () {
         $('#usersmodalrecent').html(recentMeetingTemplate(response.data));
     });
 }
-
 getSchedulMeeting = function () {
     $.getJSON('/json/schedulmeeting.json', function (response) {
         console.log(response);
@@ -287,7 +291,6 @@ getcratedMeeting = function () {
         $('#usersmodalcreated').html(createdMeetingTemplate(response.data));
     });
 }
-
 getActiveMeeting = function () {
     $.getJSON('/json/meeting.json', function (response) {
         console.log(response);

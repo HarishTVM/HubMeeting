@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    checkWindowPathName();
+
     // BEGIN DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
     var count = 0;
     var i;
@@ -141,3 +143,10 @@ $(document).ready(function () {
     });
     // END FORM SUBMIT LOGIC
 });
+
+checkWindowPathName = function(){
+
+    if(Window.path.name == "/schedulemeeting"){
+        
+    }
+}

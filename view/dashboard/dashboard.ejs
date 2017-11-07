@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll" lang="en">
-  <head>
-    <!-- Site Title-->
-    <title><%= translation.HUB_DASHBORD_SUBHEAD_DASHBOARD %></title>
-    <!-- Site logo images-->
-    <link href="/images/logo.png" rel="icon" type="image/x-icon"/>
-    <!--Stylesheets file links -->
-    <% include _layouts/common-header %>
+
+<head>
+  <!-- Site Title-->
+  <title>
+    <%= translation.HUB_DASHBORD_SUBHEAD_DASHBOARD %>
+  </title>
+  <!-- Site logo images-->
+  <link href="/images/logo.png" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" href="/styles/dashboard/chart.css" />
+  <link rel="stylesheet" href="/styles/dashboard/chart1.css" />
+  <!--Stylesheets file links -->
+  <% include _layouts/common-header %>
     <style type="text/css">
-        canvas{
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-        </style>
-  </head>
-  <body>
-    <!-- Page -->
-    <% include _layouts/header-with-navigation %>
+      canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+    </style>
+</head>
+
+<body>
+  <!-- Page -->
+  <% include _layouts/header-with-navigation %>
     <div class="page">
       <div id="page-loader">
         <div class="cssload-container">
@@ -25,364 +31,422 @@
         </div>
       </div>
       <div class="container-fluid breadcrumb-container">
-          <ol class="breadcrumb">
-              <h5 class="meeting-head-bread  t-c-default-toolbar"><%= translation.HUB_DASHBORD_RECENT_MEETINGS %></h5>
-              <li><%= translation.HUB_DASHBORD_SUBHEAD_DASHBOARD %></li>
-          </ol>
+        <ol class="breadcrumb">
+          <h5 class="meeting-head-bread  t-c-default-toolbar">
+            <%= translation.HUB_DASHBORD_RECENT_MEETINGS %>
+          </h5>
+          <li>
+            <%= translation.HUB_DASHBORD_SUBHEAD_DASHBOARD %>
+          </li>
+        </ol>
       </div>
 
-       <section class="section-lg bg-white meeting-main-section">
-            <div class="shell accordian-shell">
-                    <!-- Accordion-->
-                    <div id="accordion" role="tablist" class="accordian-border">
-                      <!-- Bootstrap panel-->
-                      <div class="panel panel-custom">
-                        <div class="panel-custom-heading" id="1Headingundefined" role="tab">
-                          <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined" aria-controls="1Collapseundefined">Mr.ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
-                          </p>
-                        </div>
-                        <div class="panel-custom-collapse collapse" id="1Collapseundefined" role="tabpanel" aria-labelledby="1Headingundefined">
-                          <div class="panel-custom-body">
-                            <ul class="list-group list-content">
-                              <li>Cospace: ABC</li>
-                              <li>Owner: Sreeharsha inflexion.com</li>
-                              <li>Operator:</li>
-                              <li>Invitees: 3</li>
-                            </ul>  
-                            <ul class="list-group list-content"> 
-                              <li>Call reference #: 20170907/0001</li>
-                              <li>Call URI: abc</li>
-                              <li>Call ID: 700102</li>
-                            </ul>
-                            <a href="#">Edit</a>
-                         </div>
-                        </div>
-                      </div>
-                      <!-- Bootstrap panel-->
-                      <div class="panel panel-custom">
-                        <div class="panel-custom-heading" id="2Headingundefined" role="tab">
-                          <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#2" href="#2Collapseundefined" aria-controls="2Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
-                          </p>
-                        </div>
-                        <div class="panel-custom-collapse collapse" id="2Collapseundefined" role="tabpanel" aria-labelledby="2Headingundefined">
-                          <div class="panel-custom-body">
-                              <ul class="list-group list-content">
-                                  <li>Cospace: ABC</li>
-                                  <li>Owner: Sreeharsha inflexion.com</li>
-                                  <li>Operator:</li>
-                                  <li>Invitees: 3</li>
-                              </ul>
-                              <ul class="list-group list-content">
-                                  <li>Call reference #: 20170907/0001</li>
-                                  <li>Call URI: abc</li>
-                                  <li>Call ID: 700102</li>
-                              </ul>
-                                <a href="#">Edit</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Bootstrap panel-->
-                      <div class="panel panel-custom">
-                        <div class="panel-custom-heading" id="3Headingundefined" role="tab">
-                          <p class="panel-custom-title para-title bg-light-grey"><a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#3" href="#3Collapseundefined" aria-controls="3Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
-                          </p>
-                        </div>
-                        <div class="panel-custom-collapse collapse" id="3Collapseundefined" role="tabpanel" aria-labelledby="3Headingundefined">
-                          <div class="panel-custom-body">
-                              <ul class="list-group list-content">
-                                  <li>Cospace: ABC</li>
-                                  <li>Owner: Sreeharsha inflexion.com</li>
-                                  <li>Operator:</li>
-                                  <li>Invitees: 3</li>
-                              </ul>
-                                <ul class="list-group list-content">
-                                  <li>Call reference #: 20170907/0001</li>
-                                  <li>Call URI: abc</li>
-                                  <li>Call ID: 700102</li>
-                              </ul>
-                                <a href="#">Edit</a>
-                          </div>
-                        </div>
-                      </div>
+      <section class="section-lg bg-white meeting-main-section">
+        <div class="shell accordian-shell">
+          <!-- Accordion-->
+          <div id="accordion" role="tablist" class="accordian-border">
+            <!-- Bootstrap panel-->
+            <div class="panel panel-custom">
+              <div class="panel-custom-heading" id="1Headingundefined" role="tab">
+                <p class="panel-custom-title para-title bg-light-grey">
+                  <a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined" aria-controls="1Collapseundefined">Mr.ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                </p>
+              </div>
+              <div class="panel-custom-collapse collapse" id="1Collapseundefined" role="tabpanel" aria-labelledby="1Headingundefined">
+                <div class="panel-custom-body">
+                  <ul class="list-group list-content">
+                    <li>Cospace: ABC</li>
+                    <li>Owner: Sreeharsha inflexion.com</li>
+                    <li>Operator:</li>
+                    <li>Invitees: 3</li>
+                  </ul>
+                  <ul class="list-group list-content">
+                    <li>Call reference #: 20170907/0001</li>
+                    <li>Call URI: abc</li>
+                    <li>Call ID: 700102</li>
+                  </ul>
+                  <a href="#">Edit</a>
+                </div>
+              </div>
+            </div>
+            <!-- Bootstrap panel-->
+            <div class="panel panel-custom">
+              <div class="panel-custom-heading" id="2Headingundefined" role="tab">
+                <p class="panel-custom-title para-title bg-light-grey">
+                  <a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#2" href="#2Collapseundefined" aria-controls="2Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                </p>
+              </div>
+              <div class="panel-custom-collapse collapse" id="2Collapseundefined" role="tabpanel" aria-labelledby="2Headingundefined">
+                <div class="panel-custom-body">
+                  <ul class="list-group list-content">
+                    <li>Cospace: ABC</li>
+                    <li>Owner: Sreeharsha inflexion.com</li>
+                    <li>Operator:</li>
+                    <li>Invitees: 3</li>
+                  </ul>
+                  <ul class="list-group list-content">
+                    <li>Call reference #: 20170907/0001</li>
+                    <li>Call URI: abc</li>
+                    <li>Call ID: 700102</li>
+                  </ul>
+                  <a href="#">Edit</a>
+                </div>
+              </div>
+            </div>
+            <!-- Bootstrap panel-->
+            <div class="panel panel-custom">
+              <div class="panel-custom-heading" id="3Headingundefined" role="tab">
+                <p class="panel-custom-title para-title bg-light-grey">
+                  <a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#3" href="#3Collapseundefined" aria-controls="3Collapseundefined">Mr. ABC &emsp; ITS &emsp; 9/7/17 4:00PM</a>
+                </p>
+              </div>
+              <div class="panel-custom-collapse collapse" id="3Collapseundefined" role="tabpanel" aria-labelledby="3Headingundefined">
+                <div class="panel-custom-body">
+                  <ul class="list-group list-content">
+                    <li>Cospace: ABC</li>
+                    <li>Owner: Sreeharsha inflexion.com</li>
+                    <li>Operator:</li>
+                    <li>Invitees: 3</li>
+                  </ul>
+                  <ul class="list-group list-content">
+                    <li>Call reference #: 20170907/0001</li>
+                    <li>Call URI: abc</li>
+                    <li>Call ID: 700102</li>
+                  </ul>
+                  <a href="#">Edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;">
+          <a href="/meeting">
+            <%= translation.HUB_DASHBORD_LINK_SEE_MORE %>...</a>
+        </p>
+        <div class="container-fluid breadcrumb-container">
+          <ol class="breadcrumb" style="text-align: left">
+            <h5 class=" t-c-default-toolbar">
+              <%= translation.HUB_DASHBORD_SUBHEAD_ACTIVITY %>
+            </h5>
+          </ol>
+        </div>
+        <div style="margin-left: 25px; margin-right:25px">
+          <div class="range range-50 offset-top-1 ">
+            <div class="cell-sm-12 cell-md-12 cell-lg-6 h-div-border">
+              <div id="container" style="min-width: 310px; max-width: 600px; height: 350px; margin: 0 auto"></div>
+            </div>
+            <div class="cell-sm-12 cell-md-12 cell-lg-6 h-div-border">
+              <canvas id="canvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="cell-sm-12 cell-md-12 cell-lg-12 text-center h-div-border" style="margin: 10px;margin-top: 30px; padding-top: 10px">
+          <div class="rd-calendar">
+            <div class="rdc-panel">
+              <h3>
+                <%= translation.HUB_DASHBORD_CALENDER %>
+                  <span class="rdc-month"></span>
+                  <span class="rdc-fullyear"></span>
+              </h3>
+            </div>
+            <div class="rdc-table"></div>
+            <div class="rdc-events">
+              <a class="rdc-events_close"></a>
+              <ul>
+                <li class="rdc-event" data-date="06/14/2017">
+                  <div class="thumbnail-classic">
+                    <div class="caption">
+                      <h6>
+                        <a class="thumbnail-classic-title" href="single-event.html">Novi Builder</a>
+                      </h6>
+                      <time class="thumbnail-classic-time" datetime="2017">October 30, 2017 @ 8:00 am - November 5, 2017 @ 5:00 pm</time>
+                      <p>Use our Novi Builder to customize and update your website within seconds.</p>
                     </div>
                   </div>
-          <p style="text-align: right;margin-right: 2%;font-size: 15px;margin-top: 10px;"><a href="/meeting"><%= translation.HUB_DASHBORD_LINK_SEE_MORE %>...</a></p> 
-          <div class="container-fluid breadcrumb-container">
-                <ol class="breadcrumb" style="text-align: left">
-                    <h5 class=" t-c-default-toolbar"><%= translation.HUB_DASHBORD_SUBHEAD_ACTIVITY %></h5>
-                </ol>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
+              <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;"></a>
+              <ul>
+                <li class="rdc-event" data-date="10/28/2017">
+                  <div class="thumbnail-classic">
+                    <div class="caption">
+                      <h6 class="us-title-color">NextHoles Client</h6>
+                      <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
+                      <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status
+                        of all work completed since the last meeting, work performed since the last meeting and work which
+                        will be performed prior to the next meeting.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
+              <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;"></a>
+              <ul>
+                <li class="rdc-event" data-date="10/14/2017">
+                  <div class="thumbnail-classic">
+                    <div class="caption">
+                      <h6 class="us-title-color">NextHoles Client</h6>
+                      <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
+                      <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status
+                        of all work completed since the last meeting, work performed since the last meeting and work which
+                        will be performed prior to the next meeting.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
+              <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;"></a>
+              <ul>
+                <li class="rdc-event" data-date="10/16/2017">
+                  <div class="thumbnail-classic">
+                    <div class="caption">
+                      <h6 class="us-title-color">NextHoles Client</h6>
+                      <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
+                      <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status
+                        of all work completed since the last meeting, work performed since the last meeting and work which
+                        will be performed prior to the next meeting.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
+              <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;"></a>
+              <ul>
+                <li class="rdc-event" data-date="10/28/2017">
+                  <div class="thumbnail-classic">
+                    <div class="caption">
+                      <h6 class="us-title-color">NextHoles Client</h6>
+                      <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
+                      <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status
+                        of all work completed since the last meeting, work performed since the last meeting and work which
+                        will be performed prior to the next meeting.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
+              <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;"></a>
+              <ul>
+                <li class="rdc-event" data-date="10/1/2017">
+                  <div class="thumbnail-classic">
+                    <div class="caption">
+                      <h6 class="us-title-color">NextHoles Client</h6>
+                      <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
+                      <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status
+                        of all work completed since the last meeting, work performed since the last meeting and work which
+                        will be performed prior to the next meeting.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
+              <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;"></a>
+              <ul>
+                <li class="rdc-event" data-date="10/5/2017">
+                  <div class="thumbnail-classic">
+                    <div class="caption">
+                      <h6 class="us-title-color">NextHoles Client</h6>
+                      <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
+                      <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status
+                        of all work completed since the last meeting, work performed since the last meeting and work which
+                        will be performed prior to the next meeting.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rdc-panel-nav">
+              <a class="rdc-prev">
+                <%= translation.HUB_DASHBORD_LINK_PREV_MONTH %>
+              </a>
+              <!--<h5 class="veil reveal-sm-block">Calendar Month Navigation</h5>-->
+              <a class="rdc-next">
+                <%= translation.HUB_DASHBORD_LINK_NEXT_MONTH %>
+              </a>
+            </div>
           </div>
-          <div style="margin-left: 25px; margin-right:25px">
-                <div class="range range-50 offset-top-1 ">
-                    <div class="cell-sm-12 cell-md-12 cell-lg-6 h-div-border">
-                        <div id="container" style="min-width: 310px; max-width: 600px; height: 350px; margin: 0 auto"></div>
-                    </div>
-                    <div class="cell-sm-12 cell-md-12 cell-lg-6 h-div-border">
-                        <canvas id="canvas"></canvas>
-                    </div>
-                </div>
+        </div>
+
+        <div class="container-fluid breadcrumb-container">
+          <ol class="breadcrumb" style="text-align: left">
+            <h5 class=" t-c-default-toolbar">Chart</h5>
+          </ol>
+          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center h-div-border">
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 chart-bg-color">
+              <div class="chart-wrapper">
+                <canvas id='c'></canvas>
+                <div class="label">text</div>
+              </div>
             </div>
-            
-            <div class="cell-sm-12 cell-md-12 cell-lg-12 text-center h-div-border" style="margin: 10px;margin-top: 30px; padding-top: 10px">
-                    <div class="rd-calendar">
-                            <div class="rdc-panel">
-                              <h3><%= translation.HUB_DASHBORD_CALENDER %> <span class="rdc-month"></span> <span class="rdc-fullyear"></span>
-                              </h3>
-                            </div>
-                            <div class="rdc-table"></div>
-                            <div class="rdc-events"><a class="rdc-events_close"></a>
-                              <ul>
-                                <li class="rdc-event" data-date="06/14/2017">
-                                  <div class="thumbnail-classic">
-                                    <div class="caption">
-                                      <h6><a class="thumbnail-classic-title" href="single-event.html">Novi Builder</a></h6>
-                                      <time class="thumbnail-classic-time" datetime="2017">October 30, 2017 @ 8:00 am - November 5, 2017 @ 5:00 pm</time>
-                                      <p>Use our Novi Builder to customize and update your website within seconds.</p>
-                                    </div>
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-
-                            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
-                              <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;" ></a>
-                              <ul>
-                                <li class="rdc-event" data-date="10/28/2017">
-                                  <div class="thumbnail-classic">
-                                    <div class="caption">
-                                      <h6 class="us-title-color">NextHoles Client</h6>
-                                      <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
-                                      <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status of all work completed since the last meeting, work performed since the last meeting and work which will be performed prior to the next meeting.</p>
-                                    </div>
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-
-                            <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
-                                <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;" ></a>
-                                <ul>
-                                  <li class="rdc-event" data-date="10/14/2017">
-                                    <div class="thumbnail-classic">
-                                      <div class="caption">
-                                        <h6 class="us-title-color">NextHoles Client</h6>
-                                        <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
-                                        <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status of all work completed since the last meeting, work performed since the last meeting and work which will be performed prior to the next meeting.</p>
-                                      </div>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
-                                  <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;" ></a>
-                                  <ul>
-                                    <li class="rdc-event" data-date="10/16/2017">
-                                      <div class="thumbnail-classic">
-                                        <div class="caption">
-                                          <h6 class="us-title-color">NextHoles Client</h6>
-                                          <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
-                                          <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status of all work completed since the last meeting, work performed since the last meeting and work which will be performed prior to the next meeting.</p>
-                                        </div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-
-                                <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
-                                    <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;" ></a>
-                                    <ul>
-                                      <li class="rdc-event" data-date="10/28/2017">
-                                        <div class="thumbnail-classic">
-                                          <div class="caption">
-                                            <h6 class="us-title-color">NextHoles Client</h6>
-                                            <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
-                                            <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status of all work completed since the last meeting, work performed since the last meeting and work which will be performed prior to the next meeting.</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  
-                                <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
-                                    <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;" ></a>
-                                    <ul>
-                                      <li class="rdc-event" data-date="10/1/2017">
-                                        <div class="thumbnail-classic">
-                                          <div class="caption">
-                                            <h6 class="us-title-color">NextHoles Client</h6>
-                                            <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
-                                            <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status of all work completed since the last meeting, work performed since the last meeting and work which will be performed prior to the next meeting.</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                         
-                                <div class="rdc-events" style="border:1px solid #888; border-radius:10px;">
-                                    <a class="rdc-events_close" style="margin-top: 5px;margin-right: 5px;" ></a>
-                                    <ul>
-                                      <li class="rdc-event" data-date="10/5/2017">
-                                        <div class="thumbnail-classic">
-                                          <div class="caption">
-                                            <h6 class="us-title-color">NextHoles Client</h6>
-                                            <p style="font-size:15px;">10.30 Am - 1.30 pm </p>
-                                            <p style="font-size:12px;">The NextHoles Project schedule is reviewed during this meeting topic. The review covers the status of all work completed since the last meeting, work performed since the last meeting and work which will be performed prior to the next meeting.</p>
-                                          </div>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </div>
-
-                            <div class="rdc-panel-nav">
-                              <a class="rdc-prev"><%= translation.HUB_DASHBORD_LINK_PREV_MONTH %></a>
-                              <!--<h5 class="veil reveal-sm-block">Calendar Month Navigation</h5>-->
-                              <a class="rdc-next"><%= translation.HUB_DASHBORD_LINK_NEXT_MONTH %></a>
-                            </div>
-                          </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6  bg-white-modal">
+                
             </div>
-        </section>
+          </div>
+
+        </div>
+      </section>
     </div>
-     <!-- BEGIN script file links -->
-     <% include _layouts/common-scripts %>
-     <!-- Pagination next footer -->
-     <%include _layouts/footer %>
-    <script src="/node_modules/highcharts/highcharts.js"></script>
-    <script src="/node_modules/highcharts/modules/data.js"></script>
-    <script src="/node_modules/highcharts/modules/drilldown.js"></script>
-    <script src="/node_modules/chart.js/dist/Chart.min.js"></script>
-    <script src="/node_modules/chart.js/samples/utils.js"></script>
-    <script>
-        $(document).ready(function(){
+    <!-- BEGIN script file links -->
+    <% include _layouts/common-scripts %>
+      <!-- Pagination next footer -->
+      <%include _layouts/footer %>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js'></script>
+        <script src="/node_modules/highcharts/highcharts.js"></script>
+        <script src="/node_modules/highcharts/modules/data.js"></script>
+        <script src="/node_modules/highcharts/modules/drilldown.js"></script>
+        <script src="/node_modules/chart.js/dist/Chart.min.js"></script>
+        <script src="/node_modules/chart.js/samples/utils.js"></script>
+
+
+        <script src="/scripts/dashboard/chart.js"></script>
+        <script src="/scripts/dashboard/chart1.js"></script>
+        <script>
+          $(document).ready(function () {
             debugger;
             $("#dashboard").addClass("active");
 
             var popData = {
-  datasets: [{
-    label: ['<%= translation.HUB_DASHBORD_BUBBLE_CHART_MEETING_DURATION %>'],
-    data: [{
-      x: 100,
-      y: 0,
-      r: 10
-    }, {
-      x: 60,
-      y: 30,
-      r: 20
-    }, {
-      x: 40,
-      y: 60,
-      r: 25
-    }, {
-      x: 80,
-      y: 80,
-      r: 50
-    }, {
-      x: 20,
-      y: 30,
-      r: 25
-    }, {
-      x: 0,
-      y: 100,
-      r: 5
-    }],
-    backgroundColor: "#3a8fff"
-  }]
-};
+              datasets: [{
+                label: ['<%= translation.HUB_DASHBORD_BUBBLE_CHART_MEETING_DURATION %>'],
+                data: [{
+                  x: 100,
+                  y: 0,
+                  r: 10
+                }, {
+                  x: 60,
+                  y: 30,
+                  r: 20
+                }, {
+                  x: 40,
+                  y: 60,
+                  r: 25
+                }, {
+                  x: 80,
+                  y: 80,
+                  r: 50
+                }, {
+                  x: 20,
+                  y: 30,
+                  r: 25
+                }, {
+                  x: 0,
+                  y: 100,
+                  r: 5
+                }],
+                backgroundColor: "#3a8fff"
+              }]
+            };
 
             var ctx = document.getElementById("canvas").getContext("2d");
             var myChart = new Chart(ctx, {
-                type: 'bubble',
-                data: popData,
-                options: {
-                    responsive: true,
-                    title:{
-                        display:false,
-                        text:'<%= translation.HUB_DASHBORD_BUBBLE_CHART_MEETING_DURATION %>'
-                    },
-                    tooltips: {
-                        mode: 'point'
-                    }
+              type: 'bubble',
+              data: popData,
+              options: {
+                responsive: true,
+                title: {
+                  display: false,
+                  text: '<%= translation.HUB_DASHBORD_BUBBLE_CHART_MEETING_DURATION %>'
+                },
+                tooltips: {
+                  mode: 'point'
                 }
+              }
             });
 
             Highcharts.chart('container', {
-                chart: {
-                    type: 'pie'
-                },
-                title: {
-                    text: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS %>'
-                },
-                // subtitle: {
-                //     text: 'Click the slices to view versions. Source: netmarketshare.com.'
-                // },
-                plotOptions: {
-                    series: {
-                        dataLabels: {
-                            enabled: true,
-                            format: '{point.name}: {point.y:.1f}%'
-                        }
-                    }
-                },
+              chart: {
+                type: 'pie'
+              },
+              title: {
+                text: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS %>'
+              },
+              // subtitle: {
+              //     text: 'Click the slices to view versions. Source: netmarketshare.com.'
+              // },
+              plotOptions: {
+                series: {
+                  dataLabels: {
+                    enabled: true,
+                    format: '{point.name}: {point.y:.1f}%'
+                  }
+                }
+              },
 
-                tooltip: {
-                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
-                },
-    series: [{
-        name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS %>',
-        colorByPoint: true,
-        data: [{
-            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_ACTIVE %>',
-            y: 10.33,
-            drilldown: 'Active Meetings'
-        }, {
-            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_COMPLETED %>',
-            y: 24.03,
-            drilldown: 'Completed Meetings'
-        }, {
-            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_SCHEDULED %>',
-            y: 35.38,
-            drilldown: 'Scheduled Meetings'
-        }]
-    }],
-    drilldown: {
-        series: [{
-            name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_ACTIVE %>',
-            id: 'Active Meetings',
-            data: [
-                ['Jan', 2.33],
-                ['Feb', 1.00],
-                ['Mar', 3.00],
-                ['Apr', 2.00],
-                ['May', 1.00],
-                ['Jun', 1.00]
-            ]
-        }, {
-            name: 'Completed Meetings',
-            id: 'Completed Meetings',
-            data: [
-                ['Jan', 5],
-                ['Feb', 4.03],
-                ['Mar', 4.00],
-                ['Apr', 3.68],
-                ['May', 4.00],
-                ['Jun', 4.00],
-            ]
-        }, {
-            name: 'Scheduled Meetings',
-            id: 'Scheduled Meetings',
-            data: [
-                ['Jan', 5],
-                ['Feb', 5.38],
-                ['Mar', 5.00],
-                ['Apr', 5.00],
-                ['May', 5.00],
-                ['Jun', 10.00]
-            ]
-        }]
-    }
-});
-});
+              tooltip: {
+                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+              },
+              series: [{
+                name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS %>',
+                colorByPoint: true,
+                data: [{
+                  name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_ACTIVE %>',
+                  y: 10.33,
+                  drilldown: 'Active Meetings'
+                }, {
+                  name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_COMPLETED %>',
+                  y: 24.03,
+                  drilldown: 'Completed Meetings'
+                }, {
+                  name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_SCHEDULED %>',
+                  y: 35.38,
+                  drilldown: 'Scheduled Meetings'
+                }]
+              }],
+              drilldown: {
+                series: [{
+                  name: '<%= translation.HUB_DASHBORD_PIE_CHART_MEETINGS_BRANDS_ACTIVE %>',
+                  id: 'Active Meetings',
+                  data: [
+                    ['Jan', 2.33],
+                    ['Feb', 1.00],
+                    ['Mar', 3.00],
+                    ['Apr', 2.00],
+                    ['May', 1.00],
+                    ['Jun', 1.00]
+                  ]
+                }, {
+                  name: 'Completed Meetings',
+                  id: 'Completed Meetings',
+                  data: [
+                    ['Jan', 5],
+                    ['Feb', 4.03],
+                    ['Mar', 4.00],
+                    ['Apr', 3.68],
+                    ['May', 4.00],
+                    ['Jun', 4.00],
+                  ]
+                }, {
+                  name: 'Scheduled Meetings',
+                  id: 'Scheduled Meetings',
+                  data: [
+                    ['Jan', 5],
+                    ['Feb', 5.38],
+                    ['Mar', 5.00],
+                    ['Apr', 5.00],
+                    ['May', 5.00],
+                    ['Jun', 10.00]
+                  ]
+                }]
+              }
+            });
+          });
 
-    </script>
-  </body>
+        </script>
+</body>
+
 </html>
