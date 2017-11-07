@@ -1,10 +1,7 @@
 $(document).ready(function () {
-<<<<<<< HEAD
 
     checkWindowPathName();
 
-=======
->>>>>>> 534d19fbe1267939409b88bf69995ad2b96d51ac
     // BEGIN DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
     var count = 0;
     var i;
