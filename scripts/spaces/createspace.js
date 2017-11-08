@@ -60,6 +60,7 @@ $(document).ready(function () {
     $('#addMemberBtn').live('click', function () {
         var member = $('<div id="addDeleteParent" class="input-group form-wrap input-box-shadow">\
                         <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">\
+                        <span id="ownerIcon" class="bg-gray input-group-addon"><a class="fa fa-user fa-lg" aria-hidden="true" title="Owner"></a></span>\
                         <span id="deleteMember" class="input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>\
                         </div>\
                         <datalist id="emails">\
@@ -167,7 +168,7 @@ $(document).ready(function () {
     // END MODAL CLOSE LOGIC
 
     // BEGIN POPULATE UPDATE COSPACE FORM
-    setTimeout(function(){
+    setTimeout(function () {
         var url = window.location.href;
         var subString = url.substring(url.indexOf('=') + 1);
         // console.log(subString);
@@ -182,15 +183,6 @@ $(document).ready(function () {
             $("#totime").val("14:00");
         });
     }, 1000);
-    // END POPULATE UPDATE COSPACE FORM
-
-    // BEGIN MOMENT.JS CODE LOGIC 
-        // console.log(moment().format());
-        // console.log(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
-        // console.log(typeof moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
-        // console.log(moment().format("ddd, hA"));
-        // console.log(moment());
-    // END MOMENT.JS CODE LOGIC 
-    
+    // END POPULATE UPDATE COSPACE FORM    
 });
 

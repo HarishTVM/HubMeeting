@@ -129,6 +129,18 @@ li.select2-results__option:hover{
     top: -20%;
 }
 
+#ownerIcon{
+    border: none;
+}
+
+#ownerIcon a {
+    color: black;
+}
+
+#ownerIcon:hover{
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
     .schedule-meeting-div{
         width: 50%;
