@@ -1,7 +1,5 @@
 <!-- Modal -->
-<!-- <script id="coSpacesUser-Modal-Script" type="text/x-handlebars-template">
-  {{#each coSpaceUsers}} -->
-<div id="coSpacesUsersModal" class="modal fade" role="dialog">
+<div id="coSpacesUsersModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
 
   <div class="modal-dialog  modal-lg">
     <!-- Modal content-->
@@ -9,7 +7,7 @@
       <div class="modal-header">
         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
           <div class="col-md-6 col-sm-6 col-xs-12 col-lg-10 padding-left-right-none ">
-            <h6 id="modalName" class="h6-title-color text-overflow-title h6-title-medium us-title-color modal-t-align-l">
+            <h6 id="modalTitle" class="space-details h6-title-color text-overflow-title h6-title-medium us-title-color modal-t-align-l">
               <!-- Allowed RODC Password Replication Group.users -->
             </h6>
           </div>
@@ -18,10 +16,10 @@
           </div>
         </div>
       </div>
-    
+
       <!-- BEGIN Modal Body -->
       <div class="modal-body padding-none-all">
-        
+
         <div class="content-style-form content-style-form-1">
           <!-- BEGIN Space Details -->
           <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-left-right-none h-m-top-none modal-border-r">
@@ -46,7 +44,7 @@
               </div>
               <!-- End Pages Loading -->
               <!-- BEGIN Set Details -->
-            
+
               <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none space-details">
                 <div id="mainParent" class="s-height m-details-padding">
                   <!-- BEGIN Set Name,URI and Members for Space Details -->
@@ -58,8 +56,7 @@
                       </div>
                       <!-- Set Value Space ID -->
                       <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div ">
-                        <h6 class="cursor-default  h6-title text-overflow-title" data-toggle=" " title="Allowed\20RODC\20Password\20Replication\20Group@inflexion.com">
-                          Allowed\20RODC\20Password\20Replication\20Group@inflexion.com
+                        <h6 id="modalSpaceID" class="cursor-default  h6-title text-overflow-title" data-toggle=" " title="Allowed\20RODC\20Password\20Replication\20Group@inflexion.com">
                         </h6>
                       </div>
                     </div>
@@ -71,7 +68,7 @@
                       </div>
                       <!-- Set Members Value -->
                       <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
-                        <h6 class="cursor-default h6-title text-overflow-title meeting-div ">{{attrkey.total}}</h6>
+                        <h6 id="modalTotalMembers" class="cursor-default h6-title text-overflow-title meeting-div"></h6>
                       </div>
                     </div>
 
@@ -82,7 +79,7 @@
                       </div>
                       <!-- Set URI Value -->
                       <div class="col-md-6 col-sm-6 col-xs-12 col-lg-10 padding-left-right-none meeting-div">
-                        <h6 class="cursor-default h6-title text-overflow-title">arpr-group.users</h6>
+                        <h6 id="modalURI" class="cursor-default h6-title text-overflow-title"></h6>
                       </div>
                     </div>
                   </div>
@@ -94,18 +91,31 @@
             </div>
           </div>
           <!-- End Space Details -->
-       
+
           <!-- BEGIN Members List -->
           <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-left-right-none h-m-top-none ">
             <div class="sl-model-height">
               <!-- BEGIN Set Title-->
               <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 modal-toolbar-border-t-b padding-left-right-none">
-                <div class="container-fluid breadcrumb-container">
-                  <ol class="toolbar-padding" style="text-align: left">
-                    <h5 class="text-color-default ">
-                      Members List
-                    </h5>
-                  </ol>
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
+                  <div class="container-fluid breadcrumb-container">
+                    <ol class="toolbar-padding" style="text-align: left">
+                      <h5 class="text-color-default ">
+                        Members List
+                      </h5>
+                    </ol>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
+
+                  <form class="padding-top-none sharch-m-t">
+                    <div class="input-group">
+                      <input id="email" type="text" class="form-control sharch-width-modal" name="Sharch" placeholder="Sharch">
+                      <span class="input-group-addon input-sharch cursor-pointer ">
+                          <i class="glyphicon linear-icon-magnifier"></i>
+                        </span>
+                    </div>
+                  </form>
                 </div>
               </div>
               <!-- End Set Title-->
@@ -117,19 +127,12 @@
                   </div>
                 </div>
                 <!-- End Pages Loading -->
-          
-                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member space-members-list">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
                   <!-- BEGIN Set Spaces members -->
-                  <ul class="padding-left-right-none">
-                    <li class="padding-left-right-none">
-                      <b>
-                        <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">Harish.inflexiontech@gmail.com</h6>
-                      </b>
-                    </li>
-                  </ul>
+                  <div class="space-members-list  cursor-default" id="spaceMembersModal"></div>
                   <!-- End Set Spaces members -->
                 </div>
-             
+
               </div>
             </div>
           </div>
@@ -144,5 +147,53 @@
     </div>
   </div>
 </div>
-<!-- {{/each}}
+
+<!-- BEGIN Set Spaces Members Handlebars-->
+<script id="spaceMembers" type="text/x-handlebars-template">
+  {{#each coSpaceUser}}
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member space-members-list">
+      <!-- BEGIN Set Spaces members -->
+      <ul class="padding-left-right-none cursor-default" data-toggle=" " title="  {{userJid}}">
+          <li class="padding-left-right-none">
+              <b>
+                  <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">
+                      {{#if userJid}}
+                      {{userJid}}
+                        {{else}}
+                       <p>No Members</p>
+                         {{/if}}
+                    </h6>
+              </b>
+          </li>
+      </ul>
+  </div>
+  {{/each}}
+</script>
+<!-- End Set Spaces Members Handlebars-->
+
+
+<!-- BEGIN Set Spaces Details Handlebars-->
+
+<!-- End Set Spaces Details Handlebars-->
+
+
+<!-- <script id="spaceDetails" type="text/x-handlebars-template">
+  {{#each coSpaceUser}}
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member space-members-list">
+
+      <ul class="padding-left-right-none">
+          <li class="padding-left-right-none">
+              <b>
+                  <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">
+                      {{#if userJid}}
+                      {{userJid}}
+                        {{else}}
+                       <br><p>No Members</p>
+                         {{/if}}
+                    </h6>
+              </b>
+          </li>
+      </ul>
+  </div>
+  {{/each}}
 </script> -->

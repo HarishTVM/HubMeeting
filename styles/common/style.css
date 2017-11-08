@@ -81,6 +81,23 @@ html {
   list-style: none;
   border-radius: 4px
 }
+.sharch-m-t{margin-top:5px;}
+
+.input-sharch{
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-color: #23d7b2;
+  border-radius: 4px;
+}
+.input-sharch:hover{
+  background-color: #000000;
+}
+
+.sharch-width-modal{ width: 100% !important; font-size: 10px !important;}
 a.page-link {
   background: #FFFFFF !important;
   color:#23d7b2 !important;
@@ -122,6 +139,7 @@ a.page-link {
 /*========================================================================================
                     =          BEGIN modal for Users               =
 ==========================================================================================*/
+
 .body-center{
   position: relative;
   top: 50%;
