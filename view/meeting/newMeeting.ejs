@@ -85,9 +85,6 @@
                     <%= translation.CREATE_SPACE_ERROR_TEXT_PASSCODE %>
                   </span>
                 </div>
-                <div class="hide form-wrap">
-                  <p id="videoAdd">Video Address: </p>
-                </div>
                 <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
                   <select class="form-control on-hover-color" id="sel1" name="selectLayout">
                     <option selected value="default" disabled>
@@ -187,8 +184,11 @@
                         <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member...">
                         <div id="addDeleteParent" class="input-group form-wrap input-box-shadow">
                           <input id="addMembers" class="form-input" type="text" list="emails" autocomplete="off" multiple placeholder="add member...">
+                          <span id="ownerIcon" class="bg-gray input-group-addon">
+                            <a class="fa fa-user-circle fa-lg" aria-hidden="true" title="Owner"></a>
+                          </span>
                           <span id="deleteMember" class="bg-gray input-group-addon">
-                            <a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a>
+                            <a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></a>
                           </span>
                         </div>
                         <datalist id="emails">
@@ -220,6 +220,9 @@
       <script src="/node_modules/moment/min/locales.min.js"></script>
       <script src="/node_modules/moment/min/moment.min.js"></script>
       <script src="/node_modules/moment/min/moment-with-locales.min.js"></script>
+      <script src="/node_modules/moment-timezone/builds/moment-timezone.min.js"></script>
+      <script src="/node_modules/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+      <script src="/node_modules/moment-timezone/builds/moment-timezone-with-data-2012-2022.min.js"></script>
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/meeting/newmeeting.js"></script>
       <script src="/scripts/meeting/updatemeeting.js"></script>

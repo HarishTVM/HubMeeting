@@ -54,9 +54,7 @@ var ToastMesssges = {
 
 var meetingType = {
     Personal: 0,
-    OneTime: 1,
-    Default: 2
-    
+    OneTime: 1
 }
 
 var meetingLayoutTranslation = {
