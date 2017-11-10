@@ -1,13 +1,17 @@
 $(document).ready(function () {
+    // BEGIN ---------------------GLOBAL VARIABLES---------------------
     var isKeyEntered = false;
+    var isOwner = false
 
-    // BEGIN CREATE ARRAY OF MEMBERS - GLOBAL VARIABLES
+    // BEGIN CREATE ARRAY OF MEMBERS 
     var memArrayList = [];
     var ownerArrayList = [];
     var cospaceUSerIdArray = [];
     var newArray = [];
     var memberObj = []
-    // BEGIN CREATE ARRAY OF MEMBERS - GLOBAL VARIABLES
+    // BEGIN CREATE ARRAY OF MEMBERS
+
+    // END ---------------------GLOBAL VARIABLES---------------------
 
     //-----BEGIN--------------------------HARISH CODE------------------------------------
     // checkWindowPathName();
@@ -25,7 +29,6 @@ $(document).ready(function () {
     //END Mirror populate input value logic
 
     // ---------- BEGIN MAKE A MEMBER OWNER ---------------
-    var isOwner = false;
     $("#ownerIcon").live("click", function () {
         $(this).toggle(function () {
             $(this).children().css("color", "#2ed3ae");
@@ -43,6 +46,10 @@ $(document).ready(function () {
     });
     // ---------- END MAKE A MEMBER OWNER ---------------
 
+    // BEGIN -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
+    $("#memberParentDiv")
+    // END -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
+
     //BEGIN Add Member and DELETE MEMBER Logic
     $('#addMemberBtn').live('click', function () {
         var member = $('<div id="addDeleteParent" class="input-group form-wrap input-box-shadow">\
@@ -58,7 +65,13 @@ $(document).ready(function () {
     });
 
     $("#deleteMember").live('click', function () {
-        $(this).parent().remove();
+        debugger;
+        if ($(this).parents("#memberParentDiv").children('div').length == 1) {
+            $(this).prop('disabled', true);
+        }
+        else {
+            $(this).parent().remove();
+        }
     });
 
     //END Add Member and DELETE MEMBER Logic
@@ -220,10 +233,8 @@ $(document).ready(function () {
     $("#addMembers").live("blur", function () {
         debugger;
         httpGet(apiType.GET_USERS + "?filter=" + $(this).val(), function (resp, err) {
-            // console.log(resp.data.users[0].user.attrkey.id);
             var userCospaceId = resp.data.users[0].user.attrkey.id
             cospaceUSerIdArray.push(userCospaceId);
-            // console.log(cospaceUSerIdArray);
         });
     });
 
@@ -282,13 +293,6 @@ $(document).ready(function () {
         }
     });
     // END GET USERS
-
-    // // BEGIN TO GET COSPACE_USER_ID
-    //     $("#memberAddDiv").on('select',function(){
-    //         debugger;
-    //         console.log($(this).val());
-    //     });
-    // // END TO GET COSPACE_USER_ID
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
@@ -349,7 +353,6 @@ $(document).ready(function () {
                     console.log(resp);
                     console.log(err);
                     $('input[name=types]:checked').val("");
-                    console.log($('input[name=types]:checked').val());
                 });
             }
 
