@@ -293,18 +293,36 @@ $(document).ready(function () {
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
         debugger;
+        var startDateFormat = $("#fromdate").val().split('-');
+        var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
+
+        var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
+
+        var endDateFormat = $("#todate").val().split('-');
+        var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
+
+        var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
+        var start = moment(fromISO).tz('Europe/London');
+        var end = moment(toISO).tz('Europe/London');
+
+        console.log(start._i);
+        console.log(end._i);
+
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
                 resultItem.push(validateText(obj));
             });
             if (resultItem.indexOf(false) < 0) {
-                var fromISO = moment($("#fromdate").val() + ' ' + $("#fromtime").val()).toISOString();
-                var toISO = moment($("#todate").val() + ' ' + $("#totime").val()).toISOString();
+                var startDateFormat = $("#fromdate").val().split('-');
+                var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
+                var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
+                var endDateFormat = $("#todate").val().split('-');
+                var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
+                var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
                 var start = moment(fromISO).tz('Europe/London');
-                console.log(start);
                 var end = moment(toISO).tz('Europe/London');
-                console.log(end);
+
                 if ($('input[name=types]:checked').val() === "0") {
                     isCospaceId = randomObj.spaceid;
                 }
