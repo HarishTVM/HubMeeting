@@ -273,12 +273,6 @@ $(document).ready(function () {
         console.log(start._i);
         console.log(end._i);
 
-        var startTz = moment.tz(fromISO, moment.tz.guess()).clone().tz('Europe/London').format();
-        var endTz = moment.tz(toISO, moment.tz.guess()).clone().tz('Europe/London').format();
-
-        console.log(startTz);
-        console.log(endTz);
-
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
