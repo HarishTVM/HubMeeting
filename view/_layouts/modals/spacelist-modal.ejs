@@ -108,12 +108,15 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
 
-                  <form class="padding-top-none sharch-m-t">
+                  <form class="padding-top-none search-m-t">
                     <div class="input-group">
-                      <input id="email" type="text" class="form-control sharch-width-modal" name="Sharch" placeholder="Sharch">
-                      <span class="input-group-addon input-sharch cursor-pointer ">
-                          <i class="glyphicon linear-icon-magnifier"></i>
-                        </span>
+                      <input id="inputSearchMembers" type="text" class="form-control sharch-width-modal" name="searchMembers" placeholder="Search Members">
+                      <span id="btnSearchMembers" class="input-group-addon input-search cursor-pointer ">
+                        <i class="glyphicon linear-icon-magnifier searchMembers"></i>
+                      </span>
+                    </div>
+                    <div class="t-right noMembersRefreshIcons">
+                      <a class="linear-icon-undo2"></a>
                     </div>
                   </form>
                 </div>
@@ -121,12 +124,13 @@
               <!-- End Set Title-->
               <div class="modal-padding-member sl-model-scroll-member">
                 <!-- BEGIN Pages Loading -->
-                <div class="loading-modal body-center">
+                <div class="loading-moda-members body-center">
                   <div class="cssload-container">
                     <div class="cssload-speeding-wheel"></div>
                   </div>
                 </div>
                 <!-- End Pages Loading -->
+
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
                   <!-- BEGIN Set Spaces members -->
                   <div class="space-members-list  cursor-default" id="spaceMembersModal"></div>

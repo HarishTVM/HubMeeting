@@ -14,7 +14,8 @@ var apiType = {
     GET_COSPACES_BY_ID: "getCospacesbyId",
     CHECK_COSPACE_EXISTENCE: "checkCoSpaceExistence",
     GET_COSPACES_USERS:"getCoSpacesUsers",
-    CREATE_MEETING: "createMeeting"
+    CREATE_MEETING: "createMeeting",
+    FIND_ALL_MEETING:"findAllMeeting"
 }
 
 var errorCodes = {
@@ -72,3 +73,21 @@ var meetingLayoutTranslation = {
     11: "automatic",
     12: "onePlusN"
 }
+var meetingTypeDetails = {
+    0:"Personal",
+    1:"OneTime"
+}
+var meetingStatusColor = {
+    0:"#4dffa6",// On going Meeting
+    1:"#74a9d8",//Meeting Completed
+    2:"#ffff4d",//Meeting to be Started
+    3:"#ff4d4d;"//Meeting Expired
+}
+// var meetingStatusText = {
+//     0:"On going Meeting",
+//     1:"Meeting Completed",
+//     2:"Meeting to be Started",
+//     3:"Meeting Expired"
+// }
+
+

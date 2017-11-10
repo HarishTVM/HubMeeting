@@ -170,7 +170,6 @@
 .content-style-form input[type="text"]:focus,
 .content-style-form input[type="password"]:focus {
 	border-color: #23d7b2;
-	color: #23d7b2;
 }
 
 .content-style-form input:focus {

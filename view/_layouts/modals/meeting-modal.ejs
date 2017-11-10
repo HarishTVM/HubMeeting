@@ -1,138 +1,285 @@
 <!-- Modal -->
-<div id="" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <!-- <h6>SpaceName</h6> -->
+<div id="meetingModal" class="modal fade" role="dialog" role="dialog" data-backdrop="static" data-keyboard="false">
+
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content modal-margin-t">
+        <div class="modal-header">
+          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none ">
+              <h6 id="modalTitleMeeting" class="h6-title-color text-overflow-title h6-title-medium us-title-color modal-t-align-l"></h6>
             </div>
-            <div class="modal-body padding-none-all">
-              <div class="content-style-form content-style-form-1">
-                <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-right-none padding-left-none h-m-top-none">
-                  <div class="sl-model-bg-color sl-model-height">
-                    <ul class="text-center">
-                      <li>
-                        <h6 class="text-overflow-title sl-model-text-color h6-title-medium">Space Details</h6>
-                      </li>
-                    </ul>
-                    <ul class="sl-m-top-text">
-                      <li>
-                        <b>
-                          <h6 id="modalName" class="h6-title text-overflow-title "></h6>
-                        </b>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <h6 id="modalTenant" class="h6-title  text-overflow-title "></h6>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <h6 id="modalUri" class="sl-model-text-font-small text-overflow-title">
-                          <h6>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <h6 id="modalOwnerJid" class="sl-model-text-font-small text-overflow-title"></h6>
-                      </li>
-                    </ul>
-                    <!-- <ul>
-                      <li>
-                        <h6 id="modalMembers" class="sl-model-text-font-small text-overflow-title ">Members : 5</h6>
-                      </li>
-                    </ul> -->
+            <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+          </div>
+          <!-- <h6>SpaceName</h6> -->
+        </div>
+        <div class="modal-body padding-none-all">
+          <div class="content-style-form content-style-form-1">
+            <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-left-right-none  h-m-top-none  modal-border-r">
+              <div class="sl-model-bg-color sl-model-height">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  modal-toolbar-border-t-b padding-left-right-none">
+                  <div class="container-fluid breadcrumb-container">
+                    <ol class="toolbar-padding" style="text-align: left">
+                      <h5 class="text-color-default ">
+                        Meeting Details
+                      </h5>
+                    </ol>
                   </div>
                 </div>
-                <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-left-right-none h-m-top-none">
-                  <div class="sl-model-height">
-                    <ul class="text-center">
-                      <li>
-                        <b>
-                          <h6 class="h6-title-color text-overflow-title h6-title-medium">Members List</h6>
-                        </b>
-                      </li>
-                    </ul>
-                    <div class="sl-m-top-text sl-model-scroll-member">
-                      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member">
-                        <!-- BEGIN card two  spaces name for Spaces members-->
-                        <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-6 icon-cursor padding-left-right-none" data-toggle="modal" data-target="#myModal"
-                          title="Sreeharsha.inflexiontech@gmail.com">
-                          <ul class="padding-left-right-none">
-                            <li class="padding-left-right-none">
-                              <b>
-                                <h6 class="title-color padding-left-right-none title-align text-margin-top text-overflow-title">Sreeharsha.inflexiontech@gmail.com</h6>
-                              </b>
-                            </li>
-                          </ul>
+                <!-- BEGIN Page card -->
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+                  <div class="us-card-loading card-loaders-meeting">
+                    <div class="cssload-container">
+                      <div class="cssload-speeding-wheel"></div>
+                    </div>
+                  </div>
+                  <div id="mainParent" class="s-height m-details-padding">
+                    <div class="col-md-12 col-sm-12  col-xs-12 col-lg-12 padding-left-right-none">
+                      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+                            <h6 class="linear-icon-calendar-31 m-details-color"></h6>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
+                            <h6 id="modalStartDate" class="cursor-default  h6-title text-overflow-title"></h6>
+                          </div>
+  
                         </div>
-                        <!-- END card two  spaces name for Spaces members -->
-                        <!-- BEGIN card two  show the icon mic,camera and delete for Spaces members-->
-                        <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-6">
-                          <ul class="list-inline-sm icon-right ">
-                            <li class="members-padding-icon">
-                              <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
-                                <i class="linear-icon-mic"></i>
-                              </p>
-                            </li>
-                            <li class="members-padding-icon">
-                              <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
-                                <i class="linear-icon-camera"></i>
-                              </p>
-                            </li>
-                            <li class="members-padding-icon">
-                              <p class="btn  icon-member-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-size ">
-                                <i class="linear-icon-trash2"></i>
-                              </p>
-                            </li>
-                          </ul>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+                            <h6 class="linear-icon-clock3 m-details-color"></h6>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none ">
+                            <h6 id="modalStartTimeAndEnd"class="cursor-default h6-title text-overflow-title"></h6>
+                          </div>
                         </div>
-                        <!-- BEGIN card two show the icon mic,camera and delete for Spaces members-->
                       </div>
-                      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-right-none padding-left-none  h-div-border sl-div-shadow-member">
-                        <!-- BEGIN card two  spaces name for Spaces members-->
-                        <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-6 padding-right-none padding-left-none">
-                          <ul>
-                            <li>
-                              <b>
-                                <h6 class="title-color  title-align text-margin-top text-overflow-title">Sreeharsha.inflexiontech@gmail.com</h6>
-                              </b>
-                            </li>
-                          </ul>
+            
+                      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div card-m-top">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+                            <h6 class="linear-icon-users2 m-details-color"></h6>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
+                            <h6 id="modalTotalMembers" class="cursor-default h6-title text-overflow-title meeting-div "></h6>
+                          </div>
+  
                         </div>
-                        <!-- END card two  spaces name for Spaces members -->
-                        <!-- BEGIN card two  show the icon mic,camera and delete for Spaces members-->
-                        <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-6">
-                          <ul class="list-inline-sm icon-right ">
-                            <li class="members-padding-icon">
-                              <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
-                                <i class="linear-icon-mic"></i>
-                              </p>
-                            </li>
-                            <li class="members-padding-icon">
-                              <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
-                                <i class="linear-icon-camera"></i>
-                              </p>
-                            </li>
-                            <li class="members-padding-icon">
-                              <p class="btn  icon-member-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-size ">
-                                <i class="linear-icon-trash2"></i>
-                              </p>
-                            </li>
-                          </ul>
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+                            <h6 class="linear-icon-border-all m-details-color"></h6>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div" data-toggle=" " title="{{meeting.defaultLayout}}">
+                            <h6 id="modalDefaultLayout" class="cursor-default h6-title text-overflow-title "></h6>
+                          </div>
                         </div>
-                        <!-- BEGIN card two show the icon mic,camera and delete for Spaces members-->
-      
+                      </div>
+                      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div card-m-top">
+                          <div class="col-md-6 col-sm-6 col-xs-12 col-lg-1 padding-left-right-none meeting-div">
+                              <h6 class="linear-icon-group-work m-details-color"></h6>
+                          </div>
+                          <div class="col-md-6 col-sm-6 col-xs-12 col-lg-11 padding-left-right-none meeting-div">
+                              <h6 id="modalMeetingType"class="cursor-default h6-title text-overflow-title"></h6>
+                          </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <!-- END Page card -->
               </div>
-              <div class="modal-footer">
-                <button id="editBtn" type="button" class="hide btn-padding-edit button button-primary" data-dismiss="modal">Edit</button>
+            </div>
+  
+            <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-left-right-none h-m-top-none">
+              <div class="sl-model-height">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 modal-toolbar-border-t-b padding-left-right-none">
+                  <div class="container-fluid breadcrumb-container">
+                    <ol class="toolbar-padding" style="text-align: left">
+                      <h5 class="text-color-default ">
+                        Members List
+                      </h5>
+                    </ol>
+                  </div>
+                </div>
+                <div class="modal-padding-member sl-model-scroll-member">
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member">
+                    <!-- BEGIN card two  spaces name for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-8 cursor-default padding-left-right-none" data-target="" title="Harish.inflexiontech@gmail.com">
+                      <ul class="padding-left-right-none">
+                        <li class="padding-left-right-none">
+                          <b>
+                            <h6 class="title-color padding-left-right-none title-align text-margin-top text-overflow-title">Harish.inflexiontech@gmail.com</h6>
+                          </b>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END card two  spaces name for Spaces members -->
+                    <!-- BEGIN card two  show the icon mic,camera and delete for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-4 ">
+                      <ul class="list-inline-sm icon-right ">
+                        <li class="members-padding-icon" data-target="" title="Mute">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-mic"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Hide">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-camera"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Delete">
+                          <p class="btn  icon-member-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-size ">
+                            <i class="linear-icon-trash2"></i>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- BEGIN card two show the icon mic,camera and delete for Spaces members-->
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member">
+                    <!-- BEGIN card two  spaces name for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-8 cursor-default padding-left-right-none" data-target="" title="Naveen.inflexiontech@gmail.com">
+                      <ul class="padding-left-right-none">
+                        <li class="padding-left-right-none">
+                          <b>
+                            <h6 class="title-color padding-left-right-none title-align text-margin-top text-overflow-title">Naveen.inflexiontech@gmail.com</h6>
+                          </b>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END card two  spaces name for Spaces members -->
+                    <!-- BEGIN card two  show the icon mic,camera and delete for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-4 ">
+                      <ul class="list-inline-sm icon-right ">
+                        <li class="members-padding-icon" data-target="" title="Mute">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-mic"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Hide">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-camera"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Delete">
+                          <p class="btn  icon-member-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-size ">
+                            <i class="linear-icon-trash2"></i>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- BEGIN card two show the icon mic,camera and delete for Spaces members-->
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member">
+                    <!-- BEGIN card two  spaces name for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-8 cursor-default padding-left-right-none" data-target="" title="Sreeharsha.inflexiontech@gmail.com">
+                      <ul class="padding-left-right-none">
+                        <li class="padding-left-right-none">
+                          <b>
+                            <h6 class="title-color padding-left-right-none title-align text-margin-top text-overflow-title">Sreeharsha.inflexiontech@gmail.com</h6>
+                          </b>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END card two  spaces name for Spaces members -->
+                    <!-- BEGIN card two  show the icon mic,camera and delete for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-4 ">
+                      <ul class="list-inline-sm icon-right ">
+                        <li class="members-padding-icon" data-target="" title="Mute">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-mic"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Hide">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-camera"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Delete">
+                          <p class="btn  icon-member-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-size ">
+                            <i class="linear-icon-trash2"></i>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- BEGIN card two show the icon mic,camera and delete for Spaces members-->
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member">
+                    <!-- BEGIN card two  spaces name for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-8 cursor-default padding-left-right-none" data-target="" title="Satish.inflexiontech@gmail.com">
+                      <ul class="padding-left-right-none">
+                        <li class="padding-left-right-none">
+                          <b>
+                            <h6 class="title-color padding-left-right-none title-align text-margin-top text-overflow-title">Satish.inflexiontech@gmail.com</h6>
+                          </b>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END card two  spaces name for Spaces members -->
+                    <!-- BEGIN card two  show the icon mic,camera and delete for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-4 ">
+                      <ul class="list-inline-sm icon-right ">
+                        <li class="members-padding-icon" data-target="" title="Mute">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-mic"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Hide">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-camera"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Delete">
+                          <p class="btn  icon-member-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-size ">
+                            <i class="linear-icon-trash2"></i>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- BEGIN card two show the icon mic,camera and delete for Spaces members-->
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member">
+                    <!-- BEGIN card two  spaces name for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-8 cursor-default padding-left-right-none" data-target="" title="Ravi.inflexiontech@gmail.com">
+                      <ul class="padding-left-right-none">
+                        <li class="padding-left-right-none">
+                          <b>
+                            <h6 class="title-color padding-left-right-none title-align text-margin-top text-overflow-title">Ravi.inflexiontech@gmail.com</h6>
+                          </b>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- END card two  spaces name for Spaces members -->
+                    <!-- BEGIN card two  show the icon mic,camera and delete for Spaces members-->
+                    <div class="col-md-6 col-sm-6 col-md-6 col-xs-6 col-lg-4 ">
+                      <ul class="list-inline-sm icon-right ">
+                        <li class="members-padding-icon" data-target="" title="Mute">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-mic"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Hide">
+                          <p class="btn  btn-warning1 icon-member-circle thumb-corporate__list h-iconls-color icon-size ">
+                            <i class="linear-icon-camera"></i>
+                          </p>
+                        </li>
+                        <li class="members-padding-icon"data-target="" title="Delete">
+                          <p class="btn  icon-member-circle h-icon-color-sm-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete thumb-corporate__list  h-icon-color-sm-delete btn-actived-delete icon-size ">
+                            <i class="linear-icon-trash2"></i>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- BEGIN card two show the icon mic,camera and delete for Spaces members-->
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="modal-footer">
+          <a id="editmodelBtn" class="button button-primary button-sm">Edit</a>
+        </div>
+      </div>
+    </div>

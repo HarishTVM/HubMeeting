@@ -81,9 +81,10 @@ html {
   list-style: none;
   border-radius: 4px
 }
-.sharch-m-t{margin-top:5px;}
 
-.input-sharch{
+.search-m-t{margin-top:5px;}
+
+.input-search{
   padding: 6px 12px;
   font-size: 14px;
   font-weight: normal;

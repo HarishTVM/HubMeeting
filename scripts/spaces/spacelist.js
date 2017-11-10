@@ -1,6 +1,50 @@
 var firstPageObj = null;
 var recentSearch = "";
 var noData;
+var searchcoSpaceId = " ";
+$(document).ready(function () {
+    var isKeyEntered = false;
+    $('#page-loaders-users').show();
+    $('.loading-modal').hide();
+    $('.loading-moda-members').hide();
+    $(".input-group").hide()
+    $(".noMembersRefreshIcons").hide();
+    getCospaces();
+    searchSpcelist();
+    btnDelete();
+    getusersID();
+    searchMembers();
+
+    //BEGIN MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
+    $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
+        debugger;
+        var cospaceIdEle = $(this).parents("#mainParent").attr("coSpaceId");
+
+        // var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
+
+        // var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
+        // $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
+
+        // var b = $(autoPopulate).children("#tenant").attr("tenant");
+        // $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
+
+        // var c = $(autoPopulate).children("#uri").attr("uri");
+        // $("#modalUri").html("<p>Uri:&nbsp;</p>" + c);
+
+        // var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
+        // $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
+
+        // BEGIN UPDATE COSPACE 
+        $("#modalEditBtn").on('click', function () {
+            debugger;
+            window.location.href = "/updatespace?cospaceId=" + cospaceIdEle;
+        });
+        // END UPDATE COSPACE 
+    });
+    //END MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
+
+});
+// BEGIN Check GetCoSpacesRequest and Page.
 function getCoSpacesRequest(query, page, callback) {
     if (page == 1)
         callback(firstPageObj);
@@ -10,7 +54,7 @@ function getCoSpacesRequest(query, page, callback) {
         });
     }
 }
-
+// BEGIN Get coSpaces for API.
 getCospaces = function () {
     $('.card-loaders-spacelist').show();
     $('.page-loaders').show();
@@ -54,16 +98,63 @@ getCospaces = function () {
     });
 
 }
+// BEGIN GetusersID and Set Modal For API.
+getusersID = function () {
+    $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
+        $('.loading-modal').show();
+        $('.loading-moda-members').show();
+        $(".space-details").hide();
+        $(".space-members-list").hide();
 
-$(document).ready(function () {
-    var isKeyEntered = false;
-    $('#page-loaders-users').show();
-    $('.loading-modal').hide();
-    
-    //clearTextValue();
-    getCospaces();
-    GetusersID();
- 
+        var coSpaceId = $(this).parents("#mainParent").attr("coSpaceId");
+        var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
+
+        var getUsersURL = $(autoPopulate).children("#uri").attr("uri");
+        var coSpaceNameTitle = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
+        var coSpaceURL = $(autoPopulate).children("#uri").attr("uri");
+        var coSpaceOwnerJid = $(autoPopulate).children("#ownerJid").attr("ownerJid");
+        var totalMembers;
+        searchcoSpaceId = coSpaceId;
+        setTimeout(function () {
+
+            httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + coSpaceId, function (resp) {
+                console.log(resp);
+                var template = Handlebars.compile($('#spaceMembers').html());
+                $('#spaceMembersModal').html(template(resp.data.coSpaceUsers));
+                totalMembers = resp.data.coSpaceUsers.attrkey.total;
+
+                $("#modalTotalMembers").html(totalMembers);
+                $("#modalTitle").html(coSpaceNameTitle);
+                $("#modalSpaceID").html(coSpaceNameTitle);
+                $("#modalURI").html(coSpaceURL);
+                $(".space-details").show();
+                $(".space-members-list").show();
+
+                if (totalMembers > 5) {
+                    $(".input-group").show()
+                    $(".noMembersRefreshIcons").hide()
+
+                } else {
+                    $(".input-group").hide()
+                    $(".noMembersRefreshIcons").show()
+                }
+            });
+            $('.loading-modal').hide();
+            $('.loading-moda-members').hide();
+        }, 1000);
+
+        $("#btnScheduleModal").on('click', function () {
+            window.location.href = "/schedulemeeting?cospaceId=" + coSpaceId;
+        });
+
+    });
+
+
+
+}
+// BEGIN Search card Spcelist For API.
+searchSpcelist = function () {
+
     // BEGIN SEARCH FILTER
     $('#filter').keyup(function () {
         $("#List").hide();
@@ -110,10 +201,6 @@ $(document).ready(function () {
                                         $('.page-loaders').hide();
                                         var template = Handlebars.compile($('#coSpacesUsers').html());
                                         $('#List').html(template(resp.data));
-                                        Handlebars.registerHelper("rHCoSpaceName",function(coSpaceName){
-
-                                            return options.fn(this);
-                                        });
 
                                     });
                                 },
@@ -135,36 +222,9 @@ $(document).ready(function () {
         }
     });
     // END SEARCH FILTER
-
-    //BEGIN MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
-    $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
-        debugger;
-        var cospaceIdEle = $(this).parents("#mainParent").attr("coSpaceId");
-
-        // var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
-
-        // var a = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
-        // $("#modalName").html("<p>SpaceName:&nbsp;</p>" + a);
-
-        // var b = $(autoPopulate).children("#tenant").attr("tenant");
-        // $("#modalTenant").html("<p>Tenant:&nbsp;</p>" + b);
-
-        // var c = $(autoPopulate).children("#uri").attr("uri");
-        // $("#modalUri").html("<p>Uri:&nbsp;</p>" + c);
-
-        // var d = $(autoPopulate).children("#ownerJid").attr("ownerJid");
-        // $("#modalOwnerJid").html("<p>OwnerJid:&nbsp;</p>" + d);
-
-        // BEGIN UPDATE COSPACE 
-        $("#modalEditBtn").on('click', function () {
-            debugger;
-            window.location.href = "/updatespace?cospaceId=" + cospaceIdEle;
-        });
-        // END UPDATE COSPACE 
-    });
-    //END MODAL AUTOPOPULATE IN SPACELIST ON CLICK INFO BTN
-
-
+}
+// BEGIN Delete Spcelist For API.
+btnDelete = function () {
     // BEGIN DELETE SPACELIST CARDS
     $("#deleteBtn").live("click", function () {
         var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
@@ -183,60 +243,41 @@ $(document).ready(function () {
             });
     });
     // END DELETE SPACELIST CARDS
+}
+// BEGIN Search Members in Modal For API.
+searchMembers = function () {
 
-});
-// //Clear The Text Value using jquery
-// clearTextValue = function(){
-//     $("#modalTitle").val(" ");
-//     $("#modalSpaceID").val(" ");
-//     $("#modalTotalMembers").val(" ");
-//     $("#modalURI").val(" ");
-// }
-
-
-// BEGIN GetusersID and Set Modal 
-GetusersID = function () {
-
-    $("#infoDelteBtnsParent").find("#spacelistInfoBtn").live('click', function () {
-        $('.loading-modal').show();
-        $(".space-details").hide();
-        $(".space-members-list").hide();
-        
-        var coSpaceId = $(this).parents("#mainParent").attr("coSpaceId");
-        var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
-
-        var getUsersURL = $(autoPopulate).children("#uri").attr("uri");
-        var coSpaceNameTitle = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
-        var coSpaceURL = $(autoPopulate).children("#uri").attr("uri");
-        var coSpaceOwnerJid = $(autoPopulate).children("#ownerJid").attr("ownerJid");
-        var totalMembers;
+    $('#inputSearchMembers').keyup(function () {
+        var inputSearchMembers = $("#inputSearchMembers").val();
+        var searchTotalMembers;
 
         setTimeout(function () {
 
-            httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + coSpaceId ,function (resp) {
-                console.log(resp);
-                var template = Handlebars.compile($('#spaceMembers').html());
-                $('#spaceMembersModal').html(template(resp.data.coSpaceUsers));
-                totalMembers = resp.data.coSpaceUsers.attrkey.total;
+            $('.loading-moda-members').show();
+            $(".space-members-list").hide();
+            console.log(inputSearchMembers);
+            httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + searchcoSpaceId + "&filter=" + inputSearchMembers, function (resp) {
+                searchTotalMembers = resp.data.coSpaceUsers.attrkey.total;
+                // console.log("MembersFilter" + JSON.stringify(resp));
 
-                $("#modalTotalMembers").html(totalMembers);
-                $("#modalTitle").html(coSpaceNameTitle);
-                $("#modalSpaceID").html(coSpaceNameTitle);
-                $("#modalURI").html(coSpaceURL);
-                $(".space-details").show();
-                $(".space-members-list").show();     
+                if (searchTotalMembers == 0) {
+                    $('.loading-moda-members').hide();
+                    onMembers = $(
+                        '<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                        <h6>No Members</h6>\
+                        </div>'
+                    );
+                    $(".space-members-list").show();
+                    $("#spaceMembersModal").html(onMembers);
+                    $(".noMembersRefreshIcons").show()
+                } else {
+                    var template = Handlebars.compile($('#spaceMembers').html());
+                    $('#spaceMembersModal').html(template(resp.data.coSpaceUsers));
+                    $(".space-members-list").show();
+                    $('.loading-moda-members').hide();
+                }
             });
-            $('.loading-modal').hide();
-        },1000);
-
-     
-        $("#btnScheduleModal").on('click', function () {
-            window.location.href = "/schedulemeeting?cospaceId=" + coSpaceId;
-        });
-
+            $(".input-group").hide()
+        }, 1000);
     });
-
-  
-
 }
-// End GetusersID and Set Modal 
