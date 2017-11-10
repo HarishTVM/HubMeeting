@@ -1,9 +1,14 @@
 $(document).ready(function () {
     var isKeyEntered = false;
-    var userObj;
-    // BEGIN CREATE ARRAY OF MEMBERS
+
+    // BEGIN CREATE ARRAY OF MEMBERS - GLOBAL VARIABLES
     var memArrayList = [];
     var ownerArrayList = [];
+    var cospaceUSerIdArray = [];
+    var newArray = [];
+    var memberObj = []
+    // BEGIN CREATE ARRAY OF MEMBERS - GLOBAL VARIABLES
+
     //-----BEGIN--------------------------HARISH CODE------------------------------------
     // checkWindowPathName();
     // ----END---------------------------HARISH CODE------------------------------------
@@ -211,21 +216,51 @@ $(document).ready(function () {
     });
     // END CHECK MEETING TYPE
 
+    // BEGIN FILTER FOR COSPACE_USER_ID
+    $("#addMembers").live("blur", function () {
+        debugger;
+        httpGet(apiType.GET_USERS + "?filter=" + $(this).val(), function (resp, err) {
+            // console.log(resp.data.users[0].user.attrkey.id);
+            var userCospaceId = resp.data.users[0].user.attrkey.id
+            cospaceUSerIdArray.push(userCospaceId);
+            // console.log(cospaceUSerIdArray);
+        });
+    });
 
+    // END FILTER FOR COSPACE_USER_ID
+
+    // END CREATE ARRAY OF MEMBERS
     $("#submitMembersBtn").click(function () {
         debugger;
         $("input[name='addMembers']").each(function () {
             debugger;
             memArrayList.push($(this).val());
         });
-        console.log(memArrayList);
         $("[name='ownerspan']").each(function () {
             ownerArrayList.push($(this).attr("ifOwner"));
         });
-        console.log(ownerArrayList);
 
+        newArray = memArrayList.map(function (value, index) {
+            return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
+        });
+        console.log(newArray);
+        console.log(typeof newArray);
+
+        var sampleArray = [];
+        for (i = 0; i < newArray.length; i++) {
+            sampleArray = newArray[i].split(':');
+            console.log(sampleArray);
+
+            var member1 = {
+                "memberJid": sampleArray[0],
+                "isOwner": sampleArray[1],
+                "coSpaceUserID": sampleArray[2]
+            }
+            memberObj.push(member1);
+        }
+        console.log(memberObj)
     });
-    // END CREATE ARRAY OF MEMBERS
+    // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
 
     // BEGIN GET USERS
     $('#addMembers').live("keyup", function () {
@@ -248,12 +283,12 @@ $(document).ready(function () {
     });
     // END GET USERS
 
-    // BEGIN TO GET COSPACE_USER_ID
-        $("#memberAddDiv").on('select',function(){
-            debugger;
-            console.log($(this).val());
-        });
-    // END TO GET COSPACE_USER_ID
+    // // BEGIN TO GET COSPACE_USER_ID
+    //     $("#memberAddDiv").on('select',function(){
+    //         debugger;
+    //         console.log($(this).val());
+    //     });
+    // // END TO GET COSPACE_USER_ID
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
@@ -289,18 +324,7 @@ $(document).ready(function () {
                     "meetingType": parseInt($('input[name=types]:checked').val()),
                     "meetingStartDateTime": start._i,
                     "meetingEndDateTime": end._i,
-                    "members": [
-                        {
-                            "memberJid": "Harish@inflexion.com",
-                            "coSpaceUserID": "c6eeeaac-e805-43f8-b15b-cf1d1f0246b7",
-                            "isOwner": true
-                        },
-                        {
-                            "memberJid": "naveen@inflexion.com",
-                            "coSpaceUserID": "bef098fd-b4e0-4b7a-811b-f6ea4441a9df",
-                            "isOwner": false
-                        }
-                    ]
+                    "members": memberObj
                 };
                 httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
                     debugger;
