@@ -1,6 +1,9 @@
 $(document).ready(function () {
     var isKeyEntered = false;
-
+    var userObj;
+    // BEGIN CREATE ARRAY OF MEMBERS
+    var memArrayList = [];
+    var ownerArrayList = [];
     //-----BEGIN--------------------------HARISH CODE------------------------------------
     // checkWindowPathName();
     // ----END---------------------------HARISH CODE------------------------------------
@@ -43,7 +46,7 @@ $(document).ready(function () {
                             <span id="deleteMember" class="input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>\
                             </div>\
                             <datalist id="emails">\
-                                <input type="text" id="memberAddDiv">\
+                            <option id="memberAddDiv"></option>\
                             </datalist>');
 
         $('#memberParentDiv').append(member);
@@ -208,17 +211,15 @@ $(document).ready(function () {
     });
     // END CHECK MEETING TYPE
 
-    // BEGIN CREATE ARRAY OF MEMBERS
-    var memArrayList = [];
-    var ownerArrayList = [];
-    
+
     $("#submitMembersBtn").click(function () {
         debugger;
         $("input[name='addMembers']").each(function () {
+            debugger;
             memArrayList.push($(this).val());
         });
         console.log(memArrayList);
-        $("[name='ownerspan']").each(function(){
+        $("[name='ownerspan']").each(function () {
             ownerArrayList.push($(this).attr("ifOwner"));
         });
         console.log(ownerArrayList);
@@ -245,8 +246,14 @@ $(document).ready(function () {
             }, 1000);
         }
     });
-
     // END GET USERS
+
+    // BEGIN TO GET COSPACE_USER_ID
+        $("#memberAddDiv").on('select',function(){
+            debugger;
+            console.log($(this).val());
+        });
+    // END TO GET COSPACE_USER_ID
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
