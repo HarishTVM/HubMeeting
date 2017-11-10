@@ -54,60 +54,6 @@ $(document).ready(function () {
     }
     //END DETERMINE THE PATHNAME
 
-    var filterArray = []; //ARRAY TO HOLD SCHEDULE MEETING MEMBERS
-
-    //BEGIN Add Member and DELETE MEMBER Logic
-    $('#addMemberBtn').live('click', function () {
-        var member = $('<div id="addDeleteParent" class="input-group form-wrap input-box-shadow">\
-                        <input id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">\
-                        <span id="ownerIcon" class="bg-gray input-group-addon"><a class="fa fa-user fa-lg" aria-hidden="true" title="Owner"></a></span>\
-                        <span id="deleteMember" class="input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>\
-                        </div>\
-                        <datalist id="emails">\
-                            <input type="text" id="memberAddDiv">\
-                        </datalist>');
-
-        $('#memberParentDiv').append(member);
-    });
-
-    $("#deleteMember").live('click', function () {
-        $(this).parent().remove();
-    });
-
-    //END Add Member and DELETE MEMBER Logic
-
-    //BEGIN Mirror populate input value logic
-    $('#contact-sName').on('keyup', function () {
-        $('#contact-create_space_URI').val(this.value);
-        $('videoAdd').append(this.value);
-    });
-    //END Mirror populate input value logic
-
-    // BEGIN GET USERS
-    $('#addMembers').live("keyup", function () {
-        if (!isKeyEntered) {
-            isKeyEntered = true;
-            var that = this;
-            setTimeout(function () {
-                debugger;
-                var filterData = $(that).val();
-                httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {
-                    debugger;
-                    var totalUsers = resp.data.total;
-                    // filterArray.push(filterData);   
-                    // filterData = undefined;
-                    // console.log(userData.length);
-                    var memberHandlebar = $('#memberAdd').html();
-                    var templateHandlebar = Handlebars.compile(memberHandlebar);
-                    $('#memberAddDiv').html(templateHandlebar(resp.data));
-                    isKeyEntered = false;
-                });
-            }, 1000);
-        }
-    });
-
-    // END GET USERS
-
     //BEGIN FORM SUBMIT LOGIC
 
     // $('#btndone').click(function () {
@@ -175,8 +121,6 @@ $(document).ready(function () {
         httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + subString, function (resp, err) {
             $("#contact-sName").val(resp.data.coSpace.name);
             $("#contact-create_space_URI").val(resp.data.coSpace.uri);
-            // $("#sel1 option[value='Allequal']").prop("selected", true);
-            // $("#sel2 option[value='One Time']").val("selected", true);
             $("#fromdate").val("26-10-2017");
             $("#fromtime").val("26-10-2017");
             $("#todate").val("12:45");

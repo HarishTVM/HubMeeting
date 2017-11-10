@@ -1,24 +1,84 @@
 $(document).ready(function () {
+    // BEGIN ---------------------GLOBAL VARIABLES---------------------
+    var isKeyEntered = false;
+    var isOwner = false
+
+    // BEGIN CREATE ARRAY OF MEMBERS 
+    var memArrayList = [];
+    var ownerArrayList = [];
+    var cospaceUSerIdArray = [];
+    var newArray = [];
+    var memberObj = []
+    // BEGIN CREATE ARRAY OF MEMBERS
+
+    // END ---------------------GLOBAL VARIABLES---------------------
+
     //-----BEGIN--------------------------HARISH CODE------------------------------------
     // checkWindowPathName();
     // ----END---------------------------HARISH CODE------------------------------------
 
-    // BEGIN DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
-    
     // BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
     var randomObj = {};
     // END OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
-    
+
+    //BEGIN Mirror populate input value logic
+    $('#contact-sName').on('keyup', function () {
+        $('#contact-create_space_URI').val(this.value);
+        $('videoAdd').append(this.value);
+    });
+    //END Mirror populate input value logic
+
     // ---------- BEGIN MAKE A MEMBER OWNER ---------------
-    $("#ownerIcon").toggle(
-        function(){$(this).children().css("color","#2ed3ae");$(this).children().attr('title','Active Owner')},
-        function(){$(this).children().css("color","black");$(this).children().attr('title','Deactive Owner')}
-    );
+    $("#ownerIcon").live("click", function () {
+        $(this).toggle(function () {
+            $(this).children().css("color", "#2ed3ae");
+            $(this).children().attr('title', 'Active Owner');
+            isOwner = true;
+            $(this).attr("ifOwner", isOwner);
+            console.log(isOwner);
+        }, function () {
+            $(this).children().css("color", "black");
+            $(this).children().attr('title', 'Deactive Owner');
+            isOwner = false;
+            $(this).attr("ifOwner", isOwner);
+            console.log(isOwner);
+        }).trigger('click');
+    });
     // ---------- END MAKE A MEMBER OWNER ---------------
 
+    // BEGIN -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
+    $("#memberParentDiv")
+    // END -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
+
+    //BEGIN Add Member and DELETE MEMBER Logic
+    $('#addMemberBtn').live('click', function () {
+        var member = $('<div id="addDeleteParent" class="input-group form-wrap input-box-shadow">\
+                            <input name="addMembers" id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">\
+                            <span name="ownerspan" id="ownerIcon" ifOwner="" class="bg-gray input-group-addon"><a class="fa fa-user-circle fa-lg" aria-hidden="true" title="Owner"></a></span>\
+                            <span id="deleteMember" class="input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>\
+                            </div>\
+                            <datalist id="emails">\
+                            <option id="memberAddDiv"></option>\
+                            </datalist>');
+
+        $('#memberParentDiv').append(member);
+    });
+
+    $("#deleteMember").live('click', function () {
+        debugger;
+        if ($(this).parents("#memberParentDiv").children('div').length == 1) {
+            $(this).prop('disabled', true);
+        }
+        else {
+            $(this).parent().remove();
+        }
+    });
+
+    //END Add Member and DELETE MEMBER Logic
+
+    // BEGIN DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
     var count = 0;
     var i;
-
     for (i in meetingType) {
         if (meetingType.hasOwnProperty(i)) {
             // console.log(i);
@@ -70,7 +130,7 @@ $(document).ready(function () {
     // BEGIN THIS FUNCTION WILL CALLED BASDED ON MEETING TYPES
     checkOneTimeMeeting = function () {
         // BEGIN EXISTING SPACENAME AND URI VALIDATION
-        $("#contact-sName").on("blur",function () {
+        $("#contact-sName").on("blur", function () {
             debugger;
             var checkcoSpaceName = $(this).val();
             if (checkcoSpaceName != "") {
@@ -111,83 +171,168 @@ $(document).ready(function () {
     // END THIS FUNCTION WILL CALLED BASDED ON MEETING TYPES
 
     // BEGIN CHECK MEETING TYPE
-        $("#contact-sName").on("focus", function () {
-            var checkedVal = $('input[name=types]:checked').val();
-            if (checkedVal === "0") {
+    $("#contact-sName").on("focus", function () {
+        var checkedVal = $('input[name=types]:checked').val();
+        if (checkedVal === "0") {
+            debugger;
+            $("#contact-sName").on("blur", function () {
                 debugger;
-                $("#contact-sName").on("blur", function () {
-                    debugger;
-                    console.log(checkedVal);
-                    console.log(typeof(checkedVal));
-                    if ($("#contact-sName").val() != "") {
-                        var checkcoSpaceName = $(this).val();
-                        httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
-                            if (resp.data.coSpaces.attrkey.total == 1) {
-                                $("#spaceNameCheck").addClass("hide").fadeOut();
-                                // swal('Space Name already exists...');
-                                var cospace = resp.data.coSpaces.coSpace.attrkey.id;
-                                httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + cospace, function (cospace_resp, err) {
-                                    var getcospace = cospace_resp.data.coSpace;
-                                    $("#contact-create_space_URI").val(getcospace.uri);
-                                    $("#passcode").val(getcospace.passcode);
-                                    $("#ownerJid").val(getcospace.ownerJid);
-                                    randomObj.spaceid = getcospace.attrkey.id;
-                                });
-                            } 
-                            else {
-                                $("#spaceNameCheck").removeClass("hide").fadeIn();
-                            }
-                        });
-                    }
-                    else $("#spaceNameCheck").addClass("hide").fadeOut();
-                });
+                console.log(checkedVal);
+                console.log(typeof (checkedVal));
+                if ($("#contact-sName").val() != "") {
+                    var checkcoSpaceName = $(this).val();
+                    httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
+                        if (resp.data.coSpaces.attrkey.total == 1) {
+                            $("#spaceNameCheck").addClass("hide").fadeOut();
+                            // swal('Space Name already exists...');
+                            var cospace = resp.data.coSpaces.coSpace.attrkey.id;
+                            httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + cospace, function (cospace_resp, err) {
+                                var getcospace = cospace_resp.data.coSpace;
+                                $("#contact-create_space_URI").val(getcospace.uri);
+                                $("#passcode").val(getcospace.passcode);
+                                $("#ownerJid").val(getcospace.ownerJid);
+                                randomObj.spaceid = getcospace.attrkey.id;
+                            });
+                        }
+                        else {
+                            $("#spaceNameCheck").removeClass("hide").fadeIn();
+                        }
+                    });
+                }
+                else $("#spaceNameCheck").addClass("hide").fadeOut();
+            });
 
-                $("#contact-create_space_URI").on("blur", function () {
+            $("#contact-create_space_URI").on("blur", function () {
+                debugger;
+                var checkcoSpaceUri = $(this).val();
+                if (checkcoSpaceUri != "") {
+                    httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
+                        if (resp.data.coSpaces.attrkey.total == 1) {
+                            $("#spaceUriCheck").addClass("hide").fadeOut();
+                            swal('URI already exists...');
+                        }
+                        else $("#spaceUriCheck").removeClass("hide").fadeIn();
+                    });
+                }
+                else {
                     debugger;
-                    var checkcoSpaceUri = $(this).val();
-                    if (checkcoSpaceUri != "") {
-                        httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
-                            if (resp.data.coSpaces.attrkey.total == 1) {
-                                $("#spaceUriCheck").addClass("hide").fadeOut();
-                                swal('URI already exists...');
-                            }
-                            else $("#spaceUriCheck").removeClass("hide").fadeIn();
-                        });
-                    }
-                    else {
-                        debugger;
-                        $("#spaceUriCheck").addClass("hide").fadeOut();
-                    }
-                });
-            }
-            else if (checkedVal === "1") {  // IF CHECKEDVAL == 1 
-                checkOneTimeMeeting();
-            }
-            else {
-                console.log('empty')
-            }
-        });
+                    $("#spaceUriCheck").addClass("hide").fadeOut();
+                }
+            });
+        }
+        else if (checkedVal === "1") {  // IF CHECKEDVAL == 1 
+            checkOneTimeMeeting();
+        }
+        else {
+            console.log('empty')
+        }
+    });
     // END CHECK MEETING TYPE
+
+    // BEGIN FILTER FOR COSPACE_USER_ID
+    $("#addMembers").live("blur", function () {
+        debugger;
+        httpGet(apiType.GET_USERS + "?filter=" + $(this).val(), function (resp, err) {
+            var userCospaceId = resp.data.users[0].user.attrkey.id
+            cospaceUSerIdArray.push(userCospaceId);
+        });
+    });
+
+    // END FILTER FOR COSPACE_USER_ID
+
+    // END CREATE ARRAY OF MEMBERS
+    $("#submitMembersBtn").click(function () {
+        debugger;
+        $("input[name='addMembers']").each(function () {
+            debugger;
+            memArrayList.push($(this).val());
+        });
+        $("[name='ownerspan']").each(function () {
+            ownerArrayList.push($(this).attr("ifOwner"));
+        });
+
+        newArray = memArrayList.map(function (value, index) {
+            return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
+        });
+        console.log(newArray);
+        console.log(typeof newArray);
+
+        var sampleArray = [];
+        for (i = 0; i < newArray.length; i++) {
+            sampleArray = newArray[i].split(':');
+            console.log(sampleArray);
+
+            var member1 = {
+                "memberJid": sampleArray[0],
+                "isOwner": sampleArray[1],
+                "coSpaceUserID": sampleArray[2]
+            }
+            memberObj.push(member1);
+        }
+        console.log(memberObj)
+    });
+    // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
+
+    // BEGIN GET USERS
+    $('#addMembers').live("keyup", function () {
+        if (!isKeyEntered) {
+            isKeyEntered = true;
+            var that = this;
+            setTimeout(function () {
+                debugger;
+                var filterData = $(that).val();
+                httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {
+                    debugger;
+                    var totalUsers = resp.data.total;
+                    var memberHandlebar = $('#memberAdd').html();
+                    var templateHandlebar = Handlebars.compile(memberHandlebar);
+                    $('#memberAddDiv').html(templateHandlebar(resp.data));
+                    isKeyEntered = false;
+                });
+            }, 1000);
+        }
+    });
+    // END GET USERS
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
         debugger;
+        var startDateFormat = $("#fromdate").val().split('-');
+        var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
+
+        var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
+
+        var endDateFormat = $("#todate").val().split('-');
+        var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
+
+        var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
+        var start = moment(fromISO).tz('Europe/London');
+        var end = moment(toISO).tz('Europe/London');
+
+        console.log(start._i);
+        console.log(end._i);
+
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
                 resultItem.push(validateText(obj));
             });
             if (resultItem.indexOf(false) < 0) {
-                var fromISO = moment($("#fromdate").val() + ' ' + $("#fromtime").val()).toISOString();
-                var toISO = moment($("#todate").val() + ' ' + $("#totime").val()).toISOString();
+                var startDateFormat = $("#fromdate").val().split('-');
+                var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
+                var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
+                var endDateFormat = $("#todate").val().split('-');
+                var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
+                var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
                 var start = moment(fromISO).tz('Europe/London');
                 var end = moment(toISO).tz('Europe/London');
-                if($('input[name=types]:checked').val() === "0"){
+
+                if ($('input[name=types]:checked').val() === "0") {
                     isCospaceId = randomObj.spaceid;
-                 }
-                 else if($('input[name=types]:checked').val() === "1"){
+                }
+                else if ($('input[name=types]:checked').val() === "1") {
                     isCospaceId = "";
-                 }
+                }
                 var reqData = {
                     "coSpace": $("#contact-sName").val(),
                     "description": $("#description").val(),
@@ -201,30 +346,16 @@ $(document).ready(function () {
                     "meetingType": parseInt($('input[name=types]:checked').val()),
                     "meetingStartDateTime": start._i,
                     "meetingEndDateTime": end._i,
-                    "members": [
-                        {
-                            "memberJid": "Harish@inflexion.com",
-                            "coSpaceUserID": "c6eeeaac-e805-43f8-b15b-cf1d1f0246b7",
-                            "isOwner": true
-                        },
-                        {
-                            "memberJid": "naveen@inflexion.com",
-                            "coSpaceUserID": "bef098fd-b4e0-4b7a-811b-f6ea4441a9df",
-                            "isOwner": false
-                        }
-                    ]
+                    "members": memberObj
                 };
                 httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
                     debugger;
                     console.log(resp);
                     console.log(err);
                     $('input[name=types]:checked').val("");
-                    console.log($('input[name=types]:checked').val());
-                    // var checked = $('input[name=types]:checked').val();
-                    // console.log(checked);
                 });
             }
-            
+
         }
     });
     // END FORM SUBMIT LOGIC
