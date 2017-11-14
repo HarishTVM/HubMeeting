@@ -4,11 +4,12 @@ $(document).ready(function () {
     var isOwner = false
 
     // BEGIN CREATE ARRAY OF MEMBERS 
-    var memArrayList = [];
-    var ownerArrayList = [];
-    var cospaceUSerIdArray = [];
+    var memArrayList = [], memArray = [];
+    var ownerArrayList = [], ownerArr = [];
+    var cospaceUSerIdArray = [], coUserArr = [];
     var newArray = [];
-    var memberObj = []
+    var memberObj = [],finalArray=[];
+    var uniques = [];
     // BEGIN CREATE ARRAY OF MEMBERS
 
     // END ---------------------GLOBAL VARIABLES---------------------
@@ -35,26 +36,25 @@ $(document).ready(function () {
             $(this).children().attr('title', 'Active Owner');
             isOwner = true;
             $(this).attr("ifOwner", isOwner);
-            console.log(isOwner);
         }, function () {
             $(this).children().css("color", "black");
             $(this).children().attr('title', 'Deactive Owner');
             isOwner = false;
             $(this).attr("ifOwner", isOwner);
-            console.log(isOwner);
         }).trigger('click');
     });
     // ---------- END MAKE A MEMBER OWNER ---------------
 
     // BEGIN -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
-    $("#memberParentDiv")
+
+
     // END -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
 
     //BEGIN Add Member and DELETE MEMBER Logic
     $('#addMemberBtn').live('click', function () {
         var member = $('<div id="addDeleteParent" class="input-group form-wrap input-box-shadow">\
                             <input name="addMembers" id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">\
-                            <span name="ownerspan" id="ownerIcon" ifOwner="" class="bg-gray input-group-addon"><a class="fa fa-user-circle fa-lg" aria-hidden="true" title="Owner"></a></span>\
+                            <span name="ownerspan" id="ownerIcon" ifOwner="false" class="bg-gray input-group-addon"><a class="fa fa-user-circle fa-lg" aria-hidden="true" title="Owner"></a></span>\
                             <span id="deleteMember" class="input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>\
                             </div>\
                             <datalist id="emails">\
@@ -65,7 +65,6 @@ $(document).ready(function () {
     });
 
     $("#deleteMember").live('click', function () {
-        debugger;
         if ($(this).parents("#memberParentDiv").children('div').length == 1) {
             $(this).prop('disabled', true);
         }
@@ -81,7 +80,6 @@ $(document).ready(function () {
     var i;
     for (i in meetingType) {
         if (meetingType.hasOwnProperty(i)) {
-            // console.log(i);
             $("#typeMeeting").append(
                 $('<label />', {
                     'text': i
@@ -113,7 +111,6 @@ $(document).ready(function () {
     checkOwnerJid = function () {
         var preventPropagate = true;
         $("#clickToAdd").on("click", function (e) {
-            debugger;
             if ($("#ownerJid").val() == "") {
                 if (preventPropagate) {
                     e.stopPropagation();
@@ -131,7 +128,6 @@ $(document).ready(function () {
     checkOneTimeMeeting = function () {
         // BEGIN EXISTING SPACENAME AND URI VALIDATION
         $("#contact-sName").on("blur", function () {
-            debugger;
             var checkcoSpaceName = $(this).val();
             if (checkcoSpaceName != "") {
                 httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
@@ -146,7 +142,6 @@ $(document).ready(function () {
         });
 
         $("#contact-create_space_URI").on("blur", function () {
-            debugger;
             var checkcoSpaceUri = $(this).val();
             if (checkcoSpaceUri != "") {
                 httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
@@ -158,7 +153,6 @@ $(document).ready(function () {
                 });
             }
             else {
-                debugger;
                 $("#spaceUriCheck").addClass("hide").fadeOut();
             }
         });
@@ -174,11 +168,7 @@ $(document).ready(function () {
     $("#contact-sName").on("focus", function () {
         var checkedVal = $('input[name=types]:checked').val();
         if (checkedVal === "0") {
-            debugger;
             $("#contact-sName").on("blur", function () {
-                debugger;
-                console.log(checkedVal);
-                console.log(typeof (checkedVal));
                 if ($("#contact-sName").val() != "") {
                     var checkcoSpaceName = $(this).val();
                     httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
@@ -203,7 +193,6 @@ $(document).ready(function () {
             });
 
             $("#contact-create_space_URI").on("blur", function () {
-                debugger;
                 var checkcoSpaceUri = $(this).val();
                 if (checkcoSpaceUri != "") {
                     httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
@@ -215,7 +204,6 @@ $(document).ready(function () {
                     });
                 }
                 else {
-                    debugger;
                     $("#spaceUriCheck").addClass("hide").fadeOut();
                 }
             });
@@ -230,37 +218,62 @@ $(document).ready(function () {
     // END CHECK MEETING TYPE
 
     // BEGIN FILTER FOR COSPACE_USER_ID
+
     $("#addMembers").live("blur", function () {
-        debugger;
         httpGet(apiType.GET_USERS + "?filter=" + $(this).val(), function (resp, err) {
-            var userCospaceId = resp.data.users[0].user.attrkey.id
+            var userCospaceId = resp.data.users[0].user.attrkey.id;
             cospaceUSerIdArray.push(userCospaceId);
         });
     });
 
     // END FILTER FOR COSPACE_USER_ID
 
-    // END CREATE ARRAY OF MEMBERS
+    avoidDuplicate = function(array){
+        var uniqueNames = [];
+        $.each(array, function (i, el) {
+            if ($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+        });
+        return uniqueNames;
+    }
+
+    // Array.prototype.contains = function(v) {
+    //     for(var i = 0; i < this.length; i++) {
+    //         if(this[i] === v) return true;
+    //     }
+    //     return false;
+    // };
+    
+    // Array.prototype.unique = function() {
+    //     var arr = [];
+    //     for(var i = 0; i < this.length; i++) {
+    //         if(!arr.contains(this[i])) {
+    //             arr.push(this[i]);
+    //         }
+    //     }
+    //     return arr; 
+    // }
+
+    // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
     $("#submitMembersBtn").click(function () {
+        // uniques=[];
+        memberObj=[];
         debugger;
         $("input[name='addMembers']").each(function () {
-            debugger;
             memArrayList.push($(this).val());
+            memArray = avoidDuplicate(memArrayList);
         });
+
         $("[name='ownerspan']").each(function () {
             ownerArrayList.push($(this).attr("ifOwner"));
         });
 
-        newArray = memArrayList.map(function (value, index) {
+        newArray = memArray.map(function (value, index) {
             return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
         });
-        console.log(newArray);
-        console.log(typeof newArray);
 
         var sampleArray = [];
         for (i = 0; i < newArray.length; i++) {
             sampleArray = newArray[i].split(':');
-            console.log(sampleArray);
 
             var member1 = {
                 "memberJid": sampleArray[0],
@@ -268,9 +281,13 @@ $(document).ready(function () {
                 "coSpaceUserID": sampleArray[2]
             }
             memberObj.push(member1);
+            // uniques = memberObj.unique(); 
         }
-        console.log(memberObj)
+        console.log(memberObj);
+        // console.log("uniques:" +  JSON.stringify(uniques));
     });
+  
+    
     // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
 
     // BEGIN GET USERS
@@ -279,10 +296,8 @@ $(document).ready(function () {
             isKeyEntered = true;
             var that = this;
             setTimeout(function () {
-                debugger;
                 var filterData = $(that).val();
                 httpGet(apiType.GET_USERS + "?filter=" + filterData, function (resp) {
-                    debugger;
                     var totalUsers = resp.data.total;
                     var memberHandlebar = $('#memberAdd').html();
                     var templateHandlebar = Handlebars.compile(memberHandlebar);
@@ -308,9 +323,6 @@ $(document).ready(function () {
         var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
         var start = moment(fromISO).tz('Europe/London');
         var end = moment(toISO).tz('Europe/London');
-
-        console.log(start._i);
-        console.log(end._i);
 
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
@@ -349,10 +361,9 @@ $(document).ready(function () {
                     "members": memberObj
                 };
                 httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
-                    debugger;
+                    $('input[name=types]:checked').val("");
                     console.log(resp);
                     console.log(err);
-                    $('input[name=types]:checked').val("");
                 });
             }
 
