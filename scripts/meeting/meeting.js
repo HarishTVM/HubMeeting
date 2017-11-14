@@ -1,11 +1,14 @@
 var firstPageObj = null;
-var recentSearch = "";
-var noData;
+var recentSearch, onMembers = "";
+var noData = null;
+var loadingModaMembers = $(".loading-moda-members").hide();
+var divModaMembers = $("meeting-members-list").show();
+var btnSearchMeetingMembers = $(".input-group").hide();
+
 $(document).ready(function () {
     $(".card-loaders-meeting").show();
     $('.loadingPageHide').hide();
     var isKeyEntered;
-
     formatDateAndTimeStatus();
     getMeetingDetails();
 
@@ -180,60 +183,48 @@ searhMeeting = function (isKeyEntered) {
 }
 
 btnInfoMeetingMoreDetails = function () {
+    btnSearchMeetingMembers.hide();
 
+    var offset = 0; limit = 10;
     $("#infoParent").find("#meetingInfoBtn").live('click', function () {
-        debugger;
-        var getMeetingID = $(this).parents("#mainMeetingParent").attr("meetingId");
+        loadingModaMembers.show();
+        divModaMembers.hide();
 
+        var getMeetingID = $(this).parents("#mainMeetingParent").attr("meetingId");
         var autoPopulateinfoParent = $(this).parents("#infoParent").siblings().html();
         var getMeetingName = $(autoPopulateinfoParent).children("#setMeetingName").attr("setMeetingName");
+        $("#modalTitleMeeting").html(getMeetingName);
 
-        var getMeetingStartDate = $(autoPopulateinfoParent).children("#setMeetingStartDate").attr("meetingstartdate");
+        setTimeout(function () {
+            // BEGIN info Members Send Rquest.
+            httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=' + limit + '&offset=' + offset + "&meetingID=" + getMeetingID, function (resp) {
 
-        // var getTotalMembers = $(autoPopulateinfoParent).children("#setTotalMembers").attr("setTotalMembers");
-        // var getDefaultLayout = $(autoPopulateinfoParent).children("#setDefaultLayout").attr("setDefaultLayout");
-        // var getMeetingType = $(autoPopulateinfoParent).children("#setMeetingType").attr("setMeetingType");
+                if (resp.data.count > 5 ) {
+                    btnSearchMeetingMembers.show();
+                }
+                if (resp.data.count == 0) {
+                    btnSearchMeetingMembers.hide();
 
-        console.log(
-         "getMeetingName ="+getMeetingName+"\n"+
-         "getMeetingStartTime ="+getMeetingStartDate+"\n"+
-         "getMeetingID ="+getMeetingID)
+                    onMembers = $(
+                        '<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                                <h6>No Members</h6>\
+                                </div>'
+                    );
+                    $("#meetingMembersModal").html(onMembers);
+                    divModaMembers.show();
 
-         $("#modalTitleMeeting").html(getMeetingName);
-    $("#modalStartDate").html(getMeetingStartDate);
-
-
-  //  $("#modalStartTimeAndEnd").html(getMeetingName);
-      //  $("#modalTotalMembers").html(getTotalMembers +"");
-     //   $("#modalDefaultLayout").html(efaultLayout);
-       // $("#modalMeetingType").html(getMeetingType +"");
-        // $("#modalMeetingType").html(getMeetingType);
-        // setTimeout(function () {
-        //     httpGet(apiType.FIND_ALL_MEETING + '?limit=' + queryTypes.LIMIT + '&offset=' + offset + "&filter=" + getMeetingID, function (resp) {
-        //         console.log(resp);
-             
-        //     });
-        //     $('.loading-modal').hide();
-        // }, 1000);
-
-
-
+                } else {
+                    var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
+                    $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
+                    divModaMembers.show();
+                    $(".noMembersRefreshIcons").show()
+                   
+                }
+                loadingModaMembers.hide();
+            });
+        }, 1000);
     });
     $('.loading-modal').show();
-    // $(".space-details").hide();
-    // $(".space-members-list").hide();
-
-    // var getMeetingID = $(this).parents("#mainParent").attr("meetingId");
-    // var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
-    // var getMeetingName = $(autoPopulate).children("#setMeetingName").attr("setMeetingNameAttr");
-
-    // var getMeetingStartDate = $(autoPopulate).children("#setMeetingStartDate").attr("setMeetingStartDate");
-    // var getMeetingStartTime = $(autoPopulate).children("#setMeetingStartTime").attr("setMeetingStartTime");
-    // var getTotalMembers = $(autoPopulate).children("#setTotalMembers").attr("setTotalMembers");
-    // var getDefaultLayout = $(autoPopulate).children("#setDefaultLayout").attr("setDefaultLayout");
-
-    // var totalMembers;
-    // console.log("getDefaultLayout" + getDefaultLayout + "<br>" + getMeetingStartDate);
 
 
 }
@@ -261,20 +252,3 @@ btnDelete = function () {
 
 }
 
-// Set Localdata for json 
-// getMeeting = function () {
-//     $.getJSON('/json/meeting.json', function (response) {
-//         console.log(response);
-//         var meetingTemplate = Handlebars.compile($('#meetingCardId').html());
-//         $('#meeting-card').html(meetingTemplate(response.data));
-
-//     });
-
-// }
-// meetingModal = function () {
-//     $.getJSON('/json/meeting.json', function (response) {
-//         console.log(response);
-//         var meetingModalTemplate = Handlebars.compile($('#meetingModalId').html());
-//         $('#modal').html(meetingModalTemplate(response.data));
-//     });
-// }

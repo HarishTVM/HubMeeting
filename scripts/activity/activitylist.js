@@ -90,6 +90,11 @@ $(document).ready(function () {
     // END DELETE RECENT MEETING CARDS
 
 });
+
+// getCurrentMeeting =function(){
+  
+// }
+
 getCurrentMeeting = function () {
   $.getJSON('/json/currentmeeting.json', function (response) {
     console.log(response);

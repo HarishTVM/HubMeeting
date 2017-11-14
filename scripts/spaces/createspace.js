@@ -125,6 +125,8 @@ $(document).ready(function () {
             $("#fromtime").val("26-10-2017");
             $("#todate").val("12:45");
             $("#totime").val("14:00");
+            $(".update-page-loader").hide();
+            $(".page-loader-div").show();
         });
     }, 1000);
     // END POPULATE UPDATE COSPACE FORM    

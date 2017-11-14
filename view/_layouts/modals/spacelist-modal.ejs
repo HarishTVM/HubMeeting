@@ -101,7 +101,7 @@
                   <div class="container-fluid breadcrumb-container">
                     <ol class="toolbar-padding" style="text-align: left">
                       <h5 class="text-color-default ">
-                        Members List
+                        Members 
                       </h5>
                     </ol>
                   </div>
@@ -116,7 +116,7 @@
                       </span>
                     </div>
                     <div class="t-right noMembersRefreshIcons">
-                      <a class="linear-icon-undo2"></a>
+                      <a onclick="refreshPage()" class="linear-icon-undo2"></a>
                     </div>
                   </form>
                 </div>
@@ -174,30 +174,3 @@
   {{/each}}
 </script>
 <!-- End Set Spaces Members Handlebars-->
-
-
-<!-- BEGIN Set Spaces Details Handlebars-->
-
-<!-- End Set Spaces Details Handlebars-->
-
-
-<!-- <script id="spaceDetails" type="text/x-handlebars-template">
-  {{#each coSpaceUser}}
-  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member space-members-list">
-
-      <ul class="padding-left-right-none">
-          <li class="padding-left-right-none">
-              <b>
-                  <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">
-                      {{#if userJid}}
-                      {{userJid}}
-                        {{else}}
-                       <br><p>No Members</p>
-                         {{/if}}
-                    </h6>
-              </b>
-          </li>
-      </ul>
-  </div>
-  {{/each}}
-</script> -->

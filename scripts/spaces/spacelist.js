@@ -1,7 +1,8 @@
 var firstPageObj = null;
 var recentSearch = "";
 var noData;
-var searchcoSpaceId = " ";
+var searchcoSpaceId = null, coSpaceOwnerJid = null, coSpaceNameTitle = null, coSpaceURL = null, totalMembers;
+var inputSearchMembers = null;
 $(document).ready(function () {
     var isKeyEntered = false;
     $('#page-loaders-users').show();
@@ -110,46 +111,47 @@ getusersID = function () {
         var autoPopulate = $(this).parents("#infoDelteBtnsParent").siblings().html();
 
         var getUsersURL = $(autoPopulate).children("#uri").attr("uri");
-        var coSpaceNameTitle = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
-        var coSpaceURL = $(autoPopulate).children("#uri").attr("uri");
-        var coSpaceOwnerJid = $(autoPopulate).children("#ownerJid").attr("ownerJid");
-        var totalMembers;
+        coSpaceNameTitle = $(autoPopulate).children("#coSpaceName").attr("coSpaceName");
+        coSpaceURL = $(autoPopulate).children("#uri").attr("uri");
+        coSpaceOwnerJid = $(autoPopulate).children("#ownerJid").attr("ownerJid");
+
         searchcoSpaceId = coSpaceId;
-        setTimeout(function () {
+        console.log("coSpaceId" + coSpaceId);
 
-            httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + coSpaceId, function (resp) {
-                console.log(resp);
-                var template = Handlebars.compile($('#spaceMembers').html());
-                $('#spaceMembersModal').html(template(resp.data.coSpaceUsers));
-                totalMembers = resp.data.coSpaceUsers.attrkey.total;
-
-                $("#modalTotalMembers").html(totalMembers);
-                $("#modalTitle").html(coSpaceNameTitle);
-                $("#modalSpaceID").html(coSpaceNameTitle);
-                $("#modalURI").html(coSpaceURL);
-                $(".space-details").show();
-                $(".space-members-list").show();
-
-                if (totalMembers > 5) {
-                    $(".input-group").show()
-                    $(".noMembersRefreshIcons").hide()
-
-                } else {
-                    $(".input-group").hide()
-                    $(".noMembersRefreshIcons").show()
-                }
-            });
-            $('.loading-modal').hide();
-            $('.loading-moda-members').hide();
-        }, 1000);
-
+        requestHTTPUsersID();
         $("#btnScheduleModal").on('click', function () {
             window.location.href = "/schedulemeeting?cospaceId=" + coSpaceId;
         });
 
     });
 
+}
+// BEGIN User coSpaceId Send Rquest.
+requestHTTPUsersID = function () {
+    setTimeout(function () {
+        httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + searchcoSpaceId, function (resp) {
+            console.log(resp);
+            var template = Handlebars.compile($('#spaceMembers').html());
+            $('#spaceMembersModal').html(template(resp.data.coSpaceUsers));
+            totalMembers = resp.data.coSpaceUsers.attrkey.total;
+            $("#modalTotalMembers").html(totalMembers);
+            $("#modalTitle").html(coSpaceNameTitle);
+            $("#modalSpaceID").html(coSpaceNameTitle);
+            $("#modalURI").html(coSpaceURL);
+            $(".space-details").show();
+            $(".space-members-list").show();
+            if (totalMembers > 5) {
+                $(".input-group").show()
+                $(".noMembersRefreshIcons").hide()
 
+            } else {
+                $(".input-group").hide()
+
+            }
+        });
+        $('.loading-modal').hide();
+        $('.loading-moda-members').hide();
+    }, 1000);
 
 }
 // BEGIN Search card Spcelist For API.
@@ -246,38 +248,49 @@ btnDelete = function () {
 }
 // BEGIN Search Members in Modal For API.
 searchMembers = function () {
-
-    $('#inputSearchMembers').keyup(function () {
-        var inputSearchMembers = $("#inputSearchMembers").val();
-        var searchTotalMembers;
-
-        setTimeout(function () {
-
-            $('.loading-moda-members').show();
-            $(".space-members-list").hide();
-            console.log(inputSearchMembers);
-            httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + searchcoSpaceId + "&filter=" + inputSearchMembers, function (resp) {
-                searchTotalMembers = resp.data.coSpaceUsers.attrkey.total;
-                // console.log("MembersFilter" + JSON.stringify(resp));
-
-                if (searchTotalMembers == 0) {
-                    $('.loading-moda-members').hide();
-                    onMembers = $(
-                        '<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
-                        <h6>No Members</h6>\
-                        </div>'
-                    );
-                    $(".space-members-list").show();
-                    $("#spaceMembersModal").html(onMembers);
-                    $(".noMembersRefreshIcons").show()
-                } else {
-                    var template = Handlebars.compile($('#spaceMembers').html());
-                    $('#spaceMembersModal').html(template(resp.data.coSpaceUsers));
-                    $(".space-members-list").show();
-                    $('.loading-moda-members').hide();
-                }
-            });
-            $(".input-group").hide()
-        }, 1000);
+    $('#btnSearchMembers').click(function () {
+        inputSearchMembers = $("#inputSearchMembers").val();
+        console.log("inputSearchMembers"+inputSearchMembers)
+        if(inputSearchMembers.length > 0){
+            requestHTTPSearchMembers();
+        }else{
+            alert("Please Enter MemberName");
+        }
     });
+}
+// BEGIN RefreshPage icon function
+refreshPage = function () {
+    $('.loading-moda-members').show();
+    $(".space-members-list").hide();
+    requestHTTPUsersID();
+}
+// BEGIN Search Members Send Rquest.
+requestHTTPSearchMembers = function () {
+    setTimeout(function () {
+        $('.loading-moda-members').show();
+        $(".space-members-list").hide();
+        console.log(inputSearchMembers);
+        httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + searchcoSpaceId + "&filter=" + inputSearchMembers, function (resp) {
+            var searchTotalMembers = resp.data.coSpaceUsers.attrkey.total;
+            if (searchTotalMembers == 0) {
+                $('.loading-moda-members').hide();
+                onMembers = $(
+                    '<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                            <h6>No Members</h6>\
+                            </div>'
+                );
+                $(".space-members-list").show();
+                $("#spaceMembersModal").html(onMembers);
+                $(".noMembersRefreshIcons").show()
+            } else {
+                var template = Handlebars.compile($('#spaceMembers').html());
+                $('#spaceMembersModal').html(template(resp.data.coSpaceUsers));
+                $(".space-members-list").show();
+                $('.loading-moda-members').hide();
+                $(".noMembersRefreshIcons").show()
+            }
+        });
+        $(".input-group").hide()
+    }, 1000);
+
 }
