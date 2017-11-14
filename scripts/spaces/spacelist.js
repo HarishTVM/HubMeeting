@@ -118,7 +118,8 @@ getusersID = function () {
         searchcoSpaceId = coSpaceId;
         console.log("coSpaceId" + coSpaceId);
 
-        requestHTTPUsersID();
+        requestMeetingMembers();
+
         $("#btnScheduleModal").on('click', function () {
             window.location.href = "/schedulemeeting?cospaceId=" + coSpaceId;
         });
@@ -126,8 +127,8 @@ getusersID = function () {
     });
 
 }
-// BEGIN User coSpaceId Send Rquest.
-requestHTTPUsersID = function () {
+// BEGIN Rquest To Spcelist Members.
+requestMeetingMembers = function () {
     setTimeout(function () {
         httpGet(apiType.GET_COSPACES_USERS + "?cospaceid=" + searchcoSpaceId, function (resp) {
             console.log(resp);
@@ -262,7 +263,7 @@ searchMembers = function () {
 refreshPage = function () {
     $('.loading-moda-members').show();
     $(".space-members-list").hide();
-    requestHTTPUsersID();
+    requestMeetingMembers();
 }
 // BEGIN Search Members Send Rquest.
 requestHTTPSearchMembers = function () {
@@ -275,7 +276,7 @@ requestHTTPSearchMembers = function () {
             if (searchTotalMembers == 0) {
                 $('.loading-moda-members').hide();
                 onMembers = $(
-                    '<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                    '<div style="text-align: center; margin-top: 15%;"><a class="linear-icon-user-plus page-error-icon-size"></a>\
                             <h6>No Members</h6>\
                             </div>'
                 );

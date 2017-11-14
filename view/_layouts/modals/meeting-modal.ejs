@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div id="meeting-Modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
-  <div class="modal-dialog  modal-lg">
+  <div class="modal-dialog modal-lg">
     <!-- Modal content-->
     <div class="modal-content modal-margin-t">
       <div class="modal-header">
@@ -36,7 +36,7 @@
               <!-- End Set Title-->
 
               <!-- BEGIN Pages Loading -->
-              <div class="loading-modal  body-center-details">
+              <div class="loading-modal body-center-details">
                 <div class="cssload-container">
                   <div class="cssload-speeding-wheel"></div>
                 </div>
@@ -45,11 +45,11 @@
               <!-- BEGIN Set Details -->
 
               <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
-                <div class="us-card-loading card-loaders-meeting">
+                <!-- <div class="us-card-loading card-loaders-meeting">
                   <div class="cssload-container">
                     <div class="cssload-speeding-wheel"></div>
                   </div>
-                </div>
+                </div> -->
                 <div id="mainParent" class="s-height m-details-padding">
                   <div class="col-md-12 col-sm-12  col-xs-12 col-lg-12 padding-left-right-none">
                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div">
@@ -125,14 +125,14 @@
 
                   <form class="padding-top-none search-m-t">
                     <div class="input-group">
-                      <input id="inputSearchMembers" type="text" class="form-control sharch-width-modal" name="searchMembers" placeholder="Search Members">
-                      <span id="btnSearchMeetingMembers" class="input-group-addon input-search cursor-pointer ">
+                      <input id="inputSearchMeetingMembers" type="text" class="form-control sharch-width-modal" name="searchMembers" placeholder="Search Members">
+                      <span id="btnSearchMembers"  class="input-group-addon input-search cursor-pointer ">
                         <i class="glyphicon linear-icon-magnifier searchMembers"></i>
                       </span>
                     </div>
-                    <!-- <div class="t-right noMembersRefreshIcons">
+                    <div class="t-right noMembersRefreshIcons cursor-pointer ">
                           <a onclick="refreshPage()" class="linear-icon-undo2"></a>
-                        </div> -->
+                        </div>
                   </form>
                 </div>
               </div>
@@ -169,7 +169,7 @@
 <!-- BEGIN Set Meeting Members Handlebars-->
 <script id="meetingMembers" type="text/x-handlebars-template">
       {{#each rows}}
-      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member space-members-list">
+      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member meeting-members-list">
           <!-- BEGIN Set Meeting members -->
           <ul class="padding-left-right-none cursor-default" data-toggle=" " title="  {{memberJid}}">
               <li class="padding-left-right-none">
