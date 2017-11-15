@@ -6,6 +6,7 @@ var divModaMembers = $(".meeting-members-list");
 var btnSearchDiv = $(".input-group").hide();
 var meetingID = null;
 var iconRefreshPage = $(".noMembersRefreshIcons");
+var meetingDetails = $(".meeting-details");  
 $(document).ready(function () {
     $(".card-loaders-meeting").show();
     $('.loadingPageHide').hide();
@@ -56,7 +57,7 @@ function getMeetingRequest(query, page, callback) {
         });
     }
 }
-
+// BEGIN Rquest To Find All Meeting.
 getMeetingDetails = function () {
 
     var offset = 0, pages;
@@ -102,6 +103,7 @@ getMeetingDetails = function () {
 
 
 }
+// BEGIN Converter Date,Time Format for Card meeting.
 formatDateAndTimeStatus = function () {
     Handlebars.registerHelper("formatDate", function (dateTime) {
         return moment(dateTime).format('DD/MM/YYYY');
@@ -110,7 +112,7 @@ formatDateAndTimeStatus = function () {
         return moment(dateTime).format('h:mm -A');
     });
 }
-
+// BEGIN Searh Meeting for Card.
 searhMeeting = function (isKeyEntered) {
 
     if (!isKeyEntered) {
@@ -183,7 +185,7 @@ searhMeeting = function (isKeyEntered) {
     }
 
 }
-
+// BEGIN info Icon onClick GetDetails for Card.
 btnInfoMeetingMoreDetails = function () {
     btnSearchDiv.hide();
     $("#infoParent").find("#meetingInfoBtn").live('click', function () {
@@ -196,8 +198,10 @@ btnInfoMeetingMoreDetails = function () {
         meetingID = getMeetingID;
         rquestMeetingMembers();
         btnSearch();
+        rquestToInfoDetails();
     });
 }
+// BEGIN Rquest To Delete Meeting.
 btnDelete = function () {
 
     $("#meetingDelBtn").live("click", function () {
@@ -290,4 +294,25 @@ refreshPage = function () {
     divModaMembers.hide();
     $('.loading-moda-members').show();
     rquestMeetingMembers();
+}
+// BEGIN Rquest To info Details 
+rquestToInfoDetails = function () {
+
+    setTimeout(function () {
+        // BEGIN info Members Send Rquest.
+        httpGet(apiType.GET_MEETING_BY_MEETINGID + "?meetingID=" + meetingID, function (resp) {
+
+            // Set data Append to DefaultLayout for API.
+
+            resp.data.defaultLayout = meetingLayoutTranslation[resp.data.defaultLayout];
+            resp.data.meetingType = meetingTypeDetails[resp.data.meetingType];
+
+            var meetingDetailsTemplate = Handlebars.compile($('#meetingDetails').html());
+            $('#meetingDetailsModal').html(meetingDetailsTemplate(resp));
+            console.log(resp.data)
+            divModaMembers.show();
+        });
+        $('.loading-modal').show();
+        loadingModaMembers.hide();
+    }, 1000);
 }
