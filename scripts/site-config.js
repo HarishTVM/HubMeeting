@@ -1,5 +1,5 @@
 var app = {
-    BASE_URL: "http://192.168.5.84:9000/api/",
+    BASE_URL: "http://192.168.5.20:9000/api/",
 }
 
 var apiType = {
@@ -16,7 +16,8 @@ var apiType = {
     GET_COSPACES_USERS:"getCoSpacesUsers",
     CREATE_MEETING: "createMeeting",
     FIND_ALL_MEETING:"findAllMeeting",
-    FIND_ALL_MEETING_MEMBERS:"findAllMeetingMembers"
+    FIND_ALL_MEETING_MEMBERS:"findAllMeetingMembers",
+    DELETE_MEETING: "deleteMeeting"
 }
 
 var errorCodes = {
