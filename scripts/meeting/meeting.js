@@ -1,17 +1,19 @@
 var firstPageObj = null;
 var recentSearch, onMembers = "";
-var noData = null;
+var noData, inputSearchMeetingMembers = null;
 var loadingModaMembers = $(".loading-moda-members").hide();
-var divModaMembers = $("meeting-members-list").show();
-var btnSearchMeetingMembers = $(".input-group").hide();
-
+var divModaMembers = $(".meeting-members-list");
+var btnSearchDiv = $(".input-group").hide();
+var meetingID = null;
+var iconRefreshPage = $(".noMembersRefreshIcons");
 $(document).ready(function () {
     $(".card-loaders-meeting").show();
     $('.loadingPageHide').hide();
+    iconRefreshPage.hide();
     var isKeyEntered;
     formatDateAndTimeStatus();
     getMeetingDetails();
-
+    btnSearch();
     // BEGIN UPDATE COSPACE 
     $("#editmodelBtn").on('click', function () {
         window.location.href = "/updatemeeting";
@@ -183,52 +185,19 @@ searhMeeting = function (isKeyEntered) {
 }
 
 btnInfoMeetingMoreDetails = function () {
-    btnSearchMeetingMembers.hide();
-
-    var offset = 0; limit = 10;
+    btnSearchDiv.hide();
     $("#infoParent").find("#meetingInfoBtn").live('click', function () {
         loadingModaMembers.show();
         divModaMembers.hide();
-
         var getMeetingID = $(this).parents("#mainMeetingParent").attr("meetingId");
         var autoPopulateinfoParent = $(this).parents("#infoParent").siblings().html();
         var getMeetingName = $(autoPopulateinfoParent).children("#setMeetingName").attr("setMeetingName");
         $("#modalTitleMeeting").html(getMeetingName);
-
-        setTimeout(function () {
-            // BEGIN info Members Send Rquest.
-            httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=' + limit + '&offset=' + offset + "&meetingID=" + getMeetingID, function (resp) {
-
-                if (resp.data.count > 5 ) {
-                    btnSearchMeetingMembers.show();
-                }
-                if (resp.data.count == 0) {
-                    btnSearchMeetingMembers.hide();
-
-                    onMembers = $(
-                        '<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
-                                <h6>No Members</h6>\
-                                </div>'
-                    );
-                    $("#meetingMembersModal").html(onMembers);
-                    divModaMembers.show();
-
-                } else {
-                    var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
-                    $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
-                    divModaMembers.show();
-                    $(".noMembersRefreshIcons").show()
-                   
-                }
-                loadingModaMembers.hide();
-            });
-        }, 1000);
+        meetingID = getMeetingID;
+        rquestMeetingMembers();
+        btnSearch();
     });
-    $('.loading-modal').show();
-
-
 }
-
 btnDelete = function () {
 
     $("#meetingDelBtn").live("click", function () {
@@ -251,4 +220,74 @@ btnDelete = function () {
     });
 
 }
+// BEGIN Rquest To Meeting Members.
+rquestMeetingMembers = function () {
+    var offset = 0; limit = 10;
+    // BEGIN Request To Meeting Members
+    setTimeout(function () {
+        // BEGIN info Members Send Rquest.
+        httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=' + limit + '&offset=' + offset + "&meetingID=" + meetingID, function (resp) {
+            var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
+            $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
+            console.log(resp.data)
+            divModaMembers.show();
+            if (resp.data.count > 5) {
+                btnSearchDiv.show();
+                iconRefreshPage.hide();
+            } else {
+                $(".input-group").hide();
+            }
 
+        });
+        $('.loading-modal').show();
+        loadingModaMembers.hide();
+    }, 1000);
+}
+btnSearch = function () {
+    var offset = 0; limit = 10;
+    $('#btnSearchMembers').click(function () {
+        divModaMembers.hide();
+        $('.loading-moda-members').show();
+        var inputSearchMeetingMembers = $("#inputSearchMeetingMembers").val();
+        if (inputSearchMeetingMembers.length > 0) {
+            // BEGIN Request To Meeting Members
+            setTimeout(function () {
+                // BEGIN info Members Send Rquest.
+                httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=' + limit + '&offset=' + offset + "&meetingID=" + meetingID + "&filter=" + inputSearchMeetingMembers, function (resp) {
+                    var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
+                    $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
+                    console.log(resp.data)
+                    divModaMembers.show();
+
+                    if (resp.data.count == 0) {
+                        btnSearchDiv.hide();
+                        onMembers = $(
+                            '<div style="text-align: center; margin-top: 15%;"><a class="linear-icon-user-plus page-error-icon-size"></a>\
+                                    <h6>No Members</h6>\
+                                    </div>'
+                        );
+                        $("#meetingMembersModal").html(onMembers);
+                        iconRefreshPage.show();
+                    } else {
+                        var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
+                        $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
+                        divModaMembers.show();
+                        iconRefreshPage.show();
+                    }
+
+                });
+                $('.loading-modal').show();
+                loadingModaMembers.hide();
+            }, 1000);
+
+        } else {
+            alert("Please Enter MemberName");
+        }
+    });
+}
+// BEGIN RefreshPage icon function
+refreshPage = function () {
+    divModaMembers.hide();
+    $('.loading-moda-members').show();
+    rquestMeetingMembers();
+}
