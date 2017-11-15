@@ -21,22 +21,22 @@ $(document).ready(function () {
     });
     // END UPDATE COSPACE 
     // BEGIN DELETE MEETING CARDS
-    $("#meetingDelBtn").live("click", function () {
-        var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
-        var ele = $(mainEle).children("#meetingName").attr("meetingName");
-        swal({
-            title: "",
-            text: "Are you sure you want to delete " + ele + " ?",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonClass: "btn-danger",
-            confirmButtonText: "Yes, delete it!",
-            closeOnConfirm: false
-        },
-            function () {
-                swal("Deleted!", "", "success");
-            });
-    });
+    // $("#meetingDelBtn").live("click", function () {
+    //     var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
+    //     var ele = $(mainEle).children("#meetingName").attr("meetingName");
+    //     swal({
+    //         title: "",
+    //         text: "Are you sure you want to delete " + ele + " ?",
+    //         type: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonClass: "btn-danger",
+    //         confirmButtonText: "Yes, delete it!",
+    //         closeOnConfirm: false
+    //     },
+    //         function () {
+    //             swal("Deleted!", "", "success");
+    //         });
+    // });
     // END DELETE MEETING CARDS
 
     // Searh Meeting 
@@ -205,24 +205,33 @@ btnInfoMeetingMoreDetails = function () {
 btnDelete = function () {
 
     $("#meetingDelBtn").live("click", function () {
+        debugger;
         var getMeetingID = $(this).parents("#mainMeetingParent").attr("meetingId");
         var autoPopulateMeeting = $(this).parents("#infoParent").siblings().html();
         var getMeetingName = $(autoPopulateMeeting).children("#setMeetingName").attr("setMeetingName");
 
-        swal({
-            title: "",
-            text: "Are you sure you want to delete " + getMeetingName + " ?",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonClass: "btn-danger",
-            confirmButtonText: "Yes, delete it!",
-            closeOnConfirm: false
-        },
-            function () {
-                swal("Deleted!", "", "success");
-            });
+        httpDelete(apiType.DELETE_MEETING + "?meetingID=" + getMeetingID, function(resp, err){
+            debugger;
+            if(err){
+                if(err.customErrCode == errorCodes.UNKNOWN_USER) {
+                  toastr.options.closeButton = true;
+                  toastr.error(err.message);
+                }
+                else if(err.customErrCode == errorCodes.BAD_REQUEST){
+                    toastr.options.closeButton = true;
+                    toastr.warning("UnrecognisedObject");
+                } 
+            }
+            else {
+                swal(
+                    getMeetingName,
+                    'Deleted!',
+                    'success'
+                  )
+            }
+            setTimeout(function(){ location.reload(); }, 2000);
+        });
     });
-
 }
 // BEGIN Rquest To Meeting Members.
 rquestMeetingMembers = function () {
