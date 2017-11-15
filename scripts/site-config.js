@@ -1,5 +1,5 @@
 var app = {
-    BASE_URL: "http://192.168.5.20:9000/api/",
+    BASE_URL: "http://192.168.5.84:9000/api/",
 }
 
 var apiType = {
@@ -17,7 +17,8 @@ var apiType = {
     CREATE_MEETING: "createMeeting",
     FIND_ALL_MEETING:"findAllMeeting",
     FIND_ALL_MEETING_MEMBERS:"findAllMeetingMembers",
-    DELETE_MEETING: "deleteMeeting"
+    DELETE_MEETING: "deleteMeeting",
+    GET_MEETING_BY_MEETINGID:"getMeetingByMeetingId"
 }
 
 var errorCodes = {
@@ -91,5 +92,3 @@ var meetingStatusColor = {
 //     2:"Meeting to be Started",
 //     3:"Meeting Expired"
 // }
-
-

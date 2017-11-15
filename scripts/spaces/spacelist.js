@@ -3,6 +3,7 @@ var recentSearch = "";
 var noData;
 var searchcoSpaceId = null, coSpaceOwnerJid = null, coSpaceNameTitle = null, coSpaceURL = null, totalMembers;
 var inputSearchMembers = null;
+var isKeyEntered = false;
 $(document).ready(function () {
     var isKeyEntered = false;
     $('#page-loaders-users').show();
