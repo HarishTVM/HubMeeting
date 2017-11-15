@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="wide wow-animation smoothscroll" lang="en">
+
+<head>
+  <!-- Site Title-->
+  <title>
+    <%= translation.HUB_MEETING_PAGE_TITLE %>
+  </title>
+  <!-- Site logo images-->
+  <link href="/images/logo.png" rel="icon" type="image/x-icon" />
+  <link rel="stylesheet" href="/styles/meeting/meeting.css">
+  <link rel="stylesheet" href="/styles/common/sweetalert.css">
+  <!--Stylesheets file links -->
+  <% include _layouts/common-header %>
+</head>
+
+<body>
+  <!-- include file for navigation -->
+  <% include _layouts/header-with-navigation %>
+    <div class="page">
+      <!-- BEGIN page loader -->
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- End page loader -->
+      <!-- BEGIN Meeting toolbar-->
+      <div class="container-fluid breadcrumb-container">
+        <ol class="breadcrumb">
+          <h5 class="meeting-head-bread t-c-default-toolbar">
+            Active Meeting
+          </h5>
+          <li>
+            <a href="/dashboard" class="breadcrumb-links">
+              <%= translation.HUB_MEETING_BREADCRUMB_DASHBOARD %>
+            </a>
+          </li>
+          <li>
+            <a href="/activitylist" class="breadcrumb-links">
+              <%= translation.HUB_ACTIVITY_TOOLBAR_ACTIVITY %>
+            </a>
+          </li>
+          <li>
+            Active Meetings
+          </li>
+
+        </ol>
+      </div>
+      <!-- END Meeting toolbar-->
+      <section>
+        <div class="shell">
+          <!-- BEGIN users search head -->
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+            <!-- Search input field -->
+            <div class="form-wrap form-wrap_icon linear-icon-magnifier head-search-w-h">
+              <input id="searhMeeting" class="form-input cursor-auto search-input input-box-shadow" type="text" name="search" placeholder="Search Active Meetings">
+            </div>
+          </div>
+
+          <!--Pagination plugin-->
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+            <ul class="sync-pagination pagination-sm"></ul>
+          </div>
+
+       
+				<div class="modal-scrollbar bg-white-modal" style=" overflow-x: auto;  padding: 0px 1px 0px 0px;">
+            <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none text-center">
+              <div id="activeMeetingCard">
+                <a href="#" id="ui-to-top" class="ui-to-top active"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+            <% include _layouts/cards/active-meeting %>
+              <% include _layouts/modals/activitylist-modal %>
+          </div>
+  
+          <!-- BEGIN Current Activities -->
+      
+        </div>
+        <!-- page-loaders-users -->
+        <div class="us-card-loading" id="page-loaders-users">
+          <div class="cssload-container">
+            <div class="cssload-speeding-wheel"></div>
+          </div>
+        </div>
+      </section>
+      <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+        <ul class="sync-pagination pagination-sm "></ul>
+        <!--Pagination plugin-->
+      </div>
+    </div>
+    <!-- BEGIN script file links -->
+    <% include _layouts/common-scripts %>
+    <script src="/scripts/activity/activemeeting.js"></script>
+      <script src="/scripts/jquery.twbsPagination.min.js"></script>
+      <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <script src="/scripts/common/sweetalert.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $("#activityList").addClass("active");
+        });
+      </script>
+      <!-- End Meeting script -->
+      <%include _layouts/footer %>
+
+</body>
+
+</html>

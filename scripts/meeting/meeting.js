@@ -63,7 +63,6 @@ getMeetingDetails = function () {
         var totalRec = resp.data.count; //Total coSpace records
         pages = Math.ceil((parseInt(totalRec) / queryTypes.LIMIT)); //No of pages in pagination
         firstPageObj = resp;
-
         //Pagination Logic
         $('.sync-pagination').twbsPagination({
             totalPages: pages,
@@ -187,78 +186,6 @@ searhMeeting = function () {
         }
     });
 
-
-    // if (!isKeyEntered) {
-    //     isKeyEntered = true;
-    //     setTimeout(function () {
-
-    //         $("#searhMeeting").prop("disabled", true);
-    //         $('.sync-pagination').empty();
-    //         $('.sync-pagination').removeData("twbs-pagination");
-    //         $('.sync-pagination').unbind("page");
-
-    //         var offset = 0;
-    //         var input = $('#searhMeeting').val();
-    //         if (input.length > 0) {
-
-    //             if (recentSearch != input) {
-    //                 recentSearch = input;
-    //                 httpGet(apiType.FIND_ALL_MEETING + '?limit=' + queryTypes.LIMIT + '&offset=' + offset + "&filter=" + input, function (resp) {
-
-    //                     console.log("searhMeeting"+JSON.stringify(resp));
-    //                     if (resp.data.count == 0) {
-    //                         $('.page-loaders').hide();
-
-    //                         noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
-    //                                         <h6>No Data</h6>\
-    //                                         </div>');
-    //                         $("#meetingCardHandlebars").html(noData);
-    //                         isKeyEntered = false;
-
-    //                         $("#searhMeeting").prop("disabled", false);
-    //                     }
-
-    //                     var totalRec = resp.data.count; //Total coSpace records
-    //                     var pages = Math.ceil((parseInt(resp.data.count) / queryTypes.LIMIT)); //No of pages in pagination
-    //                     firstPageObj = resp;
-    //                     //Pagination Logic
-    //                     $('.sync-pagination').twbsPagination({
-    //                         totalPages: pages,
-    //                         onPageClick: function (event, page) {
-    //                             $('.loadingPageHide').hide();
-    //                             $('.card-loaders-meeting').show();
-    //                             offset = queryTypes.LIMIT * (page - 1);
-    //                             //If offset is greater than total records
-    //                             if (offset > totalRec)
-    //                                 offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
-
-    //                             getMeetingDetails(apiType.FIND_ALL_MEETING + '?limit=' + queryTypes.LIMIT + '&offset=' + offset + "&filter=" + input, page, function (resp) {
-
-    //                                 var meetingTemplate = Handlebars.compile($('#meetingCardId').html());
-    //                                 $('#meetingCardHandlebars').html(meetingTemplate(resp.data));
-    //                        debugger;
-    //                                 $('.loadingPageHide').show();
-    //                                 $('.card-loaders-meeting').hide();
-    //                                 $('.page-loaders').hide();
-    //                             });
-    //                         },
-    //                         hideOnlyOnePage: true
-    //                     });
-    //                     isKeyEntered = false;
-    //                     $("#searhMeeting").prop("disabled", false);
-    //                 });
-    //             }
-    //             else
-    //                 $("#searhMeeting").prop("disabled", false);
-    //         }
-    //         else if (input.length == 0) {
-    //             isKeyEntered = false;
-    //             $("#searhMeeting").prop("disabled", false);
-    //             getMeetingDetails();
-    //         }
-    //     }, 1500);
-    // }
-
 }
 // BEGIN info Icon onClick GetDetails for Card.
 btnInfoMeetingMoreDetails = function () {
@@ -310,11 +237,10 @@ btnDelete = function () {
 }
 // BEGIN Rquest To Meeting Members.
 rquestMeetingMembers = function () {
-    var offset = 0; limit = 10;
     // BEGIN Request To Meeting Members
     setTimeout(function () {
         // BEGIN info Members Send Rquest.
-        httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=' + limit + '&offset=' + offset + "&meetingID=" + meetingID, function (resp) {
+        httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=10' + limit + '&offset=0' + offset + "&meetingID=" + meetingID, function (resp) {
             var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
             $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
             console.log(resp.data)

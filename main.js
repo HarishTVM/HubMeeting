@@ -72,6 +72,7 @@ localLang = osLocale.sync().toString();
 					  path.join(__dirname, '/view/error/'),
 					  path.join(__dirname, '/view/demo/'),
 					  path.join(__dirname, '/view/users/'),
+					  path.join(__dirname,'/view/active-meetings/'),
 					  path.join(__dirname, '/view/dashboard/')]);
 	app.set('view engine', 'ejs');
 	app.engine('html', require('ejs').renderFile);

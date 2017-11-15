@@ -130,14 +130,14 @@ function getUsersHttpRequest(query, page, callback) {
     }
 }
 
-setSplice = function(){
+setSplice = function () {
 
-    Handlebars.registerHelper('splitTitle', function() {
+    Handlebars.registerHelper('splitTitle', function () {
         var avatar = substr()
         return t[1] + " <br/> " + t[0];
-      });
+    });
 }
-    
+
 getUsers = function () {
     getActiveMeeting();
     getCurrentMeeting();
@@ -177,6 +177,11 @@ getUsers = function () {
                     //Bind the response using Handlebars
                     $("#users-card").show();
                     $('.LoadingPageHide').show();
+
+                    Handlebars.registerHelper("nameSplice", function (names) {
+                        return names.slice(0, 1).toUpperCase();
+                    });
+
                     var templateUsers = Handlebars.compile($('#users-cardID').html());
                     $('#users-card').html(templateUsers(resp.data));
                     $('.div-loaders-users').hide();

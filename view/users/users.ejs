@@ -59,52 +59,49 @@
             <!--Pagination plugin-->
           </div>
           <!-- handlebars -->
-          <di class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-nonev">
+          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-nonev">
             <div id="users-card"></div>
-        </div>
-        <!-- include file for card-->
-        <di class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-nonev">
-          <% include _layouts/cards/users-card %>
-    </div>
-    <di class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-nonev">
-      <% include _layouts/modals/users-modal %>
-        </div>
-
-
-        <!--Pagination next plugin footer -->
-
-        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
-          <ul class="sync-pagination pagination-sm" />
-        </div>
-        </div>
-        </div>
-
-        <!-- End Users Pages-->
-        </section>
-
-        <!-- BEGIN script file links -->
-        <% include _layouts/common-scripts %>
-          <script src="/scripts/users/users-card.js"></script>
-          <script src="/scripts/jquery.twbsPagination.min.js"></script>
-          <script src="/scripts/inbuilt/toastr.min.js"></script>
-          <script src="/scripts/common/sweetalert.min.js"></script>
-          <!-- End Users script -->
-          <!-- Navigation active Users -->
-          <script>
-            $(document).ready(function () {
-              $("#usersList").addClass("active");
-            });
-          </script>
-
-          <script>
-            window.onload = function () {
-              $('.').modal('show');
-            }
-          </script>
-          <!-- Pagination next footer -->
-          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
-            <%include _layouts/footer %>
           </div>
+          <!-- include file for card-->
+          <% include _layouts/cards/users-card %>
+            <% include _layouts/modals/users-modal %>
+
+
+
+              <!--Pagination next plugin footer -->
+
+              <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+                <ul class="sync-pagination pagination-sm" />
+              </div>
+        </div>
+    </div>
+
+    <!-- End Users Pages-->
+    </section>
+
+    <!-- BEGIN script file links -->
+    <% include _layouts/common-scripts %>
+      <script src="/scripts/users/users-card.js"></script>
+      <script src="/scripts/jquery.twbsPagination.min.js"></script>
+      <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <script src="/scripts/common/sweetalert.min.js"></script>
+      <!-- End Users script -->
+      <!-- Navigation active Users -->
+      <script>
+        $(document).ready(function () {
+          $("#usersList").addClass("active");
+        });
+      </script>
+
+      <script>
+        window.onload = function () {
+          $('.').modal('show');
+        }
+      </script>
+      <!-- Pagination next footer -->
+      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 text-center padding-left-right-none">
+        <%include _layouts/footer %>
+      </div>
 
 </body>
 

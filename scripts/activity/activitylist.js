@@ -1,55 +1,18 @@
 $(document).ready(function () {
 
   //BEGIN EDIT OPTION IN MODAL LINKING
-    $("#activityEditmodelBtn").on('click', function () {
-      window.location.href = "/updateactivitymeeting";
+  $("#activityEditmodelBtn").on('click', function () {
+    window.location.href = "/updateactivitymeeting";
   });
 
-    $("#activeEditBtn").on('click', function () {
-      window.location.href = "/updateactivitymeeting";
+  $("#activeEditBtn").on('click', function () {
+    window.location.href = "/updateactivitymeeting";
   });
   //END EDIT OPTION IN MODAL LINKING
 
-  getCurrentMeeting();
+  getRequestCurrentMeeting();
   getRecntMeeting();
-  $('#btn_add_hidden').hide();
-  $('#btn_meeting_details').hide();
-  $('[data-toggle="tooltip"]').tooltip();
-  var clickFlag = false;
-
-  $("#btn_all").hover(function () {
-    $('#btn_add').hide();
-    $('#btn_add_hidden').show();
-  }, function () {
-    $('#btn_add').show();
-    $('#btn_add_hidden').hide();
-  });
-
-  $("#btn_meeting_details_all").hover(function () {
-    $('#btn_meeting_details').show();
-    $('#btu_ay_notification').hide();
-  }, function () {
-    if (clickFlag) {
-      $('#btn_meeting_details').hide();
-      $('#btu_ay_notification').show();
-    }
-
-  });
-
-  $("#btn_call_ur").click(function () {
-    $('#btn_meeting_details').show();
-    var clickFlag = true;
-  });
-
-
-  $(function () {
-    $('.div-background').hover(function () {
-      $(this).css('background-color', '#fffff0');
-    },
-      function () {
-        $(this).css('background-color', '#FFF');
-      });
-  });
+ 
 
   // BEGIN DELETE ACTIVE MEETING CARDS
   $("#activityDeleteBtn").live("click", function () {
@@ -70,41 +33,65 @@ $(document).ready(function () {
   });
   // END DELETE ACTIVE MEETING CARDS
 
-    // BEGIN DELETE RECENT MEETING CARDS
-    $("#recentMeetingDelBtn").live("click", function () {
-      var recentMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
-      var recentEle = $(recentMainEle).children("#recentMeetingName").attr("recentMeetingName");
-      swal({
-        title: "",
-        text: "Are you sure you want to delete " + recentEle + " ?",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonClass: "btn-danger",
-        confirmButtonText: "Yes, delete it!",
-        closeOnConfirm: false
-      },
-        function () {
-          swal("Deleted!", "", "success");
-        });
-    });
-    // END DELETE RECENT MEETING CARDS
+  // BEGIN DELETE RECENT MEETING CARDS
+  $("#recentMeetingDelBtn").live("click", function () {
+    var recentMainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
+    var recentEle = $(recentMainEle).children("#recentMeetingName").attr("recentMeetingName");
+    swal({
+      title: "",
+      text: "Are you sure you want to delete " + recentEle + " ?",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonClass: "btn-danger",
+      confirmButtonText: "Yes, delete it!",
+      closeOnConfirm: false
+    },
+      function () {
+        swal("Deleted!", "", "success");
+      });
+  });
+  // END DELETE RECENT MEETING CARDS
 
 });
 
 // getCurrentMeeting =function(){
-  
-// }
 
-getCurrentMeeting = function () {
-  $.getJSON('/json/currentmeeting.json', function (response) {
-    console.log(response);
-    var activityListTemplate = Handlebars.compile($('#activitylistCardId').html());
-    $('#activity-card').html(activityListTemplate(response.data));
+// } 
+
+getRequestCurrentMeeting = function () {
+  var offset = 0;
+  //Bind the response using Handlebars
+  // getRequestCurrentMeeting(apiType.FIND_ALL_MEETING + "?limit=" + queryTypesActive.LIMIT + "&offset=" + offset, function (response) {
+  //   debugger;
+  //   console.log(JSON.stringify(response))
+  // });
+
+  httpGet(apiType.FIND_ALL_MEETING + '?limit=' + queryTypesActive.LIMIT + '&offset=' + offset, function (resp) {
+    for (i = 0; i < resp.data.rows.length; i++) {
+      resp.data.rows[i].defaultLayout = meetingLayoutTranslation[resp.data.rows[i].defaultLayout]
+      // Set data Append to Meeting types for API.
+      resp.data.rows[i].meetingType = meetingTypeDetails[resp.data.rows[i].meetingType]
+      // Set MeetingStatus for API.
+      resp.data.rows.defaultLayout = meetingLayoutTranslation[resp.data.rows.defaultLayout]
+
+      resp.data.rows[i].meetingStatus = meetingStatusColor[resp.data.rows[i].meetingStatus]
+
+    }
+
+    var meetingTemplate = Handlebars.compile($('#activeMeetingCardId').html());
+    $('#activeMeetingCard').html(meetingTemplate(resp.data));
+    //console.log(JSON.stringify(resp))
   });
+
+  // $.getJSON('/json/currentmeeting.json', function (response) {
+  //   console.log(response);
+  //   var activityListTemplate = Handlebars.compile($('#activitylistCardId').html());
+  //   $('#activity-card').html(activityListTemplate(response.data));
+  // });
 }
 getRecntMeeting = function () {
   $.getJSON('/json/recentmeeting.json', function (response) {
-    console.log(response);
+  //  console.log(response);
     var recentMeetingTemplate = Handlebars.compile($('#recentMeetingCardId').html());
     $('#recent-meeting-card').html(recentMeetingTemplate(response.data));
   });

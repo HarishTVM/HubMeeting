@@ -75,5 +75,8 @@ app.get("/logs",(req,res)=>{
 app.get("/spacelist", (req, res)=>{
   res.render("spacelist", {year: new Date().getFullYear()});
 });
+app.get("/active-meeting",(req,res) => {
+  res.render("active-meeting", {year: new Date().getFullYear()});
+});
 
 module.exports = app;

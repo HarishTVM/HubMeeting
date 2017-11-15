@@ -1,63 +1,56 @@
 <!-- BEGIN Page card  -->
-
 <script id="users-cardID" type="text/x-handlebars-template">
-    {{#each users}}
-  
-<div class="col-sm-6 col-md-4 col-xs-12 col-lg-3 ">
-        <div class="us-card-loading div-loaders-users">
-                <div class="cssload-container">
-                  <div class="cssload-speeding-wheel"></div>
+     {{#each users}}
+     <div class="col-sm-6 col-md-4 col-xs-12 col-lg-3 ">
+         <div class="us-card-loading div-loaders-users">
+             <div class="cssload-container">
+                 <div class="cssload-speeding-wheel"></div>
                 </div>
-              </div>
-          
-                <div class="div-top thumb-corporate bg-white h-box-shadow h-div-border s-height">
-                        <div class="LoadingPageHide">
-                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 ">
-                           
+            </div>
+        
+            <div class="div-top thumb-corporate bg-white h-box-shadow h-div-border s-height">
+                <div class="LoadingPageHide">
+                    <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
                         <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 card-width-name padding-left-right-none">
                             <div class="us-name-circle">
-                                  
-                                    <i class="card-icon-size linear-icon-man"  style="color:{{ colors.iconColor}};"></i>
-                         
+                                <!-- <i class="card-icon-size linear-icon-man" style="color:{{ colors.iconColor}};">
+
+                                </i> -->
+                                <h1 id="userNameSplice"class="card-icon-size cursor-default " style="margin-top: 17%; color:#f5c104;"> {{nameSplice  user.name}}</h1>
                             </div>
                         </div>
-                       
-                        <div data-toggle=" " title="{{user.userJid}}" class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6 padding-left-right-none card-width-title us-title-color text-overflow-title h6-title-medium us-card-title-mardin-top cursor-default">
-                                {{#if user.userJid}}
-                                {{user.userJid}}
-                                  {{else}}
-                                  Not Available
-                                   {{/if}}
+                        <div id="userJID" data-toggle=" " title="{{user.userJid}}" class=" col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-6  padding-left-right-none card-width-title us-title-color text-overflow-title h6-title-medium us-card-title-mardin-top cursor-default">
+                            {{#if user.userJid}}
+                            {{user.userJid}}
+                            {{else}}
+                            Not Available
+                            {{/if}}
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 us-card-mardin-top ">
                         <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-right-none text-center">
                             <i class="us-icon-color linear-icon-user"></i>
                         </div>
-                        <div  data-toggle=" " title="{{user.name}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10 cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title">
-                          
-                                    {{#if user.name}}
-                                    {{user.name}}
-                                      {{else}}
-                                      <br>
-                                      {{/if}}
+                        <div  data-toggle=" " title="{{user.name}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10  cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title">
+                            {{#if user.name}}
+                            {{user.name}}
+                            {{else}}
+                            <br>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12">
                         <div class="col-sm-2 col-md-2 col-xs-2 col-lg-2 padding-left-right-none text-center">
                             <i class="us-icon-color linear-icon-envelope"></i>
                         </div>
-                        <div data-toggle=" " title="{{user.email}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10 cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title">
-                            
-                                    {{#if user.email}}
-                                    {{user.email}}
-                                      {{else}}
-                                      Not Available
-                                       {{/if}}
-                           
+                        <div data-toggle=" " title="{{user.email}}"  class="col-sm-10 col-md-10 col-xs-10 col-lg-10 cursor-default padding-left-right-none us-card-mardin-top h6-title text-overflow-title ">
+                            {{#if user.email}}
+                            {{user.email}}
+                            {{else}}
+                            Not Available
+                            {{/if}}
                         </div>
                     </div>
-            
                     <!-- BEGIN card mouseover show icon for Spaces-->
                     <div class="col-md-12 col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none ">
                         <div id="icon-list" class="thumb-corporate__overlay text-center ">
@@ -70,13 +63,10 @@
                             </ul>
                         </div>
                     </div>
-                  
                     <!-- END card one mouseover show for Spaces-->
                 </div>
               </div>
-   
-</div>
-
-{{/each}}
-</script>
+            </div>
+            {{/each}}
+        </script>
 <!-- END Page card -->
