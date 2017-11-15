@@ -8,7 +8,7 @@ $(document).ready(function () {
     var ownerArrayList = [], ownerArr = [];
     var cospaceUSerIdArray = [], coUserArr = [];
     var newArray = [];
-    var memberObj = [],finalArray=[];
+    var memberObj = [], finalArray = [];
     var uniques = [];
     // BEGIN CREATE ARRAY OF MEMBERS
 
@@ -218,8 +218,8 @@ $(document).ready(function () {
     // END CHECK MEETING TYPE
 
     // BEGIN FILTER FOR COSPACE_USER_ID
-
-    $("#addMembers").live("blur", function () {
+    $(document).on("mouseleave", "#addMembers", function () {
+        debugger;
         httpGet(apiType.GET_USERS + "?filter=" + $(this).val(), function (resp, err) {
             var userCospaceId = resp.data.users[0].user.attrkey.id;
             cospaceUSerIdArray.push(userCospaceId);
@@ -228,7 +228,7 @@ $(document).ready(function () {
 
     // END FILTER FOR COSPACE_USER_ID
 
-    avoidDuplicate = function(array){
+    avoidDuplicate = function (array) {
         var uniqueNames = [];
         $.each(array, function (i, el) {
             if ($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
@@ -242,7 +242,7 @@ $(document).ready(function () {
     //     }
     //     return false;
     // };
-    
+
     // Array.prototype.unique = function() {
     //     var arr = [];
     //     for(var i = 0; i < this.length; i++) {
@@ -254,10 +254,11 @@ $(document).ready(function () {
     // }
 
     // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
-    $("#submitMembersBtn").click(function () {
-        // uniques=[];
-        memberObj=[];
+    $(document).on("click", "#submitMembersBtn", function () {
         debugger;
+        // uniques=[];
+        memberObj = [];
+
         $("input[name='addMembers']").each(function () {
             memArrayList.push($(this).val());
             memArray = avoidDuplicate(memArrayList);
@@ -265,6 +266,7 @@ $(document).ready(function () {
 
         $("[name='ownerspan']").each(function () {
             ownerArrayList.push($(this).attr("ifOwner"));
+            $(this).attr("ifOwner", "");
         });
 
         newArray = memArray.map(function (value, index) {
@@ -286,8 +288,8 @@ $(document).ready(function () {
         console.log(memberObj);
         // console.log("uniques:" +  JSON.stringify(uniques));
     });
-  
-    
+
+
     // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
 
     // BEGIN GET USERS
@@ -340,7 +342,10 @@ $(document).ready(function () {
                 var end = moment(toISO).tz('Europe/London');
 
                 if ($('input[name=types]:checked').val() === "0") {
-                    isCospaceId = randomObj.spaceid;
+                    if(randomObj.spaceid == undefined){
+                        isCospaceId = "";
+                    }
+                    else isCospaceId = randomObj.spaceid;
                 }
                 else if ($('input[name=types]:checked').val() === "1") {
                     isCospaceId = "";
