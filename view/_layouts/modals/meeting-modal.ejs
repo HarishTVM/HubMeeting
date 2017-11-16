@@ -6,8 +6,7 @@
       <div class="modal-header">
         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
           <div class="col-md-6 col-sm-6 col-xs-12 col-lg-10 padding-left-right-none ">
-            <h6 id="modalTitleMeeting" class="space-details h6-title-color text-overflow-title h6-title-medium us-title-color modal-t-align-l">
-              <!-- Allowed RODC Password Replication Group.users -->
+            <h6 id="modalTitleMeeting" class="meeting-details h6-title-color text-overflow-title h6-title-medium us-title-color modal-t-align-l">
             </h6>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12 col-lg-2 padding-left-right-none">
@@ -44,63 +43,13 @@
               <!-- End Pages Loading -->
               <!-- BEGIN Set Details -->
 
-              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none">
+              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12 padding-left-right-none meeting-details">
                 <!-- <div class="us-card-loading card-loaders-meeting">
                   <div class="cssload-container">
                     <div class="cssload-speeding-wheel"></div>
                   </div>
                 </div> -->
-                <div id="mainParent" class="s-height m-details-padding">
-                  <div class="col-md-12 col-sm-12  col-xs-12 col-lg-12 padding-left-right-none">
-                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div">
-                      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
-                          <h6 class="linear-icon-calendar-31 m-details-color"></h6>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
-                          <h6 id="modalStartDate" class="cursor-default  h6-title text-overflow-title"></h6>
-                        </div>
-
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
-                          <h6 class="linear-icon-clock3 m-details-color"></h6>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none ">
-                          <h6 id="modalStartTimeAndEnd" class="cursor-default h6-title text-overflow-title"></h6>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div card-m-top">
-                      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
-                          <h6 class="linear-icon-users2 m-details-color"></h6>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
-                          <h6 id="modalTotalMembers" class="cursor-default h6-title text-overflow-title meeting-div "></h6>
-                        </div>
-
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
-                          <h6 class="linear-icon-border-all m-details-color"></h6>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div" data-toggle=" " title="{{meeting.defaultLayout}}">
-                          <h6 id="modalDefaultLayout" class="cursor-default h6-title text-overflow-title "></h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div card-m-top">
-                      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-1 padding-left-right-none meeting-div">
-                        <h6 class="linear-icon-group-work m-details-color"></h6>
-                      </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-11 padding-left-right-none meeting-div">
-                        <h6 id="modalMeetingType" class="cursor-default h6-title text-overflow-title"></h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div id="meetingDetailsModal"></div>
               </div>
               <!-- End Set Details -->
             </div>
@@ -126,13 +75,13 @@
                   <form class="padding-top-none search-m-t">
                     <div class="input-group">
                       <input id="inputSearchMeetingMembers" type="text" class="form-control sharch-width-modal" name="searchMembers" placeholder="Search Members">
-                      <span id="btnSearchMembers"  class="input-group-addon input-search cursor-pointer ">
+                      <span id="btnSearchMembers" class="input-group-addon input-search cursor-pointer ">
                         <i class="glyphicon linear-icon-magnifier searchMembers"></i>
                       </span>
                     </div>
                     <div class="t-right noMembersRefreshIcons cursor-pointer ">
-                          <a onclick="refreshPage()" class="linear-icon-undo2"></a>
-                        </div>
+                      <a onclick="refreshPage()" class="linear-icon-undo2"></a>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -168,23 +117,89 @@
 
 <!-- BEGIN Set Meeting Members Handlebars-->
 <script id="meetingMembers" type="text/x-handlebars-template">
-      {{#each rows}}
-      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member meeting-members-list">
-          <!-- BEGIN Set Meeting members -->
-          <ul class="padding-left-right-none cursor-default" data-toggle=" " title="  {{memberJid}}">
-              <li class="padding-left-right-none">
-                  <b>
-                      <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">
-                          {{#if memberJid}}
-                          {{memberJid}}
-                            {{else}}
-                           <p>No Members</p>
-                             {{/if}}
-                        </h6>
-                  </b>
-              </li>
-          </ul>
-      </div>
-      {{/each}}
-    </script>
+  {{#each rows}}
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member meeting-members-list">
+    <!-- BEGIN Set Meeting members -->
+    <ul class="padding-left-right-none cursor-default" data-toggle=" " title="  {{memberJid}}">
+      <li class="padding-left-right-none">
+        <b>
+          <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">
+            {{#if memberJid}}
+            {{memberJid}}
+            {{else}}
+            <p>No Members</p>
+            {{/if}}
+          </h6>
+        </b>
+      </li>
+    </ul>
+  </div>
+  {{/each}}
+</script>
 <!-- End Set Meeting Members Handlebars-->
+
+
+<!-- BEGIN Set Meeting Details Handlebars-->
+<script id="meetingDetails" type="text/x-handlebars-template">
+  {{#with data}}
+  <div class="s-height m-details-padding">
+    <div class="col-md-12 col-sm-12  col-xs-12 col-lg-12 padding-left-right-none">
+    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div">
+      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+          <h6 class="linear-icon-calendar-31 m-details-color"></h6>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
+          <h6 id="modalStartDate" class="cursor-default  h6-title text-overflow-title">
+              {{formatDate meetingStartDateTime}}
+          </h6>
+        </div>
+
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+          <h6 class="linear-icon-clock3 m-details-color"></h6>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none ">
+          <h6 id="modalStartTimeAndEnd" class="cursor-default h6-title text-overflow-title">
+              {{formatTime meetingStartDateTime}}
+          </h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div card-m-top">
+      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+          <h6 class="linear-icon-users2 m-details-color"></h6>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
+          <h6 id="modalTotalMembers" class="cursor-default h6-title text-overflow-title meeting-div">
+          </h6>
+        </div>
+
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6 padding-left-right-none meeting-div">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-2 padding-left-right-none meeting-div">
+          <h6 class="linear-icon-border-all m-details-color"></h6>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div" data-toggle=" " title="{{meeting.defaultLayout}}">
+          <h6 id="modalDefaultLayout" class="cursor-default h6-title text-overflow-title ">
+            {{defaultLayout}}
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none meeting-div card-m-top">
+      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-1 padding-left-right-none meeting-div">
+        <h6 class="linear-icon-group-work m-details-color"></h6>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12 col-lg-11 padding-left-right-none meeting-div">
+        <h6 id="modalMeetingType" class="cursor-default h6-title text-overflow-title"></h6>
+      </div>
+    </div>
+  </div>
+</div>
+{{/with}}
+</script>
+<!-- End Set Meeting Details Handlebars-->
