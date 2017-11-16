@@ -1,9 +1,9 @@
 var firstPageObj = null;
 var searchUsers = "";
 var noData;
+var pagination = $(".sync-pagination");
+var headSearchSpaceList= $(".head-search-w-h").hide();
 $(document).ready(function () {
-
-
     $('#page-loaders-users').show();
     $('.div-loaders-users').hide();
     var isKeyEntered = false;
@@ -128,6 +128,12 @@ function getUsersHttpRequest(query, page, callback) {
             callback(getUsers);
         });
     }
+    if (page > 0){
+        headSearchSpaceList.show();
+    }else{
+        headSearchSpaceList.hide();
+    }
+  
 }
 
 setSplice = function () {
@@ -139,16 +145,6 @@ setSplice = function () {
 }
 
 getUsers = function () {
-    getActiveMeeting();
-    getCurrentMeeting();
-    getRecntMeeting();
-    getSchedulMeeting();
-    getcratedMeeting();
-    getExpiredMeeting();
-
-    $('.div-loaders-users').show();
-    $('#page-loaders-users').show();
-
     var offset = 0, pages;
     //GET getUsers records
     httpGet(apiType.GET_USERS + '?&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
@@ -175,9 +171,7 @@ getUsers = function () {
                     offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
                 getUsersHttpRequest(apiType.GET_USERS + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, page, function (resp) {
                     //Bind the response using Handlebars
-                    $("#users-card").show();
-                    $('.LoadingPageHide').show();
-
+           
                     Handlebars.registerHelper("nameSplice", function (names) {
                         return names.slice(0, 1).toUpperCase();
                     });
@@ -186,18 +180,25 @@ getUsers = function () {
                     $('#users-card').html(templateUsers(resp.data));
                     $('.div-loaders-users').hide();
                     $('#page-loaders-users').hide();
-
-
+                    $("#users-card").show();
+                    pagination.show();
                 });
             },
             hideOnlyOnePage: true
         });
     });
+
+    getActiveMeeting();
+    getCurrentMeeting();
+    getRecntMeeting();
+    getSchedulMeeting();
+    getcratedMeeting();
+    getExpiredMeeting();
 }
 filterUsers = function (isKeyEntered) {
     $("#users-card").hide();
     $('#page-loaders-users').show();
-
+    pagination.hide();
     if (!isKeyEntered) {
         isKeyEntered = true;
         setTimeout(function () {
@@ -209,7 +210,7 @@ filterUsers = function (isKeyEntered) {
             var offset = 0;
             var input = $('#filter-users').val();
             if (input.length > 0) {
-                $("#users-card").show();
+             
                 if (searchUsers != input) {
                     searchUsers = input;
                     httpGet(apiType.GET_USERS + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (getUsers) {
@@ -217,13 +218,13 @@ filterUsers = function (isKeyEntered) {
                         var pages = Math.ceil((parseInt(getUsers.data.total) / queryTypes.LIMIT)); //No of pages in pagination
 
                         if (getUsers.data.total == 0) {
-                            $('#page-loaders-users').hide();
-                            $("#users-card").show();
-                            noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
-                                            <h6>No Data</h6>\
+                            noData = $('<div style="text-align: center; margin-top: 8%;"><a class="linear-icon-user-plus page-error-icon-size"></a>\
+                                            <h6>No Users</h6>\
                                             </div>');
                             $("#users-card").html(noData);
                             isKeyEntered = false;
+                            $("#users-card").show();
+                            $('#page-loaders-users').hide();
                             $("#filter-users").prop("disabled", false);
                         }
 
@@ -245,6 +246,7 @@ filterUsers = function (isKeyEntered) {
                                     var templateUsers = Handlebars.compile($('#users-cardID').html());
                                     $('#users-card').html(templateUsers(resp.data));
                                     $('#page-loaders-users').hide();
+                                    pagination.show();
                                 });
                             },
                             hideOnlyOnePage: true
@@ -260,7 +262,7 @@ filterUsers = function (isKeyEntered) {
             else if (input.length == 0) {
                 isKeyEntered = false;
                 $("#filter-users").prop("disabled", false);
-
+                getUsers();
 
             }
         }, 1500);

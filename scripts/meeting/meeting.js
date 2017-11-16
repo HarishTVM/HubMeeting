@@ -7,12 +7,16 @@ var btnSearchDiv = $(".input-group").hide();
 var meetingID = null;
 var iconRefreshPage = $(".noMembersRefreshIcons");
 var meetingDetails = $(".meeting-details");
+var loadingModalDetails =$(".loading-modal");
+var meetingCardDiv = $(".meeting-card-div");
+var pageLoadersMeeting = $("#page-loaders-meeting");
+var headSearch = $(".head-search-w-h");
 var isKeyEntered = false;
 $(document).ready(function () {
     $(".card-loaders-meeting").show();
     $('.loadingPageHide').hide();
     iconRefreshPage.hide();
-
+    headSearch.hide();
     formatDateAndTimeStatus();
     getMeetingDetails();
     btnSearch();
@@ -46,6 +50,7 @@ $(document).ready(function () {
 });
 
 function getMeetingRequest(query, page, callback) {
+
     if (page == 0)
         callback(firstPageObj);
     else {
@@ -53,11 +58,17 @@ function getMeetingRequest(query, page, callback) {
             callback(resp);
         });
     }
+    if(page > 1 ){
+        headSearch.show();
+    }else{
+        headSearch.hide();
+    }
 }
 // BEGIN Rquest To Find All Meeting.
 getMeetingDetails = function () {
     $('.card-loaders-spacelist').show();
     $('.page-loaders').show();
+
     var offset = 0, pages;
     httpGet(apiType.FIND_ALL_MEETING + '?limit=' + queryTypes.LIMIT + '&offset=' + offset, function (resp) {
         var totalRec = resp.data.count; //Total coSpace records
@@ -90,8 +101,8 @@ getMeetingDetails = function () {
                     response.data.rows.defaultLayout = meetingLayoutTranslation[response.data.rows.defaultLayout]
                     var meetingTemplate = Handlebars.compile($('#meetingCardId').html());
                     $('#meetingCardHandlebars').html(meetingTemplate(response.data));
-                    $('.loadingPageHide').show();
-                    $('.card-loaders-meeting').hide();
+                    meetingCardDiv.show();
+                    pageLoadersMeeting.hide()
                 });
             },
             hideOnlyOnePage: true
@@ -114,7 +125,8 @@ searhMeeting = function () {
 
     // Searh Meeting 
     $('#searhMeeting').keyup(function () {
-
+        meetingCardDiv.hide();
+        pageLoadersMeeting.show();
         if (!isKeyEntered) {
             isKeyEntered = true;
             setTimeout(function () {
@@ -131,17 +143,17 @@ searhMeeting = function () {
                     if (recentSearch != input) {
                         recentSearch = input;
                         httpGet(apiType.FIND_ALL_MEETING + '?limit=' + queryTypes.LIMIT + '&offset=' + offset + "&filter=" + input, function (resp) {
-
-                            console.log("searhMeeting" + JSON.stringify(resp));
+                            meetingCardDiv.hide();
                             if (resp.data.count == 0) {
                                 $('.page-loaders').hide();
 
-                                noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
-                                                <h6>No Data</h6>\
+                                noData = $('<div style="text-align: center; margin-top: 5%;"><a class="linear-icon-sad page-error-icon-size"></a>\
+                                                <h6>No Meething</h6>\
                                                 </div>');
                                 $("#meetingCardHandlebars").html(noData);
                                 isKeyEntered = false;
-
+                                meetingCardDiv.show();
+                                pageLoadersMeeting.hide();
                                 $("#searhMeeting").prop("disabled", false);
                             }
 
@@ -166,6 +178,7 @@ searhMeeting = function () {
                                         $('.loadingPageHide').show();
                                         $('.card-loaders-meeting').hide();
                                         $('.page-loaders').hide();
+                                        pageLoadersMeeting.hide();
                                     });
                                 },
                                 hideOnlyOnePage: true
@@ -189,8 +202,8 @@ searhMeeting = function () {
 }
 // BEGIN info Icon onClick GetDetails for Card.
 btnInfoMeetingMoreDetails = function () {
-    btnSearchDiv.hide();
     $("#infoParent").find("#meetingInfoBtn").live('click', function () {
+        btnSearchDiv.hide();
         loadingModaMembers.show();
         divModaMembers.hide();
         var getMeetingID = $(this).parents("#mainMeetingParent").attr("meetingId");
@@ -240,7 +253,7 @@ rquestMeetingMembers = function () {
     // BEGIN Request To Meeting Members
     setTimeout(function () {
         // BEGIN info Members Send Rquest.
-        httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=10' + limit + '&offset=0' + offset + "&meetingID=" + meetingID, function (resp) {
+        httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=10'  + '&offset=0'  + "&meetingID=" + meetingID, function (resp) {
             var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
             $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
             console.log(resp.data)
@@ -253,7 +266,6 @@ rquestMeetingMembers = function () {
             }
 
         });
-        $('.loading-modal').show();
         loadingModaMembers.hide();
     }, 1000);
 }
@@ -290,12 +302,13 @@ btnSearch = function () {
                     }
 
                 });
-                $('.loading-modal').show();
                 loadingModaMembers.hide();
             }, 1000);
 
         } else {
             alert("Please Enter MemberName");
+            divModaMembers.show();
+            $('.loading-moda-members').hide();
         }
     });
 }
@@ -320,8 +333,8 @@ rquestToInfoDetails = function () {
             $('#meetingDetailsModal').html(meetingDetailsTemplate(resp));
             console.log(resp.data)
             divModaMembers.show();
+            loadingModalDetails.hide();
         });
-        $('.loading-modal').show();
         loadingModaMembers.hide();
     }, 1000);
 }

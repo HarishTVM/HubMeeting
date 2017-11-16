@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="coSpacesUsersModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+<div id="coSpacesUsersModal" class="modal fade cursor-default" role="dialog" data-backdrop="static" data-keyboard="false">
 
   <div class="modal-dialog  modal-lg">
     <!-- Modal content-->
@@ -8,7 +8,6 @@
         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
           <div class="col-md-6 col-sm-6 col-xs-12 col-lg-10 padding-left-right-none ">
             <h6 id="modalTitle" class="space-details h6-title-color text-overflow-title h6-title-medium us-title-color modal-t-align-l">
-              <!-- Allowed RODC Password Replication Group.users -->
             </h6>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12 col-lg-2 padding-left-right-none">
@@ -56,7 +55,7 @@
                       </div>
                       <!-- Set Value Space ID -->
                       <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div ">
-                        <h6 id="modalSpaceID" class="cursor-default  h6-title text-overflow-title" data-toggle=" " title="Allowed\20RODC\20Password\20Replication\20Group@inflexion.com">
+                        <h6 id="modalSpaceID" class="  h6-title text-overflow-title" >
                         </h6>
                       </div>
                     </div>
@@ -68,7 +67,7 @@
                       </div>
                       <!-- Set Members Value -->
                       <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
-                        <h6 id="modalTotalMembers" class="cursor-default h6-title text-overflow-title meeting-div"></h6>
+                        <h6 id="modalTotalMembers" class=" h6-title text-overflow-title meeting-div"></h6>
                       </div>
                     </div>
 
@@ -79,7 +78,7 @@
                       </div>
                       <!-- Set URI Value -->
                       <div class="col-md-6 col-sm-6 col-xs-12 col-lg-10 padding-left-right-none meeting-div">
-                        <h6 id="modalURI" class="cursor-default h6-title text-overflow-title"></h6>
+                        <h6 id="modalURI" class=" h6-title text-overflow-title"></h6>
                       </div>
                     </div>
                   </div>
@@ -133,7 +132,7 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
                   <!-- BEGIN Set Spaces members -->
-                  <div class="space-members-list  cursor-default" id="spaceMembersModal"></div>
+                  <div class="space-members-list  " id="spaceMembersModal"></div>
                   <!-- End Set Spaces members -->
                 </div>
 
@@ -145,8 +144,8 @@
       </div>
       <!-- End Modal Body -->
       <div class="modal-footer">
-        <button id="btnScheduleModal" type="button" class="btn-padding-edit button button-primary" data-dismiss="modal">Schedule Meeting</button>
-        <button id="modalEditBtn" type="button" class="btn-padding-edit button button-primary" data-dismiss="modal">Edit</button>
+        <button id="btnScheduleModal" type="button" class="btn-padding-edit button button-primary h-m-top-none" data-dismiss="modal">Schedule Meeting</button>
+        <button id="modalEditBtn" type="button" class="btn-padding-edit button button-primary h-m-top-none" data-dismiss="modal">Edit</button>
       </div>
     </div>
   </div>
@@ -157,7 +156,7 @@
   {{#each coSpaceUser}}
   <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member space-members-list">
       <!-- BEGIN Set Spaces members -->
-      <ul class="padding-left-right-none cursor-default" data-toggle=" " title="  {{userJid}}">
+      <ul class="padding-left-right-none " data-toggle=" " title="  {{userJid}}">
           <li class="padding-left-right-none">
               <b>
                   <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">

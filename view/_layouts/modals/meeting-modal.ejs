@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="meeting-Modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+<div id="meeting-Modal" class="modal fade cursor-default" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-lg">
     <!-- Modal content-->
     <div class="modal-content modal-margin-t">
@@ -23,7 +23,7 @@
           <div class="col-sm-6 col-md-4 col-xs-12 col-lg-6 padding-left-right-none h-m-top-none modal-border-r">
             <div class="sl-model-bg-color sl-model-height">
               <!-- BEGIN Set Title-->
-              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  modal-toolbar-border-t-b padding-left-right-none">
+              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-12  modal-toolbar-border-t-b padding-left-right-none ">
                 <div class="container-fluid breadcrumb-container">
                   <ol class="toolbar-padding" style="text-align: left">
                     <h5 class="text-color-default ">
@@ -97,7 +97,7 @@
 
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none ">
                   <!-- BEGIN Set Meeting members -->
-                  <div class="meeting-members-list  cursor-default" id="meetingMembersModal"></div>
+                  <div class="meeting-members-list  " id="meetingMembersModal"></div>
                   <!-- End Set Meeting members -->
                 </div>
 
@@ -120,7 +120,7 @@
   {{#each rows}}
   <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 padding-left-right-none h-div-border sl-div-shadow-member meeting-members-list">
     <!-- BEGIN Set Meeting members -->
-    <ul class="padding-left-right-none cursor-default" data-toggle=" " title="  {{memberJid}}">
+    <ul class="padding-left-right-none " data-toggle=" " title="  {{memberJid}}">
       <li class="padding-left-right-none">
         <b>
           <h6 class="title-color text-padding-m-t padding-left-right-none title-align text-margin-top text-overflow-title">
@@ -150,7 +150,7 @@
           <h6 class="linear-icon-calendar-31 m-details-color"></h6>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
-          <h6 id="modalStartDate" class="cursor-default  h6-title text-overflow-title">
+          <h6 id="modalStartDate" class="  h6-title text-overflow-title">
               {{formatDate meetingStartDateTime}}
           </h6>
         </div>
@@ -161,7 +161,7 @@
           <h6 class="linear-icon-clock3 m-details-color"></h6>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none ">
-          <h6 id="modalStartTimeAndEnd" class="cursor-default h6-title text-overflow-title">
+          <h6 id="modalStartTimeAndEnd" class=" h6-title text-overflow-title">
               {{formatTime meetingStartDateTime}}
           </h6>
         </div>
@@ -174,7 +174,8 @@
           <h6 class="linear-icon-users2 m-details-color"></h6>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div">
-          <h6 id="modalTotalMembers" class="cursor-default h6-title text-overflow-title meeting-div">
+          <h6 id="modalTotalMembers" class=" h6-title text-overflow-title meeting-div">
+          {{memberCount}}
           </h6>
         </div>
 
@@ -184,7 +185,7 @@
           <h6 class="linear-icon-border-all m-details-color"></h6>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6 col-lg-10 padding-left-right-none meeting-div" data-toggle=" " title="{{meeting.defaultLayout}}">
-          <h6 id="modalDefaultLayout" class="cursor-default h6-title text-overflow-title ">
+          <h6 id="modalDefaultLayout" class=" h6-title text-overflow-title ">
             {{defaultLayout}}
           </h6>
         </div>
@@ -195,7 +196,9 @@
         <h6 class="linear-icon-group-work m-details-color"></h6>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12 col-lg-11 padding-left-right-none meeting-div">
-        <h6 id="modalMeetingType" class="cursor-default h6-title text-overflow-title"></h6>
+        <h6 id="modalMeetingType" class=" h6-title text-overflow-title">
+          {{meetingType}}
+        </h6>
       </div>
     </div>
   </div>
