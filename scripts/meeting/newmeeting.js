@@ -1,23 +1,17 @@
+// BEGIN ---------------------GLOBAL VARIABLES---------------------
+var isKeyEntered = false;
+var isOwner = false
+var func;
+// BEGIN CREATE ARRAY OF MEMBERS 
+var memArrayList = [], memArray = [];
+var ownerArrayList = [], ownerArr = [];
+var cospaceUSerIdArray = [], coUserArr = [];
+var newArray = [];
+var memberObj = [], memberObjNew = [];
+// BEGIN CREATE ARRAY OF MEMBERS
+// END ---------------------GLOBAL VARIABLES---------------------
+
 $(document).ready(function () {
-    // BEGIN ---------------------GLOBAL VARIABLES---------------------
-    var isKeyEntered = false;
-    var isOwner = false
-
-    // BEGIN CREATE ARRAY OF MEMBERS 
-    var memArrayList = [], memArray = [];
-    var ownerArrayList = [], ownerArr = [];
-    var cospaceUSerIdArray = [], coUserArr = [];
-    var newArray = [];
-    var memberObj = [], finalArray = [];
-    var uniques = [];
-    // BEGIN CREATE ARRAY OF MEMBERS
-
-    // END ---------------------GLOBAL VARIABLES---------------------
-
-    //-----BEGIN--------------------------HARISH CODE------------------------------------
-    // checkWindowPathName();
-    // ----END---------------------------HARISH CODE------------------------------------
-
     // BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
     var randomObj = {};
     // END OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
@@ -45,11 +39,6 @@ $(document).ready(function () {
     });
     // ---------- END MAKE A MEMBER OWNER ---------------
 
-    // BEGIN -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
-
-
-    // END -----------------ONLY ONE MEMBER CAN BE OWNER LOGIC-----------------
-
     //BEGIN Add Member and DELETE MEMBER Logic
     $('#addMemberBtn').live('click', function () {
         var member = $('<div id="addDeleteParent" class="input-group form-wrap input-box-shadow">\
@@ -66,14 +55,14 @@ $(document).ready(function () {
 
     $("#deleteMember").live('click', function () {
         if ($(this).parents("#memberParentDiv").children('div').length == 1) {
-            $(this).prop('disabled', true);
+            if ($(this).siblings("#ownerspan").attr("ifOwner") == "true") {
+                $(this).prop('disabled', true);
+            }
         }
         else {
             $(this).parent().remove();
         }
     });
-
-    //END Add Member and DELETE MEMBER Logic
 
     // BEGIN DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
     var count = 0;
@@ -217,15 +206,14 @@ $(document).ready(function () {
     });
     // END CHECK MEETING TYPE
 
+
     // BEGIN FILTER FOR COSPACE_USER_ID
     $(document).on("mouseleave", "#addMembers", function () {
-        debugger;
         httpGet(apiType.GET_USERS + "?filter=" + $(this).val(), function (resp, err) {
             var userCospaceId = resp.data.users[0].user.attrkey.id;
             cospaceUSerIdArray.push(userCospaceId);
         });
     });
-
     // END FILTER FOR COSPACE_USER_ID
 
     avoidDuplicate = function (array) {
@@ -236,27 +224,8 @@ $(document).ready(function () {
         return uniqueNames;
     }
 
-    // Array.prototype.contains = function(v) {
-    //     for(var i = 0; i < this.length; i++) {
-    //         if(this[i] === v) return true;
-    //     }
-    //     return false;
-    // };
-
-    // Array.prototype.unique = function() {
-    //     var arr = [];
-    //     for(var i = 0; i < this.length; i++) {
-    //         if(!arr.contains(this[i])) {
-    //             arr.push(this[i]);
-    //         }
-    //     }
-    //     return arr; 
-    // }
-
     // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
     $(document).on("click", "#submitMembersBtn", function () {
-        debugger;
-        // uniques=[];
         memberObj = [];
 
         $("input[name='addMembers']").each(function () {
@@ -266,7 +235,13 @@ $(document).ready(function () {
 
         $("[name='ownerspan']").each(function () {
             ownerArrayList.push($(this).attr("ifOwner"));
-            $(this).attr("ifOwner", "");
+
+            // BEGIN ---------------POPULATE OWNERJID FIELD----------------
+            if ($(this).attr("ifOwner") == "true") {
+                var jId = $(this).siblings("#addMembers").val();
+                $("#ownerJid").val(jId);
+            }
+            // END --------------POPULATE OWNERJID FIELD--------------------
         });
 
         newArray = memArray.map(function (value, index) {
@@ -283,13 +258,10 @@ $(document).ready(function () {
                 "coSpaceUserID": sampleArray[2]
             }
             memberObj.push(member1);
-            // uniques = memberObj.unique(); 
         }
+
         console.log(memberObj);
-        // console.log("uniques:" +  JSON.stringify(uniques));
     });
-
-
     // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
 
     // BEGIN GET USERS
@@ -342,7 +314,7 @@ $(document).ready(function () {
                 var end = moment(toISO).tz('Europe/London');
 
                 if ($('input[name=types]:checked').val() === "0") {
-                    if(randomObj.spaceid == undefined){
+                    if (randomObj.spaceid == undefined) {
                         isCospaceId = "";
                     }
                     else isCospaceId = randomObj.spaceid;
@@ -366,9 +338,12 @@ $(document).ready(function () {
                     "members": memberObj
                 };
                 httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
-                    $('input[name=types]:checked').val("");
-                    console.log(resp);
-                    console.log(err);
+                    if (err) {
+
+                    }
+                    else {
+                        swal('New meeting creation successful');
+                    }
                 });
             }
 
@@ -377,12 +352,4 @@ $(document).ready(function () {
     // END FORM SUBMIT LOGIC
 });
 
-//-----BEGIN--------------------------HARISH CODE------------------------------------
-// checkWindowPathName = function () {
-
-//     if (Window.path.name == "/schedulemeeting") {
-
-//     }
-// }
-// ----END---------------------------HARISH CODE------------------------------------
 

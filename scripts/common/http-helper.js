@@ -3,11 +3,9 @@ var httpGet = function (Url, callback) {
         method: 'GET',
         url: app.BASE_URL + Url,
         success: function (response, status, xhr) {
-            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
-            debugger;
             if (errObj.status == serverStatus.INTERNAL_SERVER_ERROR) {
                 {
                     toastr.options.closeButton = true;
@@ -39,7 +37,7 @@ var httpPost = function (Url, _data, callback) {
         },
         data: JSON.stringify(_data),
         success: function (response, status, xhr) {
-            debugger
+            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
@@ -97,11 +95,9 @@ var httpDelete = function (Url, callback) {
             "Content-Type": "application/json; charset=utf-8"
         },
         success: function (response, status, xhr) {
-            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
-            debugger;
             if (errObj.status == serverStatus.INTERNAL_SERVER_ERROR) {
                 {
                     toastr.options.closeButton = true;
