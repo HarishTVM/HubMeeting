@@ -33,6 +33,11 @@ $(document).ready(function () {
         }
         var attr = $(this).attr
     });
+    $(".h-logo-image ").click(function () {
+    
+        window.location.href = href="/dashboard";
+
+    });
 
 
     // // trick to prevent scrolling when opening/closing button

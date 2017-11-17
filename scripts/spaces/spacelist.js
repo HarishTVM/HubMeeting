@@ -4,9 +4,12 @@ var noData;
 var searchcoSpaceId = null, coSpaceOwnerJid = null, coSpaceNameTitle = null, coSpaceURL = null, totalMembers;
 var inputSearchMembers = null;
 var isKeyEntered = false;
+var headSearchSpaceList= $(".head-search-w-h").hide();
+var pagination = $(".sync-pagination");
 $(document).ready(function () {
     var isKeyEntered = false;
     $('#page-loaders-users').show();
+
     $('.loading-modal').hide();
     $('.loading-moda-members').hide();
     $(".input-group").hide()
@@ -48,12 +51,18 @@ $(document).ready(function () {
 });
 // BEGIN Check GetCoSpacesRequest and Page.
 function getCoSpacesRequest(query, page, callback) {
-    if (page == 1)
+
+    if (page == 1){
         callback(firstPageObj);
+    }
     else {
+        headSearchSpaceList.hide();
         httpGet(query, function (resp) {
             callback(resp);
         });
+    }
+    if (page > 0){
+        headSearchSpaceList.show();
     }
 }
 // BEGIN Get coSpaces for API.
@@ -72,6 +81,7 @@ getCospaces = function () {
             prev: 'Prev',
             next: 'Next',
             onPageClick: function (event, page) {
+              
                 $('.LoadingPageHide').hide();
                 $('.card-loaders-spacelist').show();
                 $('.page-loaders').hide();
@@ -86,14 +96,13 @@ getCospaces = function () {
                     offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
                 getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT, page, function (resp) {
                     //Bind the response using Handlebars
-                    $("#List").show();
-                    $('.LoadingPageHide').show();
-                    $('.page-loaders').hide();
                     var template = Handlebars.compile($('#coSpacesUsers').html());
                     $('#List').html(template(resp.data));
+                    $("#List").show();
+                    pagination.show();
                     $('.card-loaders-spacelist').hide();
-
                 })
+          
             },
             hideOnlyOnePage: true
         });
@@ -162,6 +171,7 @@ searchSpcelist = function () {
     // BEGIN SEARCH FILTER
     $('#filter').keyup(function () {
         $("#List").hide();
+        pagination.hide();
         $('.page-loaders').show();
         if (!isKeyEntered) {
             isKeyEntered = true;
@@ -174,17 +184,18 @@ searchSpcelist = function () {
                 var offset = 0;
                 var input = $('#filter').val();
                 if (input.length > 0) {
-                    $("#List").show();
+                   
                     if (recentSearch != input) {
                         recentSearch = input;
                         httpGet(apiType.GET_COSPACES + "?filter=" + input + '&offset=' + offset + '&limit=' + queryTypes.LIMIT, function (resp) {
                             if (resp.data.total == 0) {
                                 $('.page-loaders').hide();
-                                noData = $('<div style="text-align: center;"><a class="linear-icon-sad page-error-icon-size"></a>\
-                                                <h6>No Data</h6>\
+                                noData = $('<div style="text-align: center; margin-top: 5%;"><a class="linear-icon-user-plus page-error-icon-size"></a>\
+                                                <h6>No Space</h6>\
                                                 </div>');
                                 $("#List").html(noData);
                                 isKeyEntered = false;
+                                $("#List").show();
 
                                 $("#filter").prop("disabled", false);
                             }
@@ -202,10 +213,10 @@ searchSpcelist = function () {
                                         offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
 
                                     getCoSpacesRequest(apiType.GET_COSPACES + "?offset=" + offset + "&limit=" + queryTypes.LIMIT + "&filter=" + input, page, function (resp) {
-                                        $('.page-loaders').hide();
                                         var template = Handlebars.compile($('#coSpacesUsers').html());
                                         $('#List').html(template(resp.data));
-
+                                        $("#List").show();
+                                        $('.page-loaders').hide();
                                     });
                                 },
                                 hideOnlyOnePage: true
