@@ -7,6 +7,7 @@ $(document).ready(function(){
                 resultItem.push(validateText(obj));
             });
             if(resultItem.indexOf(false) < 0){
+                debugger;
                 var reqData = {
                     "userName": $('#contact-name').val(),
                     "userPassword": $('#contact-email').val()

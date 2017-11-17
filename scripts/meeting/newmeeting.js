@@ -55,7 +55,6 @@ $(document).ready(function () {
 
     // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
     reassignMemberObjFunc = function (memberObjNew) {
-        console.log(memberObjNew);
         $(document).on("click", "#submitMembersBtn", function () {
             memberObj = [];
             $("input[name='addMembers']").each(function () {

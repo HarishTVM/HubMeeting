@@ -19,27 +19,8 @@ $(document).ready(function () {
     searhMeeting();
     // BEGIN UPDATE COSPACE 
     $("#editmodelBtn").on('click', function () {
-        window.location.href = "/updatemeeting";
+        window.location.href = "/updatemeeting?meetingID=" + meetingID;
     });
-    // END UPDATE COSPACE 
-    // BEGIN DELETE MEETING CARDS
-    // $("#meetingDelBtn").live("click", function () {
-    //     var mainEle = $(this).parents("#infoDelteBtnsParent").siblings().html();
-    //     var ele = $(mainEle).children("#meetingName").attr("meetingName");
-    //     swal({
-    //         title: "",
-    //         text: "Are you sure you want to delete " + ele + " ?",
-    //         type: "warning",
-    //         showCancelButton: true,
-    //         confirmButtonClass: "btn-danger",
-    //         confirmButtonText: "Yes, delete it!",
-    //         closeOnConfirm: false
-    //     },
-    //         function () {
-    //             swal("Deleted!", "", "success");
-    //         });
-    // });
-    // END DELETE MEETING CARDS
 
     btnInfoMeetingMoreDetails();
     btnDelete();
@@ -160,7 +141,7 @@ searhMeeting = function () {
                                         offset = totalRec - (totalRec - (queryTypes.LIMIT * (page - 2)));
 
                                     getMeetingRequest(apiType.FIND_ALL_MEETING + '?limit=' + queryTypes.LIMIT + '&offset=' + offset + "&filter=" + input, page, function (resp) {
-                                        
+
                                         var meetingTemplate = Handlebars.compile($('#meetingCardId').html());
                                         $('#meetingCardHandlebars').html(meetingTemplate(resp.data)); debugger;
                                         $('.loadingPageHide').show();
@@ -205,15 +186,18 @@ btnInfoMeetingMoreDetails = function () {
 }
 // BEGIN Rquest To Delete Meeting.
 btnDelete = function () {
-
+    var meetingIDget = "";
+    var meetingNameGet = "";
     $("#meetingDelBtn").live("click", function () {
-        debugger;
         var getMeetingID = $(this).parents("#mainMeetingParent").attr("meetingId");
         var autoPopulateMeeting = $(this).parents("#infoParent").siblings().html();
         var getMeetingName = $(autoPopulateMeeting).children("#setMeetingName").attr("setMeetingName");
+        meetingIDget = getMeetingID;
+        meetingNameGet = getMeetingName;
+    });
 
-        httpDelete(apiType.DELETE_MEETING + "?meetingID=" + getMeetingID, function (resp, err) {
-            debugger;
+    $("#yesMeetingDelBtn").click(function () {
+        httpDelete(apiType.DELETE_MEETING + "?meetingID=" + meetingIDget, function (resp, err) {
             if (err) {
                 if (err.customErrCode == errorCodes.UNKNOWN_USER) {
                     toastr.options.closeButton = true;
@@ -225,22 +209,23 @@ btnDelete = function () {
                 }
             }
             else {
-                swal(
-                    getMeetingName,
-                    'Deleted!',
-                    'success'
-                )
+                swal(meetingNameGet, "Deleted!", "success");
             }
             setTimeout(function () { location.reload(); }, 2000);
         });
     });
+    $("#noMeetingDelBtn").click(function(){
+        $('#delModal').modal('hide');
+    });
 }
+// END Rquest To Delete Meeting.
+
 // BEGIN Rquest To Meeting Members.
 rquestMeetingMembers = function () {
     // BEGIN Request To Meeting Members
     setTimeout(function () {
         // BEGIN info Members Send Rquest.
-        httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=10' + limit + '&offset=0' + offset + "&meetingID=" + meetingID, function (resp) {
+        httpGet(apiType.FIND_ALL_MEETING_MEMBERS + '?limit=10' + '&offset=0' + "&meetingID=" + meetingID, function (resp) {
             var meetingMembersTemplate = Handlebars.compile($('#meetingMembers').html());
             $('#meetingMembersModal').html(meetingMembersTemplate(resp.data));
             console.log(resp.data)

@@ -1,3 +1,9 @@
+function make_base_auth(user, password) {
+    var tok = user + ':' + password;
+    var hash = btoa(tok);
+    return "Basic " + hash;
+  }
+
 var httpGet = function (Url, callback) {
     $.ajax({
         method: 'GET',
@@ -29,19 +35,23 @@ var httpGet = function (Url, callback) {
 };
 
 var httpPost = function (Url, _data, callback) {
+    // console.log(_data);
+    // console.log(make_base_auth(_data.userName, _data.userPassword));
     $.ajax({
         method: 'POST',
         url: app.BASE_URL + Url,
         headers: {
+            // "Authorization": make_base_auth(_data.userName, _data.userPassword),
             "Content-Type": "application/json; charset=utf-8"
         },
         data: JSON.stringify(_data),
+        // beforeSend: function (xhr) {
+        //     xhr.setRequestHeader("Authorization", "Basic " + btoa(_data.userName + ":" + _data.userPassword));
+        // },
         success: function (response, status, xhr) {
-            debugger;
             callback(response);
         },
         error: function (errObj, xhr, errStr) {
-            debugger;
             if (errObj.status == serverStatus.INTERNAL_SERVER_ERROR) {
                 toastr.options.closeButton = true;
                 toastr.warning(ToastMesssges.INTERNAL_SERVER_ERROR); //errObj.responseJSON.data
