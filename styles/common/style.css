@@ -83,7 +83,11 @@ html {
 }
 
 .search-m-t{margin-top:3px;}
-
+.see-more-right{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
 .input-search{
   padding: 6px 12px;
   font-size: 14px;

@@ -1,3 +1,4 @@
+var activeMeetingSeeMore= $("#activeMeetingSeeMore").hide(); ; 
 $(document).ready(function () {
 
   //BEGIN EDIT OPTION IN MODAL LINKING
@@ -65,7 +66,7 @@ getRequestCurrentMeeting = function () {
   //   debugger;
   //   console.log(JSON.stringify(response))
   // });
-
+ 
   httpGet(apiType.FIND_ALL_MEETING + '?limit=' + queryTypesActive.LIMIT + '&offset=' + offset, function (resp) {
     for (i = 0; i < resp.data.rows.length; i++) {
       resp.data.rows[i].defaultLayout = meetingLayoutTranslation[resp.data.rows[i].defaultLayout]
@@ -80,6 +81,12 @@ getRequestCurrentMeeting = function () {
 
     var meetingTemplate = Handlebars.compile($('#activeMeetingCardId').html());
     $('#activeMeetingCard').html(meetingTemplate(resp.data));
+
+    if(resp.data.count > 3){
+      activeMeetingSeeMore.show();
+    }else{
+      activeMeetingSeeMore.hide();
+    }
     //console.log(JSON.stringify(resp))
   });
 
