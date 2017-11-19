@@ -51,7 +51,12 @@
           <h4 id="createMeeting">
             <%= translation.CREATE_MEETING_HEADING_4_5_BREADCRUMB %>
           </h4>
-          <div class="range range-md-center">
+          <div id="meeting-page-loader" style="margin-top: 10%;">
+            <div class="cssload-container">
+              <div class="cssload-speeding-wheel"></div>
+            </div>
+          </div>
+          <div id="newMeetingForm" class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
                 <div class="form-wrap form-wrap_icon margin-css custom-cospace">
@@ -149,30 +154,37 @@
                   </h6>
                 </div>
                 <br>
-                <section id="existingMembers" class="input-box-shadow" style="padding: 5px;">
-                  <h6 style="text-align: left;">Existing Members</h6>
-                  <div class="alert-div">
-                    <div class="alert alert-info alert-dismissible" role="alert">
-                      <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      admin@inflexion.com
+                <div id="accordion" role="tablist" class="accordian-border form-input input-box-shadow padding-top-none">
+                  <!-- Bootstrap panel-->
+                  <div id="accordionPanel" class="panel panel-custom">
+                    <div class="panel-custom-heading" id="1Headingundefined" role="tab">
+                      <p class="panel-custom-title para-title bg-light-grey">
+                        <a id="accordianPanelaTag" class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined"
+                          aria-controls="1Collapseundefined">
+                          <span class="fontStyle">Existing Members</span>
+                        </a>
+                      </p>
                     </div>
-                    <div class="alert alert-info alert-dismissible" role="alert">
-                      <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      hr-dept@inflexion.com
+                    <div class="panel-custom-collapse collapse" id="1Collapseundefined" role="tabpanel" aria-labelledby="1Headingundefined">
+                      <div class="panel-custom-body">
+                        <ul id="accordianList_1" class="list-group list-content fontStyle"></ul>
+                        <ul id="accordianList_2" class="list-group list-content fontStyle"></ul>
+
+                      </div>
+                      <a class="seeMoreMembers" id="seeMoreMem" data-toggle="modal" data-target="#seeMoreMembersModal">see more...</a>
                     </div>
                   </div>
-                </section>
+                  <!-- Bootstrap panel-->
+
+                  <% include _layouts/modals/see-more-members %>
+                </div>
                 <br>
                 <div class="form-wrap margin-css custom-cospace input-box-shadow">
                   <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal"
                     style="width: 100%;" />
                 </div>
                 <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
+                <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
                   <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -181,8 +193,8 @@
                         <button id="addMemberBtn" type="button" class="button button-primary button-sm">Add Member</button>
                       </div>
                       <div id="memberParentDiv" class="modal-body">
-                        <input id="admin" name="admin" class="form-input" type="text" value="admin@inflexion.com" placeholder="add member...">
-                        <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member...">
+                        <!-- <input id="admin" name="admin" class="form-input" type="text" value="admin@inflexion.com" placeholder="add member...">
+                        <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member..."> -->
                         <div id="addDeleteParent" class="input-group form-wrap input-box-shadow">
                           <input name="addMembers" id="addMembers" class="form-input" type="text" list="emails" autocomplete="off" multiple placeholder="add member...">
                           <span name="ownerspan" id="ownerIcon" ifOwner="false" class="bg-gray input-group-addon">
@@ -199,7 +211,8 @@
                         <span class="hide"></span>
                       </div>
                       <div class="modal-footer">
-                        <button id="submitMembersBtn" type="button" class="button button-primary button-sm" data-dismiss="modal">Done</button>
+                        <button type="button" class="button button-primary button-sm h-m-top-none" data-dismiss="modal">Close</button>
+                        <button id="submitMembersBtn" type="button" class="button button-primary button-sm h-m-top-none" data-dismiss="modal">Done</button>
                       </div>
                     </div>
                   </div>
@@ -217,7 +230,7 @@
         </div>
       </section>
     </div>
-    
+
     <!-- include file for Script -->
     <% include _layouts/common-scripts %>
       <script src="/node_modules/moment/min/locales.min.js"></script>
@@ -234,7 +247,7 @@
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/scripts/common/sweetalert.min.js"></script>
       <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-    
+
       <script id="memberAdd" type="text/x-handlebars-template">
         {{#each users}}
           {{user.userJid}}

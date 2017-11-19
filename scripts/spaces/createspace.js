@@ -1,21 +1,21 @@
 $(document).ready(function () {
     var isKeyEntered = false;
     // BEGIN SELECTED OPTIONS FOR FORM DROPDOWN INPUTS
-    if (window.location.pathname == "/createspace") {
-        $("#sel2").val("default");
-        $("#sel1").val("default");
-    }
-    else {
-        $("#sel2").val("opt1");
-        $("#sel1").val("opt1");
-    }
+    // if (window.location.pathname == "/createspace") {
+    //     $("#sel2").val("default");
+    //     $("#sel1").val("default");
+    // }
+    // else {
+    //     $("#sel2").val("opt1");
+    //     $("#sel1").val("opt1");
+    // }
     // END SELECTED OPTIONS FOR FORM DROPDOWN INPUTS
 
     //BEGIN CHECK CHILDERN LENGTH INSIDE EXISTING MEMBERS
     $(".alertClose").on('click', function () {
         var numItems = $('.alertClose').length;
         if (numItems == 0 || numItems == 1)
-            $(this).parents("#existingMembers").remove();
+            $(this).parents("#accordion").remove();
         // numItems=numItems-1;    
     });
 
@@ -23,22 +23,22 @@ $(document).ready(function () {
 
     // BEGIN PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
     if (window.location.pathname == "/createspace" || window.location.pathname == "/newmeeting") {
-        $("#existingMembers").hide();
+        $("#accordion").hide();
     }
     else {
-        $("#existingMembers").show();
+        $("#accordion").show();
     }
 
-    $("#clickToAdd").click(function () {
-        if (window.location.pathname == "/createspace" || window.location.pathname == "/newmeeting") {
-            $("#admin").hide();
-            $("#hrDept").hide();
-        }
-        else {
-            $("#admin").show();
-            $("#hrDept").show();
-        }
-    });
+    // $("#clickToAdd").click(function () {
+    //     if (window.location.pathname == "/createspace" || window.location.pathname == "/newmeeting") {
+    //         $("#admin").hide();
+    //         $("#hrDept").hide();
+    //     }
+    //     else {
+    //         $("#admin").show();
+    //         $("#hrDept").show();
+    //     }
+    // });
     // END PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
 
     //BEGIN DETERMINE THE PATHNAME

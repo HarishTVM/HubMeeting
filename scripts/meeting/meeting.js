@@ -24,6 +24,7 @@ $(document).ready(function () {
     // BEGIN UPDATE COSPACE 
     $("#editmodelBtn").on('click', function () {
         window.location.href = "/updatemeeting?meetingID=" + meetingID;
+        
     });
 
     btnInfoMeetingMoreDetails();
