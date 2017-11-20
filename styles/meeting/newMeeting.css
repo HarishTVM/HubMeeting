@@ -141,6 +141,33 @@ li.select2-results__option:hover{
     cursor: pointer;
 }
 
+.accordian-border{
+    border: 1px dotted lightgray;
+}
+
+.seeMoreMembers{
+    width: 100%;
+    text-align: right;
+    font-size: small;
+    cursor: pointer;
+    margin-left: -4px;
+}
+
+#accordionPanel, #accordianPanelaTag {
+    background-color: #f8f8f8 !important;
+}
+
+#accordianPanelaTag{
+    text-align: left;
+}
+
+.fontStyle{
+    font-style: normal;
+    font-weight: normal;
+    font-size: small;
+    text-align: start;
+}
+
 @media only screen and (min-width: 768px) {
     .schedule-meeting-div{
         width: 50%;
