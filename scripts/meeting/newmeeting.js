@@ -9,13 +9,13 @@ var cospaceUSerIdArray = [], coUserArr = [];
 var newArray = [];
 var memberObj = [], memberObjNew = [];
 // BEGIN CREATE ARRAY OF MEMBERS
+
+// BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
+var randomObj = {};
+// END OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
 // END ---------------------GLOBAL VARIABLES---------------------
 
 $(document).ready(function () {
-    // BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
-    var randomObj = {};
-    // END OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
-
     //BEGIN Mirror populate input value logic
     $('#contact-sName').on('keyup', function () {
         $('#contact-create_space_URI').val(this.value);
@@ -327,7 +327,10 @@ $(document).ready(function () {
                     else isCospaceId = randomObj.spaceid;
                 }
                 else if ($('input[name=types]:checked').val() === "1") {
-                    isCospaceId = "";
+                    if (randomObj.spaceid == undefined) {
+                        isCospaceId = "";
+                    }
+                    else isCospaceId = randomObj.spaceid;
                 }
                 var reqData = {
                     "coSpace": $("#contact-sName").val(),
@@ -344,14 +347,24 @@ $(document).ready(function () {
                     "meetingEndDateTime": end._i,
                     "members": memberObj
                 };
-                httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
-                    if (err) {
-
-                    }
-                    else {
-                        swal('New meeting creation successful');
-                    }
-                });
+                if (window.location.pathname == "/newmeeting") {
+                    httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                        else {
+                            swal('New meeting creation successful');
+                        }
+                    });
+                }
+                else if(window.location.pathname == "/updatemeeting"){
+                    var url = window.location.href;
+                    var subString = url.substring(url.indexOf('=') + 1);
+                    reqData.meetingID = subString;
+                    httpPut(apiType.UPDATE_MEETING, reqData , function(){
+                        console.log(resp.data);
+                    });
+                }
             }
 
         }

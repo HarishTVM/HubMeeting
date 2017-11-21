@@ -24,12 +24,15 @@ $(document).ready(function () {
         var subString = url.substring(url.indexOf('=') + 1);
         setTimeout(function () {
             httpGet(apiType.GET_MEETING_BY_MEETINGID + "?meetingID=" + subString, function (resp, err) {
+                debugger;
                 console.log(resp.data);
                 if (resp.data.meetingType == 1)
                     $('[name=types][value=1]').prop('checked', true);
                 else {
                     $('[name=types][value=0]').prop('checked', true);
                 }
+                randomObj.spaceid = resp.data.coSpaceId;
+                console.log(randomObj.spaceid);
                 $("#contact-sName").val(resp.data.coSpace);
                 $("#description").val(resp.data.description);
                 $("#contact-create_space_URI").val(resp.data.uri);
@@ -102,6 +105,7 @@ $(document).ready(function () {
             }
         });
         // END GET MEMBERS FOR MEETING_ID
+
 
     }
     else if (window.location.pathname == "/updateactivitymeeting") {

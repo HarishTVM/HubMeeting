@@ -27,3 +27,12 @@ module.exports.redirectLocation = {
 module.exports.errorLog = {
 	filePath: "./Errorlog/log.txt",
 };
+
+var cmsAuth = {
+	apiUser : null,
+	apiPassword : null,
+	base64Encode : null,
+	apiUrl : null
+}
+
+module.exports.cmsAuth = cmsAuth;
