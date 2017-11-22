@@ -3,6 +3,7 @@
 "esversion:6";
 
 var express = require('express');
+var ioHelper = require('../helpers/io-helper.js');
 
 var app = express.Router();
 
@@ -78,20 +79,5 @@ app.get("/spacelist", (req, res)=>{
 app.get("/active-meeting",(req,res) => {
   res.render("active-meeting", {year: new Date().getFullYear()});
 });
-
-// BEGIN TO HANDLE GET, POST, PUT, DEL 
-  app.get("/api/", (req, res) =>{
-    res.send();
-  }); 
-  app.post("/api/", (req, res) => {
-    res.send();
-  });
-  app.put("/api/", (req, res) => {
-    res.send();
-  });
-  app.delete("/api/", (req, res) => {
-    res.send();
-  });
-// BEGIN TO HANDLE GET, POST, PUT, DEL 
 
 module.exports = app;
