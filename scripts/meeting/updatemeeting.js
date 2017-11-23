@@ -84,10 +84,13 @@ $(document).ready(function () {
         // BEGIN GET MEMBERS FOR MEETING_ID
         $("#seeMoreMem").hide();
         httpGet(apiType.FIND_ALL_MEETING_MEMBERS + "?limit=10&" + "offset=" + offset + "&meetingID=" + subString, function (resp, err) {
+            debugger;
             console.log(resp.data);
             if (resp.data.count != 0) {
                 for (i = 0; i < resp.data.count; i++) {
                     var existMember = resp.data.rows[i].memberJid;
+                    memberObj.push(existMember);
+                    console.log(memberObj);
                     if (i <= 2)
                         $("#accordianList_1").append('<li>' + existMember + '</li>');
                     else if (i >= 3 && i <= 5) {

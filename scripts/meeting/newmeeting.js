@@ -7,7 +7,7 @@ var memArrayList = [], memArray = [];
 var ownerArrayList = [], ownerArr = [];
 var cospaceUSerIdArray = [], coUserArr = [];
 var newArray = [];
-var memberObj = [], memberObjNew = [];
+var memberObj = [];
 // BEGIN CREATE ARRAY OF MEMBERS
 
 // BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
@@ -53,47 +53,6 @@ $(document).ready(function () {
         $('#memberParentDiv').append(member);
     });
 
-    // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
-    reassignMemberObjFunc = function (memberObjNew) {
-        $(document).on("click", "#submitMembersBtn", function () {
-            memberObj = [];
-            $("input[name='addMembers']").each(function () {
-                memArrayList.push($(this).val());
-                memArray = avoidDuplicate(memArrayList);
-            });
-
-            $("[name='ownerspan']").each(function () {
-                ownerArrayList.push($(this).attr("ifOwner"));
-
-                // BEGIN ---------------POPULATE OWNERJID FIELD----------------
-                if ($(this).attr("ifOwner") == "true") {
-                    var jId = $(this).siblings("#addMembers").val();
-                    $("#ownerJid").val(jId);
-                }
-                // END --------------POPULATE OWNERJID FIELD--------------------
-            });
-
-            newArray = memArray.map(function (value, index) {
-                return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
-            });
-
-            var sampleArray = [];
-            for (i = 0; i < newArray.length; i++) {
-                sampleArray = newArray[i].split(':');
-
-                var member1 = {
-                    "memberJid": sampleArray[0],
-                    "isOwner": sampleArray[1],
-                    "coSpaceUserID": sampleArray[2]
-                }
-                memberObj.push(member1);
-            }
-
-            console.log(memberObj);
-        });
-    }
-    // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
-
     $("#deleteMember").live('click', function () {
         if ($(this).parents("#memberParentDiv").children('div').length == 1) {
             if ($(this).siblings("#ownerspan").attr("ifOwner") == "true") {
@@ -101,10 +60,6 @@ $(document).ready(function () {
             }
         }
         else {
-            debugger;
-            var todelInput = $(this).siblings("#addMembers").val();
-            memberObjNew = $.grep(memberObj, function (element, index) { return element.memberJid == todelInput }, true);
-            reassignMemberObjFunc(memberObjNew);
             $(this).parent().remove();
         }
     });
@@ -269,8 +224,6 @@ $(document).ready(function () {
         return uniqueNames;
     }
 
-    reassignMemberObjFunc(memberObjNew);
-
     // BEGIN GET USERS
     $('#addMembers').live("keyup", function () {
         if (!isKeyEntered) {
@@ -289,6 +242,45 @@ $(document).ready(function () {
         }
     });
     // END GET USERS
+
+    // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
+    $(document).on("click", "#submitMembersBtn", function () {
+        memberObj = [];
+        $("input[name='addMembers']").each(function () {
+            memArrayList.push($(this).val());
+            memArray = avoidDuplicate(memArrayList);
+        });
+
+        $("[name='ownerspan']").each(function () {
+            ownerArrayList.push($(this).attr("ifOwner"));
+
+            // BEGIN ---------------POPULATE OWNERJID FIELD----------------
+            if ($(this).attr("ifOwner") == "true") {
+                var jId = $(this).siblings("#addMembers").val();
+                $("#ownerJid").val(jId);
+            }
+            // END --------------POPULATE OWNERJID FIELD--------------------
+        });
+
+        newArray = memArray.map(function (value, index) {
+            return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
+        });
+
+        var sampleArray = [];
+        for (i = 0; i < newArray.length; i++) {
+            sampleArray = newArray[i].split(':');
+
+            var member1 = {
+                "memberJid": sampleArray[0],
+                "isOwner": sampleArray[1],
+                "coSpaceUserID": sampleArray[2]
+            }
+            memberObj.push(member1);
+        }
+
+        console.log(memberObj);
+    });
+    // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
@@ -357,12 +349,19 @@ $(document).ready(function () {
                         }
                     });
                 }
-                else if(window.location.pathname == "/updatemeeting"){
+                else if (window.location.pathname == "/updatemeeting") {
                     var url = window.location.href;
                     var subString = url.substring(url.indexOf('=') + 1);
-                    reqData.meetingID = subString;
-                    httpPut(apiType.UPDATE_MEETING, reqData , function(){
-                        console.log(resp.data);
+                    reqData.meetingID = parseInt(subString);
+                    // httpGet(apiType.GET_MEETING_BY_MEETINGID + "?meetingID=" + parseInt(subString), function(response, error){
+
+                    // });
+                    httpPut(apiType.UPDATE_MEETING, reqData, function (resp, err) {
+                        if (err) console.log(err);
+                        else {
+                            console.log(resp);
+                            swal('Meeting update successful');
+                        }
                     });
                 }
             }
