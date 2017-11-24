@@ -69,8 +69,8 @@ $(document).ready(function () {
                 var meetingEndDateTime = resp.data.meetingEndDateTime;
                 var fromTime = moment(meetingStartDateTime).format("HH:MM");
                 var toTime = moment(meetingEndDateTime).format("HH:MM");
-                var fromDate = moment(meetingStartDateTime).format("MM-DD-YYYY");
-                var toDate = moment(meetingStartDateTime).format("MM-DD-YYYY");
+                var fromDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
+                var toDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
                 $("#fromdate").val(fromDate);
                 $("#fromtime").val(fromTime);
                 $("#todate").val(toDate);

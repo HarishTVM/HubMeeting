@@ -285,17 +285,17 @@ $(document).ready(function () {
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
         debugger;
-        var startDateFormat = $("#fromdate").val().split('-');
-        var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
+        // var startDateFormat = $("#fromdate").val().split('-');
+        // var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
 
-        var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
+        // var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
 
-        var endDateFormat = $("#todate").val().split('-');
-        var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
+        // var endDateFormat = $("#todate").val().split('-');
+        // var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
 
-        var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
-        var start = moment(fromISO).tz('Europe/London');
-        var end = moment(toISO).tz('Europe/London');
+        // var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
+        // var start = moment(fromISO).tz('Europe/London');
+        // var end = moment(toISO).tz('Europe/London');
 
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
@@ -304,11 +304,15 @@ $(document).ready(function () {
             });
             if (resultItem.indexOf(false) < 0) {
                 var startDateFormat = $("#fromdate").val().split('-');
-                var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
-                var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
+                var startDate = startDateFormat[2] + '-' + startDateFormat[1] + '-' + startDateFormat[0];
+                var fromTime = $("#fromtime").val();
+                var fromTimeISO =  startDate + ' ' + fromTime;
+                var fromISO = moment(fromTimeISO).toISOString();
                 var endDateFormat = $("#todate").val().split('-');
-                var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
-                var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
+                var endDate = endDateFormat[2] + '-' + endDateFormat[1] + '-' + endDateFormat[0];
+                var toTime = $("#totime").val();
+                var toTimeISO =  startDate + ' ' + toTime;
+                var toISO = moment(toTimeISO).toISOString();
                 var start = moment(fromISO).tz('Europe/London');
                 var end = moment(toISO).tz('Europe/London');
 
