@@ -67,8 +67,8 @@ $(document).ready(function () {
                 // END DEFAULT LAYOUT AUTO-POPULATION
                 var meetingStartDateTime = resp.data.meetingStartDateTime;
                 var meetingEndDateTime = resp.data.meetingEndDateTime;
-                var fromTime = moment(meetingStartDateTime).format("HH:MM");
-                var toTime = moment(meetingEndDateTime).format("HH:MM");
+                var fromTime = moment(meetingStartDateTime).local().format("HH:mm A");
+                var toTime = moment(meetingEndDateTime).local().format("HH:mm A");
                 var fromDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
                 var toDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
                 $("#fromdate").val(fromDate);
@@ -91,14 +91,18 @@ $(document).ready(function () {
                     var existMember = resp.data.rows[i].memberJid;
                     memberObj.push(existMember);
                     console.log(memberObj);
-                    if (i <= 2)
-                        $("#accordianList_1").append('<li>' + existMember + '</li>');
+                    if (i <= 2) {
+                        $("#accordianList_1").append('<li>' + existMember + '</li>' +  
+                                                    '<a class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true"></a>');
+                    }
                     else if (i >= 3 && i <= 5) {
-                        $("#accordianList_2").append('<li>' + existMember + '</li>');
+                        $("#accordianList_2").append('<li>' + existMember + '</li>'+  
+                                                    '<a class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true"></a>');
                     }
                     else if (i > 5 && i < resp.data.count) {
                         $("#seeMoreMem").show();
-                        $("#seeMemModalBody").append('<li>' + existMember + '</li>');
+                        $("#seeMemModalBody").append('<li>' + existMember + '</li>'+  
+                                                    '<a class=" accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true"></a>');
                         $("#see-more-page-loader").hide();
                     }
                 }
@@ -108,7 +112,6 @@ $(document).ready(function () {
             }
         });
         // END GET MEMBERS FOR MEETING_ID
-
 
     }
     else if (window.location.pathname == "/updateactivitymeeting") {

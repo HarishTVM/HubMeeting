@@ -161,6 +161,12 @@ li.select2-results__option:hover{
     text-align: left;
 }
 
+.accordian_mem_del_icon{
+    position: relative;
+    bottom: 25px;
+    left: 180px;
+}
+
 .fontStyle{
     font-style: normal;
     font-weight: normal;
