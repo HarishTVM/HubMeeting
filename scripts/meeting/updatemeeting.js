@@ -67,8 +67,8 @@ $(document).ready(function () {
                 // END DEFAULT LAYOUT AUTO-POPULATION
                 var meetingStartDateTime = resp.data.meetingStartDateTime;
                 var meetingEndDateTime = resp.data.meetingEndDateTime;
-                var fromTime = moment(meetingStartDateTime).local().format("HH:mm A");
-                var toTime = moment(meetingEndDateTime).local().format("HH:mm A");
+                var fromTime = moment(meetingStartDateTime).local().format("HH:mm");
+                var toTime = moment(meetingEndDateTime).local().format("HH:mm");
                 var fromDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
                 var toDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
                 $("#fromdate").val(fromDate);

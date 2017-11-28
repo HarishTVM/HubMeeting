@@ -7,7 +7,7 @@ var memArrayList = [], memArray = [];
 var ownerArrayList = [], ownerArr = [];
 var cospaceUSerIdArray = [], coUserArr = [];
 var newArray = [];
-var memberObj = [];
+var memberObj = [], memberNewObj = [];
 // BEGIN CREATE ARRAY OF MEMBERS
 
 // BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
@@ -55,12 +55,13 @@ $(document).ready(function () {
 
     $("#deleteMember").live('click', function () {
         if ($(this).parents("#memberParentDiv").children('div').length == 1) {
-            if ($(this).siblings("#ownerspan").attr("ifOwner") == "true") {
                 $(this).prop('disabled', true);
-            }
         }
         else {
+            var todelInput = $(this).siblings("#addMembers").val();
+            memberNewObj = $.grep(memberObj, function (element, index) { return element.memberJid == todelInput }, true);
             $(this).parent().remove();
+            console.log(memberNewObj);
         }
     });
 
@@ -245,65 +246,59 @@ $(document).ready(function () {
 
     // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
     $(document).on("click", "#submitMembersBtn", function () {
+        debugger;
         memberObj = [];
-        $("input[name='addMembers']").each(function () {
-            memArrayList.push($(this).val());
-            memArray = avoidDuplicate(memArrayList);
-        });
+        if (memberNewObj == "" || memberNewObj == undefined) {
+            $("input[name='addMembers']").each(function () {
+                memArrayList.push($(this).val());
+                memArray = avoidDuplicate(memArrayList);
+            });
 
-        $("[name='ownerspan']").each(function () {
-            ownerArrayList.push($(this).attr("ifOwner"));
+            $("[name='ownerspan']").each(function () {
+                ownerArrayList.push($(this).attr("ifOwner"));
 
-            // BEGIN ---------------POPULATE OWNERJID FIELD----------------
-            if ($(this).attr("ifOwner") == "true") {
-                var jId = $(this).siblings("#addMembers").val();
-                $("#ownerJid").val(jId);
+                // BEGIN ---------------POPULATE OWNERJID FIELD----------------
+                if ($(this).attr("ifOwner") == "true") {
+                    var jId = $(this).siblings("#addMembers").val();
+                    $("#ownerJid").val(jId);
+                }
+                // END --------------POPULATE OWNERJID FIELD--------------------
+            });
+
+            newArray = memArray.map(function (value, index) {
+                return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
+            });
+
+            var sampleArray = [];
+            for (i = 0; i < newArray.length; i++) {
+                sampleArray = newArray[i].split(':');
+
+                var member1 = {
+                    "memberJid": sampleArray[0],
+                    "isOwner": sampleArray[1],
+                    "coSpaceUserID": sampleArray[2]
+                }
+                memberObj.push(member1);
             }
-            // END --------------POPULATE OWNERJID FIELD--------------------
-        });
-
-        newArray = memArray.map(function (value, index) {
-            return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
-        });
-
-        var sampleArray = [];
-        for (i = 0; i < newArray.length; i++) {
-            sampleArray = newArray[i].split(':');
-
-            var member1 = {
-                "memberJid": sampleArray[0],
-                "isOwner": sampleArray[1],
-                "coSpaceUserID": sampleArray[2]
-            }
-            memberObj.push(member1);
+            console.log(memberObj);
         }
-
-        console.log(memberObj);
+        else {
+            memberObj = memberNewObj;
+            memberNewObj = [];
+            console.log(memberObj);
+        }
     });
     // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
 
     // BEGIN DELETE MEMBERS FROM EXISTING MEMBERS
-        $(document).on("click","#removeMember", function(){
-            debugger;
-            $(this).parent().remove();
-        });
+    $(document).on("click", "#removeMember", function () {
+        $(this).parent().remove();
+    });
     // END DELETE MEMBERS FROM EXISTING MEMBERS
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
         debugger;
-        // var startDateFormat = $("#fromdate").val().split('-');
-        // var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
-
-        // var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
-
-        // var endDateFormat = $("#todate").val().split('-');
-        // var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
-
-        // var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
-        // var start = moment(fromISO).tz('Europe/London');
-        // var end = moment(toISO).tz('Europe/London');
-
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
@@ -313,12 +308,12 @@ $(document).ready(function () {
                 var startDateFormat = $("#fromdate").val().split('-');
                 var startDate = startDateFormat[2] + '-' + startDateFormat[1] + '-' + startDateFormat[0];
                 var fromTime = $("#fromtime").val();
-                var fromTimeISO =  startDate + ' ' + fromTime;
+                var fromTimeISO = startDate + ' ' + fromTime;
                 var fromISO = moment(fromTimeISO).toISOString();
                 var endDateFormat = $("#todate").val().split('-');
                 var endDate = endDateFormat[2] + '-' + endDateFormat[1] + '-' + endDateFormat[0];
                 var toTime = $("#totime").val();
-                var toTimeISO =  startDate + ' ' + toTime;
+                var toTimeISO = startDate + ' ' + toTime;
                 var toISO = moment(toTimeISO).toISOString();
                 var start = moment(fromISO).tz('Europe/London');
                 var end = moment(toISO).tz('Europe/London');
@@ -364,9 +359,6 @@ $(document).ready(function () {
                     var url = window.location.href;
                     var subString = url.substring(url.indexOf('=') + 1);
                     reqData.meetingID = parseInt(subString);
-                    // httpGet(apiType.GET_MEETING_BY_MEETINGID + "?meetingID=" + parseInt(subString), function(response, error){
-
-                    // });
                     httpPut(apiType.UPDATE_MEETING, reqData, function (resp, err) {
                         if (err) console.log(err);
                         else {
@@ -376,7 +368,6 @@ $(document).ready(function () {
                     });
                 }
             }
-
         }
     });
     // END FORM SUBMIT LOGIC
