@@ -5,7 +5,7 @@
 const baseController = require('./base-controller');
 
 module.exports.meeting = (req, res) => {
-    res.render("meeting", {year: new Date().getFullYear()});
+    res.render("meeting", { year: new Date().getFullYear() });
 };
 
 module.exports.newmeeting = (req, res) => {
@@ -17,7 +17,7 @@ module.exports.updatemeeting = (req, res) => {
 };
 
 module.exports.schedulemeeting = (req, res) => {
-    res.render("newmeeting", { year: new Date().getFullYear() }); 
+    res.render("newmeeting", { year: new Date().getFullYear() });
 };
 
 module.exports.activemeeting = (req, res) => {

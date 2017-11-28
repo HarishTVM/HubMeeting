@@ -5,7 +5,7 @@
 const baseController = require('./base-controller');
 
 module.exports.configure = (req, res) => {
-    res.render("configure", {year: new Date().getFullYear()});
+    res.render("configure", { year: new Date().getFullYear() });
 };
 
 module.exports.configuresettings = (req, res) => {
@@ -13,7 +13,7 @@ module.exports.configuresettings = (req, res) => {
 }
 
 module.exports.changepassword = (req, res) => {
-    res.render("changepassword", {year: new Date().getFullYear()});
+    res.render("changepassword", { year: new Date().getFullYear() });
 };
 
 module.exports.settings = (req, res) => {

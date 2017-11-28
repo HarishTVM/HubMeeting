@@ -1,11 +1,11 @@
-#! /bin/env node    
+#! /bin/env node
 "esversion 6";
 "strict mode";
 
 const baseController = require('./base-controller');
 
 module.exports.login = (req, res) => {
-    res.render("login", {year: new Date().getFullYear()});  
+    res.render("login", { year: new Date().getFullYear() });
 };
 
 module.exports.dashboard = (req, res) => {
