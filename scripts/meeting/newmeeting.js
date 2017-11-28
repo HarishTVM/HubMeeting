@@ -282,6 +282,13 @@ $(document).ready(function () {
     });
     // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
 
+    // BEGIN DELETE MEMBERS FROM EXISTING MEMBERS
+        $(document).on("click","#removeMember", function(){
+            debugger;
+            $(this).parent().remove();
+        });
+    // END DELETE MEMBERS FROM EXISTING MEMBERS
+
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
         debugger;

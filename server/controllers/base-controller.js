@@ -2,10 +2,10 @@
 "strict mode";
 "esversion:6";
 
-var cmsTypes = require("./cms-types.js");
-var io = require("./helpers/io-helper");
-var config = require("./web-config");
-var logger = require('./helpers/utility').logger;
+var cmsTypes = require("../cms-types.js");
+var io = require("../helpers/io-helper");
+var config = require("../web-config");
+var logger = require('../helpers/utility').logger;
 var Response = cmsTypes.Response;
 var resp;
 

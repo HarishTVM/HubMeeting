@@ -92,17 +92,14 @@ $(document).ready(function () {
                     memberObj.push(existMember);
                     console.log(memberObj);
                     if (i <= 2) {
-                        $("#accordianList_1").append('<li>' + existMember + '</li>' +  
-                                                    '<a class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true"></a>');
+                        $("#accordianList_1").append('<li>' + existMember + '<a id="removeMember" class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true" title="remove"></a>' + '</li>');
                     }
                     else if (i >= 3 && i <= 5) {
-                        $("#accordianList_2").append('<li>' + existMember + '</li>'+  
-                                                    '<a class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true"></a>');
+                        $("#accordianList_2").append('<li>' + existMember + '<a id="removeMember" class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true" title="remove"></a>' + '</li>');
                     }
                     else if (i > 5 && i < resp.data.count) {
                         $("#seeMoreMem").show();
-                        $("#seeMemModalBody").append('<li>' + existMember + '</li>'+  
-                                                    '<a class=" accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true"></a>');
+                        $("#seeMemModalBody").append('<li>' + existMember + '<a id="removeMember" class=" accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true" title="remove"></a>'+ '</li>');
                         $("#see-more-page-loader").hide();
                     }
                 }
