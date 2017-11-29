@@ -7,15 +7,15 @@ var memArrayList = [], memArray = [];
 var ownerArrayList = [], ownerArr = [];
 var cospaceUSerIdArray = [], coUserArr = [];
 var newArray = [];
-var memberObj = [], memberObjNew = [];
+var memberObj = [], memberNewObj = [];
 // BEGIN CREATE ARRAY OF MEMBERS
+
+// BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
+var randomObj = {};
+// END OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
 // END ---------------------GLOBAL VARIABLES---------------------
 
 $(document).ready(function () {
-    // BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
-    var randomObj = {};
-    // END OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
-
     //BEGIN Mirror populate input value logic
     $('#contact-sName').on('keyup', function () {
         $('#contact-create_space_URI').val(this.value);
@@ -53,59 +53,15 @@ $(document).ready(function () {
         $('#memberParentDiv').append(member);
     });
 
-    // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
-    reassignMemberObjFunc = function (memberObjNew) {
-        $(document).on("click", "#submitMembersBtn", function () {
-            memberObj = [];
-            $("input[name='addMembers']").each(function () {
-                memArrayList.push($(this).val());
-                memArray = avoidDuplicate(memArrayList);
-            });
-
-            $("[name='ownerspan']").each(function () {
-                ownerArrayList.push($(this).attr("ifOwner"));
-
-                // BEGIN ---------------POPULATE OWNERJID FIELD----------------
-                if ($(this).attr("ifOwner") == "true") {
-                    var jId = $(this).siblings("#addMembers").val();
-                    $("#ownerJid").val(jId);
-                }
-                // END --------------POPULATE OWNERJID FIELD--------------------
-            });
-
-            newArray = memArray.map(function (value, index) {
-                return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
-            });
-
-            var sampleArray = [];
-            for (i = 0; i < newArray.length; i++) {
-                sampleArray = newArray[i].split(':');
-
-                var member1 = {
-                    "memberJid": sampleArray[0],
-                    "isOwner": sampleArray[1],
-                    "coSpaceUserID": sampleArray[2]
-                }
-                memberObj.push(member1);
-            }
-
-            console.log(memberObj);
-        });
-    }
-    // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
-
     $("#deleteMember").live('click', function () {
         if ($(this).parents("#memberParentDiv").children('div').length == 1) {
-            if ($(this).siblings("#ownerspan").attr("ifOwner") == "true") {
                 $(this).prop('disabled', true);
-            }
         }
         else {
-            debugger;
             var todelInput = $(this).siblings("#addMembers").val();
-            memberObjNew = $.grep(memberObj, function (element, index) { return element.memberJid == todelInput }, true);
-            reassignMemberObjFunc(memberObjNew);
+            memberNewObj = $.grep(memberObj, function (element, index) { return element.memberJid == todelInput }, true);
             $(this).parent().remove();
+            console.log(memberNewObj);
         }
     });
 
@@ -269,8 +225,6 @@ $(document).ready(function () {
         return uniqueNames;
     }
 
-    reassignMemberObjFunc(memberObjNew);
-
     // BEGIN GET USERS
     $('#addMembers').live("keyup", function () {
         if (!isKeyEntered) {
@@ -290,21 +244,61 @@ $(document).ready(function () {
     });
     // END GET USERS
 
+    // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
+    $(document).on("click", "#submitMembersBtn", function () {
+        debugger;
+        memberObj = [];
+        if (memberNewObj == "" || memberNewObj == undefined) {
+            $("input[name='addMembers']").each(function () {
+                memArrayList.push($(this).val());
+                memArray = avoidDuplicate(memArrayList);
+            });
+
+            $("[name='ownerspan']").each(function () {
+                ownerArrayList.push($(this).attr("ifOwner"));
+
+                // BEGIN ---------------POPULATE OWNERJID FIELD----------------
+                if ($(this).attr("ifOwner") == "true") {
+                    var jId = $(this).siblings("#addMembers").val();
+                    $("#ownerJid").val(jId);
+                }
+                // END --------------POPULATE OWNERJID FIELD--------------------
+            });
+
+            newArray = memArray.map(function (value, index) {
+                return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
+            });
+
+            var sampleArray = [];
+            for (i = 0; i < newArray.length; i++) {
+                sampleArray = newArray[i].split(':');
+
+                var member1 = {
+                    "memberJid": sampleArray[0],
+                    "isOwner": sampleArray[1],
+                    "coSpaceUserID": sampleArray[2]
+                }
+                memberObj.push(member1);
+            }
+            console.log(memberObj);
+        }
+        else {
+            memberObj = memberNewObj;
+            memberNewObj = [];
+            console.log(memberObj);
+        }
+    });
+    // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
+
+    // BEGIN DELETE MEMBERS FROM EXISTING MEMBERS
+    $(document).on("click", "#removeMember", function () {
+        $(this).parent().remove();
+    });
+    // END DELETE MEMBERS FROM EXISTING MEMBERS
+
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
         debugger;
-        var startDateFormat = $("#fromdate").val().split('-');
-        var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
-
-        var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
-
-        var endDateFormat = $("#todate").val().split('-');
-        var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
-
-        var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
-        var start = moment(fromISO).tz('Europe/London');
-        var end = moment(toISO).tz('Europe/London');
-
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
@@ -312,11 +306,15 @@ $(document).ready(function () {
             });
             if (resultItem.indexOf(false) < 0) {
                 var startDateFormat = $("#fromdate").val().split('-');
-                var startDate = startDateFormat[1] + '-' + startDateFormat[0] + '-' + startDateFormat[2];
-                var fromISO = moment(startDate + ' ' + $("#fromtime").val()).toISOString();
+                var startDate = startDateFormat[2] + '-' + startDateFormat[1] + '-' + startDateFormat[0];
+                var fromTime = $("#fromtime").val();
+                var fromTimeISO = startDate + ' ' + fromTime;
+                var fromISO = moment(fromTimeISO).toISOString();
                 var endDateFormat = $("#todate").val().split('-');
-                var endDate = endDateFormat[1] + '-' + endDateFormat[0] + '-' + endDateFormat[2];
-                var toISO = moment(endDate + ' ' + $("#totime").val()).toISOString();
+                var endDate = endDateFormat[2] + '-' + endDateFormat[1] + '-' + endDateFormat[0];
+                var toTime = $("#totime").val();
+                var toTimeISO = startDate + ' ' + toTime;
+                var toISO = moment(toTimeISO).toISOString();
                 var start = moment(fromISO).tz('Europe/London');
                 var end = moment(toISO).tz('Europe/London');
 
@@ -327,7 +325,10 @@ $(document).ready(function () {
                     else isCospaceId = randomObj.spaceid;
                 }
                 else if ($('input[name=types]:checked').val() === "1") {
-                    isCospaceId = "";
+                    if (randomObj.spaceid == undefined) {
+                        isCospaceId = "";
+                    }
+                    else isCospaceId = randomObj.spaceid;
                 }
                 var reqData = {
                     "coSpace": $("#contact-sName").val(),
@@ -344,16 +345,29 @@ $(document).ready(function () {
                     "meetingEndDateTime": end._i,
                     "members": memberObj
                 };
-                httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
-                    if (err) {
-
-                    }
-                    else {
-                        swal('New meeting creation successful');
-                    }
-                });
+                if (window.location.pathname == "/newmeeting") {
+                    httpPost(apiType.CREATE_MEETING, reqData, function (resp, err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                        else {
+                            swal('New meeting creation successful');
+                        }
+                    });
+                }
+                else if (window.location.pathname == "/updatemeeting") {
+                    var url = window.location.href;
+                    var subString = url.substring(url.indexOf('=') + 1);
+                    reqData.meetingID = parseInt(subString);
+                    httpPut(apiType.UPDATE_MEETING, reqData, function (resp, err) {
+                        if (err) console.log(err);
+                        else {
+                            console.log(resp);
+                            swal('Meeting update successful');
+                        }
+                    });
+                }
             }
-
         }
     });
     // END FORM SUBMIT LOGIC

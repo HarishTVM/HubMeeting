@@ -161,11 +161,21 @@ li.select2-results__option:hover{
     text-align: left;
 }
 
+.accordian_mem_del_icon{
+    position: relative;
+    left: 10px;
+    cursor: pointer;
+}
+
 .fontStyle{
     font-style: normal;
     font-weight: normal;
     font-size: small;
     text-align: start;
+}
+
+#typeMeeting label {
+    margin: 5px;
 }
 
 @media only screen and (min-width: 768px) {

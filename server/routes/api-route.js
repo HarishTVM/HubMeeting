@@ -2,81 +2,55 @@
 "strict mode";
 "esversion:6";
 
-var express = require('express');
+const express = require('express');
+const ioHelper = require('../helpers/io-helper.js');
+const cmsApiController = require('../controllers/cms-api-controller');
+const userController = require('../controllers/user-controller');
+const configurationController = require('../controllers/configuration-controller');
+const meetingController = require('../controllers/meeting-controller');
+const logsController = require('../controllers/logs-controller');
+const activityController = require('../controllers/activity-controller');
+const cospaceController = require('../controllers/cospace-controller');
 
 var app = express.Router();
 
-app.get("/", (req, res)=>{
-  res.render("login", {year: new Date().getFullYear()});
-});
-app.get("/meeting", (req, res)=>{
-  res.render("meeting", {year: new Date().getFullYear()});
-});
-app.get("/newmeeting", (req, res)=>{
-  res.render("newmeeting",{year: new Date().getFullYear()});
-});
-app.get("/updatemeeting", (req, res)=>{
-  res.render("newmeeting",{year: new Date().getFullYear()});
-});
-// Schedule Meeting  for Modal
-app.get("/schedulemeeting", (req, res)=>{
-  res.render("newmeeting", {year: new Date().getFullYear()});
-});
+// LOGIN RELATED API
+app.get("/", cmsApiController.login);
 
-app.get("/configure", (req, res)=>{
-  res.render("configure", {year: new Date().getFullYear()});
-});
-app.get("/configure-settings", (req, res)=>{
-  res.render("configure", {year: new Date().getFullYear()});
-});
-app.get("/changePassword", (req, res)=>{
-  res.render("changepassword", {year: new Date().getFullYear()});
-});
-app.get("/activitylist", (req, res)=>{
-  res.render("activitylist", {year: new Date().getFullYear()});
-});
-app.get("/updateactivitymeeting", (req, res)=>{
-  res.render("newmeeting",{year: new Date().getFullYear()});
-});
-app.get("/users", (req, res)=>{
-  res.render("users", {year: new Date().getFullYear()});
-});
-app.get("/createspace",(req,res)=>{
- res.render("createspace", {year: new Date().getFullYear()});
-});
-app.get("/updatespace", (req, res)=>{
-  res.render("createspace", {year: new Date().getFullYear()});
-});
+// DASHBOARD RELATED API
+app.get("/dashboard", cmsApiController.dashboard);
 
-app.get("/settings",(req,res)=>{
-  res.render("settings", {year: new Date().getFullYear()});
-});
-app.get("/dashboard",(req,res)=>{
-  res.render("dashboard", {year: new Date().getFullYear()});
-});
-app.get("/smtp",(req,res)=>{
-  res.render("smtp", {year: new Date().getFullYear()});
-});
-app.get("/smtp-settings",(req,res)=>{
-  res.render("smtp", {year: new Date().getFullYear()});
-});
-app.get("/login", (req, res)=>{
-  res.render("login", {year: new Date().getFullYear()});
-});
-app.get("/onhovermeeting", (req, res)=>{
-  res.render("onhovermeeting", {year: new Date().getFullYear()});
-});
-app.get("/404page", (req, res)=>{
-  res.render("404page", {year: new Date().getFullYear()});
-});
-app.get("/logs",(req,res)=>{
-  res.render("logs", {year: new Date().getFullYear()});
-});
-app.get("/spacelist", (req, res)=>{
-  res.render("spacelist", {year: new Date().getFullYear()});
-});
-app.get("/active-meeting",(req,res) => {
-  res.render("active-meeting", {year: new Date().getFullYear()});
-});
+// PAGE NOT FOUND RELATED API
+app.get("/404page", cmsApiController.pagenotfound);
+
+// MEETING RELATED API
+app.get("/meeting", meetingController.meeting);
+app.get("/newmeeting", meetingController.newmeeting);
+app.get("/updatemeeting", meetingController.updatemeeting);
+app.get("/schedulemeeting", meetingController.schedulemeeting);
+app.get("/active-meeting", meetingController.activemeeting);
+
+// CONFIGURATION RELATED API
+app.get("/configure", configurationController.configure);
+app.get("/configure-settings", configurationController.configuresettings);
+app.get("/changePassword", configurationController.changepassword);
+app.get("/settings", configurationController.settings);
+app.get("/smtp", configurationController.smtp);
+app.get("/smtp-settings", configurationController.smtpsettings);
+
+// ACTIVITY RELATED API
+app.get("/activitylist", activityController.activitylist);
+app.get("/updateactivitymeeting", activityController.activitynewmeeting);
+
+// USERS RELATED API
+app.get("/users", userController.users);
+
+// COSPACE RELATED API
+app.get("/createspace", cospaceController.createspace);
+app.get("/updatespace", cospaceController.updatespace);
+app.get("/spacelist", cospaceController.spacelist);
+
+// LOGS RELATED API
+app.get("/logs", logsController.logs);
 
 module.exports = app;

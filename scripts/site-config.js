@@ -1,5 +1,5 @@
 var app = {
-    BASE_URL: "http://192.168.5.20:9000/api/",
+    BASE_URL: "http://192.168.5.84:9000/api/"
 }
 
 var apiType = {
@@ -13,12 +13,13 @@ var apiType = {
     GET_USERS: "getUsers",
     GET_COSPACES_BY_ID: "getCospacesbyId",
     CHECK_COSPACE_EXISTENCE: "checkCoSpaceExistence",
-    GET_COSPACES_USERS:"getCoSpacesUsers",
+    GET_COSPACES_USERS: "getCoSpacesUsers",
     CREATE_MEETING: "createMeeting",
-    FIND_ALL_MEETING:"findAllMeeting",
-    FIND_ALL_MEETING_MEMBERS:"findAllMeetingMembers",
+    UPDATE_MEETING: "updateMeeting",
+    FIND_ALL_MEETING: "findAllMeeting",
+    FIND_ALL_MEETING_MEMBERS: "findAllMeetingMembers",
     DELETE_MEETING: "deleteMeeting",
-    GET_MEETING_BY_MEETINGID:"getMeetingByMeetingId"
+    GET_MEETING_BY_MEETINGID: "getMeetingByMeetingId"
 }
 
 var errorCodes = {
@@ -82,14 +83,14 @@ var meetingLayoutTranslation = {
     12: "onePlusN"
 }
 var meetingTypeDetails = {
-    0:"Personal",
-    1:"OneTime"
+    0: "Personal",
+    1: "OneTime"
 }
 var meetingStatusColor = {
-    0:"#4dffa6",// On going Meeting
-    1:"#74a9d8",//Meeting Completed
-    2:"#ffff4d",//Meeting to be Started
-    3:"#ff4d4d;"//Meeting Expired
+    0: "#4dffa6",// On going Meeting
+    1: "#74a9d8",//Meeting Completed
+    2: "#ffff4d",//Meeting to be Started
+    3: "#ff4d4d;"//Meeting Expired
 }
 // var meetingStatusText = {
 //     0:"On going Meeting",

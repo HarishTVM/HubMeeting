@@ -148,6 +148,7 @@ localLang = osLocale.sync().toString();
 		  config.app.httpsCert.key = io.fileReadSync(config.app.httpsCert.key);
 		  config.app.httpsCert.cert = io.fileReadSync(config.app.httpsCert.cert);
 		  https.createServer(config.app.httpsCert,app).listen(sslPort);
+		//   app.BASE_URL = "http://192.168.5.84:9000/api/";
 		  if(config.app.appStage)
 			  console.log('CMS Backend services are started!!! Running on %d', sslPort);
 		}

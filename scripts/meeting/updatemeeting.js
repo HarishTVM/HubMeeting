@@ -24,12 +24,15 @@ $(document).ready(function () {
         var subString = url.substring(url.indexOf('=') + 1);
         setTimeout(function () {
             httpGet(apiType.GET_MEETING_BY_MEETINGID + "?meetingID=" + subString, function (resp, err) {
+                debugger;
                 console.log(resp.data);
                 if (resp.data.meetingType == 1)
                     $('[name=types][value=1]').prop('checked', true);
                 else {
                     $('[name=types][value=0]').prop('checked', true);
                 }
+                randomObj.spaceid = resp.data.coSpaceId;
+                console.log(randomObj.spaceid);
                 $("#contact-sName").val(resp.data.coSpace);
                 $("#description").val(resp.data.description);
                 $("#contact-create_space_URI").val(resp.data.uri);
@@ -64,10 +67,10 @@ $(document).ready(function () {
                 // END DEFAULT LAYOUT AUTO-POPULATION
                 var meetingStartDateTime = resp.data.meetingStartDateTime;
                 var meetingEndDateTime = resp.data.meetingEndDateTime;
-                var fromTime = moment(meetingStartDateTime).format("HH:MM");
-                var toTime = moment(meetingEndDateTime).format("HH:MM");
-                var fromDate = moment(meetingStartDateTime).format("MM-DD-YYYY");
-                var toDate = moment(meetingStartDateTime).format("MM-DD-YYYY");
+                var fromTime = moment(meetingStartDateTime).local().format("HH:mm");
+                var toTime = moment(meetingEndDateTime).local().format("HH:mm");
+                var fromDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
+                var toDate = moment(meetingStartDateTime).format("DD-MM-YYYY");
                 $("#fromdate").val(fromDate);
                 $("#fromtime").val(fromTime);
                 $("#todate").val(toDate);
@@ -81,18 +84,22 @@ $(document).ready(function () {
         // BEGIN GET MEMBERS FOR MEETING_ID
         $("#seeMoreMem").hide();
         httpGet(apiType.FIND_ALL_MEETING_MEMBERS + "?limit=10&" + "offset=" + offset + "&meetingID=" + subString, function (resp, err) {
+            debugger;
             console.log(resp.data);
             if (resp.data.count != 0) {
                 for (i = 0; i < resp.data.count; i++) {
                     var existMember = resp.data.rows[i].memberJid;
-                    if (i <= 2)
-                        $("#accordianList_1").append('<li>' + existMember + '</li>');
+                    memberObj.push(existMember);
+                    console.log(memberObj);
+                    if (i <= 2) {
+                        $("#accordianList_1").append('<li>' + existMember + '<a id="removeMember" class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true" title="remove"></a>' + '</li>');
+                    }
                     else if (i >= 3 && i <= 5) {
-                        $("#accordianList_2").append('<li>' + existMember + '</li>');
+                        $("#accordianList_2").append('<li>' + existMember + '<a id="removeMember" class="accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true" title="remove"></a>' + '</li>');
                     }
                     else if (i > 5 && i < resp.data.count) {
                         $("#seeMoreMem").show();
-                        $("#seeMemModalBody").append('<li>' + existMember + '</li>');
+                        $("#seeMemModalBody").append('<li>' + existMember + '<a id="removeMember" class=" accordian_mem_del_icon fa fa-lg fa-window-close" aria-hidden="true" title="remove"></a>'+ '</li>');
                         $("#see-more-page-loader").hide();
                     }
                 }
