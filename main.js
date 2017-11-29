@@ -58,6 +58,14 @@ dns.resolveSrv("_xmpp-server._tcp.inflexion.com", function (err, data) {
 dns.lookup(require('os').hostname(), function (err, add, fam) {
 	console.log('addr: ' + add);
 })
+	// dns.resolveSrv("_xmpp-server._tcp.inflexion.com", function(err,data){
+	// 	console.log(err);
+	// 	console.log(data);
+	// })
+
+	// dns.lookup(require('os').hostname(), function (err, add, fam) {
+	// 	console.log('addr: '+add);
+	//   })
 
 /******---------------------------------------------- BEGIN Creation Of Server Properties --------------------------------------------------------------------------------------***/
 // Create express application
