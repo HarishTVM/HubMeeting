@@ -1,0 +1,30 @@
+<script id="notification" type="text/x-handlebars-template">
+    {{#each rows}}
+        <!-- Bootstrap panel-->
+        <div class="panel panel-custom">
+            <div class="panel-custom-heading" id="{{inc @index}}Headingundefined" role="tab">
+                <p class="panel-custom-title para-title bg-light-grey">
+                    <a class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#{{inc @index}}" href="#{{inc @index}}Collapseundefined" aria-controls="{{inc @index}}Collapseundefined">
+                        <span style="color:#333;">A {{logTitle}}
+                        <span style="float:right;font-size:11px">LogID: {{logID}}</span>
+                        </span>
+                    </a>
+                </p>
+            </div>
+            <div class="panel-custom-collapse collapse" id="{{inc @index}}Collapseundefined" role="tabpanel" aria-labelledby="{{inc @index}}Headingundefined">
+                <div class="panel-custom-body">
+                    <ul class="list-group list-content">
+                        <li>{{logDescription}}</li>
+                        <li>Log-Type&nbsp;:{{logType}}
+                            <a href="#">
+                                <span class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></span>
+                            </a>
+                        </li>
+                        <li>Created at: {{createdAt}}</li>
+                        <li>Updated at: {{updatedAt}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</script>

@@ -57,4 +57,7 @@
     height: 100px !important;
 }
 
+.space-accordion-border, .cospace-add-mem-btn{
+    margin-top: 20px !important;
+}
 /*/////////////////////////////////// END CreateSpace for Styles ////////////////////////////////////// */

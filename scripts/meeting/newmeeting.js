@@ -64,6 +64,7 @@ $(document).ready(function () {
             console.log(memberNewObj);
         }
     });
+    //END Add Member and DELETE MEMBER Logic
 
     // BEGIN DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
     var count = 0;

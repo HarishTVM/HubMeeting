@@ -1,25 +1,91 @@
-$(document).ready(function () {
-    var isKeyEntered = false;
-    // BEGIN SELECTED OPTIONS FOR FORM DROPDOWN INPUTS
-    // if (window.location.pathname == "/createspace") {
-    //     $("#sel2").val("default");
-    //     $("#sel1").val("default");
-    // }
-    // else {
-    //     $("#sel2").val("opt1");
-    //     $("#sel1").val("opt1");
-    // }
-    // END SELECTED OPTIONS FOR FORM DROPDOWN INPUTS
+// BEGIN ---------------------GLOBAL VARIABLES---------------------
+var isKeyEntered = false;
+var isOwner = false
+var func;
+// BEGIN CREATE ARRAY OF MEMBERS 
+var memArrayList = [], memArray = [];
+var ownerArrayList = [], ownerArr = [];
+var cospaceUSerIdArray = [], coUserArr = [];
+var newArray = [];
+var memberObj = [], memberNewObj = [];
+// BEGIN CREATE ARRAY OF MEMBERS
 
-    //BEGIN CHECK CHILDERN LENGTH INSIDE EXISTING MEMBERS
-    $(".alertClose").on('click', function () {
-        var numItems = $('.alertClose').length;
-        if (numItems == 0 || numItems == 1)
-            $(this).parents("#accordion").remove();
-        // numItems=numItems-1;    
+// BEGIN OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
+var randomObj = {};
+// END OBJECT TO HOLD COSPACEID FOR PERSONAL MEETING
+// END ---------------------GLOBAL VARIABLES---------------------
+
+$(document).ready(function () {
+    var count = 0, i;
+    for (i in meetingLayoutTranslation) {
+        if (meetingLayoutTranslation.hasOwnProperty(i)) {
+            $('#sel1').append($('<option />', {
+                value: i,
+                text: meetingLayoutTranslation[i]
+            }));
+            count++;
+        }
+    }
+
+    // ---------- BEGIN MAKE A MEMBER OWNER ---------------
+    $("#ownerIcon").live("click", function () {
+        $(this).toggle(function () {
+            $(this).children().css("color", "#2ed3ae");
+            $(this).children().attr('title', 'Active Owner');
+            isOwner = true;
+            $(this).attr("ifOwner", isOwner);
+        }, function () {
+            $(this).children().css("color", "black");
+            $(this).children().attr('title', 'Deactive Owner');
+            isOwner = false;
+            $(this).attr("ifOwner", isOwner);
+        }).trigger('click');
+    });
+    // ---------- END MAKE A MEMBER OWNER ---------------
+
+    //BEGIN Add Member and DELETE MEMBER Logic
+    $('#addMemberBtn').live('click', function () {
+        var member = $('<div id="addDeleteParent" class="input-group form-wrap input-box-shadow">\
+                                <input name="addMembers" id="addMembers" class="form-input" type="email" list="emails" autocomplete="off" multiple placeholder="add member...">\
+                                <span name="ownerspan" id="ownerIcon" ifOwner="false" class="bg-gray input-group-addon"><a class="fa fa-user-circle fa-lg" aria-hidden="true" title="Owner"></a></span>\
+                                <span id="deleteMember" class="input-group-addon"><a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a></span>\
+                                </div>\
+                                <datalist id="emails">\
+                                <option id="memberAddDiv"></option>\
+                                </datalist>');
+
+        $('#memberParentDiv').append(member);
     });
 
-    //END CHECK CHILDERN LENGTH INSIDE EXISTING MEMBERS
+    $("#deleteMember").live('click', function () {
+        if ($(this).parents("#memberParentDiv").children('div').length == 1) {
+            $(this).prop('disabled', true);
+        }
+        else {
+            var todelInput = $(this).siblings("#addMembers").val();
+            memberNewObj = $.grep(memberObj, function (element, index) { return element.memberJid == todelInput }, true);
+            $(this).parent().remove();
+            console.log(memberNewObj);
+        }
+    });
+    //END Add Member and DELETE MEMBER Logic
+
+    // BEGIN FILTER FOR COSPACE_USER_ID
+    $(document).on("mouseleave", "#addMembers", function () {
+        httpGet(apiType.GET_USERS + "?filter=" + $(this).val(), function (resp, err) {
+            var userCospaceId = resp.data.users[0].user.attrkey.id;
+            cospaceUSerIdArray.push(userCospaceId);
+        });
+    });
+    // END FILTER FOR COSPACE_USER_ID
+
+    avoidDuplicate = function (array) {
+        var uniqueNames = [];
+        $.each(array, function (i, el) {
+            if ($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+        });
+        return uniqueNames;
+    }
 
     // BEGIN PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
     if (window.location.pathname == "/createspace" || window.location.pathname == "/newmeeting") {
@@ -28,17 +94,6 @@ $(document).ready(function () {
     else {
         $("#accordion").show();
     }
-
-    // $("#clickToAdd").click(function () {
-    //     if (window.location.pathname == "/createspace" || window.location.pathname == "/newmeeting") {
-    //         $("#admin").hide();
-    //         $("#hrDept").hide();
-    //     }
-    //     else {
-    //         $("#admin").show();
-    //         $("#hrDept").show();
-    //     }
-    // });
     // END PRE-POPOPULATED MEMBERS IN ADD MEMBERS DIV
 
     //BEGIN DETERMINE THE PATHNAME
@@ -54,44 +109,95 @@ $(document).ready(function () {
     }
     //END DETERMINE THE PATHNAME
 
+    // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
+    $(document).on("click", "#submitMembersBtn", function () {
+        debugger;
+        memberObj = [];
+        if (memberNewObj == "" || memberNewObj == undefined) {
+            $("input[name='addMembers']").each(function () {
+                memArrayList.push($(this).val());
+                memArray = avoidDuplicate(memArrayList);
+            });
+
+            $("[name='ownerspan']").each(function () {
+                ownerArrayList.push($(this).attr("ifOwner"));
+
+                // BEGIN ---------------POPULATE OWNERJID FIELD----------------
+                if ($(this).attr("ifOwner") == "true") {
+                    var jId = $(this).siblings("#addMembers").val();
+                    $("#ownerJid").val(jId);
+                }
+                // END --------------POPULATE OWNERJID FIELD--------------------
+            });
+
+            newArray = memArray.map(function (value, index) {
+                return value + ':' + ownerArrayList[index] + ':' + cospaceUSerIdArray[index];
+            });
+
+            var sampleArray = [];
+            for (i = 0; i < newArray.length; i++) {
+                sampleArray = newArray[i].split(':');
+
+                var member1 = {
+                    "memberJid": sampleArray[0],
+                    "isOwner": sampleArray[1],
+                    "coSpaceUserID": sampleArray[2]
+                }
+                memberObj.push(member1);
+            }
+            console.log(memberObj);
+        }
+        else {
+            memberObj = memberNewObj;
+            memberNewObj = [];
+            console.log(memberObj);
+        }
+    });
+    // END COMBINE ARRAYS INTO ARRAY OF OBJECTS
+
+    // BEGIN DELETE MEMBERS FROM EXISTING MEMBERS
+    $(document).on("click", "#removeMember", function () {
+        $(this).parent().remove();
+    });
+    // END DELETE MEMBERS FROM EXISTING MEMBERS
+
     //BEGIN FORM SUBMIT LOGIC
+    $('#btndone').click(function () {
+        if ($('form').hasClass('validate-form')) {
+            var resultItem = [];
+            $('.validate-text').each(function (i, obj) {
+                resultItem.push(validateText(obj));
+            });
 
-    // $('#btndone').click(function () {
-    //     if ($('form').hasClass('validate-form')) {
-    //         var resultItem = [];
-    //         $('.validate-text').each(function (i, obj) {
-    //             resultItem.push(validateText(obj));
-    //         });
+            if (resultItem.indexOf(false) < 0) {
 
-    //         if (resultItem.indexOf(false) < 0) {
+                var reqData = {
+                    "name": $('#contact-sName').val(),
+                    "uri": $('#contact-create_space_URI').val(),
+                    "passcode": $('#contact-sPasscode').val(),
+                    "defaultLayout": $('#sel1').val(),
 
-    //             var reqData = {
-    //                 "name": $('#contact-sName').val(),
-    //                 "uri": $('#contact-create_space_URI').val(),
-    //                 "passcode": $('#contact-sPasscode').val(),
-    //                 "defaultLayout": $('#sel1').val(),
+                };
+                console.log(reqData);
+                httpPost(apiType.CREATE_COSPACE, reqData, function (resp, err) {
+                    if (err) {
+                        if (err.customErrCode == errorCodes.BAD_REQUEST) {
+                            toastr.options.closeButton = true;
+                            toastr.error("Error: DuplicateCoSpaceUri");
+                        }
+                    }
+                    else {
+                        console.log(resp);
+                        //Success Toast service
+                        toastr.options.closeButton = true;
+                        toastr.success("Cospace created successfully..!");
+                        setTimeout(function () { window.location.href = "/spacelist" }, 5000);
+                    }
+                });
+            }
 
-    //             };
-    //             console.log(reqData);
-    //             httpPost(apiType.CREATE_COSPACE, reqData, function (resp, err) {
-    //                 if (err) {
-    //                     if (err.customErrCode == errorCodes.BAD_REQUEST) {
-    //                         toastr.options.closeButton = true;
-    //                         toastr.error("Error: DuplicateCoSpaceUri");
-    //                     }
-    //                 }
-    //                 else {
-    //                     console.log(resp);
-    //                     //Success Toast service
-    //                     toastr.options.closeButton = true;
-    //                     toastr.success("Cospace created successfully..!");
-    //                     setTimeout(function () { window.location.href = "/spacelist" }, 5000);
-    //                 }
-    //             });
-    //         }
-
-    //     }
-    // });
+        }
+    });
     //BEGIN FORM SUBMIT LOGIC
 
     //BEGIN FORM SUBMIT LOGIC FOR DEMO 1

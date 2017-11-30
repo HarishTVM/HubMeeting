@@ -19,7 +19,8 @@ var apiType = {
     FIND_ALL_MEETING: "findAllMeeting",
     FIND_ALL_MEETING_MEMBERS: "findAllMeetingMembers",
     DELETE_MEETING: "deleteMeeting",
-    GET_MEETING_BY_MEETINGID: "getMeetingByMeetingId"
+    GET_MEETING_BY_MEETINGID: "getMeetingByMeetingId",
+    FIND_ALL_LOGS: "findAllLogs"
 }
 
 var errorCodes = {
@@ -98,3 +99,13 @@ var meetingStatusColor = {
 //     2:"Meeting to be Started",
 //     3:"Meeting Expired"
 // }
+
+var logType = {
+    CREATE_MEETING: 0,
+    DELETE_MEETING: 1,
+    UPDATE_MEETING: 2,
+    CREATE_COSPACE: 3,
+    UPDATE_COSPACE: 4,
+    ADD_USER_IN_COSPACE: 5,
+    DELETE_USER: 6
+}

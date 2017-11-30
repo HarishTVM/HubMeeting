@@ -58,14 +58,6 @@ dns.resolveSrv("_xmpp-server._tcp.inflexion.com", function (err, data) {
 dns.lookup(require('os').hostname(), function (err, add, fam) {
 	console.log('addr: ' + add);
 })
-	// dns.resolveSrv("_xmpp-server._tcp.inflexion.com", function(err,data){
-	// 	console.log(err);
-	// 	console.log(data);
-	// })
-
-	// dns.lookup(require('os').hostname(), function (err, add, fam) {
-	// 	console.log('addr: '+add);
-	//   })
 
 /******---------------------------------------------- BEGIN Creation Of Server Properties --------------------------------------------------------------------------------------***/
 // Create express application
@@ -138,25 +130,6 @@ app.all('/*', (request, response, next) => {
 
 app.use('/', routes);
 console.log("Routes are OK");
-
-// BEGIN EXPRESS SESSION MIDDLEWARE
-app.use(session({ 
-	secret: 'private-key', 
-	cookie: { maxAge: 60000 },
-	resave: false,
-	saveUninitialized: true
-}));
-// Access the session as req.session
-app.get('/', function (req, res, next) {
-	var sessData = req.session;
-	sessData.someAttribute = "foo";
-	res.send('Returning with some text');
-});
-app.get('/dashboard', function (req, res, next) {
-	var someAttribute = req.session.someAttribute;
-	res.send(`This will print the attribute I set earlier: ${someAttribute}`);
-});
-// END EXPRESS SESSION MIDDLEWARE
 
 /******---------------------------------------------- END Creation Of Server Properties --------------------------------------------------------------------------------------***/
 /******---------------------------------------------- BEGIN server start --------------------------------------------------------------------------------------***/

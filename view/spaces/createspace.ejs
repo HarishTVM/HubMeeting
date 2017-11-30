@@ -53,7 +53,6 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
-
                 <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                   <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                   <span class="hide error-text">
@@ -75,128 +74,39 @@
                     </span>
                   </div>
                 </div>
-
-                <div class="row form-wrap datetime-picker-container margin-css">
-                  <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-link2 from-to-date-container">
-                    <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
-                      <select class="form-control on-hover-color" id="sel1">
-                        <option selected value="default" disabled>
-                          <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
-                        </option>
-                        <option value="otp1">
-                          <%= translation.HUB_CREATE_SPACE_ALLEQUAL %>
-                        </option>
-                        <option value="otp2">
-                          <%= translation.HUB_CREATE_SPACE_SPEAKERONLY %>
-                        </option>
-                        <option value="otp3">
-                          <%= translation.HUB_CREATE_SPACE_TELEPRESENCE %>
-                        </option>
-                        <option value="otp4">
-                          <%= translation.HUB_CREATE_SPACE_STACKED %>
-                        </option>
-                        <option value="otp4">
-                          <%= translation.HUB_CREATE_SPACE_ALLEQUALQUARTERS %>
-                        </option>
-                        <option value="otp6">
-                          <%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %>
-                        </option>
-                      </select>
-                    </div>
-                  </div>&nbsp;&nbsp;
-                  <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-profile from-to-date-container">
-                    <div class="form-wrap form-wrap_icon linear-icon-profile">
-                      <input class="form-input input-box-shadow validate-text" id="ownerJid" type="text" name="ownerjid" placeholder="<%= translation.HUB_CREATE_SPACE_OWNERJID %>">
-                      <span class="hide error-text">
-                        <%= translation.CREATE_SPACE_ERROR_TEXT_OWNERJID %>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- <div id="URI" class="form-wrap form-wrap_icon linear-icon-link2">
-                  <input class="form-input input-box-shadow validate-text" id="contact-create_space_URI" type="text" name="create_space_URI"
-                    placeholder="<%= translation.HUB_CREATE_SPACE_ENTER_URI %>">
-                  <span class="hide error-text">
-                    <%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %>
-                  </span>
-                </div> -->
-                <!-- <div class="form-wrap form-wrap_icon linear-icon-key-hole">
-                  <input class="form-input input-box-shadow validate-text" id="passcode" type="text" name="passcode" placeholder="<%= translation.HUB_CREATE_SPACE_PASSCODE %>">
-                  <span class="hide error-text">
-                    <%= translation.CREATE_SPACE_ERROR_TEXT_PASSCODE %>
-                  </span>
-                </div> -->
-                <!-- <div class="hide form-wrap">
-                  <p id="videoAdd">Video Address: </p>
-                </div>
                 <div class="form-wrap form-wrap_icon linear-icon-border-all margin-css custom-cospace input-box-shadow">
-                  <select class="form-control on-hover-color" id="sel1">
+                  <select class="form-control on-hover-color" id="sel1" name="selectLayout">
                     <option selected value="default" disabled>
                       <%= translation.HUB_CREATE_SPACE_DEFAULT_LAYOUT %>
                     </option>
-                    <option value="otp1">
-                      <%= translation.HUB_CREATE_SPACE_ALLEQUAL %>
-                    </option>
-                    <option value="otp2">
-                      <%= translation.HUB_CREATE_SPACE_SPEAKERONLY %>
-                    </option>
-                    <option value="otp3">
-                      <%= translation.HUB_CREATE_SPACE_TELEPRESENCE %>
-                    </option>
-                    <option value="otp4">
-                      <%= translation.HUB_CREATE_SPACE_STACKED %>
-                    </option>
-                    <option value="otp4">
-                      <%= translation.HUB_CREATE_SPACE_ALLEQUALQUARTERS %>
-                    </option>
-                    <option value="otp6">
-                      <%= translation.HUB_CREATE_SPACE_ALLEQUALNINTHS %>
-                    </option>
                   </select>
                 </div>
-                <div class="form-wrap form-wrap_icon linear-icon-profile">
-                  <input class="form-input input-box-shadow validate-text" id="ownerJid" type="text" name="ownerjid" placeholder="<%= translation.HUB_CREATE_SPACE_OWNERJID %>">
-                  <span class="hide error-text">
-                    <%= translation.CREATE_SPACE_ERROR_TEXT_OWNERJID %>
-                  </span>
-                </div> -->
-                <!-- <div class="form-wrap">
-                  <h6>
-                    <%= translation.SCHEDULE_MEETING_SUB_HEAD_MEMBERS %>
-                  </h6>
-                </div> -->
-                <a href="/spacelist" id="btndiscard" class="button btn_discard" type="submit">
-                  <%= translation.HUB_CREATE_SPACE_DISCARD %>
-                </a>
-                &nbsp;&nbsp; &nbsp;&nbsp;
-                <button id="createSpaceDone" class="button button-primary" type="submit">
-                  <%= translation.HUB_CREATE_SPACE_DONE %>
-                </button>
-                <section id="existingMembers" class="input-box-shadow" style="padding: 5px;">
-                  <h6 style="text-align: left;">Existing Members</h6>
-                  <div class="alert-div">
-                    <div class="alert alert-info alert-dismissible fade in" role="alert">
-                      <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      admin@inflexion.com
+                <div id="accordion" role="tablist" class="space-accordion-border form-input input-box-shadow padding-top-none">
+                  <div id="accordionPanel" class="panel panel-custom">
+                    <div class="panel-custom-heading" id="1Headingundefined" role="tab">
+                      <p class="panel-custom-title para-title bg-light-grey">
+                        <a id="accordianPanelaTag" class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined"
+                          aria-controls="1Collapseundefined">
+                          <span class="fontStyle">Existing Members</span>
+                        </a>
+                      </p>
                     </div>
-                    <div class="alert alert-info alert-dismissible fade in" role="alert">
-                      <button type="button" class="close alertClose" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      hr-dept@inflexion.com
+                    <div class="panel-custom-collapse collapse" id="1Collapseundefined" role="tabpanel" aria-labelledby="1Headingundefined">
+                      <div class="panel-custom-body">
+                        <ul id="accordianList_1" class="list-group list-content fontStyle"></ul>
+                        <ul id="accordianList_2" class="list-group list-content fontStyle"></ul>
+                      </div>
+                      <a class="seeMoreMembers" id="seeMoreMem" data-toggle="modal" data-target="#seeMoreMembersModal">see more...</a>
                     </div>
                   </div>
-                </section>
-                <br>
-                <div style="display:none" class="form-wrap margin-css custom-cospace input-box-shadow">
-                  <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#myModal"
+                  <% include _layouts/modals/see-more-members %>
+                </div>
+                <div class="cospace-add-mem-btn form-wrap margin-css custom-cospace input-box-shadow">
+                  <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#cospaceModal"
                     style="width: 100%;" />
                 </div>
                 <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
+                <div id="cospaceModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
                   <div class="modal-dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
@@ -205,60 +115,56 @@
                         <button id="addMemberBtn" type="button" class="button button-primary button-sm">Add Member</button>
                       </div>
                       <div id="memberParentDiv" class="modal-body">
-                        <input id="admin" name="admin" class="form-input" type="text" value="admin@inflexion.com" placeholder="add member...">
-                        <input id="hrDept" name="hrdept" class="form-input" type="text" value="hr-dept@inflexion.com" placeholder="add member...">
                         <div id="addDeleteParent" class="input-group form-wrap input-box-shadow">
-                          <input id="addMembers" class="form-input" type="text" list="emails" autocomplete="off" multiple placeholder="add member...">
+                          <input name="addMembers" id="addMembers" class="form-input" type="text" list="emails" autocomplete="off" multiple placeholder="add member...">
+                          <span name="ownerspan" id="ownerIcon" ifOwner="false" class="bg-gray input-group-addon">
+                            <a class="fa fa-user-circle fa-lg" aria-hidden="true" title="Owner"></a>
+                          </span>
                           <span id="deleteMember" class="bg-gray input-group-addon">
-                            <a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true"></a>
+                            <a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></a>
                           </span>
                         </div>
                         <datalist id="emails">
                           <option id="memberAddDiv"></option>
                         </datalist>
+                        <span id="memberAddDiv"></span>
+                        <span class="hide"></span>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="button button-default button-sm" data-dismiss="modal">Close</button>
+                        <button type="button" class="button button-primary button-sm h-m-top-none" data-dismiss="modal">Close</button>
+                        <button id="submitMembersBtn" type="button" class="button button-primary button-sm h-m-top-none" data-dismiss="modal">Done</button>
                       </div>
                     </div>
                   </div>
                 </div>
-
+                <a id="createSpaceDone" class="button button-primary" type="submit">
+                  <%= translation.HUB_CREATE_SPACE_DONE %>
+                </a>
+                &nbsp;&nbsp; &nbsp;&nbsp;
+                <a href="/spacelist" id="btndiscard" class="button btn_discard" type="submit">
+                  <%= translation.HUB_CREATE_SPACE_DISCARD %>
+                </a>
               </form>
             </div>
           </div>
         </div>
       </section>
     </div>
-
     <!-- include file for Script -->
     <% include _layouts/common-scripts %>
-      <!-- <script src="/node_modules/moment/src/moment.js"></script> -->
       <script src="/scripts/common/validation.js"></script>
-      <!-- <script src="/scripts/spaces/updatespace.js"></script> -->
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
-      <script src="/scripts/common/sweetalert.min.js"></script>
-      <!-- BEGIN MOMENT.JS SCRIPT TAGS -->
-      <script src="/node_modules/moment/min/locales.min.js"></script>
-      <script src="/node_modules/moment/min/moment.min.js"></script>
-      <script src="/node_modules/moment/min/moment-with-locales.min.js"></script>
-      <!-- END MOMENT.JS SCRIPT TAGS -->
       <script>
         $(document).ready(function () {
           $("#spacesList").addClass("active");
-          moment().format(); //BELONGS TO MOMENT.JS 
         });
       </script>
-
       <script id="memberAdd" type="text/x-handlebars-template">
-        {{#each users}}
-            {{#with user}}
-              {{userJid}}
-            {{/with}}  
-        {{/each}}
-      </script>
-
+              {{#each users}}
+                {{user.userJid}}
+              {{/each}}
+            </script>
       <% include _layouts/footer %>
 </body>
 
