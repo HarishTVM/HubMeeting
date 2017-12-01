@@ -60,4 +60,19 @@
 .space-accordion-border, .cospace-add-mem-btn{
     margin-top: 20px !important;
 }
+
+div#cs-page-loader {
+    width: fit-content;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+}
+
+#wheel {
+    height: 25px;
+    width: 25px;
+    border: 3px solid #922d94;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
 /*/////////////////////////////////// END CreateSpace for Styles ////////////////////////////////////// */

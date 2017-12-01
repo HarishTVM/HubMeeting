@@ -122,14 +122,14 @@ li.select2-results__option:hover{
     height: 100px !important;
 }
 
-#spaceNameCheck, #spaceUriCheck {
+/* #spaceNameCheck, #spaceUriCheck {
     color: green !important;
     position: absolute;
     right: -6%;
     top: -20%;
-}
+} */
 
-#ownerIcon{
+/* #ownerIcon{
     border: none;
 }
 
@@ -139,9 +139,9 @@ li.select2-results__option:hover{
 
 #ownerIcon:hover{
     cursor: pointer;
-}
+} */
 
-.accordian-border{
+/* .accordian-border{
     border: 1px dotted lightgray;
 }
 
@@ -176,7 +176,7 @@ li.select2-results__option:hover{
 
 #typeMeeting label {
     margin: 5px;
-}
+} */
 
 @media only screen and (min-width: 768px) {
     .schedule-meeting-div{

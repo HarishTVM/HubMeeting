@@ -28446,6 +28446,7 @@ yx-axis
     cursor: pointer;
   }
 
+  /* Begin Media Queries  */
   @media only screen and (max-width: 768px){
     .style_prevu_kit {
       display: block;
@@ -28454,7 +28455,65 @@ yx-axis
       left: 0 !important;
     }
   }
-
   /* onhovermeeting styles End */
+  /* Begin Media Queries  */
+
+  /* Begin New Meeting and Create Space styles */
+  #spaceNameCheck, #spaceUriCheck, #spaceOwnerCheck {
+    color: green !important;
+    position: absolute;
+    right: -6%;
+    top: -20%;
+}
+
+  #ownerIcon{
+    border: none;
+  }
+
+  #ownerIcon a {
+    color: black;
+  }
+
+  #ownerIcon:hover{
+    cursor: pointer;
+  }
+
+  .accordian-border{
+    border: 1px dotted lightgray;
+}
+
+  .seeMoreMembers{
+      width: 100%;
+      text-align: right;
+      font-size: small;
+      cursor: pointer;
+      margin-left: -4px;
+  }
+
+  #accordionPanel, #accordianPanelaTag {
+      background-color: #f8f8f8 !important;
+  }
+
+  #accordianPanelaTag{
+      text-align: left;
+  }
+
+  .accordian_mem_del_icon{
+      position: relative;
+      left: 10px;
+      cursor: pointer;
+  }
+
+  .fontStyle{
+      font-style: normal;
+      font-weight: normal;
+      font-size: small;
+      text-align: start;
+  }
+
+  #typeMeeting label {
+      margin: 5px;
+  }
+  /* End  New Meeting and Create Space styles */
 
 /* END SREEHARSHA STYLES*/

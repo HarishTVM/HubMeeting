@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/styles/spaces/createspace.css">
     <link rel="stylesheet" href="styles/meeting/newMeeting.css">
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
-    <link rel="stylesheet" href="/styles/common/sweetalert.css">
+    <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -53,11 +53,24 @@
           <div class="range range-md-center">
             <div class="cell-md-10 cell-lg-8">
               <form id="createCospaceForm" class="rd-mailform rd-mailform_style-1 text-center validate-form">
+                <div class="form-wrap form-wrap_icon linear-icon-man">
+                  <input class="form-input input-box-shadow validate-text" id="ownerJid" type="text" name="ownerjid" placeholder="<%= translation.HUB_CREATE_SPACE_OWNERJID %>">
+                  <span class="hide error-text">
+                    <%= translation.CREATE_SPACE_ERROR_TEXT_OWNERJID %>
+                  </span>
+                  <div id="cs-page-loader" class="hide">
+                    <div class="cssload-container">
+                      <div id="wheel" class="cssload-speeding-wheel"></div>
+                    </div>
+                  </div>
+                  <span id="spaceOwnerCheck" class="hide fa fa-2x fa-check-circle" aria-hidden="true" title="Validated"></span>
+                </div>
                 <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                   <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %>
                   </span>
+                  <span id="spaceNameCheck" class="hide fa fa-2x fa-check-circle" aria-hidden="true" title="Validated"></span>
                 </div>
                 <div class="row form-wrap datetime-picker-container margin-css">
                   <div class="form-wrap_icon form-wrap_icon__label-outside linear-icon-link2 from-to-date-container">
@@ -66,6 +79,7 @@
                     <span class="hide error-text">
                       <%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %>
                     </span>
+                    <span id="spaceUriCheck" class="hide fa fa-2x fa-check-circle" aria-hidden="true" title="Validated"></span>
                   </div>&nbsp;&nbsp;
                   <div class="form-wrap form-wrap_icon form-wrap_icon__label-outside linear-icon-key-hole from-to-date-container">
                     <input class="form-input input-box-shadow validate-text" id="passcode" type="text" name="passcode" placeholder="<%= translation.HUB_CREATE_SPACE_PASSCODE %>">
@@ -81,67 +95,11 @@
                     </option>
                   </select>
                 </div>
-                <div id="accordion" role="tablist" class="space-accordion-border form-input input-box-shadow padding-top-none">
-                  <div id="accordionPanel" class="panel panel-custom">
-                    <div class="panel-custom-heading" id="1Headingundefined" role="tab">
-                      <p class="panel-custom-title para-title bg-light-grey">
-                        <a id="accordianPanelaTag" class="collapsed chevron-icon" role="button" data-toggle="collapse" data-parent="#1" href="#1Collapseundefined"
-                          aria-controls="1Collapseundefined">
-                          <span class="fontStyle">Existing Members</span>
-                        </a>
-                      </p>
-                    </div>
-                    <div class="panel-custom-collapse collapse" id="1Collapseundefined" role="tabpanel" aria-labelledby="1Headingundefined">
-                      <div class="panel-custom-body">
-                        <ul id="accordianList_1" class="list-group list-content fontStyle"></ul>
-                        <ul id="accordianList_2" class="list-group list-content fontStyle"></ul>
-                      </div>
-                      <a class="seeMoreMembers" id="seeMoreMem" data-toggle="modal" data-target="#seeMoreMembersModal">see more...</a>
-                    </div>
-                  </div>
-                  <% include _layouts/modals/see-more-members %>
-                </div>
-                <div class="cospace-add-mem-btn form-wrap margin-css custom-cospace input-box-shadow">
-                  <input id="clickToAdd" type="button" value="Click to add a Member" class="button button-primary" data-toggle="modal" data-target="#cospaceModal"
-                    style="width: 100%;" />
-                </div>
-                <!-- Modal -->
-                <div id="cospaceModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
-                  <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title modal-title">Add Members</h6>
-                        <button id="addMemberBtn" type="button" class="button button-primary button-sm">Add Member</button>
-                      </div>
-                      <div id="memberParentDiv" class="modal-body">
-                        <div id="addDeleteParent" class="input-group form-wrap input-box-shadow">
-                          <input name="addMembers" id="addMembers" class="form-input" type="text" list="emails" autocomplete="off" multiple placeholder="add member...">
-                          <span name="ownerspan" id="ownerIcon" ifOwner="false" class="bg-gray input-group-addon">
-                            <a class="fa fa-user-circle fa-lg" aria-hidden="true" title="Owner"></a>
-                          </span>
-                          <span id="deleteMember" class="bg-gray input-group-addon">
-                            <a class="minus-icon fa fa-trash-o fa-lg" aria-hidden="true" title="Delete"></a>
-                          </span>
-                        </div>
-                        <datalist id="emails">
-                          <option id="memberAddDiv"></option>
-                        </datalist>
-                        <span id="memberAddDiv"></span>
-                        <span class="hide"></span>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="button button-primary button-sm h-m-top-none" data-dismiss="modal">Close</button>
-                        <button id="submitMembersBtn" type="button" class="button button-primary button-sm h-m-top-none" data-dismiss="modal">Done</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a id="createSpaceDone" class="button button-primary" type="submit">
+                <a id="cs_createSpaceDone" class="button button-primary" type="submit">
                   <%= translation.HUB_CREATE_SPACE_DONE %>
                 </a>
                 &nbsp;&nbsp; &nbsp;&nbsp;
-                <a href="/spacelist" id="btndiscard" class="button btn_discard" type="submit">
+                <a href="/spacelist" id="cs_btndiscard" class="button btn_discard" type="submit">
                   <%= translation.HUB_CREATE_SPACE_DISCARD %>
                 </a>
               </form>
@@ -155,16 +113,17 @@
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
+      <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
       <script>
         $(document).ready(function () {
           $("#spacesList").addClass("active");
         });
       </script>
-      <script id="memberAdd" type="text/x-handlebars-template">
+      <!-- <script id="memberAdd" type="text/x-handlebars-template">
               {{#each users}}
                 {{user.userJid}}
               {{/each}}
-            </script>
+            </script> -->
       <% include _layouts/footer %>
 </body>
 
