@@ -83,6 +83,7 @@ var meetingLayoutTranslation = {
     11: "automatic",
     12: "onePlusN"
 }
+
 var meetingTypeDetails = {
     0: "Personal",
     1: "OneTime"

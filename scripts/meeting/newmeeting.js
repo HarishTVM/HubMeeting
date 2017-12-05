@@ -55,7 +55,7 @@ $(document).ready(function () {
 
     $("#deleteMember").live('click', function () {
         if ($(this).parents("#memberParentDiv").children('div').length == 1) {
-                $(this).prop('disabled', true);
+            $(this).prop('disabled', true);
         }
         else {
             var todelInput = $(this).siblings("#addMembers").val();
@@ -87,15 +87,15 @@ $(document).ready(function () {
         }
     }
 
-    for (i in meetingLayoutTranslation) {
-        if (meetingLayoutTranslation.hasOwnProperty(i)) {
-            $('#sel1').append($('<option />', {
-                value: i,
-                text: meetingLayoutTranslation[i]
-            }));
-            count++;
-        }
-    }
+    // Begin Pre-select radio button
+    $("input[name=types][value='0']").prop("checked",true);
+    // End Pre-select radio button
+
+    $.each(meetingLayoutTranslation, function (key, value) {
+        $('#sel1').append($("<option></option>").attr("value", key).text(value));
+        console.log("Key: "+key+" value: "+value);
+    });
+
     // END DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
 
     // BEGIN CHECK IF OWNERJID FIELD ID FILLED
@@ -247,7 +247,6 @@ $(document).ready(function () {
 
     // BEGIN COMBINE ARRAYS INTO ARRAY OF OBJECTS
     $(document).on("click", "#submitMembersBtn", function () {
-        debugger;
         memberObj = [];
         if (memberNewObj == "" || memberNewObj == undefined) {
             $("input[name='addMembers']").each(function () {
@@ -299,7 +298,6 @@ $(document).ready(function () {
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
-        debugger;
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
@@ -338,7 +336,7 @@ $(document).ready(function () {
                     "meetingStatus": 0,
                     "uri": $("#contact-create_space_URI").val(),
                     "defaultLayout": $('select[name=selectLayout]').val(),
-                    "ownerJid": "",
+                    "ownerJid": $("#ownerJid").val(),
                     "isInitiated": false,
                     "passcode": $("#passcode").val(),
                     "meetingType": parseInt($('input[name=types]:checked').val()),

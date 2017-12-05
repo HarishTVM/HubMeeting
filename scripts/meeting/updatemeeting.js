@@ -10,6 +10,7 @@ $(document).ready(function () {
         $(".meeting-head-bread").html("Create Meeting");
         $("#createmeeting-breadcrumb").html("Create Meeting");
         $("#createMeeting").html("Create Meeting");
+        $('#accordion').hide();
     }
     else if (window.location.pathname == "/updatemeeting") {
         $("#newMeetingForm").hide();

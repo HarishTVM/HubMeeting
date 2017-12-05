@@ -33,7 +33,7 @@ $(document).ready(function () {
     var count = 0, i;
     for (i in meetingLayoutTranslation) {
         if (meetingLayoutTranslation.hasOwnProperty(i)) {
-            $('#sel1').append($('<option />', {
+            $('#cs_sel1').append($('<option />', {
                 value: i,
                 text: meetingLayoutTranslation[i]
             }));
@@ -254,7 +254,7 @@ $(document).ready(function () {
                     "coSpace": $("#contact-sName").val(),
                     "uri": $("#contact-create_space_URI").val(),
                     "passcode": $("#passcode").val(),
-                    "defaultLayout": $("#sel1").val(),
+                    "defaultLayout": $("#cs_sel1").val(),
                     "cdrTag": "",
                     "ownerId": ""
                 }

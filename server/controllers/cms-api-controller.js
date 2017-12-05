@@ -6,6 +6,9 @@ const baseController = require('./base-controller');
 
 module.exports.login = (req, res) => {
     res.render("login", { year: new Date().getFullYear() });
+    console.log(req.cookies);
+    console.log("=========================");
+    console.log(req.session);    
 };
 
 module.exports.dashboard = (req, res) => {

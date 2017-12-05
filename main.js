@@ -5,11 +5,11 @@
 
 var express = require("express");
 var cluster = require('cluster');
-var session = require('express-session');
 var routes = require('./server/routes/api-route');
 var io = require("./server/helpers/io-helper");
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var parseurl = require("parseurl");
 var logger = require('./server/helpers/utility').logger;
 var config = require("./server/web-config");
@@ -83,6 +83,9 @@ app.set('trust proxy', 1);
 app.use(bodyParser.json({ limit: '5mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 app.use(cookieParser());
+app.use(session({secret: 'meetingHub',
+				saveUninitialized: false,
+				resave: false}));
 
 if (config.app.supportedLangs.indexOf(localLang) < 0)
 	localLang = "en"
