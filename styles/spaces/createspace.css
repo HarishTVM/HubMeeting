@@ -75,4 +75,41 @@ div#cs-page-loader {
     border-left-color: transparent;
     border-bottom-color: transparent;
 }
+
+/* Begin default layout select dropdown styling */
+span#select2-cs_sel1-container{
+    position: relative;
+    left: 44px;
+}
+
+@media only screen and (min-width: 768px) {
+    span#select2-cs_sel1-container{
+        position: relative;
+        left: 44px!important;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 449px){
+    span#select2-cs_sel1-container{
+        position: relative;
+        left: 14% !important;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 767px) {
+    span#select2-cs_sel1-container{
+        position: relative;
+        left: 12% !important;
+    }
+
+}
+
+/* @media only screen and (min-width: 351px) and (max-width: 767px){
+    span#select2-cs_sel1-container{
+        position: relative;
+        left: 16% !important;
+    }
+} */
+
+/* End default layout select dropdown styling */
 /*/////////////////////////////////// END CreateSpace for Styles ////////////////////////////////////// */

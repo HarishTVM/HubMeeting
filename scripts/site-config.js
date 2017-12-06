@@ -1,5 +1,5 @@
 var app = {
-    BASE_URL: "http://192.168.5.84:9000/api/"
+    BASE_URL: "http://192.168.5.20:9000/api/"
 }
 
 var apiType = {

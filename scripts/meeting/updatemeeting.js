@@ -41,7 +41,7 @@ $(document).ready(function () {
                 // BEGIN DEFAULT LAYOUT AUTO-POPULATION
                 if (resp.data.defaultLayout == 0)
                     $("#sel1 option[value=0]").attr('selected', true).change();
-                if (resp.data.defaultLayout == 1)
+                else if (resp.data.defaultLayout == 1)
                     $("#sel1 option[value=1]").attr('selected', true).change();
                 else if (resp.data.defaultLayout == 2)
                     $("#sel1 option[value=2]").attr('selected', true).change();

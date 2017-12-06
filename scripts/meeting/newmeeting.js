@@ -1,7 +1,8 @@
 // BEGIN ---------------------GLOBAL VARIABLES---------------------
-var isKeyEntered = false;
+var isKeyEntered = false, isEntered = false;
 var isOwner = false
 var func;
+var isCospaceId = "", iscospacename = "";
 // BEGIN CREATE ARRAY OF MEMBERS 
 var memArrayList = [], memArray = [];
 var ownerArrayList = [], ownerArr = [];
@@ -16,12 +17,81 @@ var randomObj = {};
 // END ---------------------GLOBAL VARIABLES---------------------
 
 $(document).ready(function () {
+    // Begin show datalist for spacename entries
+    $("#Name").hide();
+    // End show datalist for spacename entries
+
     //BEGIN Mirror populate input value logic
     $('#contact-sName').on('keyup', function () {
         $('#contact-create_space_URI').val(this.value);
         $('videoAdd').append(this.value);
     });
+    $('#cospace-name').on('keyup', function () {
+        $('#contact-create_space_URI').val(this.value);
+        $('videoAdd').append(this.value);
+    });
     //END Mirror populate input value logic
+
+    // Begin cospacename of datalist type to get users
+    $("#cospace-name").keyup(function () {
+        if (!isEntered) {
+            var that = this;
+            if ($(that).val() != "") {
+                isEntered = true;
+                $("#nm-page-loader").removeClass("hide");
+                setTimeout(function () {
+                    var filterData = $(that).val();
+                    httpGet(apiType.GET_COSPACES + "?filter=" + filterData, function (resp, err) {
+                        var totalUsers = resp.data.total;
+                        if (totalUsers >= 1) {
+                            var cospaceValue = resp.data.coSpaces[0].coSpace;
+                            var memberHandlebar = $('#getuser').html();
+                            var templateHandlebar = Handlebars.compile(memberHandlebar);
+                            $('#spacename').html(templateHandlebar(resp.data));
+                            $("#contact-create_space_URI").val(cospaceValue.uri);
+                            // BEGIN DEFAULT LAYOUT AUTO-POPULATION
+                            if (cospaceValue.defaultLayout == "allEqual")
+                                $("#sel1 option[value=0]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "speakerOnly")
+                                $("#sel1 option[value=1]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "telepresence")
+                                $("#sel1 option[value=2]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "stacked")
+                                $("#sel1 option[value=3]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "allEqualQuarters")
+                                $("#sel1 option[value=4]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "allEqualNinths")
+                                $("#sel1 option[value=5]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "allEqualSixteenths")
+                                $("#sel1 option[value=6]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "allEqualTwentyFifths")
+                                $("#sel1 option[value=7]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "onePlusFive")
+                                $("#sel1 option[value=8]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "onePlusSeven")
+                                $("#sel1 option[value=9]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "onePlusNine")
+                                $("#sel1 option[value=10]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "automatic")
+                                $("#sel1 option[value=11]").attr('selected', true).change();
+                            else if (cospaceValue.defaultLayout == "onePlusN")
+                                $("#sel1 option[value=12]").attr('selected', true).change();
+                            // END DEFAULT LAYOUT AUTO-POPULATION
+                            $("#ownerJid").val(cospaceValue.ownerJid);
+                            $("#nm-page-loader").addClass("hide");
+                        }
+                        else {
+                            $("#nm-page-loader").addClass("hide");
+                            swal("Spacename does not exist! Please create a new coSpace..!");
+                            $(that).val("");
+                        }
+                    });
+                    isEntered = false;
+                }, 1500);
+            }
+        }
+    });
+    // End cospacename of datalist type to get users
 
     // ---------- BEGIN MAKE A MEMBER OWNER ---------------
     $("#ownerIcon").live("click", function () {
@@ -88,12 +158,25 @@ $(document).ready(function () {
     }
 
     // Begin Pre-select radio button
-    $("input[name=types][value='0']").prop("checked",true);
+    $("input[name=types][value='0']").prop("checked", true);
     // End Pre-select radio button
+
+    // Begin show and hide input and datalist for meeting type
+    $("input[name=types]").change(function () {
+        if ($('input[name=types]:checked').val() == 0) {
+            $("#Name").hide().fadeOut();
+            $("#datalistname").show().fadeIn();
+        }
+        else {
+            $("#Name").show().fadeIn();
+            $("#datalistname").hide().fadeOut();
+        }
+    });
+    // End show and hide input and datalist for meeting type
 
     $.each(meetingLayoutTranslation, function (key, value) {
         $('#sel1').append($("<option></option>").attr("value", key).text(value));
-        console.log("Key: "+key+" value: "+value);
+        console.log("Key: " + key + " value: " + value);
     });
 
     // END DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE
@@ -121,13 +204,20 @@ $(document).ready(function () {
         $("#contact-sName").on("blur", function () {
             var checkcoSpaceName = $(this).val();
             if (checkcoSpaceName != "") {
-                httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
-                    if (resp.data.coSpaces.attrkey.total == 1) {
-                        $("#spaceNameCheck").addClass("hide").fadeOut();
-                        swal('Space Name already exists...');
-                    }
-                    else $("#spaceNameCheck").removeClass("hide").fadeIn();
-                });
+                $("#nm-spacename-page-loader").removeClass("hide");
+                setTimeout(function () {
+                    httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
+                        if (resp.data.coSpaces.attrkey.total == 1) {
+                            $("#spaceNameCheck").addClass("hide").fadeOut();
+                            swal('Space Name already exists...');
+                            $("#nm-spacename-page-loader").addClass("hide");
+                        }
+                        else {
+                            $("#nm-spacename-page-loader").addClass("hide");
+                            $("#spaceNameCheck").removeClass("hide").fadeIn();
+                        }
+                    });
+                }, 1200)
             }
             else $("#spaceNameCheck").addClass("hide").fadeOut();
         });
@@ -135,13 +225,21 @@ $(document).ready(function () {
         $("#contact-create_space_URI").on("blur", function () {
             var checkcoSpaceUri = $(this).val();
             if (checkcoSpaceUri != "") {
-                httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
-                    if (resp.data.coSpaces.attrkey.total == 1) {
-                        $("#spaceUriCheck").addClass("hide").fadeOut();
-                        swal('URI already exists...');
-                    }
-                    else $("#spaceUriCheck").removeClass("hide").fadeIn();
-                });
+                $("#nm-uri-page-loader").removeClass("hide");
+                setTimeout(function () {
+                    httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
+                        if (resp.data.coSpaces.attrkey.total == 1) {
+                            $("#spaceUriCheck").addClass("hide").fadeOut();
+                            swal('URI already exists...');
+                            $("#nm-uri-page-loader").removeClass("hide");
+
+                        }
+                        else {
+                            $("#nm-uri-page-loader").addClass("hide");
+                            $("#spaceUriCheck").removeClass("hide").fadeIn()
+                        };
+                    });
+                }, 1200);
             }
             else {
                 $("#spaceUriCheck").addClass("hide").fadeOut();
@@ -158,48 +256,7 @@ $(document).ready(function () {
     // BEGIN CHECK MEETING TYPE
     $("#contact-sName").on("focus", function () {
         var checkedVal = $('input[name=types]:checked').val();
-        if (checkedVal === "0") {
-            $("#contact-sName").on("blur", function () {
-                if ($("#contact-sName").val() != "") {
-                    var checkcoSpaceName = $(this).val();
-                    httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceName, function (resp, err) {
-                        if (resp.data.coSpaces.attrkey.total == 1) {
-                            $("#spaceNameCheck").addClass("hide").fadeOut();
-                            // swal('Space Name already exists...');
-                            var cospace = resp.data.coSpaces.coSpace.attrkey.id;
-                            httpGet(apiType.GET_COSPACES_BY_ID + "?coSpaceid=" + cospace, function (cospace_resp, err) {
-                                var getcospace = cospace_resp.data.coSpace;
-                                $("#contact-create_space_URI").val(getcospace.uri);
-                                $("#passcode").val(getcospace.passcode);
-                                $("#ownerJid").val(getcospace.ownerJid);
-                                randomObj.spaceid = getcospace.attrkey.id;
-                            });
-                        }
-                        else {
-                            $("#spaceNameCheck").removeClass("hide").fadeIn();
-                        }
-                    });
-                }
-                else $("#spaceNameCheck").addClass("hide").fadeOut();
-            });
-
-            $("#contact-create_space_URI").on("blur", function () {
-                var checkcoSpaceUri = $(this).val();
-                if (checkcoSpaceUri != "") {
-                    httpGet(apiType.CHECK_COSPACE_EXISTENCE + "?filter=" + checkcoSpaceUri, function (resp, err) {
-                        if (resp.data.coSpaces.attrkey.total == 1) {
-                            $("#spaceUriCheck").addClass("hide").fadeOut();
-                            swal('URI already exists...');
-                        }
-                        else $("#spaceUriCheck").removeClass("hide").fadeIn();
-                    });
-                }
-                else {
-                    $("#spaceUriCheck").addClass("hide").fadeOut();
-                }
-            });
-        }
-        else if (checkedVal === "1") {  // IF CHECKEDVAL == 1 
+        if (checkedVal === "1") {  // IF CHECKEDVAL == 1 
             checkOneTimeMeeting();
         }
         else {
@@ -237,7 +294,7 @@ $(document).ready(function () {
                     var totalUsers = resp.data.total;
                     var memberHandlebar = $('#memberAdd').html();
                     var templateHandlebar = Handlebars.compile(memberHandlebar);
-                    $('#memberAddDiv').html(templateHandlebar(resp.data));
+                    $('#emails').html(templateHandlebar(resp.data));
                     isKeyEntered = false;
                 });
             }, 1000);
@@ -321,16 +378,20 @@ $(document).ready(function () {
                     if (randomObj.spaceid == undefined) {
                         isCospaceId = "";
                     }
-                    else isCospaceId = randomObj.spaceid;
+                    else { isCospaceId = randomObj.spaceid };
+
+                    iscospacename = $("#cospace-name").val();
                 }
                 else if ($('input[name=types]:checked').val() === "1") {
                     if (randomObj.spaceid == undefined) {
                         isCospaceId = "";
                     }
-                    else isCospaceId = randomObj.spaceid;
+                    else { isCospaceId = randomObj.spaceid };
+
+                    iscospacename = $("#contact-sName").val();
                 }
                 var reqData = {
-                    "coSpace": $("#contact-sName").val(),
+                    "coSpace": iscospacename,
                     "description": $("#description").val(),
                     "coSpaceId": isCospaceId,
                     "meetingStatus": 0,
@@ -370,6 +431,57 @@ $(document).ready(function () {
         }
     });
     // END FORM SUBMIT LOGIC
+
+    // Begin Selectize.js logic
+    // $("#select-movie").change(function () {
+    //     debugger;
+    //     $('#select-movie').selectize({
+    //         valueField: 'title',
+    //         labelField: 'title',
+    //         searchField: 'title',
+    //         options: [],
+    //         create: false,
+    //         render: {
+    //             option: function (item, escape) {
+    //                 var actors = [];
+    //                 for (var i = 0, n = item.abridged_cast.length; i < n; i++) {
+    //                     actors.push('<span>' + escape(item.abridged_cast[i].name) + '</span>');
+    //                 }
+
+    //                 return '<div>' +
+    //                     '<img src="' + escape(item.posters.thumbnail) + '" alt="">' +
+    //                     '<span class="title">' +
+    //                     '<span class="name">' + escape(item.title) + '</span>' +
+    //                     '</span>' +
+    //                     '<span class="description">' + escape(item.synopsis || 'No synopsis available at this time.') + '</span>' +
+    //                     '<span class="actors">' + (actors.length ? 'Starring ' + actors.join(', ') : 'Actors unavailable') + '</span>' +
+    //                     '</div>';
+    //             }
+    //         },
+    //         load: function (query, callback) {
+    //             if (!query.length) return callback();
+    //             $.ajax({
+    //                 url: apiType.GET_COSPACES + "?filter=" + input.select2 - search__field,
+    //                 type: 'GET',
+    //                 dataType: 'jsonp',
+    //                 data: {
+    //                     q: query,
+    //                     page_limit: 10,
+    //                     apikey: '3qqmdwbuswut94jv4eua3j85'
+    //                 },
+    //                 error: function () {
+    //                     callback();
+    //                 },
+    //                 success: function (res) {
+    //                     console.log(res.movies);
+    //                     callback(res.movies);
+    //                 }
+    //             });
+    //         }
+    //     });
+    // })
+    // End Selectize.js logic
+
 });
 
 

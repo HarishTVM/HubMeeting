@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
     <link rel="stylesheet" href="/styles/common/sweetalert.css">
     <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <!-- <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.bootstrap3.css">
+    <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.css">
+    <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.default.css">
+    <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.legacy.css"> -->
+    
 </head>
 
 <body>
@@ -64,11 +69,39 @@
                     <label for="meeting-type">Meeting Type:</label>
                   </div>
                 </div>
+
+                <!-- Begin Selectize.js code -->
+                <!-- <div class="control-group">
+                  <label for="select-movie">Movie:</label>
+                  <select id="select-movie" class="movies" placeholder="Find a movie..."></select>
+                </div> -->
+                <!-- Begin Selectize.js code -->
+
                 <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                   <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %>
                   </span>
+                  <div id="nm-spacename-page-loader" class="hide">
+                    <div class="cssload-container">
+                      <div id="nm-spacename-wheel" class="cssload-speeding-wheel"></div>
+                    </div>
+                  </div>
+                  <span id="spaceNameCheck" class="hide fa fa-2x fa-check-circle" aria-hidden="true" title="Validated"></span>
+                </div>
+                <div id="datalistname" class="form-wrap form-wrap_icon linear-icon-database-add">
+                  <input class="form-input input-box-shadow validate-text" id="cospace-name" list="spacename" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
+                  <datalist id="spacename">
+                    <!-- <option id="putUser"></option> -->
+                  </datalist>
+                  <span class="hide error-text">
+                    <%= translation.CREATE_SPACE_ERROR_TEXT_SPACE_NAME %>
+                  </span>
+                  <div id="nm-page-loader" class="hide">
+                    <div class="cssload-container">
+                      <div id="nm-wheel" class="cssload-speeding-wheel"></div>
+                    </div>
+                  </div>
                   <span id="spaceNameCheck" class="hide fa fa-2x fa-check-circle" aria-hidden="true" title="Validated"></span>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-book">
@@ -83,6 +116,11 @@
                   <span class="hide error-text">
                     <%= translation.CREATE_SPACE_ERROR_TEXT_ENTER_URI %>
                   </span>
+                  <div id="nm-uri-page-loader" class="hide">
+                    <div class="cssload-container">
+                      <div id="nm-uri-wheel" class="cssload-speeding-wheel"></div>
+                    </div>
+                  </div>
                   <span id="spaceUriCheck" class="hide fa fa-2x fa-check-circle" aria-hidden="true" title="Validated"></span>
                 </div>
                 <div class="form-wrap form-wrap_icon linear-icon-key-hole">
@@ -199,7 +237,7 @@
                           </span>
                         </div>
                         <datalist id="emails">
-                          <option id="memberAddDiv"></option>
+                          <!-- <option id="memberAddDiv"></option> -->
                         </datalist>
                         <span id="memberAddDiv"></span>
                         <span class="hide"></span>
@@ -233,17 +271,25 @@
       <script src="/node_modules/moment-timezone/builds/moment-timezone.min.js"></script>
       <script src="/node_modules/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
       <script src="/node_modules/moment-timezone/builds/moment-timezone-with-data-2012-2022.min.js"></script>
-      
+
       <script src="/scripts/common/validation.js"></script>
       <script src="/scripts/meeting/newmeeting.js"></script>
       <script src="/scripts/meeting/updatemeeting.js"></script>
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-
+      <!-- <script src="/node_modules/selectize.js-master/dist/js/standalone/selectize.min.js"></script>
+      <script src="/node_modules/selectize.js-master/dist/js/standalone/selectize.min.js"></script>
+      <script src="/node_modules/selectize.js-master/dist/js/selectize.min.js"></script> -->
       <script id="memberAdd" type="text/x-handlebars-template">
         {{#each users}}
-          {{user.userJid}}
+          <option value="{{user.userJid}}">{{user.userJid}}</option>
+        {{/each}}
+      </script>
+
+      <script id="getuser" type="text/x-handlebars-template">
+        {{#each coSpaces}}
+          <option value="{{coSpace.name}}">{{coSpace.name}}</option>
         {{/each}}
       </script>
 
