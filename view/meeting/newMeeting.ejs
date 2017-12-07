@@ -15,11 +15,7 @@
     <link rel="stylesheet" href="/styles/inbuilt/toastr.min.css">
     <link rel="stylesheet" href="/styles/common/sweetalert.css">
     <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css">
-    <!-- <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.bootstrap3.css">
-    <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.css">
-    <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.default.css">
-    <link rel="stylesheet" href="/node_modules/selectize.js-master/dist/css/selectize.legacy.css"> -->
-    
+
 </head>
 
 <body>
@@ -69,14 +65,6 @@
                     <label for="meeting-type">Meeting Type:</label>
                   </div>
                 </div>
-
-                <!-- Begin Selectize.js code -->
-                <!-- <div class="control-group">
-                  <label for="select-movie">Movie:</label>
-                  <select id="select-movie" class="movies" placeholder="Find a movie..."></select>
-                </div> -->
-                <!-- Begin Selectize.js code -->
-
                 <div id="Name" class="form-wrap form-wrap_icon linear-icon-database-add">
                   <input class="form-input input-box-shadow validate-text" id="contact-sName" type="text" name="name" placeholder="<%= translation.HUB_CREATE_SPACE_NAME %>">
                   <span class="hide error-text">
@@ -278,9 +266,6 @@
       <script src="/scripts/spaces/createspace.js"></script>
       <script src="/scripts/inbuilt/toastr.min.js"></script>
       <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-      <!-- <script src="/node_modules/selectize.js-master/dist/js/standalone/selectize.min.js"></script>
-      <script src="/node_modules/selectize.js-master/dist/js/standalone/selectize.min.js"></script>
-      <script src="/node_modules/selectize.js-master/dist/js/selectize.min.js"></script> -->
       <script id="memberAdd" type="text/x-handlebars-template">
         {{#each users}}
           <option value="{{user.userJid}}">{{user.userJid}}</option>

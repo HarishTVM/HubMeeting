@@ -49,6 +49,7 @@ $(document).ready(function () {
                             var templateHandlebar = Handlebars.compile(memberHandlebar);
                             $('#spacename').html(templateHandlebar(resp.data));
                             $("#contact-create_space_URI").val(cospaceValue.uri);
+                            $("#passcode").val(cospaceValue.passcode);
                             // BEGIN DEFAULT LAYOUT AUTO-POPULATION
                             if (cospaceValue.defaultLayout == "allEqual")
                                 $("#sel1 option[value=0]").attr('selected', true).change();
@@ -355,6 +356,7 @@ $(document).ready(function () {
 
     // BEGIN FORM SUBMIT LOGIC
     $("#newMeetingDone").click(function () {
+        debugger;
         if ($('form').hasClass('validate-form')) {
             var resultItem = [];
             $('.validate-text').each(function (i, obj) {
@@ -431,56 +433,6 @@ $(document).ready(function () {
         }
     });
     // END FORM SUBMIT LOGIC
-
-    // Begin Selectize.js logic
-    // $("#select-movie").change(function () {
-    //     debugger;
-    //     $('#select-movie').selectize({
-    //         valueField: 'title',
-    //         labelField: 'title',
-    //         searchField: 'title',
-    //         options: [],
-    //         create: false,
-    //         render: {
-    //             option: function (item, escape) {
-    //                 var actors = [];
-    //                 for (var i = 0, n = item.abridged_cast.length; i < n; i++) {
-    //                     actors.push('<span>' + escape(item.abridged_cast[i].name) + '</span>');
-    //                 }
-
-    //                 return '<div>' +
-    //                     '<img src="' + escape(item.posters.thumbnail) + '" alt="">' +
-    //                     '<span class="title">' +
-    //                     '<span class="name">' + escape(item.title) + '</span>' +
-    //                     '</span>' +
-    //                     '<span class="description">' + escape(item.synopsis || 'No synopsis available at this time.') + '</span>' +
-    //                     '<span class="actors">' + (actors.length ? 'Starring ' + actors.join(', ') : 'Actors unavailable') + '</span>' +
-    //                     '</div>';
-    //             }
-    //         },
-    //         load: function (query, callback) {
-    //             if (!query.length) return callback();
-    //             $.ajax({
-    //                 url: apiType.GET_COSPACES + "?filter=" + input.select2 - search__field,
-    //                 type: 'GET',
-    //                 dataType: 'jsonp',
-    //                 data: {
-    //                     q: query,
-    //                     page_limit: 10,
-    //                     apikey: '3qqmdwbuswut94jv4eua3j85'
-    //                 },
-    //                 error: function () {
-    //                     callback();
-    //                 },
-    //                 success: function (res) {
-    //                     console.log(res.movies);
-    //                     callback(res.movies);
-    //                 }
-    //             });
-    //         }
-    //     });
-    // })
-    // End Selectize.js logic
 
 });
 
