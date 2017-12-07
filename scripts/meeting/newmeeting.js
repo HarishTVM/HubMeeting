@@ -177,7 +177,6 @@ $(document).ready(function () {
 
     $.each(meetingLayoutTranslation, function (key, value) {
         $('#sel1').append($("<option></option>").attr("value", key).text(value));
-        console.log("Key: " + key + " value: " + value);
     });
 
     // END DROPDOWN IMPLEMENTATION FOR MEETING TYPE AND DEFAULT TEMPLATE

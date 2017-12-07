@@ -19,6 +19,7 @@ $(document).ready(function () {
         $(".meeting-head-bread").html("Update Meeting");
         $("#createmeeting-breadcrumb").html("Update Meeting");
         $("#createMeeting").html("Update Meeting");
+        debugger;
 
         // BEGIN AUTO_POPULATION OF FIELDS
         var url = window.location.href;
@@ -26,15 +27,22 @@ $(document).ready(function () {
         setTimeout(function () {
             httpGet(apiType.GET_MEETING_BY_MEETINGID + "?meetingID=" + subString, function (resp, err) {
                 debugger;
-                console.log(resp.data);
+                console.log(resp.data);  
                 if (resp.data.meetingType == 1)
+                   { 
                     $('[name=types][value=1]').prop('checked', true);
+                    $("#Name").show().fadeIn();
+                    $("#datalistname").hide().fadeOut();
+                    $("#contact-sName").val(resp.data.coSpace);
+                }
                 else {
                     $('[name=types][value=0]').prop('checked', true);
+                    $("#Name").hide().fadeOut();
+                    $("#datalistname").show().fadeIn();
+                    $("#cospace-name").val(resp.data.coSpace)
                 }
                 randomObj.spaceid = resp.data.coSpaceId;
                 console.log(randomObj.spaceid);
-                $("#contact-sName").val(resp.data.coSpace);
                 $("#description").val(resp.data.description);
                 $("#contact-create_space_URI").val(resp.data.uri);
                 $("#passcode").val(resp.data.passcode);
@@ -85,7 +93,6 @@ $(document).ready(function () {
         // BEGIN GET MEMBERS FOR MEETING_ID
         $("#seeMoreMem").hide();
         httpGet(apiType.FIND_ALL_MEETING_MEMBERS + "?limit=10&" + "offset=" + offset + "&meetingID=" + subString, function (resp, err) {
-            debugger;
             console.log(resp.data);
             if (resp.data.count != 0) {
                 for (i = 0; i < resp.data.count; i++) {
